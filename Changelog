@@ -1,0 +1,28 @@
+v3.0
+  Converted to Python 3.x (also imports and libraries)
+
+v2.0
+  Refactored python modules, ready to bring in machine learning one
+
+v1.0
+  Added installation tool, examples, and docs
+
+
+v0.2.1
+  General bug fixes
+  created Folder.sync
+
+
+v0.2
+  Created new modules, classes and functions
+  Got qt work
+
+
+v0.1
+  Fixed small bugs
+  Added previously created modules following PEP rules
+
+
+v0.0
+  Quick release for new library project
+  Language: Python 2.7
