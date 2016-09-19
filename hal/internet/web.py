@@ -185,6 +185,12 @@ class Webpage(object):
             except:
                 time.sleep(timeout)  # time to wait for another attempt
 
+    def open_in_browser(times):
+        assert(times > 0)
+
+        for t in range(times):
+            webbrowser.open(url)
+
 
 class SearchEngineResult(object):
     """ Result of search query in search engine """
@@ -220,19 +226,5 @@ class SearchEngine(object):
     def get_search_page(self, search_url):
         """ get HTML source of search page of given query """
 
-        source = Webpage(search_url).get_html_source(tor=False)
+        source = Webpage(search_url).get_html_source()
         return source
-
-
-def open_browser(url, times):
-    """
-    :param url: url to open
-    :param times: how many times
-    :return: open given url
-    """
-
-    if times >= 0:
-        for travel in range(0, times):
-            webbrowser.open(url)
-    else:
-        raise ValueError('\'times\' field cannot be negative')
