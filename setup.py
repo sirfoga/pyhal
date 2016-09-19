@@ -21,12 +21,11 @@ from setuptools import setup, find_packages
 
 setup(
     name="Hal",
-    version="3.0",
+    version="3.1",
     description="Hal is a from-scratch home-made multipurpose library to perform most of actions in a every-day python-dev life.",
     license="Apache License, Version 2.0",
-    keywords="library scratch maths ml",
+    keywords="library scratch maths",
     url="https://github.com/sirfoga/hal",
     packages=find_packages(exclude=["examples", "docs"]),
-    test_suite="hal.tests.runtests",
-    install_requires = ["numpy", "scipy", "matplotlib", "mutagen", "send2trash", "selenium", "beautifulsoup4", "pycrypto"],
+    install_requires = ["beautifulsoup4", "mutagen", "numpy", "pycrypto", "PySocks", "scipy", "selenium", "send2trash"]
 )

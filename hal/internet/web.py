@@ -16,29 +16,63 @@
 # limitations under the License.
 
 
-""" deal with webpages """
+""" Deal with webpages """
 
-import robotparser
-import time
-import urllib2
-import urlparse
-import webbrowser
-
-from BeautifulSoup import BeautifulSoup
+import time, random
+import urllib, webbrowser
+import socks, socket, requests  # fetch source via tor
+from bs4 import BeautifulSoup
 from selenium import webdriver
 
 
-class Webpage(object):
-    """ representation of URL (web page)
-    """
+CHROME_USER_AGENT = [
+    "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.19 (KHTML, like Gecko) Chrome/1.0.154.53 Safari/525.19",
+    "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.19 (KHTML, like Gecko) Chrome/1.0.154.36 Safari/525.19",
+    "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.10 (KHTML, like Gecko) Chrome/7.0.540.0 Safari/534.10",
+    "Mozilla/5.0 (Windows; U; Windows NT 5.2; en-US) AppleWebKit/534.4 (KHTML, like Gecko) Chrome/6.0.481.0 Safari/534.4",
+    "Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-US) AppleWebKit/533.4 (KHTML, like Gecko) Chrome/5.0.375.86 Safari/533.4",
+    "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/532.2 (KHTML, like Gecko) Chrome/4.0.223.3 Safari/532.2",
+    "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/532.0 (KHTML, like Gecko) Chrome/4.0.201.1 Safari/532.0",
+    "Mozilla/5.0 (Windows; U; Windows NT 5.2; en-US) AppleWebKit/532.0 (KHTML, like Gecko) Chrome/3.0.195.27 Safari/532.0",
+    "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/530.5 (KHTML, like Gecko) Chrome/2.0.173.1 Safari/530.5",
+    "Mozilla/5.0 (Windows; U; Windows NT 5.2; en-US) AppleWebKit/534.10 (KHTML, like Gecko) Chrome/8.0.558.0 Safari/534.10",
+    "Mozilla/5.0 (X11; U; Linux x86_64; en-US) AppleWebKit/540.0 (KHTML,like Gecko) Chrome/9.1.0.0 Safari/540.0",
+    "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/534.14 (KHTML, like Gecko) Chrome/9.0.600.0 Safari/534.14",
+    "Mozilla/5.0 (X11; U; Windows NT 6; en-US) AppleWebKit/534.12 (KHTML, like Gecko) Chrome/9.0.587.0 Safari/534.12",
+    "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.13 (KHTML, like Gecko) Chrome/9.0.597.0 Safari/534.13",
+    "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.16 (KHTML, like Gecko) Chrome/10.0.648.11 Safari/534.16",
+    "Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US) AppleWebKit/534.20 (KHTML, like Gecko) Chrome/11.0.672.2 Safari/534.20",
+    "Mozilla/5.0 (Windows NT 6.0) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.792.0 Safari/535.1",
+    "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.872.0 Safari/535.2",
+    "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.7 (KHTML, like Gecko) Chrome/16.0.912.36 Safari/535.7",
+    "Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.66 Safari/535.11",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.45 Safari/535.19",
+    "Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/535.24 (KHTML, like Gecko) Chrome/19.0.1055.1 Safari/535.24",
+    "Mozilla/5.0 (Windows NT 6.2) AppleWebKit/536.6 (KHTML, like Gecko) Chrome/20.0.1090.0 Safari/536.6",
+    "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/22.0.1207.1 Safari/537.1",
+    "Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.15 (KHTML, like Gecko) Chrome/24.0.1295.0 Safari/537.15",
+    "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.93 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1467.0 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/30.0.1599.101 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1623.0 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.103 Safari/537.36",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.38 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.71 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
+]
 
-    def __init__(self, raw_url):
+
+class Webpage(object):
+    """ representation of URL (web page) """
+
+    def __init__(self, url):
         object.__init__(self)
 
-        self.url = self.parse_url(raw_url)
-        self.get_domain()
-        self.source = ""
-        self.links = ""
+        self.url = self.parse_url(url)
+        self.domain = self.get_domain()
+        self.source = None
+        self.links = None
 
     def run(self):
         """
@@ -76,13 +110,26 @@ class Webpage(object):
 
         return parsed
 
-    def get_domain(self):
+    def get_scheme(self):
         """
-        :return: extract domain from given url
+        :return: get scheme (HTTP, HTTPS, FTP ..) from given url
         """
 
-        parsed_url = urlparse.urlparse(self.url)
-        self.domain = '{uri.scheme}://{uri.netloc}/'.format(uri=parsed_url)
+        return urllib.request.urlparse(self.url).scheme
+
+    def get_hostname(self):
+        """
+        :return: extract hostname from given url
+        """
+
+        return urllib.request.urlparse(self.url).hostname
+
+    def get_domain(self):
+        """
+        :return: get domain from given url
+        """
+
+        return "{uri.scheme}://{uri.netloc}/".format(uri=urllib.request.urlparse(self.url))
 
     def allow_spider(self, spider):
         """
@@ -91,7 +138,7 @@ class Webpage(object):
         """
 
         domain = self.domain  # look for robots.txt in domain
-        parser = robotparser.RobotFileParser()
+        parser = urllib.request.robotparser.RobotFileParser()
         parser.set_url(domain + 'robots.txt')
         parser.read()
 
@@ -103,15 +150,20 @@ class Webpage(object):
         """
 
         if tor:
-            self.source = open_tor(self.url, 1)  # 1 time only
+            print("To be able to fetch HTML source pages via Tor the following command is required:")
+            print("apt-get install tor && tor &")
+            socks.setdefaultproxy(proxy_type=socks.PROXY_TYPE_SOCKS5, addr="127.0.0.1", port=9050)
+            socket.socket = socks.socksocket
+            r = requests.get(self.url).text
         else:
             try:
-                req = urllib2.Request(self.url)
-                req.add_header('User-Agent', 'I am a human')
-                response = urllib2.urlopen(req)
-                self.source = response.read()
+                q = urllib.request.Request(self.url)
+                q.add_header("user-agent", random.choice(CHROME_USER_AGENT))
+                r = urllib.request.urlopen(q).read()
             except:
-                raise ValueError('error while parsing ' + self.url)
+                raise ValueError('Error while parsing ' + self.url)
+
+        return str(r)
 
     def get_links(self, recall, timeout):
         """
@@ -126,12 +178,50 @@ class Webpage(object):
                 out_links = []
 
                 for tag in soup.findAll(['a', 'link'], href=True):
-                    tag['href'] = urlparse.urljoin(self.url, tag['href'])
+                    tag['href'] = urllib.request.urlparse.urljoin(self.url, tag['href'])
                     out_links.append(tag['href'])
 
-                self.links = sorted(out_links)  # sort array
+                return sorted(out_links)  # sort array
             except:
                 time.sleep(timeout)  # time to wait for another attempt
+
+
+class SearchEngineResult(object):
+    """ Result of search query in search engine """
+    def __init__(self, title, link):
+        object.__init__(self)
+
+        self.title = title
+        self.link = link
+
+    def __str__():
+        return self.title
+
+
+class SearchEngine(object):
+    """ Abstract search engine: provide keywords, then find results """
+
+    def __init__(self, url):
+        object.__init__(self)
+
+        self.url = url
+        self.domain = Webpage(url).get_domain()
+        self.blank_replace = None  # every search engine has to replace blanks in query
+
+    def __str__(self):
+        return urllib.request.urlparse(self.url).hostname
+
+    def parse_query(self, query):
+        """ parse given query in order to meet search criteria of search engine """
+
+        assert(type(query) is type("string"))  # assert that query is a string
+        return query.strip().replace(" ", self.blank_replace).lower()  # remove trailing blanks, then replace with search engine blanks
+
+    def get_search_page(self, search_url):
+        """ get HTML source of search page of given query """
+
+        source = Webpage(search_url).get_html_source(tor=False)
+        return source
 
 
 def open_browser(url, times):
@@ -144,29 +234,5 @@ def open_browser(url, times):
     if times >= 0:
         for travel in range(0, times):
             webbrowser.open(url)
-    else:
-        raise ValueError('\'times\' field cannot be negative')
-
-
-def open_tor(url, times):
-    """
-    :param url: url to open (inside TOR network)
-    :param times: how many times
-    :return: open given url with tor browser (anonymously): Tor browser must be running
-    """
-
-    if times >= 0:
-        profile = webdriver.FirefoxProfile()
-        profile.set_preference('network.proxy.type', 1)
-        profile.set_preference('network.proxy.socks','127.0.0.1')
-        profile.set_preference('network.proxy.socks_port', 9150)
-
-        browser = webdriver.Firefox(profile)
-        source = ""
-        for travel in range(0, times):
-            browser.get(url)
-            source = browser.page_source
-
-        return source
     else:
         raise ValueError('\'times\' field cannot be negative')
