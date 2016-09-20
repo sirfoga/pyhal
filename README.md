@@ -6,11 +6,9 @@
 
 ## Solution
 * class wrappers when functions can possibly be attributed to single instance of object
-* easy-to-remember names
 
 ## Install
-* You can either open a terminal and type in `python setup.py install` (this will take care of all needed other modules and dependencies) or ...
-* ... install dependencies yourself by running the bash script provided (`chmod +x install-dependencies.sh && ./install-dependencies.sh`), and then place all module stuff in your python library folder (you can get the location by running `python -m site --user-site`)
+* Fire up a terminal and type `python3 setup.py install`: this will take care of all needed other modules and dependencies. Note that you can also install it by one cmd command: `mkdir hal_install && cd hal_install && git clone https://github.com/sirfoga/hal.git && cd hal && python3 setup.py install`
 
 ## LICENSE
 
