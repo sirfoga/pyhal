@@ -8,7 +8,7 @@
 * class wrappers when functions can possibly be attributed to single instance of object
 
 ## Install
-* Fire up a terminal and type `python3 setup.py install`: this will take care of all needed other modules and dependencies. Note that you can also install it by one cmd command: `mkdir hal_install && cd hal_install && git clone https://github.com/sirfoga/hal.git && cd hal && python3 setup.py install`
+* Fire up a terminal and type `python3 setup.py install`: this will take care of all needed other modules and dependencies. Note that you can also install it by one cmd command: `mkdir hal_install && cd hal_install && git clone https://github.com/sirfoga/hal.git && cd hal && python3 setup.py install && cd .. && cd .. && rm hal_instal`.
 
 ## LICENSE
 
