@@ -44,7 +44,7 @@ def handle_exceptions(function):
         try:
             return function(*args, **kwargs)
         except KeyboardInterrupt:
-            print("\r[!] User stopped program...\n")
+            print("\r[!] User stopped program...")
         except Exception:
             print("\r[!] Unhandled exception occured...\n%s" % sys.exc_info()[1])
     return _handle_exceptions
