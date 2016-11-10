@@ -50,6 +50,7 @@ setup(
         "sklearn",
         "requests",
         "lxml",
-        "scipy"
+        "scipy",
+        "send2trash"
     ]
 )
