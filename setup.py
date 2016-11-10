@@ -33,7 +33,7 @@ def read(fname):
 
 setup(
     name="Hal",
-    version="4.1.1",
+    version="4.2",
     author="sirfoga",
     author_email="sirfoga@protonmail.com",
     description="Hal is a from-scratch home-made multipurpose library to perform most of stuff in python.",
