@@ -16,7 +16,8 @@
 # limitations under the License.
 
 
-""" various tools and utilities to deal with database and machine learning """
+""" Various tools and utilities to deal with database and machine learning. """
+
 
 import numpy as np
 from matplotlib import pyplot, cm
@@ -33,8 +34,6 @@ def precision(matrix):
 
     tp = matrix[0][0]
     fp = matrix[1][0]
-    fn = matrix[0][1]
-    tn = matrix[1][1]
 
     try:
         return 1.0 * tp / (tp + fp)
@@ -52,9 +51,7 @@ def recall(matrix):
     """
 
     tp = matrix[0][0]
-    fp = matrix[1][0]
     fn = matrix[0][1]
-    tn = matrix[1][1]
 
     try:
         return 1.0 * tp / (tp + fn)
@@ -71,9 +68,7 @@ def tn_rate(matrix):
         False Positive - True Negative
     """
 
-    tp = matrix[0][0]
     fp = matrix[1][0]
-    fn = matrix[0][1]
     tn = matrix[1][1]
 
     try:
@@ -136,8 +131,6 @@ def show_correlation_matrix(feature_list, correlation_matrix):
     ax1.set_yticks(list(range(len(feature_list))))
     ax1.set_yticklabels([feature_list[i] + " : " + str(i) for i in range(len(feature_list))])
     cmap = cm.get_cmap('jet', 30)
-
     cax = ax1.imshow(correlation_matrix, interpolation="nearest", cmap=cmap)
-    cbar = fig.colorbar(cax, ticks=[.5, .55, .6, .65, .7, .75, .8, .85, .90, .95, 1])  # add colorbar
-
+    fig.colorbar(cax, ticks=[.5, .55, .6, .65, .7, .75, .8, .85, .90, .95, 1])  # add colorbar
     pyplot.show()

@@ -1,4 +1,10 @@
-v3.1
+v4.1.1
+  YouTube RSS channel creator, moved engines.
+
+v4.1
+  Reformat code, removed lots of useless modules, improved performance.
+
+v3.3
   Search engine module (torrent at least ...)
 
 v3.0

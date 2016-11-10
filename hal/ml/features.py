@@ -16,7 +16,8 @@
 # limitations under the License.
 
 
-""" Collection of methods to find weights of features and select the best ones """
+""" Collection of methods to find weights of features and select the best ones. """
+
 
 from sklearn.feature_selection import SelectKBest, chi2, RFECV, RFE
 from sklearn.cross_validation import StratifiedKFold
@@ -41,7 +42,7 @@ def get_best_features(x, y):
 
 def get_features(x, y, n_features_to_select):
     """ finds the optimal features """
-    
+
     svc = SVC(kernel="linear", C=1)
     rfe = RFE(estimator=svc, n_features_to_select=n_features_to_select, step=1)
     rfe.fit(x, y)

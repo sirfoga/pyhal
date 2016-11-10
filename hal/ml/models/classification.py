@@ -16,7 +16,7 @@
 # limitations under the License.
 
 
-""" Prediction methods based on classification algorithms """
+""" Prediction methods based on classification algorithms. """
 
 
 from sklearn.ensemble import ExtraTreesClassifier, RandomForestClassifier, AdaBoostClassifier

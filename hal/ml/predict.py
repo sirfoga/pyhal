@@ -16,7 +16,7 @@
 # limitations under the License.
 
 
-"""" General model to make prediction about everything """
+"""" General model to make prediction about everything. """
 
 
 from sklearn.cross_validation import train_test_split

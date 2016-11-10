@@ -16,7 +16,7 @@
 # limitations under the License.
 
 
-""" Prediction methods based on multiple models mixed up """
+""" Prediction methods based on multiple models mixed up. """
 
 
 from sklearn import linear_model

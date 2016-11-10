@@ -16,7 +16,7 @@
 # limitations under the License.
 
 
-""" MATHS: many elegant and powerful mathematical functions """
+""" A few elegant and powerful mathematical functions. """
 
 
 import random
@@ -42,14 +42,14 @@ class Integer(object):
         """
         :return: test with miller-rabin
         """
-        
+
         if self.to_int < 2:
             return False
         elif self.to_int == 2:
             return True
         elif self.to_int % 2 == 0:
             return False
-    
+
         low_primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101,
                       103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199,
                       211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317,
@@ -59,7 +59,7 @@ class Integer(object):
                       709, 719, 727, 733, 739, 743, 751, 757, 761, 769, 773, 787, 797, 809, 811, 821, 823, 827, 829, 839,
                       853, 857, 859, 863, 877, 881, 883, 887, 907, 911, 919, 929, 937, 941, 947, 953, 967, 971, 977, 983,
                       991, 997]
-    
+
         if self.to_int in low_primes:
             return True
 
@@ -67,7 +67,7 @@ class Integer(object):
         for prime in low_primes:
             if self.to_int % prime == 0:
                 return False
-    
+
         # If all else fails, call rabinMiller to determine if self.to_int is a prime
         self.is_pprime = self.test_miller_rabin(5)
         return self.is_pprime
@@ -131,14 +131,16 @@ class EightQueen(object):
     def under_attack(self, col, queens):  # (col, queens) What is their meaning? What do I need to write it this field?
         left = right = col
         for r, c in reversed(queens):  # What does reversed means in this loop? For what reson do we need r and c (their meaning is 0 by default?)?
-            left, right = left-1, right+1
+            left, right = left - 1, right + 1
             if c in (left, col, right):
                 return True
         return False
 
     def solve(self, n):
-        if n == 0: return [[]]  # No RECURSION if n=0.
-        smaller_solutions = self.solve(n-1)  # RECURSION!!!!!!!!!!!!!!
+        if n == 0:
+            return [[]]
+
+        smaller_solutions = self.solve(n - 1)
         solutions = []
         for solution in smaller_solutions:  # I moved this around, so it makes more sense
             for column in range(1, self.board_size + 1):  # I changed this, so it makes more sense
@@ -175,7 +177,7 @@ def blumblumshub(seed, amount, prime0, prime1):
     if amount == 0:
         return []
 
-    assert(seed > 0 and prime0 > 0 and prime1 > 0) # seed and primes cannot be negative
+    assert(seed > 0 and prime0 > 0 and prime1 > 0)  # seed and primes cannot be negative
     assert(prime0 % 4 == 3 and prime1 % 4 == 3)  # primes must be congruent 3 mod 4
 
     mod = prime0 * prime1

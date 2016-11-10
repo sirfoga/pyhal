@@ -16,7 +16,7 @@
 # limitations under the License.
 
 
-"""" Parses raw file database """
+""" Parsers for raw databases. """
 
 
 class Parser(object):

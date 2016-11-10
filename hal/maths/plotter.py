@@ -16,18 +16,18 @@
 # limitations under the License.
 
 
-""" PLOTTER: show elegant plots in any dimension """
+""" Show elegant plots in any dimension. """
 
 
-from scipy import *
+from scipy import linspace
 import matplotlib.pyplot as plt
+from matplotlib.widgets import Slider
 import numpy
-from matplotlib.widgets import *
 
 
 class Plot2d(object):
     """ 2d plot """
-    
+
     @staticmethod
     def scatter(vectorx, vectory):
         """
@@ -35,12 +35,12 @@ class Plot2d(object):
         :param vectory: vector in y axis
         :return: 2d scatter plot
         """
-        
-        if len(vectorx) == len(vectory):
-            fig = plt.figure()
-            ax = fig.add_subplot(111)
 
+        if len(vectorx) == len(vectory):
+            # fig = plt.figure()
+            # ax = fig.add_subplot(111)
             # ax.scatter(vectorx, vectory, c="r", marker="o")
+
             plt.plot(vectorx, vectory, "-o")
             plt.show()
         else:
@@ -95,7 +95,6 @@ class Plot3d(object):
         :param vectorz: vector in z axis
         :return: plot 3d scattered points
         """
-
 
         if len(vectorx) == len(vectory) == len(vectorz):
             # general settings
@@ -164,13 +163,13 @@ class Plot3d(object):
             self.plot(function, minx, maxx, pointsx, maxy, miny, pointsy)
 
         # general settings
-        fig = plt.figure()
+        # fig = plt.figure()
         ax = plt.axes(projection="3d")
 
         # points
         x = numpy.outer(linspace(minx, maxx, pointsx), numpy.ones(pointsx))
         y = numpy.outer(linspace(miny, maxy, pointsy), numpy.ones(pointsy)).T
-        z = function(x,y)
+        z = function(x, y)
 
         # plot
         ax.plot_surface(x, y, z, cmap=plt.cm.jet, rstride=1, cstride=1, linewidth=0)
@@ -295,12 +294,11 @@ class Plot4d(object):
             # general settings
             fig = plt.figure()
             ax = plt.axes(projection="3d")
-            x_const = minx
+            # x_const = minx
 
             # points
             pointsx = get_precision(minx, maxx)
             pointsy = get_precision(miny, maxz)
-            pointsz = get_precision(miny, maxz)
 
             # create axes
             X = numpy.outer(linspace(minx, maxx, pointsx), pointsx)
@@ -330,7 +328,6 @@ class Plot4d(object):
             # general settings
             fig = plt.figure()
             ax = fig.gca(projection="3d")
-            x_const = minx
 
             # create axes
             X = numpy.arange(minx, maxx, get_precision_delta(minx, maxx, precision)).tolist()
@@ -359,10 +356,10 @@ class Plot4d(object):
                     Z.append(function(x_const, X[i], Y[i]))
 
                 # show
-                cset = ax.contour(X, Y, Z, zdir="x", offset=minx)
-                cset = ax.contour(X, Y, Z, zdir="y", offset=miny)
-                cset = ax.contour(X, Y, Z, zdir="z", offset=minz)
-                cset = ax.contour(X, Y, Z, extend3d=True)
+                # cset = ax.contour(X, Y, Z, zdir="x", offset=minx)
+                # cset = ax.contour(X, Y, Z, zdir="y", offset=miny)
+                # cset = ax.contour(X, Y, Z, zdir="z", offset=minz)
+                # cset = ax.contour(X, Y, Z, extend3d=True)
                 set_labels(ax, "y", "z", "w")
 
             slider.on_changed(update)

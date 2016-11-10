@@ -16,13 +16,14 @@
 # limitations under the License.
 
 
-""" perform fast hash, encryption and calculations related to cryptography """
-""" TODO: add salted hash option """
+""" Perform fast hash, encryption and calculations related to cryptography. """
+
+
 import hashlib
 import binascii
-import crypt, getpass, pwd, base64
-from Crypto.Hash import *
-from Crypto.Cipher import *
+import crypt
+from Crypto.Hash import SHA224, SHA256
+from Crypto.Cipher import DES3, ARC2, ARC4, Blowfish, CAST
 from Crypto.PublicKey import DSA
 from Crypto import Random
 from Crypto.Random import random
@@ -65,7 +66,6 @@ class MD6(object):
         :return: return md6 hash
         """
 
-
         self.hashed = self.hex(self.plain, self.size)
         return self.hashed
 
@@ -86,8 +86,8 @@ class MD6(object):
                 ((i_byte[i + 3] & 0xff) << 32) |
                 ((i_byte[i + 4] & 0xff) << 24) |
                 ((i_byte[i + 5] & 0xff) << 16) |
-                ((i_byte[i + 6] & 0xff) <<  8) |
-                ((i_byte[i + 7] & 0xff) <<  0)
+                ((i_byte[i + 6] & 0xff) << 8) |
+                ((i_byte[i + 7] & 0xff) << 0)
             )
 
         return o_word
@@ -108,8 +108,8 @@ class MD6(object):
             o_byte.append((i_word[i] >> 32) & 0xff)
             o_byte.append((i_word[i] >> 24) & 0xff)
             o_byte.append((i_word[i] >> 16) & 0xff)
-            o_byte.append((i_word[i] >>  8) & 0xff)
-            o_byte.append((i_word[i] >>  0) & 0xff)
+            o_byte.append((i_word[i] >> 8) & 0xff)
+            o_byte.append((i_word[i] >> 0) & 0xff)
 
         return o_byte
 
@@ -164,18 +164,16 @@ class MD6(object):
 
         S0 = 0x0123456789abcdef
         Sm = 0x7311c2812425cfa0
-
         Q = [
             0x7311c2812425cfa0, 0x6432286434aac8e7, 0xb60450e9ef68b7c1,
             0xe8fb23908d9f06f1, 0xdd2e76cba691e5bf, 0x0cd0d63b2c30bc41,
             0x1f8ccf6823058f8a, 0x54e5ed5b88e3775d, 0x4ad12aae0a6d6031,
             0x3e7f16bb88222e0d, 0x8af8671d3fb50c2c, 0x995ad1178bd25c31,
             0xc878c1dd04c4b633, 0x3b72066c7a1552ac, 0x0d6f3522631effcb
-        ];
-
-        t  = [17, 18, 21, 31, 67, 89]
-        rs = [10,  5, 13, 10, 11, 12,  2,  7, 14, 15,  7, 13, 11,  7,  6, 12]
-        ls = [11, 24,  9, 16, 15,  9, 27, 15,  6,  2, 29,  8, 15,  5, 31,  9]
+        ]
+        t = [17, 18, 21, 31, 67, 89]
+        rs = [10, 5, 13, 10, 11, 12, 2, 7, 14, 15, 7, 13, 11, 7, 6, 12]
+        ls = [11, 24, 9, 16, 15, 9, 27, 15, 6, 2, 29, 8, 15, 5, 31, 9]
 
         def f(N):
             S = S0
@@ -286,7 +284,7 @@ class MD6(object):
         """
 
         i_str = binascii.hexlify(i_str.encode('ascii'))
-        o_byte = [int(i_str[i:i+2], 16) for i in range(0, len(i_str), 2)]
+        o_byte = [int(i_str[i:i + 2], 16) for i in range(0, len(i_str), 2)]
 
         return o_byte
 
@@ -371,7 +369,7 @@ class SHA(object):
             else:  # 512
                 self.hash_sha512()
         else:
-
+            self.hash_shasalted()
 
     def hash_sha1(self):
         """
@@ -471,8 +469,8 @@ class DES(object):
         :return: des3 hash
         """
 
-        nonce = Random.new().read(DES.block_size/2)
-        ctr = Counter.new(DES.block_size*8/2, prefix=nonce)
+        nonce = Random.new().read(DES.block_size / 2)
+        ctr = Counter.new(DES.block_size * 8 / 2, prefix=nonce)
         cipher = DES.new(self.key, DES.MODE_CTR, counter=ctr)
         return nonce + cipher.encrypt(self.plain)
 
@@ -517,7 +515,7 @@ class ARC(object):
         """
 
         nonce = Random.new().read(16)
-        tempkey = SHA.new(self.key+nonce).digest()
+        tempkey = SHA.new(self.key + nonce).digest()
         cipher = ARC4.new(tempkey)
         self.hashed = nonce + cipher.encrypt(self.plain)
         return self.hashed
@@ -580,8 +578,8 @@ class BLOWFISH(object):
         iv = Random.new().read(bs)
         cipher = Blowfish.new(self.key, Blowfish.MODE_CBC, iv)
         plen = bs - divmod(len(self.plain), bs)[1]
-        padding = [plen]*plen
-        padding = pack('b'*plen, *padding)
+        padding = [plen] * plen
+        padding = pack('b' * plen, *padding)
         self.hashed = iv + cipher.encrypt(self.plain + padding)
         return self.hashed
 
@@ -662,7 +660,7 @@ class IDEA(object):
         :param round_keys: rounds
         :return: ma layer
         """
-        
+
         assert 0 <= y1 <= 0xFFFF
         assert 0 <= y2 <= 0xFFFF
         assert 0 <= y3 <= 0xFFFF
@@ -750,8 +748,8 @@ class CAST128(object):
         return self.answer
 
     def decrypt(self):
-        eiv = self.plain[:CAST.block_size+2]
-        ciphertext = self.plain[CAST.block_size+2:]
+        eiv = self.plain[:CAST.block_size + 2]
+        ciphertext = self.plain[CAST.block_size + 2:]
         cipher = CAST.new(self.key, CAST.MODE_OPENPGP, eiv)
         self.answer = cipher.decrypt(ciphertext)
         return self.answer
@@ -772,6 +770,6 @@ class Dsa(object):
 
         key = DSA.generate(1024)
         h = SHA.new(self.plain).digest()
-        k = random.StrongRandom().randint(1, key.q-1)
+        k = random.StrongRandom().randint(1, key.q - 1)
         self.hashed = key.sign(h, k)
         return self.hashed

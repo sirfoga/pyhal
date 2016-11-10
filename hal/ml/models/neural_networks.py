@@ -16,7 +16,7 @@
 # limitations under the License.
 
 
-""" Collection of models based on nn algorithms """
+""" Collection of models based on nn algorithms. """
 
 
 from sknn.mlp import Classifier, Convolution, Layer  # test only

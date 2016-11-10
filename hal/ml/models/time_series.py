@@ -16,7 +16,8 @@
 # limitations under the License.
 
 
-""" Multi-purpose prediction methods to be used in time-series """
+""" Multi-purpose prediction methods to be used in time-series. """
+
 
 import numpy as np
 import pandas as pd

@@ -16,13 +16,17 @@
 # limitations under the License.
 
 
-""" Deal with webpages """
+""" Deal with webpages. """
 
-import time, random
-import urllib, webbrowser
-import socks, socket, requests  # fetch source via tor
+
+import time
+import random
+import urllib
+import webbrowser
+import socks
+import socket
+import requests  # fetch source via tor
 from bs4 import BeautifulSoup
-from selenium import webdriver
 
 
 CHROME_USER_AGENT = [
@@ -89,7 +93,8 @@ class Webpage(object):
         except:
             raise ValueError("Cannot get URL links inside of \"" + self.url + "\"")
 
-    def parse_url(self, raw_url):
+    @staticmethod
+    def parse_url(raw_url):
         """
         :param raw_url: url to parse
         :return: parses correctly url
@@ -172,7 +177,7 @@ class Webpage(object):
         :return: array of out_links
         """
 
-        for attempt in xrange(0, recall):
+        for attempt in range(recall):
             try:  # setting timeout
                 soup = BeautifulSoup(self.source)  # parse source
                 out_links = []
@@ -185,47 +190,8 @@ class Webpage(object):
             except:
                 time.sleep(timeout)  # time to wait for another attempt
 
-    def open_in_browser(times):
+    def open_in_browser(self, times):
         assert(times > 0)
 
         for t in range(times):
-            webbrowser.open(url)
-
-
-class SearchEngineResult(object):
-    """ Result of search query in search engine """
-    def __init__(self, title, link):
-        object.__init__(self)
-
-        self.title = title
-        self.link = link
-
-    def __str__():
-        return self.title
-
-
-class SearchEngine(object):
-    """ Abstract search engine: provide keywords, then find results """
-
-    def __init__(self, url):
-        object.__init__(self)
-
-        self.url = url
-        self.domain = Webpage(url).get_domain()
-        self.blank_replace = None  # every search engine has to replace blanks in query
-
-    def __str__(self):
-        return urllib.request.urlparse(self.url).hostname
-
-    def parse_query(self, query):
-        """ parse given query in order to meet search criteria of search engine """
-
-        assert(type(query) is type("string"))  # assert that query is a string
-        return query.strip().replace(" ", self.blank_replace).lower()  # remove trailing blanks, then replace with search engine blanks
-
-    def get_search_page(self, search_url):
-        """ get HTML source of search page of given query """
-
-        source = Webpage(search_url).get_html_source()
-        return source
-
+            webbrowser.open(self.url)

@@ -16,7 +16,7 @@
 # limitations under the License.
 
 
-""" Prediction methods based on regression algorithms """
+""" Prediction methods based on regression algorithms. """
 
 
 from sklearn import svm, linear_model

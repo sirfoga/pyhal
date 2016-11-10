@@ -1,4 +1,4 @@
-# !/usr/bin/python
+# !/usr/bin/python3
 # coding: utf_8
 
 # Copyright 2016 Stefano Fogarollo
@@ -16,16 +16,40 @@
 # limitations under the License.
 
 
+import os
 from setuptools import setup, find_packages
+
+
+def read(fname):
+    """
+    :param fname: string
+        Path to file to read
+    :return: string
+        Content of file specified
+    """
+
+    return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 
 setup(
     name="Hal",
-    version="3.1",
-    description="Hal is a from-scratch home-made multipurpose library to perform most of actions in a every-day python-dev life.",
+    version="4.1.1",
+    author="sirfoga",
+    author_email="sirfoga@protonmail.com",
+    description="Hal is a from-scratch home-made multipurpose library to perform most of stuff in python.",
+    long_description=read("README.md"),
     license="Apache License, Version 2.0",
     keywords="library scratch maths",
     url="https://github.com/sirfoga/hal",
     packages=find_packages(exclude=["examples", "docs"]),
-    install_requires = ["beautifulsoup4", "mutagen", "numpy", "pycrypto", "PySocks", "scipy", "selenium", "send2trash"]
+    install_requires=[
+        "bs4",
+        "numpy",
+        "pycrypto",
+        "PySocks",
+        "sklearn",
+        "requests",
+        "lxml",
+        "scipy"
+    ]
 )
