@@ -16,12 +16,60 @@
 # limitations under the License.
 
 
-""" Parse anything there is on Internet. """
+""" Parse anything there is on the Internet. """
 
 
-class Form:
-    pass
+from bs4 import BeautifulSoup
 
 
-class Table:
-    pass
+class HtmlTable(object):
+    def __init__(self, html_source):
+        """
+        :param html_source: string
+            Html source of table
+        """
+
+        object.__init__(self)
+
+        self.source = html_source
+        self.soup = BeautifulSoup(html_source)
+
+    def parse(self):
+        """
+        :return: list of list
+            List of list of values in table
+        """
+
+        data = []  # add name of section
+        for row in self.soup.find_all("tr"):  # cycle through all rows
+            data_row = []
+            for column_label in row.find_all("th"):  # cycle through all labels
+                data_row.append(
+                    strip_raw_html_string(column_label.text)
+                )
+
+            for column in row.find_all("td"):  # cycle through all columns
+                data_row.append(
+                    strip_raw_html_string(column.text)
+                )
+
+            data.append(data_row)
+        return data
+
+
+def strip_raw_html_string(string):
+    """
+    :param string: string
+        String to parse
+    :return: string
+        Given string with raw HTML elements removed
+    """
+
+    out = string.replace("\n", "") \
+        .replace("\r", "") \
+        .replace("\t", "") \
+        .strip()
+
+    while out.find("  ") > 0:  # while there are multiple blanks in a row
+        out = out.replace("  ", " ")
+    return out.encode("utf-8")

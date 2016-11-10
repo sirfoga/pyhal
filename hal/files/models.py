@@ -204,28 +204,28 @@ class Document(FileSystem):
         """
         :return: True iff document is a subtitle.
         """
-        
+
         return self.extension.lower() in SUBTITLE_FORMAT
 
     def is_text(self):
         """
         :return: True iff document is a text file.
         """
-        
+
         return self.extension.lower() in TEXT_FORMAT
 
     def is_image(self):
         """
         :return: True iff document is an image.
         """
-        
+
         return self.extension.lower() in IMAGE_FORMAT
 
     def is_audio(self):
         """
         :return: True iff document is an audio.
         """
-        
+
         return self.extension.lower() in AUDIO_FORMAT
 
     def is_archive_mac(self):
@@ -293,6 +293,7 @@ class Document(FileSystem):
         :return: void
             Writes given data to given path file.
         """
+
         with open(out_file, "w") as f:
             f.write(data)
 
