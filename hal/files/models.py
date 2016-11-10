@@ -21,13 +21,16 @@
 
 import os
 import re
+from mutagen.id3 import ID3
+from mutagen.id3._frames import TIT2, TPE1, TALB, TRCK, TDRC
+from mutagen.mp3 import MP3
 from send2trash import send2trash
 
 
 BAD_CHARS = [
     ".", ":", "\"", "’", "&", "720p", "1080p", "yify", ",", "\"S", "brrip", "bluray", "Bokutox", "x264", "[", "]", "sparks", "h264",
     "aac", "ozlem", "ac3", "ozlem", "etrg", "dvdrip", "xvid", "nydic", "sujaidr", "x265", "hevc", "(pimprg)", "aac",
-    "ozlem", "remastered", "anoxmous", "yts"]
+    "ozlem", "remastered", "anoxmous", "yts"]  # official formats based on wikipedia
 RUSSIAN_CHARS = ["ш", "а", "б", "л", "о", "н", "ы", "р", "е", "а", "л", "и", "з", "а", "ц", "и", "и", "к",
     "о", "р", "п", "о", "р", "а", "т", "и", "в", "н", "ы", "х", "п", "р", "и", "л", "о", "ж", "е", "н", "и", "й",
     "в", "о", "п", "р", "о", "с", "ы", "и", "о", "т", "в", "е", "т", "ы", "п", "о", "б", "е", "з", "о", "п",
@@ -376,3 +379,34 @@ class Directory(FileSystem):
             return Directory.ls_recurse(path, include_hidden=include_hidden)
         else:
             return Directory.ls_dir(path, include_hidden=include_hidden)
+
+
+class MP3Song(object):
+    """ mp3 song """
+
+    def __init__(self, path):
+        object.__init__(self)
+
+        self.path = path
+        self.song = MP3(self.path, ID3=ID3)
+        self.tags = self.song.tags
+
+    def set_name(self, name):
+        self.tags.add(TIT2(encoding=3, text=name.decode('utf-8')))
+        self.song.save()
+
+    def set_artist(self, artist):
+        self.tags.add(TPE1(encoding=3, text=artist.decode('utf-8')))
+        self.song.save()
+
+    def set_album(self, album):
+        self.tags.add(TALB(encoding=3, text=album.decode('utf-8')))
+        self.song.save()
+
+    def set_nr_track(self, nr_track):
+        self.tags.add(TRCK(encoding=3, text=str(nr_track)))
+        self.song.save()
+
+    def set_year(self, year):
+        self.tags.add(TDRC(encoding=3, text=str(year)))
+        self.song.save()
