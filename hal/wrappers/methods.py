@@ -18,6 +18,7 @@
 
 """ Typical (and useful) function wrappers """
 
+import sys
 import functools
 
 
@@ -40,13 +41,10 @@ def handle_exceptions(function):
             handle exception of callback function
         """
 
-        print("function", function.__name__, "got", args, kwargs)
-        function(*args, **kwargs)
-
-        # try:
-        #     return function(*args, **kwargs)
-        # except KeyboardInterrupt:
-        #     print("\r[!] User stopped program...\n%s")
-        # except Exception:
-        #     print("\r[!] Unhandled exception occured...\n%s" % sys.exc_info()[1])
+        try:
+            return function(*args, **kwargs)
+        except KeyboardInterrupt:
+            print("\r[!] User stopped program...\n%s")
+        except Exception:
+            print("\r[!] Unhandled exception occured...\n%s" % sys.exc_info()[1])
     return _handle_exceptions
