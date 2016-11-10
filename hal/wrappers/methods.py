@@ -18,11 +18,10 @@
 
 """ Typical (and useful) function wrappers """
 
-import sys
 import functools
 
 
-def main(function):
+def handle_main(function):
     """
     :param function: callback function
         function to wrap
@@ -31,7 +30,7 @@ def main(function):
     """
 
     @functools.wraps(function)
-    def _main(*args, **kwargs):
+    def _handle_main(*args, **kwargs):
         """
         :param args: *
             args for callback function
@@ -41,10 +40,13 @@ def main(function):
             handle exception of callback function
         """
 
-        try:
-            function(*args, **kwargs)
-        except KeyboardInterrupt:
-            print("\r[!] User stopped program...\n%s")
-        except Exception:
-            print("\r[!] Unhandled exception occured...\n%s" % sys.exc_info()[1])
-    return _main
+        print("function", function.__name__, "got", args, kwargs)
+        function(*args, **kwargs)
+
+        # try:
+        #     return function(*args, **kwargs)
+        # except KeyboardInterrupt:
+        #     print("\r[!] User stopped program...\n%s")
+        # except Exception:
+        #     print("\r[!] Unhandled exception occured...\n%s" % sys.exc_info()[1])
+    return _handle_main
