@@ -21,7 +21,7 @@
 import functools
 
 
-def handle_main(function):
+def handle_exceptions(function):
     """
     :param function: callback function
         function to wrap
@@ -30,7 +30,7 @@ def handle_main(function):
     """
 
     @functools.wraps(function)
-    def _handle_main(*args, **kwargs):
+    def _handle_exceptions(*args, **kwargs):
         """
         :param args: *
             args for callback function
@@ -49,4 +49,4 @@ def handle_main(function):
         #     print("\r[!] User stopped program...\n%s")
         # except Exception:
         #     print("\r[!] Unhandled exception occured...\n%s" % sys.exc_info()[1])
-    return _handle_main
+    return _handle_exceptions
