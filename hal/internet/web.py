@@ -76,7 +76,7 @@ class Webpage(object):
         self.url = self.parse_url(url)
         self.domain = self.get_domain()
         self.source = self.get_html_source()
-        self.soup = BeautifulSoup(self.source)
+        self.soup = BeautifulSoup(self.source, "lxml")
 
     @staticmethod
     def parse_url(raw_url):
