@@ -22,15 +22,14 @@
 from bs4 import BeautifulSoup
 
 
-class HtmlTable(object):
+class HtmlTable(str):
     def __init__(self, html_source):
         """
         :param html_source: string
             Html source of table
         """
 
-        object.__init__(self)
-
+        str.__init__(html_source)
         self.source = html_source
         self.soup = BeautifulSoup(html_source)
 

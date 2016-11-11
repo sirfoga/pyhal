@@ -75,23 +75,8 @@ class Webpage(object):
 
         self.url = self.parse_url(url)
         self.domain = self.get_domain()
-        self.source = None
-        self.links = None
-
-    def run(self):
-        """
-        :return: get html source, links..
-        """
-
-        try:
-            self.get_html_source()
-        except:
-            raise ValueError("Cannot get HTML source of \"" + self.url + "\"")
-
-        try:
-            self.get_links(1, 1000)  # default recall and timeout
-        except:
-            raise ValueError("Cannot get URL links inside of \"" + self.url + "\"")
+        self.source = self.get_html_source()
+        self.soup = BeautifulSoup(self.source)
 
     @staticmethod
     def parse_url(raw_url):
@@ -191,7 +176,12 @@ class Webpage(object):
                 time.sleep(timeout)  # time to wait for another attempt
 
     def open_in_browser(self, times):
-        assert(times > 0)
+        """
+        :param times: int
+            Times to open webpage in browser
+        :return: void
+            Open a wendrive and go to webpage
+        """
 
         for t in range(times):
             webbrowser.open(self.url)
