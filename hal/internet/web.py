@@ -146,12 +146,9 @@ class Webpage(object):
             socket.socket = socks.socksocket
             r = requests.get(self.url).text
         else:
-            try:
-                q = urllib.request.Request(self.url)
-                q.add_header("user-agent", random.choice(CHROME_USER_AGENT))
-                r = urllib.request.urlopen(q).read()
-            except:
-                raise ValueError('Error while parsing ' + self.url)
+            q = urllib.request.Request(self.url)
+            q.add_header("user-agent", random.choice(CHROME_USER_AGENT))
+            r = urllib.request.urlopen(q).read()
 
         return str(r)
 
