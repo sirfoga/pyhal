@@ -95,4 +95,4 @@ def html_stripper(string):
             .replace("  ", " ") \
             .strip()
 
-    return out.encode("utf-8")
+    return str(out)
