@@ -56,7 +56,7 @@ class HtmlTable(str):
         return data
 
 
-def strip_raw_html_string(string):
+def html_stripper(string):
     """
     :param string: string
         String to parse
@@ -64,11 +64,23 @@ def strip_raw_html_string(string):
         Given string with raw HTML elements removed
     """
 
-    out = string.replace("\n", "") \
-        .replace("\r", "") \
-        .replace("\t", "") \
-        .strip()
+    def is_string_well_formatted(string):
+        """
+        :param string: string
+            String to parse
+        :return: bool
+            True iff string is good formatted
+        """
 
-    while out.find("  ") > 0:  # while there are multiple blanks in a row
-        out = out.replace("  ", " ")
+        # False iff there are at least \n, \r, \t,"  "
+        return not (string.find("\n") > 0 or string.find("\r") > 0 or string.find("\t") or string.find("  ") > 0)
+
+    out = string
+    while not is_string_well_formatted(out):  # while there are some edits to do
+        out = out.replace("\n", "") \
+            .replace("\r", "") \
+            .replace("\t", "") \
+            .replace("  ", "") \
+            .strip()
+
     return out.encode("utf-8")
