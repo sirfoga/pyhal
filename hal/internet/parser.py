@@ -83,7 +83,7 @@ def html_stripper(string):
         return not is_bad_formatted
 
     out = string
-    while not is_string_well_formatted(out):  # while there are some edits to do
+    while not is_string_well_formatted(out):  # while there are some improvements to do
         out = out.replace("\\n", "") \
             .replace("\\r", "") \
             .replace("\\t", "") \
