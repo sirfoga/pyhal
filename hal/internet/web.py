@@ -21,7 +21,7 @@
 
 import time
 import random
-import urllib
+import urllib.request
 import webbrowser
 import socks
 import socket
@@ -68,14 +68,22 @@ CHROME_USER_AGENT = [
 
 
 class Webpage(object):
-    """ representation of URL (web page) """
+    """ representation of URL (web page)"""
 
-    def __init__(self, url):
+    def __init__(self, url, using_tor=False):
+        """
+        :param url: string
+            Url of webpage
+        :param using_tor: bool
+            Whether using tor or not to fetch source page
+        """
+
         object.__init__(self)
 
         self.url = self.parse_url(url)
         self.domain = self.get_domain()
-        self.source = self.get_html_source()
+        self.using_tor = using_tor
+        self.source = self.get_html_source(self.using_tor)
         self.soup = BeautifulSoup(self.source, "lxml")
 
     @staticmethod
