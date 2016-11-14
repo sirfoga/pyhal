@@ -44,12 +44,12 @@ class HtmlTable(str):
             data_row = []
             for column_label in row.find_all("th"):  # cycle through all labels
                 data_row.append(
-                    strip_raw_html_string(column_label.text)
+                    html_stripper(column_label.text)
                 )
 
             for column in row.find_all("td"):  # cycle through all columns
                 data_row.append(
-                    strip_raw_html_string(column.text)
+                    html_stripper(column.text)
                 )
 
             data.append(data_row)
@@ -74,6 +74,7 @@ def html_stripper(string):
 
         # False iff there are at least \n, \r, \t,"  "
         is_bad_formatted = string.find(":") > 0 or \
+                           string.find("\\'") > 0 or \
                            string.find("\n") > 0 or \
                            string.find("\r") > 0 or \
                            string.find("\t") > 0 or \
@@ -86,6 +87,7 @@ def html_stripper(string):
     out = string
     while not is_string_well_formatted(out):  # while there are some improvements to do
         out = out.replace(":", "") \
+            .replace("\\'", "\'") \
             .replace("\\n", "") \
             .replace("\\r", "") \
             .replace("\\t", "") \
