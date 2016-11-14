@@ -42,9 +42,9 @@ def handle_exceptions(function):
         """
 
         function_name = function.__name__
-        exception_string = "\tname: " + function_name + "\n" \
-                           "\t*args: " + str(args) + "\n" \
-                           "\t**kwargs: " + str(kwargs)
+        exception_string = "name: " + function_name + "\n" \
+                           "*args: " + str(args) + "\n" \
+                           "**kwargs: " + str(kwargs)
 
         try:
             return function(*args, **kwargs)
