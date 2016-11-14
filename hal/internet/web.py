@@ -70,7 +70,7 @@ CHROME_USER_AGENT = [
 class Webpage(object):
     """ representation of URL (web page)"""
 
-    def __init__(self, url, using_tor=False):
+    def __init__(self, url, using_tor=True):
         """
         :param url: string
             Url of webpage
@@ -148,11 +148,13 @@ class Webpage(object):
         """
 
         if tor:
-            print("To be able to fetch HTML source pages via Tor the following command is required:")
-            print("apt-get install tor && tor &")
-            socks.setdefaultproxy(proxy_type=socks.PROXY_TYPE_SOCKS5, addr="127.0.0.1", port=9050)
-            socket.socket = socks.socksocket
-            r = requests.get(self.url).text
+            try:
+                socks.setdefaultproxy(proxy_type=socks.PROXY_TYPE_SOCKS5, addr="127.0.0.1", port=9050)
+                socket.socket = socks.socksocket
+                r = requests.get(self.url).text
+            except:
+                print("To be able to fetch HTML source pages via Tor the following command is required:")
+                print("apt-get install tor && tor &")
         else:
             q = urllib.request.Request(self.url)
             q.add_header("user-agent", random.choice(CHROME_USER_AGENT))
