@@ -84,7 +84,7 @@ def save_image(url, local_file):
 
 
 @handle_exceptions
-def main(search_keywords):
+def search_and_save(search_keywords):
     """
     :param search_keywords: string
         Search keyword
@@ -109,7 +109,3 @@ def main(search_keywords):
         for image in images:
             save_file = str(image.__hash__())
             save_image(image, os.path.join(save_folder, save_file))
-
-
-if __name__ == '__main__':
-    main("search")
