@@ -73,15 +73,15 @@ def html_stripper(string):
         """
 
         # False iff there are at least \n, \r, \t,"  "
-        is_bad_formatted = string.find(":") > 0 or \
-                           string.find("\\'") > 0 or \
-                           string.find("\n") > 0 or \
-                           string.find("\r") > 0 or \
-                           string.find("\t") > 0 or \
-                           string.find("\\n") > 0 or \
-                           string.find("\\r") > 0 or \
-                           string.find("\\t") > 0 or \
-                           string.find("  ") > 0
+        is_bad_formatted = ":" in string or \
+                           "\\'" in string or \
+                           "\n" in string or \
+                           "\r" in string or \
+                           "\t" in string or \
+                           "\\n" in string or \
+                           "\\r" in string or \
+                           "\\t" in string or \
+                           "  " in string
         return not is_bad_formatted
 
     out = string
