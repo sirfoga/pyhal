@@ -18,16 +18,15 @@
 
 """ Deal with webpages. """
 
-
-import time
 import random
+import socket
+import time
 import urllib.request
 import webbrowser
-import socks
-import socket
-import requests  # fetch source via tor
-from bs4 import BeautifulSoup
 
+import requests  # fetch source via tor
+import socks
+from bs4 import BeautifulSoup
 
 CHROME_USER_AGENT = [
     "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.19 (KHTML, like Gecko) Chrome/1.0.154.53 Safari/525.19",
@@ -155,6 +154,7 @@ class Webpage(object):
             except:
                 print("To be able to fetch HTML source pages via Tor the following command is required:")
                 print("apt-get install tor && tor &")
+                return None
         else:
             q = urllib.request.Request(self.url)
             q.add_header("user-agent", random.choice(CHROME_USER_AGENT))
