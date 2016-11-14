@@ -18,41 +18,23 @@
 
 import time
 import urllib.request
-from urllib.request import Request, urlopen
-from urllib.request import URLError, HTTPError
+import os
+from hal.wrappers.methods import handle_exceptions
+from hal.internet.web import Webpage
 
 
-search_keyword = ["hello"]
-keywords = ["world"]  # add suffix to your search term
+BASE_URL = "https://www.google.com/search?q="  # base url to search google images
+TOKEN_URL = "&espv=2&biw=1366&bih=667&site=webhp&source=lnms&tbm=isch&sa=X&ei=XosDVaCXD8TasATItgE&ved=0CAcQ_AUoAg"
 
 
-def download_page(url):
+def get_next_image(s):
     """
-    Downloading entire Web Document (Raw Page Content)
-    :param url:
-    :return:
-    """
-
-    try:
-        headers = {}
-        headers["User-Agent"] = "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"
-        req = urllib.request.Request(url, headers = headers)
-        resp = urllib.request.urlopen(req)
-        respData = str(resp.read())
-        return respData
-    except Exception as e:
-        print(str(e))
-
-
-def _images_get_next_item(s):
-    """
-    Finding "Next Image" from the given raw page
     :param s:
     :return:
     """
 
     start_line = s.find("rg_di")
-    if start_line == -1:    #If no links are found then give an error!
+    if start_line == -1:  # If no links are found then give an error!
         end_quote = 0
         link = "no_links"
         return link, end_quote
@@ -64,93 +46,70 @@ def _images_get_next_item(s):
         return content_raw, end_content
 
 
-def _images_get_all_items(page):
+def get_images(page, max_items=10):
     """
     Getting all links with the help of "_images_get_next_image"
-    :param page:
-    :return:
+    :param page: string
+        Source page
+    :param max_items: int
+        Max items to download
+    :return: []
+        List of images in page
     """
 
     items = []
-    while True:
-        item, end_content = _images_get_next_item(page)
+    while len(items) < max_items:
+        item, end_content = get_next_image(page)
         if item == "no_links":
             break
         else:
-            items.append(item)      #Append all the links in the list named "Links"
-            time.sleep(0.1)        #Timer could be used to slow down the request for image downloads
+            items.append(item)  # append all the links in the list named "Links"
             page = page[end_content:]
     return items
 
 
-t0 = time.time()   #start the timer
-i = 0
-while i < len(search_keyword):
-    items = []
-    iteration = "Item no.: " + str(i+1) + " -->" + " Item name = " + str(search_keyword[i])
-    print (iteration)
-    print ("Evaluating...")
-    search_keywords = search_keyword[i]
-    search = search_keywords.replace(" ","%20")
-    j = 0
-    while j<len(keywords):
-        pure_keyword = keywords[j].replace(" ","%20")
-        url = "https://www.google.com/search?q=" + search + pure_keyword + "&espv=2&biw=1366&bih=667&site=webhp&source=lnms&tbm=isch&sa=X&ei=XosDVaCXD8TasATItgE&ved=0CAcQ_AUoAg"
-        raw_html =  (download_page(url))
-        time.sleep(0.1)
-        items = items + (_images_get_all_items(raw_html))
-        j = j + 1
-    #print ("Image Links = "+str(items))
-    print ("Total Image Links = "+str(len(items)))
-    print ("\n")
-    i = i+1
+@handle_exceptions
+def save_image(url, local_file):
+    """
+    :param url: string
+        Url to fetch image from
+    :param local_file: string
+        Path to local file to store image
+    :return: void
+        Download and save image in local_file
+    """
+
+    d = urllib.request.URLopener()
+    d.retrieve(url, local_file)
 
 
-    #This allows you to write all the links into a test file. This text file will be created in the same directory as your code. You can comment out the below 3 lines to stop writing the output to the text file.
-    info = open("output.txt", "a")        #Open the text file called database.txt
-    info.write(str(i) + ": " + str(search_keyword[i-1]) + ": " + str(items) + "\n\n\n")         #Write the title of the page
-    info.close()                            #Close the file
+@handle_exceptions
+def main(search_keywords):
+    """
+    :param search_keywords: string
+        Search keyword
+    :return: void
+        Download images matching given search keywords
+    """
 
-t1 = time.time()    #stop the timer
-total_time = t1-t0   #Calculating the total time required to crawl, find and download all the links of 60,000 images
-print("Total time taken: "+str(total_time)+" Seconds")
-print ("Starting Download...")
+    url = BASE_URL + search_keywords.replace(" ", "%20") + TOKEN_URL
+    raw_html = (Webpage(url).get_html_source())
+    images = get_images(raw_html, max_items=100)
+    save_folder = os.path.join(
+        os.getcwd(),
+        str(search_keywords)
+            .replace(os.path.pathsep, "")  # remove path separators
+            .replace(" ", "-")  # remove blanks
+            .lower(),  # lowercase folder
+        str(int(time.time())),  # seconds since 1970
+    )
 
-## To save imges to the same directory
-# IN this saving process we are just skipping the URL if there is any error
+    if len(images) > 0:  # if there are images to download
+        os.makedirs(save_folder)
+        for image in images:
+            save_file = str(image.__hash__())
+            save_image(image, os.path.join(save_folder, save_file))
 
-k=0
-errorCount=0
-while(k<len(items)):
-    try:
-        req = Request(items[k], headers={"User-Agent": "Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.27 Safari/537.17"})
-        response = urlopen(req)
-        output_file = open(str(k+1)+".jpg","wb")
-        data = response.read()
-        output_file.write(data)
-        response.close();
 
-        print("completed ====> "+str(k+1))
-
-        k=k+1;
-
-    except IOError:   #If there is any IOError
-
-        errorCount+=1
-        print("IOError on image "+str(k+1))
-        k=k+1;
-
-    except HTTPError as e:  #If there is any HTTPError
-
-        errorCount+=1
-        print("HTTPError"+str(k))
-        k=k+1;
-    except URLError as e:
-
-        errorCount+=1
-        print("URLError "+str(k))
-        k=k+1;
-
-print("\n")
-print("All are downloaded")
-print("\n"+str(errorCount)+" ----> total Errors")
+if __name__ == '__main__':
+    main("search")
