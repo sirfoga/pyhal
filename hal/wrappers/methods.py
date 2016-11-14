@@ -41,10 +41,17 @@ def handle_exceptions(function):
             handle exception of callback function
         """
 
+        function_name = function.__name__
+        exception_string = "\tname: " + function_name + "\n" \
+                           "\t*args: " + str(args) + "\n" \
+                           "\t**kwargs: " + str(kwargs)
+
         try:
             return function(*args, **kwargs)
         except KeyboardInterrupt:
-            print("\r[!] User stopped program...")
+            print("\r[!] User stopped program in function")
+            print(exception_string)
         except Exception:
             print("\r[!] Unhandled exception occured...\n%s" % sys.exc_info()[1])
+            print(exception_string)
     return _handle_exceptions
