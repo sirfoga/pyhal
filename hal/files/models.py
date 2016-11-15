@@ -392,6 +392,14 @@ class Directory(FileSystem):
         name = self.path.replace(p + os.path.sep, "")[: -1]  # replace in full path, dir path to get name
         return p, name
 
+    def is_empty(self):
+        """
+        :return: Bool
+            True iff empty
+        """
+
+        return not os.listdir(self.path)
+
 
 class MP3Song(object):  # TODO: maybe inherit from FileSystem
     """ mp3 song """
