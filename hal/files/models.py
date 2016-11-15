@@ -97,6 +97,8 @@ class FileSystem(object):
             l_bracket, r_bracket = self.name.find("["), self.name.find("]")  # try with square brackets
             if r_bracket - l_bracket + 1 == 6:  # there is a year in between
                 name = self.name.replace(self.name[l_bracket: r_bracket + 1], "")  # remove year
+            else:
+                name = self.name
 
         for i in range(len(self.name) - 4):
             try:
