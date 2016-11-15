@@ -198,7 +198,7 @@ class Document(FileSystem):
         FileSystem.__init__(self, path)
 
         self.root_path, self.full_name = self.get_path_name()
-        self.name, self.extension = os.path.splitext(self.path)
+        self.name, self.extension = os.path.splitext(self.full_name)
 
     @staticmethod
     def move_file_to_directory(file_path, directory_path):
