@@ -150,8 +150,6 @@ class FileSystem(object):
 
         if name.startswith("."):  # remove starting .
             name = name[1:]
-        else:
-            name = name
 
         for t in bad_chars:
             name = name.replace(t.lower(), r)  # remove token
@@ -161,8 +159,11 @@ class FileSystem(object):
 
         for i in range(1, len(name) - 2):  # loop through characters except 1 and end
             try:
-                if name[i - 1] == r and name[i + 1] == r:  # 2 replacement hug one good char
-                    name = name[:i - 1] + name[i + 1:]
+                if name[i - 1] == r and name[i + 1] == r and name[i] not in bad_chars:  # 2 blanks hug one good char
+                    name = name[:i - 1] + name[i] + name[i + 2:]
+
+                if name[i - 1] == r and name[i + 1] == r and name[i] in bad_chars:  # 2 blanks hug one bad char
+                    name = name[:i - 1] + name[i + 2:]
             except:  # out of bounds
                 pass
 
