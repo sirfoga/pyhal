@@ -270,7 +270,7 @@ class Document(FileSystem):
         """
 
         p, name = os.path.dirname(os.path.abspath(self.path)), os.path.basename(self.path)
-        return p, name
+        return p + "/", name  # fix non-ending path separator
 
     def is_video(self):
         """
