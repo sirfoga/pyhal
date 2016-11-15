@@ -18,8 +18,10 @@
 
 """ Typical (and useful) function wrappers """
 
-import sys
 import functools
+import sys
+
+import colorama
 
 
 def handle_exceptions(function):
@@ -49,9 +51,9 @@ def handle_exceptions(function):
         try:
             return function(*args, **kwargs)
         except KeyboardInterrupt:
-            print("\r[!] User stopped program in function")
+            print(colorama.Fore.RED + colorama.Style.BRIGHT + "\r[!] User stopped program in function" + colorama.Style.RESET_ALL)
             print(exception_string)
         except Exception:
-            print("\r[!] Unhandled exception occured...\n%s" % sys.exc_info()[1])
+            print(colorama.Fore.RED + colorama.Style.BRIGHT + "\r[!] Unhandled exception occured...\n%s" % sys.exc_info()[1] + colorama.Style.RESET_ALL)
             print(exception_string)
     return _handle_exceptions
