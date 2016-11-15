@@ -305,7 +305,7 @@ class Document(FileSystem):
             True iff path is hidden
         """
 
-        hidden_start_path = os.path.pathsep() + "."
+        hidden_start_path = "/."
         return hidden_start_path in self.path
 
     def rename(self, new_path):
