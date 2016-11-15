@@ -48,6 +48,8 @@ def handle_exceptions(function):
                            "*args: " + str(args) + "\n" \
                            "**kwargs: " + str(kwargs)
 
+        colorama.init()  # start color mode
+
         try:
             return function(*args, **kwargs)
         except KeyboardInterrupt:

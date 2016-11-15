@@ -64,7 +64,14 @@ class FileSystem(object):
         object.__init__(self)
 
         self.path = path
-        self.name, self.extension = os.path.splitext(self.path)
+        self.name, extension = os.path.splitext(self.path)
+
+    def is_archive_mac(self):
+        """
+        :return: True iff document is an MACOSX archive.
+        """
+
+        return "macosx" in self.path.lower()
 
     def is_russian(self):
         """
@@ -151,7 +158,7 @@ class FileSystem(object):
         for t in BAD_CHARS:
             name = name.replace(t.lower(), r)  # remove token
         name = name.replace(" ", r)  # replace blanks
-        while name.find(r + r) > 0:  # while there are blanks to remove
+        while name.find(r + r) >= 0:  # while there are blanks to remove
             name = name.replace(r + r, r)
 
         for i in range(1, len(name) - 2):  # loop through characters except 1 and end
@@ -183,6 +190,8 @@ class Document(FileSystem):
         """
 
         FileSystem.__init__(self, path)
+
+        self.name, self.extension = os.path.splitext(self.path)
 
     @staticmethod
     def move_file_to_directory(file_path, directory_path):
@@ -290,13 +299,6 @@ class Document(FileSystem):
 
         return self.extension.lower() in AUDIO_FORMAT
 
-    def is_archive_mac(self):
-        """
-        :return: True iff document is an MACOSX archive.
-        """
-
-        return "macosx" in self.path.lower()
-
     def is_hidden(self):
         """
         :return: bool
@@ -305,6 +307,16 @@ class Document(FileSystem):
 
         hidden_start_path = os.path.pathsep() + "."
         return hidden_start_path in self.path
+
+    def rename(self, new_path):
+        """
+        :param new_path: string
+            New path to use
+        :return: void
+            Rename to new path
+        """
+
+        os.rename(self.path, new_path)
 
 
 class Directory(FileSystem):
@@ -315,6 +327,8 @@ class Directory(FileSystem):
         """
 
         FileSystem.__init__(self, path)
+
+        self.root_path, self.name = self.get_path_name()
 
     @staticmethod
     def ls_dir(path, include_hidden=False):
@@ -399,6 +413,16 @@ class Directory(FileSystem):
         """
 
         return not os.listdir(self.path)
+
+    def rename(self, new_path):
+        """
+        :param new_path: string
+            New path to use
+        :return: void
+            Rename to new path
+        """
+
+        os.renames(self.path, new_path)
 
 
 class MP3Song(object):  # TODO: maybe inherit from FileSystem
