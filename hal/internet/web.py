@@ -23,6 +23,7 @@ import socket
 import time
 import urllib.request
 import webbrowser
+from urllib.parse import urljoin
 
 import requests  # fetch source via tor
 import socks
@@ -128,19 +129,6 @@ class Webpage(object):
 
         return "{uri.scheme}://{uri.netloc}/".format(uri=urllib.request.urlparse(self.url))
 
-    def allow_spider(self, spider):
-        """
-        :param spider: name of bot
-        :return: look robots.txt for approval
-        """
-
-        domain = self.domain  # look for robots.txt in domain
-        parser = urllib.request.robotparser.RobotFileParser()
-        parser.set_url(domain + 'robots.txt')
-        parser.read()
-
-        return parser.can_fetch(spider, self.url)
-
     def get_html_source(self, tor=False):
         """
         :return: BeautifulSoup to parse
@@ -175,7 +163,7 @@ class Webpage(object):
                 out_links = []
 
                 for tag in soup.findAll(['a', 'link'], href=True):
-                    tag['href'] = urllib.request.urlparse.urljoin(self.url, tag['href'])
+                    tag['href'] = urljoin(self.url, tag['href'])
                     out_links.append(tag['href'])
 
                 return sorted(out_links)  # sort array
@@ -192,3 +180,17 @@ class Webpage(object):
 
         for t in range(times):
             webbrowser.open(self.url)
+
+
+def download_url(url, local_file):
+    """
+    :param url: string
+        Url to download
+    :param local_file: string
+        Save url as this path
+    :return: void
+        Download link to local file
+    """
+
+    d = urllib.request.URLopener()
+    d.retrieve(url, local_file)
