@@ -66,41 +66,24 @@ class FileSystem(object):
         self.path = path
         self.name, extension = os.path.splitext(self.path)
 
-    def is_archive_mac(self):
-        """
-        :return: True iff document is an MACOSX archive.
-        """
-
-        return "macosx" in self.path.lower()
-
-    def is_russian(self):
-        """
-        :return: True iff document has a russian name.
-        """
-
-        russian_chars = 0
-        for c in RUSSIAN_CHARS:
-            if c in self.name:
-                russian_chars += 1  # found a russian char
-        return russian_chars > len(RUSSIAN_CHARS) / 2.0
-
-    def remove_year(self):
+    @staticmethod
+    def remove_year(name):
         """
         :return: string
             Given string bu with no years.
         """
 
-        l_bracket, r_bracket = self.name.find("("), self.name.find(")")  # find limits of year
+        l_bracket, r_bracket = name.find("("), name.find(")")  # find limits of year
         if r_bracket - l_bracket + 1 == 6:  # there is a year in between
-            name = self.name.replace(self.name[l_bracket: r_bracket + 1], "")  # remove year
+            name = name.replace(name[l_bracket: r_bracket + 1], "")  # remove year
         else:
-            l_bracket, r_bracket = self.name.find("["), self.name.find("]")  # try with square brackets
+            l_bracket, r_bracket = name.find("["), name.find("]")  # try with square brackets
             if r_bracket - l_bracket + 1 == 6:  # there is a year in between
-                name = self.name.replace(self.name[l_bracket: r_bracket + 1], "")  # remove year
+                name = name.replace(name[l_bracket: r_bracket + 1], "")  # remove year
             else:
-                name = self.name
+                name = name
 
-        for i in range(len(self.name) - 4):
+        for i in range(len(name) - 4):
             try:
                 if name[i: i + 4].isdigit():
                     name = name[:i] + name[i + 4:]
@@ -109,13 +92,14 @@ class FileSystem(object):
 
         return name
 
-    def remove_brackets(self):
+    @staticmethod
+    def remove_brackets(name):
         """
         :return: string
             Given string bu with no barckets.
         """
 
-        name = re.sub("([\(\[]).*?([\)\]])", "\g<1>\g<2>", self.name)
+        name = re.sub("([\(\[]).*?([\)\]])", "\g<1>\g<2>", name)
         name = name.replace("()", "")  # remove anything in ()
         if name.rfind("(") > 0:  # there exists a "("
             name = name[:name.rfind("(")]
@@ -126,7 +110,8 @@ class FileSystem(object):
         name = name.strip()
         return name
 
-    def extract_name_max_chars(self, max_chars, blank=" "):
+    @staticmethod
+    def extract_name_max_chars(name, max_chars, blank=" "):
         """
         :param max_chars: int
             Maximum chars of new name
@@ -136,15 +121,16 @@ class FileSystem(object):
             Name edited to contain at most max_chars (truncate to nearest word)
         """
 
-        if len(self.name) > max_chars:
-            new_name = self.name[:max_chars]  # get at most 64 chars
+        if len(name) > max_chars:
+            new_name = name[:max_chars]  # get at most 64 chars
             if new_name.rfind(blank) > 0:
                 new_name = new_name[:new_name.rfind(blank)]  # truncate to nearest word
             return new_name
         else:
-            return self.name
+            return name
 
-    def prettify(self, r=" "):
+    @staticmethod
+    def prettify(name, r=" "):
         """
         :param r: string
             Default blanks in name.
@@ -152,10 +138,10 @@ class FileSystem(object):
             Prettier name from given one: replace bad chars with good ones.
         """
 
-        if self.name.startswith("."):  # remove starting .
-            name = self.name[1:]
+        if name.startswith("."):  # remove starting .
+            name = name[1:]
         else:
-            name = self.name
+            name = name
 
         for t in BAD_CHARS:
             name = name.replace(t.lower(), r)  # remove token
@@ -174,6 +160,24 @@ class FileSystem(object):
             name = name[:-1]
 
         return name
+
+    def is_archive_mac(self):
+        """
+        :return: True iff document is an MACOSX archive.
+        """
+
+        return "macosx" in self.path.lower()
+
+    def is_russian(self):
+        """
+        :return: True iff document has a russian name.
+        """
+
+        russian_chars = 0
+        for c in RUSSIAN_CHARS:
+            if c in self.name:
+                russian_chars += 1  # found a russian char
+        return russian_chars > len(RUSSIAN_CHARS) / 2.0
 
     def trash(self):
         """
