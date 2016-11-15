@@ -17,6 +17,7 @@
 
 
 import os
+
 from setuptools import setup, find_packages
 
 
@@ -33,7 +34,7 @@ def read(fname):
 
 setup(
     name="Hal",
-    version="4.2",
+    version="4.3",
     author="sirfoga",
     author_email="sirfoga@protonmail.com",
     description="Hal is a from-scratch home-made multipurpose library to perform most of stuff in python.",

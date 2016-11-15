@@ -440,13 +440,12 @@ class Directory(FileSystem):
         os.renames(self.path, new_path)
 
 
-class MP3Song(object):  # TODO: maybe inherit from FileSystem
+class MP3Song(FileSystem):
     """ mp3 song """
 
     def __init__(self, path):
-        object.__init__(self)
+        FileSystem.__init__(self, path)
 
-        self.path = path
         self.song = MP3(self.path, ID3=ID3)
         self.tags = self.song.tags
 
