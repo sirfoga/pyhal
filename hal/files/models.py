@@ -159,9 +159,6 @@ class FileSystem(object):
 
         for i in range(1, len(name) - 2):  # loop through characters except 1 and end
             try:
-                if name[i - 1] == r and name[i + 1] == r and name[i] not in bad_chars:  # 2 blanks hug one good char
-                    name = name[:i - 1] + name[i] + name[i + 2:]
-
                 if name[i - 1] == r and name[i + 1] == r and name[i] in bad_chars:  # 2 blanks hug one bad char
                     name = name[:i - 1] + name[i + 2:]
             except:  # out of bounds
