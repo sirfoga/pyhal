@@ -18,14 +18,13 @@
 
 """ Main entities in files, such as documents, folders. """
 
-
 import os
 import re
+
 from mutagen.id3 import ID3
 from mutagen.id3._frames import TIT2, TPE1, TALB, TRCK, TDRC
 from mutagen.mp3 import MP3
 from send2trash import send2trash
-
 
 BAD_CHARS = [
     ".", ":", "\"", "’", "&", "720p", "1080p", "yify", ",", "\"S", "brrip", "bluray", "Bokutox", "x264", "[", "]", "sparks", "h264",
@@ -185,65 +184,6 @@ class Document(FileSystem):
 
         FileSystem.__init__(self, path)
 
-    def get_path_name(self):
-        """
-        :return: tuple string, string
-            Name of path, name of file (or folder)
-        """
-
-        p, name = os.path.dirname(os.path.abspath(self.path)), os.path.basename(self.path)
-        return p, name
-
-    def is_video(self):
-        """
-        :return: True iff document is a video.
-        """
-        return self.extension.lower() in VIDEO_FORMAT
-
-    def is_subtitle(self):
-        """
-        :return: True iff document is a subtitle.
-        """
-
-        return self.extension.lower() in SUBTITLE_FORMAT
-
-    def is_text(self):
-        """
-        :return: True iff document is a text file.
-        """
-
-        return self.extension.lower() in TEXT_FORMAT
-
-    def is_image(self):
-        """
-        :return: True iff document is an image.
-        """
-
-        return self.extension.lower() in IMAGE_FORMAT
-
-    def is_audio(self):
-        """
-        :return: True iff document is an audio.
-        """
-
-        return self.extension.lower() in AUDIO_FORMAT
-
-    def is_archive_mac(self):
-        """
-        :return: True iff document is an MACOSX archive.
-        """
-
-        return "macosx" in self.path.lower()
-
-    def is_hidden(self):
-        """
-        :return: bool
-            True iff path is hidden
-        """
-
-        hidden_start_path = os.path.pathsep() + "."
-        return hidden_start_path in self.path
-
     @staticmethod
     def move_file_to_directory(file_path, directory_path):
         """
@@ -307,6 +247,65 @@ class Document(FileSystem):
         """
         return os.path.splitext(file_name)
 
+    def get_path_name(self):
+        """
+        :return: tuple string, string
+            Name of path, name of file (or folder)
+        """
+
+        p, name = os.path.dirname(os.path.abspath(self.path)), os.path.basename(self.path)
+        return p, name
+
+    def is_video(self):
+        """
+        :return: True iff document is a video.
+        """
+        return self.extension.lower() in VIDEO_FORMAT
+
+    def is_subtitle(self):
+        """
+        :return: True iff document is a subtitle.
+        """
+
+        return self.extension.lower() in SUBTITLE_FORMAT
+
+    def is_text(self):
+        """
+        :return: True iff document is a text file.
+        """
+
+        return self.extension.lower() in TEXT_FORMAT
+
+    def is_image(self):
+        """
+        :return: True iff document is an image.
+        """
+
+        return self.extension.lower() in IMAGE_FORMAT
+
+    def is_audio(self):
+        """
+        :return: True iff document is an audio.
+        """
+
+        return self.extension.lower() in AUDIO_FORMAT
+
+    def is_archive_mac(self):
+        """
+        :return: True iff document is an MACOSX archive.
+        """
+
+        return "macosx" in self.path.lower()
+
+    def is_hidden(self):
+        """
+        :return: bool
+            True iff path is hidden
+        """
+
+        hidden_start_path = os.path.pathsep() + "."
+        return hidden_start_path in self.path
+
 
 class Directory(FileSystem):
     def __init__(self, path):
@@ -316,16 +315,6 @@ class Directory(FileSystem):
         """
 
         FileSystem.__init__(self, path)
-
-    def get_path_name(self):
-        """
-        :return: tuple string, string
-            Name of path, name of file (or folder)
-        """
-
-        p = os.path.dirname(os.path.abspath(self.path))
-        name = self.path.replace(p + os.path.sep, "")[: -1]  # replace in full path, dir path to get name
-        return p, name
 
     @staticmethod
     def ls_dir(path, include_hidden=False):
@@ -381,8 +370,30 @@ class Directory(FileSystem):
         else:
             return Directory.ls_dir(path, include_hidden=include_hidden)
 
+    @staticmethod
+    def create_new(path):
+        """
+        :param path: string
+            Path to directory to create
+        :return: void
+            Creates new directory
+        """
 
-class MP3Song(object):
+        if not os.path.exists(path):
+            os.makedirs(path)
+
+    def get_path_name(self):
+        """
+        :return: tuple string, string
+            Name of path, name of file (or folder)
+        """
+
+        p = os.path.dirname(os.path.abspath(self.path))
+        name = self.path.replace(p + os.path.sep, "")[: -1]  # replace in full path, dir path to get name
+        return p, name
+
+
+class MP3Song(object):  # TODO: maybe inherit from FileSystem
     """ mp3 song """
 
     def __init__(self, path):
