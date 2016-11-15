@@ -69,6 +69,8 @@ class FileSystem(object):
     @staticmethod
     def remove_year(name):
         """
+        :param name: string
+            Name to edit
         :return: string
             Given string bu with no years.
         """
@@ -95,6 +97,8 @@ class FileSystem(object):
     @staticmethod
     def remove_brackets(name):
         """
+        :param name: string
+            Name to edit
         :return: string
             Given string bu with no barckets.
         """
@@ -113,6 +117,8 @@ class FileSystem(object):
     @staticmethod
     def extract_name_max_chars(name, max_chars, blank=" "):
         """
+        :param name: string
+            Name to edit
         :param max_chars: int
             Maximum chars of new name
         :param blank: string
@@ -130,8 +136,12 @@ class FileSystem(object):
             return name
 
     @staticmethod
-    def prettify(name, r=" "):
+    def prettify(name, bad_chars=BAD_CHARS, r=" "):
         """
+        :param name: string
+            Name to edit
+        :param bad_chars: []
+            List of bad strings to remove
         :param r: string
             Default blanks in name.
         :return: string
@@ -143,7 +153,7 @@ class FileSystem(object):
         else:
             name = name
 
-        for t in BAD_CHARS:
+        for t in bad_chars:
             name = name.replace(t.lower(), r)  # remove token
         name = name.replace(" ", r)  # replace blanks
         while name.find(r + r) >= 0:  # while there are blanks to remove
