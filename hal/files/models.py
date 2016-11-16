@@ -63,8 +63,22 @@ class FileSystem(object):
         """
         object.__init__(self)
 
-        self.path = path
+        self.path = self.fix_raw_path(path)
         self.name, extension = os.path.splitext(self.path)
+
+    @staticmethod
+    def fix_raw_path(path):
+        """
+        :param path: string
+            Path to fix
+        :return: string
+            Right path
+        """
+
+        if not path.endswith("/"):
+            return path + "/"
+        else:
+            return path
 
     @staticmethod
     def remove_year(name):
