@@ -63,7 +63,7 @@ class FileSystem(object):
         """
         object.__init__(self)
 
-        self.path = self.fix_raw_path(path)
+        self.path = path
         self.name, extension = os.path.splitext(self.path)
 
     @staticmethod
@@ -209,6 +209,20 @@ class FileSystem(object):
 
         send2trash(self.path)
 
+    def rename(self, new_path):
+        """
+        :param new_path: string
+            New path to use
+        :return: void
+            Rename to new path
+        """
+
+        rename_path = self.fix_raw_path(new_path)  # fix path
+        if os.path.isdir(self.path):
+            os.rename(self.path, rename_path)
+        else:
+            os.renames(self.path, rename_path)
+
 
 class Document(FileSystem):
     def __init__(self, path):
@@ -291,12 +305,9 @@ class Document(FileSystem):
             Name of path, name of file (or folder)
         """
 
-        p, name = os.path.dirname(os.path.abspath(self.path)), os.path.basename(self.path)
-
-        if not p.endswith("/"):  # fix non-ending path separator
-            p += "/"
-
-        return p, name
+        path = self.fix_raw_path(os.path.dirname(os.path.abspath(self.path)))
+        name = os.path.basename(self.path)
+        return path, name
 
     def is_video(self):
         """
@@ -341,16 +352,6 @@ class Document(FileSystem):
         hidden_start_path = "/."
         return hidden_start_path in self.path
 
-    def rename(self, new_path):
-        """
-        :param new_path: string
-            New path to use
-        :return: void
-            Rename to new path
-        """
-
-        os.rename(self.path, new_path)
-
 
 class Directory(FileSystem):
     def __init__(self, path):
@@ -359,7 +360,7 @@ class Directory(FileSystem):
             Path to file
         """
 
-        FileSystem.__init__(self, path)
+        FileSystem.__init__(self, self.fix_raw_path(path))
 
         self.root_path, self.name = self.get_path_name()
 
@@ -446,16 +447,6 @@ class Directory(FileSystem):
         """
 
         return not os.listdir(self.path)
-
-    def rename(self, new_path):
-        """
-        :param new_path: string
-            New path to use
-        :return: void
-            Rename to new path
-        """
-
-        os.renames(self.path, new_path)
 
 
 class MP3Song(FileSystem):
