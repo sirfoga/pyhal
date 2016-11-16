@@ -422,7 +422,7 @@ class Directory(FileSystem):
         """
 
         p = os.path.dirname(os.path.abspath(self.path))
-        name = self.path.replace(p + os.path.sep, "")[: -1]  # replace in full path, dir path to get name
+        name = self.path.replace(p + "/", "")[: -1]  # replace in full path, dir path to get name
         return p, name
 
     def is_empty(self):
