@@ -75,8 +75,11 @@ class FileSystem(object):
             Right path
         """
 
-        if not path.endswith("/"):
-            return path + "/"
+        if os.path.isdir(path):
+            if not path.endswith("/"):
+                return path + "/"
+            else:
+                return path
         else:
             return path
 
@@ -217,7 +220,7 @@ class FileSystem(object):
             Rename to new path
         """
 
-        rename_path = self.fix_raw_path(new_path)  # fix path
+        rename_path = self.fix_raw_path(new_path)
         if os.path.isdir(self.path):
             os.rename(self.path, rename_path)
         else:
