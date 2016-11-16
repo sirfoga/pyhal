@@ -53,6 +53,7 @@ IMAGE_FORMAT = [".ani", ".bmp", ".cal", ".fax", ".gif", ".img", ".jbg", ".jpe", 
 AUDIO_FORMAT = [".3gp", ".aa", ".aac", ".aax", ".act", ".aiff", ".amr", ".ape", ".au", ".awb", ".dct", ".dss", ".dvf",
                 ".flac", ".gsm", ".iklax", ".ivs", ".m4a", ".m4b", ".m4p", ".mmf", ".mogg", ".mp3", ".mpc", ".msv",
                 ".oga", ".ogg", ".opus", ".ra", ".raw", ".rm", ".sln", ".tta", ".vox", ".wav", ".webm", ".wma", ".wv"]
+PATH_SEPARATOR = "/" if "posix" in os.name else "\\"
 
 
 class FileSystem(object):
@@ -63,7 +64,7 @@ class FileSystem(object):
         """
         object.__init__(self)
 
-        self.path = path
+        self.path = self.fix_raw_path(path)
         self.name, extension = os.path.splitext(self.path)
 
     @staticmethod
@@ -76,8 +77,8 @@ class FileSystem(object):
         """
 
         if os.path.isdir(path):
-            if not path.endswith("/"):
-                return path + "/"
+            if not path.endswith(PATH_SEPARATOR):
+                return path + PATH_SEPARATOR
             else:
                 return path
         else:
@@ -440,7 +441,7 @@ class Directory(FileSystem):
         """
 
         p = os.path.dirname(os.path.abspath(self.path))
-        name = self.path.replace(p + "/", "")[: -1]  # replace in full path, dir path to get name
+        name = self.path.replace(p + PATH_SEPARATOR, "")[: -1]  # replace in full path, dir path to get name
         return p, name
 
     def is_empty(self):

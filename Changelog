@@ -1,3 +1,7 @@
+v4.3.0.1
+    Now path separator works also in windows
+    Fixed more annoying bugs in files.models
+
 v4.3
     Google search engine deprecated (too unreliable)
     Fixed annoying bugs in files.models
