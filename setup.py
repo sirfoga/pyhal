@@ -49,10 +49,10 @@ setup(
         "numpy",
         "pycrypto",
         "PySocks",
+        "scipy",
         "sklearn",
         "requests",
         "lxml",
-        "scipy",
         "send2trash"
     ]
 )
