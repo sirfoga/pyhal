@@ -12,7 +12,7 @@ addons:
   apt:
     packages:
       # - python3-numpy  # matplotlib
-      - python3-matplotlib
+      # - python3-matplotlib
       - libpng-dev
       - libfreetype6-dev
       - python3-scipy  # scipy
