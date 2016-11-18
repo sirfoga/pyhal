@@ -14,11 +14,11 @@ addons:
     packages:
       # - python3-numpy  # matplotlib
       # - python3-matplotlib
-      - libpng-dev
-      - libfreetype6-dev
+      # - libpng-dev
+      # - libfreetype6-dev
       # - python3-scipy  # scipy
       # - python3-pandas
-      - python3-nose
+      # - python3-nose
 
 install: "pip3 install -U ."  # command to install dependencies
 # script: pytest  # command to run tests

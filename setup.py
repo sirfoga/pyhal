@@ -43,16 +43,16 @@ setup(
     keywords="library scratch maths",
     url="https://github.com/sirfoga/hal",
     packages=find_packages(exclude=["examples", "docs"]),
-    install_requires=[
-        "bs4",
-        # "mutagen",
-        "numpy",
-        "pycrypto",
-        "PySocks",
-        # "scipy",
-        "sklearn",
-        "requests",
-        "lxml",
-        "send2trash"
-    ]
+    # install_requires=[
+    #     "bs4",
+    #     "mutagen",
+    #     "numpy",
+    #     "pycrypto",
+    #     "PySocks",
+    #     "scipy",
+    #     "sklearn",
+    #     "requests",
+    #     "lxml",
+    #     "send2trash"
+    # ]
 )
