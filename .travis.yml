@@ -22,14 +22,14 @@ addons:
 before_install:
 #  - "pip3 install pytest pytest-cov"
 #  - "pip3 install coveralls"
-  - pip3 install coveralls
+
 install:
+  - "pip install coveralls"
   - "pip install -U pip"
   - "pip3 install ."
 script:
-  - python3 setup.py test
-  - coverage
+  - "coverage run --source=hal setup.py test"
 after_success:
-  - coveralls
+  - "coveralls"
 notifications:
   email: "false"  # no email notifications
