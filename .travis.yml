@@ -20,13 +20,13 @@ addons:
 #       - python3-pandas
 #       - python3-nose
 before_install:
-#  - "pip3 install pytest pytest-cov"
-#  - "pip3 install coveralls"
+#  - "pip install pytest pytest-cov"
+#  - "pip install coveralls"
 
 install:
   - "pip install coveralls"
   - "pip install -U pip"
-  - "pip3 install ."
+  - "pip install ."
 script:
   - "coverage run --source=hal setup.py test"
 after_success:
