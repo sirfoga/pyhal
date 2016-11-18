@@ -1,5 +1,5 @@
 # HAL: Handy Algorithmic Library
-[![Build Status](https://travis-ci.org/sirfoga/hal.svg?branch=master)](https://travis-ci.org/sirfoga/hal)
+[![Build Status](https://travis-ci.org/sirfoga/hal.svg?branch=master)](https://travis-ci.org/sirfoga/hal) [![Coverage Status](https://coveralls.io/repos/github/sirfoga/hal/badge.svg?branch=master)](https://coveralls.io/github/sirfoga/hal?branch=master)
 
 ## Aim
 * create library of scritpt-like functions and small classes
