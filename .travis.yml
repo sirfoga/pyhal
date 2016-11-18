@@ -1,3 +1,4 @@
+sudo: required  # apt
 language: python  # language used in repo
 
 python:  # versions used
@@ -19,5 +20,5 @@ addons:
       # - python3-pandas
       - python3-nose
 
-install: "pip install -U ."  # command to install dependencies
+install: "pip3 install -U ."  # command to install dependencies
 # script: pytest  # command to run tests
