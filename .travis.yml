@@ -1,13 +1,6 @@
 language: python  # language used in repo
-os:
-  - linux
-env:
-  global:
-    - NEWEST_PYTHON=3.5
 python:  # versions used
   - "3.2"
-virtualenv:
-  system_site_packages: true  # enable use of python system packages
 #addons:
 #  apt:
 #    packages:
@@ -18,7 +11,6 @@ virtualenv:
 #       - python3-scipy  # scipy
 #       - python3-pandas
 #       - python3-nose
-before_install: "pip3 install --upgrade pip"
 install: "pip3 install mutagen"  # command to install dependencies
 notifications:
   email: false  # no email notifications
