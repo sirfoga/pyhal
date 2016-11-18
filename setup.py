@@ -48,7 +48,6 @@ setup(
         # "mutagen",
         "numpy",
         "pycrypto",
-        "PySocks",
         # "scipy",
         # "sklearn",
         "requests",
