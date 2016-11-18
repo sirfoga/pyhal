@@ -1,4 +1,5 @@
 # HAL: Handy Algorithmic Library
+[![Build Status](https://travis-ci.org/sirfoga/hal.svg?branch=master)](https://travis-ci.org/sirfoga/hal)
 
 ## Aim
 * create library of scritpt-like functions and small classes
