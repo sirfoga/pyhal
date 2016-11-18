@@ -16,7 +16,7 @@ addons:
       # - python3-matplotlib
       - libpng-dev
       - libfreetype6-dev
-      - python3-scipy  # scipy
+      # - python3-scipy  # scipy
       # - python3-pandas
       - python3-nose
 

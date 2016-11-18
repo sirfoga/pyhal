@@ -49,7 +49,7 @@ setup(
         "numpy",
         "pycrypto",
         "PySocks",
-        "scipy",
+        # "scipy",
         "sklearn",
         "requests",
         "lxml",
