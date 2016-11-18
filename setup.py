@@ -50,7 +50,7 @@ setup(
         "pycrypto",
         "PySocks",
         # "scipy",
-        "sklearn",
+        # "sklearn",
         "requests",
         "lxml",
         "send2trash"
