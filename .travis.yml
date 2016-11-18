@@ -30,6 +30,6 @@ install:
 script:
   - "coverage"
 after_success:
-  - "coveralls"
+  - "coveralls run --source=hal setup.py test"
 notifications:
   email: "false"  # no email notifications
