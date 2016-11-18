@@ -4,21 +4,21 @@ language: python  # language used in repo
 python:  # versions used
   - "3.2"
   - "3.3"
-  - "3.4"
-  - "3.5"
+
 virtualenv:
   system_site_packages: true  # enable use of python system packages
 
-addons:
-  apt:
-    packages:
-      # - python3-numpy  # matplotlib
-      # - python3-matplotlib
-      # - libpng-dev
-      # - libfreetype6-dev
-      # - python3-scipy  # scipy
-      # - python3-pandas
-      # - python3-nose
+#addons:
+#  apt:
+#    packages:
+#       - python3-numpy  # matplotlib
+#       - python3-matplotlib
+#       - libpng-dev
+#       - libfreetype6-dev
+#       - python3-scipy  # scipy
+#       - python3-pandas
+#       - python3-nose
 
+before_install: "pip3 install --upgrade pip"
 install: "pip3 install -U ."  # command to install dependencies
 # script: pytest  # command to run tests
