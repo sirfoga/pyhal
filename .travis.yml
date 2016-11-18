@@ -11,7 +11,7 @@ python:  # versions used
 #       - python3-scipy  # scipy
 #       - python3-pandas
 #       - python3-nose
-install: "pip3 install mutagen"  # command to install dependencies
+install: "pip3 install ."  # command to install dependencies
 notifications:
   email: false  # no email notifications
 # script: pytest  # command to run tests
