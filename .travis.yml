@@ -1,7 +1,7 @@
 language: "python"  # language used in repo
 python:  # versions used
-  - "3.2"
-#  - "3.3"
+#  - "3.2"
+  - "3.3"
 #  - "3.4"
 #  - "3.5"
 #  - "3.5-dev"
