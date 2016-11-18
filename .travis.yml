@@ -25,10 +25,10 @@ before_install:
 
 install:
   - "pip install -U pip"
-  - "pip install coveralls"
+  - "pip install python-coveralls"
   - "pip install install git+https://github.com/sirfoga/hal.git"
 script:
-  - "coverage run --source=hal setup.py test"
+  - "coverage"
 after_success:
   - "coveralls"
 notifications:
