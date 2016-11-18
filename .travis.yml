@@ -1,4 +1,4 @@
-language: python  # language used in repo
+language: "python"  # language used in repo
 python:  # versions used
   - "3.4"
 #addons:
@@ -12,11 +12,13 @@ python:  # versions used
 #       - python3-pandas
 #       - python3-nose
 before_install:
-    - pip install pytest pytest-cov
-    - pip install coveralls
-install: "pip3 install ."  # command to install dependencies
+  - "pip3 install pytest pytest-cov"
+  - "pip3 install coveralls"
+install: "pip3 install ." # command to install dependencies
 after_success:
-    - coveralls
+  - "coveralls"
+script:
+  - "echo \"Success!\""
 notifications:
-  email: false  # no email notifications
+  email: "false"  # no email notifications
 # script: pytest  # command to run tests
