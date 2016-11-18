@@ -45,7 +45,7 @@ setup(
     packages=find_packages(exclude=["examples", "docs"]),
     install_requires=[
         "bs4",
-        "mutagen",
+        # "mutagen",
         "numpy",
         "pycrypto",
         "PySocks",
