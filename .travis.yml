@@ -1,16 +1,17 @@
 language: "python"  # language used in repo
 python:  # versions used
   - "3.2"
-  - "3.3"
-  - "3.4"
-  - "3.5"
-os:
-  - linux
-  - windows
-  - macosx
-#addons:
-#  apt:
-#    packages:
+#  - "3.3"
+#  - "3.4"
+#  - "3.5"
+#  - "3.5-dev"
+#os:
+#  - linux
+#  - windows
+#  - macosx
+addons:
+  apt:
+    packages:
 #       - python3-numpy  # matplotlib
 #       - python3-matplotlib
 #       - libpng-dev
@@ -18,12 +19,17 @@ os:
 #       - python3-scipy  # scipy
 #       - python3-pandas
 #       - python3-nose
-#before_install:
+before_install:
 #  - "pip3 install pytest pytest-cov"
 #  - "pip3 install coveralls"
-install: "pip3 install ." # command to install dependencies
+  - pip3 install coveralls
+install:
+  - "pip install -U pip"
+  - "pip3 install ."
 script:
-  - "echo \"Success\""
+  - python3 setup.py test
+  - coverage
+after_success:
+  - coveralls
 notifications:
   email: "false"  # no email notifications
-# script: pytest  # command to run tests

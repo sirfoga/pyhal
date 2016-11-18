@@ -27,7 +27,7 @@ from mutagen.mp3 import MP3
 from send2trash import send2trash
 
 BAD_CHARS = [
-    ".", ":", "\"", "’", "&", "720p", "1080p", "yify", ",", "\"S", "brrip", "bluray", "Bokutox", "x264", "[", "]", "sparks", "h264",
+    ".", ":", "\"", "’", "&", "720p", "1080p", "yify", ",", "brrip", "bluray", "Bokutox", "x264", "[", "]", "sparks", "h264",
     "aac", "ozlem", "ac3", "ozlem", "etrg", "dvdrip", "xvid", "nydic", "sujaidr", "x265", "hevc", "(pimprg)", "aac",
     "ozlem", "remastered", "anoxmous", "yts"]  # official formats based on wikipedia
 RUSSIAN_CHARS = ["ш", "а", "б", "л", "о", "н", "ы", "р", "е", "а", "л", "и", "з", "а", "ц", "и", "и", "к",
@@ -76,13 +76,10 @@ class FileSystem(object):
             Right path
         """
 
-        if os.path.isdir(path):
-            if not path.endswith(PATH_SEPARATOR):
-                return path + PATH_SEPARATOR
-            else:
-                return path
-        else:
-            return path
+        double_path_separator = PATH_SEPARATOR + PATH_SEPARATOR
+        while path.find(double_path_separator) >= 0:  # there are double separators
+            path = path.replace(double_path_separator, PATH_SEPARATOR)  # remove double path separators
+        return path
 
     @staticmethod
     def remove_year(name):
@@ -93,23 +90,10 @@ class FileSystem(object):
             Given string bu with no years.
         """
 
-        l_bracket, r_bracket = name.find("("), name.find(")")  # find limits of year
-        if r_bracket - l_bracket + 1 == 6:  # there is a year in between
-            name = name.replace(name[l_bracket: r_bracket + 1], "")  # remove year
-        else:
-            l_bracket, r_bracket = name.find("["), name.find("]")  # try with square brackets
-            if r_bracket - l_bracket + 1 == 6:  # there is a year in between
-                name = name.replace(name[l_bracket: r_bracket + 1], "")  # remove year
-            else:
-                name = name
-
-        for i in range(len(name) - 4):
-            try:
-                if name[i: i + 4].isdigit():
-                    name = name[:i] + name[i + 4:]
-            except:  # out of bounds
-                pass
-
+        for i in range(len(name) - 3):  # last index is lenght - 3 - 1 = length - 4
+            if name[i: i + 4].isdigit():
+                name = name[:i] + name[i + 4:]
+                return FileSystem.remove_year(name)  # if there is a removal, start again
         return name
 
     @staticmethod
@@ -121,19 +105,14 @@ class FileSystem(object):
             Given string bu with no barckets.
         """
 
-        name = re.sub("([\(\[]).*?([\)\]])", "\g<1>\g<2>", name)
-        name = name.replace("()", "")  # remove anything in ()
-        if name.rfind("(") > 0:  # there exists a "("
-            name = name[:name.rfind("(")]
-        name = name.replace("(", "")
-        name = name.replace(")", "")
-        for _ in range(10):
-            name = name.replace("  ", " ")  # remove extra blanks
-        name = name.strip()
+        name = re.sub("([\(\[]).*?([\)\]])", "\g<1>\g<2>", name)  # remove anything in between brackets
+        brackets = "()[]{}"  # list of brackets
+        for bracket in brackets:
+            name = name.replace(bracket, "")
         return name
 
     @staticmethod
-    def extract_name_max_chars(name, max_chars, blank=" "):
+    def extract_name_max_chars(name, max_chars=64, blank=" "):
         """
         :param name: string
             Name to edit
@@ -145,13 +124,15 @@ class FileSystem(object):
             Name edited to contain at most max_chars (truncate to nearest word)
         """
 
-        if len(name) > max_chars:
-            new_name = name[:max_chars]  # get at most 64 chars
+        if max_chars <= 0:
+            raise ValueError("Maximum chars of new name must be greater than 0")
+
+        new_name = name.strip()
+        if len(new_name) > max_chars:
+            new_name = new_name[:max_chars]  # get at most 64 chars
             if new_name.rfind(blank) > 0:
                 new_name = new_name[:new_name.rfind(blank)]  # truncate to nearest word
-            return new_name
-        else:
-            return name
+        return new_name
 
     @staticmethod
     def prettify(name, bad_chars=BAD_CHARS, r=" "):
@@ -170,7 +151,8 @@ class FileSystem(object):
             name = name[1:]
 
         for t in bad_chars:
-            name = name.replace(t.lower(), r)  # remove token
+            name = name.replace(t, r)  # remove token
+
         name = name.replace(" ", r)  # replace blanks
         while name.find(r + r) >= 0:  # while there are blanks to remove
             name = name.replace(r + r, r)
@@ -182,10 +164,67 @@ class FileSystem(object):
             except:  # out of bounds
                 pass
 
+        if name.startswith(r):
+            name = name[1:]
+
         if name.endswith(r):  # remove ending replacement
             name = name[:-1]
 
         return name
+
+    @staticmethod
+    def ls_dir(path, include_hidden=False):
+        """
+        :param path: string
+            Path to directory to get list of files and folders
+        :param include_hidden: bool
+            Whether to include hidden files in list.
+        :return: list
+            List of paths in given directory.
+        """
+
+        list_ = []
+        for f in os.listdir(path):
+            if include_hidden or not Document(f).is_hidden():
+                list_.append(os.path.join(path, f))
+        return list_
+
+    @staticmethod
+    def ls_recurse(path, include_hidden=False):
+        """
+        :param path: string
+            Path to directory to get list of files and folders
+        :param include_hidden: bool
+            Whether to include hidden files in list.
+        :return: list
+            List of paths in given directory recursively.
+        """
+
+        list_ = []
+        for f in os.listdir(path):
+            if include_hidden or not Document(f).is_hidden():
+                list_.append(os.path.join(path, f))
+                if os.path.isdir(os.path.join(path, f)):
+                    list_ += Directory.ls_recurse(os.path.join(path, f),
+                                        include_hidden=include_hidden)  # get list of files in directory
+        return list_
+
+    @staticmethod
+    def ls(path, recurse, include_hidden=False):
+        """
+        :param path: string
+            Path to directory to get list of files and folders
+        :param recurse: bool
+            Whether to recurse into subdirectories or not.
+        :param include_hidden: bool
+            Whether to include hidden files in list.
+        :return: list
+            List of paths in given directory recursively.
+        """
+        if recurse:
+            return Directory.ls_recurse(path, include_hidden=include_hidden)
+        else:
+            return Directory.ls_dir(path, include_hidden=include_hidden)
 
     def is_archive_mac(self):
         """
@@ -367,60 +406,6 @@ class Directory(FileSystem):
         FileSystem.__init__(self, self.fix_raw_path(path))
 
         self.root_path, self.name = self.get_path_name()
-
-    @staticmethod
-    def ls_dir(path, include_hidden=False):
-        """
-        :param path: string
-            Path to directory to get list of files and folders
-        :param include_hidden: bool
-            Whether to include hidden files in list.
-        :return: list
-            List of paths in given directory.
-        """
-
-        list_ = []
-        for f in os.listdir(path):
-            if include_hidden or not Document(f).is_hidden():
-                list_.append(os.path.join(path, f))
-        return list_
-
-    @staticmethod
-    def ls_recurse(path, include_hidden=False):
-        """
-        :param path: string
-            Path to directory to get list of files and folders
-        :param include_hidden: bool
-            Whether to include hidden files in list.
-        :return: list
-            List of paths in given directory recursively.
-        """
-
-        list_ = []
-        for f in os.listdir(path):
-            if include_hidden or not Document(f).is_hidden():
-                list_.append(os.path.join(path, f))
-                if os.path.isdir(os.path.join(path, f)):
-                    list_ += Directory.ls_recurse(os.path.join(path, f),
-                                        include_hidden=include_hidden)  # get list of files in directory
-        return list_
-
-    @staticmethod
-    def ls(path, recurse, include_hidden=False):
-        """
-        :param path: string
-            Path to directory to get list of files and folders
-        :param recurse: bool
-            Whether to recurse into subdirectories or not.
-        :param include_hidden: bool
-            Whether to include hidden files in list.
-        :return: list
-            List of paths in given directory recursively.
-        """
-        if recurse:
-            return Directory.ls_recurse(path, include_hidden=include_hidden)
-        else:
-            return Directory.ls_dir(path, include_hidden=include_hidden)
 
     @staticmethod
     def create_new(path):

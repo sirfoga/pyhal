@@ -42,8 +42,8 @@ setup(
     license="Apache License, Version 2.0",
     keywords="library scratch maths",
     url="https://github.com/sirfoga/hal",
-    packages=find_packages(exclude=["examples", "docs"]),
-    install_requires=[
+    packages=find_packages(exclude=["tests"]),
+    install_requires=[  # TODO: uncomment packages (but travis will fail)
         "bs4",
         # "mutagen",
         "numpy",
@@ -53,5 +53,6 @@ setup(
         "requests",
         "lxml",
         "send2trash"
-    ]
+    ],
+    test_suite="tests"
 )

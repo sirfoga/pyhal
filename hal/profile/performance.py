@@ -18,11 +18,11 @@
 
 """ Perform benchmarks and tests on your PC. """
 
-
+import getpass
 import os
 import sys
 import time
-import getpass
+
 from hal import maths
 from hal.files.models import Document
 
