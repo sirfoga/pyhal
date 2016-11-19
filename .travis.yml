@@ -1,32 +1,13 @@
-language: "python"  # language used in repo
-python:  # versions used
-#  - "3.2"
+language: "python"
+python:
   - "3.3"
-#  - "3.4"
-#  - "3.5"
-#  - "3.5-dev"
-#os:
-#  - linux
-#  - windows
-#  - macosx
-addons:
-  apt:
-    packages:
-#       - python3-numpy  # matplotlib
-#       - python3-matplotlib
-#       - libpng-dev
-#       - libfreetype6-dev
-#       - python3-scipy  # scipy
-#       - python3-pandas
-#       - python3-nose
-before_install:
-#  - "pip install pytest pytest-cov"
-#  - "pip install coveralls"
-
+  - "3.4"
+  - "3.5"
+  - "3.5-dev"
 install:
-  - "pip install -U pip"
+  - "pip install -U pip"  # upgrade pip
   - "pip install coveralls"
-  - "pip install git+https://github.com/sirfoga/hal.git"
+  - "pip install pyhal"
 script:
   - "coverage"
 after_success:

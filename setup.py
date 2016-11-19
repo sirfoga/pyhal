@@ -33,7 +33,7 @@ def read(fname):
 
 
 setup(
-    name="Hal",
+    name="PyHal",
     version="4.3",
     author="sirfoga",
     author_email="sirfoga@protonmail.com",
@@ -45,6 +45,7 @@ setup(
     packages=find_packages(exclude=["tests"]),
     install_requires=[  # TODO: uncomment packages (but travis will fail)
         "bs4",
+        # "matplotlib",
         # "mutagen",
         "numpy",
         "pycrypto",
