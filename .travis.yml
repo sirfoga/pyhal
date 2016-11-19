@@ -7,7 +7,7 @@ python:
 install:
   - "pip install -U pip"  # upgrade pip
   - "pip install coveralls"
-  - "pip install pyhal"
+  - "pip install git+https://github.com/sirfoga/hal.git"
 script:
   - "coverage"
 after_success:
