@@ -16,20 +16,26 @@
 # limitations under the License.
 
 
-import os
-
 from setuptools import setup, find_packages
 
 
-def read(fname):
-    """
-    :param fname: string
-        Path to file to read
-    :return: string
-        Content of file specified
-    """
-
-    return open(os.path.join(os.path.dirname(__file__), fname)).read()
+DESCRIPTION = \
+    "HAL: Handy Algorithmic Library\n\
+    A multipurpose library homemade from scratch to perform great stuff in a pythonic way.\n\
+    \n\
+    Examples\n\
+    You can take a look at my other repository: there are lots of implementations from various HAL modules.\n\
+    \n\
+    Install\n\
+    $ python3 setup.py install from the source\n\
+    $ pip3 install pyhal via pip\n\
+    \n\
+    Questions and issues\n\
+    The github issue tracker is only for bug reports and feature requests." \
+    "Anything else, such as questions for help in using the library, should be posted in StackOverflow.\n\
+    \n\
+    License\n\
+    [Apache License](http://www.apache.org/licenses/LICENSE-2.0) Version 2.0, January 2004"
 
 
 setup(
@@ -38,7 +44,7 @@ setup(
     author="sirfoga",
     author_email="sirfoga@protonmail.com",
     description="Hal is a from-scratch home-made multipurpose library to perform most of stuff in python.",
-    long_description=read("README.md"),
+    long_description=DESCRIPTION,
     license="Apache License, Version 2.0",
     keywords="library scratch maths",
     url="https://github.com/sirfoga/hal",
