@@ -3,15 +3,23 @@
 
 *A multipurpose library homemade from scratch to perform great stuff in a pythonic way.*
 
-## Examples
-You can take a look at [my other repository](https://github.com/sirfoga): there are lots of implementations from various HAL modules.
 
 ## Install
 * ``` $ python3 setup.py install ``` from the source
 * ``` $ pip3 install pyhal``` via pip
 
+
+## Examples
+You can take a look at [my other repository](https://github.com/sirfoga): there are lots of implementations from various HAL modules.
+
+
+## Documentation
+Currently no pretty documentation exits, so you have to run ```pydoc -p 1729``` go to [the local website](http://localhost:1729) and view documentation there.
+
+
 ## Questions and issues
 The [github issue tracker](https://github.com/sirfoga/hal/issues) is **only** for bug reports and feature requests. Anything else, such as questions for help in using the library, should be posted in [StackOverflow](http://stackoverflow.com/questions/tagged/hal).
+
 
 ## LICENSE
 [Apache License](http://www.apache.org/licenses/LICENSE-2.0) Version 2.0, January 2004
