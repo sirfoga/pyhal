@@ -1,0 +1,35 @@
+\begin{theindex}
+
+  \item hal \textit{(package)}, \hyperpage{5--6}
+    \subitem hal.files \textit{(package)}, \hyperpage{7}
+      \subsubitem hal.files.models \textit{(module)}, \hyperpage{8--16}
+    \subitem hal.internet \textit{(package)}, \hyperpage{17}
+      \subsubitem hal.internet.engines \textit{(module)}, 
+		\hyperpage{18--19}
+      \subsubitem hal.internet.parser \textit{(module)}, 
+		\hyperpage{20--21}
+      \subsubitem hal.internet.selenium \textit{(module)}, 
+		\hyperpage{22--23}
+      \subsubitem hal.internet.web \textit{(module)}, 
+		\hyperpage{24--26}
+      \subsubitem hal.internet.youtube \textit{(module)}, 
+		\hyperpage{27}
+    \subitem hal.maths \textit{(package)}, \hyperpage{28}
+      \subsubitem hal.maths.crypt \textit{(module)}, \hyperpage{29--38}
+      \subsubitem hal.maths.maths \textit{(module)}, \hyperpage{39--41}
+      \subsubitem hal.maths.plotter \textit{(module)}, 
+		\hyperpage{42--45}
+    \subitem hal.ml \textit{(package)}, \hyperpage{46}
+      \subsubitem hal.ml.data \textit{(package)}, \hyperpage{47}
+      \subsubitem hal.ml.features \textit{(module)}, \hyperpage{50}
+      \subsubitem hal.ml.models \textit{(package)}, \hyperpage{51}
+      \subsubitem hal.ml.predict \textit{(module)}, \hyperpage{56}
+      \subsubitem hal.ml.utils \textit{(module)}, \hyperpage{57--58}
+    \subitem hal.profile \textit{(package)}, \hyperpage{59}
+      \subsubitem hal.profile.performance \textit{(module)}, 
+		\hyperpage{60--61}
+    \subitem hal.wrappers \textit{(package)}, \hyperpage{62}
+      \subsubitem hal.wrappers.methods \textit{(module)}, 
+		\hyperpage{63}
+
+\end{theindex}

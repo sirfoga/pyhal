@@ -14,7 +14,7 @@ You can take a look at [my other repository](https://github.com/sirfoga): there 
 
 
 ## Documentation
-Currently no pretty documentation exits, so you have to run ```pydoc -p 1729``` go to [the local website](http://localhost:1729) and view documentation there.
+You can either browse the [html](docs/html/index.html) or the [pdf](docs/pdf/api.pdf) version of the documentation.
 
 
 ## Questions and issues
