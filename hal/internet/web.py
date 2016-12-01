@@ -70,7 +70,7 @@ CHROME_USER_AGENT = [
 class Webpage(object):
     """ representation of URL (web page)"""
 
-    def __init__(self, url, using_tor=True):
+    def __init__(self, url, using_tor=False):
         """
         :param url: string
             Url of webpage
