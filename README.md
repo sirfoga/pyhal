@@ -14,7 +14,7 @@ You can take a look at [my other repository](https://github.com/sirfoga/pymisc):
 
 
 ## API
-See ```Usage and documentation``` for detailed usage; see the [python API](https://github.com/sirfoga/pyhal) for the Python APIs.
+See ```Usage and documentation``` for detailed usage; see the [Java API](https://github.com/sirfoga/jhal) for Java counterpart.
 
 
 ## Usage and documentation
