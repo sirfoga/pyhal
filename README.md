@@ -10,7 +10,7 @@
 
 
 ## Examples
-You can take a look at [my other repository](https://github.com/sirfoga): there are lots of implementations from various HAL modules.
+You can take a look at [my other repository](https://github.com/sirfoga/pymisc): there are lots of implementations from various HAL modules.
 
 
 ## Documentation
