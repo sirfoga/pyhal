@@ -13,7 +13,11 @@
 You can take a look at [my other repository](https://github.com/sirfoga/pymisc): there are lots of implementations from various HAL modules.
 
 
-## Documentation
+## API
+See ```Usage and documentation``` for detailed usage; see the [python API](https://github.com/sirfoga/pyhal) for the Python APIs.
+
+
+## Usage and documentation
 You can either browse the [html](docs/html/index.html) or the [pdf](docs/pdf/api.pdf) version of the documentation.
 
 
