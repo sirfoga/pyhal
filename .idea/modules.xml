@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/hal.iml" filepath="$PROJECT_DIR$/.idea/hal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/pyhal.iml" filepath="$PROJECT_DIR$/.idea/pyhal.iml" />
     </modules>
   </component>
 </project>
