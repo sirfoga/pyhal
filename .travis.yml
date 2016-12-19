@@ -5,9 +5,9 @@ python:
   - "3.5"
   - "3.5-dev"
 install:
-  - "pip install -U pip"  # upgrade pip
-  - "pip install coveralls"  # for test coverage
-  - "pip install pyhal"  # pyhal
+  - "pip3 install -U pip"  # upgrade pip
+  - "pip3 install coveralls"  # for test coverage
+  - "pip3 install pyhal"  # pyhal
 script:
   - "coverage"
 after_success:
