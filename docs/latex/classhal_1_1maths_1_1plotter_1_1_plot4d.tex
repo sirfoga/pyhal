@@ -1,0 +1,109 @@
+\hypertarget{classhal_1_1maths_1_1plotter_1_1_plot4d}{}\section{hal.\+maths.\+plotter.\+Plot4d Class Reference}
+\label{classhal_1_1maths_1_1plotter_1_1_plot4d}\index{hal.\+maths.\+plotter.\+Plot4d@{hal.\+maths.\+plotter.\+Plot4d}}
+
+
+Inheritance diagram for hal.\+maths.\+plotter.\+Plot4d\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{classhal_1_1maths_1_1plotter_1_1_plot4d__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for hal.\+maths.\+plotter.\+Plot4d\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{classhal_1_1maths_1_1plotter_1_1_plot4d__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classhal_1_1maths_1_1plotter_1_1_plot4d_a90b39427c236100f8c080e08e2222f2d}{param} (self, functionx, functiony, functionz, functionw, min, max, points)
+\item 
+def \hyperlink{classhal_1_1maths_1_1plotter_1_1_plot4d_aa776ce05b0f159953ea817402aa9e280}{plot} (self, function, minx, maxx, miny, maxy, minz, maxz, precision, kind)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classhal_1_1maths_1_1plotter_1_1_plot4d_a1f822a4cfb97006651da35cb2f5e55d1}{scatter} (vectorx, vectory, vectorz, vectorw)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{hal\+::maths\+::plotter\+::\+Plot4d@{hal\+::maths\+::plotter\+::\+Plot4d}!param@{param}}
+\index{param@{param}!hal\+::maths\+::plotter\+::\+Plot4d@{hal\+::maths\+::plotter\+::\+Plot4d}}
+\subsubsection[{\texorpdfstring{param(self, functionx, functiony, functionz, functionw, min, max, points)}{param(self, functionx, functiony, functionz, functionw, min, max, points)}}]{\setlength{\rightskip}{0pt plus 5cm}def hal.\+maths.\+plotter.\+Plot4d.\+param (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{functionx, }
+\item[{}]{functiony, }
+\item[{}]{functionz, }
+\item[{}]{functionw, }
+\item[{}]{min, }
+\item[{}]{max, }
+\item[{}]{points}
+\end{DoxyParamCaption}
+)}\hypertarget{classhal_1_1maths_1_1plotter_1_1_plot4d_a90b39427c236100f8c080e08e2222f2d}{}\label{classhal_1_1maths_1_1plotter_1_1_plot4d_a90b39427c236100f8c080e08e2222f2d}
+\begin{DoxyVerb}:param functionx: function in x
+:param functiony: function in y
+:param functionz: function in z
+:param functionw: function in w
+:param min: minimum
+:param max: maximum
+:param points: number of points
+:return: 4d parametric graph of given function from min to max
+\end{DoxyVerb}
+ \index{hal\+::maths\+::plotter\+::\+Plot4d@{hal\+::maths\+::plotter\+::\+Plot4d}!plot@{plot}}
+\index{plot@{plot}!hal\+::maths\+::plotter\+::\+Plot4d@{hal\+::maths\+::plotter\+::\+Plot4d}}
+\subsubsection[{\texorpdfstring{plot(self, function, minx, maxx, miny, maxy, minz, maxz, precision, kind)}{plot(self, function, minx, maxx, miny, maxy, minz, maxz, precision, kind)}}]{\setlength{\rightskip}{0pt plus 5cm}def hal.\+maths.\+plotter.\+Plot4d.\+plot (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{function, }
+\item[{}]{minx, }
+\item[{}]{maxx, }
+\item[{}]{miny, }
+\item[{}]{maxy, }
+\item[{}]{minz, }
+\item[{}]{maxz, }
+\item[{}]{precision, }
+\item[{}]{kind}
+\end{DoxyParamCaption}
+)}\hypertarget{classhal_1_1maths_1_1plotter_1_1_plot4d_aa776ce05b0f159953ea817402aa9e280}{}\label{classhal_1_1maths_1_1plotter_1_1_plot4d_aa776ce05b0f159953ea817402aa9e280}
+\begin{DoxyVerb}:param function: function to plot
+:param minx: minimum of x-values
+:param maxx: maximum of x-values
+:param miny: minimum of y-values
+:param maxy: maximum of y-values
+:param minz: minimum of z-values
+:param maxz: maximum of z-values
+:param precision: precision
+:param kind: slice: x cont -> 3d plot with y,z variables in plane and w as "z"-axis
+     contour: x cont -> 3d plot with y,z variables in plane and w colored
+:return: plot 4d function
+\end{DoxyVerb}
+ \index{hal\+::maths\+::plotter\+::\+Plot4d@{hal\+::maths\+::plotter\+::\+Plot4d}!scatter@{scatter}}
+\index{scatter@{scatter}!hal\+::maths\+::plotter\+::\+Plot4d@{hal\+::maths\+::plotter\+::\+Plot4d}}
+\subsubsection[{\texorpdfstring{scatter(vectorx, vectory, vectorz, vectorw)}{scatter(vectorx, vectory, vectorz, vectorw)}}]{\setlength{\rightskip}{0pt plus 5cm}def hal.\+maths.\+plotter.\+Plot4d.\+scatter (
+\begin{DoxyParamCaption}
+\item[{}]{vectorx, }
+\item[{}]{vectory, }
+\item[{}]{vectorz, }
+\item[{}]{vectorw}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classhal_1_1maths_1_1plotter_1_1_plot4d_a1f822a4cfb97006651da35cb2f5e55d1}{}\label{classhal_1_1maths_1_1plotter_1_1_plot4d_a1f822a4cfb97006651da35cb2f5e55d1}
+\begin{DoxyVerb}:param vectorx: vector in x axis
+:param vectory: vector in y axis
+:param vectorz: vector in z axis
+:param vectorw: vector in w axis
+:return: plot 4d scattered points
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+hal/maths/plotter.\+py\end{DoxyCompactItemize}
