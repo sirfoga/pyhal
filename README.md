@@ -3,6 +3,7 @@
 
 *A multipurpose library homemade from scratch to perform great stuff in a pythonic way.*
 
+![screenshot](logo.png)
 
 ## Install
 * ``` $ python3 setup.py install ``` from the source
