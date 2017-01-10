@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 ## 4.3.1.2
 ### Added
-- url validator
+- url validator with regex
 
 ## 4.3.1.1
 ### Fixed
