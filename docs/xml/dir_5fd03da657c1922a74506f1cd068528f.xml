@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_5fd03da657c1922a74506f1cd068528f" kind="dir">
+    <compoundname>/home/stefano/Coding/Python/projects/pyhal/hal/ml</compoundname>
+    <innerdir refid="dir_cd1e57bf442ba2ddfaf92b79b10d6681">/home/stefano/Coding/Python/projects/pyhal/hal/ml/data</innerdir>
+    <innerdir refid="dir_a6e341139506ab45822c0b7bfe609039">/home/stefano/Coding/Python/projects/pyhal/hal/ml/models</innerdir>
+    <innerfile refid="ml_2____init_____8py">__init__.py</innerfile>
+    <innerfile refid="features_8py">features.py</innerfile>
+    <innerfile refid="predict_8py">predict.py</innerfile>
+    <innerfile refid="utils_8py">utils.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/stefano/Coding/Python/projects/pyhal/hal/ml/"/>
+  </compounddef>
+</doxygen>

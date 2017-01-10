@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_225e76ead227d704817754dc016fbada" kind="dir">
+    <compoundname>/home/stefano/Coding/Python/projects/pyhal/hal/maths</compoundname>
+    <innerfile refid="maths_2____init_____8py">__init__.py</innerfile>
+    <innerfile refid="crypt_8py">crypt.py</innerfile>
+    <innerfile refid="maths_8py">maths.py</innerfile>
+    <innerfile refid="plotter_8py">plotter.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/"/>
+  </compounddef>
+</doxygen>

@@ -18,6 +18,7 @@
 
 """ Deal with webpages. """
 
+import re
 import random
 import socket
 import time
@@ -65,6 +66,26 @@ CHROME_USER_AGENT = [
     "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.71 Safari/537.36",
     "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
 ]
+URL_VALID_REGEX = re.compile(
+    r"^(?:http|ftp)s?://"  # http:// or https://
+    r"(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+(?:[A-Z]{2,6}\.?|[A-Z0-9-]{2,}\.?)|"  # domain...
+    r"localhost|"  # localhost...
+    r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"  # ...or ip
+    r"(?::\d+)?"  # optional port
+    r"(?:/?|[/?]\S+)$",
+    re.IGNORECASE
+)
+
+
+def is_url(candidate_url):
+    """
+    :param candidate_url: str
+        Possible url to check for url
+    :return: bool
+        True iff candidate is a valid url
+    """
+    
+    return re.match(URL_VALID_REGEX, candidate_url)
 
 
 class Webpage(object):
@@ -95,14 +116,14 @@ class Webpage(object):
 
         parsed = raw_url
 
-        if not raw_url.startswith('http://') and not raw_url.startswith('https://'):  # if url is like www.yahoo.com
-            parsed = 'http://' + parsed
-        elif raw_url.startswith('https://'):
+        if not raw_url.startswith("http://") and not raw_url.startswith("https://"):  # if url is like www.yahoo.com
+            parsed = "http://" + parsed
+        elif raw_url.startswith("https://"):
             parsed = parsed[8:]
-            parsed = 'http://' + parsed
+            parsed = "http://" + parsed
 
-        index_hash = parsed.rfind('#')  # remove trailing #
-        index_slash = parsed.rfind('/')
+        index_hash = parsed.rfind("#")  # remove trailing #
+        index_slash = parsed.rfind("/")
         if index_hash > index_slash:
             parsed = parsed[0: index_hash]
 
@@ -162,9 +183,9 @@ class Webpage(object):
                 soup = BeautifulSoup(self.source)  # parse source
                 out_links = []
 
-                for tag in soup.findAll(['a', 'link'], href=True):
-                    tag['href'] = urljoin(self.url, tag['href'])
-                    out_links.append(tag['href'])
+                for tag in soup.findAll(["a", "link"], href=True):
+                    tag["href"] = urljoin(self.url, tag["href"])
+                    out_links.append(tag["href"])
 
                 return sorted(out_links)  # sort array
             except:

@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classhal_1_1profile_1_1performance_1_1_eight_queen_test" kind="class" language="Python" prot="public">
+    <compoundname>hal::profile::performance::EightQueenTest</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">object</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classhal_1_1profile_1_1performance_1_1_eight_queen_test_1afefe08b8ae5a8a787f867d97cc2d6ad4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>hal.profile.performance.EightQueenTest::size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/profile/performance.py" line="35" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/profile/performance.py" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classhal_1_1profile_1_1performance_1_1_eight_queen_test_1aff4c0640adbaf044ee1a2f1d20480647" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.profile.performance.EightQueenTest.__init__</definition>
+        <argsstring>(self, size)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>size</type>
+          <defname>size</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/profile/performance.py" line="33" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/profile/performance.py" bodystart="33" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1profile_1_1performance_1_1_eight_queen_test_1a0f340ce684acbecc0ecec304907852c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.profile.performance.EightQueenTest.run</definition>
+        <argsstring>(self)</argsstring>
+        <name>run</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/profile/performance.py" line="66" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/profile/performance.py" bodystart="66" bodyend="94"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classhal_1_1profile_1_1performance_1_1_eight_queen_test_1a981be709c0e10f0098a8c58af1929746" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.profile.performance.EightQueenTest.welcome</definition>
+        <argsstring>()</argsstring>
+        <name>welcome</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:return: introduce script </verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/profile/performance.py" line="38" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/profile/performance.py" bodystart="38" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1profile_1_1performance_1_1_eight_queen_test_1a570aa1a773c9d24cca31e6a42e852fd4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.profile.performance.EightQueenTest.introduction</definition>
+        <argsstring>()</argsstring>
+        <name>introduction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:return: introduce 8 queen problem </verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/profile/performance.py" line="51" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/profile/performance.py" bodystart="51" bodyend="65"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>test CPU by solving eight-queen problem </verbatim> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="176">
+        <label>hal.profile.performance.EightQueenTest</label>
+        <link refid="classhal_1_1profile_1_1performance_1_1_eight_queen_test"/>
+        <childnode refid="177" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="177">
+        <label>object</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="178">
+        <label>hal.profile.performance.EightQueenTest</label>
+        <link refid="classhal_1_1profile_1_1performance_1_1_eight_queen_test"/>
+        <childnode refid="179" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="179">
+        <label>object</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/stefano/Coding/Python/projects/pyhal/hal/profile/performance.py" line="30" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/profile/performance.py" bodystart="30" bodyend="94"/>
+    <listofallmembers>
+      <member refid="classhal_1_1profile_1_1performance_1_1_eight_queen_test_1aff4c0640adbaf044ee1a2f1d20480647" prot="public" virt="non-virtual"><scope>hal::profile::performance::EightQueenTest</scope><name>__init__</name></member>
+      <member refid="classhal_1_1profile_1_1performance_1_1_eight_queen_test_1a570aa1a773c9d24cca31e6a42e852fd4" prot="public" virt="non-virtual"><scope>hal::profile::performance::EightQueenTest</scope><name>introduction</name></member>
+      <member refid="classhal_1_1profile_1_1performance_1_1_eight_queen_test_1a0f340ce684acbecc0ecec304907852c3" prot="public" virt="non-virtual"><scope>hal::profile::performance::EightQueenTest</scope><name>run</name></member>
+      <member refid="classhal_1_1profile_1_1performance_1_1_eight_queen_test_1afefe08b8ae5a8a787f867d97cc2d6ad4" prot="public" virt="non-virtual"><scope>hal::profile::performance::EightQueenTest</scope><name>size</name></member>
+      <member refid="classhal_1_1profile_1_1performance_1_1_eight_queen_test_1a981be709c0e10f0098a8c58af1929746" prot="public" virt="non-virtual"><scope>hal::profile::performance::EightQueenTest</scope><name>welcome</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

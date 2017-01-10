@@ -1,0 +1,236 @@
+.TH "hal.files.models.FileSystem" 3 "Tue Jan 10 2017" "Version 4.3" "PyHal" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+hal.files.models.FileSystem \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.PP
+Inherited by \fBhal\&.files\&.models\&.Directory\fP, \fBhal\&.files\&.models\&.Document\fP, and \fBhal\&.files\&.models\&.MP3Song\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP (self, path)"
+.br
+.ti -1c
+.RI "def \fBis_archive_mac\fP (self)"
+.br
+.ti -1c
+.RI "def \fBis_russian\fP (self)"
+.br
+.ti -1c
+.RI "def \fBtrash\fP (self)"
+.br
+.ti -1c
+.RI "def \fBrename\fP (self, new_path)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBfix_raw_path\fP (path)"
+.br
+.ti -1c
+.RI "def \fBremove_year\fP (name)"
+.br
+.ti -1c
+.RI "def \fBremove_brackets\fP (name)"
+.br
+.ti -1c
+.RI "def \fBextract_name_max_chars\fP (name, max_chars=64, blank=' ')"
+.br
+.ti -1c
+.RI "def \fBprettify\fP (name, bad_chars=BAD_CHARS, r=' ')"
+.br
+.ti -1c
+.RI "def \fBls_dir\fP (path, include_hidden=False)"
+.br
+.ti -1c
+.RI "def \fBls_recurse\fP (path, include_hidden=False)"
+.br
+.ti -1c
+.RI "def \fBls\fP (path, recurse, include_hidden=False)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBpath\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def hal\&.files\&.models\&.FileSystem\&.__init__ ( self,  path)"
+
+.PP
+.nf
+:param path: string
+    Path to file
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "def hal\&.files\&.models\&.FileSystem\&.extract_name_max_chars ( name,  max_chars = \fC64\fP,  blank = \fC' '\fP)\fC [static]\fP"
+
+.PP
+.nf
+:param name: string
+    Name to edit
+:param max_chars: int
+    Maximum chars of new name
+:param blank: string
+    Char that represents the blank between words.
+:return: string
+    Name edited to contain at most max_chars (truncate to nearest word)
+
+.fi
+.PP
+ 
+.SS "def hal\&.files\&.models\&.FileSystem\&.fix_raw_path ( path)\fC [static]\fP"
+
+.PP
+.nf
+:param path: string
+    Path to fix
+:return: string
+    Right path
+
+.fi
+.PP
+ 
+.SS "def hal\&.files\&.models\&.FileSystem\&.is_archive_mac ( self)"
+
+.PP
+.nf
+:return: True iff document is an MACOSX archive.
+
+.fi
+.PP
+ 
+.SS "def hal\&.files\&.models\&.FileSystem\&.is_russian ( self)"
+
+.PP
+.nf
+:return: True iff document has a russian name.
+
+.fi
+.PP
+ 
+.SS "def hal\&.files\&.models\&.FileSystem\&.ls ( path,  recurse,  include_hidden = \fCFalse\fP)\fC [static]\fP"
+
+.PP
+.nf
+:param path: string
+    Path to directory to get list of files and folders
+:param recurse: bool
+    Whether to recurse into subdirectories or not.
+:param include_hidden: bool
+    Whether to include hidden files in list.
+:return: list
+    List of paths in given directory recursively.
+
+.fi
+.PP
+ 
+.SS "def hal\&.files\&.models\&.FileSystem\&.ls_dir ( path,  include_hidden = \fCFalse\fP)\fC [static]\fP"
+
+.PP
+.nf
+:param path: string
+    Path to directory to get list of files and folders
+:param include_hidden: bool
+    Whether to include hidden files in list.
+:return: list
+    List of paths in given directory.
+
+.fi
+.PP
+ 
+.SS "def hal\&.files\&.models\&.FileSystem\&.ls_recurse ( path,  include_hidden = \fCFalse\fP)\fC [static]\fP"
+
+.PP
+.nf
+:param path: string
+    Path to directory to get list of files and folders
+:param include_hidden: bool
+    Whether to include hidden files in list.
+:return: list
+    List of paths in given directory recursively.
+
+.fi
+.PP
+ 
+.SS "def hal\&.files\&.models\&.FileSystem\&.prettify ( name,  bad_chars = \fCBAD_CHARS\fP,  r = \fC' '\fP)\fC [static]\fP"
+
+.PP
+.nf
+:param name: string
+    Name to edit
+:param bad_chars: []
+    List of bad strings to remove
+:param r: string
+    Default blanks in name.
+:return: string
+    Prettier name from given one: replace bad chars with good ones.
+
+.fi
+.PP
+ 
+.SS "def hal\&.files\&.models\&.FileSystem\&.remove_brackets ( name)\fC [static]\fP"
+
+.PP
+.nf
+:param name: string
+    Name to edit
+:return: string
+    Given string bu with no barckets.
+
+.fi
+.PP
+ 
+.SS "def hal\&.files\&.models\&.FileSystem\&.remove_year ( name)\fC [static]\fP"
+
+.PP
+.nf
+:param name: string
+    Name to edit
+:return: string
+    Given string bu with no years.
+
+.fi
+.PP
+ 
+.SS "def hal\&.files\&.models\&.FileSystem\&.rename ( self,  new_path)"
+
+.PP
+.nf
+:param new_path: string
+    New path to use
+:return: void
+    Rename to new path
+
+.fi
+.PP
+ 
+.SS "def hal\&.files\&.models\&.FileSystem\&.trash ( self)"
+
+.PP
+.nf
+:return: void
+    Trash given file/folder
+
+.fi
+.PP
+ 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PyHal from the source code\&.

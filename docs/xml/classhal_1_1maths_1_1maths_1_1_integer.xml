@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classhal_1_1maths_1_1maths_1_1_integer" kind="class" language="Python" prot="public">
+    <compoundname>hal::maths::maths::Integer</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">object</basecompoundref>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classhal_1_1maths_1_1maths_1_1_integer_1a96c3647159f9eb8631f519bd088b8eda" prot="public" static="yes" mutable="no">
+        <type>list</type>
+        <definition>list hal.maths.maths.Integer::LOW_PRIMES</definition>
+        <argsstring></argsstring>
+        <name>LOW_PRIMES</name>
+        <initializer>= [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101,
+                  103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199,
+                  211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317,
+                  331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421, 431, 433, 439, 443,
+                  449, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509, 521, 523, 541, 547, 557, 563, 569, 571, 577,
+                  587, 593, 599, 601, 607, 613, 617, 619, 631, 641, 643, 647, 653, 659, 661, 673, 677, 683, 691, 701,
+                  709, 719, 727, 733, 739, 743, 751, 757, 761, 769, 773, 787, 797, 809, 811, 821, 823, 827, 829, 839,
+                  853, 857, 859, 863, 877, 881, 883, 887, 907, 911, 919, 929, 937, 941, 947, 953, 967, 971, 977, 983,
+                  991, 997]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/maths.py" line="26" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/maths.py" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classhal_1_1maths_1_1maths_1_1_integer_1aef52e227e80e9dc90779d0d8f202dbc6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>hal.maths.maths.Integer::to_int</definition>
+        <argsstring></argsstring>
+        <name>to_int</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/maths.py" line="37" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/maths.py" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classhal_1_1maths_1_1maths_1_1_integer_1a18958bf743811b233e9524cbaf355138" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>hal.maths.maths.Integer::to_string</definition>
+        <argsstring></argsstring>
+        <name>to_string</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/maths.py" line="38" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/maths.py" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classhal_1_1maths_1_1maths_1_1_integer_1a1cc838d9ba075f9237ca4079468bef4c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>hal.maths.maths.Integer::is_pprime</definition>
+        <argsstring></argsstring>
+        <name>is_pprime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/maths.py" line="39" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/maths.py" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classhal_1_1maths_1_1maths_1_1_integer_1ab02daf8f7df66b9739514805740d2e29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.maths.Integer.__init__</definition>
+        <argsstring>(self, string)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>string</type>
+          <defname>string</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/maths.py" line="36" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/maths.py" bodystart="36" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1maths_1_1maths_1_1_integer_1a813e392f81a6c01f87a9ef8d1c8c1250" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.maths.Integer.is_probably_prime</definition>
+        <argsstring>(self)</argsstring>
+        <name>is_probably_prime</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:return: test with miller-rabin
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/maths.py" line="41" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/maths.py" bodystart="41" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1maths_1_1maths_1_1_integer_1a3cd7d69cc1e8bb8271e61bbeba6d2a50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.maths.Integer.test_miller_rabin</definition>
+        <argsstring>(self, precision)</argsstring>
+        <name>test_miller_rabin</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>precision</type>
+          <defname>precision</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param precision: number of rounds to perform (higher -&gt; better precision)
+:return: True iff probably prime
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/maths.py" line="75" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/maths.py" bodystart="75" bodyend="123"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="200">
+        <label>object</label>
+      </node>
+      <node id="199">
+        <label>hal.maths.maths.Integer</label>
+        <link refid="classhal_1_1maths_1_1maths_1_1_integer"/>
+        <childnode refid="200" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="202">
+        <label>object</label>
+      </node>
+      <node id="201">
+        <label>hal.maths.maths.Integer</label>
+        <link refid="classhal_1_1maths_1_1maths_1_1_integer"/>
+        <childnode refid="202" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/maths.py" line="25" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/maths.py" bodystart="25" bodyend="124"/>
+    <listofallmembers>
+      <member refid="classhal_1_1maths_1_1maths_1_1_integer_1ab02daf8f7df66b9739514805740d2e29" prot="public" virt="non-virtual"><scope>hal::maths::maths::Integer</scope><name>__init__</name></member>
+      <member refid="classhal_1_1maths_1_1maths_1_1_integer_1a1cc838d9ba075f9237ca4079468bef4c" prot="public" virt="non-virtual"><scope>hal::maths::maths::Integer</scope><name>is_pprime</name></member>
+      <member refid="classhal_1_1maths_1_1maths_1_1_integer_1a813e392f81a6c01f87a9ef8d1c8c1250" prot="public" virt="non-virtual"><scope>hal::maths::maths::Integer</scope><name>is_probably_prime</name></member>
+      <member refid="classhal_1_1maths_1_1maths_1_1_integer_1a96c3647159f9eb8631f519bd088b8eda" prot="public" virt="non-virtual"><scope>hal::maths::maths::Integer</scope><name>LOW_PRIMES</name></member>
+      <member refid="classhal_1_1maths_1_1maths_1_1_integer_1a3cd7d69cc1e8bb8271e61bbeba6d2a50" prot="public" virt="non-virtual"><scope>hal::maths::maths::Integer</scope><name>test_miller_rabin</name></member>
+      <member refid="classhal_1_1maths_1_1maths_1_1_integer_1aef52e227e80e9dc90779d0d8f202dbc6" prot="public" virt="non-virtual"><scope>hal::maths::maths::Integer</scope><name>to_int</name></member>
+      <member refid="classhal_1_1maths_1_1maths_1_1_integer_1a18958bf743811b233e9524cbaf355138" prot="public" virt="non-virtual"><scope>hal::maths::maths::Integer</scope><name>to_string</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classhal_1_1maths_1_1crypt_1_1_b_l_o_w_f_i_s_h" kind="class" language="Python" prot="public">
+    <compoundname>hal::maths::crypt::BLOWFISH</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">object</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classhal_1_1maths_1_1crypt_1_1_b_l_o_w_f_i_s_h_1a91433d504d000422abfce6ad4df9fed5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>hal.maths.crypt.BLOWFISH::plain</definition>
+        <argsstring></argsstring>
+        <name>plain</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="568" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="568" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classhal_1_1maths_1_1crypt_1_1_b_l_o_w_f_i_s_h_1a6c4537a3fff285916787aea66f8286b6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>hal.maths.crypt.BLOWFISH::key</definition>
+        <argsstring></argsstring>
+        <name>key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="569" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="569" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classhal_1_1maths_1_1crypt_1_1_b_l_o_w_f_i_s_h_1a315f4ff71730a1c60b97324e41475e48" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>hal.maths.crypt.BLOWFISH::hashed</definition>
+        <argsstring></argsstring>
+        <name>hashed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="570" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="570" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classhal_1_1maths_1_1crypt_1_1_b_l_o_w_f_i_s_h_1a0428f1f9b864c84c1911d61235e739fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.crypt.BLOWFISH.__init__</definition>
+        <argsstring>(self, string, key)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>string</type>
+          <defname>string</defname>
+        </param>
+        <param>
+          <type>key</type>
+          <defname>key</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="566" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="566" bodyend="571"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1maths_1_1crypt_1_1_b_l_o_w_f_i_s_h_1a7581e9c15acfe4cb64c88c215193f65a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.crypt.BLOWFISH.hash</definition>
+        <argsstring>(self)</argsstring>
+        <name>hash</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:return: hash plaintext
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="572" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="572" bodyend="586"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>blowfish hash </verbatim> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="139">
+        <label>object</label>
+      </node>
+      <node id="138">
+        <label>hal.maths.crypt.BLOWFISH</label>
+        <link refid="classhal_1_1maths_1_1crypt_1_1_b_l_o_w_f_i_s_h"/>
+        <childnode refid="139" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="141">
+        <label>object</label>
+      </node>
+      <node id="140">
+        <label>hal.maths.crypt.BLOWFISH</label>
+        <link refid="classhal_1_1maths_1_1crypt_1_1_b_l_o_w_f_i_s_h"/>
+        <childnode refid="141" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="563" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="563" bodyend="587"/>
+    <listofallmembers>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_b_l_o_w_f_i_s_h_1a0428f1f9b864c84c1911d61235e739fc" prot="public" virt="non-virtual"><scope>hal::maths::crypt::BLOWFISH</scope><name>__init__</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_b_l_o_w_f_i_s_h_1a7581e9c15acfe4cb64c88c215193f65a" prot="public" virt="non-virtual"><scope>hal::maths::crypt::BLOWFISH</scope><name>hash</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_b_l_o_w_f_i_s_h_1a315f4ff71730a1c60b97324e41475e48" prot="public" virt="non-virtual"><scope>hal::maths::crypt::BLOWFISH</scope><name>hashed</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_b_l_o_w_f_i_s_h_1a6c4537a3fff285916787aea66f8286b6" prot="public" virt="non-virtual"><scope>hal::maths::crypt::BLOWFISH</scope><name>key</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_b_l_o_w_f_i_s_h_1a91433d504d000422abfce6ad4df9fed5" prot="public" virt="non-virtual"><scope>hal::maths::crypt::BLOWFISH</scope><name>plain</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

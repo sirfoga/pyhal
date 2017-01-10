@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespacehal_1_1ml_1_1utils" kind="namespace" language="Python">
+    <compoundname>hal::ml::utils</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="utils_8py_1a0e93507cf2a4b9fe511fff7d0018feec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.ml.utils.precision</definition>
+        <argsstring>(matrix)</argsstring>
+        <name>precision</name>
+        <param>
+          <type>matrix</type>
+          <defname>matrix</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Calcualtes accuarcy on database
+
+    :param matrix: 2x2 matrix that looks like
+    True Positive  - False Negative
+         |         -       |
+    False Positive - True Negative
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/ml/utils.py" line="26" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/ml/utils.py" bodystart="26" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="utils_8py_1a7365ffc0ed5ba6fc0a14f6fdbb75e53e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.ml.utils.recall</definition>
+        <argsstring>(matrix)</argsstring>
+        <name>recall</name>
+        <param>
+          <type>matrix</type>
+          <defname>matrix</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Calcualtes recall on database
+
+    :param matrix: 2x2 matrix that looks like
+    True Positive  - False Negative
+         |         -       |
+    False Positive - True Negative
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/ml/utils.py" line="44" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/ml/utils.py" bodystart="44" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="utils_8py_1a010bdadf4f82df34e9cda7c082d680ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.ml.utils.tn_rate</definition>
+        <argsstring>(matrix)</argsstring>
+        <name>tn_rate</name>
+        <param>
+          <type>matrix</type>
+          <defname>matrix</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Calcualtes true negative rate on database
+
+    :param matrix: 2x2 matrix that looks like
+    True Positive  - False Negative
+         |         -       |
+    False Positive - True Negative
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/ml/utils.py" line="62" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/ml/utils.py" bodystart="62" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="utils_8py_1afcfa5f0a4fd9b85092eb0c5f667ade6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.ml.utils.accuracy</definition>
+        <argsstring>(matrix)</argsstring>
+        <name>accuracy</name>
+        <param>
+          <type>matrix</type>
+          <defname>matrix</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Calcualtes recall on database
+
+    :param matrix: 2x2 matrix that looks like
+    True Positive  - False Negative
+         |         -       |
+    False Positive - True Negative
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/ml/utils.py" line="80" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/ml/utils.py" bodystart="80" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="utils_8py_1a5de49ea0e46fedfb6babf844856fd466" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.ml.utils.f1_score</definition>
+        <argsstring>(matrix)</argsstring>
+        <name>f1_score</name>
+        <param>
+          <type>matrix</type>
+          <defname>matrix</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Calcualtes f1 score on database
+
+    :param matrix: 2x2 matrix that looks like
+    True Positive  - False Negative
+         |         -       |
+    False Positive - True Negative
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/ml/utils.py" line="100" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/ml/utils.py" bodystart="100" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="utils_8py_1a6bb03edb2fb8db3332eac79256301005" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.ml.utils.pearson</definition>
+        <argsstring>(x, y)</argsstring>
+        <name>pearson</name>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <param>
+          <type>y</type>
+          <defname>y</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Pearson coefficient of arrays</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/ml/utils.py" line="118" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/ml/utils.py" bodystart="118" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="utils_8py_1a4f09877878cf20248cd8f303e94312cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.ml.utils.show_correlation_matrix</definition>
+        <argsstring>(feature_list, correlation_matrix)</argsstring>
+        <name>show_correlation_matrix</name>
+        <param>
+          <type>feature_list</type>
+          <defname>feature_list</defname>
+        </param>
+        <param>
+          <type>correlation_matrix</type>
+          <defname>correlation_matrix</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Show the given correlation matrix as image </verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/ml/utils.py" line="123" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/ml/utils.py" bodystart="123" bodyend="137"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/stefano/Coding/Python/projects/pyhal/hal/ml/utils.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

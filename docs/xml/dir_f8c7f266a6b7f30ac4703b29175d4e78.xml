@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_f8c7f266a6b7f30ac4703b29175d4e78" kind="dir">
+    <compoundname>/home/stefano/Coding/Python/projects/pyhal/hal/internet</compoundname>
+    <innerfile refid="internet_2____init_____8py">__init__.py</innerfile>
+    <innerfile refid="engines_8py">engines.py</innerfile>
+    <innerfile refid="internet_2parser_8py">parser.py</innerfile>
+    <innerfile refid="selenium_8py">selenium.py</innerfile>
+    <innerfile refid="web_8py">web.py</innerfile>
+    <innerfile refid="youtube_8py">youtube.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/stefano/Coding/Python/projects/pyhal/hal/internet/"/>
+  </compounddef>
+</doxygen>

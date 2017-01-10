@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespacehal_1_1maths_1_1plotter" kind="namespace" language="Python">
+    <compoundname>hal::maths::plotter</compoundname>
+    <innerclass refid="classhal_1_1maths_1_1plotter_1_1_plot2d" prot="public">hal::maths::plotter::Plot2d</innerclass>
+    <innerclass refid="classhal_1_1maths_1_1plotter_1_1_plot3d" prot="public">hal::maths::plotter::Plot3d</innerclass>
+    <innerclass refid="classhal_1_1maths_1_1plotter_1_1_plot4d" prot="public">hal::maths::plotter::Plot4d</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/plotter.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

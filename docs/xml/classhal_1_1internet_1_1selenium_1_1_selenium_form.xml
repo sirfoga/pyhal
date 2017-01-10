@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classhal_1_1internet_1_1selenium_1_1_selenium_form" kind="class" language="Python" prot="public">
+    <compoundname>hal::internet::selenium::SeleniumForm</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classhal_1_1internet_1_1selenium_1_1_selenium_form_1a9523968c9daa9a96f9a7b7ddd358904b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.internet.selenium.SeleniumForm.fill_form_field</definition>
+        <argsstring>(browser, field_name, field_value)</argsstring>
+        <name>fill_form_field</name>
+        <param>
+          <type>browser</type>
+          <defname>browser</defname>
+        </param>
+        <param>
+          <type>field_name</type>
+          <defname>field_name</defname>
+        </param>
+        <param>
+          <type>field_value</type>
+          <defname>field_value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param browser: webdriver
+    Browser to use to submit form.
+:param field_name :string
+    Name of field to fill
+:param field_value: string
+    Value with which to fill field.
+:return: void
+    Fill given field wiht given value.
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/internet/selenium.py" line="26" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/internet/selenium.py" bodystart="26" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1internet_1_1selenium_1_1_selenium_form_1aa73bb0384f074f2d1b07f78c7bfb6867" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.internet.selenium.SeleniumForm.fill_login_form</definition>
+        <argsstring>(browser, username, username_field, userpassword, userpassword_field)</argsstring>
+        <name>fill_login_form</name>
+        <param>
+          <type>browser</type>
+          <defname>browser</defname>
+        </param>
+        <param>
+          <type>username</type>
+          <defname>username</defname>
+        </param>
+        <param>
+          <type>username_field</type>
+          <defname>username_field</defname>
+        </param>
+        <param>
+          <type>userpassword</type>
+          <defname>userpassword</defname>
+        </param>
+        <param>
+          <type>userpassword_field</type>
+          <defname>userpassword_field</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param browser: webdriver
+    Browser to use to submit form.
+:param username: string
+    Username of user to login.
+:param username_field: string
+    Name of field to fill with username.
+:param userpassword: string
+    Password of user to login.
+:param userpassword_field: string
+    Name of field to fill with userpassword.
+:return: void
+    Form filled with given information.
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/internet/selenium.py" line="42" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/internet/selenium.py" bodystart="42" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1internet_1_1selenium_1_1_selenium_form_1a7648cf31df2f596b9af4f9b9583f2bdb" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.internet.selenium.SeleniumForm.submit_form</definition>
+        <argsstring>(browser, button_name)</argsstring>
+        <name>submit_form</name>
+        <param>
+          <type>browser</type>
+          <defname>browser</defname>
+        </param>
+        <param>
+          <type>button_name</type>
+          <defname>button_name</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param browser: webdriver
+    Browser to use to submit form.
+:param button_name: string
+    Name of button to press to submit form
+:return: void
+    Submit form.
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/internet/selenium.py" line="62" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/internet/selenium.py" bodystart="62" bodyend="73"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>Great and simple static methods to deal with selenium webdrivers. </verbatim> </para>    </detaileddescription>
+    <location file="/home/stefano/Coding/Python/projects/pyhal/hal/internet/selenium.py" line="22" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/internet/selenium.py" bodystart="22" bodyend="73"/>
+    <listofallmembers>
+      <member refid="classhal_1_1internet_1_1selenium_1_1_selenium_form_1a9523968c9daa9a96f9a7b7ddd358904b" prot="public" virt="non-virtual"><scope>hal::internet::selenium::SeleniumForm</scope><name>fill_form_field</name></member>
+      <member refid="classhal_1_1internet_1_1selenium_1_1_selenium_form_1aa73bb0384f074f2d1b07f78c7bfb6867" prot="public" virt="non-virtual"><scope>hal::internet::selenium::SeleniumForm</scope><name>fill_login_form</name></member>
+      <member refid="classhal_1_1internet_1_1selenium_1_1_selenium_form_1a7648cf31df2f596b9af4f9b9583f2bdb" prot="public" virt="non-virtual"><scope>hal::internet::selenium::SeleniumForm</scope><name>submit_form</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

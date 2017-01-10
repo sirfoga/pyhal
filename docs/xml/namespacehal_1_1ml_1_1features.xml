@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespacehal_1_1ml_1_1features" kind="namespace" language="Python">
+    <compoundname>hal::ml::features</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="features_8py_1a4bcdf5682e2397d6c7c61816027e1df1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.ml.features.select_k_best</definition>
+        <argsstring>(x, y, k)</argsstring>
+        <name>select_k_best</name>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <param>
+          <type>y</type>
+          <defname>y</defname>
+        </param>
+        <param>
+          <type>k</type>
+          <defname>k</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>select k best features in dataset </verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/ml/features.py" line="27" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/ml/features.py" bodystart="27" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="features_8py_1a7a9b93d398daf8eb9e112b3a7fa7407e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.ml.features.get_best_features</definition>
+        <argsstring>(x, y)</argsstring>
+        <name>get_best_features</name>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <param>
+          <type>y</type>
+          <defname>y</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>finds the optimal number of features </verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/ml/features.py" line="34" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/ml/features.py" bodystart="34" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="features_8py_1a91157eb0f100e6721f70158f21d987d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.ml.features.get_features</definition>
+        <argsstring>(x, y, n_features_to_select)</argsstring>
+        <name>get_features</name>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <param>
+          <type>y</type>
+          <defname>y</defname>
+        </param>
+        <param>
+          <type>n_features_to_select</type>
+          <defname>n_features_to_select</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>finds the optimal features </verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/ml/features.py" line="43" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/ml/features.py" bodystart="43" bodyend="50"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/stefano/Coding/Python/projects/pyhal/hal/ml/features.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

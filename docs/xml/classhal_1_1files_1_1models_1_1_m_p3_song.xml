@@ -1,0 +1,225 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classhal_1_1files_1_1models_1_1_m_p3_song" kind="class" language="Python" prot="public">
+    <compoundname>hal::files::models::MP3Song</compoundname>
+    <basecompoundref refid="classhal_1_1files_1_1models_1_1_file_system" prot="public" virt="non-virtual">hal.files.models.FileSystem</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classhal_1_1files_1_1models_1_1_m_p3_song_1a767b9af9e2e01ce942a44cfa7cda2653" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>hal.files.models.MP3Song::song</definition>
+        <argsstring></argsstring>
+        <name>song</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="447" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="447" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classhal_1_1files_1_1models_1_1_m_p3_song_1a57a2d42a3326e55f553c1a79678dd6b5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>hal.files.models.MP3Song::tags</definition>
+        <argsstring></argsstring>
+        <name>tags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="448" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="448" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classhal_1_1files_1_1models_1_1_m_p3_song_1a4f37efc2f666bf142bb1ed2370244fef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.files.models.MP3Song.__init__</definition>
+        <argsstring>(self, path)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="444" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="444" bodyend="449"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1files_1_1models_1_1_m_p3_song_1ae4f958b7afa7212cff8470163854a0ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.files.models.MP3Song.set_name</definition>
+        <argsstring>(self, name)</argsstring>
+        <name>set_name</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="450" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="450" bodyend="453"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1files_1_1models_1_1_m_p3_song_1abecb2c34045dbd2133e898114198d518" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.files.models.MP3Song.set_artist</definition>
+        <argsstring>(self, artist)</argsstring>
+        <name>set_artist</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>artist</type>
+          <defname>artist</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="454" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="454" bodyend="457"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1files_1_1models_1_1_m_p3_song_1afda62b2b1519b7bc65e8cd98d8f2e2bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.files.models.MP3Song.set_album</definition>
+        <argsstring>(self, album)</argsstring>
+        <name>set_album</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>album</type>
+          <defname>album</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="458" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="458" bodyend="461"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1files_1_1models_1_1_m_p3_song_1a6b456dde38763b13fb10266b7910b63f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.files.models.MP3Song.set_nr_track</definition>
+        <argsstring>(self, nr_track)</argsstring>
+        <name>set_nr_track</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>nr_track</type>
+          <defname>nr_track</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="462" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="462" bodyend="465"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1files_1_1models_1_1_m_p3_song_1ac14c40460b53a47979a58864409a366c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.files.models.MP3Song.set_year</definition>
+        <argsstring>(self, year)</argsstring>
+        <name>set_year</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>year</type>
+          <defname>year</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="466" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="466" bodyend="469"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>mp3 song </verbatim> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="212">
+        <label>hal.files.models.FileSystem</label>
+        <link refid="classhal_1_1files_1_1models_1_1_file_system"/>
+        <childnode refid="213" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="213">
+        <label>object</label>
+      </node>
+      <node id="211">
+        <label>hal.files.models.MP3Song</label>
+        <link refid="classhal_1_1files_1_1models_1_1_m_p3_song"/>
+        <childnode refid="212" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="215">
+        <label>hal.files.models.FileSystem</label>
+        <link refid="classhal_1_1files_1_1models_1_1_file_system"/>
+        <childnode refid="216" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="216">
+        <label>object</label>
+      </node>
+      <node id="214">
+        <label>hal.files.models.MP3Song</label>
+        <link refid="classhal_1_1files_1_1models_1_1_m_p3_song"/>
+        <childnode refid="215" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="441" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="441" bodyend="469"/>
+    <listofallmembers>
+      <member refid="classhal_1_1files_1_1models_1_1_m_p3_song_1a4f37efc2f666bf142bb1ed2370244fef" prot="public" virt="non-virtual"><scope>hal::files::models::MP3Song</scope><name>__init__</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1a809f1abc2282567f89f809a510e7d665" prot="public" virt="non-virtual"><scope>hal::files::models::MP3Song</scope><name>extract_name_max_chars</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1a7fe20d282e84a1ad292f7e04de6d335d" prot="public" virt="non-virtual"><scope>hal::files::models::MP3Song</scope><name>fix_raw_path</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1a7b176e08ad6531bcc9caa04c44df1944" prot="public" virt="non-virtual"><scope>hal::files::models::MP3Song</scope><name>is_archive_mac</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1a073400419be263c865c0971136d2898b" prot="public" virt="non-virtual"><scope>hal::files::models::MP3Song</scope><name>is_russian</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1aaf2fadb1bb388e4b565da0db6823f4f5" prot="public" virt="non-virtual"><scope>hal::files::models::MP3Song</scope><name>ls</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1a60f66aeec22d00b67067f3527d06db74" prot="public" virt="non-virtual"><scope>hal::files::models::MP3Song</scope><name>ls_dir</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1a2df7cb545b239ccb239b71f808ce5808" prot="public" virt="non-virtual"><scope>hal::files::models::MP3Song</scope><name>ls_recurse</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1a261fa17468126979cedf206b69a1d071" prot="public" virt="non-virtual"><scope>hal::files::models::MP3Song</scope><name>path</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1a81206c773e9176fb2c0537a731381b7a" prot="public" virt="non-virtual"><scope>hal::files::models::MP3Song</scope><name>prettify</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1ab97d14ce121829510e40c3f052c176df" prot="public" virt="non-virtual"><scope>hal::files::models::MP3Song</scope><name>remove_brackets</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1af473fc3f0450ffe57c2484fd76d3a40d" prot="public" virt="non-virtual"><scope>hal::files::models::MP3Song</scope><name>remove_year</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1a3388d434e8ae2be2f2b7b9a227ac418e" prot="public" virt="non-virtual"><scope>hal::files::models::MP3Song</scope><name>rename</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_m_p3_song_1afda62b2b1519b7bc65e8cd98d8f2e2bf" prot="public" virt="non-virtual"><scope>hal::files::models::MP3Song</scope><name>set_album</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_m_p3_song_1abecb2c34045dbd2133e898114198d518" prot="public" virt="non-virtual"><scope>hal::files::models::MP3Song</scope><name>set_artist</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_m_p3_song_1ae4f958b7afa7212cff8470163854a0ed" prot="public" virt="non-virtual"><scope>hal::files::models::MP3Song</scope><name>set_name</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_m_p3_song_1a6b456dde38763b13fb10266b7910b63f" prot="public" virt="non-virtual"><scope>hal::files::models::MP3Song</scope><name>set_nr_track</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_m_p3_song_1ac14c40460b53a47979a58864409a366c" prot="public" virt="non-virtual"><scope>hal::files::models::MP3Song</scope><name>set_year</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_m_p3_song_1a767b9af9e2e01ce942a44cfa7cda2653" prot="public" virt="non-virtual"><scope>hal::files::models::MP3Song</scope><name>song</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_m_p3_song_1a57a2d42a3326e55f553c1a79678dd6b5" prot="public" virt="non-virtual"><scope>hal::files::models::MP3Song</scope><name>tags</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1a98912c19e86d13c67b0a9bb70682026c" prot="public" virt="non-virtual"><scope>hal::files::models::MP3Song</scope><name>trash</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

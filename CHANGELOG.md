@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 
 
+## 4.3.1.2
+### Added
+- url validator
+
 ## 4.3.1.1
 ### Fixed
 - now Webpage does NOT use TOR as default internet connection 

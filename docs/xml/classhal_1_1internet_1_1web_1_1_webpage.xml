@@ -1,0 +1,299 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classhal_1_1internet_1_1web_1_1_webpage" kind="class" language="Python" prot="public">
+    <compoundname>hal::internet::web::Webpage</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">object</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classhal_1_1internet_1_1web_1_1_webpage_1a9daf360debee3008329bcd28c0e578ed" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>hal.internet.web.Webpage::url</definition>
+        <argsstring></argsstring>
+        <name>url</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/internet/web.py" line="104" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/internet/web.py" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classhal_1_1internet_1_1web_1_1_webpage_1a0440d1bfe5d1a8e510d8ac3254731846" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>hal.internet.web.Webpage::domain</definition>
+        <argsstring></argsstring>
+        <name>domain</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/internet/web.py" line="105" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/internet/web.py" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classhal_1_1internet_1_1web_1_1_webpage_1a7320808ec3b5ad1a2b8f30dd10d50229" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>hal.internet.web.Webpage::using_tor</definition>
+        <argsstring></argsstring>
+        <name>using_tor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/internet/web.py" line="106" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/internet/web.py" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classhal_1_1internet_1_1web_1_1_webpage_1ae44cb4f2581c38185f08f1f9be1c7f1f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>hal.internet.web.Webpage::source</definition>
+        <argsstring></argsstring>
+        <name>source</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/internet/web.py" line="107" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/internet/web.py" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classhal_1_1internet_1_1web_1_1_webpage_1a03808ba06bc15af222b922960cf2232a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>hal.internet.web.Webpage::soup</definition>
+        <argsstring></argsstring>
+        <name>soup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/internet/web.py" line="108" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/internet/web.py" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classhal_1_1internet_1_1web_1_1_webpage_1abdd82419586ce1fab58d0d594a4780f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.internet.web.Webpage.__init__</definition>
+        <argsstring>(self, url, using_tor=False)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>url</type>
+          <defname>url</defname>
+        </param>
+        <param>
+          <type>using_tor</type>
+          <defname>using_tor</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param url: string
+    Url of webpage
+:param using_tor: bool
+    Whether using tor or not to fetch source page
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/internet/web.py" line="94" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/internet/web.py" bodystart="94" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1internet_1_1web_1_1_webpage_1a8a5f45d640b9a433fdd4ab4956141ed0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.internet.web.Webpage.get_scheme</definition>
+        <argsstring>(self)</argsstring>
+        <name>get_scheme</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:return: get scheme (HTTP, HTTPS, FTP ..) from given url
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/internet/web.py" line="132" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/internet/web.py" bodystart="132" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1internet_1_1web_1_1_webpage_1ad3059e24c2ea962b13944209e086b1c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.internet.web.Webpage.get_hostname</definition>
+        <argsstring>(self)</argsstring>
+        <name>get_hostname</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:return: extract hostname from given url
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/internet/web.py" line="139" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/internet/web.py" bodystart="139" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1internet_1_1web_1_1_webpage_1a1879c8695e4e1c7c0155d24100fbbbc0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.internet.web.Webpage.get_domain</definition>
+        <argsstring>(self)</argsstring>
+        <name>get_domain</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:return: get domain from given url
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/internet/web.py" line="146" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/internet/web.py" bodystart="146" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1internet_1_1web_1_1_webpage_1ad813eba8e41c06f110311ada3ae86f2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.internet.web.Webpage.get_html_source</definition>
+        <argsstring>(self, tor=False)</argsstring>
+        <name>get_html_source</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>tor</type>
+          <defname>tor</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:return: BeautifulSoup to parse
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/internet/web.py" line="153" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/internet/web.py" bodystart="153" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1internet_1_1web_1_1_webpage_1a73b639e5eaa4506a653c9a4792f7dead" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.internet.web.Webpage.get_links</definition>
+        <argsstring>(self, recall, timeout)</argsstring>
+        <name>get_links</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>recall</type>
+          <defname>recall</defname>
+        </param>
+        <param>
+          <type>timeout</type>
+          <defname>timeout</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param recall: max time to attempt to fetch url
+:param timeout: max time (s) to wait for web_page response
+:return: array of out_links
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/internet/web.py" line="174" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/internet/web.py" bodystart="174" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1internet_1_1web_1_1_webpage_1ae3904bbb1924178180ca32e922bbbeb5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.internet.web.Webpage.open_in_browser</definition>
+        <argsstring>(self, times)</argsstring>
+        <name>open_in_browser</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>times</type>
+          <defname>times</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param times: int
+    Times to open webpage in browser
+:return: void
+    Open a wendrive and go to webpage
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/internet/web.py" line="194" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/internet/web.py" bodystart="194" bodyend="205"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classhal_1_1internet_1_1web_1_1_webpage_1af6e3dcd4dbebe8e1b196fded24e4025e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.internet.web.Webpage.parse_url</definition>
+        <argsstring>(raw_url)</argsstring>
+        <name>parse_url</name>
+        <param>
+          <type>raw_url</type>
+          <defname>raw_url</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param raw_url: url to parse
+:return: parses correctly url
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/internet/web.py" line="111" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/internet/web.py" bodystart="111" bodyend="131"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>representation of URL (web page)</verbatim> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="248">
+        <label>hal.internet.web.Webpage</label>
+        <link refid="classhal_1_1internet_1_1web_1_1_webpage"/>
+        <childnode refid="249" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="249">
+        <label>object</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="250">
+        <label>hal.internet.web.Webpage</label>
+        <link refid="classhal_1_1internet_1_1web_1_1_webpage"/>
+        <childnode refid="251" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="251">
+        <label>object</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/stefano/Coding/Python/projects/pyhal/hal/internet/web.py" line="91" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/internet/web.py" bodystart="91" bodyend="206"/>
+    <listofallmembers>
+      <member refid="classhal_1_1internet_1_1web_1_1_webpage_1abdd82419586ce1fab58d0d594a4780f8" prot="public" virt="non-virtual"><scope>hal::internet::web::Webpage</scope><name>__init__</name></member>
+      <member refid="classhal_1_1internet_1_1web_1_1_webpage_1a0440d1bfe5d1a8e510d8ac3254731846" prot="public" virt="non-virtual"><scope>hal::internet::web::Webpage</scope><name>domain</name></member>
+      <member refid="classhal_1_1internet_1_1web_1_1_webpage_1a1879c8695e4e1c7c0155d24100fbbbc0" prot="public" virt="non-virtual"><scope>hal::internet::web::Webpage</scope><name>get_domain</name></member>
+      <member refid="classhal_1_1internet_1_1web_1_1_webpage_1ad3059e24c2ea962b13944209e086b1c8" prot="public" virt="non-virtual"><scope>hal::internet::web::Webpage</scope><name>get_hostname</name></member>
+      <member refid="classhal_1_1internet_1_1web_1_1_webpage_1ad813eba8e41c06f110311ada3ae86f2c" prot="public" virt="non-virtual"><scope>hal::internet::web::Webpage</scope><name>get_html_source</name></member>
+      <member refid="classhal_1_1internet_1_1web_1_1_webpage_1a73b639e5eaa4506a653c9a4792f7dead" prot="public" virt="non-virtual"><scope>hal::internet::web::Webpage</scope><name>get_links</name></member>
+      <member refid="classhal_1_1internet_1_1web_1_1_webpage_1a8a5f45d640b9a433fdd4ab4956141ed0" prot="public" virt="non-virtual"><scope>hal::internet::web::Webpage</scope><name>get_scheme</name></member>
+      <member refid="classhal_1_1internet_1_1web_1_1_webpage_1ae3904bbb1924178180ca32e922bbbeb5" prot="public" virt="non-virtual"><scope>hal::internet::web::Webpage</scope><name>open_in_browser</name></member>
+      <member refid="classhal_1_1internet_1_1web_1_1_webpage_1af6e3dcd4dbebe8e1b196fded24e4025e" prot="public" virt="non-virtual"><scope>hal::internet::web::Webpage</scope><name>parse_url</name></member>
+      <member refid="classhal_1_1internet_1_1web_1_1_webpage_1a03808ba06bc15af222b922960cf2232a" prot="public" virt="non-virtual"><scope>hal::internet::web::Webpage</scope><name>soup</name></member>
+      <member refid="classhal_1_1internet_1_1web_1_1_webpage_1ae44cb4f2581c38185f08f1f9be1c7f1f" prot="public" virt="non-virtual"><scope>hal::internet::web::Webpage</scope><name>source</name></member>
+      <member refid="classhal_1_1internet_1_1web_1_1_webpage_1a9daf360debee3008329bcd28c0e578ed" prot="public" virt="non-virtual"><scope>hal::internet::web::Webpage</scope><name>url</name></member>
+      <member refid="classhal_1_1internet_1_1web_1_1_webpage_1a7320808ec3b5ad1a2b8f30dd10d50229" prot="public" virt="non-virtual"><scope>hal::internet::web::Webpage</scope><name>using_tor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,429 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.11">
+  <compound refid="classhal_1_1maths_1_1crypt_1_1_a_e_s" kind="class"><name>hal::maths::crypt::AES</name>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_a_e_s_1a511e51110acb8e0ff377a021458d89ec" kind="variable"><name>plain</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_a_e_s_1a41c89cf1e5822b1b1831132c2cb50c8c" kind="variable"><name>key</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_a_e_s_1a7a203fbe4d7cd5ce3c170c8d163d9587" kind="variable"><name>hashed</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_a_e_s_1a384607218f6de8a5bf2091a8913f02a2" kind="function"><name>__init__</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_a_e_s_1ab7bd23c02bda2da94f6a2437f906cd09" kind="function"><name>hash</name></member>
+  </compound>
+  <compound refid="classhal_1_1maths_1_1crypt_1_1_a_r_c" kind="class"><name>hal::maths::crypt::ARC</name>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_a_r_c_1add5e33fd8bbab7761bc77f633363c5a0" kind="variable"><name>ALLOWED_SIZE</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_a_r_c_1ab565094fdb53f56635001d60863153c7" kind="variable"><name>plain</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_a_r_c_1a21a38c518574b0558238889bc0632e24" kind="variable"><name>key</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_a_r_c_1a87c67dc38f9fd683d3f16f5b27a125a3" kind="variable"><name>size</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_a_r_c_1ad6d70770753dd95fd685f11aa2c50f35" kind="variable"><name>hashed</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_a_r_c_1a82309db9054f68f3f2c9b5eea7e46c3d" kind="function"><name>__init__</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_a_r_c_1a5453d043fc6d569e8d56b08d0657440d" kind="function"><name>hash</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_a_r_c_1a8bb650cb7e154c93c8d3f90939e42330" kind="function"><name>hash_ar2</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_a_r_c_1ad81bf4a4f683f4c303c05c6ae93fb020" kind="function"><name>hash_arc4</name></member>
+  </compound>
+  <compound refid="classhal_1_1ml_1_1predict_1_1_base_prediction" kind="class"><name>hal::ml::predict::BasePrediction</name>
+    <member refid="classhal_1_1ml_1_1predict_1_1_base_prediction_1a78a5950426761d76607463957e6d7b5f" kind="variable"><name>model</name></member>
+    <member refid="classhal_1_1ml_1_1predict_1_1_base_prediction_1a706bdbfbad676c63b8755e43189d706f" kind="variable"><name>rounds</name></member>
+    <member refid="classhal_1_1ml_1_1predict_1_1_base_prediction_1a77743bfb5de4846d30d3f41e7d2706df" kind="function"><name>__init__</name></member>
+    <member refid="classhal_1_1ml_1_1predict_1_1_base_prediction_1a3bee607838f71f2ed205864a3f73d5f5" kind="function"><name>train</name></member>
+  </compound>
+  <compound refid="classhal_1_1maths_1_1crypt_1_1_b_l_o_w_f_i_s_h" kind="class"><name>hal::maths::crypt::BLOWFISH</name>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_b_l_o_w_f_i_s_h_1a91433d504d000422abfce6ad4df9fed5" kind="variable"><name>plain</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_b_l_o_w_f_i_s_h_1a6c4537a3fff285916787aea66f8286b6" kind="variable"><name>key</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_b_l_o_w_f_i_s_h_1a315f4ff71730a1c60b97324e41475e48" kind="variable"><name>hashed</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_b_l_o_w_f_i_s_h_1a0428f1f9b864c84c1911d61235e739fc" kind="function"><name>__init__</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_b_l_o_w_f_i_s_h_1a7581e9c15acfe4cb64c88c215193f65a" kind="function"><name>hash</name></member>
+  </compound>
+  <compound refid="classhal_1_1maths_1_1crypt_1_1_c_a_s_t128" kind="class"><name>hal::maths::crypt::CAST128</name>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_c_a_s_t128_1af91078dab517ef6705a17f5c41821d27" kind="variable"><name>plain</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_c_a_s_t128_1af89de906c01f3aa02c872831548307a6" kind="variable"><name>key</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_c_a_s_t128_1a452da0fec6f88f16ec468ceaa55b3d18" kind="variable"><name>answer</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_c_a_s_t128_1a285a3b0d8e5ab5a6aa1bfe2ed07cf275" kind="function"><name>__init__</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_c_a_s_t128_1a955fa0eab07e305ba028b007c2851abf" kind="function"><name>encrypt</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_c_a_s_t128_1a70b29321e653c2daaeb2c9e144d2c1c0" kind="function"><name>decrypt</name></member>
+  </compound>
+  <compound refid="classhal_1_1ml_1_1data_1_1parser_1_1_c_s_v_parser" kind="class"><name>hal::ml::data::parser::CSVParser</name>
+    <member refid="classhal_1_1ml_1_1data_1_1parser_1_1_c_s_v_parser_1a1119c3b0d27312ff8086f710a71a8bf2" kind="variable"><name>data</name></member>
+    <member refid="classhal_1_1ml_1_1data_1_1parser_1_1_c_s_v_parser_1adb6168a2083f75a99132b4aad471b9e6" kind="function"><name>__init__</name></member>
+    <member refid="classhal_1_1ml_1_1data_1_1parser_1_1_c_s_v_parser_1ac47a4070d172a1ada61060610749f5e8" kind="function"><name>parse_data</name></member>
+  </compound>
+  <compound refid="classhal_1_1maths_1_1crypt_1_1_d_e_s" kind="class"><name>hal::maths::crypt::DES</name>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1af4a6996632dc4bc9711ec4f17ca3c425" kind="variable"><name>ALLOWED_SIZE</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a7f7043d08dd641c3e061d6316263754a" kind="variable"><name>plain</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a5220f18392796674edee54db1772365b" kind="variable"><name>key</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a0197f3353d660bba2ee2046b0e27ff4f" kind="variable"><name>size</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a413aae8583c759879becd80f35dd335d" kind="variable"><name>hashed</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a163fe40de3514de90bf07230f18cb891" kind="function"><name>__init__</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a950a921233fa101b5be1c2910c1e0595" kind="function"><name>hash</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a0e397526a54b62510f118a0859b3c8b6" kind="function"><name>hash_des</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a9183df60a448c690beb8ac117262aa41" kind="function"><name>hash_des3</name></member>
+  </compound>
+  <compound refid="classhal_1_1files_1_1models_1_1_directory" kind="class"><name>hal::files::models::Directory</name>
+    <member refid="classhal_1_1files_1_1models_1_1_directory_1a881eb92f96a89ccd626fb1c4be7da135" kind="variable"><name>name</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_directory_1ae4f13948eb8127b0c62f56d0ddf154b1" kind="function"><name>__init__</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_directory_1a58118af8552193237b38f7f341773707" kind="function"><name>get_path_name</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_directory_1a2a7a4af7d8d8d9e8e0d121ae9b673ce7" kind="function"><name>is_empty</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_directory_1ac1f283483a8ae3cdc09634882be2e419" kind="function"><name>create_new</name></member>
+  </compound>
+  <compound refid="classhal_1_1files_1_1models_1_1_document" kind="class"><name>hal::files::models::Document</name>
+    <member refid="classhal_1_1files_1_1models_1_1_document_1a001d1a849951ad3a43139b45a9f26bf4" kind="variable"><name>full_name</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_document_1a6770905738040c9bcb052456bb41ce97" kind="variable"><name>extension</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_document_1a2080309a793ba5fe60aa26fcaf3c0bbd" kind="function"><name>__init__</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_document_1a157a403918f676d1bdaaa58177cafca2" kind="function"><name>get_path_name</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_document_1a6666175408a32f5a1cf700e0e0315c15" kind="function"><name>is_video</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_document_1a6ec8b0654bc6ff54b82f3bacad4ceb1b" kind="function"><name>is_subtitle</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_document_1aecb93cd7bde7e21fef16c50538451815" kind="function"><name>is_text</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_document_1a56f51ccb5598448441cd681b95540ce5" kind="function"><name>is_image</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_document_1ab9c88190355f8602dd4fcdb3f66d5c71" kind="function"><name>is_audio</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_document_1acb08b90372387db6c0047f8f0e4aa23b" kind="function"><name>is_hidden</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_document_1a667fad984369339c6c03f21a91394f54" kind="function"><name>move_file_to_directory</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_document_1ae1d5c82d81497dcea679f77bdbc84387" kind="function"><name>move_file_to_file</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_document_1a7e506ca64800b613848c58338eecd077" kind="function"><name>write_data_to_file</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_document_1ade6b922c91273016659c2698031fc35e" kind="function"><name>extract_name_extension</name></member>
+  </compound>
+  <compound refid="classhal_1_1maths_1_1crypt_1_1_dsa" kind="class"><name>hal::maths::crypt::Dsa</name>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_dsa_1a8fddacfaa756e3400dd60e62edecae5d" kind="variable"><name>plain</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_dsa_1af05db55c1f6ebca07b027397a8f494dd" kind="variable"><name>hashed</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_dsa_1a127aadb2c49476c4ffc47537beb0a47f" kind="function"><name>__init__</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_dsa_1ab571cc724b6bd76e1001d9d449cb6c61" kind="function"><name>hash</name></member>
+  </compound>
+  <compound refid="classhal_1_1maths_1_1maths_1_1_eight_queen" kind="class"><name>hal::maths::maths::EightQueen</name>
+    <member refid="classhal_1_1maths_1_1maths_1_1_eight_queen_1a8d242fe77a100b25c6ab6e861069623b" kind="variable"><name>board_size</name></member>
+    <member refid="classhal_1_1maths_1_1maths_1_1_eight_queen_1a71642e4346629fda32e51c647c28fa3f" kind="function"><name>__init__</name></member>
+    <member refid="classhal_1_1maths_1_1maths_1_1_eight_queen_1a8e7e221caa5ac408c49d69116076595e" kind="function"><name>under_attack</name></member>
+    <member refid="classhal_1_1maths_1_1maths_1_1_eight_queen_1a8147e8ea2dabfa44b3c8d13e04d7b529" kind="function"><name>solve</name></member>
+  </compound>
+  <compound refid="classhal_1_1profile_1_1performance_1_1_eight_queen_test" kind="class"><name>hal::profile::performance::EightQueenTest</name>
+    <member refid="classhal_1_1profile_1_1performance_1_1_eight_queen_test_1afefe08b8ae5a8a787f867d97cc2d6ad4" kind="variable"><name>size</name></member>
+    <member refid="classhal_1_1profile_1_1performance_1_1_eight_queen_test_1aff4c0640adbaf044ee1a2f1d20480647" kind="function"><name>__init__</name></member>
+    <member refid="classhal_1_1profile_1_1performance_1_1_eight_queen_test_1a0f340ce684acbecc0ecec304907852c3" kind="function"><name>run</name></member>
+    <member refid="classhal_1_1profile_1_1performance_1_1_eight_queen_test_1a981be709c0e10f0098a8c58af1929746" kind="function"><name>welcome</name></member>
+    <member refid="classhal_1_1profile_1_1performance_1_1_eight_queen_test_1a570aa1a773c9d24cca31e6a42e852fd4" kind="function"><name>introduction</name></member>
+  </compound>
+  <compound refid="classhal_1_1files_1_1models_1_1_file_system" kind="class"><name>hal::files::models::FileSystem</name>
+    <member refid="classhal_1_1files_1_1models_1_1_file_system_1a261fa17468126979cedf206b69a1d071" kind="variable"><name>path</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_file_system_1a17bf22e8739c0abe81a1736115ff6778" kind="function"><name>__init__</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_file_system_1a7b176e08ad6531bcc9caa04c44df1944" kind="function"><name>is_archive_mac</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_file_system_1a073400419be263c865c0971136d2898b" kind="function"><name>is_russian</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_file_system_1a98912c19e86d13c67b0a9bb70682026c" kind="function"><name>trash</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_file_system_1a3388d434e8ae2be2f2b7b9a227ac418e" kind="function"><name>rename</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_file_system_1a7fe20d282e84a1ad292f7e04de6d335d" kind="function"><name>fix_raw_path</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_file_system_1af473fc3f0450ffe57c2484fd76d3a40d" kind="function"><name>remove_year</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_file_system_1ab97d14ce121829510e40c3f052c176df" kind="function"><name>remove_brackets</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_file_system_1a809f1abc2282567f89f809a510e7d665" kind="function"><name>extract_name_max_chars</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_file_system_1a81206c773e9176fb2c0537a731381b7a" kind="function"><name>prettify</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_file_system_1a60f66aeec22d00b67067f3527d06db74" kind="function"><name>ls_dir</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_file_system_1a2df7cb545b239ccb239b71f808ce5808" kind="function"><name>ls_recurse</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_file_system_1aaf2fadb1bb388e4b565da0db6823f4f5" kind="function"><name>ls</name></member>
+  </compound>
+  <compound refid="classhal_1_1maths_1_1crypt_1_1_h_m_a_c" kind="class"><name>hal::maths::crypt::HMAC</name>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_h_m_a_c_1ab910c0e7eb0da6d054812871b920414a" kind="variable"><name>plain</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_h_m_a_c_1a4416aa9252b26f8bf3a401e6d57d44d2" kind="variable"><name>key</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_h_m_a_c_1aaba6b2465c286591e7c6acf7007c4a32" kind="variable"><name>hashed</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_h_m_a_c_1a0186db40c61b717b1ecc0d353272ee14" kind="function"><name>__init__</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_h_m_a_c_1a6c5f1e283f7cb24eddffdda46734e71d" kind="function"><name>hash</name></member>
+  </compound>
+  <compound refid="classhal_1_1internet_1_1parser_1_1_html_table" kind="class"><name>hal::internet::parser::HtmlTable</name>
+    <member refid="classhal_1_1internet_1_1parser_1_1_html_table_1a537aef3b34a0596a6f7cdf042e6f3089" kind="variable"><name>source</name></member>
+    <member refid="classhal_1_1internet_1_1parser_1_1_html_table_1a71408991172cb88eba0ef2ae375746ba" kind="variable"><name>soup</name></member>
+    <member refid="classhal_1_1internet_1_1parser_1_1_html_table_1a5bcf5b773113fd62eb6b5319372c5e6b" kind="function"><name>__init__</name></member>
+    <member refid="classhal_1_1internet_1_1parser_1_1_html_table_1addcc7238344dce5f6f71426ae03ce362" kind="function"><name>parse</name></member>
+  </compound>
+  <compound refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a" kind="class"><name>hal::maths::crypt::IDEA</name>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a12ff209ce3c63eddbf86dfdbb2c38fc8" kind="variable"><name>_keys</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a3e7cfa1f3b0c243b2b7804b3c08e84bd" kind="variable"><name>plain</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a0c8e325b0c159234ac90d9e32006fbc8" kind="variable"><name>hashed</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1aeef99d9276abb6b2bd57d001c909dce6" kind="function"><name>__init__</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a35ca1846d9e5373e9c8ded2515926a75" kind="function"><name>hash</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1affd2617aac36358891d86f2cb1fc39c4" kind="function"><name>change_key</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a8950639a4067643433ae9db631d3c8d0" kind="function"><name>encrypt</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1ad48d12f9ef7dcea4bcc9356246b2e4ee" kind="function"><name>_mul</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a9427385a531724885539cdd302b71438" kind="function"><name>_KA_layer</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a46086c1c33dde127d064f074aa751cc8" kind="function"><name>_MA_layer</name></member>
+  </compound>
+  <compound refid="classhal_1_1maths_1_1maths_1_1_integer" kind="class"><name>hal::maths::maths::Integer</name>
+    <member refid="classhal_1_1maths_1_1maths_1_1_integer_1a96c3647159f9eb8631f519bd088b8eda" kind="variable"><name>LOW_PRIMES</name></member>
+    <member refid="classhal_1_1maths_1_1maths_1_1_integer_1aef52e227e80e9dc90779d0d8f202dbc6" kind="variable"><name>to_int</name></member>
+    <member refid="classhal_1_1maths_1_1maths_1_1_integer_1a18958bf743811b233e9524cbaf355138" kind="variable"><name>to_string</name></member>
+    <member refid="classhal_1_1maths_1_1maths_1_1_integer_1a1cc838d9ba075f9237ca4079468bef4c" kind="variable"><name>is_pprime</name></member>
+    <member refid="classhal_1_1maths_1_1maths_1_1_integer_1ab02daf8f7df66b9739514805740d2e29" kind="function"><name>__init__</name></member>
+    <member refid="classhal_1_1maths_1_1maths_1_1_integer_1a813e392f81a6c01f87a9ef8d1c8c1250" kind="function"><name>is_probably_prime</name></member>
+    <member refid="classhal_1_1maths_1_1maths_1_1_integer_1a3cd7d69cc1e8bb8271e61bbeba6d2a50" kind="function"><name>test_miller_rabin</name></member>
+  </compound>
+  <compound refid="classhal_1_1maths_1_1crypt_1_1_m_d5" kind="class"><name>hal::maths::crypt::MD5</name>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_m_d5_1aa822e9fbe6057d9aa720551bdba468e6" kind="variable"><name>plain</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_m_d5_1a7f9b85649d89714b340a6dfb424681a2" kind="variable"><name>hashed</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_m_d5_1a904093421d68e73ab12f6d00f3e0beff" kind="function"><name>__init__</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_m_d5_1a5f2fcd9c5019f5ace7f70f7a6b514123" kind="function"><name>hash</name></member>
+  </compound>
+  <compound refid="classhal_1_1maths_1_1crypt_1_1_m_d6" kind="class"><name>hal::maths::crypt::MD6</name>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1a54b930b58adc82ff6fb00b7ec03b9194" kind="variable"><name>ALLOWED_SIZE</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1a278814da97344037e49882218a3e5f99" kind="variable"><name>plain</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1ac536bb3b4e1a4099845865e51e31291f" kind="variable"><name>size</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1a4f2445ec801202f1eefed4c428778ea8" kind="variable"><name>hashed</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1a44aaff6ac5a1369c30c6515e36f3e4f2" kind="function"><name>__init__</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1ad3e597a2acb6d2e2ff3dbccdde536ab1" kind="function"><name>hash</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1abe7af5abf04e41a31b3c901124aa1114" kind="function"><name>hex</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1a325f687cdf1081ae62d54638a5774293" kind="function"><name>raw</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1a05cd4edd3bb0395274a08bde443ee073" kind="function"><name>__to_word</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1ab1ba67b59cb2eb4139b68d544e97a3b6" kind="function"><name>__from_word</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1a6a70ed46f60d2de5d889cb1d547bd792" kind="function"><name>__crop</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1aeaa0c2f185890afc30ea36d080ce4350" kind="function"><name>__hash</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1ab2f11c8a5a1bb900f1ec84ded4b58721" kind="function"><name>__bytes</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1a04f2a8c5ce1f0cf82a4774260b9711e0" kind="function"><name>__prehash</name></member>
+  </compound>
+  <compound refid="classhal_1_1files_1_1models_1_1_m_p3_song" kind="class"><name>hal::files::models::MP3Song</name>
+    <member refid="classhal_1_1files_1_1models_1_1_m_p3_song_1a767b9af9e2e01ce942a44cfa7cda2653" kind="variable"><name>song</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_m_p3_song_1a57a2d42a3326e55f553c1a79678dd6b5" kind="variable"><name>tags</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_m_p3_song_1a4f37efc2f666bf142bb1ed2370244fef" kind="function"><name>__init__</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_m_p3_song_1ae4f958b7afa7212cff8470163854a0ed" kind="function"><name>set_name</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_m_p3_song_1abecb2c34045dbd2133e898114198d518" kind="function"><name>set_artist</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_m_p3_song_1afda62b2b1519b7bc65e8cd98d8f2e2bf" kind="function"><name>set_album</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_m_p3_song_1a6b456dde38763b13fb10266b7910b63f" kind="function"><name>set_nr_track</name></member>
+    <member refid="classhal_1_1files_1_1models_1_1_m_p3_song_1ac14c40460b53a47979a58864409a366c" kind="function"><name>set_year</name></member>
+  </compound>
+  <compound refid="classhal_1_1ml_1_1data_1_1parser_1_1_parser" kind="class"><name>hal::ml::data::parser::Parser</name>
+    <member refid="classhal_1_1ml_1_1data_1_1parser_1_1_parser_1a6c29e08c2a9938a625004389ef18a281" kind="variable"><name>database_file</name></member>
+    <member refid="classhal_1_1ml_1_1data_1_1parser_1_1_parser_1a7409c542f418415aeb0c073be705fc58" kind="variable"><name>lines</name></member>
+    <member refid="classhal_1_1ml_1_1data_1_1parser_1_1_parser_1adc7a4812823d9c636eb8977c6d450e6a" kind="function"><name>__init__</name></member>
+    <member refid="classhal_1_1ml_1_1data_1_1parser_1_1_parser_1aaf10b0c434100a1c3effd5e5ee0ee2a3" kind="function"><name>get_lines</name></member>
+  </compound>
+  <compound refid="classhal_1_1maths_1_1plotter_1_1_plot2d" kind="class"><name>hal::maths::plotter::Plot2d</name>
+    <member refid="classhal_1_1maths_1_1plotter_1_1_plot2d_1adff2970c2337d309b1943479d216d2f6" kind="function"><name>scatter</name></member>
+    <member refid="classhal_1_1maths_1_1plotter_1_1_plot2d_1a60f7295d6cad1639e30c6b0407a2b983" kind="function"><name>param</name></member>
+    <member refid="classhal_1_1maths_1_1plotter_1_1_plot2d_1aa340a489f84fc82aa7c69a868ebd11c3" kind="function"><name>plot</name></member>
+  </compound>
+  <compound refid="classhal_1_1maths_1_1plotter_1_1_plot3d" kind="class"><name>hal::maths::plotter::Plot3d</name>
+    <member refid="classhal_1_1maths_1_1plotter_1_1_plot3d_1ac426f777196d1c85ae841e59ea43ad89" kind="function"><name>scatter</name></member>
+    <member refid="classhal_1_1maths_1_1plotter_1_1_plot3d_1ad17823fc8ceb91fa2c602c45f8eae70e" kind="function"><name>param</name></member>
+    <member refid="classhal_1_1maths_1_1plotter_1_1_plot3d_1a1e249de9ab5dac1acc94f82bada6deb0" kind="function"><name>plot</name></member>
+  </compound>
+  <compound refid="classhal_1_1maths_1_1plotter_1_1_plot4d" kind="class"><name>hal::maths::plotter::Plot4d</name>
+    <member refid="classhal_1_1maths_1_1plotter_1_1_plot4d_1a1f822a4cfb97006651da35cb2f5e55d1" kind="function"><name>scatter</name></member>
+    <member refid="classhal_1_1maths_1_1plotter_1_1_plot4d_1a90b39427c236100f8c080e08e2222f2d" kind="function"><name>param</name></member>
+    <member refid="classhal_1_1maths_1_1plotter_1_1_plot4d_1aa776ce05b0f159953ea817402aa9e280" kind="function"><name>plot</name></member>
+  </compound>
+  <compound refid="classhal_1_1internet_1_1engines_1_1_search_engine" kind="class"><name>hal::internet::engines::SearchEngine</name>
+    <member refid="classhal_1_1internet_1_1engines_1_1_search_engine_1a2b16e6f92de3d9dd64d1c51efbd8717d" kind="variable"><name>url</name></member>
+    <member refid="classhal_1_1internet_1_1engines_1_1_search_engine_1a96f97387f7a035a12cb1509288b5401a" kind="variable"><name>domain</name></member>
+    <member refid="classhal_1_1internet_1_1engines_1_1_search_engine_1a28184626d85a0e6a0af8f3a2e381cf7f" kind="variable"><name>blank_replace</name></member>
+    <member refid="classhal_1_1internet_1_1engines_1_1_search_engine_1afa48d729c2ecd0ba30a56544dd3951ea" kind="function"><name>__init__</name></member>
+    <member refid="classhal_1_1internet_1_1engines_1_1_search_engine_1afde9fa1646b6057ecd94746132c9b7c1" kind="function"><name>parse_query</name></member>
+    <member refid="classhal_1_1internet_1_1engines_1_1_search_engine_1a0da195cc7ff5bf796127827b8c54c2ef" kind="function"><name>get_search_page</name></member>
+  </compound>
+  <compound refid="classhal_1_1internet_1_1engines_1_1_search_engine_result" kind="class"><name>hal::internet::engines::SearchEngineResult</name>
+    <member refid="classhal_1_1internet_1_1engines_1_1_search_engine_result_1ad5bf472925c771cddddc1ec8008cc6b2" kind="variable"><name>title</name></member>
+    <member refid="classhal_1_1internet_1_1engines_1_1_search_engine_result_1a87fd88d4579dd7be2fed559386cc58e8" kind="variable"><name>link</name></member>
+    <member refid="classhal_1_1internet_1_1engines_1_1_search_engine_result_1a055578b70da89ea3248abb6aa27d92df" kind="variable"><name>description</name></member>
+    <member refid="classhal_1_1internet_1_1engines_1_1_search_engine_result_1aafeb2e635cb5a9b381d5535c714d11c2" kind="function"><name>__init__</name></member>
+    <member refid="classhal_1_1internet_1_1engines_1_1_search_engine_result_1aa65111d2c02c5e1d9d2b135d60eaeeac" kind="function"><name>__str__</name></member>
+  </compound>
+  <compound refid="classhal_1_1internet_1_1selenium_1_1_selenium_form" kind="class"><name>hal::internet::selenium::SeleniumForm</name>
+    <member refid="classhal_1_1internet_1_1selenium_1_1_selenium_form_1a9523968c9daa9a96f9a7b7ddd358904b" kind="function"><name>fill_form_field</name></member>
+    <member refid="classhal_1_1internet_1_1selenium_1_1_selenium_form_1aa73bb0384f074f2d1b07f78c7bfb6867" kind="function"><name>fill_login_form</name></member>
+    <member refid="classhal_1_1internet_1_1selenium_1_1_selenium_form_1a7648cf31df2f596b9af4f9b9583f2bdb" kind="function"><name>submit_form</name></member>
+  </compound>
+  <compound refid="classhal_1_1maths_1_1crypt_1_1_s_h_a" kind="class"><name>hal::maths::crypt::SHA</name>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1ac548ef72156aee09835369f224ba1349" kind="variable"><name>ALLOWED_SIZE</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1ad683af29f5abcb0607b3152750ed2848" kind="variable"><name>plain</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1a039dcc420e588091d5bf74037882ec31" kind="variable"><name>size</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1ad0916d65406b116f81a23754a3ca3c79" kind="variable"><name>salt</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1a633832075c61a928b02a9a9c0fa133eb" kind="variable"><name>hashed</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1accde1fc65395f7ecd7869fa7a71961f1" kind="function"><name>__init__</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1a4434870473a585d5382945a8cef6c7c3" kind="function"><name>hash</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1a87af3f937c0cfed513ea0720c4814246" kind="function"><name>hash_sha1</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1ad258fade71cc488adc9e5cbcfaf7fc9c" kind="function"><name>hash_sha224</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1aa2c42ae578cf76dc73cfd443fc931605" kind="function"><name>hash_sha256</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1af0a05dbeeb0ec1f6530aa8c99937b44f" kind="function"><name>hash_sha384</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1ad799ad40338287efb2a6f539954d35e9" kind="function"><name>hash_sha512</name></member>
+    <member refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1a9ebefcb7012b2b306cd6b70feb646d8c" kind="function"><name>hash_shasalted</name></member>
+  </compound>
+  <compound refid="classhal_1_1internet_1_1web_1_1_webpage" kind="class"><name>hal::internet::web::Webpage</name>
+    <member refid="classhal_1_1internet_1_1web_1_1_webpage_1a9daf360debee3008329bcd28c0e578ed" kind="variable"><name>url</name></member>
+    <member refid="classhal_1_1internet_1_1web_1_1_webpage_1a0440d1bfe5d1a8e510d8ac3254731846" kind="variable"><name>domain</name></member>
+    <member refid="classhal_1_1internet_1_1web_1_1_webpage_1a7320808ec3b5ad1a2b8f30dd10d50229" kind="variable"><name>using_tor</name></member>
+    <member refid="classhal_1_1internet_1_1web_1_1_webpage_1ae44cb4f2581c38185f08f1f9be1c7f1f" kind="variable"><name>source</name></member>
+    <member refid="classhal_1_1internet_1_1web_1_1_webpage_1a03808ba06bc15af222b922960cf2232a" kind="variable"><name>soup</name></member>
+    <member refid="classhal_1_1internet_1_1web_1_1_webpage_1abdd82419586ce1fab58d0d594a4780f8" kind="function"><name>__init__</name></member>
+    <member refid="classhal_1_1internet_1_1web_1_1_webpage_1a8a5f45d640b9a433fdd4ab4956141ed0" kind="function"><name>get_scheme</name></member>
+    <member refid="classhal_1_1internet_1_1web_1_1_webpage_1ad3059e24c2ea962b13944209e086b1c8" kind="function"><name>get_hostname</name></member>
+    <member refid="classhal_1_1internet_1_1web_1_1_webpage_1a1879c8695e4e1c7c0155d24100fbbbc0" kind="function"><name>get_domain</name></member>
+    <member refid="classhal_1_1internet_1_1web_1_1_webpage_1ad813eba8e41c06f110311ada3ae86f2c" kind="function"><name>get_html_source</name></member>
+    <member refid="classhal_1_1internet_1_1web_1_1_webpage_1a73b639e5eaa4506a653c9a4792f7dead" kind="function"><name>get_links</name></member>
+    <member refid="classhal_1_1internet_1_1web_1_1_webpage_1ae3904bbb1924178180ca32e922bbbeb5" kind="function"><name>open_in_browser</name></member>
+    <member refid="classhal_1_1internet_1_1web_1_1_webpage_1af6e3dcd4dbebe8e1b196fded24e4025e" kind="function"><name>parse_url</name></member>
+  </compound>
+  <compound refid="namespacehal" kind="namespace"><name>hal</name>
+  </compound>
+  <compound refid="namespacehal_1_1files" kind="namespace"><name>hal::files</name>
+  </compound>
+  <compound refid="namespacehal_1_1files_1_1models" kind="namespace"><name>hal::files::models</name>
+    <member refid="models_8py_1aaf1b65f017ea32d7104a1eda2cff3dde" kind="variable"><name>BAD_CHARS</name></member>
+    <member refid="models_8py_1a43edf2157ded61590f9c91199334cceb" kind="variable"><name>RUSSIAN_CHARS</name></member>
+    <member refid="models_8py_1ab66a7d426dd9557ff5afbcac6b6d8359" kind="variable"><name>VIDEO_FORMAT</name></member>
+    <member refid="models_8py_1a0f573f0a1ad0679c0bb9a64267bf99b1" kind="variable"><name>ARCHIVE_FORMAT</name></member>
+    <member refid="models_8py_1ae98f5f1851cce70adba7bd822a1e3341" kind="variable"><name>SUBTITLE_FORMAT</name></member>
+    <member refid="models_8py_1a9aab07f4c9dbe7eecd608a86ea9a2971" kind="variable"><name>TEXT_FORMAT</name></member>
+    <member refid="models_8py_1a69d036097f8893f201776d0b09dac5bb" kind="variable"><name>IMAGE_FORMAT</name></member>
+    <member refid="models_8py_1af1a50756580e88c39d38536472111358" kind="variable"><name>AUDIO_FORMAT</name></member>
+    <member refid="models_8py_1ae9163e4c41c92f978c5e19844b3eb68b" kind="variable"><name>PATH_SEPARATOR</name></member>
+  </compound>
+  <compound refid="namespacehal_1_1internet" kind="namespace"><name>hal::internet</name>
+  </compound>
+  <compound refid="namespacehal_1_1internet_1_1engines" kind="namespace"><name>hal::internet::engines</name>
+  </compound>
+  <compound refid="namespacehal_1_1internet_1_1parser" kind="namespace"><name>hal::internet::parser</name>
+    <member refid="internet_2parser_8py_1a09ee6d2803ac07c9cd958cfd19ac05ec" kind="function"><name>is_string_well_formatted</name></member>
+    <member refid="internet_2parser_8py_1a97cbe48e67af3dc1dd781bd43c6f989e" kind="function"><name>html_stripper</name></member>
+  </compound>
+  <compound refid="namespacehal_1_1internet_1_1selenium" kind="namespace"><name>hal::internet::selenium</name>
+  </compound>
+  <compound refid="namespacehal_1_1internet_1_1web" kind="namespace"><name>hal::internet::web</name>
+    <member refid="web_8py_1a296c96976f215a571208907d5d278bf6" kind="variable"><name>CHROME_USER_AGENT</name></member>
+    <member refid="web_8py_1a6d0e8aaee408753632ad376eb55547ce" kind="variable"><name>URL_VALID_REGEX</name></member>
+    <member refid="web_8py_1a90ca6986f0b58b8582986004eab031c8" kind="function"><name>is_url</name></member>
+    <member refid="web_8py_1af33eedec19a22d2b87fa85ca88636925" kind="function"><name>download_url</name></member>
+  </compound>
+  <compound refid="namespacehal_1_1internet_1_1youtube" kind="namespace"><name>hal::internet::youtube</name>
+    <member refid="youtube_8py_1a0ce6bdbc23e377caeb124b693580df75" kind="function"><name>get_channel_page</name></member>
+    <member refid="youtube_8py_1a0d346ae1245f732b71243f850815e54e" kind="function"><name>get_channel_id</name></member>
+    <member refid="youtube_8py_1a873b9efafcfb99ba55b38fabb9059ba0" kind="function"><name>get_channel_feed_url</name></member>
+  </compound>
+  <compound refid="namespacehal_1_1maths" kind="namespace"><name>hal::maths</name>
+  </compound>
+  <compound refid="namespacehal_1_1maths_1_1crypt" kind="namespace"><name>hal::maths::crypt</name>
+  </compound>
+  <compound refid="namespacehal_1_1maths_1_1maths" kind="namespace"><name>hal::maths::maths</name>
+    <member refid="maths_8py_1ad91b769c49027ee24a29dc0cb478a185" kind="function"><name>get_prime</name></member>
+    <member refid="maths_8py_1ae10e70d56ded5443131404154cf0246d" kind="function"><name>blumblumshub</name></member>
+  </compound>
+  <compound refid="namespacehal_1_1maths_1_1plotter" kind="namespace"><name>hal::maths::plotter</name>
+  </compound>
+  <compound refid="namespacehal_1_1ml" kind="namespace"><name>hal::ml</name>
+  </compound>
+  <compound refid="namespacehal_1_1ml_1_1data" kind="namespace"><name>hal::ml::data</name>
+  </compound>
+  <compound refid="namespacehal_1_1ml_1_1data_1_1parser" kind="namespace"><name>hal::ml::data::parser</name>
+  </compound>
+  <compound refid="namespacehal_1_1ml_1_1features" kind="namespace"><name>hal::ml::features</name>
+    <member refid="features_8py_1a4bcdf5682e2397d6c7c61816027e1df1" kind="function"><name>select_k_best</name></member>
+    <member refid="features_8py_1a7a9b93d398daf8eb9e112b3a7fa7407e" kind="function"><name>get_best_features</name></member>
+    <member refid="features_8py_1a91157eb0f100e6721f70158f21d987d7" kind="function"><name>get_features</name></member>
+  </compound>
+  <compound refid="namespacehal_1_1ml_1_1models" kind="namespace"><name>hal::ml::models</name>
+  </compound>
+  <compound refid="namespacehal_1_1ml_1_1models_1_1classification" kind="namespace"><name>hal::ml::models::classification</name>
+    <member refid="classification_8py_1a26dcaf27752c3692adb1abdc89115be5" kind="function"><name>extra_trees_classifier</name></member>
+    <member refid="classification_8py_1a9651d6d2f9b1233cd3626c76d1516ee8" kind="function"><name>random_forest</name></member>
+    <member refid="classification_8py_1a4f1ca3daac3bb1a4a51a3dca36d330e7" kind="function"><name>knn</name></member>
+    <member refid="classification_8py_1a79fe8e02f08c789415d1f3c264deb141" kind="function"><name>ada_boost</name></member>
+    <member refid="classification_8py_1ae1fde34e1d07346f8e6ff5535edfccda" kind="function"><name>bayes_gauss</name></member>
+    <member refid="classification_8py_1a0184e60d51ab354f47d9ced91c42a35f" kind="function"><name>bayes_bernoulli</name></member>
+  </compound>
+  <compound refid="namespacehal_1_1ml_1_1models_1_1pipelined" kind="namespace"><name>hal::ml::models::pipelined</name>
+    <member refid="pipelined_8py_1ac72c816353a1a014e527bfd44e7a519f" kind="function"><name>logistic_rbm</name></member>
+    <member refid="pipelined_8py_1a8e82f881089d8b5909c6d408b8e9bb0d" kind="function"><name>anova_svm</name></member>
+  </compound>
+  <compound refid="namespacehal_1_1ml_1_1models_1_1regression" kind="namespace"><name>hal::ml::models::regression</name>
+    <member refid="regression_8py_1aeb359b5e041b62a878adf3add352d6e1" kind="function"><name>support_vector_machine</name></member>
+    <member refid="regression_8py_1a3082b33d6bcf5cfe23be0bfb50819f15" kind="function"><name>logistic_regression</name></member>
+  </compound>
+  <compound refid="namespacehal_1_1ml_1_1models_1_1time__series" kind="namespace"><name>hal::ml::models::time_series</name>
+    <member refid="time__series_8py_1a1a4cf7c1bda87449aad9047de6569ab1" kind="function"><name>test_stationarity</name></member>
+    <member refid="time__series_8py_1a692b0e04d90b14e439c38a50897c9de7" kind="function"><name>arma</name></member>
+    <member refid="time__series_8py_1a4849d5556c6633268d4119a1b90edca5" kind="function"><name>arima</name></member>
+    <member refid="time__series_8py_1ace52b666608b541191b933587c41567c" kind="function"><name>var</name></member>
+    <member refid="time__series_8py_1a6be48602894b14a030a4155cd66ecdc8" kind="function"><name>dynamic_var</name></member>
+  </compound>
+  <compound refid="namespacehal_1_1ml_1_1predict" kind="namespace"><name>hal::ml::predict</name>
+  </compound>
+  <compound refid="namespacehal_1_1ml_1_1utils" kind="namespace"><name>hal::ml::utils</name>
+    <member refid="utils_8py_1a0e93507cf2a4b9fe511fff7d0018feec" kind="function"><name>precision</name></member>
+    <member refid="utils_8py_1a7365ffc0ed5ba6fc0a14f6fdbb75e53e" kind="function"><name>recall</name></member>
+    <member refid="utils_8py_1a010bdadf4f82df34e9cda7c082d680ae" kind="function"><name>tn_rate</name></member>
+    <member refid="utils_8py_1afcfa5f0a4fd9b85092eb0c5f667ade6d" kind="function"><name>accuracy</name></member>
+    <member refid="utils_8py_1a5de49ea0e46fedfb6babf844856fd466" kind="function"><name>f1_score</name></member>
+    <member refid="utils_8py_1a6bb03edb2fb8db3332eac79256301005" kind="function"><name>pearson</name></member>
+    <member refid="utils_8py_1a4f09877878cf20248cd8f303e94312cf" kind="function"><name>show_correlation_matrix</name></member>
+  </compound>
+  <compound refid="namespacehal_1_1profile" kind="namespace"><name>hal::profile</name>
+  </compound>
+  <compound refid="namespacehal_1_1profile_1_1performance" kind="namespace"><name>hal::profile::performance</name>
+  </compound>
+  <compound refid="namespacehal_1_1wrappers" kind="namespace"><name>hal::wrappers</name>
+  </compound>
+  <compound refid="namespacehal_1_1wrappers_1_1methods" kind="namespace"><name>hal::wrappers::methods</name>
+    <member refid="methods_8py_1a11e2886d7903dc50cf4c59fa7fefd3f1" kind="function"><name>handle_exceptions</name></member>
+  </compound>
+  <compound refid="____init_____8py" kind="file"><name>__init__.py</name>
+  </compound>
+  <compound refid="files_2____init_____8py" kind="file"><name>__init__.py</name>
+  </compound>
+  <compound refid="internet_2____init_____8py" kind="file"><name>__init__.py</name>
+  </compound>
+  <compound refid="maths_2____init_____8py" kind="file"><name>__init__.py</name>
+  </compound>
+  <compound refid="ml_2____init_____8py" kind="file"><name>__init__.py</name>
+  </compound>
+  <compound refid="ml_2data_2____init_____8py" kind="file"><name>__init__.py</name>
+  </compound>
+  <compound refid="ml_2models_2____init_____8py" kind="file"><name>__init__.py</name>
+  </compound>
+  <compound refid="profile_2____init_____8py" kind="file"><name>__init__.py</name>
+  </compound>
+  <compound refid="wrappers_2____init_____8py" kind="file"><name>__init__.py</name>
+  </compound>
+  <compound refid="models_8py" kind="file"><name>models.py</name>
+  </compound>
+  <compound refid="engines_8py" kind="file"><name>engines.py</name>
+  </compound>
+  <compound refid="internet_2parser_8py" kind="file"><name>parser.py</name>
+  </compound>
+  <compound refid="ml_2data_2parser_8py" kind="file"><name>parser.py</name>
+  </compound>
+  <compound refid="selenium_8py" kind="file"><name>selenium.py</name>
+  </compound>
+  <compound refid="web_8py" kind="file"><name>web.py</name>
+  </compound>
+  <compound refid="youtube_8py" kind="file"><name>youtube.py</name>
+  </compound>
+  <compound refid="crypt_8py" kind="file"><name>crypt.py</name>
+  </compound>
+  <compound refid="maths_8py" kind="file"><name>maths.py</name>
+  </compound>
+  <compound refid="plotter_8py" kind="file"><name>plotter.py</name>
+  </compound>
+  <compound refid="features_8py" kind="file"><name>features.py</name>
+  </compound>
+  <compound refid="classification_8py" kind="file"><name>classification.py</name>
+  </compound>
+  <compound refid="pipelined_8py" kind="file"><name>pipelined.py</name>
+  </compound>
+  <compound refid="regression_8py" kind="file"><name>regression.py</name>
+  </compound>
+  <compound refid="time__series_8py" kind="file"><name>time_series.py</name>
+  </compound>
+  <compound refid="predict_8py" kind="file"><name>predict.py</name>
+  </compound>
+  <compound refid="utils_8py" kind="file"><name>utils.py</name>
+  </compound>
+  <compound refid="performance_8py" kind="file"><name>performance.py</name>
+  </compound>
+  <compound refid="methods_8py" kind="file"><name>methods.py</name>
+  </compound>
+  <compound refid="dir_cd1e57bf442ba2ddfaf92b79b10d6681" kind="dir"><name>/home/stefano/Coding/Python/projects/pyhal/hal/ml/data</name>
+  </compound>
+  <compound refid="dir_a161224535343065a7617037f916b793" kind="dir"><name>/home/stefano/Coding/Python/projects/pyhal/hal/files</name>
+  </compound>
+  <compound refid="dir_52c912f73dac9c4c0e442232e1b2bd80" kind="dir"><name>/home/stefano/Coding/Python/projects/pyhal/hal</name>
+  </compound>
+  <compound refid="dir_f8c7f266a6b7f30ac4703b29175d4e78" kind="dir"><name>/home/stefano/Coding/Python/projects/pyhal/hal/internet</name>
+  </compound>
+  <compound refid="dir_225e76ead227d704817754dc016fbada" kind="dir"><name>/home/stefano/Coding/Python/projects/pyhal/hal/maths</name>
+  </compound>
+  <compound refid="dir_5fd03da657c1922a74506f1cd068528f" kind="dir"><name>/home/stefano/Coding/Python/projects/pyhal/hal/ml</name>
+  </compound>
+  <compound refid="dir_a6e341139506ab45822c0b7bfe609039" kind="dir"><name>/home/stefano/Coding/Python/projects/pyhal/hal/ml/models</name>
+  </compound>
+  <compound refid="dir_b37d55e427f12b0f7549d3f96f31f688" kind="dir"><name>/home/stefano/Coding/Python/projects/pyhal/hal/profile</name>
+  </compound>
+  <compound refid="dir_2e2947ae23336da195a0c7ec6d96d7b4" kind="dir"><name>/home/stefano/Coding/Python/projects/pyhal/hal/wrappers</name>
+  </compound>
+</doxygenindex>

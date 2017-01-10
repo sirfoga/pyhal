@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classhal_1_1maths_1_1plotter_1_1_plot2d" kind="class" language="Python" prot="public">
+    <compoundname>hal::maths::plotter::Plot2d</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">object</basecompoundref>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classhal_1_1maths_1_1plotter_1_1_plot2d_1adff2970c2337d309b1943479d216d2f6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.plotter.Plot2d.scatter</definition>
+        <argsstring>(vectorx, vectory)</argsstring>
+        <name>scatter</name>
+        <param>
+          <type>vectorx</type>
+          <defname>vectorx</defname>
+        </param>
+        <param>
+          <type>vectory</type>
+          <defname>vectory</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param vectorx: vector in x axis
+:param vectory: vector in y axis
+:return: 2d scatter plot
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/plotter.py" line="32" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/plotter.py" bodystart="32" bodyend="48"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classhal_1_1maths_1_1plotter_1_1_plot2d_1a60f7295d6cad1639e30c6b0407a2b983" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.plotter.Plot2d.param</definition>
+        <argsstring>(self, functionx, functiony, min, max, points)</argsstring>
+        <name>param</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>functionx</type>
+          <defname>functionx</defname>
+        </param>
+        <param>
+          <type>functiony</type>
+          <defname>functiony</defname>
+        </param>
+        <param>
+          <type>min</type>
+          <defname>min</defname>
+        </param>
+        <param>
+          <type>max</type>
+          <defname>max</defname>
+        </param>
+        <param>
+          <type>points</type>
+          <defname>points</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param functionx: function in x value
+:param functiony: function in y value
+::param min: minimum value
+:param max: maximum value
+:param points: number of points to display
+:return: 2d parametric graph of given function from min to max
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/plotter.py" line="49" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/plotter.py" bodystart="49" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1maths_1_1plotter_1_1_plot2d_1aa340a489f84fc82aa7c69a868ebd11c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.plotter.Plot2d.plot</definition>
+        <argsstring>(self, function, min, max, points)</argsstring>
+        <name>plot</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>function</type>
+          <defname>function</defname>
+        </param>
+        <param>
+          <type>min</type>
+          <defname>min</defname>
+        </param>
+        <param>
+          <type>max</type>
+          <defname>max</defname>
+        </param>
+        <param>
+          <type>points</type>
+          <defname>points</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param function: function to plot
+:param min: minimum value
+:param max: maximum value
+:param points: number of points
+:return: plot 2d function
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/plotter.py" line="66" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/plotter.py" bodystart="66" bodyend="88"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>2d plot </verbatim> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="222">
+        <label>hal.maths.plotter.Plot2d</label>
+        <link refid="classhal_1_1maths_1_1plotter_1_1_plot2d"/>
+        <childnode refid="223" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="223">
+        <label>object</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="224">
+        <label>hal.maths.plotter.Plot2d</label>
+        <link refid="classhal_1_1maths_1_1plotter_1_1_plot2d"/>
+        <childnode refid="225" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="225">
+        <label>object</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/plotter.py" line="28" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/plotter.py" bodystart="28" bodyend="89"/>
+    <listofallmembers>
+      <member refid="classhal_1_1maths_1_1plotter_1_1_plot2d_1a60f7295d6cad1639e30c6b0407a2b983" prot="public" virt="non-virtual"><scope>hal::maths::plotter::Plot2d</scope><name>param</name></member>
+      <member refid="classhal_1_1maths_1_1plotter_1_1_plot2d_1aa340a489f84fc82aa7c69a868ebd11c3" prot="public" virt="non-virtual"><scope>hal::maths::plotter::Plot2d</scope><name>plot</name></member>
+      <member refid="classhal_1_1maths_1_1plotter_1_1_plot2d_1adff2970c2337d309b1943479d216d2f6" prot="public" virt="non-virtual"><scope>hal::maths::plotter::Plot2d</scope><name>scatter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

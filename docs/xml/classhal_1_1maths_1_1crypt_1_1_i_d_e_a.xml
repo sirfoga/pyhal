@@ -1,0 +1,291 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classhal_1_1maths_1_1crypt_1_1_i_d_e_a" kind="class" language="Python" prot="public">
+    <compoundname>hal::maths::crypt::IDEA</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">object</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a12ff209ce3c63eddbf86dfdbb2c38fc8" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>hal.maths.crypt.IDEA::_keys</definition>
+        <argsstring></argsstring>
+        <name>_keys</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="591" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="591" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a3e7cfa1f3b0c243b2b7804b3c08e84bd" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>hal.maths.crypt.IDEA::plain</definition>
+        <argsstring></argsstring>
+        <name>plain</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="592" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="592" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a0c8e325b0c159234ac90d9e32006fbc8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>hal.maths.crypt.IDEA::hashed</definition>
+        <argsstring></argsstring>
+        <name>hashed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="593" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="593" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1aeef99d9276abb6b2bd57d001c909dce6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.crypt.IDEA.__init__</definition>
+        <argsstring>(self, string, key)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>string</type>
+          <defname>string</defname>
+        </param>
+        <param>
+          <type>key</type>
+          <defname>key</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="590" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="590" bodyend="595"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a35ca1846d9e5373e9c8ded2515926a75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.crypt.IDEA.hash</definition>
+        <argsstring>(self)</argsstring>
+        <name>hash</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:return: IDEA hash
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="596" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="596" bodyend="603"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1affd2617aac36358891d86f2cb1fc39c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.crypt.IDEA.change_key</definition>
+        <argsstring>(self, key)</argsstring>
+        <name>change_key</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>key</type>
+          <defname>key</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param key: new key
+:return: change key
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="686" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="686" bodyend="706"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a8950639a4067643433ae9db631d3c8d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.crypt.IDEA.encrypt</definition>
+        <argsstring>(self)</argsstring>
+        <name>encrypt</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:return: encrypt with key
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="707" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="707" bodyend="734"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1ad48d12f9ef7dcea4bcc9356246b2e4ee" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.crypt.IDEA._mul</definition>
+        <argsstring>(self, x, y)</argsstring>
+        <name>_mul</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <param>
+          <type>y</type>
+          <defname>y</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param x: first operand
+:param y: second operand
+:return: x*y
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="604" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="604" bodyend="626"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a9427385a531724885539cdd302b71438" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.crypt.IDEA._KA_layer</definition>
+        <argsstring>(self, x1, x2, x3, x4, round_keys)</argsstring>
+        <name>_KA_layer</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>x1</type>
+          <defname>x1</defname>
+        </param>
+        <param>
+          <type>x2</type>
+          <defname>x2</defname>
+        </param>
+        <param>
+          <type>x3</type>
+          <defname>x3</defname>
+        </param>
+        <param>
+          <type>x4</type>
+          <defname>x4</defname>
+        </param>
+        <param>
+          <type>round_keys</type>
+          <defname>round_keys</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param x1: x1
+:param x2: x2
+:param x3: x3
+:param x4: x4
+:param round_keys: rounds
+:return: ka layer
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="627" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="627" bodyend="653"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a46086c1c33dde127d064f074aa751cc8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.crypt.IDEA._MA_layer</definition>
+        <argsstring>(self, y1, y2, y3, y4, round_keys)</argsstring>
+        <name>_MA_layer</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>y1</type>
+          <defname>y1</defname>
+        </param>
+        <param>
+          <type>y2</type>
+          <defname>y2</defname>
+        </param>
+        <param>
+          <type>y3</type>
+          <defname>y3</defname>
+        </param>
+        <param>
+          <type>y4</type>
+          <defname>y4</defname>
+        </param>
+        <param>
+          <type>round_keys</type>
+          <defname>round_keys</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param y1: y1
+:param y2: y2
+:param y3: y3
+:param y4: y4
+:param round_keys: rounds
+:return: ma layer
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="654" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="654" bodyend="685"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>IDEA hash </verbatim> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="196">
+        <label>object</label>
+      </node>
+      <node id="195">
+        <label>hal.maths.crypt.IDEA</label>
+        <link refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a"/>
+        <childnode refid="196" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="198">
+        <label>object</label>
+      </node>
+      <node id="197">
+        <label>hal.maths.crypt.IDEA</label>
+        <link refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a"/>
+        <childnode refid="198" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="587" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="587" bodyend="735"/>
+    <listofallmembers>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1aeef99d9276abb6b2bd57d001c909dce6" prot="public" virt="non-virtual"><scope>hal::maths::crypt::IDEA</scope><name>__init__</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a9427385a531724885539cdd302b71438" prot="private" virt="non-virtual"><scope>hal::maths::crypt::IDEA</scope><name>_KA_layer</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a12ff209ce3c63eddbf86dfdbb2c38fc8" prot="private" virt="non-virtual"><scope>hal::maths::crypt::IDEA</scope><name>_keys</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a46086c1c33dde127d064f074aa751cc8" prot="private" virt="non-virtual"><scope>hal::maths::crypt::IDEA</scope><name>_MA_layer</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1ad48d12f9ef7dcea4bcc9356246b2e4ee" prot="private" virt="non-virtual"><scope>hal::maths::crypt::IDEA</scope><name>_mul</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1affd2617aac36358891d86f2cb1fc39c4" prot="public" virt="non-virtual"><scope>hal::maths::crypt::IDEA</scope><name>change_key</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a8950639a4067643433ae9db631d3c8d0" prot="public" virt="non-virtual"><scope>hal::maths::crypt::IDEA</scope><name>encrypt</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a35ca1846d9e5373e9c8ded2515926a75" prot="public" virt="non-virtual"><scope>hal::maths::crypt::IDEA</scope><name>hash</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a0c8e325b0c159234ac90d9e32006fbc8" prot="public" virt="non-virtual"><scope>hal::maths::crypt::IDEA</scope><name>hashed</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a3e7cfa1f3b0c243b2b7804b3c08e84bd" prot="public" virt="non-virtual"><scope>hal::maths::crypt::IDEA</scope><name>plain</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

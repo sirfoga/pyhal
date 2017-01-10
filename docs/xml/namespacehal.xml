@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespacehal" kind="namespace" language="Python">
+    <compoundname>hal</compoundname>
+    <innernamespace refid="namespacehal_1_1files">hal::files</innernamespace>
+    <innernamespace refid="namespacehal_1_1internet">hal::internet</innernamespace>
+    <innernamespace refid="namespacehal_1_1maths">hal::maths</innernamespace>
+    <innernamespace refid="namespacehal_1_1ml">hal::ml</innernamespace>
+    <innernamespace refid="namespacehal_1_1profile">hal::profile</innernamespace>
+    <innernamespace refid="namespacehal_1_1wrappers">hal::wrappers</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/stefano/Coding/Python/projects/pyhal/hal/__init__.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,416 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classhal_1_1files_1_1models_1_1_file_system" kind="class" language="Python" prot="public">
+    <compoundname>hal::files::models::FileSystem</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">object</basecompoundref>
+    <derivedcompoundref refid="classhal_1_1files_1_1models_1_1_directory" prot="public" virt="non-virtual">hal.files.models.Directory</derivedcompoundref>
+    <derivedcompoundref refid="classhal_1_1files_1_1models_1_1_document" prot="public" virt="non-virtual">hal.files.models.Document</derivedcompoundref>
+    <derivedcompoundref refid="classhal_1_1files_1_1models_1_1_m_p3_song" prot="public" virt="non-virtual">hal.files.models.MP3Song</derivedcompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classhal_1_1files_1_1models_1_1_file_system_1a261fa17468126979cedf206b69a1d071" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>hal.files.models.FileSystem::path</definition>
+        <argsstring></argsstring>
+        <name>path</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="67" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classhal_1_1files_1_1models_1_1_file_system_1a17bf22e8739c0abe81a1736115ff6778" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.files.models.FileSystem.__init__</definition>
+        <argsstring>(self, path)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param path: string
+    Path to file
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="60" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="60" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1files_1_1models_1_1_file_system_1a7b176e08ad6531bcc9caa04c44df1944" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.files.models.FileSystem.is_archive_mac</definition>
+        <argsstring>(self)</argsstring>
+        <name>is_archive_mac</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:return: True iff document is an MACOSX archive.
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="229" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="229" bodyend="235"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1files_1_1models_1_1_file_system_1a073400419be263c865c0971136d2898b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.files.models.FileSystem.is_russian</definition>
+        <argsstring>(self)</argsstring>
+        <name>is_russian</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:return: True iff document has a russian name.
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="236" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="236" bodyend="246"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1files_1_1models_1_1_file_system_1a98912c19e86d13c67b0a9bb70682026c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.files.models.FileSystem.trash</definition>
+        <argsstring>(self)</argsstring>
+        <name>trash</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:return: void
+    Trash given file/folder
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="247" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="247" bodyend="254"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1files_1_1models_1_1_file_system_1a3388d434e8ae2be2f2b7b9a227ac418e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.files.models.FileSystem.rename</definition>
+        <argsstring>(self, new_path)</argsstring>
+        <name>rename</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>new_path</type>
+          <defname>new_path</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param new_path: string
+    New path to use
+:return: void
+    Rename to new path
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="255" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="255" bodyend="269"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classhal_1_1files_1_1models_1_1_file_system_1a7fe20d282e84a1ad292f7e04de6d335d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.files.models.FileSystem.fix_raw_path</definition>
+        <argsstring>(path)</argsstring>
+        <name>fix_raw_path</name>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param path: string
+    Path to fix
+:return: string
+    Right path
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="71" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="71" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1files_1_1models_1_1_file_system_1af473fc3f0450ffe57c2484fd76d3a40d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.files.models.FileSystem.remove_year</definition>
+        <argsstring>(name)</argsstring>
+        <name>remove_year</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param name: string
+    Name to edit
+:return: string
+    Given string bu with no years.
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="85" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="85" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1files_1_1models_1_1_file_system_1ab97d14ce121829510e40c3f052c176df" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.files.models.FileSystem.remove_brackets</definition>
+        <argsstring>(name)</argsstring>
+        <name>remove_brackets</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param name: string
+    Name to edit
+:return: string
+    Given string bu with no barckets.
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="100" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="100" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1files_1_1models_1_1_file_system_1a809f1abc2282567f89f809a510e7d665" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.files.models.FileSystem.extract_name_max_chars</definition>
+        <argsstring>(name, max_chars=64, blank=&quot; &quot;)</argsstring>
+        <name>extract_name_max_chars</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>max_chars</type>
+          <defname>max_chars</defname>
+          <defval>64</defval>
+        </param>
+        <param>
+          <type>blank</type>
+          <defname>blank</defname>
+          <defval>&quot; &quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param name: string
+    Name to edit
+:param max_chars: int
+    Maximum chars of new name
+:param blank: string
+    Char that represents the blank between words.
+:return: string
+    Name edited to contain at most max_chars (truncate to nearest word)
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="115" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="115" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1files_1_1models_1_1_file_system_1a81206c773e9176fb2c0537a731381b7a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.files.models.FileSystem.prettify</definition>
+        <argsstring>(name, bad_chars=BAD_CHARS, r=&quot; &quot;)</argsstring>
+        <name>prettify</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>bad_chars</type>
+          <defname>bad_chars</defname>
+          <defval>BAD_CHARS</defval>
+        </param>
+        <param>
+          <type>r</type>
+          <defname>r</defname>
+          <defval>&quot; &quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param name: string
+    Name to edit
+:param bad_chars: []
+    List of bad strings to remove
+:param r: string
+    Default blanks in name.
+:return: string
+    Prettier name from given one: replace bad chars with good ones.
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="138" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="138" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1files_1_1models_1_1_file_system_1a60f66aeec22d00b67067f3527d06db74" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.files.models.FileSystem.ls_dir</definition>
+        <argsstring>(path, include_hidden=False)</argsstring>
+        <name>ls_dir</name>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <param>
+          <type>include_hidden</type>
+          <defname>include_hidden</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param path: string
+    Path to directory to get list of files and folders
+:param include_hidden: bool
+    Whether to include hidden files in list.
+:return: list
+    List of paths in given directory.
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="176" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="176" bodyend="191"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1files_1_1models_1_1_file_system_1a2df7cb545b239ccb239b71f808ce5808" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.files.models.FileSystem.ls_recurse</definition>
+        <argsstring>(path, include_hidden=False)</argsstring>
+        <name>ls_recurse</name>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <param>
+          <type>include_hidden</type>
+          <defname>include_hidden</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param path: string
+    Path to directory to get list of files and folders
+:param include_hidden: bool
+    Whether to include hidden files in list.
+:return: list
+    List of paths in given directory recursively.
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="193" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="193" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1files_1_1models_1_1_file_system_1aaf2fadb1bb388e4b565da0db6823f4f5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.files.models.FileSystem.ls</definition>
+        <argsstring>(path, recurse, include_hidden=False)</argsstring>
+        <name>ls</name>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <param>
+          <type>recurse</type>
+          <defname>recurse</defname>
+        </param>
+        <param>
+          <type>include_hidden</type>
+          <defname>include_hidden</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param path: string
+    Path to directory to get list of files and folders
+:param recurse: bool
+    Whether to recurse into subdirectories or not.
+:param include_hidden: bool
+    Whether to include hidden files in list.
+:return: list
+    List of paths in given directory recursively.
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="213" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="213" bodyend="228"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="183">
+        <label>hal.files.models.Document</label>
+        <link refid="classhal_1_1files_1_1models_1_1_document"/>
+        <childnode refid="180" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="180">
+        <label>hal.files.models.FileSystem</label>
+        <link refid="classhal_1_1files_1_1models_1_1_file_system"/>
+        <childnode refid="181" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="182">
+        <label>hal.files.models.Directory</label>
+        <link refid="classhal_1_1files_1_1models_1_1_directory"/>
+        <childnode refid="180" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="181">
+        <label>object</label>
+      </node>
+      <node id="184">
+        <label>hal.files.models.MP3Song</label>
+        <link refid="classhal_1_1files_1_1models_1_1_m_p3_song"/>
+        <childnode refid="180" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="185">
+        <label>hal.files.models.FileSystem</label>
+        <link refid="classhal_1_1files_1_1models_1_1_file_system"/>
+        <childnode refid="186" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="186">
+        <label>object</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="59" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="59" bodyend="270"/>
+    <listofallmembers>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1a17bf22e8739c0abe81a1736115ff6778" prot="public" virt="non-virtual"><scope>hal::files::models::FileSystem</scope><name>__init__</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1a809f1abc2282567f89f809a510e7d665" prot="public" virt="non-virtual"><scope>hal::files::models::FileSystem</scope><name>extract_name_max_chars</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1a7fe20d282e84a1ad292f7e04de6d335d" prot="public" virt="non-virtual"><scope>hal::files::models::FileSystem</scope><name>fix_raw_path</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1a7b176e08ad6531bcc9caa04c44df1944" prot="public" virt="non-virtual"><scope>hal::files::models::FileSystem</scope><name>is_archive_mac</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1a073400419be263c865c0971136d2898b" prot="public" virt="non-virtual"><scope>hal::files::models::FileSystem</scope><name>is_russian</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1aaf2fadb1bb388e4b565da0db6823f4f5" prot="public" virt="non-virtual"><scope>hal::files::models::FileSystem</scope><name>ls</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1a60f66aeec22d00b67067f3527d06db74" prot="public" virt="non-virtual"><scope>hal::files::models::FileSystem</scope><name>ls_dir</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1a2df7cb545b239ccb239b71f808ce5808" prot="public" virt="non-virtual"><scope>hal::files::models::FileSystem</scope><name>ls_recurse</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1a261fa17468126979cedf206b69a1d071" prot="public" virt="non-virtual"><scope>hal::files::models::FileSystem</scope><name>path</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1a81206c773e9176fb2c0537a731381b7a" prot="public" virt="non-virtual"><scope>hal::files::models::FileSystem</scope><name>prettify</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1ab97d14ce121829510e40c3f052c176df" prot="public" virt="non-virtual"><scope>hal::files::models::FileSystem</scope><name>remove_brackets</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1af473fc3f0450ffe57c2484fd76d3a40d" prot="public" virt="non-virtual"><scope>hal::files::models::FileSystem</scope><name>remove_year</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1a3388d434e8ae2be2f2b7b9a227ac418e" prot="public" virt="non-virtual"><scope>hal::files::models::FileSystem</scope><name>rename</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1a98912c19e86d13c67b0a9bb70682026c" prot="public" virt="non-virtual"><scope>hal::files::models::FileSystem</scope><name>trash</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

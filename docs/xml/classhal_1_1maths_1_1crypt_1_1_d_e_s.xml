@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classhal_1_1maths_1_1crypt_1_1_d_e_s" kind="class" language="Python" prot="public">
+    <compoundname>hal::maths::crypt::DES</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">object</basecompoundref>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classhal_1_1maths_1_1crypt_1_1_d_e_s_1af4a6996632dc4bc9711ec4f17ca3c425" prot="public" static="yes" mutable="no">
+        <type>list</type>
+        <definition>list hal.maths.crypt.DES::ALLOWED_SIZE</definition>
+        <argsstring></argsstring>
+        <name>ALLOWED_SIZE</name>
+        <initializer>= [1, 3]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="436" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="436" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a7f7043d08dd641c3e061d6316263754a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>hal.maths.crypt.DES::plain</definition>
+        <argsstring></argsstring>
+        <name>plain</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="440" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="440" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a5220f18392796674edee54db1772365b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>hal.maths.crypt.DES::key</definition>
+        <argsstring></argsstring>
+        <name>key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="441" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="441" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a0197f3353d660bba2ee2046b0e27ff4f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>hal.maths.crypt.DES::size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="442" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="442" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a413aae8583c759879becd80f35dd335d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>hal.maths.crypt.DES::hashed</definition>
+        <argsstring></argsstring>
+        <name>hashed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="445" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="445" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a163fe40de3514de90bf07230f18cb891" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.crypt.DES.__init__</definition>
+        <argsstring>(self, string, key, size)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>string</type>
+          <defname>string</defname>
+        </param>
+        <param>
+          <type>key</type>
+          <defname>key</defname>
+        </param>
+        <param>
+          <type>size</type>
+          <defname>size</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="438" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="438" bodyend="446"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a950a921233fa101b5be1c2910c1e0595" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.crypt.DES.hash</definition>
+        <argsstring>(self)</argsstring>
+        <name>hash</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:return: hash of given size
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="447" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="447" bodyend="456"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a0e397526a54b62510f118a0859b3c8b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.crypt.DES.hash_des</definition>
+        <argsstring>(self)</argsstring>
+        <name>hash_des</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:return: des hash
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="457" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="457" bodyend="466"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a9183df60a448c690beb8ac117262aa41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.crypt.DES.hash_des3</definition>
+        <argsstring>(self)</argsstring>
+        <name>hash_des3</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:return: des3 hash
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="467" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="467" bodyend="477"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>DES hash </verbatim> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="152">
+        <label>hal.maths.crypt.DES</label>
+        <link refid="classhal_1_1maths_1_1crypt_1_1_d_e_s"/>
+        <childnode refid="153" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="153">
+        <label>object</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="154">
+        <label>hal.maths.crypt.DES</label>
+        <link refid="classhal_1_1maths_1_1crypt_1_1_d_e_s"/>
+        <childnode refid="155" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="155">
+        <label>object</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="433" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="433" bodyend="478"/>
+    <listofallmembers>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a163fe40de3514de90bf07230f18cb891" prot="public" virt="non-virtual"><scope>hal::maths::crypt::DES</scope><name>__init__</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1af4a6996632dc4bc9711ec4f17ca3c425" prot="public" virt="non-virtual"><scope>hal::maths::crypt::DES</scope><name>ALLOWED_SIZE</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a950a921233fa101b5be1c2910c1e0595" prot="public" virt="non-virtual"><scope>hal::maths::crypt::DES</scope><name>hash</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a0e397526a54b62510f118a0859b3c8b6" prot="public" virt="non-virtual"><scope>hal::maths::crypt::DES</scope><name>hash_des</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a9183df60a448c690beb8ac117262aa41" prot="public" virt="non-virtual"><scope>hal::maths::crypt::DES</scope><name>hash_des3</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a413aae8583c759879becd80f35dd335d" prot="public" virt="non-virtual"><scope>hal::maths::crypt::DES</scope><name>hashed</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a5220f18392796674edee54db1772365b" prot="public" virt="non-virtual"><scope>hal::maths::crypt::DES</scope><name>key</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a7f7043d08dd641c3e061d6316263754a" prot="public" virt="non-virtual"><scope>hal::maths::crypt::DES</scope><name>plain</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a0197f3353d660bba2ee2046b0e27ff4f" prot="public" virt="non-virtual"><scope>hal::maths::crypt::DES</scope><name>size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

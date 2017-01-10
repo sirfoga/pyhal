@@ -1,0 +1,388 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classhal_1_1maths_1_1crypt_1_1_m_d6" kind="class" language="Python" prot="public">
+    <compoundname>hal::maths::crypt::MD6</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">object</basecompoundref>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classhal_1_1maths_1_1crypt_1_1_m_d6_1a54b930b58adc82ff6fb00b7ec03b9194" prot="public" static="yes" mutable="no">
+        <type>list</type>
+        <definition>list hal.maths.crypt.MD6::ALLOWED_SIZE</definition>
+        <argsstring></argsstring>
+        <name>ALLOWED_SIZE</name>
+        <initializer>= [64, 128, 224, 256, 384, 512]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="54" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classhal_1_1maths_1_1crypt_1_1_m_d6_1a278814da97344037e49882218a3e5f99" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>hal.maths.crypt.MD6::plain</definition>
+        <argsstring></argsstring>
+        <name>plain</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="58" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classhal_1_1maths_1_1crypt_1_1_m_d6_1ac536bb3b4e1a4099845865e51e31291f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>hal.maths.crypt.MD6::size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="59" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classhal_1_1maths_1_1crypt_1_1_m_d6_1a4f2445ec801202f1eefed4c428778ea8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>hal.maths.crypt.MD6::hashed</definition>
+        <argsstring></argsstring>
+        <name>hashed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="62" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classhal_1_1maths_1_1crypt_1_1_m_d6_1a44aaff6ac5a1369c30c6515e36f3e4f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.crypt.MD6.__init__</definition>
+        <argsstring>(self, string, size)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>string</type>
+          <defname>string</defname>
+        </param>
+        <param>
+          <type>size</type>
+          <defname>size</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="56" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="56" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1maths_1_1crypt_1_1_m_d6_1ad3e597a2acb6d2e2ff3dbccdde536ab1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.crypt.MD6.hash</definition>
+        <argsstring>(self)</argsstring>
+        <name>hash</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:return: return md6 hash
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="64" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="64" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1maths_1_1crypt_1_1_m_d6_1abe7af5abf04e41a31b3c901124aa1114" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.crypt.MD6.hex</definition>
+        <argsstring>(self, data, size)</argsstring>
+        <name>hex</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>data</type>
+          <defname>data</defname>
+        </param>
+        <param>
+          <type>size</type>
+          <defname>size</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param data: plaintext
+:param size: bytes
+:return: hex representation
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="310" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="310" bodyend="324"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1maths_1_1crypt_1_1_m_d6_1a325f687cdf1081ae62d54638a5774293" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.crypt.MD6.raw</definition>
+        <argsstring>(self, data, size)</argsstring>
+        <name>raw</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>data</type>
+          <defname>data</defname>
+        </param>
+        <param>
+          <type>size</type>
+          <defname>size</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param data: plaintext
+:param size: bytes
+:return: raw representation
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="325" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="325" bodyend="340"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classhal_1_1maths_1_1crypt_1_1_m_d6_1a05cd4edd3bb0395274a08bde443ee073" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.crypt.MD6.__to_word</definition>
+        <argsstring>(self, i_byte)</argsstring>
+        <name>__to_word</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>i_byte</type>
+          <defname>i_byte</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param i_byte: i-th byte
+:return: to word representation
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="72" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="72" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1maths_1_1crypt_1_1_m_d6_1ab1ba67b59cb2eb4139b68d544e97a3b6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.crypt.MD6.__from_word</definition>
+        <argsstring>(self, i_word)</argsstring>
+        <name>__from_word</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>i_word</type>
+          <defname>i_word</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param i_word: i-th word
+:return: partial hash
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="95" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="95" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1maths_1_1crypt_1_1_m_d6_1a6a70ed46f60d2de5d889cb1d547bd792" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.crypt.MD6.__crop</definition>
+        <argsstring>(self, size, data, right)</argsstring>
+        <name>__crop</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>size</type>
+          <defname>size</defname>
+        </param>
+        <param>
+          <type>data</type>
+          <defname>data</defname>
+        </param>
+        <param>
+          <type>right</type>
+          <defname>right</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param size: bytes
+:param data: plaintext
+:param right: right index
+:return: crop plaintext to right index
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="116" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="116" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1maths_1_1crypt_1_1_m_d6_1aeaa0c2f185890afc30ea36d080ce4350" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.crypt.MD6.__hash</definition>
+        <argsstring>(self, size, data, key, levels)</argsstring>
+        <name>__hash</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>size</type>
+          <defname>size</defname>
+        </param>
+        <param>
+          <type>data</type>
+          <defname>data</defname>
+        </param>
+        <param>
+          <type>key</type>
+          <defname>key</defname>
+        </param>
+        <param>
+          <type>levels</type>
+          <defname>levels</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param size: size of hash
+:param data: plaintext
+:param key: hash key
+:param levels: hash levels
+:return: md6 hash
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="137" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="137" bodyend="279"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1maths_1_1crypt_1_1_m_d6_1ab2f11c8a5a1bb900f1ec84ded4b58721" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.crypt.MD6.__bytes</definition>
+        <argsstring>(self, i_str)</argsstring>
+        <name>__bytes</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>i_str</type>
+          <defname>i_str</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param i_str: word
+:return: bytes of word
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="280" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="280" bodyend="290"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1maths_1_1crypt_1_1_m_d6_1a04f2a8c5ce1f0cf82a4774260b9711e0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.crypt.MD6.__prehash</definition>
+        <argsstring>(self, data, size, key, levels)</argsstring>
+        <name>__prehash</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>data</type>
+          <defname>data</defname>
+        </param>
+        <param>
+          <type>size</type>
+          <defname>size</defname>
+        </param>
+        <param>
+          <type>key</type>
+          <defname>key</defname>
+        </param>
+        <param>
+          <type>levels</type>
+          <defname>levels</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param data: plaintext
+:param size: bytes
+:param key: hash key
+:param levels: hash level
+:return: pre-hash md6
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="291" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="291" bodyend="309"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>md6 hash </verbatim> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="207">
+        <label>hal.maths.crypt.MD6</label>
+        <link refid="classhal_1_1maths_1_1crypt_1_1_m_d6"/>
+        <childnode refid="208" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="208">
+        <label>object</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="209">
+        <label>hal.maths.crypt.MD6</label>
+        <link refid="classhal_1_1maths_1_1crypt_1_1_m_d6"/>
+        <childnode refid="210" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="210">
+        <label>object</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" line="51" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py" bodystart="51" bodyend="341"/>
+    <listofallmembers>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1ab2f11c8a5a1bb900f1ec84ded4b58721" prot="private" virt="non-virtual"><scope>hal::maths::crypt::MD6</scope><name>__bytes</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1a6a70ed46f60d2de5d889cb1d547bd792" prot="private" virt="non-virtual"><scope>hal::maths::crypt::MD6</scope><name>__crop</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1ab1ba67b59cb2eb4139b68d544e97a3b6" prot="private" virt="non-virtual"><scope>hal::maths::crypt::MD6</scope><name>__from_word</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1aeaa0c2f185890afc30ea36d080ce4350" prot="private" virt="non-virtual"><scope>hal::maths::crypt::MD6</scope><name>__hash</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1a44aaff6ac5a1369c30c6515e36f3e4f2" prot="public" virt="non-virtual"><scope>hal::maths::crypt::MD6</scope><name>__init__</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1a04f2a8c5ce1f0cf82a4774260b9711e0" prot="private" virt="non-virtual"><scope>hal::maths::crypt::MD6</scope><name>__prehash</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1a05cd4edd3bb0395274a08bde443ee073" prot="private" virt="non-virtual"><scope>hal::maths::crypt::MD6</scope><name>__to_word</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1a54b930b58adc82ff6fb00b7ec03b9194" prot="public" virt="non-virtual"><scope>hal::maths::crypt::MD6</scope><name>ALLOWED_SIZE</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1ad3e597a2acb6d2e2ff3dbccdde536ab1" prot="public" virt="non-virtual"><scope>hal::maths::crypt::MD6</scope><name>hash</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1a4f2445ec801202f1eefed4c428778ea8" prot="public" virt="non-virtual"><scope>hal::maths::crypt::MD6</scope><name>hashed</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1abe7af5abf04e41a31b3c901124aa1114" prot="public" virt="non-virtual"><scope>hal::maths::crypt::MD6</scope><name>hex</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1a278814da97344037e49882218a3e5f99" prot="public" virt="non-virtual"><scope>hal::maths::crypt::MD6</scope><name>plain</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1a325f687cdf1081ae62d54638a5774293" prot="public" virt="non-virtual"><scope>hal::maths::crypt::MD6</scope><name>raw</name></member>
+      <member refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1ac536bb3b4e1a4099845865e51e31291f" prot="public" virt="non-virtual"><scope>hal::maths::crypt::MD6</scope><name>size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

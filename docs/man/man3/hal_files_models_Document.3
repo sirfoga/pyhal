@@ -1,0 +1,201 @@
+.TH "hal.files.models.Document" 3 "Tue Jan 10 2017" "Version 4.3" "PyHal" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+hal.files.models.Document \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBhal\&.files\&.models\&.FileSystem\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP (self, path)"
+.br
+.ti -1c
+.RI "def \fBget_path_name\fP (self)"
+.br
+.ti -1c
+.RI "def \fBis_video\fP (self)"
+.br
+.ti -1c
+.RI "def \fBis_subtitle\fP (self)"
+.br
+.ti -1c
+.RI "def \fBis_text\fP (self)"
+.br
+.ti -1c
+.RI "def \fBis_image\fP (self)"
+.br
+.ti -1c
+.RI "def \fBis_audio\fP (self)"
+.br
+.ti -1c
+.RI "def \fBis_hidden\fP (self)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBmove_file_to_directory\fP (file_path, directory_path)"
+.br
+.ti -1c
+.RI "def \fBmove_file_to_file\fP (old_path, new_path)"
+.br
+.ti -1c
+.RI "def \fBwrite_data_to_file\fP (data, out_file)"
+.br
+.ti -1c
+.RI "def \fBextract_name_extension\fP (file_name)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBfull_name\fP"
+.br
+.ti -1c
+.RI "\fBextension\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def hal\&.files\&.models\&.Document\&.__init__ ( self,  path)"
+
+.PP
+.nf
+:param path: string
+    Path to file
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "def hal\&.files\&.models\&.Document\&.extract_name_extension ( file_name)\fC [static]\fP"
+
+.PP
+.nf
+:param file_name: string
+    Name of file
+:return: tuple string, string
+    Name of file, extension of file
+
+.fi
+.PP
+ 
+.SS "def hal\&.files\&.models\&.Document\&.get_path_name ( self)"
+
+.PP
+.nf
+:return: tuple string, string
+    Name of path, name of file (or folder)
+
+.fi
+.PP
+ 
+.SS "def hal\&.files\&.models\&.Document\&.is_audio ( self)"
+
+.PP
+.nf
+:return: True iff document is an audio.
+
+.fi
+.PP
+ 
+.SS "def hal\&.files\&.models\&.Document\&.is_hidden ( self)"
+
+.PP
+.nf
+:return: bool
+    True iff path is hidden
+
+.fi
+.PP
+ 
+.SS "def hal\&.files\&.models\&.Document\&.is_image ( self)"
+
+.PP
+.nf
+:return: True iff document is an image.
+
+.fi
+.PP
+ 
+.SS "def hal\&.files\&.models\&.Document\&.is_subtitle ( self)"
+
+.PP
+.nf
+:return: True iff document is a subtitle.
+
+.fi
+.PP
+ 
+.SS "def hal\&.files\&.models\&.Document\&.is_text ( self)"
+
+.PP
+.nf
+:return: True iff document is a text file.
+
+.fi
+.PP
+ 
+.SS "def hal\&.files\&.models\&.Document\&.is_video ( self)"
+
+.PP
+.nf
+:return: True iff document is a video.
+
+.fi
+.PP
+ 
+.SS "def hal\&.files\&.models\&.Document\&.move_file_to_directory ( file_path,  directory_path)\fC [static]\fP"
+
+.PP
+.nf
+:param file_path: string
+    Path to file to move
+:param directory_path: string
+    Path to target directory where to move file
+:return: void
+    Move file to given directory
+
+.fi
+.PP
+ 
+.SS "def hal\&.files\&.models\&.Document\&.move_file_to_file ( old_path,  new_path)\fC [static]\fP"
+
+.PP
+.nf
+:param old_path: string
+    Old path of file to move
+:param new_path: string
+    New path (location) of file
+:return: void
+    Move file from old location to new one
+
+.fi
+.PP
+ 
+.SS "def hal\&.files\&.models\&.Document\&.write_data_to_file ( data,  out_file)\fC [static]\fP"
+
+.PP
+.nf
+:param data: string
+    Data to write to file.
+:param out_file: string
+    Path to output file.
+:return: void
+    Writes given data to given path file.
+
+.fi
+.PP
+ 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PyHal from the source code\&.

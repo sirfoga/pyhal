@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classhal_1_1ml_1_1data_1_1parser_1_1_parser" kind="class" language="Python" prot="public">
+    <compoundname>hal::ml::data::parser::Parser</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">object</basecompoundref>
+    <derivedcompoundref refid="classhal_1_1ml_1_1data_1_1parser_1_1_c_s_v_parser" prot="public" virt="non-virtual">hal.ml.data.parser.CSVParser</derivedcompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classhal_1_1ml_1_1data_1_1parser_1_1_parser_1a6c29e08c2a9938a625004389ef18a281" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>hal.ml.data.parser.Parser::database_file</definition>
+        <argsstring></argsstring>
+        <name>database_file</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/ml/data/parser.py" line="27" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/ml/data/parser.py" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classhal_1_1ml_1_1data_1_1parser_1_1_parser_1a7409c542f418415aeb0c073be705fc58" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>hal.ml.data.parser.Parser::lines</definition>
+        <argsstring></argsstring>
+        <name>lines</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/ml/data/parser.py" line="28" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/ml/data/parser.py" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classhal_1_1ml_1_1data_1_1parser_1_1_parser_1adc7a4812823d9c636eb8977c6d450e6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.ml.data.parser.Parser.__init__</definition>
+        <argsstring>(self, database_file)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>database_file</type>
+          <defname>database_file</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param database_file: a raw .csv file that contains any data about anything </verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/ml/data/parser.py" line="23" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/ml/data/parser.py" bodystart="23" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1ml_1_1data_1_1parser_1_1_parser_1aaf10b0c434100a1c3effd5e5ee0ee2a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.ml.data.parser.Parser.get_lines</definition>
+        <argsstring>(self)</argsstring>
+        <name>get_lines</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/ml/data/parser.py" line="30" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/ml/data/parser.py" bodystart="30" bodyend="35"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="219">
+        <label>hal.ml.data.parser.CSVParser</label>
+        <link refid="classhal_1_1ml_1_1data_1_1parser_1_1_c_s_v_parser"/>
+        <childnode refid="217" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="218">
+        <label>object</label>
+      </node>
+      <node id="217">
+        <label>hal.ml.data.parser.Parser</label>
+        <link refid="classhal_1_1ml_1_1data_1_1parser_1_1_parser"/>
+        <childnode refid="218" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="221">
+        <label>object</label>
+      </node>
+      <node id="220">
+        <label>hal.ml.data.parser.Parser</label>
+        <link refid="classhal_1_1ml_1_1data_1_1parser_1_1_parser"/>
+        <childnode refid="221" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/stefano/Coding/Python/projects/pyhal/hal/ml/data/parser.py" line="22" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/ml/data/parser.py" bodystart="22" bodyend="36"/>
+    <listofallmembers>
+      <member refid="classhal_1_1ml_1_1data_1_1parser_1_1_parser_1adc7a4812823d9c636eb8977c6d450e6a" prot="public" virt="non-virtual"><scope>hal::ml::data::parser::Parser</scope><name>__init__</name></member>
+      <member refid="classhal_1_1ml_1_1data_1_1parser_1_1_parser_1a6c29e08c2a9938a625004389ef18a281" prot="public" virt="non-virtual"><scope>hal::ml::data::parser::Parser</scope><name>database_file</name></member>
+      <member refid="classhal_1_1ml_1_1data_1_1parser_1_1_parser_1aaf10b0c434100a1c3effd5e5ee0ee2a3" prot="public" virt="non-virtual"><scope>hal::ml::data::parser::Parser</scope><name>get_lines</name></member>
+      <member refid="classhal_1_1ml_1_1data_1_1parser_1_1_parser_1a7409c542f418415aeb0c073be705fc58" prot="public" virt="non-virtual"><scope>hal::ml::data::parser::Parser</scope><name>lines</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

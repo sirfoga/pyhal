@@ -1,0 +1,87 @@
+.TH "hal.files.models.Directory" 3 "Tue Jan 10 2017" "Version 4.3" "PyHal" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+hal.files.models.Directory \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBhal\&.files\&.models\&.FileSystem\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP (self, path)"
+.br
+.ti -1c
+.RI "def \fBget_path_name\fP (self)"
+.br
+.ti -1c
+.RI "def \fBis_empty\fP (self)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBcreate_new\fP (path)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBname\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def hal\&.files\&.models\&.Directory\&.__init__ ( self,  path)"
+
+.PP
+.nf
+:param path: string
+    Path to file
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "def hal\&.files\&.models\&.Directory\&.create_new ( path)\fC [static]\fP"
+
+.PP
+.nf
+:param path: string
+    Path to directory to create
+:return: void
+    Creates new directory
+
+.fi
+.PP
+ 
+.SS "def hal\&.files\&.models\&.Directory\&.get_path_name ( self)"
+
+.PP
+.nf
+:return: tuple string, string
+    Name of path, name of file (or folder)
+
+.fi
+.PP
+ 
+.SS "def hal\&.files\&.models\&.Directory\&.is_empty ( self)"
+
+.PP
+.nf
+:return: Bool
+    True iff empty
+
+.fi
+.PP
+ 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PyHal from the source code\&.

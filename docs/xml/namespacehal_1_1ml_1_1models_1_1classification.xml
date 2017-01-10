@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespacehal_1_1ml_1_1models_1_1classification" kind="namespace" language="Python">
+    <compoundname>hal::ml::models::classification</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="classification_8py_1a26dcaf27752c3692adb1abdc89115be5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.ml.models.classification.extra_trees_classifier</definition>
+        <argsstring>()</argsstring>
+        <name>extra_trees_classifier</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/ml/models/classification.py" line="28" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/ml/models/classification.py" bodystart="28" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classification_8py_1a9651d6d2f9b1233cd3626c76d1516ee8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.ml.models.classification.random_forest</definition>
+        <argsstring>()</argsstring>
+        <name>random_forest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/ml/models/classification.py" line="32" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/ml/models/classification.py" bodystart="32" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classification_8py_1a4f1ca3daac3bb1a4a51a3dca36d330e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.ml.models.classification.knn</definition>
+        <argsstring>()</argsstring>
+        <name>knn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>    very fast and slightly more accurate than AdaBoost
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/ml/models/classification.py" line="36" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/ml/models/classification.py" bodystart="36" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classification_8py_1a79fe8e02f08c789415d1f3c264deb141" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.ml.models.classification.ada_boost</definition>
+        <argsstring>()</argsstring>
+        <name>ada_boost</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>    fast, accurate but too uncertainty
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/ml/models/classification.py" line="44" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/ml/models/classification.py" bodystart="44" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classification_8py_1ae1fde34e1d07346f8e6ff5535edfccda" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.ml.models.classification.bayes_gauss</definition>
+        <argsstring>()</argsstring>
+        <name>bayes_gauss</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>slower than svr but equally accuarte
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/ml/models/classification.py" line="52" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/ml/models/classification.py" bodystart="52" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classification_8py_1a0184e60d51ab354f47d9ced91c42a35f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.ml.models.classification.bayes_bernoulli</definition>
+        <argsstring>()</argsstring>
+        <name>bayes_bernoulli</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/ml/models/classification.py" line="59" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/ml/models/classification.py" bodystart="59" bodyend="61"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/stefano/Coding/Python/projects/pyhal/hal/ml/models/classification.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

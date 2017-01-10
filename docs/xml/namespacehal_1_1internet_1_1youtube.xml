@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespacehal_1_1internet_1_1youtube" kind="namespace" language="Python">
+    <compoundname>hal::internet::youtube</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="youtube_8py_1a0ce6bdbc23e377caeb124b693580df75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.internet.youtube.get_channel_page</definition>
+        <argsstring>(channel_name, youtube_channel_url=&quot;https://www.youtube.com/user/&quot;)</argsstring>
+        <name>get_channel_page</name>
+        <param>
+          <type>channel_name</type>
+          <defname>channel_name</defname>
+        </param>
+        <param>
+          <type>youtube_channel_url</type>
+          <defname>youtube_channel_url</defname>
+          <defval>&quot;https://www.youtube.com/user/&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>@param channel_name: string
+    name of channel.
+@param youtube_channel_url: string
+    base url of youtube channels.
+@return string
+    source page of youtube channel.
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/internet/youtube.py" line="26" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/internet/youtube.py" bodystart="26" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="youtube_8py_1a0d346ae1245f732b71243f850815e54e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.internet.youtube.get_channel_id</definition>
+        <argsstring>(channel_name, channel_id_field=&quot;data-channel-external-id&quot;)</argsstring>
+        <name>get_channel_id</name>
+        <param>
+          <type>channel_name</type>
+          <defname>channel_name</defname>
+        </param>
+        <param>
+          <type>channel_id_field</type>
+          <defname>channel_id_field</defname>
+          <defval>&quot;data-channel-external-id&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>@param channel_name: string
+    channel_name name of channel.
+@param channel_id_field: string
+    default field to get channel id.
+@return string
+    id of youtube channel.
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/internet/youtube.py" line="41" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/internet/youtube.py" bodystart="41" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="youtube_8py_1a873b9efafcfb99ba55b38fabb9059ba0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.internet.youtube.get_channel_feed_url</definition>
+        <argsstring>(channel_name, base_feed_url=&quot;https://www.youtube.com/feeds/videos.xml?channel_id=&quot;)</argsstring>
+        <name>get_channel_feed_url</name>
+        <param>
+          <type>channel_name</type>
+          <defname>channel_name</defname>
+        </param>
+        <param>
+          <type>base_feed_url</type>
+          <defname>base_feed_url</defname>
+          <defval>&quot;https://www.youtube.com/feeds/videos.xml?channel_id=&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>@param channel_name: string
+    channel_name name of channel.
+@param base_feed_url: string
+    default base url for rss feed of youtube channels.
+@return string
+    rss url feed of youtube channel.
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/internet/youtube.py" line="58" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/internet/youtube.py" bodystart="58" bodyend="70"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/stefano/Coding/Python/projects/pyhal/hal/internet/youtube.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

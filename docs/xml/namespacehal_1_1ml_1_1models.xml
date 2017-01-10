@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespacehal_1_1ml_1_1models" kind="namespace" language="Python">
+    <compoundname>hal::ml::models</compoundname>
+    <innernamespace refid="namespacehal_1_1ml_1_1models_1_1classification">hal::ml::models::classification</innernamespace>
+    <innernamespace refid="namespacehal_1_1ml_1_1models_1_1pipelined">hal::ml::models::pipelined</innernamespace>
+    <innernamespace refid="namespacehal_1_1ml_1_1models_1_1regression">hal::ml::models::regression</innernamespace>
+    <innernamespace refid="namespacehal_1_1ml_1_1models_1_1time__series">hal::ml::models::time_series</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/stefano/Coding/Python/projects/pyhal/hal/ml/models/__init__.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespacehal_1_1files_1_1models" kind="namespace" language="Python">
+    <compoundname>hal::files::models</compoundname>
+    <innerclass refid="classhal_1_1files_1_1models_1_1_directory" prot="public">hal::files::models::Directory</innerclass>
+    <innerclass refid="classhal_1_1files_1_1models_1_1_document" prot="public">hal::files::models::Document</innerclass>
+    <innerclass refid="classhal_1_1files_1_1models_1_1_file_system" prot="public">hal::files::models::FileSystem</innerclass>
+    <innerclass refid="classhal_1_1files_1_1models_1_1_m_p3_song" prot="public">hal::files::models::MP3Song</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="models_8py_1aaf1b65f017ea32d7104a1eda2cff3dde" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list hal::files::models.BAD_CHARS</definition>
+        <argsstring></argsstring>
+        <name>BAD_CHARS</name>
+        <initializer>= [
+    &quot;.&quot;, &quot;:&quot;, &quot;\&quot;&quot;, &quot;’&quot;, &quot;&amp;&quot;, &quot;720p&quot;, &quot;1080p&quot;, &quot;yify&quot;, &quot;,&quot;, &quot;brrip&quot;, &quot;bluray&quot;, &quot;Bokutox&quot;, &quot;x264&quot;, &quot;[&quot;, &quot;]&quot;, &quot;sparks&quot;, &quot;h264&quot;,
+    &quot;aac&quot;, &quot;ozlem&quot;, &quot;ac3&quot;, &quot;ozlem&quot;, &quot;etrg&quot;, &quot;dvdrip&quot;, &quot;xvid&quot;, &quot;nydic&quot;, &quot;sujaidr&quot;, &quot;x265&quot;, &quot;hevc&quot;, &quot;(pimprg)&quot;, &quot;aac&quot;,
+    &quot;ozlem&quot;, &quot;remastered&quot;, &quot;anoxmous&quot;, &quot;yts&quot;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="29" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="models_8py_1a43edf2157ded61590f9c91199334cceb" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list hal::files::models.RUSSIAN_CHARS</definition>
+        <argsstring></argsstring>
+        <name>RUSSIAN_CHARS</name>
+        <initializer>= [&quot;ш&quot;, &quot;а&quot;, &quot;б&quot;, &quot;л&quot;, &quot;о&quot;, &quot;н&quot;, &quot;ы&quot;, &quot;р&quot;, &quot;е&quot;, &quot;а&quot;, &quot;л&quot;, &quot;и&quot;, &quot;з&quot;, &quot;а&quot;, &quot;ц&quot;, &quot;и&quot;, &quot;и&quot;, &quot;к&quot;,
+    &quot;о&quot;, &quot;р&quot;, &quot;п&quot;, &quot;о&quot;, &quot;р&quot;, &quot;а&quot;, &quot;т&quot;, &quot;и&quot;, &quot;в&quot;, &quot;н&quot;, &quot;ы&quot;, &quot;х&quot;, &quot;п&quot;, &quot;р&quot;, &quot;и&quot;, &quot;л&quot;, &quot;о&quot;, &quot;ж&quot;, &quot;е&quot;, &quot;н&quot;, &quot;и&quot;, &quot;й&quot;,
+    &quot;в&quot;, &quot;о&quot;, &quot;п&quot;, &quot;р&quot;, &quot;о&quot;, &quot;с&quot;, &quot;ы&quot;, &quot;и&quot;, &quot;о&quot;, &quot;т&quot;, &quot;в&quot;, &quot;е&quot;, &quot;т&quot;, &quot;ы&quot;, &quot;п&quot;, &quot;о&quot;, &quot;б&quot;, &quot;е&quot;, &quot;з&quot;, &quot;о&quot;, &quot;п&quot;,
+    &quot;а&quot;, &quot;с&quot;, &quot;н&quot;, &quot;о&quot;, &quot;с&quot;, &quot;т&quot;, &quot;и&quot;, &quot;д&quot;, &quot;а&quot;, &quot;н&quot;, &quot;н&quot;, &quot;ы&quot;, &quot;х&quot;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="33" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="models_8py_1ab66a7d426dd9557ff5afbcac6b6d8359" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list hal::files::models.VIDEO_FORMAT</definition>
+        <argsstring></argsstring>
+        <name>VIDEO_FORMAT</name>
+        <initializer>= [&quot;.&quot;, &quot;.3g2&quot;, &quot;.3gp&quot;, &quot;.amv&quot;, &quot;.asf&quot;, &quot;.avi&quot;, &quot;.drc&quot;, &quot;.f4a&quot;, &quot;.f4b&quot;, &quot;.f4p&quot;, &quot;.f4v&quot;, &quot;.flv&quot;,
+    &quot;.gifv&quot;, &quot;.m2v&quot;, &quot;.m4p&quot;, &quot;.m4v&quot;, &quot;.mkv&quot;, &quot;.mng&quot;, &quot;.mov&quot;, &quot;.mp2&quot;, &quot;.mp4&quot;, &quot;.mpe&quot;, &quot;.mpeg&quot;, &quot;.mpg&quot;, &quot;.mpv&quot;, &quot;.mxf&quot;,
+    &quot;.nsv&quot;, &quot;.ogg&quot;, &quot;.ogv&quot;, &quot;.qt&quot;, &quot;.rm&quot;, &quot;.rmvb&quot;, &quot;.roq&quot;, &quot;.svi&quot;, &quot;.vob&quot;, &quot;.webm&quot;, &quot;.wmv&quot;, &quot;.yuv&quot;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="37" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="models_8py_1a0f573f0a1ad0679c0bb9a64267bf99b1" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list hal::files::models.ARCHIVE_FORMAT</definition>
+        <argsstring></argsstring>
+        <name>ARCHIVE_FORMAT</name>
+        <initializer>= [&quot;.7z&quot;, &quot;.??_&quot;, &quot;.?Q?&quot;, &quot;.?Z?&quot;, &quot;.a&quot;, &quot;.ace&quot;, &quot;.afa&quot;, &quot;.alz&quot;, &quot;.apk&quot;, &quot;.ar&quot;, &quot;.arc&quot;, &quot;.arj&quot;,
+                      &quot;.b1&quot;, &quot;.ba&quot;, &quot;.bh&quot;, &quot;.bz2&quot;, &quot;.cab&quot;, &quot;.car&quot;, &quot;.cfs&quot;, &quot;.cpio&quot;, &quot;.cpt&quot;, &quot;.dar&quot;, &quot;.dd&quot;, &quot;.dgc&quot;,
+                      &quot;.dmg&quot;, &quot;.ear&quot;, &quot;.ecc&quot;, &quot;.F&quot;, &quot;.gca&quot;, &quot;.gz&quot;, &quot;.ha&quot;, &quot;.hki&quot;, &quot;.ice&quot;, &quot;.infl&quot;, &quot;.iso&quot;, &quot;.jar&quot;,
+                      &quot;.kgb&quot;, &quot;.LBR&quot;, &quot;.lbr&quot;, &quot;.lha&quot;, &quot;.lz&quot;, &quot;.lzh&quot;, &quot;.lzma&quot;, &quot;.lzo&quot;, &quot;.lzx&quot;, &quot;.mar&quot;, &quot;.pak&quot;, &quot;.paq6&quot;,
+                      &quot;.paq7&quot;, &quot;.paq8&quot;, &quot;.par&quot;, &quot;.par2&quot;, &quot;.partimg&quot;, &quot;.pea&quot;, &quot;.pim&quot;, &quot;.pit&quot;, &quot;.qda&quot;, &quot;.rar&quot;, &quot;.rk&quot;,
+                      &quot;.rz&quot;, &quot;.s7z&quot;, &quot;.sda&quot;, &quot;.sea&quot;, &quot;.sen&quot;, &quot;.sfark&quot;, &quot;.sfx&quot;, &quot;.shar&quot;, &quot;.shk&quot;, &quot;.sit&quot;, &quot;.sitx&quot;,
+                      &quot;.sqx&quot;, &quot;.sz&quot;, &quot;.tar&quot;, &quot;.tar.bz2&quot;, &quot;.tar.gz&quot;, &quot;.tar.lzma&quot;, &quot;.tar.Z&quot;, &quot;.tbz2&quot;, &quot;.tgz&quot;, &quot;.tlz&quot;,
+                      &quot;.uc&quot;, &quot;.uc0&quot;, &quot;.uc2&quot;, &quot;.uca&quot;, &quot;.ucn&quot;, &quot;.ue2&quot;, &quot;.uha&quot;, &quot;.ur2&quot;, &quot;.war&quot;, &quot;.wim&quot;, &quot;.xar&quot;, &quot;.xp3&quot;,
+                      &quot;.xz&quot;, &quot;.yz1&quot;, &quot;.z&quot;, &quot;.Z&quot;, &quot;.zip&quot;, &quot;.zipx&quot;, &quot;.zoo&quot;, &quot;.zpaq&quot;, &quot;.zz&quot;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="40" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="models_8py_1ae98f5f1851cce70adba7bd822a1e3341" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list hal::files::models.SUBTITLE_FORMAT</definition>
+        <argsstring></argsstring>
+        <name>SUBTITLE_FORMAT</name>
+        <initializer>= [&quot;.srt&quot;, &quot;.sub&quot;, &quot;.sbv&quot;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="49" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="models_8py_1a9aab07f4c9dbe7eecd608a86ea9a2971" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list hal::files::models.TEXT_FORMAT</definition>
+        <argsstring></argsstring>
+        <name>TEXT_FORMAT</name>
+        <initializer>= [&quot;.cnf&quot;, &quot;.conf&quot;, &quot;.cfg&quot;, &quot;.chm&quot;, &quot;.epub&quot;, &quot;.log&quot;, &quot;.asc&quot;, &quot;.txt&quot;, &quot;.url&quot;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="50" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="models_8py_1a69d036097f8893f201776d0b09dac5bb" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list hal::files::models.IMAGE_FORMAT</definition>
+        <argsstring></argsstring>
+        <name>IMAGE_FORMAT</name>
+        <initializer>= [&quot;.ani&quot;, &quot;.bmp&quot;, &quot;.cal&quot;, &quot;.fax&quot;, &quot;.gif&quot;, &quot;.img&quot;, &quot;.jbg&quot;, &quot;.jpe&quot;, &quot;.jpe&quot;, &quot;.jpg&quot;, &quot;.mac&quot;, &quot;.pbm&quot;,
+                &quot;.pcd&quot;, &quot;.pcx&quot;, &quot;.pct&quot;, &quot;.pgm&quot;, &quot;.png&quot;, &quot;.ppm&quot;, &quot;.psd&quot;, &quot;.ras&quot;, &quot;.tga&quot;, &quot;.tif&quot;, &quot;.wmf&quot;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="51" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="models_8py_1af1a50756580e88c39d38536472111358" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list hal::files::models.AUDIO_FORMAT</definition>
+        <argsstring></argsstring>
+        <name>AUDIO_FORMAT</name>
+        <initializer>= [&quot;.3gp&quot;, &quot;.aa&quot;, &quot;.aac&quot;, &quot;.aax&quot;, &quot;.act&quot;, &quot;.aiff&quot;, &quot;.amr&quot;, &quot;.ape&quot;, &quot;.au&quot;, &quot;.awb&quot;, &quot;.dct&quot;, &quot;.dss&quot;, &quot;.dvf&quot;,
+                &quot;.flac&quot;, &quot;.gsm&quot;, &quot;.iklax&quot;, &quot;.ivs&quot;, &quot;.m4a&quot;, &quot;.m4b&quot;, &quot;.m4p&quot;, &quot;.mmf&quot;, &quot;.mogg&quot;, &quot;.mp3&quot;, &quot;.mpc&quot;, &quot;.msv&quot;,
+                &quot;.oga&quot;, &quot;.ogg&quot;, &quot;.opus&quot;, &quot;.ra&quot;, &quot;.raw&quot;, &quot;.rm&quot;, &quot;.sln&quot;, &quot;.tta&quot;, &quot;.vox&quot;, &quot;.wav&quot;, &quot;.webm&quot;, &quot;.wma&quot;, &quot;.wv&quot;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="53" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="models_8py_1ae9163e4c41c92f978c5e19844b3eb68b" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string hal::files::models.PATH_SEPARATOR</definition>
+        <argsstring></argsstring>
+        <name>PATH_SEPARATOR</name>
+        <initializer>= &quot;/&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="56" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

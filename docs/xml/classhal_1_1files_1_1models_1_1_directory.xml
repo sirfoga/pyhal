@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classhal_1_1files_1_1models_1_1_directory" kind="class" language="Python" prot="public">
+    <compoundname>hal::files::models::Directory</compoundname>
+    <basecompoundref refid="classhal_1_1files_1_1models_1_1_file_system" prot="public" virt="non-virtual">hal.files.models.FileSystem</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classhal_1_1files_1_1models_1_1_directory_1a881eb92f96a89ccd626fb1c4be7da135" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>hal.files.models.Directory::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="408" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="408" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classhal_1_1files_1_1models_1_1_directory_1ae4f13948eb8127b0c62f56d0ddf154b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.files.models.Directory.__init__</definition>
+        <argsstring>(self, path)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param path: string
+    Path to file
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="400" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="400" bodyend="409"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1files_1_1models_1_1_directory_1a58118af8552193237b38f7f341773707" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.files.models.Directory.get_path_name</definition>
+        <argsstring>(self)</argsstring>
+        <name>get_path_name</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:return: tuple string, string
+    Name of path, name of file (or folder)
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="422" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="422" bodyend="431"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1files_1_1models_1_1_directory_1a2a7a4af7d8d8d9e8e0d121ae9b673ce7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.files.models.Directory.is_empty</definition>
+        <argsstring>(self)</argsstring>
+        <name>is_empty</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:return: Bool
+    True iff empty
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="432" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="432" bodyend="440"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classhal_1_1files_1_1models_1_1_directory_1ac1f283483a8ae3cdc09634882be2e419" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.files.models.Directory.create_new</definition>
+        <argsstring>(path)</argsstring>
+        <name>create_new</name>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param path: string
+    Path to directory to create
+:return: void
+    Creates new directory
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="411" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="411" bodyend="421"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="157">
+        <label>hal.files.models.FileSystem</label>
+        <link refid="classhal_1_1files_1_1models_1_1_file_system"/>
+        <childnode refid="158" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="156">
+        <label>hal.files.models.Directory</label>
+        <link refid="classhal_1_1files_1_1models_1_1_directory"/>
+        <childnode refid="157" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="158">
+        <label>object</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="160">
+        <label>hal.files.models.FileSystem</label>
+        <link refid="classhal_1_1files_1_1models_1_1_file_system"/>
+        <childnode refid="161" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="159">
+        <label>hal.files.models.Directory</label>
+        <link refid="classhal_1_1files_1_1models_1_1_directory"/>
+        <childnode refid="160" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="161">
+        <label>object</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" line="399" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/files/models.py" bodystart="399" bodyend="441"/>
+    <listofallmembers>
+      <member refid="classhal_1_1files_1_1models_1_1_directory_1ae4f13948eb8127b0c62f56d0ddf154b1" prot="public" virt="non-virtual"><scope>hal::files::models::Directory</scope><name>__init__</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_directory_1ac1f283483a8ae3cdc09634882be2e419" prot="public" virt="non-virtual"><scope>hal::files::models::Directory</scope><name>create_new</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1a809f1abc2282567f89f809a510e7d665" prot="public" virt="non-virtual"><scope>hal::files::models::Directory</scope><name>extract_name_max_chars</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1a7fe20d282e84a1ad292f7e04de6d335d" prot="public" virt="non-virtual"><scope>hal::files::models::Directory</scope><name>fix_raw_path</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_directory_1a58118af8552193237b38f7f341773707" prot="public" virt="non-virtual"><scope>hal::files::models::Directory</scope><name>get_path_name</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1a7b176e08ad6531bcc9caa04c44df1944" prot="public" virt="non-virtual"><scope>hal::files::models::Directory</scope><name>is_archive_mac</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_directory_1a2a7a4af7d8d8d9e8e0d121ae9b673ce7" prot="public" virt="non-virtual"><scope>hal::files::models::Directory</scope><name>is_empty</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1a073400419be263c865c0971136d2898b" prot="public" virt="non-virtual"><scope>hal::files::models::Directory</scope><name>is_russian</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1aaf2fadb1bb388e4b565da0db6823f4f5" prot="public" virt="non-virtual"><scope>hal::files::models::Directory</scope><name>ls</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1a60f66aeec22d00b67067f3527d06db74" prot="public" virt="non-virtual"><scope>hal::files::models::Directory</scope><name>ls_dir</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1a2df7cb545b239ccb239b71f808ce5808" prot="public" virt="non-virtual"><scope>hal::files::models::Directory</scope><name>ls_recurse</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_directory_1a881eb92f96a89ccd626fb1c4be7da135" prot="public" virt="non-virtual"><scope>hal::files::models::Directory</scope><name>name</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1a261fa17468126979cedf206b69a1d071" prot="public" virt="non-virtual"><scope>hal::files::models::Directory</scope><name>path</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1a81206c773e9176fb2c0537a731381b7a" prot="public" virt="non-virtual"><scope>hal::files::models::Directory</scope><name>prettify</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1ab97d14ce121829510e40c3f052c176df" prot="public" virt="non-virtual"><scope>hal::files::models::Directory</scope><name>remove_brackets</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1af473fc3f0450ffe57c2484fd76d3a40d" prot="public" virt="non-virtual"><scope>hal::files::models::Directory</scope><name>remove_year</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1a3388d434e8ae2be2f2b7b9a227ac418e" prot="public" virt="non-virtual"><scope>hal::files::models::Directory</scope><name>rename</name></member>
+      <member refid="classhal_1_1files_1_1models_1_1_file_system_1a98912c19e86d13c67b0a9bb70682026c" prot="public" virt="non-virtual"><scope>hal::files::models::Directory</scope><name>trash</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

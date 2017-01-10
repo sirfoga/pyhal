@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespacehal_1_1maths_1_1maths" kind="namespace" language="Python">
+    <compoundname>hal::maths::maths</compoundname>
+    <innerclass refid="classhal_1_1maths_1_1maths_1_1_eight_queen" prot="public">hal::maths::maths::EightQueen</innerclass>
+    <innerclass refid="classhal_1_1maths_1_1maths_1_1_integer" prot="public">hal::maths::maths::Integer</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="maths_8py_1ad91b769c49027ee24a29dc0cb478a185" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.maths.get_prime</definition>
+        <argsstring>(bits)</argsstring>
+        <name>get_prime</name>
+        <param>
+          <type>bits</type>
+          <defname>bits</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param bits: size of number to generate (bits)
+:return: prime number of given size
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/maths.py" line="153" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/maths.py" bodystart="153" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="maths_8py_1ae10e70d56ded5443131404154cf0246d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.maths.blumblumshub</definition>
+        <argsstring>(seed, amount, prime0, prime1)</argsstring>
+        <name>blumblumshub</name>
+        <param>
+          <type>seed</type>
+          <defname>seed</defname>
+        </param>
+        <param>
+          <type>amount</type>
+          <defname>amount</defname>
+        </param>
+        <param>
+          <type>prime0</type>
+          <defname>prime0</defname>
+        </param>
+        <param>
+          <type>prime1</type>
+          <defname>prime1</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param seed: seeder
+:param amount: amount of number to generate
+:param prime0: one prime number
+:param prime1: the second prime number
+:return: pseudo-number generator
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/maths.py" line="167" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/maths.py" bodystart="167" bodyend="192"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/maths.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

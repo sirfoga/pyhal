@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_a161224535343065a7617037f916b793" kind="dir">
+    <compoundname>/home/stefano/Coding/Python/projects/pyhal/hal/files</compoundname>
+    <innerfile refid="files_2____init_____8py">__init__.py</innerfile>
+    <innerfile refid="models_8py">models.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/stefano/Coding/Python/projects/pyhal/hal/files/"/>
+  </compounddef>
+</doxygen>

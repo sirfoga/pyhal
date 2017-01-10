@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespacehal_1_1ml_1_1models_1_1regression" kind="namespace" language="Python">
+    <compoundname>hal::ml::models::regression</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="regression_8py_1aeb359b5e041b62a878adf3add352d6e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.ml.models.regression.support_vector_machine</definition>
+        <argsstring>()</argsstring>
+        <name>support_vector_machine</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>super fast and precise
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/ml/models/regression.py" line="25" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/ml/models/regression.py" bodystart="25" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="regression_8py_1a3082b33d6bcf5cfe23be0bfb50819f15" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.ml.models.regression.logistic_regression</definition>
+        <argsstring>()</argsstring>
+        <name>logistic_regression</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/ml/models/regression.py" line="32" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/ml/models/regression.py" bodystart="32" bodyend="34"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/stefano/Coding/Python/projects/pyhal/hal/ml/models/regression.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

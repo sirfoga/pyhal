@@ -1,0 +1,800 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="crypt_8py" kind="file" language="Python">
+    <compoundname>crypt.py</compoundname>
+    <innerclass refid="classhal_1_1maths_1_1crypt_1_1_m_d5" prot="public">hal::maths::crypt::MD5</innerclass>
+    <innerclass refid="classhal_1_1maths_1_1crypt_1_1_m_d6" prot="public">hal::maths::crypt::MD6</innerclass>
+    <innerclass refid="classhal_1_1maths_1_1crypt_1_1_s_h_a" prot="public">hal::maths::crypt::SHA</innerclass>
+    <innerclass refid="classhal_1_1maths_1_1crypt_1_1_d_e_s" prot="public">hal::maths::crypt::DES</innerclass>
+    <innerclass refid="classhal_1_1maths_1_1crypt_1_1_a_r_c" prot="public">hal::maths::crypt::ARC</innerclass>
+    <innerclass refid="classhal_1_1maths_1_1crypt_1_1_a_e_s" prot="public">hal::maths::crypt::AES</innerclass>
+    <innerclass refid="classhal_1_1maths_1_1crypt_1_1_h_m_a_c" prot="public">hal::maths::crypt::HMAC</innerclass>
+    <innerclass refid="classhal_1_1maths_1_1crypt_1_1_b_l_o_w_f_i_s_h" prot="public">hal::maths::crypt::BLOWFISH</innerclass>
+    <innerclass refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a" prot="public">hal::maths::crypt::IDEA</innerclass>
+    <innerclass refid="classhal_1_1maths_1_1crypt_1_1_c_a_s_t128" prot="public">hal::maths::crypt::CAST128</innerclass>
+    <innerclass refid="classhal_1_1maths_1_1crypt_1_1_dsa" prot="public">hal::maths::crypt::Dsa</innerclass>
+    <innernamespace refid="namespacehal_1_1maths_1_1crypt">hal::maths::crypt</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">#<sp/>!/usr/bin/python</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">#<sp/>coding:<sp/>utf_8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Copyright<sp/>2016<sp/>Stefano<sp/>Fogarollo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">#<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">#<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">#<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">#<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">#<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">#<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">#<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;&quot;&quot;<sp/>Perform<sp/>fast<sp/>hash,<sp/>encryption<sp/>and<sp/>calculations<sp/>related<sp/>to<sp/>cryptography.<sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>hashlib</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>binascii</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>crypt</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>Crypto.Hash<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>SHA224,<sp/>SHA256</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>Crypto.Cipher<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>DES3,<sp/>ARC2,<sp/>ARC4,<sp/>Blowfish,<sp/>CAST</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>Crypto.PublicKey<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>DSA</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>Crypto<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>Random</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>Crypto.Random<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>random</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>Crypto.Util<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>Counter</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>struct<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>pack</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="classhal_1_1maths_1_1crypt_1_1_m_d5" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_m_d5" kindref="compound">MD5</ref>(object):</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;<sp/>md5<sp/>hash<sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">__init__(self,<sp/>string):</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>object.__init__(self)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_m_d5_1aa822e9fbe6057d9aa720551bdba468e6" kindref="member">plain</ref><sp/>=<sp/>string</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_m_d5_1a7f9b85649d89714b340a6dfb424681a2" kindref="member">hashed</ref><sp/>=<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_m_d5_1a5f2fcd9c5019f5ace7f70f7a6b514123" kindref="member">hash</ref>(self):</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="44"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>hash<sp/>plaintext</highlight></codeline>
+<codeline lineno="45"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_m_d5_1a7f9b85649d89714b340a6dfb424681a2" kindref="member">hashed</ref><sp/>=<sp/>hashlib.md5(self.plain.encode(</highlight><highlight class="stringliteral">&apos;utf-8&apos;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_m_d5_1a7f9b85649d89714b340a6dfb424681a2" kindref="member">hashed</ref></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="classhal_1_1maths_1_1crypt_1_1_m_d6" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_m_d6" kindref="compound">MD6</ref>(object):</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;<sp/>md6<sp/>hash<sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>ALLOWED_SIZE<sp/>=<sp/>[64,<sp/>128,<sp/>224,<sp/>256,<sp/>384,<sp/>512]</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">__init__(self,<sp/>string,<sp/>size):</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>object.__init__(self)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1a278814da97344037e49882218a3e5f99" kindref="member">plain</ref><sp/>=<sp/>string</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1ac536bb3b4e1a4099845865e51e31291f" kindref="member">size</ref><sp/>=<sp/>int(size)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1ac536bb3b4e1a4099845865e51e31291f" kindref="member">size</ref><sp/></highlight><highlight class="keywordflow">not</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1a54b930b58adc82ff6fb00b7ec03b9194" kindref="member">ALLOWED_SIZE</ref>:</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">raise</highlight><highlight class="normal"><sp/>ValueError(</highlight><highlight class="stringliteral">&apos;Cannot<sp/>create<sp/>MD6<sp/>hash<sp/>of<sp/>size<sp/>&apos;</highlight><highlight class="normal"><sp/>+<sp/>str(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1ac536bb3b4e1a4099845865e51e31291f" kindref="member">size</ref>))</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1a4f2445ec801202f1eefed4c428778ea8" kindref="member">hashed</ref><sp/>=<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1ad3e597a2acb6d2e2ff3dbccdde536ab1" kindref="member">hash</ref>(self):</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="66"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>return<sp/>md6<sp/>hash</highlight></codeline>
+<codeline lineno="67"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1a4f2445ec801202f1eefed4c428778ea8" kindref="member">hashed</ref><sp/>=<sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1abe7af5abf04e41a31b3c901124aa1114" kindref="member">hex</ref>(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1a278814da97344037e49882218a3e5f99" kindref="member">plain</ref>,<sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1ac536bb3b4e1a4099845865e51e31291f" kindref="member">size</ref>)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1a4f2445ec801202f1eefed4c428778ea8" kindref="member">hashed</ref></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">__to_word(self,<sp/>i_byte):</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="74"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>i_byte:<sp/>i-th<sp/>byte</highlight></codeline>
+<codeline lineno="75"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>to<sp/>word<sp/>representation</highlight></codeline>
+<codeline lineno="76"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>length<sp/>=<sp/>len(i_byte)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>o_word<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>i<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(0,<sp/>length,<sp/>8):</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>o_word.append(</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((i_byte[i<sp/>+<sp/>0]<sp/>&amp;<sp/>0xff)<sp/>&lt;&lt;<sp/>56)<sp/>|</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((i_byte[i<sp/>+<sp/>1]<sp/>&amp;<sp/>0xff)<sp/>&lt;&lt;<sp/>48)<sp/>|</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((i_byte[i<sp/>+<sp/>2]<sp/>&amp;<sp/>0xff)<sp/>&lt;&lt;<sp/>40)<sp/>|</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((i_byte[i<sp/>+<sp/>3]<sp/>&amp;<sp/>0xff)<sp/>&lt;&lt;<sp/>32)<sp/>|</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((i_byte[i<sp/>+<sp/>4]<sp/>&amp;<sp/>0xff)<sp/>&lt;&lt;<sp/>24)<sp/>|</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((i_byte[i<sp/>+<sp/>5]<sp/>&amp;<sp/>0xff)<sp/>&lt;&lt;<sp/>16)<sp/>|</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((i_byte[i<sp/>+<sp/>6]<sp/>&amp;<sp/>0xff)<sp/>&lt;&lt;<sp/>8)<sp/>|</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((i_byte[i<sp/>+<sp/>7]<sp/>&amp;<sp/>0xff)<sp/>&lt;&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>o_word</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">__from_word(self,<sp/>i_word):</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="97"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>i_word:<sp/>i-th<sp/>word</highlight></codeline>
+<codeline lineno="98"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>partial<sp/>hash</highlight></codeline>
+<codeline lineno="99"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>length<sp/>=<sp/>len(i_word)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>o_byte<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>i<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(length):</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>o_byte.append((i_word[i]<sp/>&gt;&gt;<sp/>56)<sp/>&amp;<sp/>0xff)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>o_byte.append((i_word[i]<sp/>&gt;&gt;<sp/>48)<sp/>&amp;<sp/>0xff)</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>o_byte.append((i_word[i]<sp/>&gt;&gt;<sp/>40)<sp/>&amp;<sp/>0xff)</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>o_byte.append((i_word[i]<sp/>&gt;&gt;<sp/>32)<sp/>&amp;<sp/>0xff)</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>o_byte.append((i_word[i]<sp/>&gt;&gt;<sp/>24)<sp/>&amp;<sp/>0xff)</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>o_byte.append((i_word[i]<sp/>&gt;&gt;<sp/>16)<sp/>&amp;<sp/>0xff)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>o_byte.append((i_word[i]<sp/>&gt;&gt;<sp/>8)<sp/>&amp;<sp/>0xff)</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>o_byte.append((i_word[i]<sp/>&gt;&gt;<sp/>0)<sp/>&amp;<sp/>0xff)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>o_byte</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">__crop(self,<sp/>size,<sp/>data,<sp/>right):</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="118"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>size:<sp/>bytes</highlight></codeline>
+<codeline lineno="119"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>data:<sp/>plaintext</highlight></codeline>
+<codeline lineno="120"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>right:<sp/>right<sp/>index</highlight></codeline>
+<codeline lineno="121"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>crop<sp/>plaintext<sp/>to<sp/>right<sp/>index</highlight></codeline>
+<codeline lineno="122"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>length<sp/>=<sp/>int((size<sp/>+<sp/>7)<sp/>/<sp/>8)</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>remain<sp/>=<sp/>size<sp/>%<sp/>8</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>right:</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data<sp/>=<sp/>data[len(data)<sp/>-<sp/>length:]</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data<sp/>=<sp/>data[:length]</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>remain<sp/>&gt;<sp/>0:</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[length<sp/>-<sp/>1]<sp/>&amp;=<sp/>(0xff<sp/>&lt;&lt;<sp/>(8<sp/>-<sp/>remain))<sp/>&amp;<sp/>0xff</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>data</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">__hash(self,<sp/>size,<sp/>data,<sp/>key,<sp/>levels):</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="139"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>size:<sp/>size<sp/>of<sp/>hash</highlight></codeline>
+<codeline lineno="140"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>data:<sp/>plaintext</highlight></codeline>
+<codeline lineno="141"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>key:<sp/>hash<sp/>key</highlight></codeline>
+<codeline lineno="142"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>levels:<sp/>hash<sp/>levels</highlight></codeline>
+<codeline lineno="143"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>md6<sp/>hash</highlight></codeline>
+<codeline lineno="144"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>b<sp/>=<sp/>512</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c<sp/>=<sp/>128</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>n<sp/>=<sp/>89</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d<sp/>=<sp/>size</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>M<sp/>=<sp/>data</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>K<sp/>=<sp/>key[:64]</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>k<sp/>=<sp/>len(K)</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>len(K)<sp/>&lt;<sp/>64:</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>K.append(0x00)</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>K<sp/>=<sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1a05cd4edd3bb0395274a08bde443ee073" kindref="member">__to_word</ref>(K)</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r<sp/>=<sp/>max(80<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>k<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>0,<sp/>40<sp/>+<sp/>int(d<sp/>/<sp/>4))</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L<sp/>=<sp/>levels</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ell<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S0<sp/>=<sp/>0x0123456789abcdef</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sm<sp/>=<sp/>0x7311c2812425cfa0</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Q<sp/>=<sp/>[</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x7311c2812425cfa0,<sp/>0x6432286434aac8e7,<sp/>0xb60450e9ef68b7c1,</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xe8fb23908d9f06f1,<sp/>0xdd2e76cba691e5bf,<sp/>0x0cd0d63b2c30bc41,</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x1f8ccf6823058f8a,<sp/>0x54e5ed5b88e3775d,<sp/>0x4ad12aae0a6d6031,</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x3e7f16bb88222e0d,<sp/>0x8af8671d3fb50c2c,<sp/>0x995ad1178bd25c31,</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xc878c1dd04c4b633,<sp/>0x3b72066c7a1552ac,<sp/>0x0d6f3522631effcb</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>]</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>t<sp/>=<sp/>[17,<sp/>18,<sp/>21,<sp/>31,<sp/>67,<sp/>89]</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rs<sp/>=<sp/>[10,<sp/>5,<sp/>13,<sp/>10,<sp/>11,<sp/>12,<sp/>2,<sp/>7,<sp/>14,<sp/>15,<sp/>7,<sp/>13,<sp/>11,<sp/>7,<sp/>6,<sp/>12]</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ls<sp/>=<sp/>[11,<sp/>24,<sp/>9,<sp/>16,<sp/>15,<sp/>9,<sp/>27,<sp/>15,<sp/>6,<sp/>2,<sp/>29,<sp/>8,<sp/>15,<sp/>5,<sp/>31,<sp/>9]</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">f(N):</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S<sp/>=<sp/>S0</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>A<sp/>=<sp/>list(N)</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>j<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i<sp/>=<sp/>n</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>j<sp/>&lt;<sp/>r:</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>s<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(16):</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>S</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>^=<sp/>A[i<sp/>+<sp/>s<sp/>-<sp/>t[5]]</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>^=<sp/>A[i<sp/>+<sp/>s<sp/>-<sp/>t[0]]</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>^=<sp/>A[i<sp/>+<sp/>s<sp/>-<sp/>t[1]]<sp/>&amp;<sp/>A[i<sp/>+<sp/>s<sp/>-<sp/>t[2]]</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>^=<sp/>A[i<sp/>+<sp/>s<sp/>-<sp/>t[3]]<sp/>&amp;<sp/>A[i<sp/>+<sp/>s<sp/>-<sp/>t[4]]</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>^=<sp/>x<sp/>&gt;&gt;<sp/>rs[s]</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>len(A)<sp/>&lt;=<sp/>i<sp/>+<sp/>s:</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>len(A)<sp/>&lt;=<sp/>i<sp/>+<sp/>s:</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>A.append(0x00)</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>A[i<sp/>+<sp/>s]<sp/>=<sp/>x<sp/>^<sp/>((x<sp/>&lt;&lt;<sp/>ls[s])<sp/>&amp;<sp/>0xffffffffffffffff)</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S<sp/>=<sp/>(((S<sp/>&lt;&lt;<sp/>1)<sp/>&amp;<sp/>0xffffffffffffffff)<sp/>^<sp/>(S<sp/>&gt;&gt;<sp/>63))<sp/>^<sp/>(S<sp/>&amp;<sp/>Sm)</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>j<sp/>+=<sp/>1</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i<sp/>+=<sp/>16</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>A[(len(A)<sp/>-<sp/>16):]</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">mid(B,<sp/>C,<sp/>i,<sp/>p,<sp/>z):</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>U<sp/>=<sp/>((ell<sp/>&amp;<sp/>0xff)<sp/>&lt;&lt;<sp/>56)<sp/>|<sp/>i<sp/>&amp;<sp/>0xffffffffffffff</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>V<sp/>=<sp/>((r<sp/>&amp;<sp/>0xfff)<sp/>&lt;&lt;<sp/>48)<sp/>|<sp/>((L<sp/>&amp;<sp/>0xff)<sp/>&lt;&lt;<sp/>40)<sp/>|<sp/>((z<sp/>&amp;<sp/>0xf)<sp/>&lt;&lt;<sp/>36)<sp/>|<sp/>((p<sp/>&amp;<sp/>0xffff)<sp/>&lt;&lt;<sp/>20)<sp/>|<sp/>((k<sp/>&amp;<sp/>0xff)<sp/>&lt;&lt;<sp/>12)<sp/>|<sp/>(d<sp/>&amp;<sp/>0xfff)</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>f(Q<sp/>+<sp/>K<sp/>+<sp/>[U,<sp/>V]<sp/>+<sp/>C<sp/>+<sp/>B)</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">par(M):</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>P<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>B<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>C<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>z<sp/>=<sp/>0<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>len(M)<sp/>&gt;<sp/>b<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>1</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>len(M)<sp/>&lt;<sp/>1<sp/></highlight><highlight class="keywordflow">or</highlight><highlight class="normal"><sp/>(len(M)<sp/>%<sp/>b)<sp/>&gt;<sp/>0:</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>M.append(0x00)</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>P<sp/>+=<sp/>8</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>M<sp/>=<sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1a05cd4edd3bb0395274a08bde443ee073" kindref="member">__to_word</ref>(M)</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>len(M)<sp/>&gt;<sp/>0:</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>B.append(M[:int(b<sp/>/<sp/>8)])</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>M<sp/>=<sp/>M[int(b<sp/>/<sp/>8):]</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>l<sp/>=<sp/>len(B)</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>i<sp/>&lt;<sp/>l:</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p<sp/>=<sp/>P<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>i<sp/>==<sp/>(len(B)<sp/>-<sp/>1)<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>0</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>C<sp/>+=<sp/>mid(B[i],<sp/>[],<sp/>i,<sp/>p,<sp/>z)</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i<sp/>+=<sp/>1</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1ab1ba67b59cb2eb4139b68d544e97a3b6" kindref="member">__from_word</ref>(C)</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">seq(M):</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>P<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>B<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>C<sp/>=<sp/>[0x0,<sp/>0x0,<sp/>0x0,<sp/>0x0,<sp/>0x0,<sp/>0x0,<sp/>0x0,<sp/>0x0,<sp/>0x0,<sp/>0x0,<sp/>0x0,<sp/>0x0,<sp/>0x0,<sp/>0x0,<sp/>0x0,<sp/>0x0]</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>len(M)<sp/>&lt;<sp/>1<sp/></highlight><highlight class="keywordflow">or</highlight><highlight class="normal"><sp/>(len(M)<sp/>%<sp/>(b<sp/>-<sp/>c))<sp/>&gt;<sp/>0:</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>M.append(0x00)</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>P<sp/>+=<sp/>8</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>M<sp/>=<sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1a05cd4edd3bb0395274a08bde443ee073" kindref="member">__to_word</ref>(M)</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>len(M)<sp/>&gt;<sp/>0:</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>B.append(M[:int((b<sp/>-<sp/>c)<sp/>/<sp/>8)])</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>M<sp/>=<sp/>M[int((b<sp/>-<sp/>c)<sp/>/<sp/>8):]</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>l<sp/>=<sp/>len(B)</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>i<sp/>&lt;<sp/>l:</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p<sp/>=<sp/>P<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>i<sp/>==<sp/>(len(B)<sp/>-<sp/>1)<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>0</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>z<sp/>=<sp/>1<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>i<sp/>==<sp/>(len(B)<sp/>-<sp/>1)<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>0</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>C<sp/>=<sp/>mid(B[i],<sp/>C,<sp/>i,<sp/>p,<sp/>z)</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i<sp/>+=<sp/>1</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1ab1ba67b59cb2eb4139b68d544e97a3b6" kindref="member">__from_word</ref>(C)</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ell<sp/>+=<sp/>1</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>M<sp/>=<sp/>seq(M)<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>ell<sp/>&gt;<sp/>L<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>par(M)</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>len(M)<sp/>==<sp/>c:</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1a6a70ed46f60d2de5d889cb1d547bd792" kindref="member">__crop</ref>(d,<sp/>M,<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">__bytes(self,<sp/>i_str):</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="282"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>i_str:<sp/>word</highlight></codeline>
+<codeline lineno="283"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>bytes<sp/>of<sp/>word</highlight></codeline>
+<codeline lineno="284"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i_str<sp/>=<sp/>binascii.hexlify(i_str.encode(</highlight><highlight class="stringliteral">&apos;ascii&apos;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>o_byte<sp/>=<sp/>[int(i_str[i:i<sp/>+<sp/>2],<sp/>16)<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>i<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(0,<sp/>len(i_str),<sp/>2)]</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>o_byte</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">__prehash(self,<sp/>data,<sp/>size,<sp/>key,<sp/>levels):</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="293"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>data:<sp/>plaintext</highlight></codeline>
+<codeline lineno="294"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>size:<sp/>bytes</highlight></codeline>
+<codeline lineno="295"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>key:<sp/>hash<sp/>key</highlight></codeline>
+<codeline lineno="296"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>levels:<sp/>hash<sp/>level</highlight></codeline>
+<codeline lineno="297"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>pre-hash<sp/>md6</highlight></codeline>
+<codeline lineno="298"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data<sp/>=<sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1ab2f11c8a5a1bb900f1ec84ded4b58721" kindref="member">__bytes</ref>(data)</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>key<sp/>=<sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1ab2f11c8a5a1bb900f1ec84ded4b58721" kindref="member">__bytes</ref>(key)</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>size<sp/>&lt;=<sp/>0:</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>size<sp/>=<sp/>1</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">elif</highlight><highlight class="normal"><sp/>size<sp/>&gt;<sp/>512:</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>size<sp/>=<sp/>512</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1aeaa0c2f185890afc30ea36d080ce4350" kindref="member">__hash</ref>(size,<sp/>data,<sp/>key,<sp/>levels)</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1abe7af5abf04e41a31b3c901124aa1114" kindref="member">hex</ref>(self,<sp/>data,<sp/>size):</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="312"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>data:<sp/>plaintext</highlight></codeline>
+<codeline lineno="313"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>size:<sp/>bytes</highlight></codeline>
+<codeline lineno="314"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>hex<sp/>representation</highlight></codeline>
+<codeline lineno="315"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>byte<sp/>=<sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1a04f2a8c5ce1f0cf82a4774260b9711e0" kindref="member">__prehash</ref>(data,<sp/>size,<sp/></highlight><highlight class="stringliteral">&apos;&apos;</highlight><highlight class="normal">,<sp/>64)</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hexstr<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>i<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>byte:</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hexstr<sp/>+=<sp/></highlight><highlight class="stringliteral">&apos;%02x&apos;</highlight><highlight class="normal"><sp/>%<sp/>i</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>hexstr</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1a325f687cdf1081ae62d54638a5774293" kindref="member">raw</ref>(self,<sp/>data,<sp/>size):</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="327"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>data:<sp/>plaintext</highlight></codeline>
+<codeline lineno="328"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>size:<sp/>bytes</highlight></codeline>
+<codeline lineno="329"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>raw<sp/>representation</highlight></codeline>
+<codeline lineno="330"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>byte<sp/>=<sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_m_d6_1a04f2a8c5ce1f0cf82a4774260b9711e0" kindref="member">__prehash</ref>(data,<sp/>size,<sp/>key=</highlight><highlight class="stringliteral">&apos;&apos;</highlight><highlight class="normal">,<sp/>levels=64)</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rawstr<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>i<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>byte:</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rawstr<sp/>+=<sp/>chr(i)</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rawstr</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight></codeline>
+<codeline lineno="341" refid="classhal_1_1maths_1_1crypt_1_1_s_h_a" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a" kindref="compound">SHA</ref>(object):</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;<sp/>general<sp/>SHA<sp/>hash<sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"></highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/>ALLOWED_SIZE<sp/>=<sp/>[1,<sp/>224,<sp/>256,<sp/>384,<sp/>512]</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">__init__(self,<sp/>string,<sp/>size,<sp/>salt=None):</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>object.__init__(self)</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1ad683af29f5abcb0607b3152750ed2848" kindref="member">plain</ref><sp/>=<sp/>string</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1a039dcc420e588091d5bf74037882ec31" kindref="member">size</ref><sp/>=<sp/>int(size)</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1ad0916d65406b116f81a23754a3ca3c79" kindref="member">salt</ref><sp/>=<sp/>salt</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1a039dcc420e588091d5bf74037882ec31" kindref="member">size</ref><sp/></highlight><highlight class="keywordflow">not</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1ac548ef72156aee09835369f224ba1349" kindref="member">ALLOWED_SIZE</ref>:</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">raise</highlight><highlight class="normal"><sp/>ValueError(</highlight><highlight class="stringliteral">&apos;Cannot<sp/>create<sp/>SHA<sp/>hash<sp/>of<sp/>size<sp/>&apos;</highlight><highlight class="normal"><sp/>+<sp/>str(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1a039dcc420e588091d5bf74037882ec31" kindref="member">size</ref>))</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1a633832075c61a928b02a9a9c0fa133eb" kindref="member">hashed</ref><sp/>=<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"></highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1a4434870473a585d5382945a8cef6c7c3" kindref="member">hash</ref>(self):</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="357"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>hash<sp/>of<sp/>given<sp/>size</highlight></codeline>
+<codeline lineno="358"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="359"><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1ad0916d65406b116f81a23754a3ca3c79" kindref="member">salt</ref><sp/></highlight><highlight class="keywordflow">is</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1a039dcc420e588091d5bf74037882ec31" kindref="member">size</ref><sp/>==<sp/>1:</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1a87af3f937c0cfed513ea0720c4814246" kindref="member">hash_sha1</ref>()</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">elif</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1a039dcc420e588091d5bf74037882ec31" kindref="member">size</ref><sp/>==<sp/>224:</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1ad258fade71cc488adc9e5cbcfaf7fc9c" kindref="member">hash_sha224</ref>()</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">elif</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1a039dcc420e588091d5bf74037882ec31" kindref="member">size</ref><sp/>==<sp/>256:</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1aa2c42ae578cf76dc73cfd443fc931605" kindref="member">hash_sha256</ref>()</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">elif</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1a039dcc420e588091d5bf74037882ec31" kindref="member">size</ref><sp/>==<sp/>384:</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1af0a05dbeeb0ec1f6530aa8c99937b44f" kindref="member">hash_sha384</ref>()</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:<sp/><sp/></highlight><highlight class="comment">#<sp/>512</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1ad799ad40338287efb2a6f539954d35e9" kindref="member">hash_sha512</ref>()</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1a9ebefcb7012b2b306cd6b70feb646d8c" kindref="member">hash_shasalted</ref>()</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"></highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1a87af3f937c0cfed513ea0720c4814246" kindref="member">hash_sha1</ref>(self):</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="376"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>sha1<sp/>hash</highlight></codeline>
+<codeline lineno="377"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="378"><highlight class="normal"></highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>h<sp/>=<sp/>SHA.new()</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>h.update(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1ad683af29f5abcb0607b3152750ed2848" kindref="member">plain</ref>)</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1a633832075c61a928b02a9a9c0fa133eb" kindref="member">hashed</ref><sp/>=<sp/>h.hexdigest()</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1a633832075c61a928b02a9a9c0fa133eb" kindref="member">hashed</ref></highlight></codeline>
+<codeline lineno="383"><highlight class="normal"></highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1ad258fade71cc488adc9e5cbcfaf7fc9c" kindref="member">hash_sha224</ref>(self):</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="386"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>sha224<sp/>hash</highlight></codeline>
+<codeline lineno="387"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="388"><highlight class="normal"></highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>h<sp/>=<sp/>SHA224.new()</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>h.update(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1ad683af29f5abcb0607b3152750ed2848" kindref="member">plain</ref>)</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1a633832075c61a928b02a9a9c0fa133eb" kindref="member">hashed</ref><sp/>=<sp/>h.hexdigest()</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1a633832075c61a928b02a9a9c0fa133eb" kindref="member">hashed</ref></highlight></codeline>
+<codeline lineno="393"><highlight class="normal"></highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1aa2c42ae578cf76dc73cfd443fc931605" kindref="member">hash_sha256</ref>(self):</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="396"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>sha256<sp/>hash</highlight></codeline>
+<codeline lineno="397"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="398"><highlight class="normal"></highlight></codeline>
+<codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>h<sp/>=<sp/>SHA256.new()</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>h.update(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1ad683af29f5abcb0607b3152750ed2848" kindref="member">plain</ref>)</highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1a633832075c61a928b02a9a9c0fa133eb" kindref="member">hashed</ref><sp/>=<sp/>h.hexdigest()</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1a633832075c61a928b02a9a9c0fa133eb" kindref="member">hashed</ref></highlight></codeline>
+<codeline lineno="403"><highlight class="normal"></highlight></codeline>
+<codeline lineno="404"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1af0a05dbeeb0ec1f6530aa8c99937b44f" kindref="member">hash_sha384</ref>(self):</highlight></codeline>
+<codeline lineno="405"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="406"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>sha384<sp/>hash</highlight></codeline>
+<codeline lineno="407"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="408"><highlight class="normal"></highlight></codeline>
+<codeline lineno="409"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>h<sp/>=<sp/>SHA224.new()</highlight></codeline>
+<codeline lineno="410"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>h.update(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1ad683af29f5abcb0607b3152750ed2848" kindref="member">plain</ref>)</highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1a633832075c61a928b02a9a9c0fa133eb" kindref="member">hashed</ref><sp/>=<sp/>h.hexdigest()</highlight></codeline>
+<codeline lineno="412"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1a633832075c61a928b02a9a9c0fa133eb" kindref="member">hashed</ref></highlight></codeline>
+<codeline lineno="413"><highlight class="normal"></highlight></codeline>
+<codeline lineno="414"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1ad799ad40338287efb2a6f539954d35e9" kindref="member">hash_sha512</ref>(self):</highlight></codeline>
+<codeline lineno="415"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="416"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>sha512<sp/>hash</highlight></codeline>
+<codeline lineno="417"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="418"><highlight class="normal"></highlight></codeline>
+<codeline lineno="419"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>h<sp/>=<sp/>SHA256.new()</highlight></codeline>
+<codeline lineno="420"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>h.update(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1ad683af29f5abcb0607b3152750ed2848" kindref="member">plain</ref>)</highlight></codeline>
+<codeline lineno="421"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1a633832075c61a928b02a9a9c0fa133eb" kindref="member">hashed</ref><sp/>=<sp/>h.hexdigest()</highlight></codeline>
+<codeline lineno="422"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1a633832075c61a928b02a9a9c0fa133eb" kindref="member">hashed</ref></highlight></codeline>
+<codeline lineno="423"><highlight class="normal"></highlight></codeline>
+<codeline lineno="424"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1a9ebefcb7012b2b306cd6b70feb646d8c" kindref="member">hash_shasalted</ref>(self):</highlight></codeline>
+<codeline lineno="425"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="426"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>sha512<sp/>hash</highlight></codeline>
+<codeline lineno="427"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="428"><highlight class="normal"></highlight></codeline>
+<codeline lineno="429"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1a633832075c61a928b02a9a9c0fa133eb" kindref="member">hashed</ref><sp/>=<sp/>crypt.crypt(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1ad683af29f5abcb0607b3152750ed2848" kindref="member">plain</ref>,<sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1ad0916d65406b116f81a23754a3ca3c79" kindref="member">salt</ref>)<sp/><sp/></highlight><highlight class="comment">#<sp/>sha512<sp/>hash</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="430"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_s_h_a_1a633832075c61a928b02a9a9c0fa133eb" kindref="member">hashed</ref></highlight></codeline>
+<codeline lineno="431"><highlight class="normal"></highlight></codeline>
+<codeline lineno="432"><highlight class="normal"></highlight></codeline>
+<codeline lineno="433" refid="classhal_1_1maths_1_1crypt_1_1_d_e_s" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_d_e_s" kindref="compound">DES</ref>(object):</highlight></codeline>
+<codeline lineno="434"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;<sp/>DES<sp/>hash<sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="435"><highlight class="normal"></highlight></codeline>
+<codeline lineno="436"><highlight class="normal"><sp/><sp/><sp/><sp/>ALLOWED_SIZE<sp/>=<sp/>[1,<sp/>3]</highlight></codeline>
+<codeline lineno="437"><highlight class="normal"></highlight></codeline>
+<codeline lineno="438"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">__init__(self,<sp/>string,<sp/>key,<sp/>size):</highlight></codeline>
+<codeline lineno="439"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>object.__init__(self)</highlight></codeline>
+<codeline lineno="440"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a7f7043d08dd641c3e061d6316263754a" kindref="member">plain</ref><sp/>=<sp/>string</highlight></codeline>
+<codeline lineno="441"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a5220f18392796674edee54db1772365b" kindref="member">key</ref><sp/>=<sp/>key</highlight></codeline>
+<codeline lineno="442"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a0197f3353d660bba2ee2046b0e27ff4f" kindref="member">size</ref><sp/>=<sp/>int(size)</highlight></codeline>
+<codeline lineno="443"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a0197f3353d660bba2ee2046b0e27ff4f" kindref="member">size</ref><sp/></highlight><highlight class="keywordflow">not</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1af4a6996632dc4bc9711ec4f17ca3c425" kindref="member">ALLOWED_SIZE</ref>:</highlight></codeline>
+<codeline lineno="444"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">raise</highlight><highlight class="normal"><sp/>ValueError(</highlight><highlight class="stringliteral">&apos;Cannot<sp/>create<sp/>DES<sp/>hash<sp/>of<sp/>size<sp/>&apos;</highlight><highlight class="normal"><sp/>+<sp/>str(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a0197f3353d660bba2ee2046b0e27ff4f" kindref="member">size</ref>))</highlight></codeline>
+<codeline lineno="445"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a413aae8583c759879becd80f35dd335d" kindref="member">hashed</ref><sp/>=<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="446"><highlight class="normal"></highlight></codeline>
+<codeline lineno="447"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a950a921233fa101b5be1c2910c1e0595" kindref="member">hash</ref>(self):</highlight></codeline>
+<codeline lineno="448"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="449"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>hash<sp/>of<sp/>given<sp/>size</highlight></codeline>
+<codeline lineno="450"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="451"><highlight class="normal"></highlight></codeline>
+<codeline lineno="452"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a0197f3353d660bba2ee2046b0e27ff4f" kindref="member">size</ref><sp/>==<sp/>1:</highlight></codeline>
+<codeline lineno="453"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a0e397526a54b62510f118a0859b3c8b6" kindref="member">hash_des</ref>()</highlight></codeline>
+<codeline lineno="454"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:<sp/><sp/></highlight><highlight class="comment">#<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="455"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a9183df60a448c690beb8ac117262aa41" kindref="member">hash_des3</ref>()</highlight></codeline>
+<codeline lineno="456"><highlight class="normal"></highlight></codeline>
+<codeline lineno="457"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a0e397526a54b62510f118a0859b3c8b6" kindref="member">hash_des</ref>(self):</highlight></codeline>
+<codeline lineno="458"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="459"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>des<sp/>hash</highlight></codeline>
+<codeline lineno="460"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="461"><highlight class="normal"></highlight></codeline>
+<codeline lineno="462"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>iv<sp/>=<sp/>Random.new().read(DES3.block_size)</highlight></codeline>
+<codeline lineno="463"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cipher<sp/>=<sp/>DES3.new(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a5220f18392796674edee54db1772365b" kindref="member">key</ref>,<sp/>DES3.MODE_OFB,<sp/>iv)</highlight></codeline>
+<codeline lineno="464"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a413aae8583c759879becd80f35dd335d" kindref="member">hashed</ref><sp/>=<sp/>iv<sp/>+<sp/>cipher.encrypt(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a7f7043d08dd641c3e061d6316263754a" kindref="member">plain</ref>)</highlight></codeline>
+<codeline lineno="465"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a413aae8583c759879becd80f35dd335d" kindref="member">hashed</ref></highlight></codeline>
+<codeline lineno="466"><highlight class="normal"></highlight></codeline>
+<codeline lineno="467"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a9183df60a448c690beb8ac117262aa41" kindref="member">hash_des3</ref>(self):</highlight></codeline>
+<codeline lineno="468"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="469"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>des3<sp/>hash</highlight></codeline>
+<codeline lineno="470"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="471"><highlight class="normal"></highlight></codeline>
+<codeline lineno="472"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nonce<sp/>=<sp/>Random.new().read(DES.block_size<sp/>/<sp/>2)</highlight></codeline>
+<codeline lineno="473"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ctr<sp/>=<sp/>Counter.new(DES.block_size<sp/>*<sp/>8<sp/>/<sp/>2,<sp/>prefix=nonce)</highlight></codeline>
+<codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cipher<sp/>=<sp/>DES.new(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a5220f18392796674edee54db1772365b" kindref="member">key</ref>,<sp/>DES.MODE_CTR,<sp/>counter=ctr)</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>nonce<sp/>+<sp/>cipher.encrypt(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_d_e_s_1a7f7043d08dd641c3e061d6316263754a" kindref="member">plain</ref>)</highlight></codeline>
+<codeline lineno="476"><highlight class="normal"></highlight></codeline>
+<codeline lineno="477"><highlight class="normal"></highlight></codeline>
+<codeline lineno="478" refid="classhal_1_1maths_1_1crypt_1_1_a_r_c" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_a_r_c" kindref="compound">ARC</ref>(object):</highlight></codeline>
+<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;<sp/>ARC<sp/>hash<sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="480"><highlight class="normal"></highlight></codeline>
+<codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/>ALLOWED_SIZE<sp/>=<sp/>[2,<sp/>4]</highlight></codeline>
+<codeline lineno="482"><highlight class="normal"></highlight></codeline>
+<codeline lineno="483"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">__init__(self,<sp/>string,<sp/>key,<sp/>size):</highlight></codeline>
+<codeline lineno="484"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>object.__init__(self)</highlight></codeline>
+<codeline lineno="485"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_a_r_c_1ab565094fdb53f56635001d60863153c7" kindref="member">plain</ref><sp/>=<sp/>string</highlight></codeline>
+<codeline lineno="486"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_a_r_c_1a21a38c518574b0558238889bc0632e24" kindref="member">key</ref><sp/>=<sp/>key</highlight></codeline>
+<codeline lineno="487"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_a_r_c_1a87c67dc38f9fd683d3f16f5b27a125a3" kindref="member">size</ref><sp/>=<sp/>int(size)</highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_a_r_c_1a87c67dc38f9fd683d3f16f5b27a125a3" kindref="member">size</ref><sp/></highlight><highlight class="keywordflow">not</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_a_r_c_1add5e33fd8bbab7761bc77f633363c5a0" kindref="member">ALLOWED_SIZE</ref>:</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">raise</highlight><highlight class="normal"><sp/>ValueError(</highlight><highlight class="stringliteral">&apos;Cannot<sp/>create<sp/>ARC<sp/>hash<sp/>of<sp/>size<sp/>&apos;</highlight><highlight class="normal"><sp/>+<sp/>str(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_a_r_c_1a87c67dc38f9fd683d3f16f5b27a125a3" kindref="member">size</ref>))</highlight></codeline>
+<codeline lineno="490"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_a_r_c_1ad6d70770753dd95fd685f11aa2c50f35" kindref="member">hashed</ref><sp/>=<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="491"><highlight class="normal"></highlight></codeline>
+<codeline lineno="492"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_a_r_c_1a5453d043fc6d569e8d56b08d0657440d" kindref="member">hash</ref>(self):</highlight></codeline>
+<codeline lineno="493"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="494"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>hash<sp/>of<sp/>given<sp/>size</highlight></codeline>
+<codeline lineno="495"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="496"><highlight class="normal"></highlight></codeline>
+<codeline lineno="497"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_a_r_c_1a87c67dc38f9fd683d3f16f5b27a125a3" kindref="member">size</ref><sp/>==<sp/>2:</highlight></codeline>
+<codeline lineno="498"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_a_r_c_1a8bb650cb7e154c93c8d3f90939e42330" kindref="member">hash_ar2</ref>()</highlight></codeline>
+<codeline lineno="499"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:<sp/><sp/></highlight><highlight class="comment">#<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="500"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_a_r_c_1ad81bf4a4f683f4c303c05c6ae93fb020" kindref="member">hash_arc4</ref>()</highlight></codeline>
+<codeline lineno="501"><highlight class="normal"></highlight></codeline>
+<codeline lineno="502"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_a_r_c_1a8bb650cb7e154c93c8d3f90939e42330" kindref="member">hash_ar2</ref>(self):</highlight></codeline>
+<codeline lineno="503"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="504"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>des<sp/>hash</highlight></codeline>
+<codeline lineno="505"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="506"><highlight class="normal"></highlight></codeline>
+<codeline lineno="507"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>iv<sp/>=<sp/>Random.new().read(ARC2.block_size)</highlight></codeline>
+<codeline lineno="508"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cipher<sp/>=<sp/>ARC2.new(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_a_r_c_1a21a38c518574b0558238889bc0632e24" kindref="member">key</ref>,<sp/>ARC2.MODE_CFB,<sp/>iv)</highlight></codeline>
+<codeline lineno="509"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_a_r_c_1ad6d70770753dd95fd685f11aa2c50f35" kindref="member">hashed</ref><sp/>=<sp/>iv<sp/>+<sp/>cipher.encrypt(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_a_r_c_1ab565094fdb53f56635001d60863153c7" kindref="member">plain</ref>)</highlight></codeline>
+<codeline lineno="510"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_a_r_c_1ad6d70770753dd95fd685f11aa2c50f35" kindref="member">hashed</ref></highlight></codeline>
+<codeline lineno="511"><highlight class="normal"></highlight></codeline>
+<codeline lineno="512"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_a_r_c_1ad81bf4a4f683f4c303c05c6ae93fb020" kindref="member">hash_arc4</ref>(self):</highlight></codeline>
+<codeline lineno="513"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="514"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>des3<sp/>hash</highlight></codeline>
+<codeline lineno="515"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="516"><highlight class="normal"></highlight></codeline>
+<codeline lineno="517"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nonce<sp/>=<sp/>Random.new().read(16)</highlight></codeline>
+<codeline lineno="518"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tempkey<sp/>=<sp/>SHA.new(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_a_r_c_1a21a38c518574b0558238889bc0632e24" kindref="member">key</ref><sp/>+<sp/>nonce).digest()</highlight></codeline>
+<codeline lineno="519"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cipher<sp/>=<sp/>ARC4.new(tempkey)</highlight></codeline>
+<codeline lineno="520"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_a_r_c_1ad6d70770753dd95fd685f11aa2c50f35" kindref="member">hashed</ref><sp/>=<sp/>nonce<sp/>+<sp/>cipher.encrypt(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_a_r_c_1ab565094fdb53f56635001d60863153c7" kindref="member">plain</ref>)</highlight></codeline>
+<codeline lineno="521"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_a_r_c_1ad6d70770753dd95fd685f11aa2c50f35" kindref="member">hashed</ref></highlight></codeline>
+<codeline lineno="522"><highlight class="normal"></highlight></codeline>
+<codeline lineno="523"><highlight class="normal"></highlight></codeline>
+<codeline lineno="524" refid="classhal_1_1maths_1_1crypt_1_1_a_e_s" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_a_e_s" kindref="compound">AES</ref>(object):</highlight></codeline>
+<codeline lineno="525"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;<sp/>aes<sp/>hash<sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="526"><highlight class="normal"></highlight></codeline>
+<codeline lineno="527"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">__init__(self,<sp/>string,<sp/>key):</highlight></codeline>
+<codeline lineno="528"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>object.__init__(self)</highlight></codeline>
+<codeline lineno="529"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_a_e_s_1a511e51110acb8e0ff377a021458d89ec" kindref="member">plain</ref><sp/>=<sp/>string</highlight></codeline>
+<codeline lineno="530"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_a_e_s_1a41c89cf1e5822b1b1831132c2cb50c8c" kindref="member">key</ref><sp/>=<sp/>key</highlight></codeline>
+<codeline lineno="531"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_a_e_s_1a7a203fbe4d7cd5ce3c170c8d163d9587" kindref="member">hashed</ref><sp/>=<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="532"><highlight class="normal"></highlight></codeline>
+<codeline lineno="533"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_a_e_s_1ab7bd23c02bda2da94f6a2437f906cd09" kindref="member">hash</ref>(self):</highlight></codeline>
+<codeline lineno="534"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="535"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>hash<sp/>plaintext</highlight></codeline>
+<codeline lineno="536"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="537"><highlight class="normal"></highlight></codeline>
+<codeline lineno="538"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>iv<sp/>=<sp/>Random.new().read(AES.block_size)</highlight></codeline>
+<codeline lineno="539"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cipher<sp/>=<sp/>AES.new(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_a_e_s_1a41c89cf1e5822b1b1831132c2cb50c8c" kindref="member">key</ref>,<sp/>AES.MODE_CFB,<sp/>iv)</highlight></codeline>
+<codeline lineno="540"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_a_e_s_1a7a203fbe4d7cd5ce3c170c8d163d9587" kindref="member">hashed</ref><sp/>=<sp/>iv<sp/>+<sp/>cipher.encrypt(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_a_e_s_1a511e51110acb8e0ff377a021458d89ec" kindref="member">plain</ref>)</highlight></codeline>
+<codeline lineno="541"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_a_e_s_1a7a203fbe4d7cd5ce3c170c8d163d9587" kindref="member">hashed</ref></highlight></codeline>
+<codeline lineno="542"><highlight class="normal"></highlight></codeline>
+<codeline lineno="543"><highlight class="normal"></highlight></codeline>
+<codeline lineno="544" refid="classhal_1_1maths_1_1crypt_1_1_h_m_a_c" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_h_m_a_c" kindref="compound">HMAC</ref>(object):</highlight></codeline>
+<codeline lineno="545"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;<sp/>hmac<sp/>hash<sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="546"><highlight class="normal"></highlight></codeline>
+<codeline lineno="547"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">__init__(self,<sp/>string,<sp/>key):</highlight></codeline>
+<codeline lineno="548"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>object.__init__(self)</highlight></codeline>
+<codeline lineno="549"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_h_m_a_c_1ab910c0e7eb0da6d054812871b920414a" kindref="member">plain</ref><sp/>=<sp/>string</highlight></codeline>
+<codeline lineno="550"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_h_m_a_c_1a4416aa9252b26f8bf3a401e6d57d44d2" kindref="member">key</ref><sp/>=<sp/>key</highlight></codeline>
+<codeline lineno="551"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_h_m_a_c_1aaba6b2465c286591e7c6acf7007c4a32" kindref="member">hashed</ref><sp/>=<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="552"><highlight class="normal"></highlight></codeline>
+<codeline lineno="553"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_h_m_a_c_1a6c5f1e283f7cb24eddffdda46734e71d" kindref="member">hash</ref>(self):</highlight></codeline>
+<codeline lineno="554"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="555"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>hash<sp/>plaintext</highlight></codeline>
+<codeline lineno="556"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="557"><highlight class="normal"></highlight></codeline>
+<codeline lineno="558"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>h<sp/>=<sp/>HMAC.new(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_h_m_a_c_1a4416aa9252b26f8bf3a401e6d57d44d2" kindref="member">key</ref>,<sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_h_m_a_c_1ab910c0e7eb0da6d054812871b920414a" kindref="member">plain</ref>)</highlight></codeline>
+<codeline lineno="559"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_h_m_a_c_1aaba6b2465c286591e7c6acf7007c4a32" kindref="member">hashed</ref><sp/>=<sp/>h.hexdigest()</highlight></codeline>
+<codeline lineno="560"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_h_m_a_c_1aaba6b2465c286591e7c6acf7007c4a32" kindref="member">hashed</ref></highlight></codeline>
+<codeline lineno="561"><highlight class="normal"></highlight></codeline>
+<codeline lineno="562"><highlight class="normal"></highlight></codeline>
+<codeline lineno="563" refid="classhal_1_1maths_1_1crypt_1_1_b_l_o_w_f_i_s_h" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_b_l_o_w_f_i_s_h" kindref="compound">BLOWFISH</ref>(object):</highlight></codeline>
+<codeline lineno="564"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;<sp/>blowfish<sp/>hash<sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="565"><highlight class="normal"></highlight></codeline>
+<codeline lineno="566"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">__init__(self,<sp/>string,<sp/>key):</highlight></codeline>
+<codeline lineno="567"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>object.__init__(self)</highlight></codeline>
+<codeline lineno="568"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_b_l_o_w_f_i_s_h_1a91433d504d000422abfce6ad4df9fed5" kindref="member">plain</ref><sp/>=<sp/>string</highlight></codeline>
+<codeline lineno="569"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_b_l_o_w_f_i_s_h_1a6c4537a3fff285916787aea66f8286b6" kindref="member">key</ref><sp/>=<sp/>key</highlight></codeline>
+<codeline lineno="570"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_b_l_o_w_f_i_s_h_1a315f4ff71730a1c60b97324e41475e48" kindref="member">hashed</ref><sp/>=<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="571"><highlight class="normal"></highlight></codeline>
+<codeline lineno="572"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_b_l_o_w_f_i_s_h_1a7581e9c15acfe4cb64c88c215193f65a" kindref="member">hash</ref>(self):</highlight></codeline>
+<codeline lineno="573"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="574"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>hash<sp/>plaintext</highlight></codeline>
+<codeline lineno="575"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="576"><highlight class="normal"></highlight></codeline>
+<codeline lineno="577"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bs<sp/>=<sp/>Blowfish.block_size</highlight></codeline>
+<codeline lineno="578"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>iv<sp/>=<sp/>Random.new().read(bs)</highlight></codeline>
+<codeline lineno="579"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cipher<sp/>=<sp/>Blowfish.new(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_b_l_o_w_f_i_s_h_1a6c4537a3fff285916787aea66f8286b6" kindref="member">key</ref>,<sp/>Blowfish.MODE_CBC,<sp/>iv)</highlight></codeline>
+<codeline lineno="580"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>plen<sp/>=<sp/>bs<sp/>-<sp/>divmod(len(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_b_l_o_w_f_i_s_h_1a91433d504d000422abfce6ad4df9fed5" kindref="member">plain</ref>),<sp/>bs)[1]</highlight></codeline>
+<codeline lineno="581"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>padding<sp/>=<sp/>[plen]<sp/>*<sp/>plen</highlight></codeline>
+<codeline lineno="582"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>padding<sp/>=<sp/>pack(</highlight><highlight class="stringliteral">&apos;b&apos;</highlight><highlight class="normal"><sp/>*<sp/>plen,<sp/>*padding)</highlight></codeline>
+<codeline lineno="583"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_b_l_o_w_f_i_s_h_1a315f4ff71730a1c60b97324e41475e48" kindref="member">hashed</ref><sp/>=<sp/>iv<sp/>+<sp/>cipher.encrypt(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_b_l_o_w_f_i_s_h_1a91433d504d000422abfce6ad4df9fed5" kindref="member">plain</ref><sp/>+<sp/>padding)</highlight></codeline>
+<codeline lineno="584"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_b_l_o_w_f_i_s_h_1a315f4ff71730a1c60b97324e41475e48" kindref="member">hashed</ref></highlight></codeline>
+<codeline lineno="585"><highlight class="normal"></highlight></codeline>
+<codeline lineno="586"><highlight class="normal"></highlight></codeline>
+<codeline lineno="587" refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a" kindref="compound">IDEA</ref>(object):</highlight></codeline>
+<codeline lineno="588"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;<sp/>IDEA<sp/>hash<sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="589"><highlight class="normal"></highlight></codeline>
+<codeline lineno="590"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">__init__(self,<sp/>string,<sp/>key):</highlight></codeline>
+<codeline lineno="591"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a12ff209ce3c63eddbf86dfdbb2c38fc8" kindref="member">_keys</ref><sp/>=<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="592"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a3e7cfa1f3b0c243b2b7804b3c08e84bd" kindref="member">plain</ref><sp/>=<sp/>string</highlight></codeline>
+<codeline lineno="593"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a0c8e325b0c159234ac90d9e32006fbc8" kindref="member">hashed</ref><sp/>=<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="594"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1affd2617aac36358891d86f2cb1fc39c4" kindref="member">change_key</ref>(key)</highlight></codeline>
+<codeline lineno="595"><highlight class="normal"></highlight></codeline>
+<codeline lineno="596"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a35ca1846d9e5373e9c8ded2515926a75" kindref="member">hash</ref>(self):</highlight></codeline>
+<codeline lineno="597"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="598"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>IDEA<sp/>hash</highlight></codeline>
+<codeline lineno="599"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="600"><highlight class="normal"></highlight></codeline>
+<codeline lineno="601"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a0c8e325b0c159234ac90d9e32006fbc8" kindref="member">hashed</ref><sp/>=<sp/>hex(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a8950639a4067643433ae9db631d3c8d0" kindref="member">encrypt</ref>())</highlight></codeline>
+<codeline lineno="602"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a0c8e325b0c159234ac90d9e32006fbc8" kindref="member">hashed</ref></highlight></codeline>
+<codeline lineno="603"><highlight class="normal"></highlight></codeline>
+<codeline lineno="604"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">_mul(self,<sp/>x,<sp/>y):</highlight></codeline>
+<codeline lineno="605"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="606"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>x:<sp/>first<sp/>operand</highlight></codeline>
+<codeline lineno="607"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>y:<sp/>second<sp/>operand</highlight></codeline>
+<codeline lineno="608"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>x*y</highlight></codeline>
+<codeline lineno="609"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="610"><highlight class="normal"></highlight></codeline>
+<codeline lineno="611"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">assert</highlight><highlight class="normal"><sp/>0<sp/>&lt;=<sp/>x<sp/>&lt;=<sp/>0xFFFF</highlight></codeline>
+<codeline lineno="612"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">assert</highlight><highlight class="normal"><sp/>0<sp/>&lt;=<sp/>y<sp/>&lt;=<sp/>0xFFFF</highlight></codeline>
+<codeline lineno="613"><highlight class="normal"></highlight></codeline>
+<codeline lineno="614"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>x<sp/>==<sp/>0:</highlight></codeline>
+<codeline lineno="615"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>0x10000</highlight></codeline>
+<codeline lineno="616"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>y<sp/>==<sp/>0:</highlight></codeline>
+<codeline lineno="617"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y<sp/>=<sp/>0x10000</highlight></codeline>
+<codeline lineno="618"><highlight class="normal"></highlight></codeline>
+<codeline lineno="619"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r<sp/>=<sp/>(x<sp/>*<sp/>y)<sp/>%<sp/>0x10001</highlight></codeline>
+<codeline lineno="620"><highlight class="normal"></highlight></codeline>
+<codeline lineno="621"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>r<sp/>==<sp/>0x10000:</highlight></codeline>
+<codeline lineno="622"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="623"><highlight class="normal"></highlight></codeline>
+<codeline lineno="624"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">assert</highlight><highlight class="normal"><sp/>0<sp/>&lt;=<sp/>r<sp/>&lt;=<sp/>0xFFFF</highlight></codeline>
+<codeline lineno="625"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r</highlight></codeline>
+<codeline lineno="626"><highlight class="normal"></highlight></codeline>
+<codeline lineno="627"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">_KA_layer(self,<sp/>x1,<sp/>x2,<sp/>x3,<sp/>x4,<sp/>round_keys):</highlight></codeline>
+<codeline lineno="628"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="629"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>x1:<sp/>x1</highlight></codeline>
+<codeline lineno="630"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>x2:<sp/>x2</highlight></codeline>
+<codeline lineno="631"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>x3:<sp/>x3</highlight></codeline>
+<codeline lineno="632"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>x4:<sp/>x4</highlight></codeline>
+<codeline lineno="633"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>round_keys:<sp/>rounds</highlight></codeline>
+<codeline lineno="634"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>ka<sp/>layer</highlight></codeline>
+<codeline lineno="635"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="636"><highlight class="normal"></highlight></codeline>
+<codeline lineno="637"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">assert</highlight><highlight class="normal"><sp/>0<sp/>&lt;=<sp/>x1<sp/>&lt;=<sp/>0xFFFF</highlight></codeline>
+<codeline lineno="638"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">assert</highlight><highlight class="normal"><sp/>0<sp/>&lt;=<sp/>x2<sp/>&lt;=<sp/>0xFFFF</highlight></codeline>
+<codeline lineno="639"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">assert</highlight><highlight class="normal"><sp/>0<sp/>&lt;=<sp/>x3<sp/>&lt;=<sp/>0xFFFF</highlight></codeline>
+<codeline lineno="640"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">assert</highlight><highlight class="normal"><sp/>0<sp/>&lt;=<sp/>x4<sp/>&lt;=<sp/>0xFFFF</highlight></codeline>
+<codeline lineno="641"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>z1,<sp/>z2,<sp/>z3,<sp/>z4<sp/>=<sp/>round_keys[0:4]</highlight></codeline>
+<codeline lineno="642"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">assert</highlight><highlight class="normal"><sp/>0<sp/>&lt;=<sp/>z1<sp/>&lt;=<sp/>0xFFFF</highlight></codeline>
+<codeline lineno="643"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">assert</highlight><highlight class="normal"><sp/>0<sp/>&lt;=<sp/>z2<sp/>&lt;=<sp/>0xFFFF</highlight></codeline>
+<codeline lineno="644"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">assert</highlight><highlight class="normal"><sp/>0<sp/>&lt;=<sp/>z3<sp/>&lt;=<sp/>0xFFFF</highlight></codeline>
+<codeline lineno="645"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">assert</highlight><highlight class="normal"><sp/>0<sp/>&lt;=<sp/>z4<sp/>&lt;=<sp/>0xFFFF</highlight></codeline>
+<codeline lineno="646"><highlight class="normal"></highlight></codeline>
+<codeline lineno="647"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y1<sp/>=<sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1ad48d12f9ef7dcea4bcc9356246b2e4ee" kindref="member">_mul</ref>(x1,<sp/>z1)</highlight></codeline>
+<codeline lineno="648"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y2<sp/>=<sp/>(x2<sp/>+<sp/>z2)<sp/>%<sp/>0x10000</highlight></codeline>
+<codeline lineno="649"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y3<sp/>=<sp/>(x3<sp/>+<sp/>z3)<sp/>%<sp/>0x10000</highlight></codeline>
+<codeline lineno="650"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y4<sp/>=<sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1ad48d12f9ef7dcea4bcc9356246b2e4ee" kindref="member">_mul</ref>(x4,<sp/>z4)</highlight></codeline>
+<codeline lineno="651"><highlight class="normal"></highlight></codeline>
+<codeline lineno="652"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>y1,<sp/>y2,<sp/>y3,<sp/>y4</highlight></codeline>
+<codeline lineno="653"><highlight class="normal"></highlight></codeline>
+<codeline lineno="654"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">_MA_layer(self,<sp/>y1,<sp/>y2,<sp/>y3,<sp/>y4,<sp/>round_keys):</highlight></codeline>
+<codeline lineno="655"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="656"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>y1:<sp/>y1</highlight></codeline>
+<codeline lineno="657"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>y2:<sp/>y2</highlight></codeline>
+<codeline lineno="658"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>y3:<sp/>y3</highlight></codeline>
+<codeline lineno="659"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>y4:<sp/>y4</highlight></codeline>
+<codeline lineno="660"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>round_keys:<sp/>rounds</highlight></codeline>
+<codeline lineno="661"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>ma<sp/>layer</highlight></codeline>
+<codeline lineno="662"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="663"><highlight class="normal"></highlight></codeline>
+<codeline lineno="664"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">assert</highlight><highlight class="normal"><sp/>0<sp/>&lt;=<sp/>y1<sp/>&lt;=<sp/>0xFFFF</highlight></codeline>
+<codeline lineno="665"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">assert</highlight><highlight class="normal"><sp/>0<sp/>&lt;=<sp/>y2<sp/>&lt;=<sp/>0xFFFF</highlight></codeline>
+<codeline lineno="666"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">assert</highlight><highlight class="normal"><sp/>0<sp/>&lt;=<sp/>y3<sp/>&lt;=<sp/>0xFFFF</highlight></codeline>
+<codeline lineno="667"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">assert</highlight><highlight class="normal"><sp/>0<sp/>&lt;=<sp/>y4<sp/>&lt;=<sp/>0xFFFF</highlight></codeline>
+<codeline lineno="668"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>z5,<sp/>z6<sp/>=<sp/>round_keys[4:6]</highlight></codeline>
+<codeline lineno="669"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">assert</highlight><highlight class="normal"><sp/>0<sp/>&lt;=<sp/>z5<sp/>&lt;=<sp/>0xFFFF</highlight></codeline>
+<codeline lineno="670"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">assert</highlight><highlight class="normal"><sp/>0<sp/>&lt;=<sp/>z6<sp/>&lt;=<sp/>0xFFFF</highlight></codeline>
+<codeline lineno="671"><highlight class="normal"></highlight></codeline>
+<codeline lineno="672"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p<sp/>=<sp/>y1<sp/>^<sp/>y3</highlight></codeline>
+<codeline lineno="673"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>q<sp/>=<sp/>y2<sp/>^<sp/>y4</highlight></codeline>
+<codeline lineno="674"><highlight class="normal"></highlight></codeline>
+<codeline lineno="675"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s<sp/>=<sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1ad48d12f9ef7dcea4bcc9356246b2e4ee" kindref="member">_mul</ref>(p,<sp/>z5)</highlight></codeline>
+<codeline lineno="676"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>t<sp/>=<sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1ad48d12f9ef7dcea4bcc9356246b2e4ee" kindref="member">_mul</ref>((q<sp/>+<sp/>s)<sp/>%<sp/>0x10000,<sp/>z6)</highlight></codeline>
+<codeline lineno="677"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u<sp/>=<sp/>(s<sp/>+<sp/>t)<sp/>%<sp/>0x10000</highlight></codeline>
+<codeline lineno="678"><highlight class="normal"></highlight></codeline>
+<codeline lineno="679"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x1<sp/>=<sp/>y1<sp/>^<sp/>t</highlight></codeline>
+<codeline lineno="680"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x2<sp/>=<sp/>y2<sp/>^<sp/>u</highlight></codeline>
+<codeline lineno="681"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x3<sp/>=<sp/>y3<sp/>^<sp/>t</highlight></codeline>
+<codeline lineno="682"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x4<sp/>=<sp/>y4<sp/>^<sp/>u</highlight></codeline>
+<codeline lineno="683"><highlight class="normal"></highlight></codeline>
+<codeline lineno="684"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x1,<sp/>x2,<sp/>x3,<sp/>x4</highlight></codeline>
+<codeline lineno="685"><highlight class="normal"></highlight></codeline>
+<codeline lineno="686"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1affd2617aac36358891d86f2cb1fc39c4" kindref="member">change_key</ref>(self,<sp/>key):</highlight></codeline>
+<codeline lineno="687"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="688"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>key:<sp/>new<sp/>key</highlight></codeline>
+<codeline lineno="689"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>change<sp/>key</highlight></codeline>
+<codeline lineno="690"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="691"><highlight class="normal"></highlight></codeline>
+<codeline lineno="692"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">assert</highlight><highlight class="normal"><sp/>0<sp/>&lt;=<sp/>key<sp/>&lt;<sp/>(1<sp/>&lt;&lt;<sp/>128)</highlight></codeline>
+<codeline lineno="693"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>modulus<sp/>=<sp/>1<sp/>&lt;&lt;<sp/>128</highlight></codeline>
+<codeline lineno="694"><highlight class="normal"></highlight></codeline>
+<codeline lineno="695"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sub_keys<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="696"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>i<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(9<sp/>*<sp/>6):</highlight></codeline>
+<codeline lineno="697"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sub_keys.append((key<sp/>&gt;&gt;<sp/>(112<sp/>-<sp/>16<sp/>*<sp/>(i<sp/>%<sp/>8)))<sp/>%<sp/>0x10000)</highlight></codeline>
+<codeline lineno="698"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>i<sp/>%<sp/>8<sp/>==<sp/>7:</highlight></codeline>
+<codeline lineno="699"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>key<sp/>=<sp/>((key<sp/>&lt;&lt;<sp/>25)<sp/>|<sp/>(key<sp/>&gt;&gt;<sp/>103))<sp/>%<sp/>modulus</highlight></codeline>
+<codeline lineno="700"><highlight class="normal"></highlight></codeline>
+<codeline lineno="701"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>keys<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="702"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>i<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(9):</highlight></codeline>
+<codeline lineno="703"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>round_keys<sp/>=<sp/>sub_keys[6<sp/>*<sp/>i:<sp/>6<sp/>*<sp/>(i<sp/>+<sp/>1)]</highlight></codeline>
+<codeline lineno="704"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>keys.append(tuple(round_keys))</highlight></codeline>
+<codeline lineno="705"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a12ff209ce3c63eddbf86dfdbb2c38fc8" kindref="member">_keys</ref><sp/>=<sp/>tuple(keys)</highlight></codeline>
+<codeline lineno="706"><highlight class="normal"></highlight></codeline>
+<codeline lineno="707"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a8950639a4067643433ae9db631d3c8d0" kindref="member">encrypt</ref>(self):</highlight></codeline>
+<codeline lineno="708"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="709"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>encrypt<sp/>with<sp/>key</highlight></codeline>
+<codeline lineno="710"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="711"><highlight class="normal"></highlight></codeline>
+<codeline lineno="712"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">assert</highlight><highlight class="normal"><sp/>0<sp/>&lt;=<sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a3e7cfa1f3b0c243b2b7804b3c08e84bd" kindref="member">plain</ref><sp/>&lt;<sp/>(1<sp/>&lt;&lt;<sp/>64)</highlight></codeline>
+<codeline lineno="713"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x1<sp/>=<sp/>(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a3e7cfa1f3b0c243b2b7804b3c08e84bd" kindref="member">plain</ref><sp/>&gt;&gt;<sp/>48)<sp/>&amp;<sp/>0xFFFF</highlight></codeline>
+<codeline lineno="714"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x2<sp/>=<sp/>(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a3e7cfa1f3b0c243b2b7804b3c08e84bd" kindref="member">plain</ref><sp/>&gt;&gt;<sp/>32)<sp/>&amp;<sp/>0xFFFF</highlight></codeline>
+<codeline lineno="715"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x3<sp/>=<sp/>(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a3e7cfa1f3b0c243b2b7804b3c08e84bd" kindref="member">plain</ref><sp/>&gt;&gt;<sp/>16)<sp/>&amp;<sp/>0xFFFF</highlight></codeline>
+<codeline lineno="716"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x4<sp/>=<sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a3e7cfa1f3b0c243b2b7804b3c08e84bd" kindref="member">plain</ref><sp/>&amp;<sp/>0xFFFF</highlight></codeline>
+<codeline lineno="717"><highlight class="normal"></highlight></codeline>
+<codeline lineno="718"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>i<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(8):</highlight></codeline>
+<codeline lineno="719"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>round_keys<sp/>=<sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a12ff209ce3c63eddbf86dfdbb2c38fc8" kindref="member">_keys</ref>[i]</highlight></codeline>
+<codeline lineno="720"><highlight class="normal"></highlight></codeline>
+<codeline lineno="721"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y1,<sp/>y2,<sp/>y3,<sp/>y4<sp/>=<sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a9427385a531724885539cdd302b71438" kindref="member">_KA_layer</ref>(x1,<sp/>x2,<sp/>x3,<sp/>x4,<sp/>round_keys)</highlight></codeline>
+<codeline lineno="722"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x1,<sp/>x2,<sp/>x3,<sp/>x4<sp/>=<sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a46086c1c33dde127d064f074aa751cc8" kindref="member">_MA_layer</ref>(y1,<sp/>y2,<sp/>y3,<sp/>y4,<sp/>round_keys)</highlight></codeline>
+<codeline lineno="723"><highlight class="normal"></highlight></codeline>
+<codeline lineno="724"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x2,<sp/>x3<sp/>=<sp/>x3,<sp/>x2</highlight></codeline>
+<codeline lineno="725"><highlight class="normal"></highlight></codeline>
+<codeline lineno="726"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Note:<sp/>The<sp/>words<sp/>x2<sp/>and<sp/>x3<sp/>are<sp/>not<sp/>permuted<sp/>in<sp/>the<sp/>last<sp/>round</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="727"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>So<sp/>here<sp/>we<sp/>use<sp/>x1,<sp/>x3,<sp/>x2,<sp/>x4<sp/>as<sp/>input<sp/>instead<sp/>of<sp/>x1,<sp/>x2,<sp/>x3,<sp/>x4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="728"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>in<sp/>order<sp/>to<sp/>cancel<sp/>the<sp/>last<sp/>permutation<sp/>x2,<sp/>x3<sp/>=<sp/>x3,<sp/>x2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="729"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y1,<sp/>y2,<sp/>y3,<sp/>y4<sp/>=<sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a9427385a531724885539cdd302b71438" kindref="member">_KA_layer</ref>(x1,<sp/>x3,<sp/>x2,<sp/>x4,<sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_i_d_e_a_1a12ff209ce3c63eddbf86dfdbb2c38fc8" kindref="member">_keys</ref>[8])</highlight></codeline>
+<codeline lineno="730"><highlight class="normal"></highlight></codeline>
+<codeline lineno="731"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ciphertext<sp/>=<sp/>(y1<sp/>&lt;&lt;<sp/>48)<sp/>|<sp/>(y2<sp/>&lt;&lt;<sp/>32)<sp/>|<sp/>(y3<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>y4</highlight></codeline>
+<codeline lineno="732"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ciphertext</highlight></codeline>
+<codeline lineno="733"><highlight class="normal"></highlight></codeline>
+<codeline lineno="734"><highlight class="normal"></highlight></codeline>
+<codeline lineno="735" refid="classhal_1_1maths_1_1crypt_1_1_c_a_s_t128" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_c_a_s_t128" kindref="compound">CAST128</ref>(object):</highlight></codeline>
+<codeline lineno="736"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;<sp/>CAST<sp/>128<sp/>hash<sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="737"><highlight class="normal"></highlight></codeline>
+<codeline lineno="738"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">__init__(self,<sp/>string,<sp/>key):</highlight></codeline>
+<codeline lineno="739"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>object.__init__(self)</highlight></codeline>
+<codeline lineno="740"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_c_a_s_t128_1af91078dab517ef6705a17f5c41821d27" kindref="member">plain</ref><sp/>=<sp/>string</highlight></codeline>
+<codeline lineno="741"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_c_a_s_t128_1af89de906c01f3aa02c872831548307a6" kindref="member">key</ref><sp/>=<sp/>key</highlight></codeline>
+<codeline lineno="742"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_c_a_s_t128_1a452da0fec6f88f16ec468ceaa55b3d18" kindref="member">answer</ref><sp/>=<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="743"><highlight class="normal"></highlight></codeline>
+<codeline lineno="744"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">encrypt(self):</highlight></codeline>
+<codeline lineno="745"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>iv<sp/>=<sp/>Random.new().read(CAST.block_size)</highlight></codeline>
+<codeline lineno="746"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cipher<sp/>=<sp/>CAST.new(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_c_a_s_t128_1af89de906c01f3aa02c872831548307a6" kindref="member">key</ref>,<sp/>CAST.MODE_OPENPGP,<sp/>iv)</highlight></codeline>
+<codeline lineno="747"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_c_a_s_t128_1a452da0fec6f88f16ec468ceaa55b3d18" kindref="member">answer</ref><sp/>=<sp/>cipher.encrypt(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_c_a_s_t128_1af91078dab517ef6705a17f5c41821d27" kindref="member">plain</ref>)</highlight></codeline>
+<codeline lineno="748"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_c_a_s_t128_1a452da0fec6f88f16ec468ceaa55b3d18" kindref="member">answer</ref></highlight></codeline>
+<codeline lineno="749"><highlight class="normal"></highlight></codeline>
+<codeline lineno="750"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">decrypt(self):</highlight></codeline>
+<codeline lineno="751"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eiv<sp/>=<sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_c_a_s_t128_1af91078dab517ef6705a17f5c41821d27" kindref="member">plain</ref>[:CAST.block_size<sp/>+<sp/>2]</highlight></codeline>
+<codeline lineno="752"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ciphertext<sp/>=<sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_c_a_s_t128_1af91078dab517ef6705a17f5c41821d27" kindref="member">plain</ref>[CAST.block_size<sp/>+<sp/>2:]</highlight></codeline>
+<codeline lineno="753"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cipher<sp/>=<sp/>CAST.new(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_c_a_s_t128_1af89de906c01f3aa02c872831548307a6" kindref="member">key</ref>,<sp/>CAST.MODE_OPENPGP,<sp/>eiv)</highlight></codeline>
+<codeline lineno="754"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_c_a_s_t128_1a452da0fec6f88f16ec468ceaa55b3d18" kindref="member">answer</ref><sp/>=<sp/>cipher.decrypt(ciphertext)</highlight></codeline>
+<codeline lineno="755"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_c_a_s_t128_1a452da0fec6f88f16ec468ceaa55b3d18" kindref="member">answer</ref></highlight></codeline>
+<codeline lineno="756"><highlight class="normal"></highlight></codeline>
+<codeline lineno="757"><highlight class="normal"></highlight></codeline>
+<codeline lineno="758" refid="classhal_1_1maths_1_1crypt_1_1_dsa" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_dsa" kindref="compound">Dsa</ref>(object):</highlight></codeline>
+<codeline lineno="759"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;<sp/>dsa<sp/>hash<sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="760"><highlight class="normal"></highlight></codeline>
+<codeline lineno="761"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">__init__(self,<sp/>string):</highlight></codeline>
+<codeline lineno="762"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>object.__init__(self)</highlight></codeline>
+<codeline lineno="763"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_dsa_1a8fddacfaa756e3400dd60e62edecae5d" kindref="member">plain</ref><sp/>=<sp/>string</highlight></codeline>
+<codeline lineno="764"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_dsa_1af05db55c1f6ebca07b027397a8f494dd" kindref="member">hashed</ref><sp/>=<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="765"><highlight class="normal"></highlight></codeline>
+<codeline lineno="766"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classhal_1_1maths_1_1crypt_1_1_dsa_1ab571cc724b6bd76e1001d9d449cb6c61" kindref="member">hash</ref>(self):</highlight></codeline>
+<codeline lineno="767"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="768"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>hash<sp/>plaintext</highlight></codeline>
+<codeline lineno="769"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="770"><highlight class="normal"></highlight></codeline>
+<codeline lineno="771"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>key<sp/>=<sp/>DSA.generate(1024)</highlight></codeline>
+<codeline lineno="772"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>h<sp/>=<sp/>SHA.new(self.<ref refid="classhal_1_1maths_1_1crypt_1_1_dsa_1a8fddacfaa756e3400dd60e62edecae5d" kindref="member">plain</ref>).digest()</highlight></codeline>
+<codeline lineno="773"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>k<sp/>=<sp/>random.StrongRandom().randint(1,<sp/>key.q<sp/>-<sp/>1)</highlight></codeline>
+<codeline lineno="774"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_dsa_1af05db55c1f6ebca07b027397a8f494dd" kindref="member">hashed</ref><sp/>=<sp/>key.sign(h,<sp/>k)</highlight></codeline>
+<codeline lineno="775"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>self.<ref refid="classhal_1_1maths_1_1crypt_1_1_dsa_1af05db55c1f6ebca07b027397a8f494dd" kindref="member">hashed</ref></highlight></codeline>
+    </programlisting>
+    <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/crypt.py"/>
+  </compounddef>
+</doxygen>

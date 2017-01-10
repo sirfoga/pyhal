@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classhal_1_1maths_1_1plotter_1_1_plot4d" kind="class" language="Python" prot="public">
+    <compoundname>hal::maths::plotter::Plot4d</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">object</basecompoundref>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classhal_1_1maths_1_1plotter_1_1_plot4d_1a1f822a4cfb97006651da35cb2f5e55d1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.plotter.Plot4d.scatter</definition>
+        <argsstring>(vectorx, vectory, vectorz, vectorw)</argsstring>
+        <name>scatter</name>
+        <param>
+          <type>vectorx</type>
+          <defname>vectorx</defname>
+        </param>
+        <param>
+          <type>vectory</type>
+          <defname>vectory</defname>
+        </param>
+        <param>
+          <type>vectorz</type>
+          <defname>vectorz</defname>
+        </param>
+        <param>
+          <type>vectorw</type>
+          <defname>vectorw</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param vectorx: vector in x axis
+:param vectory: vector in y axis
+:param vectorz: vector in z axis
+:param vectorw: vector in w axis
+:return: plot 4d scattered points
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/plotter.py" line="181" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/plotter.py" bodystart="181" bodyend="193"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classhal_1_1maths_1_1plotter_1_1_plot4d_1a90b39427c236100f8c080e08e2222f2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.plotter.Plot4d.param</definition>
+        <argsstring>(self, functionx, functiony, functionz, functionw, min, max, points)</argsstring>
+        <name>param</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>functionx</type>
+          <defname>functionx</defname>
+        </param>
+        <param>
+          <type>functiony</type>
+          <defname>functiony</defname>
+        </param>
+        <param>
+          <type>functionz</type>
+          <defname>functionz</defname>
+        </param>
+        <param>
+          <type>functionw</type>
+          <defname>functionw</defname>
+        </param>
+        <param>
+          <type>min</type>
+          <defname>min</defname>
+        </param>
+        <param>
+          <type>max</type>
+          <defname>max</defname>
+        </param>
+        <param>
+          <type>points</type>
+          <defname>points</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param functionx: function in x
+:param functiony: function in y
+:param functionz: function in z
+:param functionw: function in w
+:param min: minimum
+:param max: maximum
+:param points: number of points
+:return: 4d parametric graph of given function from min to max
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/plotter.py" line="194" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/plotter.py" bodystart="194" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="classhal_1_1maths_1_1plotter_1_1_plot4d_1aa776ce05b0f159953ea817402aa9e280" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def hal.maths.plotter.Plot4d.plot</definition>
+        <argsstring>(self, function, minx, maxx, miny, maxy, minz, maxz, precision, kind)</argsstring>
+        <name>plot</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>function</type>
+          <defname>function</defname>
+        </param>
+        <param>
+          <type>minx</type>
+          <defname>minx</defname>
+        </param>
+        <param>
+          <type>maxx</type>
+          <defname>maxx</defname>
+        </param>
+        <param>
+          <type>miny</type>
+          <defname>miny</defname>
+        </param>
+        <param>
+          <type>maxy</type>
+          <defname>maxy</defname>
+        </param>
+        <param>
+          <type>minz</type>
+          <defname>minz</defname>
+        </param>
+        <param>
+          <type>maxz</type>
+          <defname>maxz</defname>
+        </param>
+        <param>
+          <type>precision</type>
+          <defname>precision</defname>
+        </param>
+        <param>
+          <type>kind</type>
+          <defname>kind</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param function: function to plot
+:param minx: minimum of x-values
+:param maxx: maximum of x-values
+:param miny: minimum of y-values
+:param maxy: maximum of y-values
+:param minz: minimum of z-values
+:param maxz: maximum of z-values
+:param precision: precision
+:param kind: slice: x cont -&gt; 3d plot with y,z variables in plane and w as &quot;z&quot;-axis
+     contour: x cont -&gt; 3d plot with y,z variables in plane and w colored
+:return: plot 4d function
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/plotter.py" line="215" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/plotter.py" bodystart="215" bodyend="368"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="230">
+        <label>hal.maths.plotter.Plot4d</label>
+        <link refid="classhal_1_1maths_1_1plotter_1_1_plot4d"/>
+        <childnode refid="231" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="231">
+        <label>object</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="232">
+        <label>hal.maths.plotter.Plot4d</label>
+        <link refid="classhal_1_1maths_1_1plotter_1_1_plot4d"/>
+        <childnode refid="233" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="233">
+        <label>object</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/stefano/Coding/Python/projects/pyhal/hal/maths/plotter.py" line="179" column="1" bodyfile="/home/stefano/Coding/Python/projects/pyhal/hal/maths/plotter.py" bodystart="179" bodyend="368"/>
+    <listofallmembers>
+      <member refid="classhal_1_1maths_1_1plotter_1_1_plot4d_1a90b39427c236100f8c080e08e2222f2d" prot="public" virt="non-virtual"><scope>hal::maths::plotter::Plot4d</scope><name>param</name></member>
+      <member refid="classhal_1_1maths_1_1plotter_1_1_plot4d_1aa776ce05b0f159953ea817402aa9e280" prot="public" virt="non-virtual"><scope>hal::maths::plotter::Plot4d</scope><name>plot</name></member>
+      <member refid="classhal_1_1maths_1_1plotter_1_1_plot4d_1a1f822a4cfb97006651da35cb2f5e55d1" prot="public" virt="non-virtual"><scope>hal::maths::plotter::Plot4d</scope><name>scatter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
