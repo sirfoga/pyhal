@@ -62,6 +62,7 @@ class FileSystem(object):
         :param path: string
             Path to file
         """
+
         object.__init__(self)
 
         self.path = self.fix_raw_path(path)

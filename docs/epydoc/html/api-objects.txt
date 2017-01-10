@@ -25,6 +25,8 @@ hal.internet.selenium.__package__	hal.internet.selenium-module.html#__package__
 hal.internet.web	hal.internet.web-module.html
 hal.internet.web.CHROME_USER_AGENT	hal.internet.web-module.html#CHROME_USER_AGENT
 hal.internet.web.download_url	hal.internet.web-module.html#download_url
+hal.internet.web.URL_VALID_REGEX	hal.internet.web-module.html#URL_VALID_REGEX
+hal.internet.web.is_url	hal.internet.web-module.html#is_url
 hal.internet.youtube	hal.internet.youtube-module.html
 hal.internet.youtube.get_channel_feed_url	hal.internet.youtube-module.html#get_channel_feed_url
 hal.internet.youtube.get_channel_page	hal.internet.youtube-module.html#get_channel_page
@@ -46,6 +48,7 @@ hal.ml.data.parser	hal.ml.data.parser-module.html
 hal.ml.data.parser.__package__	hal.ml.data.parser-module.html#__package__
 hal.ml.features	hal.ml.features-module.html
 hal.ml.features.select_k_best	hal.ml.features-module.html#select_k_best
+hal.ml.features.__package__	hal.ml.features-module.html#__package__
 hal.ml.features.get_best_features	hal.ml.features-module.html#get_best_features
 hal.ml.features.get_features	hal.ml.features-module.html#get_features
 hal.ml.models	hal.ml.models-module.html
@@ -53,16 +56,19 @@ hal.ml.models.__package__	hal.ml.models-module.html#__package__
 hal.ml.models.classification	hal.ml.models.classification-module.html
 hal.ml.models.classification.knn	hal.ml.models.classification-module.html#knn
 hal.ml.models.classification.random_forest	hal.ml.models.classification-module.html#random_forest
-hal.ml.models.classification.ada_boost	hal.ml.models.classification-module.html#ada_boost
 hal.ml.models.classification.extra_trees_classifier	hal.ml.models.classification-module.html#extra_trees_classifier
-hal.ml.models.classification.bayes_gauss	hal.ml.models.classification-module.html#bayes_gauss
+hal.ml.models.classification.ada_boost	hal.ml.models.classification-module.html#ada_boost
+hal.ml.models.classification.__package__	hal.ml.models.classification-module.html#__package__
 hal.ml.models.classification.bayes_bernoulli	hal.ml.models.classification-module.html#bayes_bernoulli
+hal.ml.models.classification.bayes_gauss	hal.ml.models.classification-module.html#bayes_gauss
 hal.ml.models.pipelined	hal.ml.models.pipelined-module.html
 hal.ml.models.pipelined.anova_svm	hal.ml.models.pipelined-module.html#anova_svm
+hal.ml.models.pipelined.__package__	hal.ml.models.pipelined-module.html#__package__
 hal.ml.models.pipelined.logistic_rbm	hal.ml.models.pipelined-module.html#logistic_rbm
 hal.ml.models.regression	hal.ml.models.regression-module.html
-hal.ml.models.regression.logistic_regression	hal.ml.models.regression-module.html#logistic_regression
 hal.ml.models.regression.support_vector_machine	hal.ml.models.regression-module.html#support_vector_machine
+hal.ml.models.regression.logistic_regression	hal.ml.models.regression-module.html#logistic_regression
+hal.ml.models.regression.__package__	hal.ml.models.regression-module.html#__package__
 hal.ml.models.time_series	hal.ml.models.time_series-module.html
 hal.ml.models.time_series.dynamic_var	hal.ml.models.time_series-module.html#dynamic_var
 hal.ml.models.time_series.arima	hal.ml.models.time_series-module.html#arima
@@ -70,6 +76,7 @@ hal.ml.models.time_series.var	hal.ml.models.time_series-module.html#var
 hal.ml.models.time_series.test_stationarity	hal.ml.models.time_series-module.html#test_stationarity
 hal.ml.models.time_series.arma	hal.ml.models.time_series-module.html#arma
 hal.ml.predict	hal.ml.predict-module.html
+hal.ml.predict.__package__	hal.ml.predict-module.html#__package__
 hal.ml.utils	hal.ml.utils-module.html
 hal.ml.utils.f1_score	hal.ml.utils-module.html#f1_score
 hal.ml.utils.pearson	hal.ml.utils-module.html#pearson

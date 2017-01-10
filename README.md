@@ -19,8 +19,8 @@ See ```Usage and documentation``` for detailed usage; see the [Java API](https:/
 
 
 ## Usage and documentation
-- You can browse the [html](docs/html/index.html) (or if you prefer the [epydoc docs](docs/epydoc/html/index.html))
-- There is also the [pdf](docs/pdf/api.pdf) version (for the epydoc pdfs go [here](docs/epydoc/pdf)
+- You can browse the [html](docs/doxygen/html/index.html) (or if you prefer the [epydoc docs](docs/epydoc/html/index.html))
+- There is also the [pdf](docs/doxygen/pdf/api.pdf) version (for the epydoc pdfs go [here](docs/epydoc/pdf)
 
 
 ## Questions and issues

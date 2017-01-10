@@ -14,9 +14,6 @@
 <table class="navbar" border="0" width="100%" cellpadding="0"
        bgcolor="#a0c0ff" cellspacing="0">
   <tr valign="middle">
-  <!-- Home link -->
-      <th>&nbsp;&nbsp;&nbsp;<a
-        href="hal-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
 
   <!-- Tree link -->
       <th>&nbsp;&nbsp;&nbsp;<a
@@ -34,7 +31,7 @@
       <th class="navbar" align="right" width="100%">
         <table border="0" cellpadding="0" cellspacing="0">
           <tr><th class="navbar" align="center"
-            ><a class="navbar" target="_top" href="https://github.com/sirfoga/pyhal">PyHal</a></th>
+            ><a href="https://github.com/sirfoga/pyhal">PyHal</a></th>
           </tr></table></th>
   </tr>
 </table>
@@ -62,7 +59,10 @@
 </table>
 <!-- ==================== MODULE DESCRIPTION ==================== -->
 <h1 class="epydoc">Module maths</h1><p class="nomargin-top"><span class="codelink"><a href="hal.maths.maths-pysrc.html">source&nbsp;code</a></span></p>
-<p>A few elegant and powerful mathematical functions.</p>
+<pre class="literalblock">
+A few elegant and powerful mathematical functions. 
+
+</pre>
 
 <!-- ==================== CLASSES ==================== -->
 <a name="section-Classes"></a>
@@ -120,9 +120,8 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="get_prime"></a><span class="summary-sig-name">get_prime</span>(<span class="summary-sig-arg">bits</span>)</span><br />
-      :param bits: size of number to generate (bits) :return: prime number 
-      of given size</td>
+          <td><span class="summary-sig"><a href="hal.maths.maths-module.html#get_prime" class="summary-sig-name">get_prime</a>(<span class="summary-sig-arg">bits</span>)</span><br />
+      :param bits: size of number to generate (bits)...</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="hal.maths.maths-pysrc.html#get_prime">source&nbsp;code</a></span>
             
@@ -138,13 +137,11 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="blumblumshub"></a><span class="summary-sig-name">blumblumshub</span>(<span class="summary-sig-arg">seed</span>,
+          <td><span class="summary-sig"><a href="hal.maths.maths-module.html#blumblumshub" class="summary-sig-name">blumblumshub</a>(<span class="summary-sig-arg">seed</span>,
         <span class="summary-sig-arg">amount</span>,
         <span class="summary-sig-arg">prime0</span>,
         <span class="summary-sig-arg">prime1</span>)</span><br />
-      :param seed: seeder :param amount: amount of number to generate 
-      :param prime0: one prime number :param prime1: the second prime 
-      number :return: pseudo-number generator</td>
+      :param seed: seeder...</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="hal.maths.maths-pysrc.html#blumblumshub">source&nbsp;code</a></span>
             
@@ -180,13 +177,86 @@
     </td>
   </tr>
 </table>
+<p class="indent-wrapped-lines"><b>Imports:</b>
+  <span title="random">random</span>
+</p><br />
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Function Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="get_prime"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_prime</span>(<span class="sig-arg">bits</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="hal.maths.maths-pysrc.html#get_prime">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+:param bits: size of number to generate (bits)
+:return: prime number of given size
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="blumblumshub"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">blumblumshub</span>(<span class="sig-arg">seed</span>,
+        <span class="sig-arg">amount</span>,
+        <span class="sig-arg">prime0</span>,
+        <span class="sig-arg">prime1</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="hal.maths.maths-pysrc.html#blumblumshub">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+:param seed: seeder
+:param amount: amount of number to generate
+:param prime0: one prime number
+:param prime1: the second prime number
+:return: pseudo-number generator
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
 <!-- ==================== NAVIGATION BAR ==================== -->
 <table class="navbar" border="0" width="100%" cellpadding="0"
        bgcolor="#a0c0ff" cellspacing="0">
   <tr valign="middle">
-  <!-- Home link -->
-      <th>&nbsp;&nbsp;&nbsp;<a
-        href="hal-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
 
   <!-- Tree link -->
       <th>&nbsp;&nbsp;&nbsp;<a
@@ -204,7 +274,7 @@
       <th class="navbar" align="right" width="100%">
         <table border="0" cellpadding="0" cellspacing="0">
           <tr><th class="navbar" align="center"
-            ><a class="navbar" target="_top" href="https://github.com/sirfoga/pyhal">PyHal</a></th>
+            ><a href="https://github.com/sirfoga/pyhal">PyHal</a></th>
           </tr></table></th>
   </tr>
 </table>
@@ -212,7 +282,7 @@
   <tr>
     <td align="left" class="footer">
     Generated by Epydoc 3.0.1
-    on Tue Dec 20 22:55:14 2016
+    on Tue Jan 10 14:25:32 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"
