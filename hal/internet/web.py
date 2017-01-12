@@ -18,8 +18,8 @@
 
 """ Deal with webpages. """
 
-import re
 import random
+import re
 import socket
 import time
 import urllib.request
@@ -104,8 +104,9 @@ class Webpage(object):
         self.url = self.parse_url(url)
         self.domain = self.get_domain()
         self.using_tor = using_tor
-        self.source = self.get_html_source(self.using_tor)
-        self.soup = BeautifulSoup(self.source, "lxml")
+
+        self.source = None
+        self.soup = None
 
     @staticmethod
     def parse_url(raw_url):
@@ -152,7 +153,8 @@ class Webpage(object):
 
     def get_html_source(self, tor=False):
         """
-        :return: BeautifulSoup to parse
+        :return: void
+            Saves HTML source of webpage
         """
 
         if tor:
@@ -169,7 +171,8 @@ class Webpage(object):
             q.add_header("user-agent", random.choice(CHROME_USER_AGENT))
             r = urllib.request.urlopen(q).read()
 
-        return str(r)
+            self.source = str(r)
+            self.soup = BeautifulSoup(self.source, "lxml")
 
     def get_links(self, recall, timeout):
         """

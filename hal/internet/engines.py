@@ -45,7 +45,8 @@ class SearchEngine(object):
         object.__init__(self)
 
         self.url = str(url)
-        self.domain = Webpage(self.url).get_domain()
+        self.web_page = Webpage(self.url)
+        self.domain = self.web_page.get_domain()
         self.blank_replace = blank_replace
 
     def parse_query(self, query):
@@ -66,6 +67,6 @@ class SearchEngine(object):
             Get HTML source of search page of given query.
         """
 
-        url = self.url + self.parse_query(query)
-        source = Webpage(url).get_html_source()
-        return source
+        query_web_page = Webpage(self.url + self.parse_query(query))
+        query_web_page.get_html_source()  # get html source
+        return query_web_page.source
