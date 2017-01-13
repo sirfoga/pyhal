@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 
 
+## 4.3.1.4
+### Fixed
+- backward compatibility for Webpage.get_html_source()
+
 ## 4.3.1.3
 ### Fixed
 - design but in webpage (would load webpage in class constructor)

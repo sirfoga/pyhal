@@ -153,8 +153,8 @@ class Webpage(object):
 
     def get_html_source(self, tor=False):
         """
-        :return: void
-            Saves HTML source of webpage
+        :return: str
+            HTML source of webpage
         """
 
         if tor:
@@ -173,6 +173,8 @@ class Webpage(object):
 
             self.source = str(r)
             self.soup = BeautifulSoup(self.source, "lxml")
+
+        return self.source
 
     def get_links(self, recall, timeout):
         """

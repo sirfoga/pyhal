@@ -18,16 +18,16 @@
 
 """ Get rss feed for youtube channel. """
 
+from bs4 import BeautifulSoup
 
 from hal.internet.web import Webpage
-from bs4 import BeautifulSoup
 
 
 def get_channel_page(channel_name, youtube_channel_url="https://www.youtube.com/user/"):
     """
-    @param channel_name: string
-        name of channel.
-    @param youtube_channel_url: string
+    :param channel_name: string
+        name of channel (e.g in "https://www.youtube.com/user/caseyneistat" you should take "caseyneistat")
+    :param youtube_channel_url: string
         base url of youtube channels.
     @return string
         source page of youtube channel.
@@ -40,12 +40,12 @@ def get_channel_page(channel_name, youtube_channel_url="https://www.youtube.com/
 
 def get_channel_id(channel_name, channel_id_field="data-channel-external-id"):
     """
-    @param channel_name: string
-        channel_name name of channel.
-    @param channel_id_field: string
-        default field to get channel id.
-    @return string
-        id of youtube channel.
+    :param channel_name: string
+        name of channel (e.g in "https://www.youtube.com/user/caseyneistat" you should take "caseyneistat")
+    :param channel_id_field: string
+        default field to get channel id
+    :return string
+        id of youtube channel
     """
 
     soup = BeautifulSoup(get_channel_page(channel_name), "lxml")  # parser for source page
@@ -57,11 +57,11 @@ def get_channel_id(channel_name, channel_id_field="data-channel-external-id"):
 
 def get_channel_feed_url(channel_name, base_feed_url="https://www.youtube.com/feeds/videos.xml?channel_id="):
     """
-    @param channel_name: string
-        channel_name name of channel.
-    @param base_feed_url: string
+    :param channel_name: string
+        name of channel (e.g in "https://www.youtube.com/user/caseyneistat" you should take "caseyneistat")
+    :param base_feed_url: string
         default base url for rss feed of youtube channels.
-    @return string
+    :return string
         rss url feed of youtube channel.
     """
 
