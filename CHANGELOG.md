@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 4.3.2
+### Fixed
+- hal.ml.utils: removed fixed title in correlation matrix
+### Added
+- method to get correlation matrix
 
 ## 4.3.1.4
 ### Fixed

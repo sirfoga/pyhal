@@ -117,20 +117,41 @@ def f1_score(matrix):
 
 def pearson(x, y):
     """ Pearson coefficient of arrays"""
+
     return np.corrcoef(x, y)[0][1]
 
 
-def show_correlation_matrix(feature_list, correlation_matrix):
-    """ Show the given correlation matrix as image """
+def get_correlation_matrix(matrix):
+    """
+    :param matrix: [] of []
+        List of features to get correlation matrix
+    :return: [] of []
+        correlation matrix
+    """
+
+    return np.corrcoef(matrix)
+
+
+def show_correlation_matrix(correlation_matrix, title, feature_list):
+    """
+    :param correlation_matrix: [] of []
+        Correlation matrix of features
+    :param title: str
+        Title of plot
+    :param feature_list: [] of str
+        List of names of features
+    :return: void
+        shows the given correlation matrix as image
+    """
 
     fig = pyplot.figure()
     ax1 = fig.add_subplot(111)
     ax1.grid(True)
-    pyplot.title('Correlation matrix of Bitcoin price')
+    pyplot.title(title)
     ax1.set_xticks(list(range(len(feature_list))))
     ax1.set_yticks(list(range(len(feature_list))))
     ax1.set_yticklabels([feature_list[i] + " : " + str(i) for i in range(len(feature_list))])
-    cmap = cm.get_cmap('jet', 30)
+    cmap = cm.get_cmap("jet", 30)
     cax = ax1.imshow(correlation_matrix, interpolation="nearest", cmap=cmap)
     fig.colorbar(cax, ticks=[.5, .55, .6, .65, .7, .75, .8, .85, .90, .95, 1])  # add colorbar
     pyplot.show()
