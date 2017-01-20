@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PyHal
-   &#160;<span id="projectnumber">4.3</span>
+   &#160;<span id="projectnumber">4</span>
    </div>
    <div id="projectbrief">A multipurpose library homemade from scratch to perform great stuff in a pythonic way.</div>
   </td>
@@ -113,8 +113,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:afa48d729c2ecd0ba30a56544dd3951ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afde9fa1646b6057ecd94746132c9b7c1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhal_1_1internet_1_1engines_1_1_search_engine.html#afde9fa1646b6057ecd94746132c9b7c1">parse_query</a> (self, query)</td></tr>
 <tr class="separator:afde9fa1646b6057ecd94746132c9b7c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0da195cc7ff5bf796127827b8c54c2ef"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhal_1_1internet_1_1engines_1_1_search_engine.html#a0da195cc7ff5bf796127827b8c54c2ef">get_search_page</a> (self, query)</td></tr>
-<tr class="separator:a0da195cc7ff5bf796127827b8c54c2ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05d68c392a6d698cd59df41927ddbc90"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhal_1_1internet_1_1engines_1_1_search_engine.html#a05d68c392a6d698cd59df41927ddbc90">get_search_page</a> (self, query, using_tor=False)</td></tr>
+<tr class="separator:a05d68c392a6d698cd59df41927ddbc90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -169,7 +169,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a0da195cc7ff5bf796127827b8c54c2ef"></a>
+<a class="anchor" id="a05d68c392a6d698cd59df41927ddbc90"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -183,7 +183,13 @@ Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>query</em>&#160;</td>
+          <td class="paramname"><em>query</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>using_tor</em> = <code>False</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -194,6 +200,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <pre class="fragment">:param query: string
     Query to search engine.
+:param using_tor: bool
+    Whether use tor or not to fetch web pages
 :return: string
     Get HTML source of search page of given query.
 </pre> 

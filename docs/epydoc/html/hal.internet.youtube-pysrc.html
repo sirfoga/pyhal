@@ -79,16 +79,16 @@
 <a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"> </tt>
 <a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"><tt class="py-docstring">""" Get rss feed for youtube channel. """</tt> </tt>
 <a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"> </tt>
-<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"> </tt>
-<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package hal=hal-module.html"><a title="hal" class="py-name" href="#" onclick="return doclink('link-0', 'hal', 'link-0');">hal</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Package hal.internet=hal.internet-module.html"><a title="hal.internet" class="py-name" href="#" onclick="return doclink('link-1', 'internet', 'link-1');">internet</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Module hal.internet.web=hal.internet.web-module.html"><a title="hal.internet.web" class="py-name" href="#" onclick="return doclink('link-2', 'web', 'link-2');">web</a></tt> <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Class hal.internet.web.Webpage=hal.internet.web.Webpage-class.html"><a title="hal.internet.web.Webpage" class="py-name" href="#" onclick="return doclink('link-3', 'Webpage', 'link-3');">Webpage</a></tt> </tt>
-<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">bs4</tt> <tt class="py-keyword">import</tt> <tt class="py-name">BeautifulSoup</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">bs4</tt> <tt class="py-keyword">import</tt> <tt class="py-name">BeautifulSoup</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package hal=hal-module.html"><a title="hal" class="py-name" href="#" onclick="return doclink('link-0', 'hal', 'link-0');">hal</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Package hal.internet=hal.internet-module.html"><a title="hal.internet" class="py-name" href="#" onclick="return doclink('link-1', 'internet', 'link-1');">internet</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Module hal.internet.web=hal.internet.web-module.html"><a title="hal.internet.web" class="py-name" href="#" onclick="return doclink('link-2', 'web', 'link-2');">web</a></tt> <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Class hal.internet.web.Webpage=hal.internet.web.Webpage-class.html"><a title="hal.internet.web.Webpage" class="py-name" href="#" onclick="return doclink('link-3', 'Webpage', 'link-3');">Webpage</a></tt> </tt>
 <a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line"> </tt>
 <a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line"> </tt>
 <a name="get_channel_page"></a><div id="get_channel_page-def"><a name="L26"></a><tt class="py-lineno">26</tt> <a class="py-toggle" href="#" id="get_channel_page-toggle" onclick="return toggle('get_channel_page');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="hal.internet.youtube-module.html#get_channel_page">get_channel_page</a><tt class="py-op">(</tt><tt class="py-param">channel_name</tt><tt class="py-op">,</tt> <tt class="py-param">youtube_channel_url</tt><tt class="py-op">=</tt><tt class="py-string">"https://www.youtube.com/user/"</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
 </div><div id="get_channel_page-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="get_channel_page-expanded"><a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
-<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"><tt class="py-docstring">    @param channel_name: string</tt> </tt>
-<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line"><tt class="py-docstring">        name of channel.</tt> </tt>
-<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line"><tt class="py-docstring">    @param youtube_channel_url: string</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"><tt class="py-docstring">    :param channel_name: string</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line"><tt class="py-docstring">        name of channel (e.g in "https://www.youtube.com/user/caseyneistat" you should take "caseyneistat")</tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line"><tt class="py-docstring">    :param youtube_channel_url: string</tt> </tt>
 <a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line"><tt class="py-docstring">        base url of youtube channels.</tt> </tt>
 <a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line"><tt class="py-docstring">    @return string</tt> </tt>
 <a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line"><tt class="py-docstring">        source page of youtube channel.</tt> </tt>
@@ -101,12 +101,12 @@
 <a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line"> </tt>
 <a name="get_channel_id"></a><div id="get_channel_id-def"><a name="L41"></a><tt class="py-lineno">41</tt> <a class="py-toggle" href="#" id="get_channel_id-toggle" onclick="return toggle('get_channel_id');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="hal.internet.youtube-module.html#get_channel_id">get_channel_id</a><tt class="py-op">(</tt><tt class="py-param">channel_name</tt><tt class="py-op">,</tt> <tt class="py-param">channel_id_field</tt><tt class="py-op">=</tt><tt class="py-string">"data-channel-external-id"</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
 </div><div id="get_channel_id-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="get_channel_id-expanded"><a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
-<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line"><tt class="py-docstring">    @param channel_name: string</tt> </tt>
-<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line"><tt class="py-docstring">        channel_name name of channel.</tt> </tt>
-<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line"><tt class="py-docstring">    @param channel_id_field: string</tt> </tt>
-<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line"><tt class="py-docstring">        default field to get channel id.</tt> </tt>
-<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line"><tt class="py-docstring">    @return string</tt> </tt>
-<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line"><tt class="py-docstring">        id of youtube channel.</tt> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line"><tt class="py-docstring">    :param channel_name: string</tt> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line"><tt class="py-docstring">        name of channel (e.g in "https://www.youtube.com/user/caseyneistat" you should take "caseyneistat")</tt> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line"><tt class="py-docstring">    :param channel_id_field: string</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line"><tt class="py-docstring">        default field to get channel id</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line"><tt class="py-docstring">    :return string</tt> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line"><tt class="py-docstring">        id of youtube channel</tt> </tt>
 <a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
 <a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line"> </tt>
 <a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">    <tt class="py-name">soup</tt> <tt class="py-op">=</tt> <tt class="py-name">BeautifulSoup</tt><tt class="py-op">(</tt><tt id="link-6" class="py-name" targets="Function hal.internet.youtube.get_channel_page()=hal.internet.youtube-module.html#get_channel_page"><a title="hal.internet.youtube.get_channel_page" class="py-name" href="#" onclick="return doclink('link-6', 'get_channel_page', 'link-6');">get_channel_page</a></tt><tt class="py-op">(</tt><tt class="py-name">channel_name</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-string">"lxml"</tt><tt class="py-op">)</tt>  <tt class="py-comment"># parser for source page</tt> </tt>
@@ -118,11 +118,11 @@
 <a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line"> </tt>
 <a name="get_channel_feed_url"></a><div id="get_channel_feed_url-def"><a name="L58"></a><tt class="py-lineno">58</tt> <a class="py-toggle" href="#" id="get_channel_feed_url-toggle" onclick="return toggle('get_channel_feed_url');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="hal.internet.youtube-module.html#get_channel_feed_url">get_channel_feed_url</a><tt class="py-op">(</tt><tt class="py-param">channel_name</tt><tt class="py-op">,</tt> <tt class="py-param">base_feed_url</tt><tt class="py-op">=</tt><tt class="py-string">"https://www.youtube.com/feeds/videos.xml?channel_id="</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
 </div><div id="get_channel_feed_url-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="get_channel_feed_url-expanded"><a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
-<a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line"><tt class="py-docstring">    @param channel_name: string</tt> </tt>
-<a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line"><tt class="py-docstring">        channel_name name of channel.</tt> </tt>
-<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line"><tt class="py-docstring">    @param base_feed_url: string</tt> </tt>
+<a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line"><tt class="py-docstring">    :param channel_name: string</tt> </tt>
+<a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line"><tt class="py-docstring">        name of channel (e.g in "https://www.youtube.com/user/caseyneistat" you should take "caseyneistat")</tt> </tt>
+<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line"><tt class="py-docstring">    :param base_feed_url: string</tt> </tt>
 <a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line"><tt class="py-docstring">        default base url for rss feed of youtube channels.</tt> </tt>
-<a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line"><tt class="py-docstring">    @return string</tt> </tt>
+<a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line"><tt class="py-docstring">    :return string</tt> </tt>
 <a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line"><tt class="py-docstring">        rss url feed of youtube channel.</tt> </tt>
 <a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
 <a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line"> </tt>
@@ -164,7 +164,7 @@ expandto(location.href);
   <tr>
     <td align="left" class="footer">
     Generated by Epydoc 3.0.1
-    on Thu Jan 12 21:14:34 2017
+    on Fri Jan 20 11:54:27 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

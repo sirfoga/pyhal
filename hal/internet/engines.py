@@ -59,14 +59,16 @@ class SearchEngine(object):
 
         return query.strip().replace(" ", self.blank_replace).lower()  # remove trailing blanks, then replace with search engine blanks
 
-    def get_search_page(self, query):
+    def get_search_page(self, query, using_tor=False):
         """
         :param query: string
             Query to search engine.
+        :param using_tor: bool
+            Whether use tor or not to fetch web pages
         :return: string
             Get HTML source of search page of given query.
         """
 
-        query_web_page = Webpage(self.url + self.parse_query(query))
-        query_web_page.get_html_source()  # get html source
+        query_web_page = Webpage(self.url + self.parse_query(query), using_tor=using_tor)
+        query_web_page.get_html_source(tor=using_tor)  # get html source
         return query_web_page.source

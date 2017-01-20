@@ -83,6 +83,7 @@ hal.ml.utils.pearson	hal.ml.utils-module.html#pearson
 hal.ml.utils.recall	hal.ml.utils-module.html#recall
 hal.ml.utils.tn_rate	hal.ml.utils-module.html#tn_rate
 hal.ml.utils.precision	hal.ml.utils-module.html#precision
+hal.ml.utils.get_correlation_matrix	hal.ml.utils-module.html#get_correlation_matrix
 hal.ml.utils.show_correlation_matrix	hal.ml.utils-module.html#show_correlation_matrix
 hal.ml.utils.accuracy	hal.ml.utils-module.html#accuracy
 hal.profile	hal.profile-module.html

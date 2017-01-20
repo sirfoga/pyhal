@@ -162,18 +162,18 @@ class Webpage(object):
                 socks.setdefaultproxy(proxy_type=socks.PROXY_TYPE_SOCKS5, addr="127.0.0.1", port=9050)
                 socket.socket = socks.socksocket
                 r = requests.get(self.url).text
-            except:
+            except Exception as e:
+                print(str(e))
                 print("To be able to fetch HTML source pages via Tor the following command is required:")
                 print("apt-get install tor && tor &")
-                return None
+                r = ""
         else:
             q = urllib.request.Request(self.url)
             q.add_header("user-agent", random.choice(CHROME_USER_AGENT))
             r = urllib.request.urlopen(q).read()
 
-            self.source = str(r)
-            self.soup = BeautifulSoup(self.source, "lxml")
-
+        self.source = str(r)
+        self.soup = BeautifulSoup(self.source, "lxml")
         return self.source
 
     def get_links(self, recall, timeout):

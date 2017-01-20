@@ -220,6 +220,7 @@
 \indexentry{hal \textit{(package)}!hal.ml \textit{(package)}!hal.ml.utils \textit{(module)}!hal.ml.utils.accuracy \textit{(function)}|hyperpage}{59}
 \indexentry{hal \textit{(package)}!hal.ml \textit{(package)}!hal.ml.utils \textit{(module)}!hal.ml.utils.f1\_score \textit{(function)}|hyperpage}{59}
 \indexentry{hal \textit{(package)}!hal.ml \textit{(package)}!hal.ml.utils \textit{(module)}!hal.ml.utils.pearson \textit{(function)}|hyperpage}{60}
+\indexentry{hal \textit{(package)}!hal.ml \textit{(package)}!hal.ml.utils \textit{(module)}!hal.ml.utils.get\_correlation\_matrix \textit{(function)}|hyperpage}{60}
 \indexentry{hal \textit{(package)}!hal.ml \textit{(package)}!hal.ml.utils \textit{(module)}!hal.ml.utils.show\_correlation\_matrix \textit{(function)}|hyperpage}{60}
 \indexentry{hal \textit{(package)}!hal.ml \textit{(package)}!hal.ml.utils \textit{(module)}|)hyperpage}{60}
 \indexentry{hal \textit{(package)}!hal.profile \textit{(package)}|(hyperpage}{61}
