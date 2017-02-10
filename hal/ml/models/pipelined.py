@@ -18,13 +18,12 @@
 
 """ Prediction methods based on multiple models mixed up. """
 
-
 from sklearn import linear_model
-from sklearn.neural_network import BernoulliRBM
-from sklearn.pipeline import Pipeline
 from sklearn import svm
 from sklearn.feature_selection import SelectKBest
 from sklearn.feature_selection import f_regression
+from sklearn.neural_network import BernoulliRBM
+from sklearn.pipeline import Pipeline
 
 
 def logistic_rbm():

@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 4.3.4
+### Fixed
+- EightQueen performance tester
+
 ## 4.3.3
 ### Fixed
 - now search engines can fetch pages using onion (tor) protocol

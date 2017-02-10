@@ -18,17 +18,17 @@
 
 """ Perform fast hash, encryption and calculations related to cryptography. """
 
-
-import hashlib
 import binascii
 import crypt
-from Crypto.Hash import SHA224, SHA256
-from Crypto.Cipher import DES3, ARC2, ARC4, Blowfish, CAST
-from Crypto.PublicKey import DSA
+import hashlib
+from struct import pack
+
 from Crypto import Random
+from Crypto.Cipher import DES3, ARC2, ARC4, Blowfish, CAST
+from Crypto.Hash import SHA224, SHA256
+from Crypto.PublicKey import DSA
 from Crypto.Random import random
 from Crypto.Util import Counter
-from struct import pack
 
 
 class MD5(object):

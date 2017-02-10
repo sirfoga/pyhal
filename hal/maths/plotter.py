@@ -18,11 +18,10 @@
 
 """ Show elegant plots in any dimension. """
 
-
-from scipy import linspace
 import matplotlib.pyplot as plt
-from matplotlib.widgets import Slider
 import numpy
+from matplotlib.widgets import Slider
+from scipy import linspace
 
 
 class Plot2d(object):

@@ -18,13 +18,12 @@
 
 """ Multi-purpose prediction methods to be used in time-series. """
 
-
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 import statsmodels.tsa.arima_model as ar
-import statsmodels.tsa.vector_ar.var_model as vr
 import statsmodels.tsa.vector_ar.dynamic as dr
+import statsmodels.tsa.vector_ar.var_model as vr
 from statsmodels.tsa.stattools import adfuller
 
 

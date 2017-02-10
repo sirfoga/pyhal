@@ -25,7 +25,7 @@ def \hyperlink{classhal_1_1internet_1_1engines_1_1_search_engine_afa48d729c2ecd0
 \item 
 def \hyperlink{classhal_1_1internet_1_1engines_1_1_search_engine_afde9fa1646b6057ecd94746132c9b7c1}{parse\+\_\+query} (self, query)
 \item 
-def \hyperlink{classhal_1_1internet_1_1engines_1_1_search_engine_a0da195cc7ff5bf796127827b8c54c2ef}{get\+\_\+search\+\_\+page} (self, query)
+def \hyperlink{classhal_1_1internet_1_1engines_1_1_search_engine_a05d68c392a6d698cd59df41927ddbc90}{get\+\_\+search\+\_\+page} (self, query, using\+\_\+tor=False)
 \end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -64,14 +64,17 @@ def \hyperlink{classhal_1_1internet_1_1engines_1_1_search_engine_a0da195cc7ff5bf
 \subsection{Member Function Documentation}
 \index{hal\+::internet\+::engines\+::\+Search\+Engine@{hal\+::internet\+::engines\+::\+Search\+Engine}!get\+\_\+search\+\_\+page@{get\+\_\+search\+\_\+page}}
 \index{get\+\_\+search\+\_\+page@{get\+\_\+search\+\_\+page}!hal\+::internet\+::engines\+::\+Search\+Engine@{hal\+::internet\+::engines\+::\+Search\+Engine}}
-\subsubsection[{\texorpdfstring{get\+\_\+search\+\_\+page(self, query)}{get_search_page(self, query)}}]{\setlength{\rightskip}{0pt plus 5cm}def hal.\+internet.\+engines.\+Search\+Engine.\+get\+\_\+search\+\_\+page (
+\subsubsection[{\texorpdfstring{get\+\_\+search\+\_\+page(self, query, using\+\_\+tor=\+False)}{get_search_page(self, query, using_tor=False)}}]{\setlength{\rightskip}{0pt plus 5cm}def hal.\+internet.\+engines.\+Search\+Engine.\+get\+\_\+search\+\_\+page (
 \begin{DoxyParamCaption}
 \item[{}]{self, }
-\item[{}]{query}
+\item[{}]{query, }
+\item[{}]{using\+\_\+tor = {\ttfamily False}}
 \end{DoxyParamCaption}
-)}\hypertarget{classhal_1_1internet_1_1engines_1_1_search_engine_a0da195cc7ff5bf796127827b8c54c2ef}{}\label{classhal_1_1internet_1_1engines_1_1_search_engine_a0da195cc7ff5bf796127827b8c54c2ef}
+)}\hypertarget{classhal_1_1internet_1_1engines_1_1_search_engine_a05d68c392a6d698cd59df41927ddbc90}{}\label{classhal_1_1internet_1_1engines_1_1_search_engine_a05d68c392a6d698cd59df41927ddbc90}
 \begin{DoxyVerb}:param query: string
     Query to search engine.
+:param using_tor: bool
+    Whether use tor or not to fetch web pages
 :return: string
     Get HTML source of search page of given query.
 \end{DoxyVerb}

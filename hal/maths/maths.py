@@ -128,9 +128,10 @@ class EightQueen(object):
         object.__init__(self)
         self.board_size = board_size
 
-    def under_attack(self, col, queens):  # (col, queens) What is their meaning? What do I need to write it this field?
+    @staticmethod
+    def under_attack(col, queens):
         left = right = col
-        for r, c in reversed(queens):  # What does reversed means in this loop? For what reson do we need r and c (their meaning is 0 by default?)?
+        for r, c in reversed(queens):
             left, right = left - 1, right + 1
             if c in (left, col, right):
                 return True

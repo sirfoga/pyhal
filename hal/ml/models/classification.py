@@ -18,11 +18,10 @@
 
 """ Prediction methods based on classification algorithms. """
 
-
-from sklearn.ensemble import ExtraTreesClassifier, RandomForestClassifier, AdaBoostClassifier
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.neighbors import KNeighborsClassifier
 from sklearn import naive_bayes
+from sklearn.ensemble import ExtraTreesClassifier, RandomForestClassifier, AdaBoostClassifier
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.tree import DecisionTreeClassifier
 
 
 def extra_trees_classifier():
