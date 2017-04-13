@@ -40,8 +40,7 @@ def get_column_of_matrix(column_index, matrix):
         np_matrix = np.array(matrix)
         np_column = np_matrix[:, column_index]
         return list(np_column)
-    except Exception as e:
-        print(str(e))
+    except:
         return []
 
 
@@ -112,6 +111,7 @@ def get_correlation_matrix_of_columns(headers_to_test, headers, data):
     data_to_test = []
     for header in headers_to_test:
         header_column = get_column_of_matrix(header_to_column[header], data)
+
         for i in range(len(header_column)):
             header_column[i] = float(header_column[i])  # get float
 

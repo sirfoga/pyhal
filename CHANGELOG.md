@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 4.3.6
+
+### Fixed
+- ml.analysis.correlation minor bugs
+
 ## 4.3.5
 
 ### Added
