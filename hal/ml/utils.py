@@ -148,10 +148,14 @@ def show_correlation_matrix(correlation_matrix, title, feature_list):
     ax1 = fig.add_subplot(111)
     ax1.grid(True)
     pyplot.title(title)
+    pyplot.gcf().subplots_adjust(bottom=0.25)  # include xlabels
+
     ax1.set_xticks(list(range(len(feature_list))))
+    ax1.set_xticklabels([feature_list[i] for i in range(len(feature_list))], rotation=90)
     ax1.set_yticks(list(range(len(feature_list))))
-    ax1.set_yticklabels([feature_list[i] + " : " + str(i) for i in range(len(feature_list))])
-    cmap = cm.get_cmap("jet", 30)
-    cax = ax1.imshow(correlation_matrix, interpolation="nearest", cmap=cmap)
+    ax1.set_yticklabels([feature_list[i] for i in range(len(feature_list))])
+    cax = ax1.imshow(correlation_matrix, interpolation="nearest", cmap=cm.get_cmap("jet", 30))
     fig.colorbar(cax, ticks=[.5, .55, .6, .65, .7, .75, .8, .85, .90, .95, 1])  # add colorbar
+
+    pyplot.gcf().subplots_adjust(bottom=0.25)  # include xlabels
     pyplot.show()

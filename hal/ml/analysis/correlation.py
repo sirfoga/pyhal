@@ -23,7 +23,7 @@ from matplotlib import pyplot, cm
 
 from hal.files.models import Document, FileSystem
 from hal.ml.data.parser import CSVParser
-from hal.ml.utils import get_correlation_matrix
+from hal.ml.utils import get_correlation_matrix, show_correlation_matrix
 
 
 def get_column_of_matrix(column_index, matrix):
@@ -60,7 +60,7 @@ def parse_input_file(file_path):
 
     data = []
     for line in raw_data:  # parse raw data
-        n_array = [float(n) for n in line[1:] if len(str(n).strip()) > 2]  # discard time value
+        n_array = [str(n).strip() for n in line[1:] if len(str(n).strip()) > 1]  # discard null value
         data.append(n_array)
 
     return headers, data
@@ -84,11 +84,13 @@ def create_visual_correlation_matrix(correlation_matrix, title, feature_list):
     pyplot.title(title)
 
     ax1.set_xticks(list(range(len(feature_list))))
+    ax1.set_xticklabels([feature_list[i] for i in range(len(feature_list))], rotation=90)
     ax1.set_yticks(list(range(len(feature_list))))
     ax1.set_yticklabels([feature_list[i] for i in range(len(feature_list))])
+    cax = ax1.imshow(correlation_matrix, interpolation="nearest", cmap=cm.get_cmap("jet", 30))
+    fig.colorbar(cax, ticks=np.linspace(-1, 1, 21))
 
-    cax = ax1.imshow(correlation_matrix, interpolation="nearest", cmap=cm.get_cmap("jet", 100))
-    fig.colorbar(cax)  # add bar
+    pyplot.gcf().subplots_adjust(bottom=0.25)  # include xlabels
 
 
 def get_correlation_matrix_of_columns(headers_to_test, headers, data):
@@ -110,6 +112,9 @@ def get_correlation_matrix_of_columns(headers_to_test, headers, data):
     data_to_test = []
     for header in headers_to_test:
         header_column = get_column_of_matrix(header_to_column[header], data)
+        for i in range(len(header_column)):
+            header_column[i] = float(header_column[i])  # get float
+
         data_to_test.append(header_column)
 
     return get_correlation_matrix(data_to_test)
@@ -130,7 +135,7 @@ def show_correlation_matrix_of_columns(title, headers_to_test, headers, data):
     """
 
     correlation_matrix = get_correlation_matrix_of_columns(headers_to_test, headers, data)
-    create_visual_correlation_matrix(correlation_matrix, title, headers_to_test)
+    show_correlation_matrix(correlation_matrix, title, headers_to_test)
     pyplot.show()
 
 
@@ -152,7 +157,10 @@ def save_correlation_matrix_of_columns(title, headers_to_test, headers, data, ou
 
     correlation_matrix = get_correlation_matrix_of_columns(headers_to_test, headers, data)
     create_visual_correlation_matrix(correlation_matrix, title, headers_to_test)
-    pyplot.savefig(out_file)
+
+    fig = pyplot.gcf()  # get reference to figure
+    fig.set_size_inches(23.4, 23.4)
+    pyplot.savefig(out_file, dpi=120)
 
 
 def save_correlation_matrix_of_data_files_in_folder(folder_path):
@@ -167,7 +175,7 @@ def save_correlation_matrix_of_data_files_in_folder(folder_path):
     os.makedirs(output_folder)  # make necessary folders to create directory
 
     for f in FileSystem.ls(folder_path, False, False):
-        if os.path.isfile(f):
+        if os.path.isfile(f) and str(f).endswith("csv"):
             print("Analysing file ", str(f))
 
             file_name = Document(f).name.strip()

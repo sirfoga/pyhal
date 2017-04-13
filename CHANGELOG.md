@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 ### Added
 - ml.analysis.correlation
 
+### Fixed
+- now ml.analysis.correlation analyzes only `csv` files
+- ml.analysis.correlation: parsing data to float only after choosing headers
+- CSVParser
+- create_visual_correlation_matrix
+
 ## 4.3.4
 
 ### Fixed

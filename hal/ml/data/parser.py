@@ -18,6 +18,8 @@
 
 """ Parsers for raw databases. """
 
+import csv
+
 
 class Parser(object):
     def __init__(self, database_file):
@@ -43,8 +45,9 @@ class CSVParser(Parser):
     def parse_data(self):
         """ store values in array, store lines in array; the result is a 2D matrix"""
 
-        for line in self.lines:
-            tokens = line.split(",")
-            self.data.append(tokens)
+        with open(self.database_file) as csvfile:
+            csv_reader = csv.reader(csvfile, delimiter=',')
+            for row in csv_reader:
+                self.data.append(row)
 
         return self.data
