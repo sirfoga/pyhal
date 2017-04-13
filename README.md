@@ -1,5 +1,5 @@
 # HAL: Handy Algorithmic Library
-[![Build Status](https://travis-ci.org/sirfoga/hal.svg?branch=master)](https://travis-ci.org/sirfoga/hal) [![PyPI version](https://badge.fury.io/py/pyhal.svg)](https://badge.fury.io/py/pyhal) [![Coverage Status](https://coveralls.io/repos/github/sirfoga/hal/badge.svg?branch=master)](https://coveralls.io/github/sirfoga/hal?branch=master) [![Code Health](https://landscape.io/github/sirfoga/hal/master/landscape.svg?style=flat)](https://landscape.io/github/sirfoga/hal/master) [![Stories in Ready](https://badge.waffle.io/sirfoga/hal.svg?label=ready&title=Ready)](http://waffle.io/sirfoga/hal)
+[![Build Status](https://travis-ci.org/sirfoga/hal.svg?branch=master)](https://travis-ci.org/sirfoga/hal) [![PyPI version](https://badge.fury.io/py/pyhal.svg)](https://badge.fury.io/py/pyhal) [![Coverage Status](https://coveralls.io/repos/github/sirfoga/hal/badge.svg?branch=master)](https://coveralls.io/github/sirfoga/hal?branch=master) [![Code Health](https://landscape.io/github/sirfoga/pyhal/master/landscape.svg?style=flat)](https://landscape.io/github/sirfoga/hal/master) [![Stories in Ready](https://badge.waffle.io/sirfoga/hal.svg?label=ready&title=Ready)](http://waffle.io/sirfoga/hal)
 
 *A multipurpose library homemade from scratch to perform great stuff in a pythonic way.*
 
