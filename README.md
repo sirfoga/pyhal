@@ -6,7 +6,7 @@
 ![screenshot](logo.png)
 
 ## Install
-* ``` $ python3 setup.py install ``` from the source
+* ``` $ pip3 install . --upgrade --force-reinstall ``` from the source
 * ``` $ pip3 install pyhal``` via pip
 
 

@@ -1,0 +1,185 @@
+# !/usr/bin/python
+# coding: utf-8
+
+# Copyright 2017 Stefano Fogarollo
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import os
+import time
+
+import numpy as np
+from matplotlib import pyplot, cm
+
+from hal.files.models import Document, FileSystem
+from hal.ml.data.parser import CSVParser
+from hal.ml.utils import get_correlation_matrix
+
+
+def get_column_of_matrix(column_index, matrix):
+    """
+    :param column_index: int >= 0
+        Column index to take
+    :param matrix: [] of []
+        Matrix
+    :return: []
+        Column of array at position given
+    """
+
+    try:
+        np_matrix = np.array(matrix)
+        np_column = np_matrix[:, column_index]
+        return list(np_column)
+    except Exception as e:
+        print(str(e))
+        return []
+
+
+def parse_input_file(file_path):
+    """
+    :param file_path: str
+        Path to file to parse
+    :return: tuple [], [] of []
+        headers of csv file and data
+    """
+
+    raw_data = CSVParser(file_path).parse_data()
+    headers = raw_data[0][1:]  # first row discarding time value
+    headers = [h.strip() for h in headers]
+    raw_data = raw_data[1:]  # discard headers row
+
+    data = []
+    for line in raw_data:  # parse raw data
+        n_array = [float(n) for n in line[1:] if len(str(n).strip()) > 2]  # discard time value
+        data.append(n_array)
+
+    return headers, data
+
+
+def create_visual_correlation_matrix(correlation_matrix, title, feature_list):
+    """
+    :param correlation_matrix: [] of []
+        Correlation matrix of features
+    :param title: str
+        Title of plot
+    :param feature_list: [] of str
+        List of names of features
+    :return: void
+        shows the given correlation matrix as image
+    """
+
+    fig = pyplot.figure()
+    ax1 = fig.add_subplot(111)
+    ax1.grid(True)
+    pyplot.title(title)
+
+    ax1.set_xticks(list(range(len(feature_list))))
+    ax1.set_yticks(list(range(len(feature_list))))
+    ax1.set_yticklabels([feature_list[i] for i in range(len(feature_list))])
+
+    cax = ax1.imshow(correlation_matrix, interpolation="nearest", cmap=cm.get_cmap("jet", 100))
+    fig.colorbar(cax)  # add bar
+
+
+def get_correlation_matrix_of_columns(headers_to_test, headers, data):
+    """
+    :param headers_to_test: [] of str
+        List of columns to get correlation matrix of
+    :param headers: [] of str
+        List of all headers in matrix
+    :param data: [] of []
+        Matrix of float values
+    :return: [] of []
+        Correlation matrix of selected columns
+    """
+
+    header_to_column = {}  # create index of headers
+    for header in headers:
+        header_to_column[header] = headers.index(header)
+
+    data_to_test = []
+    for header in headers_to_test:
+        header_column = get_column_of_matrix(header_to_column[header], data)
+        data_to_test.append(header_column)
+
+    return get_correlation_matrix(data_to_test)
+
+
+def show_correlation_matrix_of_columns(title, headers_to_test, headers, data):
+    """
+    :param title: str
+        Title to show
+    :param headers_to_test: [] of str
+        List of columns to get correlation matrix of
+    :param headers: [] of str
+        List of all headers in matrix
+    :param data: [] of []
+        Matrix of float values
+    :return: void
+        Shows on screen correlation matrix of selected headers
+    """
+
+    correlation_matrix = get_correlation_matrix_of_columns(headers_to_test, headers, data)
+    create_visual_correlation_matrix(correlation_matrix, title, headers_to_test)
+    pyplot.show()
+
+
+def save_correlation_matrix_of_columns(title, headers_to_test, headers, data, out_file):
+    """
+    :param title: str
+        Title to show
+    :param headers_to_test: [] of str
+        List of columns to get correlation matrix of
+    :param headers: [] of str
+        List of all headers in matrix
+    :param data: [] of []
+        Matrix of float values
+    :param out_file: str
+        Output file
+    :return: void
+        Saves correlation matrix of selected headers
+    """
+
+    correlation_matrix = get_correlation_matrix_of_columns(headers_to_test, headers, data)
+    create_visual_correlation_matrix(correlation_matrix, title, headers_to_test)
+    pyplot.savefig(out_file)
+
+
+def save_correlation_matrix_of_data_files_in_folder(folder_path):
+    """
+    :param folder_path: str
+        Folder containing logs data
+    :return: void
+        Saves each file's correlation matrix of common headers
+    """
+
+    output_folder = os.path.join(folder_path, "output-" + str(int(time.time())))
+    os.makedirs(output_folder)  # make necessary folders to create directory
+
+    for f in FileSystem.ls(folder_path, False, False):
+        if os.path.isfile(f):
+            print("Analysing file ", str(f))
+
+            file_name = Document(f).name.strip()
+            output_file_name = file_name + ".png"  # save output as image
+            output_file_path = os.path.join(output_folder, output_file_name)
+
+            try:
+                headers, data = parse_input_file(f)  # parse raw data
+                save_correlation_matrix_of_columns("Correlation of logs data for file " + file_name, headers, headers,
+                                                   data, output_file_path)
+            except Exception as e:
+                print("Cannot save correlation matrix of file \"", str(f), "\" because of")
+                print(str(e))
+
+# TODO def predict_next_values time data analysis
