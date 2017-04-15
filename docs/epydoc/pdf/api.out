@@ -47,48 +47,48 @@
 \BOOKMARK [3][-]{subsubsection.8.3.2}{Properties}{subsection.8.3}% 47
 \BOOKMARK [1][-]{section.9}{Module hal.internet.youtube}{}% 48
 \BOOKMARK [2][-]{subsection.9.1}{Functions}{section.9}% 49
-\BOOKMARK [1][-]{section.10}{Package hal.maths}{}% 50
-\BOOKMARK [2][-]{subsection.10.1}{Modules}{section.10}% 51
-\BOOKMARK [2][-]{subsection.10.2}{Variables}{section.10}% 52
-\BOOKMARK [1][-]{section.11}{Module hal.maths.crypt}{}% 53
-\BOOKMARK [2][-]{subsection.11.1}{Variables}{section.11}% 54
-\BOOKMARK [2][-]{subsection.11.2}{Class MD5}{section.11}% 55
-\BOOKMARK [3][-]{subsubsection.11.2.1}{Methods}{subsection.11.2}% 56
-\BOOKMARK [3][-]{subsubsection.11.2.2}{Properties}{subsection.11.2}% 57
-\BOOKMARK [2][-]{subsection.11.3}{Class MD6}{section.11}% 58
-\BOOKMARK [3][-]{subsubsection.11.3.1}{Methods}{subsection.11.3}% 59
-\BOOKMARK [3][-]{subsubsection.11.3.2}{Properties}{subsection.11.3}% 60
-\BOOKMARK [3][-]{subsubsection.11.3.3}{Class Variables}{subsection.11.3}% 61
-\BOOKMARK [2][-]{subsection.11.4}{Class SHA}{section.11}% 62
-\BOOKMARK [3][-]{subsubsection.11.4.1}{Methods}{subsection.11.4}% 63
-\BOOKMARK [3][-]{subsubsection.11.4.2}{Properties}{subsection.11.4}% 64
-\BOOKMARK [3][-]{subsubsection.11.4.3}{Class Variables}{subsection.11.4}% 65
-\BOOKMARK [2][-]{subsection.11.5}{Class DES}{section.11}% 66
-\BOOKMARK [3][-]{subsubsection.11.5.1}{Methods}{subsection.11.5}% 67
-\BOOKMARK [3][-]{subsubsection.11.5.2}{Properties}{subsection.11.5}% 68
-\BOOKMARK [3][-]{subsubsection.11.5.3}{Class Variables}{subsection.11.5}% 69
-\BOOKMARK [2][-]{subsection.11.6}{Class ARC}{section.11}% 70
-\BOOKMARK [3][-]{subsubsection.11.6.1}{Methods}{subsection.11.6}% 71
-\BOOKMARK [3][-]{subsubsection.11.6.2}{Properties}{subsection.11.6}% 72
-\BOOKMARK [3][-]{subsubsection.11.6.3}{Class Variables}{subsection.11.6}% 73
-\BOOKMARK [2][-]{subsection.11.7}{Class AES}{section.11}% 74
-\BOOKMARK [3][-]{subsubsection.11.7.1}{Methods}{subsection.11.7}% 75
-\BOOKMARK [3][-]{subsubsection.11.7.2}{Properties}{subsection.11.7}% 76
-\BOOKMARK [2][-]{subsection.11.8}{Class HMAC}{section.11}% 77
-\BOOKMARK [3][-]{subsubsection.11.8.1}{Methods}{subsection.11.8}% 78
-\BOOKMARK [3][-]{subsubsection.11.8.2}{Properties}{subsection.11.8}% 79
-\BOOKMARK [2][-]{subsection.11.9}{Class BLOWFISH}{section.11}% 80
-\BOOKMARK [3][-]{subsubsection.11.9.1}{Methods}{subsection.11.9}% 81
-\BOOKMARK [3][-]{subsubsection.11.9.2}{Properties}{subsection.11.9}% 82
-\BOOKMARK [2][-]{subsection.11.10}{Class IDEA}{section.11}% 83
-\BOOKMARK [3][-]{subsubsection.11.10.1}{Methods}{subsection.11.10}% 84
-\BOOKMARK [3][-]{subsubsection.11.10.2}{Properties}{subsection.11.10}% 85
-\BOOKMARK [2][-]{subsection.11.11}{Class CAST128}{section.11}% 86
-\BOOKMARK [3][-]{subsubsection.11.11.1}{Methods}{subsection.11.11}% 87
-\BOOKMARK [3][-]{subsubsection.11.11.2}{Properties}{subsection.11.11}% 88
-\BOOKMARK [2][-]{subsection.11.12}{Class Dsa}{section.11}% 89
-\BOOKMARK [3][-]{subsubsection.11.12.1}{Methods}{subsection.11.12}% 90
-\BOOKMARK [3][-]{subsubsection.11.12.2}{Properties}{subsection.11.12}% 91
+\BOOKMARK [2][-]{subsection.9.2}{Variables}{section.9}% 50
+\BOOKMARK [1][-]{section.10}{Package hal.maths}{}% 51
+\BOOKMARK [2][-]{subsection.10.1}{Modules}{section.10}% 52
+\BOOKMARK [2][-]{subsection.10.2}{Variables}{section.10}% 53
+\BOOKMARK [1][-]{section.11}{Module hal.maths.crypt}{}% 54
+\BOOKMARK [2][-]{subsection.11.1}{Class MD5}{section.11}% 55
+\BOOKMARK [3][-]{subsubsection.11.1.1}{Methods}{subsection.11.1}% 56
+\BOOKMARK [3][-]{subsubsection.11.1.2}{Properties}{subsection.11.1}% 57
+\BOOKMARK [2][-]{subsection.11.2}{Class MD6}{section.11}% 58
+\BOOKMARK [3][-]{subsubsection.11.2.1}{Methods}{subsection.11.2}% 59
+\BOOKMARK [3][-]{subsubsection.11.2.2}{Properties}{subsection.11.2}% 60
+\BOOKMARK [3][-]{subsubsection.11.2.3}{Class Variables}{subsection.11.2}% 61
+\BOOKMARK [2][-]{subsection.11.3}{Class SHA}{section.11}% 62
+\BOOKMARK [3][-]{subsubsection.11.3.1}{Methods}{subsection.11.3}% 63
+\BOOKMARK [3][-]{subsubsection.11.3.2}{Properties}{subsection.11.3}% 64
+\BOOKMARK [3][-]{subsubsection.11.3.3}{Class Variables}{subsection.11.3}% 65
+\BOOKMARK [2][-]{subsection.11.4}{Class DES}{section.11}% 66
+\BOOKMARK [3][-]{subsubsection.11.4.1}{Methods}{subsection.11.4}% 67
+\BOOKMARK [3][-]{subsubsection.11.4.2}{Properties}{subsection.11.4}% 68
+\BOOKMARK [3][-]{subsubsection.11.4.3}{Class Variables}{subsection.11.4}% 69
+\BOOKMARK [2][-]{subsection.11.5}{Class ARC}{section.11}% 70
+\BOOKMARK [3][-]{subsubsection.11.5.1}{Methods}{subsection.11.5}% 71
+\BOOKMARK [3][-]{subsubsection.11.5.2}{Properties}{subsection.11.5}% 72
+\BOOKMARK [3][-]{subsubsection.11.5.3}{Class Variables}{subsection.11.5}% 73
+\BOOKMARK [2][-]{subsection.11.6}{Class AES}{section.11}% 74
+\BOOKMARK [3][-]{subsubsection.11.6.1}{Methods}{subsection.11.6}% 75
+\BOOKMARK [3][-]{subsubsection.11.6.2}{Properties}{subsection.11.6}% 76
+\BOOKMARK [2][-]{subsection.11.7}{Class HMAC}{section.11}% 77
+\BOOKMARK [3][-]{subsubsection.11.7.1}{Methods}{subsection.11.7}% 78
+\BOOKMARK [3][-]{subsubsection.11.7.2}{Properties}{subsection.11.7}% 79
+\BOOKMARK [2][-]{subsection.11.8}{Class BLOWFISH}{section.11}% 80
+\BOOKMARK [3][-]{subsubsection.11.8.1}{Methods}{subsection.11.8}% 81
+\BOOKMARK [3][-]{subsubsection.11.8.2}{Properties}{subsection.11.8}% 82
+\BOOKMARK [2][-]{subsection.11.9}{Class IDEA}{section.11}% 83
+\BOOKMARK [3][-]{subsubsection.11.9.1}{Methods}{subsection.11.9}% 84
+\BOOKMARK [3][-]{subsubsection.11.9.2}{Properties}{subsection.11.9}% 85
+\BOOKMARK [2][-]{subsection.11.10}{Class CAST128}{section.11}% 86
+\BOOKMARK [3][-]{subsubsection.11.10.1}{Methods}{subsection.11.10}% 87
+\BOOKMARK [3][-]{subsubsection.11.10.2}{Properties}{subsection.11.10}% 88
+\BOOKMARK [2][-]{subsection.11.11}{Class Dsa}{section.11}% 89
+\BOOKMARK [3][-]{subsubsection.11.11.1}{Methods}{subsection.11.11}% 90
+\BOOKMARK [3][-]{subsubsection.11.11.2}{Properties}{subsection.11.11}% 91
 \BOOKMARK [1][-]{section.12}{Module hal.maths.maths}{}% 92
 \BOOKMARK [2][-]{subsection.12.1}{Functions}{section.12}% 93
 \BOOKMARK [2][-]{subsection.12.2}{Variables}{section.12}% 94
@@ -112,52 +112,57 @@
 \BOOKMARK [1][-]{section.14}{Package hal.ml}{}% 112
 \BOOKMARK [2][-]{subsection.14.1}{Modules}{section.14}% 113
 \BOOKMARK [2][-]{subsection.14.2}{Variables}{section.14}% 114
-\BOOKMARK [1][-]{section.15}{Package hal.ml.data}{}% 115
+\BOOKMARK [1][-]{section.15}{Package hal.ml.analysis}{}% 115
 \BOOKMARK [2][-]{subsection.15.1}{Modules}{section.15}% 116
 \BOOKMARK [2][-]{subsection.15.2}{Variables}{section.15}% 117
-\BOOKMARK [1][-]{section.16}{Module hal.ml.data.parser}{}% 118
-\BOOKMARK [2][-]{subsection.16.1}{Variables}{section.16}% 119
-\BOOKMARK [2][-]{subsection.16.2}{Class Parser}{section.16}% 120
-\BOOKMARK [3][-]{subsubsection.16.2.1}{Methods}{subsection.16.2}% 121
-\BOOKMARK [3][-]{subsubsection.16.2.2}{Properties}{subsection.16.2}% 122
-\BOOKMARK [2][-]{subsection.16.3}{Class CSVParser}{section.16}% 123
-\BOOKMARK [3][-]{subsubsection.16.3.1}{Methods}{subsection.16.3}% 124
-\BOOKMARK [3][-]{subsubsection.16.3.2}{Properties}{subsection.16.3}% 125
-\BOOKMARK [1][-]{section.17}{Module hal.ml.features}{}% 126
-\BOOKMARK [2][-]{subsection.17.1}{Functions}{section.17}% 127
-\BOOKMARK [2][-]{subsection.17.2}{Variables}{section.17}% 128
-\BOOKMARK [1][-]{section.18}{Package hal.ml.models}{}% 129
-\BOOKMARK [2][-]{subsection.18.1}{Modules}{section.18}% 130
-\BOOKMARK [2][-]{subsection.18.2}{Variables}{section.18}% 131
-\BOOKMARK [1][-]{section.19}{Module hal.ml.models.classification}{}% 132
-\BOOKMARK [2][-]{subsection.19.1}{Functions}{section.19}% 133
-\BOOKMARK [2][-]{subsection.19.2}{Variables}{section.19}% 134
-\BOOKMARK [1][-]{section.20}{Module hal.ml.models.pipelined}{}% 135
-\BOOKMARK [2][-]{subsection.20.1}{Functions}{section.20}% 136
-\BOOKMARK [2][-]{subsection.20.2}{Variables}{section.20}% 137
-\BOOKMARK [1][-]{section.21}{Module hal.ml.models.regression}{}% 138
-\BOOKMARK [2][-]{subsection.21.1}{Functions}{section.21}% 139
-\BOOKMARK [2][-]{subsection.21.2}{Variables}{section.21}% 140
-\BOOKMARK [1][-]{section.22}{Module hal.ml.models.time\137series}{}% 141
-\BOOKMARK [2][-]{subsection.22.1}{Functions}{section.22}% 142
-\BOOKMARK [1][-]{section.23}{Module hal.ml.predict}{}% 143
-\BOOKMARK [2][-]{subsection.23.1}{Variables}{section.23}% 144
-\BOOKMARK [2][-]{subsection.23.2}{Class BasePrediction}{section.23}% 145
-\BOOKMARK [3][-]{subsubsection.23.2.1}{Methods}{subsection.23.2}% 146
-\BOOKMARK [3][-]{subsubsection.23.2.2}{Properties}{subsection.23.2}% 147
-\BOOKMARK [1][-]{section.24}{Module hal.ml.utils}{}% 148
-\BOOKMARK [2][-]{subsection.24.1}{Functions}{section.24}% 149
-\BOOKMARK [1][-]{section.25}{Package hal.profile}{}% 150
-\BOOKMARK [2][-]{subsection.25.1}{Modules}{section.25}% 151
-\BOOKMARK [2][-]{subsection.25.2}{Variables}{section.25}% 152
-\BOOKMARK [1][-]{section.26}{Module hal.profile.performance}{}% 153
-\BOOKMARK [2][-]{subsection.26.1}{Variables}{section.26}% 154
-\BOOKMARK [2][-]{subsection.26.2}{Class EightQueenTest}{section.26}% 155
-\BOOKMARK [3][-]{subsubsection.26.2.1}{Methods}{subsection.26.2}% 156
-\BOOKMARK [3][-]{subsubsection.26.2.2}{Properties}{subsection.26.2}% 157
-\BOOKMARK [1][-]{section.27}{Package hal.wrappers}{}% 158
-\BOOKMARK [2][-]{subsection.27.1}{Modules}{section.27}% 159
-\BOOKMARK [2][-]{subsection.27.2}{Variables}{section.27}% 160
-\BOOKMARK [1][-]{section.28}{Module hal.wrappers.methods}{}% 161
-\BOOKMARK [2][-]{subsection.28.1}{Functions}{section.28}% 162
-\BOOKMARK [1][-]{section*.2}{Index}{}% 163
+\BOOKMARK [1][-]{section.16}{Module hal.ml.analysis.correlation}{}% 118
+\BOOKMARK [2][-]{subsection.16.1}{Functions}{section.16}% 119
+\BOOKMARK [1][-]{section.17}{Package hal.ml.data}{}% 120
+\BOOKMARK [2][-]{subsection.17.1}{Modules}{section.17}% 121
+\BOOKMARK [2][-]{subsection.17.2}{Variables}{section.17}% 122
+\BOOKMARK [1][-]{section.18}{Module hal.ml.data.parser}{}% 123
+\BOOKMARK [2][-]{subsection.18.1}{Variables}{section.18}% 124
+\BOOKMARK [2][-]{subsection.18.2}{Class Parser}{section.18}% 125
+\BOOKMARK [3][-]{subsubsection.18.2.1}{Methods}{subsection.18.2}% 126
+\BOOKMARK [3][-]{subsubsection.18.2.2}{Properties}{subsection.18.2}% 127
+\BOOKMARK [2][-]{subsection.18.3}{Class CSVParser}{section.18}% 128
+\BOOKMARK [3][-]{subsubsection.18.3.1}{Methods}{subsection.18.3}% 129
+\BOOKMARK [3][-]{subsubsection.18.3.2}{Properties}{subsection.18.3}% 130
+\BOOKMARK [1][-]{section.19}{Module hal.ml.features}{}% 131
+\BOOKMARK [2][-]{subsection.19.1}{Functions}{section.19}% 132
+\BOOKMARK [1][-]{section.20}{Package hal.ml.models}{}% 133
+\BOOKMARK [2][-]{subsection.20.1}{Modules}{section.20}% 134
+\BOOKMARK [2][-]{subsection.20.2}{Variables}{section.20}% 135
+\BOOKMARK [1][-]{section.21}{Module hal.ml.models.classification}{}% 136
+\BOOKMARK [2][-]{subsection.21.1}{Functions}{section.21}% 137
+\BOOKMARK [1][-]{section.22}{Module hal.ml.models.pipelined}{}% 138
+\BOOKMARK [2][-]{subsection.22.1}{Functions}{section.22}% 139
+\BOOKMARK [1][-]{section.23}{Module hal.ml.models.regression}{}% 140
+\BOOKMARK [2][-]{subsection.23.1}{Functions}{section.23}% 141
+\BOOKMARK [1][-]{section.24}{Module hal.ml.models.time\137series}{}% 142
+\BOOKMARK [2][-]{subsection.24.1}{Functions}{section.24}% 143
+\BOOKMARK [1][-]{section.25}{Module hal.ml.predict}{}% 144
+\BOOKMARK [2][-]{subsection.25.1}{Class BasePrediction}{section.25}% 145
+\BOOKMARK [3][-]{subsubsection.25.1.1}{Methods}{subsection.25.1}% 146
+\BOOKMARK [3][-]{subsubsection.25.1.2}{Properties}{subsection.25.1}% 147
+\BOOKMARK [1][-]{section.26}{Module hal.ml.utils}{}% 148
+\BOOKMARK [2][-]{subsection.26.1}{Functions}{section.26}% 149
+\BOOKMARK [1][-]{section.27}{Package hal.profile}{}% 150
+\BOOKMARK [2][-]{subsection.27.1}{Modules}{section.27}% 151
+\BOOKMARK [2][-]{subsection.27.2}{Variables}{section.27}% 152
+\BOOKMARK [1][-]{section.28}{Module hal.profile.performance}{}% 153
+\BOOKMARK [2][-]{subsection.28.1}{Class EightQueenTest}{section.28}% 154
+\BOOKMARK [3][-]{subsubsection.28.1.1}{Methods}{subsection.28.1}% 155
+\BOOKMARK [3][-]{subsubsection.28.1.2}{Properties}{subsection.28.1}% 156
+\BOOKMARK [1][-]{section.29}{Package hal.strings}{}% 157
+\BOOKMARK [2][-]{subsection.29.1}{Modules}{section.29}% 158
+\BOOKMARK [2][-]{subsection.29.2}{Variables}{section.29}% 159
+\BOOKMARK [1][-]{section.30}{Module hal.strings.utils}{}% 160
+\BOOKMARK [2][-]{subsection.30.1}{Functions}{section.30}% 161
+\BOOKMARK [2][-]{subsection.30.2}{Variables}{section.30}% 162
+\BOOKMARK [1][-]{section.31}{Package hal.wrappers}{}% 163
+\BOOKMARK [2][-]{subsection.31.1}{Modules}{section.31}% 164
+\BOOKMARK [2][-]{subsection.31.2}{Variables}{section.31}% 165
+\BOOKMARK [1][-]{section.32}{Module hal.wrappers.methods}{}% 166
+\BOOKMARK [2][-]{subsection.32.1}{Functions}{section.32}% 167
+\BOOKMARK [1][-]{section*.2}{Index}{}% 168

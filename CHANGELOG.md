@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 - strings module
 - strings.how_similar_are
+- 4.3.8 docs
 
 ### Changed
 - updated copyright to 2017

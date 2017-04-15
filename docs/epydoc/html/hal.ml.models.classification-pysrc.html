@@ -61,9 +61,9 @@
 <h1 class="epydoc">Source Code for <a href="hal.ml.models.classification-module.html">Module hal.ml.models.classification</a></h1>
 <pre class="py-src">
 <a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-comment">#!/usr/bin/env python</tt> </tt>
-<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-comment"># coding: utf_8</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-comment"># coding: utf-8</tt> </tt>
 <a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"> </tt>
-<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-comment"># Copyright 2016 Stefano Fogarollo</tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-comment"># Copyright 2017 Stefano Fogarollo</tt> </tt>
 <a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
 <a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-comment"># Licensed under the Apache License, Version 2.0 (the "License");</tt> </tt>
 <a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-comment"># you may not use this file except in compliance with the License.</tt> </tt>
@@ -80,47 +80,46 @@
 <a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"> </tt>
 <a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"><tt class="py-docstring">""" Prediction methods based on classification algorithms. """</tt> </tt>
 <a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"> </tt>
-<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">sklearn</tt> <tt class="py-keyword">import</tt> <tt class="py-name">naive_bayes</tt> </tt>
 <a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">sklearn</tt><tt class="py-op">.</tt><tt class="py-name">ensemble</tt> <tt class="py-keyword">import</tt> <tt class="py-name">ExtraTreesClassifier</tt><tt class="py-op">,</tt> <tt class="py-name">RandomForestClassifier</tt><tt class="py-op">,</tt> <tt class="py-name">AdaBoostClassifier</tt> </tt>
-<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">sklearn</tt><tt class="py-op">.</tt><tt class="py-name">tree</tt> <tt class="py-keyword">import</tt> <tt class="py-name">DecisionTreeClassifier</tt> </tt>
-<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">sklearn</tt><tt class="py-op">.</tt><tt class="py-name">neighbors</tt> <tt class="py-keyword">import</tt> <tt class="py-name">KNeighborsClassifier</tt> </tt>
-<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">sklearn</tt> <tt class="py-keyword">import</tt> <tt class="py-name">naive_bayes</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">sklearn</tt><tt class="py-op">.</tt><tt class="py-name">neighbors</tt> <tt class="py-keyword">import</tt> <tt class="py-name">KNeighborsClassifier</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">sklearn</tt><tt class="py-op">.</tt><tt class="py-name">tree</tt> <tt class="py-keyword">import</tt> <tt class="py-name">DecisionTreeClassifier</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line"> </tt>
 <a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line"> </tt>
-<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line"> </tt>
-<a name="extra_trees_classifier"></a><div id="extra_trees_classifier-def"><a name="L28"></a><tt class="py-lineno">28</tt> <a class="py-toggle" href="#" id="extra_trees_classifier-toggle" onclick="return toggle('extra_trees_classifier');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="hal.ml.models.classification-module.html#extra_trees_classifier">extra_trees_classifier</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
-</div><div id="extra_trees_classifier-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="extra_trees_classifier-expanded"><a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">ExtraTreesClassifier</tt><tt class="py-op">(</tt><tt class="py-name">n_estimators</tt><tt class="py-op">=</tt><tt class="py-number">10</tt><tt class="py-op">,</tt> <tt class="py-name">max_depth</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-name">min_samples_split</tt><tt class="py-op">=</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-name">random_state</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
-</div><a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line"> </tt>
-<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line"> </tt>
-<a name="random_forest"></a><div id="random_forest-def"><a name="L32"></a><tt class="py-lineno">32</tt> <a class="py-toggle" href="#" id="random_forest-toggle" onclick="return toggle('random_forest');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="hal.ml.models.classification-module.html#random_forest">random_forest</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
-</div><div id="random_forest-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="random_forest-expanded"><a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">RandomForestClassifier</tt><tt class="py-op">(</tt><tt class="py-name">n_estimators</tt><tt class="py-op">=</tt><tt class="py-number">10</tt><tt class="py-op">,</tt> <tt class="py-name">max_depth</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-name">min_samples_split</tt><tt class="py-op">=</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-name">random_state</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
-</div><a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line"> </tt>
-<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line"> </tt>
-<a name="knn"></a><div id="knn-def"><a name="L36"></a><tt class="py-lineno">36</tt> <a class="py-toggle" href="#" id="knn-toggle" onclick="return toggle('knn');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="hal.ml.models.classification-module.html#knn">knn</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
-</div><div id="knn-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="knn-expanded"><a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
-<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line"><tt class="py-docstring">        very fast and slightly more accurate than AdaBoost</tt> </tt>
-<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
-<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line"> </tt>
-<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">KNeighborsClassifier</tt><tt class="py-op">(</tt><tt class="py-name">n_neighbors</tt><tt class="py-op">=</tt><tt class="py-number">3</tt><tt class="py-op">,</tt> <tt class="py-name">leaf_size</tt><tt class="py-op">=</tt><tt class="py-number">125</tt><tt class="py-op">)</tt> </tt>
-</div><a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line"> </tt>
-<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line"> </tt>
-<a name="ada_boost"></a><div id="ada_boost-def"><a name="L44"></a><tt class="py-lineno">44</tt> <a class="py-toggle" href="#" id="ada_boost-toggle" onclick="return toggle('ada_boost');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="hal.ml.models.classification-module.html#ada_boost">ada_boost</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
-</div><div id="ada_boost-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="ada_boost-expanded"><a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
-<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line"><tt class="py-docstring">        fast, accurate but too uncertainty</tt> </tt>
-<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
-<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line"> </tt>
-<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">AdaBoostClassifier</tt><tt class="py-op">(</tt><tt class="py-name">DecisionTreeClassifier</tt><tt class="py-op">(</tt><tt class="py-name">max_depth</tt><tt class="py-op">=</tt><tt class="py-number">20</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">algorithm</tt><tt class="py-op">=</tt><tt class="py-string">"SAMME.R"</tt><tt class="py-op">,</tt> <tt class="py-name">n_estimators</tt><tt class="py-op">=</tt><tt class="py-number">20</tt><tt class="py-op">)</tt> </tt>
-</div><a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line"> </tt>
-<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line"> </tt>
-<a name="bayes_gauss"></a><div id="bayes_gauss-def"><a name="L52"></a><tt class="py-lineno">52</tt> <a class="py-toggle" href="#" id="bayes_gauss-toggle" onclick="return toggle('bayes_gauss');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="hal.ml.models.classification-module.html#bayes_gauss">bayes_gauss</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
-</div><div id="bayes_gauss-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="bayes_gauss-expanded"><a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line">    <tt class="py-docstring">""" slower than svr but equally accuarte</tt> </tt>
-<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
-<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line"> </tt>
-<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">naive_bayes</tt><tt class="py-op">.</tt><tt class="py-name">GaussianNB</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
-</div><a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line"> </tt>
-<a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line"> </tt>
-<a name="bayes_bernoulli"></a><div id="bayes_bernoulli-def"><a name="L59"></a><tt class="py-lineno">59</tt> <a class="py-toggle" href="#" id="bayes_bernoulli-toggle" onclick="return toggle('bayes_bernoulli');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="hal.ml.models.classification-module.html#bayes_bernoulli">bayes_bernoulli</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
-</div><div id="bayes_bernoulli-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="bayes_bernoulli-expanded"><a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">naive_bayes</tt><tt class="py-op">.</tt><tt class="py-name">BernoulliNB</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
-</div><a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<a name="extra_trees_classifier"></a><div id="extra_trees_classifier-def"><a name="L27"></a><tt class="py-lineno">27</tt> <a class="py-toggle" href="#" id="extra_trees_classifier-toggle" onclick="return toggle('extra_trees_classifier');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="hal.ml.models.classification-module.html#extra_trees_classifier">extra_trees_classifier</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="extra_trees_classifier-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="extra_trees_classifier-expanded"><a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">ExtraTreesClassifier</tt><tt class="py-op">(</tt><tt class="py-name">n_estimators</tt><tt class="py-op">=</tt><tt class="py-number">10</tt><tt class="py-op">,</tt> <tt class="py-name">max_depth</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-name">min_samples_split</tt><tt class="py-op">=</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-name">random_state</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line"> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line"> </tt>
+<a name="random_forest"></a><div id="random_forest-def"><a name="L31"></a><tt class="py-lineno">31</tt> <a class="py-toggle" href="#" id="random_forest-toggle" onclick="return toggle('random_forest');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="hal.ml.models.classification-module.html#random_forest">random_forest</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="random_forest-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="random_forest-expanded"><a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">RandomForestClassifier</tt><tt class="py-op">(</tt><tt class="py-name">n_estimators</tt><tt class="py-op">=</tt><tt class="py-number">10</tt><tt class="py-op">,</tt> <tt class="py-name">max_depth</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-name">min_samples_split</tt><tt class="py-op">=</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-name">random_state</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line"> </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line"> </tt>
+<a name="knn"></a><div id="knn-def"><a name="L35"></a><tt class="py-lineno">35</tt> <a class="py-toggle" href="#" id="knn-toggle" onclick="return toggle('knn');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="hal.ml.models.classification-module.html#knn">knn</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="knn-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="knn-expanded"><a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line"><tt class="py-docstring">        very fast and slightly more accurate than AdaBoost</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line"> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">KNeighborsClassifier</tt><tt class="py-op">(</tt><tt class="py-name">n_neighbors</tt><tt class="py-op">=</tt><tt class="py-number">3</tt><tt class="py-op">,</tt> <tt class="py-name">leaf_size</tt><tt class="py-op">=</tt><tt class="py-number">125</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line"> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line"> </tt>
+<a name="ada_boost"></a><div id="ada_boost-def"><a name="L43"></a><tt class="py-lineno">43</tt> <a class="py-toggle" href="#" id="ada_boost-toggle" onclick="return toggle('ada_boost');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="hal.ml.models.classification-module.html#ada_boost">ada_boost</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ada_boost-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="ada_boost-expanded"><a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line"><tt class="py-docstring">        fast, accurate but too uncertainty</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line"> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">AdaBoostClassifier</tt><tt class="py-op">(</tt><tt class="py-name">DecisionTreeClassifier</tt><tt class="py-op">(</tt><tt class="py-name">max_depth</tt><tt class="py-op">=</tt><tt class="py-number">20</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">algorithm</tt><tt class="py-op">=</tt><tt class="py-string">"SAMME.R"</tt><tt class="py-op">,</tt> <tt class="py-name">n_estimators</tt><tt class="py-op">=</tt><tt class="py-number">20</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line"> </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line"> </tt>
+<a name="bayes_gauss"></a><div id="bayes_gauss-def"><a name="L51"></a><tt class="py-lineno">51</tt> <a class="py-toggle" href="#" id="bayes_gauss-toggle" onclick="return toggle('bayes_gauss');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="hal.ml.models.classification-module.html#bayes_gauss">bayes_gauss</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="bayes_gauss-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="bayes_gauss-expanded"><a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line">    <tt class="py-docstring">""" slower than svr but equally accuarte</tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line"> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">naive_bayes</tt><tt class="py-op">.</tt><tt class="py-name">GaussianNB</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line"> </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line"> </tt>
+<a name="bayes_bernoulli"></a><div id="bayes_bernoulli-def"><a name="L58"></a><tt class="py-lineno">58</tt> <a class="py-toggle" href="#" id="bayes_bernoulli-toggle" onclick="return toggle('bayes_bernoulli');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="hal.ml.models.classification-module.html#bayes_bernoulli">bayes_bernoulli</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="bayes_bernoulli-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="bayes_bernoulli-expanded"><a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">naive_bayes</tt><tt class="py-op">.</tt><tt class="py-name">BernoulliNB</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line"> </tt><script type="text/javascript">
 <!--
 expandto(location.href);
 // -->
@@ -155,8 +154,7 @@ expandto(location.href);
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1
-    on Tue Jan 10 14:25:32 2017
+    Generated by Epydoc 3.0.1 on Sat Apr 15 15:07:56 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

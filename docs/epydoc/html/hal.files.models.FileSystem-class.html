@@ -269,7 +269,7 @@
         <tr>
           <td><span class="summary-sig"><a href="hal.files.models.FileSystem-class.html#extract_name_max_chars" class="summary-sig-name">extract_name_max_chars</a>(<span class="summary-sig-arg">name</span>,
         <span class="summary-sig-arg">max_chars</span>=<span class="summary-sig-default">64</span>,
-        <span class="summary-sig-arg">blank</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"> </code><code class="variable-quote">'</code></span>)</span><br />
+        <span class="summary-sig-arg">blank</span>=<span class="summary-sig-default">&quot; &quot;</span>)</span><br />
       :param name: string
     Name to edit
 :param max_chars: int
@@ -292,8 +292,8 @@
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a href="hal.files.models.FileSystem-class.html#prettify" class="summary-sig-name">prettify</a>(<span class="summary-sig-arg">name</span>,
-        <span class="summary-sig-arg">bad_chars</span>=<span class="summary-sig-default"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">.</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">:</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">&quot;</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">\xe2\x80\x99</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">&amp;</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">720p</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">1080p</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">yify</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-ellipsis">...</code></span>,
-        <span class="summary-sig-arg">r</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"> </code><code class="variable-quote">'</code></span>)</span><br />
+        <span class="summary-sig-arg">bad_chars</span>=<span class="summary-sig-default">BAD_CHARS</span>,
+        <span class="summary-sig-arg">r</span>=<span class="summary-sig-default">&quot; &quot;</span>)</span><br />
       :param name: string
     Name to edit
 :param bad_chars: []
@@ -482,7 +482,7 @@
   <tr valign="top"><td>
   <h3 class="epydoc"><span class="sig"><span class="sig-name">extract_name_max_chars</span>(<span class="sig-arg">name</span>,
         <span class="sig-arg">max_chars</span>=<span class="sig-default">64</span>,
-        <span class="sig-arg">blank</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"> </code><code class="variable-quote">'</code></span>)</span>
+        <span class="sig-arg">blank</span>=<span class="sig-default">&quot; &quot;</span>)</span>
     <br /><em class="fname">Static Method</em>
   </h3>
   </td><td align="right" valign="top"
@@ -514,8 +514,8 @@
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
   <h3 class="epydoc"><span class="sig"><span class="sig-name">prettify</span>(<span class="sig-arg">name</span>,
-        <span class="sig-arg">bad_chars</span>=<span class="sig-default"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">.</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">:</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">&quot;</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">\xe2\x80\x99</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">&amp;</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">720p</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">1080p</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">yify</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-ellipsis">...</code></span>,
-        <span class="sig-arg">r</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"> </code><code class="variable-quote">'</code></span>)</span>
+        <span class="sig-arg">bad_chars</span>=<span class="sig-default">BAD_CHARS</span>,
+        <span class="sig-arg">r</span>=<span class="sig-default">&quot; &quot;</span>)</span>
     <br /><em class="fname">Static Method</em>
   </h3>
   </td><td align="right" valign="top"
@@ -712,8 +712,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1
-    on Tue Jan 10 14:25:32 2017
+    Generated by Epydoc 3.0.1 on Sat Apr 15 15:07:56 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

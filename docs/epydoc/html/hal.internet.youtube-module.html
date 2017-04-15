@@ -87,14 +87,13 @@ Get rss feed for youtube channel.
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="hal.internet.youtube-module.html#get_channel_page" class="summary-sig-name">get_channel_page</a>(<span class="summary-sig-arg">channel_name</span>,
-        <span class="summary-sig-arg">youtube_channel_url</span>=<span class="summary-sig-default">&quot;https://www.youtube.com/user/&quot;</span>)</span><br />
+          <td><span class="summary-sig"><a href="hal.internet.youtube-module.html#get_channel_page_from_name" class="summary-sig-name">get_channel_page_from_name</a>(<span class="summary-sig-arg">channel_name</span>)</span><br />
       :param channel_name: string
     name of channel (e.g in &quot;https://www.youtube.com/user/caseyneistat&quot; you should take &quot;caseyneistat&quot;)
 :param youtube_channel_url: string
     base url of youtube channels.</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="hal.internet.youtube-pysrc.html#get_channel_page">source&nbsp;code</a></span>
+            <span class="codelink"><a href="hal.internet.youtube-pysrc.html#get_channel_page_from_name">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -108,11 +107,10 @@ Get rss feed for youtube channel.
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="hal.internet.youtube-module.html#get_channel_id" class="summary-sig-name">get_channel_id</a>(<span class="summary-sig-arg">channel_name</span>,
-        <span class="summary-sig-arg">channel_id_field</span>=<span class="summary-sig-default">&quot;data-channel-external-id&quot;</span>)</span><br />
+          <td><span class="summary-sig"><a href="hal.internet.youtube-module.html#get_channel_id_from_name" class="summary-sig-name">get_channel_id_from_name</a>(<span class="summary-sig-arg">channel_name</span>)</span><br />
       :param channel_name: string...</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="hal.internet.youtube-pysrc.html#get_channel_id">source&nbsp;code</a></span>
+            <span class="codelink"><a href="hal.internet.youtube-pysrc.html#get_channel_id_from_name">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -126,19 +124,90 @@ Get rss feed for youtube channel.
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="hal.internet.youtube-module.html#get_channel_feed_url" class="summary-sig-name">get_channel_feed_url</a>(<span class="summary-sig-arg">channel_name</span>,
-        <span class="summary-sig-arg">base_feed_url</span>=<span class="summary-sig-default">&quot;https://www.youtube.com/feeds/videos.xml?channel_id=&quot;</span>)</span><br />
-      :param channel_name: string
-    name of channel (e.g in &quot;https://www.youtube.com/user/caseyneistat&quot; you should take &quot;caseyneistat&quot;)
-:param base_feed_url: string
-    default base url for rss feed of youtube channels.</td>
+          <td><span class="summary-sig"><a name="get_channel_feed_url_from_id"></a><span class="summary-sig-name">get_channel_feed_url_from_id</span>(<span class="summary-sig-arg">channel_id</span>)</span><br />
+      :param channel_id: string
+    Id of channel (e.g in &quot;https://www.youtube.com/channel/UC2zjki3bJIaXmgV_LBQ2jTg&quot; you should take &quot;UC2zjki3bJIaXmgV_LBQ2jTg&quot;)
+:return string
+    rss url feed of youtube channel.</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="hal.internet.youtube-pysrc.html#get_channel_feed_url">source&nbsp;code</a></span>
+            <span class="codelink"><a href="hal.internet.youtube-pysrc.html#get_channel_feed_url_from_id">source&nbsp;code</a></span>
             
           </td>
         </tr>
       </table>
       
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_channel_feed_url_from_name"></a><span class="summary-sig-name">get_channel_feed_url_from_name</span>(<span class="summary-sig-arg">channel_name</span>)</span><br />
+      :param channel_name: string
+    name of channel (e.g in &quot;https://www.youtube.com/user/caseyneistat&quot; you should take &quot;caseyneistat&quot;)
+:return string
+    rss url feed of youtube channel.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="hal.internet.youtube-pysrc.html#get_channel_feed_url_from_name">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_channel_feed_url_from_video"></a><span class="summary-sig-name">get_channel_feed_url_from_video</span>(<span class="summary-sig-arg">video_url</span>)</span><br />
+      :param video_url: string
+    Url of video (e.g in https://www.youtube.com/watch?v=KB_iTbDrkxE)
+:return string
+    rss url feed of youtube channel.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="hal.internet.youtube-pysrc.html#get_channel_feed_url_from_video">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="YOUTUBE_USER_BASEURL"></a><span class="summary-name">YOUTUBE_USER_BASEURL</span> = <code title="&quot;https://www.youtube.com/user/&quot;">&quot;https://www.youtube.com/user/&quot;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="hal.internet.youtube-module.html#YOUTUBE_FEED_BASEURL" class="summary-name">YOUTUBE_FEED_BASEURL</a> = <code title="&quot;https://www.youtube.com/feeds/videos.xml?channel_id=&quot;">&quot;https://www.youtube.com/feeds/videos.x<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 </table>
@@ -164,18 +233,17 @@ Get rss feed for youtube channel.
   </td>
 </tr>
 </table>
-<a name="get_channel_page"></a>
+<a name="get_channel_page_from_name"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_channel_page</span>(<span class="sig-arg">channel_name</span>,
-        <span class="sig-arg">youtube_channel_url</span>=<span class="sig-default">&quot;https://www.youtube.com/user/&quot;</span>)</span>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_channel_page_from_name</span>(<span class="sig-arg">channel_name</span>)</span>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="hal.internet.youtube-pysrc.html#get_channel_page">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="hal.internet.youtube-pysrc.html#get_channel_page_from_name">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
@@ -193,18 +261,17 @@ Get rss feed for youtube channel.
   </dl>
 </td></tr></table>
 </div>
-<a name="get_channel_id"></a>
+<a name="get_channel_id_from_name"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_channel_id</span>(<span class="sig-arg">channel_name</span>,
-        <span class="sig-arg">channel_id_field</span>=<span class="sig-default">&quot;data-channel-external-id&quot;</span>)</span>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_channel_id_from_name</span>(<span class="sig-arg">channel_name</span>)</span>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="hal.internet.youtube-pysrc.html#get_channel_id">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="hal.internet.youtube-pysrc.html#get_channel_id_from_name">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
@@ -212,8 +279,6 @@ Get rss feed for youtube channel.
 
 :param channel_name: string
     name of channel (e.g in &quot;https://www.youtube.com/user/caseyneistat&quot; you should take &quot;caseyneistat&quot;)
-:param channel_id_field: string
-    default field to get channel id
 :return string
     id of youtube channel
 
@@ -222,32 +287,40 @@ Get rss feed for youtube channel.
   </dl>
 </td></tr></table>
 </div>
-<a name="get_channel_feed_url"></a>
+<br />
+<!-- ==================== VARIABLES DETAILS ==================== -->
+<a name="section-VariablesDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-VariablesDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="YOUTUBE_FEED_BASEURL"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
-  <table width="100%" cellpadding="0" cellspacing="0" border="0">
-  <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_channel_feed_url</span>(<span class="sig-arg">channel_name</span>,
-        <span class="sig-arg">base_feed_url</span>=<span class="sig-default">&quot;https://www.youtube.com/feeds/videos.xml?channel_id=&quot;</span>)</span>
-  </h3>
-  </td><td align="right" valign="top"
-    ><span class="codelink"><a href="hal.internet.youtube-pysrc.html#get_channel_feed_url">source&nbsp;code</a></span>&nbsp;
-    </td>
-  </tr></table>
+  <h3 class="epydoc">YOUTUBE_FEED_BASEURL</h3>
   
-  <pre class="literalblock">
-
-:param channel_name: string
-    name of channel (e.g in &quot;https://www.youtube.com/user/caseyneistat&quot; you should take &quot;caseyneistat&quot;)
-:param base_feed_url: string
-    default base url for rss feed of youtube channels.
-:return string
-    rss url feed of youtube channel.
-
-</pre>
   <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+&quot;https://www.youtube.com/feeds/videos.xml?channel_id=&quot;
+</pre></td></tr></table>
+</dd>
   </dl>
 </td></tr></table>
 </div>
@@ -280,8 +353,7 @@ Get rss feed for youtube channel.
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1
-    on Mon Jan 16 09:51:58 2017
+    Generated by Epydoc 3.0.1 on Sat Apr 15 15:07:56 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"
