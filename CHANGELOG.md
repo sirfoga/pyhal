@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 4.4.0
+
+### Added
+- ml.utils.matrix
+- ml.utils.misc
+
 ## 4.3.9
 
 ### Added

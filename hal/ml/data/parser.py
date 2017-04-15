@@ -51,3 +51,24 @@ class CSVParser(Parser):
                 self.data.append(row)
 
         return self.data
+
+
+def parse_csv_file(file_path):
+    """
+    :param file_path: str
+        Path to file to parse
+    :return: tuple [], [] of []
+        headers of csv file and data
+    """
+
+    raw_data = CSVParser(file_path).parse_data()
+    headers = raw_data[0][1:]  # first row discarding time value
+    headers = [h.strip() for h in headers]
+    raw_data = raw_data[1:]  # discard headers row
+
+    data = []
+    for line in raw_data:  # parse raw data
+        n_array = [str(n).strip() for n in line[1:] if len(str(n).strip()) > 1]  # discard null value
+        data.append(n_array)
+
+    return headers, data

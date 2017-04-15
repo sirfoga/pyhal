@@ -22,47 +22,48 @@ import numpy as np
 from matplotlib import pyplot, cm
 
 from hal.files.models import Document, FileSystem
-from hal.ml.data.parser import CSVParser
-from hal.ml.utils import get_correlation_matrix, show_correlation_matrix
+from hal.ml.data.parser import parse_csv_file
+from hal.ml.utils.matrix import get_column_of_matrix
 
 
-def get_column_of_matrix(column_index, matrix):
+def get_correlation_matrix(matrix):
     """
-    :param column_index: int >= 0
-        Column index to take
     :param matrix: [] of []
-        Matrix
-    :return: []
-        Column of array at position given
+        List of features to get correlation matrix
+    :return: [] of []
+        correlation matrix
     """
 
-    try:
-        np_matrix = np.array(matrix)
-        np_column = np_matrix[:, column_index]
-        return list(np_column)
-    except:
-        return []
+    return np.corrcoef(matrix)
 
 
-def parse_input_file(file_path):
+def show_correlation_matrix(correlation_matrix, title, feature_list):
     """
-    :param file_path: str
-        Path to file to parse
-    :return: tuple [], [] of []
-        headers of csv file and data
+    :param correlation_matrix: [] of []
+        Correlation matrix of features
+    :param title: str
+        Title of plot
+    :param feature_list: [] of str
+        List of names of features
+    :return: void
+        shows the given correlation matrix as image
     """
 
-    raw_data = CSVParser(file_path).parse_data()
-    headers = raw_data[0][1:]  # first row discarding time value
-    headers = [h.strip() for h in headers]
-    raw_data = raw_data[1:]  # discard headers row
+    fig = pyplot.figure()
+    ax1 = fig.add_subplot(111)
+    ax1.grid(True)
+    pyplot.title(title)
+    pyplot.gcf().subplots_adjust(bottom=0.25)  # include xlabels
 
-    data = []
-    for line in raw_data:  # parse raw data
-        n_array = [str(n).strip() for n in line[1:] if len(str(n).strip()) > 1]  # discard null value
-        data.append(n_array)
+    ax1.set_xticks(list(range(len(feature_list))))
+    ax1.set_xticklabels([feature_list[i] for i in range(len(feature_list))], rotation=90)
+    ax1.set_yticks(list(range(len(feature_list))))
+    ax1.set_yticklabels([feature_list[i] for i in range(len(feature_list))])
+    cax = ax1.imshow(correlation_matrix, interpolation="nearest", cmap=cm.get_cmap("jet", 30))
+    fig.colorbar(cax, ticks=[.5, .55, .6, .65, .7, .75, .8, .85, .90, .95, 1])  # add colorbar
 
-    return headers, data
+    pyplot.gcf().subplots_adjust(bottom=0.25)  # include xlabels
+    pyplot.show()
 
 
 def create_visual_correlation_matrix(correlation_matrix, title, feature_list):
@@ -183,11 +184,9 @@ def save_correlation_matrix_of_data_files_in_folder(folder_path):
             output_file_path = os.path.join(output_folder, output_file_name)
 
             try:
-                headers, data = parse_input_file(f)  # parse raw data
+                headers, data = parse_csv_file(f)  # parse raw data
                 save_correlation_matrix_of_columns("Correlation of logs data for file " + file_name, headers, headers,
                                                    data, output_file_path)
             except Exception as e:
                 print("Cannot save correlation matrix of file \"", str(f), "\" because of")
                 print(str(e))
-
-# TODO def predict_next_values time data analysis

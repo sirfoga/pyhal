@@ -39,7 +39,7 @@ DESCRIPTION = \
 
 setup(
     name="PyHal",
-    version="4.3.8",
+    version="4.4",
     author="sirfoga",
     author_email="sirfoga@protonmail.com",
     description="Hal is a from-scratch home-made multipurpose library to perform most of stuff in python.",
@@ -50,12 +50,12 @@ setup(
     packages=find_packages(exclude=["tests"]),
     install_requires=[  # TODO: uncomment packages (but travis will fail)
         "bs4",
-        # "matplotlib",
-        # "mutagen",
+        "matplotlib",
+        "mutagen",
         "numpy",
         "pycrypto",
-        # "scipy",
-        # "sklearn",
+        "scipy",
+        "sklearn",
         "requests",
         "lxml",
         "send2trash"
