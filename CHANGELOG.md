@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 4.3.9
+
+### Added
+- github api models
+
 ## 4.3.8
 
 ### Added
