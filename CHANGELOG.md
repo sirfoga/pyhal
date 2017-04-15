@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 4.3.7
+
+### Refactored
+- internet.youtube feed fetcher
+
+### Added
+- youtube feed fetcher from id, video url
+
 ## 4.3.6
 
 ### Fixed
