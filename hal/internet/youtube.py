@@ -1,5 +1,5 @@
-# !/usr/bin/python
-# coding: utf_8
+# !/usr/bin/python3
+# coding: utf-8
 
 # Copyright 2016 stefano fogarollo
 #

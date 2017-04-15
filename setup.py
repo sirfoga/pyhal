@@ -39,7 +39,7 @@ DESCRIPTION = \
 
 setup(
     name="PyHal",
-    version="4.3.7",
+    version="4.3.8",
     author="sirfoga",
     author_email="sirfoga@protonmail.com",
     description="Hal is a from-scratch home-made multipurpose library to perform most of stuff in python.",

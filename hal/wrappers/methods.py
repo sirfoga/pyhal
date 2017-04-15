@@ -1,7 +1,7 @@
-# !/usr/bin/python
-# coding: utf_8
+# !/usr/bin/python3
+# coding: utf-8
 
-# Copyright 2016 Stefano Fogarollo
+# Copyright 2017 Stefano Fogarollo
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.

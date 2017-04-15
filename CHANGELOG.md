@@ -1,6 +1,15 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 4.3.8
+
+### Added
+- strings module
+- strings.how_similar_are
+
+### Changed
+- updated copyright to 2017
+
 ## 4.3.7
 
 ### Refactored

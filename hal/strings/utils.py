@@ -16,4 +16,19 @@
 # limitations under the License.
 
 
-""" MATHS: important and scalable math functions """
+""" Typical operations on strings made easy """
+
+from difflib import SequenceMatcher
+
+
+def how_similar_are(a, b):
+    """
+    :param a: str
+        First string
+    :param b: str
+        Second string
+    :return: float in [0, 1]
+        Similarity of a VS b
+    """
+
+    return SequenceMatcher(None, a, b).ratio()
