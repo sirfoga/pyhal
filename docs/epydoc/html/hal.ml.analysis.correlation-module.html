@@ -83,11 +83,10 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="hal.ml.analysis.correlation-module.html#get_column_of_matrix" class="summary-sig-name">get_column_of_matrix</a>(<span class="summary-sig-arg">column_index</span>,
-        <span class="summary-sig-arg">matrix</span>)</span><br />
-      :param column_index: int &gt;= 0...</td>
+          <td><span class="summary-sig"><a href="hal.ml.analysis.correlation-module.html#get_correlation_matrix" class="summary-sig-name">get_correlation_matrix</a>(<span class="summary-sig-arg">matrix</span>)</span><br />
+      :param matrix: [] of []...</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="hal.ml.analysis.correlation-pysrc.html#get_column_of_matrix">source&nbsp;code</a></span>
+            <span class="codelink"><a href="hal.ml.analysis.correlation-pysrc.html#get_correlation_matrix">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -101,10 +100,12 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="hal.ml.analysis.correlation-module.html#parse_input_file" class="summary-sig-name">parse_input_file</a>(<span class="summary-sig-arg">file_path</span>)</span><br />
-      :param file_path: str...</td>
+          <td><span class="summary-sig"><a href="hal.ml.analysis.correlation-module.html#show_correlation_matrix" class="summary-sig-name">show_correlation_matrix</a>(<span class="summary-sig-arg">correlation_matrix</span>,
+        <span class="summary-sig-arg">title</span>,
+        <span class="summary-sig-arg">feature_list</span>)</span><br />
+      :param correlation_matrix: [] of []...</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="hal.ml.analysis.correlation-pysrc.html#parse_input_file">source&nbsp;code</a></span>
+            <span class="codelink"><a href="hal.ml.analysis.correlation-pysrc.html#show_correlation_matrix">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -217,9 +218,8 @@
   <span title="matplotlib.cm">cm</span>,
   <a href="hal.files.models.Document-class.html" title="hal.files.models.Document">Document</a>,
   <a href="hal.files.models.FileSystem-class.html" title="hal.files.models.FileSystem">FileSystem</a>,
-  <a href="hal.ml.data.parser.CSVParser-class.html" title="hal.ml.data.parser.CSVParser">CSVParser</a>,
-  <a href="hal.ml.utils-module.html#get_correlation_matrix" title="hal.ml.utils.get_correlation_matrix">get_correlation_matrix</a>,
-  <a href="hal.ml.utils-module.html#show_correlation_matrix" title="hal.ml.utils.show_correlation_matrix">show_correlation_matrix</a>
+  <a href="hal.ml.data.parser-module.html#parse_csv_file" title="hal.ml.data.parser.parse_csv_file">parse_csv_file</a>,
+  <a href="hal.ml.utils.matrix-module.html#get_column_of_matrix" title="hal.ml.utils.matrix.get_column_of_matrix">get_column_of_matrix</a>
 </p><br />
 <!-- ==================== FUNCTION DETAILS ==================== -->
 <a name="section-FunctionDetails"></a>
@@ -239,55 +239,58 @@
   </td>
 </tr>
 </table>
-<a name="get_column_of_matrix"></a>
+<a name="get_correlation_matrix"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_column_of_matrix</span>(<span class="sig-arg">column_index</span>,
-        <span class="sig-arg">matrix</span>)</span>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_correlation_matrix</span>(<span class="sig-arg">matrix</span>)</span>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="hal.ml.analysis.correlation-pysrc.html#get_column_of_matrix">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="hal.ml.analysis.correlation-pysrc.html#get_correlation_matrix">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
   <pre class="literalblock">
 
-:param column_index: int &gt;= 0
-    Column index to take
 :param matrix: [] of []
-    Matrix
-:return: []
-    Column of array at position given
+    List of features to get correlation matrix
+:return: [] of []
+    correlation matrix
 
 </pre>
   <dl class="fields">
   </dl>
 </td></tr></table>
 </div>
-<a name="parse_input_file"></a>
+<a name="show_correlation_matrix"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">parse_input_file</span>(<span class="sig-arg">file_path</span>)</span>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">show_correlation_matrix</span>(<span class="sig-arg">correlation_matrix</span>,
+        <span class="sig-arg">title</span>,
+        <span class="sig-arg">feature_list</span>)</span>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="hal.ml.analysis.correlation-pysrc.html#parse_input_file">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="hal.ml.analysis.correlation-pysrc.html#show_correlation_matrix">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
   <pre class="literalblock">
 
-:param file_path: str
-    Path to file to parse
-:return: tuple [], [] of []
-    headers of csv file and data
+:param correlation_matrix: [] of []
+    Correlation matrix of features
+:param title: str
+    Title of plot
+:param feature_list: [] of str
+    List of names of features
+:return: void
+    shows the given correlation matrix as image
 
 </pre>
   <dl class="fields">
@@ -486,7 +489,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Sat Apr 15 15:07:56 2017
+    Generated by Epydoc 3.0.1 on Sun Apr 16 09:23:23 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

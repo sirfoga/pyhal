@@ -147,7 +147,7 @@ def get_subset_of_matrix(headers_to_sample, all_headers, data):
     for header in all_headers:
         header_to_column[header] = all_headers.index(header)
 
-    matrix_subset = []
+    subset_columns = []
     for header in headers_to_sample:
         header_ind = header_to_column[header]  # index of header
         header_column = get_column_of_matrix(header_ind, data)
@@ -155,6 +155,6 @@ def get_subset_of_matrix(headers_to_sample, all_headers, data):
         for i in range(len(header_column)):
             header_column[i] = float(header_column[i])  # get float
 
-        matrix_subset.append(header_column)
+        subset_columns.append(header_column)
 
-    return matrix_subset
+    return np.transpose(subset_columns)

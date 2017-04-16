@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 4.4.1
+
+### Fixed
+- ml.utils.matrix.get_subset_of_matrix transpose bug
+
 ## 4.4.0
 
 ### Added
