@@ -37,35 +37,6 @@ def get_correlation_matrix(matrix):
     return np.corrcoef(matrix)
 
 
-def show_correlation_matrix(correlation_matrix, title, feature_list):
-    """
-    :param correlation_matrix: [] of []
-        Correlation matrix of features
-    :param title: str
-        Title of plot
-    :param feature_list: [] of str
-        List of names of features
-    :return: void
-        shows the given correlation matrix as image
-    """
-
-    fig = pyplot.figure()
-    ax1 = fig.add_subplot(111)
-    ax1.grid(True)
-    pyplot.title(title)
-    pyplot.gcf().subplots_adjust(bottom=0.25)  # include xlabels
-
-    ax1.set_xticks(list(range(len(feature_list))))
-    ax1.set_xticklabels([feature_list[i] for i in range(len(feature_list))], rotation=90)
-    ax1.set_yticks(list(range(len(feature_list))))
-    ax1.set_yticklabels([feature_list[i] for i in range(len(feature_list))])
-    cax = ax1.imshow(correlation_matrix, interpolation="nearest", cmap=cm.get_cmap("jet", 30))
-    fig.colorbar(cax, ticks=[.5, .55, .6, .65, .7, .75, .8, .85, .90, .95, 1])  # add colorbar
-
-    pyplot.gcf().subplots_adjust(bottom=0.25)  # include xlabels
-    pyplot.show()
-
-
 def create_visual_correlation_matrix(correlation_matrix, title, feature_list):
     """
     :param correlation_matrix: [] of []
@@ -91,6 +62,22 @@ def create_visual_correlation_matrix(correlation_matrix, title, feature_list):
     fig.colorbar(cax, ticks=np.linspace(-1, 1, 21))
 
     pyplot.gcf().subplots_adjust(bottom=0.25)  # include xlabels
+
+
+def show_correlation_matrix(correlation_matrix, title, feature_list):
+    """
+    :param correlation_matrix: [] of []
+        Correlation matrix of features
+    :param title: str
+        Title of plot
+    :param feature_list: [] of str
+        List of names of features
+    :return: void
+        shows the given correlation matrix as image
+    """
+
+    create_visual_correlation_matrix(correlation_matrix, title, feature_list)
+    pyplot.show()
 
 
 def get_correlation_matrix_of_columns(headers_to_test, headers, data):

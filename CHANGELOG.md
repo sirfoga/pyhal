@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 4.4.2
+
+### Fixed
+- ml csv parser discarding first column
+
+### Refactored
+- show correlation matrix
+
 ## 4.4.1
 
 ### Fixed

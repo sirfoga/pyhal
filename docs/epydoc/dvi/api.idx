@@ -190,8 +190,8 @@
 \indexentry{hal \textit{(package)}!hal.ml \textit{(package)}!hal.ml.analysis \textit{(package)}|)hyperpage}{55}
 \indexentry{hal \textit{(package)}!hal.ml \textit{(package)}!hal.ml.analysis \textit{(package)}!hal.ml.analysis.correlation \textit{(module)}|(hyperpage}{56}
 \indexentry{hal \textit{(package)}!hal.ml \textit{(package)}!hal.ml.analysis \textit{(package)}!hal.ml.analysis.correlation \textit{(module)}!hal.ml.analysis.correlation.get\_correlation\_matrix \textit{(function)}|hyperpage}{56}
-\indexentry{hal \textit{(package)}!hal.ml \textit{(package)}!hal.ml.analysis \textit{(package)}!hal.ml.analysis.correlation \textit{(module)}!hal.ml.analysis.correlation.show\_correlation\_matrix \textit{(function)}|hyperpage}{56}
 \indexentry{hal \textit{(package)}!hal.ml \textit{(package)}!hal.ml.analysis \textit{(package)}!hal.ml.analysis.correlation \textit{(module)}!hal.ml.analysis.correlation.create\_visual\_correlation\_matrix \textit{(function)}|hyperpage}{56}
+\indexentry{hal \textit{(package)}!hal.ml \textit{(package)}!hal.ml.analysis \textit{(package)}!hal.ml.analysis.correlation \textit{(module)}!hal.ml.analysis.correlation.show\_correlation\_matrix \textit{(function)}|hyperpage}{56}
 \indexentry{hal \textit{(package)}!hal.ml \textit{(package)}!hal.ml.analysis \textit{(package)}!hal.ml.analysis.correlation \textit{(module)}!hal.ml.analysis.correlation.get\_correlation\_matrix\_of\_columns \textit{(function)}|hyperpage}{56}
 \indexentry{hal \textit{(package)}!hal.ml \textit{(package)}!hal.ml.analysis \textit{(package)}!hal.ml.analysis.correlation \textit{(module)}!hal.ml.analysis.correlation.show\_correlation\_matrix\_of\_columns \textit{(function)}|hyperpage}{57}
 \indexentry{hal \textit{(package)}!hal.ml \textit{(package)}!hal.ml.analysis \textit{(package)}!hal.ml.analysis.correlation \textit{(module)}!hal.ml.analysis.correlation.save\_correlation\_matrix\_of\_columns \textit{(function)}|hyperpage}{57}
