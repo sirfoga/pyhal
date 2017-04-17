@@ -118,3 +118,16 @@ def pearson(x, y):
     """ Pearson coefficient of arrays"""
 
     return np.corrcoef(x, y)[0][1]
+
+
+def normalize_array(a):
+    """
+    :param a: [] of float
+        Array of floats
+    :return: [] of float
+        Normalized (in [0, 1]) input array
+    """
+
+    x = np.array(a)
+    x_normalized = x / x.max(axis=0)
+    return list(x_normalized)

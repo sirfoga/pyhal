@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 4.4.3
+
+### Added
+- charts module
+- charts.correlation
+- charts.bar
+- ml.utils normalize array
+
 ## 4.4.2
 
 ### Fixed

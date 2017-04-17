@@ -15,12 +15,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+
 import os
 import time
 
 import numpy as np
-from matplotlib import pyplot, cm
+from matplotlib import pyplot
 
+from hal.charts import correlation as cr_plot
 from hal.files.models import Document, FileSystem
 from hal.ml.data.parser import parse_csv_file
 from hal.ml.utils.matrix import get_column_of_matrix
@@ -37,33 +39,6 @@ def get_correlation_matrix(matrix):
     return np.corrcoef(matrix)
 
 
-def create_visual_correlation_matrix(correlation_matrix, title, feature_list):
-    """
-    :param correlation_matrix: [] of []
-        Correlation matrix of features
-    :param title: str
-        Title of plot
-    :param feature_list: [] of str
-        List of names of features
-    :return: void
-        shows the given correlation matrix as image
-    """
-
-    fig = pyplot.figure()
-    ax1 = fig.add_subplot(111)
-    ax1.grid(True)
-    pyplot.title(title)
-
-    ax1.set_xticks(list(range(len(feature_list))))
-    ax1.set_xticklabels([feature_list[i] for i in range(len(feature_list))], rotation=90)
-    ax1.set_yticks(list(range(len(feature_list))))
-    ax1.set_yticklabels([feature_list[i] for i in range(len(feature_list))])
-    cax = ax1.imshow(correlation_matrix, interpolation="nearest", cmap=cm.get_cmap("jet", 30))
-    fig.colorbar(cax, ticks=np.linspace(-1, 1, 21))
-
-    pyplot.gcf().subplots_adjust(bottom=0.25)  # include xlabels
-
-
 def show_correlation_matrix(correlation_matrix, title, feature_list):
     """
     :param correlation_matrix: [] of []
@@ -76,7 +51,7 @@ def show_correlation_matrix(correlation_matrix, title, feature_list):
         shows the given correlation matrix as image
     """
 
-    create_visual_correlation_matrix(correlation_matrix, title, feature_list)
+    cr_plot.create_correlation_matrix_plot(correlation_matrix, title, feature_list)
     pyplot.show()
 
 
@@ -144,7 +119,7 @@ def save_correlation_matrix_of_columns(title, headers_to_test, headers, data, ou
     """
 
     correlation_matrix = get_correlation_matrix_of_columns(headers_to_test, headers, data)
-    create_visual_correlation_matrix(correlation_matrix, title, headers_to_test)
+    cr_plot.create_correlation_matrix_plot(correlation_matrix, title, headers_to_test)
 
     fig = pyplot.gcf()  # get reference to figure
     fig.set_size_inches(23.4, 23.4)
