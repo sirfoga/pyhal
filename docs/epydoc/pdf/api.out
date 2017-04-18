@@ -187,9 +187,15 @@
 \BOOKMARK [1][-]{section.36}{Module hal.strings.utils}{}% 187
 \BOOKMARK [2][-]{subsection.36.1}{Functions}{section.36}% 188
 \BOOKMARK [2][-]{subsection.36.2}{Variables}{section.36}% 189
-\BOOKMARK [1][-]{section.37}{Package hal.wrappers}{}% 190
+\BOOKMARK [1][-]{section.37}{Package hal.time}{}% 190
 \BOOKMARK [2][-]{subsection.37.1}{Modules}{section.37}% 191
 \BOOKMARK [2][-]{subsection.37.2}{Variables}{section.37}% 192
-\BOOKMARK [1][-]{section.38}{Module hal.wrappers.methods}{}% 193
+\BOOKMARK [1][-]{section.38}{Module hal.time.utils}{}% 193
 \BOOKMARK [2][-]{subsection.38.1}{Functions}{section.38}% 194
-\BOOKMARK [1][-]{section*.2}{Index}{}% 195
+\BOOKMARK [2][-]{subsection.38.2}{Variables}{section.38}% 195
+\BOOKMARK [1][-]{section.39}{Package hal.wrappers}{}% 196
+\BOOKMARK [2][-]{subsection.39.1}{Modules}{section.39}% 197
+\BOOKMARK [2][-]{subsection.39.2}{Variables}{section.39}% 198
+\BOOKMARK [1][-]{section.40}{Module hal.wrappers.methods}{}% 199
+\BOOKMARK [2][-]{subsection.40.1}{Functions}{section.40}% 200
+\BOOKMARK [1][-]{section*.2}{Index}{}% 201

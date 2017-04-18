@@ -38,8 +38,10 @@
 		\hyperpage{78--79}
     \subitem hal.strings \textit{(package)}, \hyperpage{80}
       \subsubitem hal.strings.utils \textit{(module)}, \hyperpage{81}
-    \subitem hal.wrappers \textit{(package)}, \hyperpage{82}
+    \subitem hal.time \textit{(package)}, \hyperpage{82}
+      \subsubitem hal.time.utils \textit{(module)}, \hyperpage{83}
+    \subitem hal.wrappers \textit{(package)}, \hyperpage{84}
       \subsubitem hal.wrappers.methods \textit{(module)}, 
-		\hyperpage{83}
+		\hyperpage{85}
 
 \end{theindex}

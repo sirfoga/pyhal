@@ -187,9 +187,15 @@
 \contentsline {section}{\numberline {36}Module hal.strings.utils}{81}{section.36}
 \contentsline {subsection}{\numberline {36.1}Functions}{81}{subsection.36.1}
 \contentsline {subsection}{\numberline {36.2}Variables}{81}{subsection.36.2}
-\contentsline {section}{\numberline {37}Package hal.wrappers}{82}{section.37}
+\contentsline {section}{\numberline {37}Package hal.time}{82}{section.37}
 \contentsline {subsection}{\numberline {37.1}Modules}{82}{subsection.37.1}
 \contentsline {subsection}{\numberline {37.2}Variables}{82}{subsection.37.2}
-\contentsline {section}{\numberline {38}Module hal.wrappers.methods}{83}{section.38}
+\contentsline {section}{\numberline {38}Module hal.time.utils}{83}{section.38}
 \contentsline {subsection}{\numberline {38.1}Functions}{83}{subsection.38.1}
-\contentsline {section}{Index}{84}{section*.2}
+\contentsline {subsection}{\numberline {38.2}Variables}{83}{subsection.38.2}
+\contentsline {section}{\numberline {39}Package hal.wrappers}{84}{section.39}
+\contentsline {subsection}{\numberline {39.1}Modules}{84}{subsection.39.1}
+\contentsline {subsection}{\numberline {39.2}Variables}{84}{subsection.39.2}
+\contentsline {section}{\numberline {40}Module hal.wrappers.methods}{85}{section.40}
+\contentsline {subsection}{\numberline {40.1}Functions}{85}{subsection.40.1}
+\contentsline {section}{Index}{86}{section*.2}

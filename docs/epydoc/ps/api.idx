@@ -288,8 +288,15 @@
 \indexentry{hal \textit{(package)}!hal.strings \textit{(package)}!hal.strings.utils \textit{(module)}|(hyperpage}{81}
 \indexentry{hal \textit{(package)}!hal.strings \textit{(package)}!hal.strings.utils \textit{(module)}!hal.strings.utils.how\_similar\_are \textit{(function)}|hyperpage}{81}
 \indexentry{hal \textit{(package)}!hal.strings \textit{(package)}!hal.strings.utils \textit{(module)}|)hyperpage}{81}
-\indexentry{hal \textit{(package)}!hal.wrappers \textit{(package)}|(hyperpage}{82}
-\indexentry{hal \textit{(package)}!hal.wrappers \textit{(package)}|)hyperpage}{82}
-\indexentry{hal \textit{(package)}!hal.wrappers \textit{(package)}!hal.wrappers.methods \textit{(module)}|(hyperpage}{83}
-\indexentry{hal \textit{(package)}!hal.wrappers \textit{(package)}!hal.wrappers.methods \textit{(module)}!hal.wrappers.methods.handle\_exceptions \textit{(function)}|hyperpage}{83}
-\indexentry{hal \textit{(package)}!hal.wrappers \textit{(package)}!hal.wrappers.methods \textit{(module)}|)hyperpage}{83}
+\indexentry{hal \textit{(package)}!hal.time \textit{(package)}|(hyperpage}{82}
+\indexentry{hal \textit{(package)}!hal.time \textit{(package)}|)hyperpage}{82}
+\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.utils \textit{(module)}|(hyperpage}{83}
+\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.utils \textit{(module)}!hal.time.utils.parse\_hh\_mm\_ss \textit{(function)}|hyperpage}{83}
+\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.utils \textit{(module)}!hal.time.utils.get\_seconds \textit{(function)}|hyperpage}{83}
+\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.utils \textit{(module)}!hal.time.utils.parse\_hh\_mm \textit{(function)}|hyperpage}{83}
+\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.utils \textit{(module)}|)hyperpage}{83}
+\indexentry{hal \textit{(package)}!hal.wrappers \textit{(package)}|(hyperpage}{84}
+\indexentry{hal \textit{(package)}!hal.wrappers \textit{(package)}|)hyperpage}{84}
+\indexentry{hal \textit{(package)}!hal.wrappers \textit{(package)}!hal.wrappers.methods \textit{(module)}|(hyperpage}{85}
+\indexentry{hal \textit{(package)}!hal.wrappers \textit{(package)}!hal.wrappers.methods \textit{(module)}!hal.wrappers.methods.handle\_exceptions \textit{(function)}|hyperpage}{85}
+\indexentry{hal \textit{(package)}!hal.wrappers \textit{(package)}!hal.wrappers.methods \textit{(module)}|)hyperpage}{85}

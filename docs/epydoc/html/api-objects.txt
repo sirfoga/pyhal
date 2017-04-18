@@ -122,6 +122,13 @@ hal.strings.__package__	hal.strings-module.html#__package__
 hal.strings.utils	hal.strings.utils-module.html
 hal.strings.utils.how_similar_are	hal.strings.utils-module.html#how_similar_are
 hal.strings.utils.__package__	hal.strings.utils-module.html#__package__
+hal.time	hal.time-module.html
+hal.time.__package__	hal.time-module.html#__package__
+hal.time.utils	hal.time.utils-module.html
+hal.time.utils.get_seconds	hal.time.utils-module.html#get_seconds
+hal.time.utils.parse_hh_mm_ss	hal.time.utils-module.html#parse_hh_mm_ss
+hal.time.utils.parse_hh_mm	hal.time.utils-module.html#parse_hh_mm
+hal.time.utils.__package__	hal.time.utils-module.html#__package__
 hal.wrappers	hal.wrappers-module.html
 hal.wrappers.__package__	hal.wrappers-module.html#__package__
 hal.wrappers.methods	hal.wrappers.methods-module.html
