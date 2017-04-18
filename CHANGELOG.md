@@ -6,6 +6,9 @@ All notable changes to this project will be documented in this file.
 ### Added
 - time utils
 
+### Fixed
+- extremely annoying bug on csv parser
+
 ## 4.4.3
 
 ### Added

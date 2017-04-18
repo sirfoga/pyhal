@@ -46,7 +46,7 @@ class CSVParser(Parser):
         """ store values in array, store lines in array; the result is a 2D matrix"""
 
         with open(self.database_file) as csvfile:
-            csv_reader = csv.reader(csvfile, delimiter=',')
+            csv_reader = csv.reader(csvfile, delimiter=",", quotechar="\"")
             for row in csv_reader:
                 self.data.append(row)
 
@@ -62,13 +62,4 @@ def parse_csv_file(file_path):
     """
 
     raw_data = CSVParser(file_path).parse_data()
-    headers = raw_data[0]  # first row
-    headers = [h.strip() for h in headers]
-    raw_data = raw_data[1:]  # discard headers row
-
-    data = []
-    for line in raw_data:  # parse raw data
-        n_array = [str(n).strip() for n in line if len(str(n).strip()) > 1]  # discard null value
-        data.append(n_array)
-
-    return headers, data
+    return raw_data[0], raw_data[1:]  # headers, data

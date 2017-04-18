@@ -50,7 +50,6 @@ setup(
     packages=find_packages(exclude=["tests"]),
     install_requires=[  # TODO: uncomment packages (but travis will fail)
         "bs4",
-        "matplotlib",
         "mutagen",
         "numpy",
         "pycrypto",
