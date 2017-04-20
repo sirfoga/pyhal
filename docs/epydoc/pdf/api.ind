@@ -33,15 +33,15 @@
       \subsubitem hal.ml.models \textit{(package)}, \hyperpage{66}
       \subsubitem hal.ml.predict \textit{(module)}, \hyperpage{71}
       \subsubitem hal.ml.utils \textit{(package)}, \hyperpage{72}
-    \subitem hal.profile \textit{(package)}, \hyperpage{77}
+    \subitem hal.profile \textit{(package)}, \hyperpage{78}
       \subsubitem hal.profile.performance \textit{(module)}, 
-		\hyperpage{78--79}
-    \subitem hal.strings \textit{(package)}, \hyperpage{80}
-      \subsubitem hal.strings.utils \textit{(module)}, \hyperpage{81}
-    \subitem hal.time \textit{(package)}, \hyperpage{82}
-      \subsubitem hal.time.utils \textit{(module)}, \hyperpage{83}
-    \subitem hal.wrappers \textit{(package)}, \hyperpage{84}
+		\hyperpage{79--80}
+    \subitem hal.strings \textit{(package)}, \hyperpage{81}
+      \subsubitem hal.strings.utils \textit{(module)}, \hyperpage{82}
+    \subitem hal.time \textit{(package)}, \hyperpage{83}
+      \subsubitem hal.time.utils \textit{(module)}, \hyperpage{84}
+    \subitem hal.wrappers \textit{(package)}, \hyperpage{85}
       \subsubitem hal.wrappers.methods \textit{(module)}, 
-		\hyperpage{85}
+		\hyperpage{86}
 
 \end{theindex}

@@ -32,3 +32,17 @@ def how_similar_are(a, b):
     """
 
     return SequenceMatcher(None, a, b).ratio()
+
+
+def get_average_length_of_word(words):
+    """
+    :param words: [] of str
+        Words
+    :return: float
+        Average length of word on list
+    """
+
+    if len(words) == 0:
+        return 0
+    else:
+        return sum(len(word) for word in words) / len(words)

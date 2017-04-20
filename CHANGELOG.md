@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 4.4.5
+
+### Added
+- add and remove_column_from_matrix
+- get_average_length_of_word
+
 ## 4.4.4
 
 ### Added

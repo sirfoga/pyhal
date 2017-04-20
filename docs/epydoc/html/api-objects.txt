@@ -100,11 +100,13 @@ hal.ml.utils	hal.ml.utils-module.html
 hal.ml.utils.__package__	hal.ml.utils-module.html#__package__
 hal.ml.utils.matrix	hal.ml.utils.matrix-module.html
 hal.ml.utils.matrix.f1_score	hal.ml.utils.matrix-module.html#f1_score
+hal.ml.utils.matrix.add_columns_to_matrix	hal.ml.utils.matrix-module.html#add_columns_to_matrix
 hal.ml.utils.matrix.recall	hal.ml.utils.matrix-module.html#recall
 hal.ml.utils.matrix.tn_rate	hal.ml.utils.matrix-module.html#tn_rate
 hal.ml.utils.matrix.precision	hal.ml.utils.matrix-module.html#precision
 hal.ml.utils.matrix.get_column_of_matrix	hal.ml.utils.matrix-module.html#get_column_of_matrix
 hal.ml.utils.matrix.get_subset_of_matrix	hal.ml.utils.matrix-module.html#get_subset_of_matrix
+hal.ml.utils.matrix.remove_column_from_matrix	hal.ml.utils.matrix-module.html#remove_column_from_matrix
 hal.ml.utils.matrix.accuracy	hal.ml.utils.matrix-module.html#accuracy
 hal.ml.utils.misc	hal.ml.utils.misc-module.html
 hal.ml.utils.misc.f1_score	hal.ml.utils.misc-module.html#f1_score
@@ -121,6 +123,7 @@ hal.strings	hal.strings-module.html
 hal.strings.__package__	hal.strings-module.html#__package__
 hal.strings.utils	hal.strings.utils-module.html
 hal.strings.utils.how_similar_are	hal.strings.utils-module.html#how_similar_are
+hal.strings.utils.get_average_length_of_word	hal.strings.utils-module.html#get_average_length_of_word
 hal.strings.utils.__package__	hal.strings.utils-module.html#__package__
 hal.time	hal.time-module.html
 hal.time.__package__	hal.time-module.html#__package__

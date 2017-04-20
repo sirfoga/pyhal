@@ -158,3 +158,49 @@ def get_subset_of_matrix(headers_to_sample, all_headers, data):
         subset_columns.append(header_column)
 
     return np.transpose(subset_columns)
+
+
+def remove_column_from_matrix(headers, header_to_remove, data):
+    """
+    :param headers: [] of str
+        Column names
+    :param header_to_remove: str
+        Name of column to remove
+    :param data: matrix ([] of [])
+        Data
+    :return: headers, data
+        Headers without header removed and data without column removed
+    """
+
+    column_index_to_remove = headers.index(header_to_remove)
+    new_data = np.delete(data, column_index_to_remove, 1)  # remove column
+    new_headers = headers  # copy headers
+    new_headers.remove(header_to_remove)  # remove date header
+    return new_headers, new_data
+
+
+def add_columns_to_matrix(headers, data, new_headers, new_columns):
+    """
+    :param headers: headers: [] of str
+        Column names
+    :param data: matrix ([] of [])
+        Data
+    :param new_headers: [] of str
+        Names of new columns
+    :param new_columns: ([] of [])
+        New columns to add
+    :return: headers, data
+        New headers (with new headers) and data with new columns
+    """
+
+    new_data = []  # add each column
+    for row in range(len(data)):
+        new_row = []
+        for col in data[row]:
+            new_row.append(col)  # add old columns
+        for new_col in new_columns[row]:
+            new_row.append(new_col)  # add new columns
+        new_data.append(new_row)  # add new row
+
+    new_column_names = headers + new_headers
+    return new_column_names, new_data
