@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 - add and remove_column_from_matrix
 - get_average_length_of_word
+- MONTHS_NAMES in time utils
 
 ## 4.4.4
 
