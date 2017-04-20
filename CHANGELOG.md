@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 - add and remove_column_from_matrix
 - get_average_length_of_word
 - MONTHS_NAMES in time utils
+- normalize option in create_multiple_bar_chart
 
 ## 4.4.4
 

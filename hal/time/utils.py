@@ -20,7 +20,7 @@ from datetime import datetime
 
 MONTHS_NAMES = [datetime.strftime(datetime(year=1, month=m, day=1), "%B") for m in range(1, 13)]  # names of each month
 MONTHS = {
-    i: MONTHS_NAMES[i] for i in range(len(MONTHS_NAMES))
+    i + 1: MONTHS_NAMES[i] for i in range(len(MONTHS_NAMES))
     }  # dict <month index: month name>
 
 

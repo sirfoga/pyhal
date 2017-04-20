@@ -53,7 +53,7 @@ def create_bar_chart(title, x_labels, y_values, y_label):
     return ax1
 
 
-def create_multiple_bar_chart(title, x_labels, mul_y_values, mul_y_labels):
+def create_multiple_bar_chart(title, x_labels, mul_y_values, mul_y_labels, normalize=False):
     """
     :param title: str
         Title of chart
@@ -61,8 +61,10 @@ def create_multiple_bar_chart(title, x_labels, mul_y_values, mul_y_labels):
         Names for each variable
     :param mul_y_values: [] of [] of float
         List of values of x labels
-    :param mul_y_labels: [] ofstr
+    :param mul_y_labels: [] of str
         List of labels for each y value
+    :param normalize: bool
+        True iff you want to normalize each y series
     :return: Subplot
         Bar chart
     """
@@ -85,7 +87,10 @@ def create_multiple_bar_chart(title, x_labels, mul_y_values, mul_y_labels):
     for i in range(y_counts):
         x_pos = range(len(x_labels))  # x points
         x_pos = np.array(x_pos) + x_shifts[i]  # shift x points for each y series
-        b = ax1.bar(x_pos, normalize_array(mul_y_values[i]), width=bar_width, align="center", color=colors[i])
+        if normalize:  # normalize array
+            b = ax1.bar(x_pos, normalize_array(mul_y_values[i]), width=bar_width, align="center", color=colors[i])
+        else:
+            b = ax1.bar(x_pos, mul_y_values[i], width=bar_width, align="center", color=colors[i])
         ax_series.append(b)
 
     ax1.legend(ax_series, mul_y_labels)
