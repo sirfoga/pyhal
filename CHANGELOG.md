@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 4.4.6
+
+### Added
+- get_time_eta
+
 ## 4.4.5
 
 ### Added

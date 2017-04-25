@@ -293,13 +293,16 @@
 \indexentry{hal \textit{(package)}!hal.strings \textit{(package)}!hal.strings.utils \textit{(module)}|)hyperpage}{82}
 \indexentry{hal \textit{(package)}!hal.time \textit{(package)}|(hyperpage}{83}
 \indexentry{hal \textit{(package)}!hal.time \textit{(package)}|)hyperpage}{83}
-\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.utils \textit{(module)}|(hyperpage}{84}
-\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.utils \textit{(module)}!hal.time.utils.parse\_hh\_mm\_ss \textit{(function)}|hyperpage}{84}
-\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.utils \textit{(module)}!hal.time.utils.get\_seconds \textit{(function)}|hyperpage}{84}
-\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.utils \textit{(module)}!hal.time.utils.parse\_hh\_mm \textit{(function)}|hyperpage}{84}
-\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.utils \textit{(module)}|)hyperpage}{84}
-\indexentry{hal \textit{(package)}!hal.wrappers \textit{(package)}|(hyperpage}{85}
-\indexentry{hal \textit{(package)}!hal.wrappers \textit{(package)}|)hyperpage}{85}
-\indexentry{hal \textit{(package)}!hal.wrappers \textit{(package)}!hal.wrappers.methods \textit{(module)}|(hyperpage}{86}
-\indexentry{hal \textit{(package)}!hal.wrappers \textit{(package)}!hal.wrappers.methods \textit{(module)}!hal.wrappers.methods.handle\_exceptions \textit{(function)}|hyperpage}{86}
-\indexentry{hal \textit{(package)}!hal.wrappers \textit{(package)}!hal.wrappers.methods \textit{(module)}|)hyperpage}{86}
+\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.profile \textit{(module)}|(hyperpage}{84}
+\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.profile \textit{(module)}!hal.time.profile.get\_time\_eta \textit{(function)}|hyperpage}{84}
+\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.profile \textit{(module)}|)hyperpage}{84}
+\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.utils \textit{(module)}|(hyperpage}{85}
+\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.utils \textit{(module)}!hal.time.utils.parse\_hh\_mm\_ss \textit{(function)}|hyperpage}{85}
+\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.utils \textit{(module)}!hal.time.utils.get\_seconds \textit{(function)}|hyperpage}{85}
+\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.utils \textit{(module)}!hal.time.utils.parse\_hh\_mm \textit{(function)}|hyperpage}{85}
+\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.utils \textit{(module)}|)hyperpage}{85}
+\indexentry{hal \textit{(package)}!hal.wrappers \textit{(package)}|(hyperpage}{86}
+\indexentry{hal \textit{(package)}!hal.wrappers \textit{(package)}|)hyperpage}{86}
+\indexentry{hal \textit{(package)}!hal.wrappers \textit{(package)}!hal.wrappers.methods \textit{(module)}|(hyperpage}{87}
+\indexentry{hal \textit{(package)}!hal.wrappers \textit{(package)}!hal.wrappers.methods \textit{(module)}!hal.wrappers.methods.handle\_exceptions \textit{(function)}|hyperpage}{87}
+\indexentry{hal \textit{(package)}!hal.wrappers \textit{(package)}!hal.wrappers.methods \textit{(module)}|)hyperpage}{87}

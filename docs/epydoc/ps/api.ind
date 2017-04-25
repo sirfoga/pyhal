@@ -39,9 +39,10 @@
     \subitem hal.strings \textit{(package)}, \hyperpage{81}
       \subsubitem hal.strings.utils \textit{(module)}, \hyperpage{82}
     \subitem hal.time \textit{(package)}, \hyperpage{83}
-      \subsubitem hal.time.utils \textit{(module)}, \hyperpage{84}
-    \subitem hal.wrappers \textit{(package)}, \hyperpage{85}
+      \subsubitem hal.time.profile \textit{(module)}, \hyperpage{84}
+      \subsubitem hal.time.utils \textit{(module)}, \hyperpage{85}
+    \subitem hal.wrappers \textit{(package)}, \hyperpage{86}
       \subsubitem hal.wrappers.methods \textit{(module)}, 
-		\hyperpage{86}
+		\hyperpage{87}
 
 \end{theindex}

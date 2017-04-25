@@ -127,6 +127,9 @@ hal.strings.utils.get_average_length_of_word	hal.strings.utils-module.html#get_a
 hal.strings.utils.__package__	hal.strings.utils-module.html#__package__
 hal.time	hal.time-module.html
 hal.time.__package__	hal.time-module.html#__package__
+hal.time.profile	hal.time.profile-module.html
+hal.time.profile.get_time_eta	hal.time.profile-module.html#get_time_eta
+hal.time.profile.__package__	hal.time.profile-module.html#__package__
 hal.time.utils	hal.time.utils-module.html
 hal.time.utils.parse_hh_mm	hal.time.utils-module.html#parse_hh_mm
 hal.time.utils.MONTHS	hal.time.utils-module.html#MONTHS
