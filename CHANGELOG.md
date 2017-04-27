@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 4.4.8
+
+### Added
+- file utils save_dicts_to_csv, save_matrix_to_csv
+
 ## 4.4.7
 
 ### Added

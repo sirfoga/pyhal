@@ -21,6 +21,10 @@ hal.files.models.VIDEO_FORMAT	hal.files.models-module.html#VIDEO_FORMAT
 hal.files.models.TEXT_FORMAT	hal.files.models-module.html#TEXT_FORMAT
 hal.files.models.RUSSIAN_CHARS	hal.files.models-module.html#RUSSIAN_CHARS
 hal.files.models.ARCHIVE_FORMAT	hal.files.models-module.html#ARCHIVE_FORMAT
+hal.files.save_as	hal.files.save_as-module.html
+hal.files.save_as.save_matrix_to_csv	hal.files.save_as-module.html#save_matrix_to_csv
+hal.files.save_as.save_dicts_to_csv	hal.files.save_as-module.html#save_dicts_to_csv
+hal.files.save_as.__package__	hal.files.save_as-module.html#__package__
 hal.internet	hal.internet-module.html
 hal.internet.__package__	hal.internet-module.html#__package__
 hal.internet.engines	hal.internet.engines-module.html
@@ -39,6 +43,7 @@ hal.internet.web.CHROME_USER_AGENT	hal.internet.web-module.html#CHROME_USER_AGEN
 hal.internet.web.download_url	hal.internet.web-module.html#download_url
 hal.internet.web.URL_VALID_REGEX	hal.internet.web-module.html#URL_VALID_REGEX
 hal.internet.web.is_url	hal.internet.web-module.html#is_url
+hal.internet.web.download_pdf_to_file	hal.internet.web-module.html#download_pdf_to_file
 hal.internet.youtube	hal.internet.youtube-module.html
 hal.internet.youtube.get_channel_feed_url_from_name	hal.internet.youtube-module.html#get_channel_feed_url_from_name
 hal.internet.youtube.get_channel_feed_url_from_video	hal.internet.youtube-module.html#get_channel_feed_url_from_video
