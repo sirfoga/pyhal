@@ -25,23 +25,69 @@ def get_time_eta(total_done, total, start_time):
         Item processed
     :param total: int
         Total number of items to process
-    :param start_time: time (s since epoch)
+    :param start_time: time
         Time of start processing items
-    :return: {} <str, int>
-        Each key is the time unit, each value is eta time
+    :return: time
+        Time to go
     """
 
-    time_done = int(time.time()) - start_time  # time spent processing items
-    speed = total_done / time_done  # avg speed processing items
-    total_to_go = total - total_done  # items to go
-    seconds_to_go = int(total_to_go / speed)  # eta time
-    minutes_to_go = int(seconds_to_go / 60.0)
-    hours_to_go = int(minutes_to_go / 60.0)
-    days_to_go = int(hours_to_go / 24.0)
+    time_done = int(time.time()) - start_time
+    try:
+        speed = total_done / time_done
+    except:
+        speed = 0
 
-    return {
-        "s": seconds_to_go,
-        "m": minutes_to_go,
-        "h": hours_to_go,
-        "d": days_to_go
-    }
+    if time_done > 0 and speed > 0:
+        total_to_go = total - total_done
+        time_to_go = total_to_go / speed
+        m, s = divmod(time_to_go, 60)  # get hours, seconds and minutes
+        h, m = divmod(m, 60)
+        percentage = total_done * 100.0 / total
+
+        return {
+            "done": int(total_done),
+            "tot": int(total),
+            "%": float("{0:.2f}".format(percentage)),
+            "h": int(h),
+            "m": int(m),
+            "s": int(s)
+        }
+    else:
+        return {
+            "done": int(total_done),
+            "tot": int(total),
+            "%": 0,
+            "h": 0,
+            "m": 0,
+            "s": 0
+        }
+
+
+def print_item_info(details):
+    """
+    :param details: {}
+        Details of AthletePerformance
+    :return: void
+        Prints debug info to screen
+    """
+
+    print(
+        "{:20.19}".format(details["name"]),
+        "{:20.19}".format(details["finish_time"])
+    )  # debug info
+
+
+def print_time_eta(time_to_go):
+    """
+    :param time_to_go: {}
+        Result of a call get_time_eta(...)
+    :return: void
+        Prints debug info to screen
+    """
+
+    print(
+        str(time_to_go["done"]) + "/" + str(time_to_go["tot"]), "(" + str(time_to_go["%"]) + "%)",
+        "ETA {:20.19}".format(
+            str(time_to_go["h"]) + "h " + str(time_to_go["m"]) + "\' " + str(time_to_go["s"]) + "\""
+        )
+    )

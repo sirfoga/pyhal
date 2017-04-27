@@ -6,6 +6,9 @@ All notable changes to this project will be documented in this file.
 ### Added
 - file utils save_dicts_to_csv, save_matrix_to_csv
 
+### Changed
+- time.utils eta time
+
 ## 4.4.7
 
 ### Added
