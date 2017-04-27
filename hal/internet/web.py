@@ -21,7 +21,6 @@
 import random
 import re
 import socket
-import time
 import urllib.request
 import webbrowser
 from urllib.parse import urljoin
@@ -29,6 +28,8 @@ from urllib.parse import urljoin
 import requests  # fetch source via tor
 import socks
 from bs4 import BeautifulSoup
+
+import time
 
 CHROME_USER_AGENT = [
     "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.19 (KHTML, like Gecko) Chrome/1.0.154.53 Safari/525.19",
@@ -220,3 +221,27 @@ def download_url(url, local_file):
 
     d = urllib.request.URLopener()
     d.retrieve(url, local_file)
+
+
+def download_pdf_to_file(url, local_file, chunk_size=1024):
+    """
+    :param url: string
+        PDF url to download
+    :param local_file: string
+        Save url as this path
+    :param chunk_size: int
+        Download file in this specific chunk size
+    :return: void
+        Download link to local file
+    """
+
+    headers = {
+        'User-Agent': 'Mozilla/5.0',
+        'Accept': 'text/html,application/xhtml+xml,application/xml,application/pdf;q=0.9,*/*;q=0.8'
+    }
+
+    r = requests.get(url, headers=headers, stream=True)
+    with open(local_file, 'wb') as fd:
+        for chunk in r.iter_content(chunk_size):
+            if chunk:
+                fd.write(chunk)

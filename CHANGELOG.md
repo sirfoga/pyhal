@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 4.4.7
+
+### Added
+- download_pdf_to_file
+
 ## 4.4.6
 
 ### Added
