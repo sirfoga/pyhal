@@ -123,6 +123,9 @@ hal.ml.utils.misc.precision	hal.ml.utils.misc-module.html#precision
 hal.ml.utils.misc.accuracy	hal.ml.utils.misc-module.html#accuracy
 hal.profile	hal.profile-module.html
 hal.profile.__package__	hal.profile-module.html#__package__
+hal.profile.mem	hal.profile.mem-module.html
+hal.profile.mem.get_memory_usage	hal.profile.mem-module.html#get_memory_usage
+hal.profile.mem.force_garbage_collect	hal.profile.mem-module.html#force_garbage_collect
 hal.profile.performance	hal.profile.performance-module.html
 hal.strings	hal.strings-module.html
 hal.strings.__package__	hal.strings-module.html#__package__
@@ -134,6 +137,8 @@ hal.time	hal.time-module.html
 hal.time.__package__	hal.time-module.html#__package__
 hal.time.profile	hal.time.profile-module.html
 hal.time.profile.get_time_eta	hal.time.profile-module.html#get_time_eta
+hal.time.profile.print_item_info	hal.time.profile-module.html#print_item_info
+hal.time.profile.print_time_eta	hal.time.profile-module.html#print_time_eta
 hal.time.profile.__package__	hal.time.profile-module.html#__package__
 hal.time.utils	hal.time.utils-module.html
 hal.time.utils.parse_hh_mm	hal.time.utils-module.html#parse_hh_mm

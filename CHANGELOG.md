@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 4.4.9
+
+### Added
+- memory profiling and gc collector
+
 ## 4.4.8
 
 ### Added

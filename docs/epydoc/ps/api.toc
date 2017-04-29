@@ -1,207 +1,209 @@
 \contentsline {section}{Contents}{1}{section*.1}
-\contentsline {section}{\numberline {1}Package hal}{6}{section.1}
-\contentsline {subsection}{\numberline {1.1}Modules}{6}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}Variables}{7}{subsection.1.2}
-\contentsline {section}{\numberline {2}Package hal.charts}{8}{section.2}
-\contentsline {subsection}{\numberline {2.1}Modules}{8}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Variables}{8}{subsection.2.2}
-\contentsline {section}{\numberline {3}Module hal.charts.bar}{9}{section.3}
-\contentsline {subsection}{\numberline {3.1}Functions}{9}{subsection.3.1}
-\contentsline {section}{\numberline {4}Module hal.charts.correlation}{10}{section.4}
-\contentsline {subsection}{\numberline {4.1}Functions}{10}{subsection.4.1}
-\contentsline {section}{\numberline {5}Module hal.charts.plotter}{11}{section.5}
-\contentsline {subsection}{\numberline {5.1}Class Plot2d}{11}{subsection.5.1}
-\contentsline {subsubsection}{\numberline {5.1.1}Methods}{11}{subsubsection.5.1.1}
-\contentsline {subsubsection}{\numberline {5.1.2}Properties}{11}{subsubsection.5.1.2}
-\contentsline {subsection}{\numberline {5.2}Class Plot3d}{12}{subsection.5.2}
-\contentsline {subsubsection}{\numberline {5.2.1}Methods}{12}{subsubsection.5.2.1}
-\contentsline {subsubsection}{\numberline {5.2.2}Properties}{13}{subsubsection.5.2.2}
-\contentsline {subsection}{\numberline {5.3}Class Plot4d}{13}{subsection.5.3}
-\contentsline {subsubsection}{\numberline {5.3.1}Methods}{13}{subsubsection.5.3.1}
-\contentsline {subsubsection}{\numberline {5.3.2}Properties}{14}{subsubsection.5.3.2}
-\contentsline {section}{\numberline {6}Package hal.files}{15}{section.6}
-\contentsline {subsection}{\numberline {6.1}Modules}{15}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}Variables}{15}{subsection.6.2}
-\contentsline {section}{\numberline {7}Module hal.files.models}{16}{section.7}
-\contentsline {subsection}{\numberline {7.1}Variables}{16}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Class FileSystem}{16}{subsection.7.2}
-\contentsline {subsubsection}{\numberline {7.2.1}Methods}{16}{subsubsection.7.2.1}
-\contentsline {subsubsection}{\numberline {7.2.2}Properties}{19}{subsubsection.7.2.2}
-\contentsline {subsection}{\numberline {7.3}Class Document}{20}{subsection.7.3}
-\contentsline {subsubsection}{\numberline {7.3.1}Methods}{20}{subsubsection.7.3.1}
-\contentsline {subsubsection}{\numberline {7.3.2}Properties}{22}{subsubsection.7.3.2}
-\contentsline {subsection}{\numberline {7.4}Class Directory}{22}{subsection.7.4}
-\contentsline {subsubsection}{\numberline {7.4.1}Methods}{23}{subsubsection.7.4.1}
-\contentsline {subsubsection}{\numberline {7.4.2}Properties}{23}{subsubsection.7.4.2}
-\contentsline {subsection}{\numberline {7.5}Class MP3Song}{24}{subsection.7.5}
-\contentsline {subsubsection}{\numberline {7.5.1}Methods}{24}{subsubsection.7.5.1}
-\contentsline {subsubsection}{\numberline {7.5.2}Properties}{25}{subsubsection.7.5.2}
-\contentsline {section}{\numberline {8}Module hal.files.save\_as}{26}{section.8}
-\contentsline {subsection}{\numberline {8.1}Functions}{26}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Variables}{26}{subsection.8.2}
-\contentsline {section}{\numberline {9}Package hal.internet}{27}{section.9}
-\contentsline {subsection}{\numberline {9.1}Modules}{27}{subsection.9.1}
-\contentsline {subsection}{\numberline {9.2}Variables}{27}{subsection.9.2}
-\contentsline {section}{\numberline {10}Module hal.internet.engines}{28}{section.10}
-\contentsline {subsection}{\numberline {10.1}Class SearchEngineResult}{28}{subsection.10.1}
-\contentsline {subsubsection}{\numberline {10.1.1}Methods}{28}{subsubsection.10.1.1}
-\contentsline {subsubsection}{\numberline {10.1.2}Properties}{28}{subsubsection.10.1.2}
-\contentsline {subsection}{\numberline {10.2}Class SearchEngine}{28}{subsection.10.2}
-\contentsline {subsubsection}{\numberline {10.2.1}Methods}{29}{subsubsection.10.2.1}
-\contentsline {subsubsection}{\numberline {10.2.2}Properties}{29}{subsubsection.10.2.2}
-\contentsline {section}{\numberline {11}Module hal.internet.github}{30}{section.11}
-\contentsline {subsection}{\numberline {11.1}Variables}{30}{subsection.11.1}
-\contentsline {subsection}{\numberline {11.2}Class GithubRawApi}{30}{subsection.11.2}
-\contentsline {subsubsection}{\numberline {11.2.1}Methods}{30}{subsubsection.11.2.1}
-\contentsline {subsubsection}{\numberline {11.2.2}Properties}{31}{subsubsection.11.2.2}
-\contentsline {subsection}{\numberline {11.3}Class GithubApi}{31}{subsection.11.3}
-\contentsline {subsubsection}{\numberline {11.3.1}Methods}{31}{subsubsection.11.3.1}
-\contentsline {subsubsection}{\numberline {11.3.2}Properties}{32}{subsubsection.11.3.2}
-\contentsline {subsection}{\numberline {11.4}Class GithubUser}{32}{subsection.11.4}
-\contentsline {subsubsection}{\numberline {11.4.1}Methods}{32}{subsubsection.11.4.1}
-\contentsline {subsubsection}{\numberline {11.4.2}Properties}{33}{subsubsection.11.4.2}
-\contentsline {subsection}{\numberline {11.5}Class GithubUserRepository}{33}{subsection.11.5}
-\contentsline {subsubsection}{\numberline {11.5.1}Methods}{33}{subsubsection.11.5.1}
-\contentsline {subsubsection}{\numberline {11.5.2}Properties}{34}{subsubsection.11.5.2}
-\contentsline {section}{\numberline {12}Module hal.internet.parser}{35}{section.12}
-\contentsline {subsection}{\numberline {12.1}Functions}{35}{subsection.12.1}
-\contentsline {subsection}{\numberline {12.2}Variables}{35}{subsection.12.2}
-\contentsline {subsection}{\numberline {12.3}Class HtmlTable}{35}{subsection.12.3}
-\contentsline {subsubsection}{\numberline {12.3.1}Methods}{36}{subsubsection.12.3.1}
-\contentsline {subsubsection}{\numberline {12.3.2}Properties}{36}{subsubsection.12.3.2}
-\contentsline {section}{\numberline {13}Module hal.internet.selenium}{37}{section.13}
-\contentsline {subsection}{\numberline {13.1}Variables}{37}{subsection.13.1}
-\contentsline {subsection}{\numberline {13.2}Class SeleniumForm}{37}{subsection.13.2}
-\contentsline {subsubsection}{\numberline {13.2.1}Methods}{37}{subsubsection.13.2.1}
-\contentsline {section}{\numberline {14}Module hal.internet.web}{39}{section.14}
-\contentsline {subsection}{\numberline {14.1}Functions}{39}{subsection.14.1}
-\contentsline {subsection}{\numberline {14.2}Variables}{39}{subsection.14.2}
-\contentsline {subsection}{\numberline {14.3}Class Webpage}{40}{subsection.14.3}
-\contentsline {subsubsection}{\numberline {14.3.1}Methods}{40}{subsubsection.14.3.1}
-\contentsline {subsubsection}{\numberline {14.3.2}Properties}{41}{subsubsection.14.3.2}
-\contentsline {section}{\numberline {15}Module hal.internet.youtube}{42}{section.15}
-\contentsline {subsection}{\numberline {15.1}Functions}{42}{subsection.15.1}
-\contentsline {subsection}{\numberline {15.2}Variables}{43}{subsection.15.2}
-\contentsline {section}{\numberline {16}Package hal.maths}{44}{section.16}
-\contentsline {subsection}{\numberline {16.1}Modules}{44}{subsection.16.1}
-\contentsline {subsection}{\numberline {16.2}Variables}{44}{subsection.16.2}
-\contentsline {section}{\numberline {17}Module hal.maths.crypt}{45}{section.17}
-\contentsline {subsection}{\numberline {17.1}Class MD5}{45}{subsection.17.1}
-\contentsline {subsubsection}{\numberline {17.1.1}Methods}{45}{subsubsection.17.1.1}
-\contentsline {subsubsection}{\numberline {17.1.2}Properties}{45}{subsubsection.17.1.2}
-\contentsline {subsection}{\numberline {17.2}Class MD6}{45}{subsection.17.2}
-\contentsline {subsubsection}{\numberline {17.2.1}Methods}{46}{subsubsection.17.2.1}
-\contentsline {subsubsection}{\numberline {17.2.2}Properties}{46}{subsubsection.17.2.2}
-\contentsline {subsubsection}{\numberline {17.2.3}Class Variables}{46}{subsubsection.17.2.3}
-\contentsline {subsection}{\numberline {17.3}Class SHA}{47}{subsection.17.3}
-\contentsline {subsubsection}{\numberline {17.3.1}Methods}{47}{subsubsection.17.3.1}
-\contentsline {subsubsection}{\numberline {17.3.2}Properties}{48}{subsubsection.17.3.2}
-\contentsline {subsubsection}{\numberline {17.3.3}Class Variables}{48}{subsubsection.17.3.3}
-\contentsline {subsection}{\numberline {17.4}Class DES}{48}{subsection.17.4}
-\contentsline {subsubsection}{\numberline {17.4.1}Methods}{49}{subsubsection.17.4.1}
-\contentsline {subsubsection}{\numberline {17.4.2}Properties}{49}{subsubsection.17.4.2}
-\contentsline {subsubsection}{\numberline {17.4.3}Class Variables}{49}{subsubsection.17.4.3}
-\contentsline {subsection}{\numberline {17.5}Class ARC}{50}{subsection.17.5}
-\contentsline {subsubsection}{\numberline {17.5.1}Methods}{50}{subsubsection.17.5.1}
-\contentsline {subsubsection}{\numberline {17.5.2}Properties}{50}{subsubsection.17.5.2}
-\contentsline {subsubsection}{\numberline {17.5.3}Class Variables}{50}{subsubsection.17.5.3}
-\contentsline {subsection}{\numberline {17.6}Class AES}{51}{subsection.17.6}
-\contentsline {subsubsection}{\numberline {17.6.1}Methods}{51}{subsubsection.17.6.1}
-\contentsline {subsubsection}{\numberline {17.6.2}Properties}{51}{subsubsection.17.6.2}
-\contentsline {subsection}{\numberline {17.7}Class HMAC}{51}{subsection.17.7}
-\contentsline {subsubsection}{\numberline {17.7.1}Methods}{52}{subsubsection.17.7.1}
-\contentsline {subsubsection}{\numberline {17.7.2}Properties}{52}{subsubsection.17.7.2}
-\contentsline {subsection}{\numberline {17.8}Class BLOWFISH}{52}{subsection.17.8}
-\contentsline {subsubsection}{\numberline {17.8.1}Methods}{52}{subsubsection.17.8.1}
-\contentsline {subsubsection}{\numberline {17.8.2}Properties}{53}{subsubsection.17.8.2}
-\contentsline {subsection}{\numberline {17.9}Class IDEA}{53}{subsection.17.9}
-\contentsline {subsubsection}{\numberline {17.9.1}Methods}{53}{subsubsection.17.9.1}
-\contentsline {subsubsection}{\numberline {17.9.2}Properties}{54}{subsubsection.17.9.2}
-\contentsline {subsection}{\numberline {17.10}Class CAST128}{54}{subsection.17.10}
-\contentsline {subsubsection}{\numberline {17.10.1}Methods}{54}{subsubsection.17.10.1}
-\contentsline {subsubsection}{\numberline {17.10.2}Properties}{54}{subsubsection.17.10.2}
-\contentsline {subsection}{\numberline {17.11}Class Dsa}{55}{subsection.17.11}
-\contentsline {subsubsection}{\numberline {17.11.1}Methods}{55}{subsubsection.17.11.1}
-\contentsline {subsubsection}{\numberline {17.11.2}Properties}{55}{subsubsection.17.11.2}
-\contentsline {section}{\numberline {18}Module hal.maths.maths}{56}{section.18}
-\contentsline {subsection}{\numberline {18.1}Functions}{56}{subsection.18.1}
-\contentsline {subsection}{\numberline {18.2}Variables}{56}{subsection.18.2}
-\contentsline {subsection}{\numberline {18.3}Class Integer}{56}{subsection.18.3}
-\contentsline {subsubsection}{\numberline {18.3.1}Methods}{56}{subsubsection.18.3.1}
-\contentsline {subsubsection}{\numberline {18.3.2}Properties}{57}{subsubsection.18.3.2}
-\contentsline {subsubsection}{\numberline {18.3.3}Class Variables}{57}{subsubsection.18.3.3}
-\contentsline {subsection}{\numberline {18.4}Class EightQueen}{57}{subsection.18.4}
-\contentsline {subsubsection}{\numberline {18.4.1}Methods}{58}{subsubsection.18.4.1}
-\contentsline {subsubsection}{\numberline {18.4.2}Properties}{58}{subsubsection.18.4.2}
-\contentsline {section}{\numberline {19}Package hal.ml}{59}{section.19}
-\contentsline {subsection}{\numberline {19.1}Modules}{59}{subsection.19.1}
-\contentsline {subsection}{\numberline {19.2}Variables}{59}{subsection.19.2}
-\contentsline {section}{\numberline {20}Package hal.ml.analysis}{60}{section.20}
-\contentsline {subsection}{\numberline {20.1}Modules}{60}{subsection.20.1}
-\contentsline {subsection}{\numberline {20.2}Variables}{60}{subsection.20.2}
-\contentsline {section}{\numberline {21}Module hal.ml.analysis.correlation}{61}{section.21}
-\contentsline {subsection}{\numberline {21.1}Functions}{61}{subsection.21.1}
-\contentsline {section}{\numberline {22}Package hal.ml.data}{63}{section.22}
-\contentsline {subsection}{\numberline {22.1}Modules}{63}{subsection.22.1}
-\contentsline {subsection}{\numberline {22.2}Variables}{63}{subsection.22.2}
-\contentsline {section}{\numberline {23}Module hal.ml.data.parser}{64}{section.23}
-\contentsline {subsection}{\numberline {23.1}Functions}{64}{subsection.23.1}
-\contentsline {subsection}{\numberline {23.2}Variables}{64}{subsection.23.2}
-\contentsline {subsection}{\numberline {23.3}Class Parser}{64}{subsection.23.3}
-\contentsline {subsubsection}{\numberline {23.3.1}Methods}{64}{subsubsection.23.3.1}
-\contentsline {subsubsection}{\numberline {23.3.2}Properties}{65}{subsubsection.23.3.2}
-\contentsline {subsection}{\numberline {23.4}Class CSVParser}{65}{subsection.23.4}
-\contentsline {subsubsection}{\numberline {23.4.1}Methods}{65}{subsubsection.23.4.1}
-\contentsline {subsubsection}{\numberline {23.4.2}Properties}{65}{subsubsection.23.4.2}
-\contentsline {section}{\numberline {24}Module hal.ml.features}{66}{section.24}
-\contentsline {subsection}{\numberline {24.1}Functions}{66}{subsection.24.1}
-\contentsline {section}{\numberline {25}Package hal.ml.models}{67}{section.25}
-\contentsline {subsection}{\numberline {25.1}Modules}{67}{subsection.25.1}
-\contentsline {subsection}{\numberline {25.2}Variables}{67}{subsection.25.2}
-\contentsline {section}{\numberline {26}Module hal.ml.models.classification}{68}{section.26}
-\contentsline {subsection}{\numberline {26.1}Functions}{68}{subsection.26.1}
-\contentsline {section}{\numberline {27}Module hal.ml.models.pipelined}{69}{section.27}
-\contentsline {subsection}{\numberline {27.1}Functions}{69}{subsection.27.1}
-\contentsline {section}{\numberline {28}Module hal.ml.models.regression}{70}{section.28}
-\contentsline {subsection}{\numberline {28.1}Functions}{70}{subsection.28.1}
-\contentsline {section}{\numberline {29}Module hal.ml.models.time\_series}{71}{section.29}
-\contentsline {subsection}{\numberline {29.1}Functions}{71}{subsection.29.1}
-\contentsline {section}{\numberline {30}Module hal.ml.predict}{72}{section.30}
-\contentsline {subsection}{\numberline {30.1}Class BasePrediction}{72}{subsection.30.1}
-\contentsline {subsubsection}{\numberline {30.1.1}Methods}{72}{subsubsection.30.1.1}
-\contentsline {subsubsection}{\numberline {30.1.2}Properties}{72}{subsubsection.30.1.2}
-\contentsline {section}{\numberline {31}Package hal.ml.utils}{73}{section.31}
-\contentsline {subsection}{\numberline {31.1}Modules}{73}{subsection.31.1}
-\contentsline {subsection}{\numberline {31.2}Variables}{73}{subsection.31.2}
-\contentsline {section}{\numberline {32}Module hal.ml.utils.matrix}{74}{section.32}
-\contentsline {subsection}{\numberline {32.1}Functions}{74}{subsection.32.1}
-\contentsline {section}{\numberline {33}Module hal.ml.utils.misc}{77}{section.33}
-\contentsline {subsection}{\numberline {33.1}Functions}{77}{subsection.33.1}
-\contentsline {section}{\numberline {34}Package hal.profile}{79}{section.34}
-\contentsline {subsection}{\numberline {34.1}Modules}{79}{subsection.34.1}
-\contentsline {subsection}{\numberline {34.2}Variables}{79}{subsection.34.2}
-\contentsline {section}{\numberline {35}Module hal.profile.performance}{80}{section.35}
-\contentsline {subsection}{\numberline {35.1}Class EightQueenTest}{80}{subsection.35.1}
-\contentsline {subsubsection}{\numberline {35.1.1}Methods}{80}{subsubsection.35.1.1}
-\contentsline {subsubsection}{\numberline {35.1.2}Properties}{81}{subsubsection.35.1.2}
-\contentsline {section}{\numberline {36}Package hal.strings}{82}{section.36}
-\contentsline {subsection}{\numberline {36.1}Modules}{82}{subsection.36.1}
-\contentsline {subsection}{\numberline {36.2}Variables}{82}{subsection.36.2}
-\contentsline {section}{\numberline {37}Module hal.strings.utils}{83}{section.37}
-\contentsline {subsection}{\numberline {37.1}Functions}{83}{subsection.37.1}
-\contentsline {subsection}{\numberline {37.2}Variables}{83}{subsection.37.2}
-\contentsline {section}{\numberline {38}Package hal.time}{84}{section.38}
-\contentsline {subsection}{\numberline {38.1}Modules}{84}{subsection.38.1}
-\contentsline {subsection}{\numberline {38.2}Variables}{84}{subsection.38.2}
-\contentsline {section}{\numberline {39}Module hal.time.profile}{85}{section.39}
-\contentsline {subsection}{\numberline {39.1}Functions}{85}{subsection.39.1}
-\contentsline {subsection}{\numberline {39.2}Variables}{85}{subsection.39.2}
-\contentsline {section}{\numberline {40}Module hal.time.utils}{86}{section.40}
-\contentsline {subsection}{\numberline {40.1}Functions}{86}{subsection.40.1}
-\contentsline {subsection}{\numberline {40.2}Variables}{86}{subsection.40.2}
-\contentsline {section}{\numberline {41}Package hal.wrappers}{87}{section.41}
-\contentsline {subsection}{\numberline {41.1}Modules}{87}{subsection.41.1}
-\contentsline {subsection}{\numberline {41.2}Variables}{87}{subsection.41.2}
-\contentsline {section}{\numberline {42}Module hal.wrappers.methods}{88}{section.42}
-\contentsline {subsection}{\numberline {42.1}Functions}{88}{subsection.42.1}
-\contentsline {section}{Index}{89}{section*.2}
+\contentsline {section}{\numberline {1}Package hal}{7}{section.1}
+\contentsline {subsection}{\numberline {1.1}Modules}{7}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Variables}{8}{subsection.1.2}
+\contentsline {section}{\numberline {2}Package hal.charts}{9}{section.2}
+\contentsline {subsection}{\numberline {2.1}Modules}{9}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Variables}{9}{subsection.2.2}
+\contentsline {section}{\numberline {3}Module hal.charts.bar}{10}{section.3}
+\contentsline {subsection}{\numberline {3.1}Functions}{10}{subsection.3.1}
+\contentsline {section}{\numberline {4}Module hal.charts.correlation}{11}{section.4}
+\contentsline {subsection}{\numberline {4.1}Functions}{11}{subsection.4.1}
+\contentsline {section}{\numberline {5}Module hal.charts.plotter}{12}{section.5}
+\contentsline {subsection}{\numberline {5.1}Class Plot2d}{12}{subsection.5.1}
+\contentsline {subsubsection}{\numberline {5.1.1}Methods}{12}{subsubsection.5.1.1}
+\contentsline {subsubsection}{\numberline {5.1.2}Properties}{12}{subsubsection.5.1.2}
+\contentsline {subsection}{\numberline {5.2}Class Plot3d}{13}{subsection.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}Methods}{13}{subsubsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2}Properties}{14}{subsubsection.5.2.2}
+\contentsline {subsection}{\numberline {5.3}Class Plot4d}{14}{subsection.5.3}
+\contentsline {subsubsection}{\numberline {5.3.1}Methods}{14}{subsubsection.5.3.1}
+\contentsline {subsubsection}{\numberline {5.3.2}Properties}{15}{subsubsection.5.3.2}
+\contentsline {section}{\numberline {6}Package hal.files}{16}{section.6}
+\contentsline {subsection}{\numberline {6.1}Modules}{16}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Variables}{16}{subsection.6.2}
+\contentsline {section}{\numberline {7}Module hal.files.models}{17}{section.7}
+\contentsline {subsection}{\numberline {7.1}Variables}{17}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Class FileSystem}{17}{subsection.7.2}
+\contentsline {subsubsection}{\numberline {7.2.1}Methods}{17}{subsubsection.7.2.1}
+\contentsline {subsubsection}{\numberline {7.2.2}Properties}{20}{subsubsection.7.2.2}
+\contentsline {subsection}{\numberline {7.3}Class Document}{21}{subsection.7.3}
+\contentsline {subsubsection}{\numberline {7.3.1}Methods}{21}{subsubsection.7.3.1}
+\contentsline {subsubsection}{\numberline {7.3.2}Properties}{23}{subsubsection.7.3.2}
+\contentsline {subsection}{\numberline {7.4}Class Directory}{23}{subsection.7.4}
+\contentsline {subsubsection}{\numberline {7.4.1}Methods}{24}{subsubsection.7.4.1}
+\contentsline {subsubsection}{\numberline {7.4.2}Properties}{24}{subsubsection.7.4.2}
+\contentsline {subsection}{\numberline {7.5}Class MP3Song}{25}{subsection.7.5}
+\contentsline {subsubsection}{\numberline {7.5.1}Methods}{25}{subsubsection.7.5.1}
+\contentsline {subsubsection}{\numberline {7.5.2}Properties}{26}{subsubsection.7.5.2}
+\contentsline {section}{\numberline {8}Module hal.files.save\_as}{27}{section.8}
+\contentsline {subsection}{\numberline {8.1}Functions}{27}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Variables}{27}{subsection.8.2}
+\contentsline {section}{\numberline {9}Package hal.internet}{28}{section.9}
+\contentsline {subsection}{\numberline {9.1}Modules}{28}{subsection.9.1}
+\contentsline {subsection}{\numberline {9.2}Variables}{28}{subsection.9.2}
+\contentsline {section}{\numberline {10}Module hal.internet.engines}{29}{section.10}
+\contentsline {subsection}{\numberline {10.1}Class SearchEngineResult}{29}{subsection.10.1}
+\contentsline {subsubsection}{\numberline {10.1.1}Methods}{29}{subsubsection.10.1.1}
+\contentsline {subsubsection}{\numberline {10.1.2}Properties}{29}{subsubsection.10.1.2}
+\contentsline {subsection}{\numberline {10.2}Class SearchEngine}{29}{subsection.10.2}
+\contentsline {subsubsection}{\numberline {10.2.1}Methods}{30}{subsubsection.10.2.1}
+\contentsline {subsubsection}{\numberline {10.2.2}Properties}{30}{subsubsection.10.2.2}
+\contentsline {section}{\numberline {11}Module hal.internet.github}{31}{section.11}
+\contentsline {subsection}{\numberline {11.1}Variables}{31}{subsection.11.1}
+\contentsline {subsection}{\numberline {11.2}Class GithubRawApi}{31}{subsection.11.2}
+\contentsline {subsubsection}{\numberline {11.2.1}Methods}{31}{subsubsection.11.2.1}
+\contentsline {subsubsection}{\numberline {11.2.2}Properties}{32}{subsubsection.11.2.2}
+\contentsline {subsection}{\numberline {11.3}Class GithubApi}{32}{subsection.11.3}
+\contentsline {subsubsection}{\numberline {11.3.1}Methods}{32}{subsubsection.11.3.1}
+\contentsline {subsubsection}{\numberline {11.3.2}Properties}{33}{subsubsection.11.3.2}
+\contentsline {subsection}{\numberline {11.4}Class GithubUser}{33}{subsection.11.4}
+\contentsline {subsubsection}{\numberline {11.4.1}Methods}{33}{subsubsection.11.4.1}
+\contentsline {subsubsection}{\numberline {11.4.2}Properties}{34}{subsubsection.11.4.2}
+\contentsline {subsection}{\numberline {11.5}Class GithubUserRepository}{34}{subsection.11.5}
+\contentsline {subsubsection}{\numberline {11.5.1}Methods}{34}{subsubsection.11.5.1}
+\contentsline {subsubsection}{\numberline {11.5.2}Properties}{35}{subsubsection.11.5.2}
+\contentsline {section}{\numberline {12}Module hal.internet.parser}{36}{section.12}
+\contentsline {subsection}{\numberline {12.1}Functions}{36}{subsection.12.1}
+\contentsline {subsection}{\numberline {12.2}Variables}{36}{subsection.12.2}
+\contentsline {subsection}{\numberline {12.3}Class HtmlTable}{36}{subsection.12.3}
+\contentsline {subsubsection}{\numberline {12.3.1}Methods}{37}{subsubsection.12.3.1}
+\contentsline {subsubsection}{\numberline {12.3.2}Properties}{37}{subsubsection.12.3.2}
+\contentsline {section}{\numberline {13}Module hal.internet.selenium}{38}{section.13}
+\contentsline {subsection}{\numberline {13.1}Variables}{38}{subsection.13.1}
+\contentsline {subsection}{\numberline {13.2}Class SeleniumForm}{38}{subsection.13.2}
+\contentsline {subsubsection}{\numberline {13.2.1}Methods}{38}{subsubsection.13.2.1}
+\contentsline {section}{\numberline {14}Module hal.internet.web}{40}{section.14}
+\contentsline {subsection}{\numberline {14.1}Functions}{40}{subsection.14.1}
+\contentsline {subsection}{\numberline {14.2}Variables}{40}{subsection.14.2}
+\contentsline {subsection}{\numberline {14.3}Class Webpage}{41}{subsection.14.3}
+\contentsline {subsubsection}{\numberline {14.3.1}Methods}{41}{subsubsection.14.3.1}
+\contentsline {subsubsection}{\numberline {14.3.2}Properties}{42}{subsubsection.14.3.2}
+\contentsline {section}{\numberline {15}Module hal.internet.youtube}{43}{section.15}
+\contentsline {subsection}{\numberline {15.1}Functions}{43}{subsection.15.1}
+\contentsline {subsection}{\numberline {15.2}Variables}{44}{subsection.15.2}
+\contentsline {section}{\numberline {16}Package hal.maths}{45}{section.16}
+\contentsline {subsection}{\numberline {16.1}Modules}{45}{subsection.16.1}
+\contentsline {subsection}{\numberline {16.2}Variables}{45}{subsection.16.2}
+\contentsline {section}{\numberline {17}Module hal.maths.crypt}{46}{section.17}
+\contentsline {subsection}{\numberline {17.1}Class MD5}{46}{subsection.17.1}
+\contentsline {subsubsection}{\numberline {17.1.1}Methods}{46}{subsubsection.17.1.1}
+\contentsline {subsubsection}{\numberline {17.1.2}Properties}{46}{subsubsection.17.1.2}
+\contentsline {subsection}{\numberline {17.2}Class MD6}{46}{subsection.17.2}
+\contentsline {subsubsection}{\numberline {17.2.1}Methods}{47}{subsubsection.17.2.1}
+\contentsline {subsubsection}{\numberline {17.2.2}Properties}{47}{subsubsection.17.2.2}
+\contentsline {subsubsection}{\numberline {17.2.3}Class Variables}{47}{subsubsection.17.2.3}
+\contentsline {subsection}{\numberline {17.3}Class SHA}{48}{subsection.17.3}
+\contentsline {subsubsection}{\numberline {17.3.1}Methods}{48}{subsubsection.17.3.1}
+\contentsline {subsubsection}{\numberline {17.3.2}Properties}{49}{subsubsection.17.3.2}
+\contentsline {subsubsection}{\numberline {17.3.3}Class Variables}{49}{subsubsection.17.3.3}
+\contentsline {subsection}{\numberline {17.4}Class DES}{49}{subsection.17.4}
+\contentsline {subsubsection}{\numberline {17.4.1}Methods}{50}{subsubsection.17.4.1}
+\contentsline {subsubsection}{\numberline {17.4.2}Properties}{50}{subsubsection.17.4.2}
+\contentsline {subsubsection}{\numberline {17.4.3}Class Variables}{50}{subsubsection.17.4.3}
+\contentsline {subsection}{\numberline {17.5}Class ARC}{51}{subsection.17.5}
+\contentsline {subsubsection}{\numberline {17.5.1}Methods}{51}{subsubsection.17.5.1}
+\contentsline {subsubsection}{\numberline {17.5.2}Properties}{51}{subsubsection.17.5.2}
+\contentsline {subsubsection}{\numberline {17.5.3}Class Variables}{51}{subsubsection.17.5.3}
+\contentsline {subsection}{\numberline {17.6}Class AES}{52}{subsection.17.6}
+\contentsline {subsubsection}{\numberline {17.6.1}Methods}{52}{subsubsection.17.6.1}
+\contentsline {subsubsection}{\numberline {17.6.2}Properties}{52}{subsubsection.17.6.2}
+\contentsline {subsection}{\numberline {17.7}Class HMAC}{52}{subsection.17.7}
+\contentsline {subsubsection}{\numberline {17.7.1}Methods}{53}{subsubsection.17.7.1}
+\contentsline {subsubsection}{\numberline {17.7.2}Properties}{53}{subsubsection.17.7.2}
+\contentsline {subsection}{\numberline {17.8}Class BLOWFISH}{53}{subsection.17.8}
+\contentsline {subsubsection}{\numberline {17.8.1}Methods}{53}{subsubsection.17.8.1}
+\contentsline {subsubsection}{\numberline {17.8.2}Properties}{54}{subsubsection.17.8.2}
+\contentsline {subsection}{\numberline {17.9}Class IDEA}{54}{subsection.17.9}
+\contentsline {subsubsection}{\numberline {17.9.1}Methods}{54}{subsubsection.17.9.1}
+\contentsline {subsubsection}{\numberline {17.9.2}Properties}{55}{subsubsection.17.9.2}
+\contentsline {subsection}{\numberline {17.10}Class CAST128}{55}{subsection.17.10}
+\contentsline {subsubsection}{\numberline {17.10.1}Methods}{55}{subsubsection.17.10.1}
+\contentsline {subsubsection}{\numberline {17.10.2}Properties}{55}{subsubsection.17.10.2}
+\contentsline {subsection}{\numberline {17.11}Class Dsa}{56}{subsection.17.11}
+\contentsline {subsubsection}{\numberline {17.11.1}Methods}{56}{subsubsection.17.11.1}
+\contentsline {subsubsection}{\numberline {17.11.2}Properties}{56}{subsubsection.17.11.2}
+\contentsline {section}{\numberline {18}Module hal.maths.maths}{57}{section.18}
+\contentsline {subsection}{\numberline {18.1}Functions}{57}{subsection.18.1}
+\contentsline {subsection}{\numberline {18.2}Variables}{57}{subsection.18.2}
+\contentsline {subsection}{\numberline {18.3}Class Integer}{57}{subsection.18.3}
+\contentsline {subsubsection}{\numberline {18.3.1}Methods}{57}{subsubsection.18.3.1}
+\contentsline {subsubsection}{\numberline {18.3.2}Properties}{58}{subsubsection.18.3.2}
+\contentsline {subsubsection}{\numberline {18.3.3}Class Variables}{58}{subsubsection.18.3.3}
+\contentsline {subsection}{\numberline {18.4}Class EightQueen}{58}{subsection.18.4}
+\contentsline {subsubsection}{\numberline {18.4.1}Methods}{59}{subsubsection.18.4.1}
+\contentsline {subsubsection}{\numberline {18.4.2}Properties}{59}{subsubsection.18.4.2}
+\contentsline {section}{\numberline {19}Package hal.ml}{60}{section.19}
+\contentsline {subsection}{\numberline {19.1}Modules}{60}{subsection.19.1}
+\contentsline {subsection}{\numberline {19.2}Variables}{60}{subsection.19.2}
+\contentsline {section}{\numberline {20}Package hal.ml.analysis}{61}{section.20}
+\contentsline {subsection}{\numberline {20.1}Modules}{61}{subsection.20.1}
+\contentsline {subsection}{\numberline {20.2}Variables}{61}{subsection.20.2}
+\contentsline {section}{\numberline {21}Module hal.ml.analysis.correlation}{62}{section.21}
+\contentsline {subsection}{\numberline {21.1}Functions}{62}{subsection.21.1}
+\contentsline {section}{\numberline {22}Package hal.ml.data}{64}{section.22}
+\contentsline {subsection}{\numberline {22.1}Modules}{64}{subsection.22.1}
+\contentsline {subsection}{\numberline {22.2}Variables}{64}{subsection.22.2}
+\contentsline {section}{\numberline {23}Module hal.ml.data.parser}{65}{section.23}
+\contentsline {subsection}{\numberline {23.1}Functions}{65}{subsection.23.1}
+\contentsline {subsection}{\numberline {23.2}Variables}{65}{subsection.23.2}
+\contentsline {subsection}{\numberline {23.3}Class Parser}{65}{subsection.23.3}
+\contentsline {subsubsection}{\numberline {23.3.1}Methods}{65}{subsubsection.23.3.1}
+\contentsline {subsubsection}{\numberline {23.3.2}Properties}{66}{subsubsection.23.3.2}
+\contentsline {subsection}{\numberline {23.4}Class CSVParser}{66}{subsection.23.4}
+\contentsline {subsubsection}{\numberline {23.4.1}Methods}{66}{subsubsection.23.4.1}
+\contentsline {subsubsection}{\numberline {23.4.2}Properties}{66}{subsubsection.23.4.2}
+\contentsline {section}{\numberline {24}Module hal.ml.features}{67}{section.24}
+\contentsline {subsection}{\numberline {24.1}Functions}{67}{subsection.24.1}
+\contentsline {section}{\numberline {25}Package hal.ml.models}{68}{section.25}
+\contentsline {subsection}{\numberline {25.1}Modules}{68}{subsection.25.1}
+\contentsline {subsection}{\numberline {25.2}Variables}{68}{subsection.25.2}
+\contentsline {section}{\numberline {26}Module hal.ml.models.classification}{69}{section.26}
+\contentsline {subsection}{\numberline {26.1}Functions}{69}{subsection.26.1}
+\contentsline {section}{\numberline {27}Module hal.ml.models.pipelined}{70}{section.27}
+\contentsline {subsection}{\numberline {27.1}Functions}{70}{subsection.27.1}
+\contentsline {section}{\numberline {28}Module hal.ml.models.regression}{71}{section.28}
+\contentsline {subsection}{\numberline {28.1}Functions}{71}{subsection.28.1}
+\contentsline {section}{\numberline {29}Module hal.ml.models.time\_series}{72}{section.29}
+\contentsline {subsection}{\numberline {29.1}Functions}{72}{subsection.29.1}
+\contentsline {section}{\numberline {30}Module hal.ml.predict}{73}{section.30}
+\contentsline {subsection}{\numberline {30.1}Class BasePrediction}{73}{subsection.30.1}
+\contentsline {subsubsection}{\numberline {30.1.1}Methods}{73}{subsubsection.30.1.1}
+\contentsline {subsubsection}{\numberline {30.1.2}Properties}{73}{subsubsection.30.1.2}
+\contentsline {section}{\numberline {31}Package hal.ml.utils}{74}{section.31}
+\contentsline {subsection}{\numberline {31.1}Modules}{74}{subsection.31.1}
+\contentsline {subsection}{\numberline {31.2}Variables}{74}{subsection.31.2}
+\contentsline {section}{\numberline {32}Module hal.ml.utils.matrix}{75}{section.32}
+\contentsline {subsection}{\numberline {32.1}Functions}{75}{subsection.32.1}
+\contentsline {section}{\numberline {33}Module hal.ml.utils.misc}{78}{section.33}
+\contentsline {subsection}{\numberline {33.1}Functions}{78}{subsection.33.1}
+\contentsline {section}{\numberline {34}Package hal.profile}{80}{section.34}
+\contentsline {subsection}{\numberline {34.1}Modules}{80}{subsection.34.1}
+\contentsline {subsection}{\numberline {34.2}Variables}{80}{subsection.34.2}
+\contentsline {section}{\numberline {35}Module hal.profile.mem}{81}{section.35}
+\contentsline {subsection}{\numberline {35.1}Functions}{81}{subsection.35.1}
+\contentsline {section}{\numberline {36}Module hal.profile.performance}{82}{section.36}
+\contentsline {subsection}{\numberline {36.1}Class EightQueenTest}{82}{subsection.36.1}
+\contentsline {subsubsection}{\numberline {36.1.1}Methods}{82}{subsubsection.36.1.1}
+\contentsline {subsubsection}{\numberline {36.1.2}Properties}{83}{subsubsection.36.1.2}
+\contentsline {section}{\numberline {37}Package hal.strings}{84}{section.37}
+\contentsline {subsection}{\numberline {37.1}Modules}{84}{subsection.37.1}
+\contentsline {subsection}{\numberline {37.2}Variables}{84}{subsection.37.2}
+\contentsline {section}{\numberline {38}Module hal.strings.utils}{85}{section.38}
+\contentsline {subsection}{\numberline {38.1}Functions}{85}{subsection.38.1}
+\contentsline {subsection}{\numberline {38.2}Variables}{85}{subsection.38.2}
+\contentsline {section}{\numberline {39}Package hal.time}{86}{section.39}
+\contentsline {subsection}{\numberline {39.1}Modules}{86}{subsection.39.1}
+\contentsline {subsection}{\numberline {39.2}Variables}{86}{subsection.39.2}
+\contentsline {section}{\numberline {40}Module hal.time.profile}{87}{section.40}
+\contentsline {subsection}{\numberline {40.1}Functions}{87}{subsection.40.1}
+\contentsline {subsection}{\numberline {40.2}Variables}{87}{subsection.40.2}
+\contentsline {section}{\numberline {41}Module hal.time.utils}{88}{section.41}
+\contentsline {subsection}{\numberline {41.1}Functions}{88}{subsection.41.1}
+\contentsline {subsection}{\numberline {41.2}Variables}{88}{subsection.41.2}
+\contentsline {section}{\numberline {42}Package hal.wrappers}{89}{section.42}
+\contentsline {subsection}{\numberline {42.1}Modules}{89}{subsection.42.1}
+\contentsline {subsection}{\numberline {42.2}Variables}{89}{subsection.42.2}
+\contentsline {section}{\numberline {43}Module hal.wrappers.methods}{90}{section.43}
+\contentsline {subsection}{\numberline {43.1}Functions}{90}{subsection.43.1}
+\contentsline {section}{Index}{91}{section*.2}
