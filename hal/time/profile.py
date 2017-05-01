@@ -77,16 +77,18 @@ def print_item_info(details):
     )  # debug info
 
 
-def print_time_eta(time_to_go):
+def print_time_eta(time_to_go, note=""):
     """
     :param time_to_go: {}
         Result of a call get_time_eta(...)
+    :param note: str
+        Notes to append to stdout
     :return: void
         Prints debug info to screen
     """
 
     print(
-        str(time_to_go["done"]) + "/" + str(time_to_go["tot"]), "(" + str(time_to_go["%"]) + "%)",
+        str(note), str(time_to_go["done"]) + "/" + str(time_to_go["tot"]), "(" + str(time_to_go["%"]) + "%)",
         "ETA {:20.19}".format(
             str(time_to_go["h"]) + "h " + str(time_to_go["m"]) + "\' " + str(time_to_go["s"]) + "\""
         )
