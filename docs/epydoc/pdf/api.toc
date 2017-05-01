@@ -177,33 +177,38 @@
 \contentsline {subsection}{\numberline {32.1}Functions}{75}{subsection.32.1}
 \contentsline {section}{\numberline {33}Module hal.ml.utils.misc}{78}{section.33}
 \contentsline {subsection}{\numberline {33.1}Functions}{78}{subsection.33.1}
-\contentsline {section}{\numberline {34}Package hal.profile}{80}{section.34}
+\contentsline {section}{\numberline {34}Package hal.mongodb}{80}{section.34}
 \contentsline {subsection}{\numberline {34.1}Modules}{80}{subsection.34.1}
 \contentsline {subsection}{\numberline {34.2}Variables}{80}{subsection.34.2}
-\contentsline {section}{\numberline {35}Module hal.profile.mem}{81}{section.35}
+\contentsline {section}{\numberline {35}Module hal.mongodb.utils}{81}{section.35}
 \contentsline {subsection}{\numberline {35.1}Functions}{81}{subsection.35.1}
-\contentsline {section}{\numberline {36}Module hal.profile.performance}{82}{section.36}
-\contentsline {subsection}{\numberline {36.1}Class EightQueenTest}{82}{subsection.36.1}
-\contentsline {subsubsection}{\numberline {36.1.1}Methods}{82}{subsubsection.36.1.1}
-\contentsline {subsubsection}{\numberline {36.1.2}Properties}{83}{subsubsection.36.1.2}
-\contentsline {section}{\numberline {37}Package hal.strings}{84}{section.37}
-\contentsline {subsection}{\numberline {37.1}Modules}{84}{subsection.37.1}
-\contentsline {subsection}{\numberline {37.2}Variables}{84}{subsection.37.2}
-\contentsline {section}{\numberline {38}Module hal.strings.utils}{85}{section.38}
-\contentsline {subsection}{\numberline {38.1}Functions}{85}{subsection.38.1}
-\contentsline {subsection}{\numberline {38.2}Variables}{85}{subsection.38.2}
-\contentsline {section}{\numberline {39}Package hal.time}{86}{section.39}
+\contentsline {section}{\numberline {36}Package hal.profile}{82}{section.36}
+\contentsline {subsection}{\numberline {36.1}Modules}{82}{subsection.36.1}
+\contentsline {subsection}{\numberline {36.2}Variables}{82}{subsection.36.2}
+\contentsline {section}{\numberline {37}Module hal.profile.mem}{83}{section.37}
+\contentsline {subsection}{\numberline {37.1}Functions}{83}{subsection.37.1}
+\contentsline {section}{\numberline {38}Module hal.profile.performance}{84}{section.38}
+\contentsline {subsection}{\numberline {38.1}Class EightQueenTest}{84}{subsection.38.1}
+\contentsline {subsubsection}{\numberline {38.1.1}Methods}{84}{subsubsection.38.1.1}
+\contentsline {subsubsection}{\numberline {38.1.2}Properties}{85}{subsubsection.38.1.2}
+\contentsline {section}{\numberline {39}Package hal.strings}{86}{section.39}
 \contentsline {subsection}{\numberline {39.1}Modules}{86}{subsection.39.1}
 \contentsline {subsection}{\numberline {39.2}Variables}{86}{subsection.39.2}
-\contentsline {section}{\numberline {40}Module hal.time.profile}{87}{section.40}
+\contentsline {section}{\numberline {40}Module hal.strings.utils}{87}{section.40}
 \contentsline {subsection}{\numberline {40.1}Functions}{87}{subsection.40.1}
 \contentsline {subsection}{\numberline {40.2}Variables}{87}{subsection.40.2}
-\contentsline {section}{\numberline {41}Module hal.time.utils}{88}{section.41}
-\contentsline {subsection}{\numberline {41.1}Functions}{88}{subsection.41.1}
+\contentsline {section}{\numberline {41}Package hal.time}{88}{section.41}
+\contentsline {subsection}{\numberline {41.1}Modules}{88}{subsection.41.1}
 \contentsline {subsection}{\numberline {41.2}Variables}{88}{subsection.41.2}
-\contentsline {section}{\numberline {42}Package hal.wrappers}{89}{section.42}
-\contentsline {subsection}{\numberline {42.1}Modules}{89}{subsection.42.1}
+\contentsline {section}{\numberline {42}Module hal.time.profile}{89}{section.42}
+\contentsline {subsection}{\numberline {42.1}Functions}{89}{subsection.42.1}
 \contentsline {subsection}{\numberline {42.2}Variables}{89}{subsection.42.2}
-\contentsline {section}{\numberline {43}Module hal.wrappers.methods}{90}{section.43}
+\contentsline {section}{\numberline {43}Module hal.time.utils}{90}{section.43}
 \contentsline {subsection}{\numberline {43.1}Functions}{90}{subsection.43.1}
-\contentsline {section}{Index}{91}{section*.2}
+\contentsline {subsection}{\numberline {43.2}Variables}{90}{subsection.43.2}
+\contentsline {section}{\numberline {44}Package hal.wrappers}{91}{section.44}
+\contentsline {subsection}{\numberline {44.1}Modules}{91}{subsection.44.1}
+\contentsline {subsection}{\numberline {44.2}Variables}{91}{subsection.44.2}
+\contentsline {section}{\numberline {45}Module hal.wrappers.methods}{92}{section.45}
+\contentsline {subsection}{\numberline {45.1}Functions}{92}{subsection.45.1}
+\contentsline {section}{Index}{93}{section*.2}

@@ -39,7 +39,7 @@ DESCRIPTION = \
 
 setup(
     name="PyHal",
-    version="4.4.9",
+    version="4.5",
     author="sirfoga",
     author_email="sirfoga@protonmail.com",
     description="Hal is a from-scratch home-made multipurpose library to perform most of stuff in python.",
@@ -57,7 +57,8 @@ setup(
         "sklearn",
         "requests",
         "lxml",
-        "send2trash"
+        "send2trash",
+        "pymongo"
     ],
     test_suite="tests"
 )

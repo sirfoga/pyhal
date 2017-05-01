@@ -121,6 +121,10 @@ hal.ml.utils.misc.recall	hal.ml.utils.misc-module.html#recall
 hal.ml.utils.misc.tn_rate	hal.ml.utils.misc-module.html#tn_rate
 hal.ml.utils.misc.precision	hal.ml.utils.misc-module.html#precision
 hal.ml.utils.misc.accuracy	hal.ml.utils.misc-module.html#accuracy
+hal.mongodb	hal.mongodb-module.html
+hal.mongodb.__package__	hal.mongodb-module.html#__package__
+hal.mongodb.utils	hal.mongodb.utils-module.html
+hal.mongodb.utils.get_documents_count	hal.mongodb.utils-module.html#get_documents_count
 hal.profile	hal.profile-module.html
 hal.profile.__package__	hal.profile-module.html#__package__
 hal.profile.mem	hal.profile.mem-module.html

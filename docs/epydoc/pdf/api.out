@@ -177,33 +177,38 @@
 \BOOKMARK [2][-]{subsection.32.1}{Functions}{section.32}% 177
 \BOOKMARK [1][-]{section.33}{Module hal.ml.utils.misc}{}% 178
 \BOOKMARK [2][-]{subsection.33.1}{Functions}{section.33}% 179
-\BOOKMARK [1][-]{section.34}{Package hal.profile}{}% 180
+\BOOKMARK [1][-]{section.34}{Package hal.mongodb}{}% 180
 \BOOKMARK [2][-]{subsection.34.1}{Modules}{section.34}% 181
 \BOOKMARK [2][-]{subsection.34.2}{Variables}{section.34}% 182
-\BOOKMARK [1][-]{section.35}{Module hal.profile.mem}{}% 183
+\BOOKMARK [1][-]{section.35}{Module hal.mongodb.utils}{}% 183
 \BOOKMARK [2][-]{subsection.35.1}{Functions}{section.35}% 184
-\BOOKMARK [1][-]{section.36}{Module hal.profile.performance}{}% 185
-\BOOKMARK [2][-]{subsection.36.1}{Class EightQueenTest}{section.36}% 186
-\BOOKMARK [3][-]{subsubsection.36.1.1}{Methods}{subsection.36.1}% 187
-\BOOKMARK [3][-]{subsubsection.36.1.2}{Properties}{subsection.36.1}% 188
-\BOOKMARK [1][-]{section.37}{Package hal.strings}{}% 189
-\BOOKMARK [2][-]{subsection.37.1}{Modules}{section.37}% 190
-\BOOKMARK [2][-]{subsection.37.2}{Variables}{section.37}% 191
-\BOOKMARK [1][-]{section.38}{Module hal.strings.utils}{}% 192
-\BOOKMARK [2][-]{subsection.38.1}{Functions}{section.38}% 193
-\BOOKMARK [2][-]{subsection.38.2}{Variables}{section.38}% 194
-\BOOKMARK [1][-]{section.39}{Package hal.time}{}% 195
-\BOOKMARK [2][-]{subsection.39.1}{Modules}{section.39}% 196
-\BOOKMARK [2][-]{subsection.39.2}{Variables}{section.39}% 197
-\BOOKMARK [1][-]{section.40}{Module hal.time.profile}{}% 198
-\BOOKMARK [2][-]{subsection.40.1}{Functions}{section.40}% 199
-\BOOKMARK [2][-]{subsection.40.2}{Variables}{section.40}% 200
-\BOOKMARK [1][-]{section.41}{Module hal.time.utils}{}% 201
-\BOOKMARK [2][-]{subsection.41.1}{Functions}{section.41}% 202
-\BOOKMARK [2][-]{subsection.41.2}{Variables}{section.41}% 203
-\BOOKMARK [1][-]{section.42}{Package hal.wrappers}{}% 204
-\BOOKMARK [2][-]{subsection.42.1}{Modules}{section.42}% 205
-\BOOKMARK [2][-]{subsection.42.2}{Variables}{section.42}% 206
-\BOOKMARK [1][-]{section.43}{Module hal.wrappers.methods}{}% 207
-\BOOKMARK [2][-]{subsection.43.1}{Functions}{section.43}% 208
-\BOOKMARK [1][-]{section*.2}{Index}{}% 209
+\BOOKMARK [1][-]{section.36}{Package hal.profile}{}% 185
+\BOOKMARK [2][-]{subsection.36.1}{Modules}{section.36}% 186
+\BOOKMARK [2][-]{subsection.36.2}{Variables}{section.36}% 187
+\BOOKMARK [1][-]{section.37}{Module hal.profile.mem}{}% 188
+\BOOKMARK [2][-]{subsection.37.1}{Functions}{section.37}% 189
+\BOOKMARK [1][-]{section.38}{Module hal.profile.performance}{}% 190
+\BOOKMARK [2][-]{subsection.38.1}{Class EightQueenTest}{section.38}% 191
+\BOOKMARK [3][-]{subsubsection.38.1.1}{Methods}{subsection.38.1}% 192
+\BOOKMARK [3][-]{subsubsection.38.1.2}{Properties}{subsection.38.1}% 193
+\BOOKMARK [1][-]{section.39}{Package hal.strings}{}% 194
+\BOOKMARK [2][-]{subsection.39.1}{Modules}{section.39}% 195
+\BOOKMARK [2][-]{subsection.39.2}{Variables}{section.39}% 196
+\BOOKMARK [1][-]{section.40}{Module hal.strings.utils}{}% 197
+\BOOKMARK [2][-]{subsection.40.1}{Functions}{section.40}% 198
+\BOOKMARK [2][-]{subsection.40.2}{Variables}{section.40}% 199
+\BOOKMARK [1][-]{section.41}{Package hal.time}{}% 200
+\BOOKMARK [2][-]{subsection.41.1}{Modules}{section.41}% 201
+\BOOKMARK [2][-]{subsection.41.2}{Variables}{section.41}% 202
+\BOOKMARK [1][-]{section.42}{Module hal.time.profile}{}% 203
+\BOOKMARK [2][-]{subsection.42.1}{Functions}{section.42}% 204
+\BOOKMARK [2][-]{subsection.42.2}{Variables}{section.42}% 205
+\BOOKMARK [1][-]{section.43}{Module hal.time.utils}{}% 206
+\BOOKMARK [2][-]{subsection.43.1}{Functions}{section.43}% 207
+\BOOKMARK [2][-]{subsection.43.2}{Variables}{section.43}% 208
+\BOOKMARK [1][-]{section.44}{Package hal.wrappers}{}% 209
+\BOOKMARK [2][-]{subsection.44.1}{Modules}{section.44}% 210
+\BOOKMARK [2][-]{subsection.44.2}{Variables}{section.44}% 211
+\BOOKMARK [1][-]{section.45}{Module hal.wrappers.methods}{}% 212
+\BOOKMARK [2][-]{subsection.45.1}{Functions}{section.45}% 213
+\BOOKMARK [1][-]{section*.2}{Index}{}% 214

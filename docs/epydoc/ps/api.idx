@@ -279,41 +279,46 @@
 \indexentry{hal \textit{(package)}!hal.ml \textit{(package)}!hal.ml.utils \textit{(package)}!hal.ml.utils.misc \textit{(module)}!hal.ml.utils.misc.pearson \textit{(function)}|hyperpage}{79}
 \indexentry{hal \textit{(package)}!hal.ml \textit{(package)}!hal.ml.utils \textit{(package)}!hal.ml.utils.misc \textit{(module)}!hal.ml.utils.misc.normalize\_array \textit{(function)}|hyperpage}{79}
 \indexentry{hal \textit{(package)}!hal.ml \textit{(package)}!hal.ml.utils \textit{(package)}!hal.ml.utils.misc \textit{(module)}|)hyperpage}{79}
-\indexentry{hal \textit{(package)}!hal.profile \textit{(package)}|(hyperpage}{80}
-\indexentry{hal \textit{(package)}!hal.profile \textit{(package)}|)hyperpage}{80}
-\indexentry{hal \textit{(package)}!hal.profile \textit{(package)}!hal.profile.mem \textit{(module)}|(hyperpage}{81}
-\indexentry{hal \textit{(package)}!hal.profile \textit{(package)}!hal.profile.mem \textit{(module)}!hal.profile.mem.get\_memory\_usage \textit{(function)}|hyperpage}{81}
-\indexentry{hal \textit{(package)}!hal.profile \textit{(package)}!hal.profile.mem \textit{(module)}!hal.profile.mem.force\_garbage\_collect \textit{(function)}|hyperpage}{81}
-\indexentry{hal \textit{(package)}!hal.profile \textit{(package)}!hal.profile.mem \textit{(module)}|)hyperpage}{81}
-\indexentry{hal \textit{(package)}!hal.profile \textit{(package)}!hal.profile.performance \textit{(module)}|(hyperpage}{82}
-\indexentry{hal \textit{(package)}!hal.profile \textit{(package)}!hal.profile.performance \textit{(module)}!hal.profile.performance.EightQueenTest \textit{(class)}|(hyperpage}{82}
-\indexentry{hal \textit{(package)}!hal.profile \textit{(package)}!hal.profile.performance \textit{(module)}!hal.profile.performance.EightQueenTest \textit{(class)}!hal.profile.performance.EightQueenTest.welcome \textit{(static method)}|hyperpage}{82}
-\indexentry{hal \textit{(package)}!hal.profile \textit{(package)}!hal.profile.performance \textit{(module)}!hal.profile.performance.EightQueenTest \textit{(class)}!hal.profile.performance.EightQueenTest.introduction \textit{(static method)}|hyperpage}{82}
-\indexentry{hal \textit{(package)}!hal.profile \textit{(package)}!hal.profile.performance \textit{(module)}!hal.profile.performance.EightQueenTest \textit{(class)}!hal.profile.performance.EightQueenTest.run\_test\_with\_size \textit{(static method)}|hyperpage}{82}
-\indexentry{hal \textit{(package)}!hal.profile \textit{(package)}!hal.profile.performance \textit{(module)}!hal.profile.performance.EightQueenTest \textit{(class)}!hal.profile.performance.EightQueenTest.update\_std\_out\_and\_log \textit{(method)}|hyperpage}{82}
-\indexentry{hal \textit{(package)}!hal.profile \textit{(package)}!hal.profile.performance \textit{(module)}!hal.profile.performance.EightQueenTest \textit{(class)}!hal.profile.performance.EightQueenTest.start \textit{(method)}|hyperpage}{83}
-\indexentry{hal \textit{(package)}!hal.profile \textit{(package)}!hal.profile.performance \textit{(module)}!hal.profile.performance.EightQueenTest \textit{(class)}|)hyperpage}{83}
-\indexentry{hal \textit{(package)}!hal.profile \textit{(package)}!hal.profile.performance \textit{(module)}|)hyperpage}{83}
-\indexentry{hal \textit{(package)}!hal.strings \textit{(package)}|(hyperpage}{84}
-\indexentry{hal \textit{(package)}!hal.strings \textit{(package)}|)hyperpage}{84}
-\indexentry{hal \textit{(package)}!hal.strings \textit{(package)}!hal.strings.utils \textit{(module)}|(hyperpage}{85}
-\indexentry{hal \textit{(package)}!hal.strings \textit{(package)}!hal.strings.utils \textit{(module)}!hal.strings.utils.how\_similar\_are \textit{(function)}|hyperpage}{85}
-\indexentry{hal \textit{(package)}!hal.strings \textit{(package)}!hal.strings.utils \textit{(module)}!hal.strings.utils.get\_average\_length\_of\_word \textit{(function)}|hyperpage}{85}
-\indexentry{hal \textit{(package)}!hal.strings \textit{(package)}!hal.strings.utils \textit{(module)}|)hyperpage}{85}
-\indexentry{hal \textit{(package)}!hal.time \textit{(package)}|(hyperpage}{86}
-\indexentry{hal \textit{(package)}!hal.time \textit{(package)}|)hyperpage}{86}
-\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.profile \textit{(module)}|(hyperpage}{87}
-\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.profile \textit{(module)}!hal.time.profile.get\_time\_eta \textit{(function)}|hyperpage}{87}
-\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.profile \textit{(module)}!hal.time.profile.print\_item\_info \textit{(function)}|hyperpage}{87}
-\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.profile \textit{(module)}!hal.time.profile.print\_time\_eta \textit{(function)}|hyperpage}{87}
-\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.profile \textit{(module)}|)hyperpage}{87}
-\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.utils \textit{(module)}|(hyperpage}{88}
-\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.utils \textit{(module)}!hal.time.utils.parse\_hh\_mm\_ss \textit{(function)}|hyperpage}{88}
-\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.utils \textit{(module)}!hal.time.utils.get\_seconds \textit{(function)}|hyperpage}{88}
-\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.utils \textit{(module)}!hal.time.utils.parse\_hh\_mm \textit{(function)}|hyperpage}{88}
-\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.utils \textit{(module)}|)hyperpage}{88}
-\indexentry{hal \textit{(package)}!hal.wrappers \textit{(package)}|(hyperpage}{89}
-\indexentry{hal \textit{(package)}!hal.wrappers \textit{(package)}|)hyperpage}{89}
-\indexentry{hal \textit{(package)}!hal.wrappers \textit{(package)}!hal.wrappers.methods \textit{(module)}|(hyperpage}{90}
-\indexentry{hal \textit{(package)}!hal.wrappers \textit{(package)}!hal.wrappers.methods \textit{(module)}!hal.wrappers.methods.handle\_exceptions \textit{(function)}|hyperpage}{90}
-\indexentry{hal \textit{(package)}!hal.wrappers \textit{(package)}!hal.wrappers.methods \textit{(module)}|)hyperpage}{90}
+\indexentry{hal \textit{(package)}!hal.mongodb \textit{(package)}|(hyperpage}{80}
+\indexentry{hal \textit{(package)}!hal.mongodb \textit{(package)}|)hyperpage}{80}
+\indexentry{hal \textit{(package)}!hal.mongodb \textit{(package)}!hal.mongodb.utils \textit{(module)}|(hyperpage}{81}
+\indexentry{hal \textit{(package)}!hal.mongodb \textit{(package)}!hal.mongodb.utils \textit{(module)}!hal.mongodb.utils.get\_documents\_count \textit{(function)}|hyperpage}{81}
+\indexentry{hal \textit{(package)}!hal.mongodb \textit{(package)}!hal.mongodb.utils \textit{(module)}|)hyperpage}{81}
+\indexentry{hal \textit{(package)}!hal.profile \textit{(package)}|(hyperpage}{82}
+\indexentry{hal \textit{(package)}!hal.profile \textit{(package)}|)hyperpage}{82}
+\indexentry{hal \textit{(package)}!hal.profile \textit{(package)}!hal.profile.mem \textit{(module)}|(hyperpage}{83}
+\indexentry{hal \textit{(package)}!hal.profile \textit{(package)}!hal.profile.mem \textit{(module)}!hal.profile.mem.get\_memory\_usage \textit{(function)}|hyperpage}{83}
+\indexentry{hal \textit{(package)}!hal.profile \textit{(package)}!hal.profile.mem \textit{(module)}!hal.profile.mem.force\_garbage\_collect \textit{(function)}|hyperpage}{83}
+\indexentry{hal \textit{(package)}!hal.profile \textit{(package)}!hal.profile.mem \textit{(module)}|)hyperpage}{83}
+\indexentry{hal \textit{(package)}!hal.profile \textit{(package)}!hal.profile.performance \textit{(module)}|(hyperpage}{84}
+\indexentry{hal \textit{(package)}!hal.profile \textit{(package)}!hal.profile.performance \textit{(module)}!hal.profile.performance.EightQueenTest \textit{(class)}|(hyperpage}{84}
+\indexentry{hal \textit{(package)}!hal.profile \textit{(package)}!hal.profile.performance \textit{(module)}!hal.profile.performance.EightQueenTest \textit{(class)}!hal.profile.performance.EightQueenTest.welcome \textit{(static method)}|hyperpage}{84}
+\indexentry{hal \textit{(package)}!hal.profile \textit{(package)}!hal.profile.performance \textit{(module)}!hal.profile.performance.EightQueenTest \textit{(class)}!hal.profile.performance.EightQueenTest.introduction \textit{(static method)}|hyperpage}{84}
+\indexentry{hal \textit{(package)}!hal.profile \textit{(package)}!hal.profile.performance \textit{(module)}!hal.profile.performance.EightQueenTest \textit{(class)}!hal.profile.performance.EightQueenTest.run\_test\_with\_size \textit{(static method)}|hyperpage}{84}
+\indexentry{hal \textit{(package)}!hal.profile \textit{(package)}!hal.profile.performance \textit{(module)}!hal.profile.performance.EightQueenTest \textit{(class)}!hal.profile.performance.EightQueenTest.update\_std\_out\_and\_log \textit{(method)}|hyperpage}{84}
+\indexentry{hal \textit{(package)}!hal.profile \textit{(package)}!hal.profile.performance \textit{(module)}!hal.profile.performance.EightQueenTest \textit{(class)}!hal.profile.performance.EightQueenTest.start \textit{(method)}|hyperpage}{85}
+\indexentry{hal \textit{(package)}!hal.profile \textit{(package)}!hal.profile.performance \textit{(module)}!hal.profile.performance.EightQueenTest \textit{(class)}|)hyperpage}{85}
+\indexentry{hal \textit{(package)}!hal.profile \textit{(package)}!hal.profile.performance \textit{(module)}|)hyperpage}{85}
+\indexentry{hal \textit{(package)}!hal.strings \textit{(package)}|(hyperpage}{86}
+\indexentry{hal \textit{(package)}!hal.strings \textit{(package)}|)hyperpage}{86}
+\indexentry{hal \textit{(package)}!hal.strings \textit{(package)}!hal.strings.utils \textit{(module)}|(hyperpage}{87}
+\indexentry{hal \textit{(package)}!hal.strings \textit{(package)}!hal.strings.utils \textit{(module)}!hal.strings.utils.how\_similar\_are \textit{(function)}|hyperpage}{87}
+\indexentry{hal \textit{(package)}!hal.strings \textit{(package)}!hal.strings.utils \textit{(module)}!hal.strings.utils.get\_average\_length\_of\_word \textit{(function)}|hyperpage}{87}
+\indexentry{hal \textit{(package)}!hal.strings \textit{(package)}!hal.strings.utils \textit{(module)}|)hyperpage}{87}
+\indexentry{hal \textit{(package)}!hal.time \textit{(package)}|(hyperpage}{88}
+\indexentry{hal \textit{(package)}!hal.time \textit{(package)}|)hyperpage}{88}
+\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.profile \textit{(module)}|(hyperpage}{89}
+\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.profile \textit{(module)}!hal.time.profile.get\_time\_eta \textit{(function)}|hyperpage}{89}
+\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.profile \textit{(module)}!hal.time.profile.print\_item\_info \textit{(function)}|hyperpage}{89}
+\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.profile \textit{(module)}!hal.time.profile.print\_time\_eta \textit{(function)}|hyperpage}{89}
+\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.profile \textit{(module)}|)hyperpage}{89}
+\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.utils \textit{(module)}|(hyperpage}{90}
+\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.utils \textit{(module)}!hal.time.utils.parse\_hh\_mm\_ss \textit{(function)}|hyperpage}{90}
+\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.utils \textit{(module)}!hal.time.utils.get\_seconds \textit{(function)}|hyperpage}{90}
+\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.utils \textit{(module)}!hal.time.utils.parse\_hh\_mm \textit{(function)}|hyperpage}{90}
+\indexentry{hal \textit{(package)}!hal.time \textit{(package)}!hal.time.utils \textit{(module)}|)hyperpage}{90}
+\indexentry{hal \textit{(package)}!hal.wrappers \textit{(package)}|(hyperpage}{91}
+\indexentry{hal \textit{(package)}!hal.wrappers \textit{(package)}|)hyperpage}{91}
+\indexentry{hal \textit{(package)}!hal.wrappers \textit{(package)}!hal.wrappers.methods \textit{(module)}|(hyperpage}{92}
+\indexentry{hal \textit{(package)}!hal.wrappers \textit{(package)}!hal.wrappers.methods \textit{(module)}!hal.wrappers.methods.handle\_exceptions \textit{(function)}|hyperpage}{92}
+\indexentry{hal \textit{(package)}!hal.wrappers \textit{(package)}!hal.wrappers.methods \textit{(module)}|)hyperpage}{92}
