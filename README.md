@@ -1,6 +1,8 @@
 # HAL: Handy Algorithmic Library
 
-[![PyPI version](https://badge.fury.io/py/PyHal.svg)](https://pypi.python.org/pypi/PyHal) [![Build Status](https://travis-ci.org/sirfoga/pyhal.svg?branch=master)](https://travis-ci.org/sirfoga/hal) [![Code Health](https://landscape.io/github/sirfoga/pyhal/master/landscape.svg?style=flat)](https://landscape.io/github/sirfoga/hal/master) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fsirfoga%2Fpyhal.svg?type=shield)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fsirfoga%2Fpyhal?ref=badge_shield)
+[![Build Status](https://travis-ci.org/sirfoga/pyhal.svg?branch=master)](https://travis-ci.org/sirfoga/hal) [![Code Health](https://landscape.io/github/sirfoga/pyhal/master/landscape.svg?style=flat)](https://landscape.io/github/sirfoga/hal/master) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fsirfoga%2Fpyhal.svg?type=shield)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fsirfoga%2Fpyhal?ref=badge_shield) [![PyPI version](https://badge.fury.io/py/PyHal.svg)](https://pypi.python.org/pypi/PyHal)
+
+![pylint Score](https://mperlet.de/pybadge/badges/8.78.svg)
 
 <!-- [![Coverage Status](https://coveralls.io/repos/github/sirfoga/hal/badge.svg?branch=master)](https://coveralls.io/github/sirfoga/hal?branch=master) -->
 

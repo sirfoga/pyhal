@@ -2,6 +2,8 @@
 All notable changes to this project will be documented in this file.
 
 ## 4.6
+### Added
+- Pylint badge in README
 ### Fixed
 - duplicate code in ml.utils.misc
 - cleaned code (PEP8 compliant, score: 8.78/10)
