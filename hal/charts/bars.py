@@ -16,6 +16,8 @@
 # limitations under the License.
 
 
+""" Create easily bar charts """
+
 import numpy as np
 from matplotlib import cm
 from matplotlib import pyplot as plt
@@ -90,15 +92,21 @@ def create_multiple_bar_chart(title, x_labels, mul_y_values, mul_y_labels,
     ax_series = []
     for i in range(y_counts):
         x_pos = range(len(x_labels))  # x points
-        x_pos = np.array(x_pos) + x_shifts[
-            i]  # shift x points for each y series
+        x_pos = np.array(x_pos) + x_shifts[i]  # shift for each y series
         if normalize:  # normalize array
-            b = ax1.bar(x_pos, normalize_array(mul_y_values[i]),
-                        width=bar_width, align="center", color=colors[i])
+            y_values = normalize_array(mul_y_values[i]),
         else:
-            b = ax1.bar(x_pos, mul_y_values[i], width=bar_width,
-                        align="center", color=colors[i])
-        ax_series.append(b)
+            y_values = mul_y_values[i],
+
+        ax_series.append(
+            ax1.bar(
+                x_pos,
+                y_values,
+                width=bar_width,
+                align="center",
+                color=colors[i]
+            )
+        )
 
     ax1.legend(ax_series, mul_y_labels)
 

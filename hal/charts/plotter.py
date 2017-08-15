@@ -60,13 +60,12 @@ class Plot2d(object):
         else:
             if min_val > max_val:
                 self.param(functionx, functiony, max_val, min_val, points)
-            pass
 
-    def plot(self, function, min, max, points):
+    def plot(self, function, min_val, max_val, points):
         """
         :param function: function to plot
-        :param min: minimum value
-        :param max: maximum value
+        :param min_val: minimum value
+        :param max_val: maximum value
         :param points: number of points
         :return: plot 2d function
         """
@@ -74,18 +73,17 @@ class Plot2d(object):
         if points < 0:
             raise ValueError("Number of points to plot must be positive.")
         else:
-            if min > max:
-                self.plot(function, max, min, points)
+            if min_val > max_val:
+                self.plot(function, max_val, min_val, points)
             else:
-                # limits and plot
-                x = linspace(min, max, points)
-                plt.plot(x, function(x))
-
-                # show
+                x_values = linspace(min_val, max_val, points)
+                plt.plot(x_values, function(x_values))
                 plt.show()
 
 
 class Plot3d(object):
+    """ 3D plot """
+
     @staticmethod
     def scatter(vectorx, vectory, vectorz):
         """
@@ -98,10 +96,10 @@ class Plot3d(object):
         if len(vectorx) == len(vectory) == len(vectorz):
             # general settings
             fig = plt.figure()
-            ax = fig.add_subplot(111, projection="3d")
+            chart = fig.add_subplot(111, projection="3d")
 
             # plot
-            ax.scatter(vectorx, vectory, vectorz, c="r", marker="o")
+            chart.scatter(vectorx, vectory, vectorz, c="r", marker="o")
             plt.show()
         else:
             raise ValueError("Cannot plot vectors of different length.")
@@ -131,18 +129,18 @@ class Plot3d(object):
                 )
             # general settings
             fig = plt.figure()
-            ax = fig.gca(projection="3d")
+            chart = fig.gca(projection="3d")
 
             # limits and plot
             theta = linspace(min_val, max_val, points)
 
             # z = linspace(-2, 2, 100)
             # r = z**2 + 1
-            x = functionx(theta)
-            y = functiony(theta)
-            z = functionz(theta)
-            ax.plot(x, y, z)
-            ax.legend()
+            x_axis = functionx(theta)
+            y_axis = functiony(theta)
+            z_axis = functionz(theta)
+            chart.plot(x_axis, y_axis, z_axis)
+            chart.legend()
 
             # show
             plt.show()
@@ -168,21 +166,28 @@ class Plot3d(object):
             self.plot(function, minx, maxx, pointsx, maxy, miny, pointsy)
 
         # general settings
-        # fig = plt.figure()
-        ax = plt.axes(projection="3d")
+        chart = plt.axes(projection="3d")
 
         # points
-        x = numpy.outer(linspace(minx, maxx, pointsx), numpy.ones(pointsx))
-        y = numpy.outer(linspace(miny, maxy, pointsy), numpy.ones(pointsy)).T
-        z = function(x, y)
+        x_axis = numpy.outer(
+            linspace(minx, maxx, pointsx), numpy.ones(pointsx)
+        )
+        y_axis = numpy.outer(
+            linspace(miny, maxy, pointsy), numpy.ones(pointsy)
+        ).T
+        z_axis = function(x_axis, y_axis)
 
         # plot
-        ax.plot_surface(x, y, z, cmap=plt.cm.jet, rstride=1, cstride=1,
-                        linewidth=0)
+        chart.plot_surface(
+            x_axis, y_axis, z_axis,
+            cmap=plt.cm.jet, rstride=1, cstride=1, linewidth=0
+        )
         plt.show()
 
 
 class Plot4d(object):
+    """ 4D plot generator with slider """
+
     @staticmethod
     def scatter(vectorx, vectory, vectorz, vectorw):
         """
@@ -282,7 +287,7 @@ class Plot4d(object):
             return float(max_val - min_val) / float(10 * prec)
 
         if kind == "slice":
-            ax = plt.axes(projection="3d")  # general settings
+            chart_axis = plt.axes(projection="3d")  # general settings
             pointsx = get_precision(minx, maxx)
             pointsy = get_precision(miny, maxz)
 
@@ -300,20 +305,22 @@ class Plot4d(object):
                 :return: re-plot
                 """
 
-                ax.clear()
+                chart_axis.clear()
                 x_const = slider.val
-                Z = function(x_const, x_ax, y_ax)
-                ax.plot_surface(x_ax, y_ax, Z, alpha=0.3, linewidth=2.0)
-                set_labels(ax, "y", "z", "w")
+                z_axis = function(x_const, x_ax, y_ax)
+                chart_axis.plot_surface(
+                    x_ax, y_ax, z_axis, alpha=0.3, linewidth=2.0
+                )
+                set_labels(chart_axis, "y", "z", "w")
 
             slider.on_changed(update)
-            set_labels(ax, "y", "z", "w")
+            set_labels(chart_axis, "y", "z", "w")
             # plot
             plt.show()
         else:  # kind = contour
             # general settings
             fig = plt.figure()
-            ax = fig.gca(projection="3d")
+            chart_axis = fig.gca(projection="3d")
 
             # create axes
             x_ax = numpy.arange(minx, maxx, get_precision_delta(
@@ -334,22 +341,21 @@ class Plot4d(object):
                 :return: re-plot plot
                 """
 
-                # replot
-                ax.clear()
+                chart_axis.clear()  # replot
                 x_const = slider.val
-                Z = []
+                z_axis = []
 
                 # add new points
-                for i in range(len(x_ax)):
-                    Z.append(function(x_const, x_ax[i], y_ax[i]))
+                for i, _ in enumerate(x_ax):
+                    z_axis.append(function(x_const, x_ax[i], y_ax[i]))
 
                 # show
                 # cset = ax.contour(X, Y, Z, zdir="x", offset=minx)
                 # cset = ax.contour(X, Y, Z, zdir="y", offset=miny)
                 # cset = ax.contour(X, Y, Z, zdir="z", offset=minz)
                 # cset = ax.contour(X, Y, Z, extend3d=True)
-                set_labels(ax, "y", "z", "w")
+                set_labels(chart_axis, "y", "z", "w")
 
             slider.on_changed(update)
-            set_limits(ax, minx, maxx, miny, maxy, minz, maxz)
+            set_limits(chart_axis, minx, maxx, miny, maxy, minz, maxz)
             plt.show()
