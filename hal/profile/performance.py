@@ -66,12 +66,12 @@ class EightQueenTest(object):
                  "eight queens puzzle is a good example of a nontrivial " \
                  "problem. For this reason, it is often used as an example " \
                  "problem for various programming techniques, including " \
-                 "non-traditional approaches such as constraint programming, " \
-                 "logic programming or genetic algorithms. Most often, " \
+                 "non-traditional approaches such as constraint programming," \
+                 " logic programming or genetic algorithms. Most often, " \
                  "it is used as an example of a problem that can be solved " \
                  "with a recursive algorithm (read more here: " \
-                 "https://en.wikipedia.org/wiki/Eight_queens_puzzle) ... and " \
-                 "since recursion involves both RAM storage and CPU use of " \
+                 "https://en.wikipedia.org/wiki/Eight_queens_puzzle) ... and" \
+                 " since recursion involves both RAM storage and CPU use of " \
                  "your machine, this problem is a good tester to test your " \
                  "PC speed! Now let\'s get started.. "
         return output
