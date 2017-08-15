@@ -16,6 +16,8 @@
 # limitations under the License.
 
 
+""" Profile OS memory """
+
 import gc
 import os
 
@@ -29,8 +31,8 @@ def get_memory_usage():
     """
 
     process = psutil.Process(os.getpid())
-    m = process.memory_info().rss
-    return m / (1024 * 1024)
+    mem = process.memory_info().rss
+    return mem / (1024 * 1024)
 
 
 def force_garbage_collect():

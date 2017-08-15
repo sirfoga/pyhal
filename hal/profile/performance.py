@@ -102,6 +102,11 @@ class EightQueenTest(object):
         self.benchmark += "\n" + string  # update log
 
     def start(self):
+        """
+        :return: void
+            Starts profiling
+        """
+
         self.update_std_out_and_log(self.welcome())
         print(EightQueenTest.introduction())
 
@@ -118,9 +123,10 @@ class EightQueenTest(object):
         for size in range(max_board_size + 1):
             timing = self.run_test_with_size(size)
             self.update_std_out_and_log(
-                "BOARD SIZE".ljust(10) + str(size).ljust(
-                    10) + "TIME REQUIRED (s)".ljust(20) + str(
-                    '{:03.3f}'.format(timing)))
+                "BOARD SIZE".ljust(10) +
+                str(size).ljust(10) + "TIME REQUIRED (s)".ljust(20) +
+                str('{:03.3f}'.format(timing))
+            )
 
         finish_time = time()
         length = finish_time - start_time
