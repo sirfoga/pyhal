@@ -195,8 +195,7 @@ class FileSystem(object):
             try:
                 if name[i - 1] == r and \
                                 name[i + 1] == r and \
-                                name[
-                                    i] in bad_chars:  # 2 blanks hug one bad char
+                                name[i] in bad_chars:
                     name = name[:i - 1] + name[i + 2:]
             except:  # out of bounds
                 pass
