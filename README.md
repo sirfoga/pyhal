@@ -1,5 +1,11 @@
 # HAL: Handy Algorithmic Library
-[![Build Status](https://travis-ci.org/sirfoga/hal.svg?branch=master)](https://travis-ci.org/sirfoga/hal) [![PyPI version](https://badge.fury.io/py/pyhal.svg)](https://badge.fury.io/py/pyhal) [![Coverage Status](https://coveralls.io/repos/github/sirfoga/hal/badge.svg?branch=master)](https://coveralls.io/github/sirfoga/hal?branch=master) [![Code Health](https://landscape.io/github/sirfoga/pyhal/master/landscape.svg?style=flat)](https://landscape.io/github/sirfoga/hal/master) [![Stories in Ready](https://badge.waffle.io/sirfoga/hal.svg?label=ready&title=Ready)](http://waffle.io/sirfoga/hal)
+
+[![PyPI version](https://badge.fury.io/py/PyHal.svg)](https://pypi.python.org/pypi/PyHal) [![Build Status](https://travis-ci.org/sirfoga/pyhal.svg?branch=master)](https://travis-ci.org/sirfoga/hal) [![Code Health](https://landscape.io/github/sirfoga/pyhal/master/landscape.svg?style=flat)](https://landscape.io/github/sirfoga/hal/master) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fsirfoga%2Fpyhal.svg?type=shield)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fsirfoga%2Fpyhal?ref=badge_shield)
+
+<!-- [![Coverage Status](https://coveralls.io/repos/github/sirfoga/hal/badge.svg?branch=master)](https://coveralls.io/github/sirfoga/hal?branch=master) -->
+
+<!-- [![Stories in Ready](https://badge.waffle.io/sirfoga/hal.svg?label=ready&title=Ready)](http://waffle.io/sirfoga/hal) -->
+
 
 *A multipurpose library homemade from scratch to perform great stuff in a pythonic way.*
 
