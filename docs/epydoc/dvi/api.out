@@ -191,24 +191,30 @@
 \BOOKMARK [2][-]{subsection.38.1}{Class EightQueenTest}{section.38}% 191
 \BOOKMARK [3][-]{subsubsection.38.1.1}{Methods}{subsection.38.1}% 192
 \BOOKMARK [3][-]{subsubsection.38.1.2}{Properties}{subsection.38.1}% 193
-\BOOKMARK [1][-]{section.39}{Package hal.strings}{}% 194
+\BOOKMARK [1][-]{section.39}{Package hal.streams}{}% 194
 \BOOKMARK [2][-]{subsection.39.1}{Modules}{section.39}% 195
 \BOOKMARK [2][-]{subsection.39.2}{Variables}{section.39}% 196
-\BOOKMARK [1][-]{section.40}{Module hal.strings.utils}{}% 197
+\BOOKMARK [1][-]{section.40}{Module hal.streams.pretty\137table}{}% 197
 \BOOKMARK [2][-]{subsection.40.1}{Functions}{section.40}% 198
 \BOOKMARK [2][-]{subsection.40.2}{Variables}{section.40}% 199
-\BOOKMARK [1][-]{section.41}{Package hal.time}{}% 200
+\BOOKMARK [1][-]{section.41}{Package hal.strings}{}% 200
 \BOOKMARK [2][-]{subsection.41.1}{Modules}{section.41}% 201
 \BOOKMARK [2][-]{subsection.41.2}{Variables}{section.41}% 202
-\BOOKMARK [1][-]{section.42}{Module hal.time.profile}{}% 203
+\BOOKMARK [1][-]{section.42}{Module hal.strings.utils}{}% 203
 \BOOKMARK [2][-]{subsection.42.1}{Functions}{section.42}% 204
 \BOOKMARK [2][-]{subsection.42.2}{Variables}{section.42}% 205
-\BOOKMARK [1][-]{section.43}{Module hal.time.utils}{}% 206
-\BOOKMARK [2][-]{subsection.43.1}{Functions}{section.43}% 207
+\BOOKMARK [1][-]{section.43}{Package hal.time}{}% 206
+\BOOKMARK [2][-]{subsection.43.1}{Modules}{section.43}% 207
 \BOOKMARK [2][-]{subsection.43.2}{Variables}{section.43}% 208
-\BOOKMARK [1][-]{section.44}{Package hal.wrappers}{}% 209
-\BOOKMARK [2][-]{subsection.44.1}{Modules}{section.44}% 210
+\BOOKMARK [1][-]{section.44}{Module hal.time.profile}{}% 209
+\BOOKMARK [2][-]{subsection.44.1}{Functions}{section.44}% 210
 \BOOKMARK [2][-]{subsection.44.2}{Variables}{section.44}% 211
-\BOOKMARK [1][-]{section.45}{Module hal.wrappers.methods}{}% 212
+\BOOKMARK [1][-]{section.45}{Module hal.time.utils}{}% 212
 \BOOKMARK [2][-]{subsection.45.1}{Functions}{section.45}% 213
-\BOOKMARK [1][-]{section*.2}{Index}{}% 214
+\BOOKMARK [2][-]{subsection.45.2}{Variables}{section.45}% 214
+\BOOKMARK [1][-]{section.46}{Package hal.wrappers}{}% 215
+\BOOKMARK [2][-]{subsection.46.1}{Modules}{section.46}% 216
+\BOOKMARK [2][-]{subsection.46.2}{Variables}{section.46}% 217
+\BOOKMARK [1][-]{section.47}{Module hal.wrappers.methods}{}% 218
+\BOOKMARK [2][-]{subsection.47.1}{Functions}{section.47}% 219
+\BOOKMARK [1][-]{section*.2}{Index}{}% 220

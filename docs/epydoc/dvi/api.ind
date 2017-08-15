@@ -40,13 +40,16 @@
       \subsubitem hal.profile.mem \textit{(module)}, \hyperpage{83}
       \subsubitem hal.profile.performance \textit{(module)}, 
 		\hyperpage{84--85}
-    \subitem hal.strings \textit{(package)}, \hyperpage{86}
-      \subsubitem hal.strings.utils \textit{(module)}, \hyperpage{87}
-    \subitem hal.time \textit{(package)}, \hyperpage{88}
-      \subsubitem hal.time.profile \textit{(module)}, \hyperpage{89}
-      \subsubitem hal.time.utils \textit{(module)}, \hyperpage{90}
-    \subitem hal.wrappers \textit{(package)}, \hyperpage{91}
+    \subitem hal.streams \textit{(package)}, \hyperpage{86}
+      \subsubitem hal.streams.pretty\_table \textit{(module)}, 
+		\hyperpage{87--88}
+    \subitem hal.strings \textit{(package)}, \hyperpage{89}
+      \subsubitem hal.strings.utils \textit{(module)}, \hyperpage{90}
+    \subitem hal.time \textit{(package)}, \hyperpage{91}
+      \subsubitem hal.time.profile \textit{(module)}, \hyperpage{92}
+      \subsubitem hal.time.utils \textit{(module)}, \hyperpage{93}
+    \subitem hal.wrappers \textit{(package)}, \hyperpage{94}
       \subsubitem hal.wrappers.methods \textit{(module)}, 
-		\hyperpage{92}
+		\hyperpage{95}
 
 \end{theindex}

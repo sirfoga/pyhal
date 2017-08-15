@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 4.5.1
+
+### Added
+- pretty printer for tables
+
 ## 4.5
 
 ### Added
