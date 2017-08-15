@@ -16,6 +16,8 @@
 # limitations under the License.
 
 
+""" Parse, convert time formats """
+
 from datetime import datetime
 
 MONTHS_NAMES = [datetime.strftime(datetime(year=1, month=m, day=1), "%B") for m
@@ -25,50 +27,50 @@ MONTHS = {
     }  # dict <month index: month name>
 
 
-def parse_hh_mm_ss(h):
+def parse_hh_mm_ss(string):
     """
-    :param h: str
+    :param string: str
         Hours, minutes and seconds in the form hh:mm:ss to parse
     :return: datetime.time
         Time parsed
     """
 
-    h = str(h).strip()  # discard jibberish
-    split_count = h.count(":")
+    string = str(string).strip()  # discard jibberish
+    split_count = string.count(":")
     if split_count == 2:  # hh:mm:ss
-        return datetime.strptime(str(h).strip(), "%H:%M:%S").time()
+        return datetime.strptime(str(string).strip(), "%H:%M:%S").time()
     elif split_count == 1:  # mm:ss
-        return datetime.strptime(str(h).strip(), "%M:%S").time()
-    else:  # ss
-        return datetime.strptime(str(h).strip(), "%S").time()
+        return datetime.strptime(str(string).strip(), "%M:%S").time()
+
+    return datetime.strptime(str(string).strip(), "%S").time()
 
 
-def get_seconds(s):
+def get_seconds(string):
     """
-    :param s: str
+    :param string: str
         Datetime in the form %H:%M:%S
     :return: int
         Seconds in time
     """
 
-    t = parse_hh_mm_ss(s)  # get time
-    total_seconds = t.second
-    total_seconds += t.minute * 60.0
-    total_seconds += t.hour * 60.0 * 60.0
+    parsed_string = parse_hh_mm_ss(string)  # get time
+    total_seconds = parsed_string.second
+    total_seconds += parsed_string.minute * 60.0
+    total_seconds += parsed_string.hour * 60.0 * 60.0
     return total_seconds
 
 
-def parse_hh_mm(h):
+def parse_hh_mm(string):
     """
-    :param h: str
+    :param string: str
         Hours and minutes in the form hh:mm to parse
     :return: datetime.time
         Time parsed
     """
 
-    h = str(h).strip()  # discard jibberish
-    split_count = h.count(":")
+    string = str(string).strip()  # discard jibberish
+    split_count = string.count(":")
     if split_count == 1:  # hh:mm
-        return datetime.strptime(str(h).strip(), "%H:%M").time()
-    else:  # mm
-        return datetime.strptime(str(h).strip(), "%M").time()
+        return datetime.strptime(str(string).strip(), "%H:%M").time()
+
+    return datetime.strptime(str(string).strip(), "%M").time()
