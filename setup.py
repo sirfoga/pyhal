@@ -24,8 +24,8 @@ from setuptools import setup, find_packages
 
 DESCRIPTION = \
     "HAL\n\n\
-    Handy Algorithmic Library: a multipurpose library homemade from scratch" + \
-    " to perform great stuff in a pythonic way.\n\
+    Handy Algorithmic Library: a multipurpose library homemade from " + \
+    "scratch to perform great stuff in a pythonic way.\n\
     \n\
     Examples\n\n\
     You can take a look at my other repository: there are lots of " + \
@@ -45,7 +45,7 @@ DESCRIPTION = \
 
 setup(
     name="PyHal",
-    version="4.5.1",
+    version="4.6",
     author="sirfoga",
     author_email="sirfoga@protonmail.com",
     description="Hal is a from-scratch home-made multipurpose library to "
@@ -57,18 +57,18 @@ setup(
     packages=find_packages(exclude=["tests"]),
     install_requires=[
         "bs4",
-        "mutagen",
-        "matplotlib",
-        "numpy",
-        "pycrypto",
-        "scipy",
-        "statsmodels",
-        "sklearn",
-        "requests",
         "lxml",
-        "send2trash",
+        "matplotlib",
+        "mutagen",
+        "numpy",
+        "psutil",
+        "pycrypto",
         "pymongo",
-        "psutil"
+        "requests",
+        "scipy",
+        "send2trash",
+        "sklearn",
+        "statsmodels"
     ],
     test_suite="tests"
 )
