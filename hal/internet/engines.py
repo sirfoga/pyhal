@@ -22,6 +22,8 @@ from hal.internet.web import Webpage
 
 
 class SearchEngineResult(object):
+    """ Result of general search engine """
+
     def __init__(self, title, link, description=""):
         object.__init__(self)
 
@@ -34,6 +36,8 @@ class SearchEngineResult(object):
 
 
 class SearchEngine(object):
+    """ Internet general search engine """
+
     def __init__(self, url, blank_replace="+"):
         """
         :param url: string

@@ -104,8 +104,8 @@ CHROME_USER_AGENT = [
 URL_VALID_REGEX = re.compile(
     r"^(?:http|ftp)s?://"  # http:// or https://
     r"(?:" +
-    "(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)" +
-    "+(?:[A-Z]{2,6}\.?|[A-Z0-9-]{2,}\.?)|"  # domain
+    r"(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)" +
+    r"+(?:[A-Z]{2,6}\.?|[A-Z0-9-]{2,}\.?)|"  # domain
     r"localhost|"  # localhost...
     r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"  # ...or ip
     r"(?::\d+)?"  # optional port
@@ -201,20 +201,19 @@ class Webpage(object):
                 socks.setdefaultproxy(proxy_type=socks.PROXY_TYPE_SOCKS5,
                                       addr="127.0.0.1", port=9050)
                 socket.socket = socks.socksocket
-                r = requests.get(self.url).text
-            except Exception as e:
-                print(str(e))
+                req_text = requests.get(self.url).text
+            except:
                 print(
                     "To be able to fetch HTML source pages via Tor the "
                     "following command is required:")
                 print("apt-get install tor && tor &")
-                r = ""
+                req_text = ""
         else:
-            q = urllib.request.Request(self.url)
-            q.add_header("user-agent", random.choice(CHROME_USER_AGENT))
-            r = urllib.request.urlopen(q).read()
+            req = urllib.request.Request(self.url)
+            req.add_header("user-agent", random.choice(CHROME_USER_AGENT))
+            req_text = urllib.request.urlopen(req).read()
 
-        self.source = str(r)
+        self.source = str(req_text)
         self.soup = BeautifulSoup(self.source, "lxml")
         return self.source
 
@@ -225,7 +224,7 @@ class Webpage(object):
         :return: array of out_links
         """
 
-        for attempt in range(recall):
+        for _ in range(recall):
             try:  # setting timeout
                 soup = BeautifulSoup(self.source)  # parse source
                 out_links = []
@@ -246,7 +245,7 @@ class Webpage(object):
             Open a wendrive and go to webpage
         """
 
-        for t in range(times):
+        for _ in range(times):
             webbrowser.open(self.url)
 
 
@@ -260,8 +259,8 @@ def download_url(url, local_file):
         Download link to local file
     """
 
-    d = urllib.request.URLopener()
-    d.retrieve(url, local_file)
+    downloader = urllib.request.URLopener()
+    downloader.retrieve(url, local_file)
 
 
 def download_pdf_to_file(url, local_file, chunk_size=1024):
@@ -282,8 +281,8 @@ def download_pdf_to_file(url, local_file, chunk_size=1024):
                   'application/pdf;q=0.9,*/*;q=0.8 '
     }
 
-    r = requests.get(url, headers=headers, stream=True)
-    with open(local_file, 'wb') as fd:
-        for chunk in r.iter_content(chunk_size):
+    req = requests.get(url, headers=headers, stream=True)
+    with open(local_file, 'wb') as local_download:
+        for chunk in req.iter_content(chunk_size):
             if chunk:
-                fd.write(chunk)
+                local_download.write(chunk)

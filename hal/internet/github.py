@@ -62,8 +62,7 @@ class GithubRawApi(object):
 
         try:
             return self.api_content[key]
-        except Exception as e:
-            print(str(e))
+        except:
             return None
 
     def _get_api_content(self):
@@ -117,8 +116,8 @@ class GithubApi(GithubRawApi):
         raw_repo_list = soup.find_all("ol", {"class": "repo-list"})[
             0].find_all("li")
         repos_list = []
-        for r in raw_repo_list:
-            details = r.find_all("div")[0].a.text.split("/")
+        for repo in raw_repo_list:
+            details = repo.find_all("div")[0].a.text.split("/")
             repo_owner = details[0].strip()
             repo_name = details[1].strip()
             repos_list.append(GithubUserRepository(repo_owner, repo_name))
@@ -141,23 +140,23 @@ class GithubUser(GithubApi):
 
     def get_repos(self):
         """
-        :return: []
-            List of GithubUserRepository
+        :return: [] of GithubUserRepository
+            List of user repositories
         """
 
         user_repos_url = self["repos_url"]
         api_driver = GithubRawApi(user_repos_url,
                                   True)  # driver to parse API content
         repos_list = []
-        for r in api_driver.api_content:  # list of raw repository
-            repo_name = r["name"]
+        for repo in api_driver.api_content:  # list of raw repository
+            repo_name = repo["name"]
             repos_list.append(GithubUserRepository(self.username, repo_name))
         return repos_list
 
     def get_starred_repos(self):
         """
-        :return: []
-            List of GithubUserRepository
+        :return: [] of GithubUserRepository
+            List of starred repositories
         """
 
         starred_url = self.api_url + "/starred"
@@ -169,9 +168,9 @@ class GithubUser(GithubApi):
                 current_page)  # request starred list url with page number
             api_driver = GithubRawApi(api_url,
                                       True)  # driver to parse API content
-            for s in api_driver.api_content:
-                repo_username = s["owner"]["login"]
-                repo_name = s["name"]
+            for repo in api_driver.api_content:
+                repo_username = repo["owner"]["login"]
+                repo_name = repo["name"]
                 repos_list.append(
                     GithubUserRepository(repo_username, repo_name))
 
@@ -181,12 +180,17 @@ class GithubUser(GithubApi):
         return repos_list
 
     def get_trending_daily_not_starred(self):
+        """
+        :return: []
+            List of daily-trending repositories which are not starred by user
+        """
+
         trending_daily = self.get_trending_daily()  # repos trending daily
         starred_repos = self.get_starred_repos()  # repos starred by user
         repos_list = []
-        for r in trending_daily:
-            if r not in starred_repos:
-                repos_list.append(r)
+        for repo in trending_daily:
+            if repo not in starred_repos:
+                repos_list.append(repo)
         return repos_list
 
 

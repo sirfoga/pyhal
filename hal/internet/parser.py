@@ -22,6 +22,8 @@ from bs4 import BeautifulSoup
 
 
 class HtmlTable(str):
+    """ Table written in HTML language """
+
     def __init__(self, html_source):
         """
         :param html_source: string

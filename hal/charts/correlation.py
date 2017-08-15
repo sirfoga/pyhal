@@ -16,6 +16,9 @@
 # limitations under the License.
 
 
+""" Everything you need to create correlation charts """
+
+
 import numpy as np
 from matplotlib import pyplot, cm
 

@@ -21,17 +21,17 @@
 from difflib import SequenceMatcher
 
 
-def how_similar_are(a, b):
+def how_similar_are(str1, str2):
     """
-    :param a: str
+    :param str1: str
         First string
-    :param b: str
+    :param str2: str
         Second string
     :return: float in [0, 1]
         Similarity of a VS b
     """
 
-    return SequenceMatcher(None, a, b).ratio()
+    return SequenceMatcher(None, str1, str2).ratio()
 
 
 def get_average_length_of_word(words):
@@ -42,7 +42,7 @@ def get_average_length_of_word(words):
         Average length of word on list
     """
 
-    if len(words) == 0:
+    if not words:
         return 0
-    else:
-        return sum(len(word) for word in words) / len(words)
+
+    return sum(len(word) for word in words) / len(words)
