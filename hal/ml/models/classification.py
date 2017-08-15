@@ -19,17 +19,20 @@
 """ Prediction methods based on classification algorithms. """
 
 from sklearn import naive_bayes
-from sklearn.ensemble import ExtraTreesClassifier, RandomForestClassifier, AdaBoostClassifier
+from sklearn.ensemble import ExtraTreesClassifier, RandomForestClassifier, \
+    AdaBoostClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 
 
 def extra_trees_classifier():
-    return ExtraTreesClassifier(n_estimators=10, max_depth=None, min_samples_split=1, random_state=0)
+    return ExtraTreesClassifier(n_estimators=10, max_depth=None,
+                                min_samples_split=1, random_state=0)
 
 
 def random_forest():
-    return RandomForestClassifier(n_estimators=10, max_depth=None, min_samples_split=1, random_state=0)
+    return RandomForestClassifier(n_estimators=10, max_depth=None,
+                                  min_samples_split=1, random_state=0)
 
 
 def knn():
@@ -45,7 +48,8 @@ def ada_boost():
         fast, accurate but too uncertainty
     """
 
-    return AdaBoostClassifier(DecisionTreeClassifier(max_depth=20), algorithm="SAMME.R", n_estimators=20)
+    return AdaBoostClassifier(DecisionTreeClassifier(max_depth=20),
+                              algorithm="SAMME.R", n_estimators=20)
 
 
 def bayes_gauss():

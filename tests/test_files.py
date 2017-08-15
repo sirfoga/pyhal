@@ -47,18 +47,21 @@ class TestFileSystem(unittest.TestCase):
             "/a/b/c.txt": "/a/b/c.txt"  # files
         }
 
-        self.battery_test(self.assertEqual, tests, models.FileSystem.fix_raw_path)
+        self.battery_test(self.assertEqual, tests,
+                          models.FileSystem.fix_raw_path)
 
     def test_remove_year(self):
         tests = {
-            "Today is 1980": "Today is ",  # year in start, middle, end position of sentence
+            "Today is 1980": "Today is ",
+            # year in start, middle, end position of sentence
             "Today 1980 is ": "Today  is ",
             "1980 Today is ": " Today is ",
             "19803": "3",  # composition of year
             "20012002": ""
         }
 
-        self.battery_test(self.assertEqual, tests, models.FileSystem.remove_year)
+        self.battery_test(self.assertEqual, tests,
+                          models.FileSystem.remove_year)
 
     def test_remove_brackets(self):
         tests = {
@@ -72,7 +75,8 @@ class TestFileSystem(unittest.TestCase):
             "a(b[c{d}])": "a"  # with words in between
         }
 
-        self.battery_test(self.assertEqual, tests, models.FileSystem.remove_brackets)
+        self.battery_test(self.assertEqual, tests,
+                          models.FileSystem.remove_brackets)
 
     def test_extract_name_max_chars(self):
         tests = {
@@ -84,7 +88,9 @@ class TestFileSystem(unittest.TestCase):
             "012345678912345678f": "0123456789"  # remove
         }
 
-        self.battery_test(self.assertEqual, tests, partial(models.FileSystem.extract_name_max_chars, max_chars=10))
+        self.battery_test(self.assertEqual, tests,
+                          partial(models.FileSystem.extract_name_max_chars,
+                                  max_chars=10))
 
     def test_prettify(self):
         bad_string = "".join(models.BAD_CHARS)
@@ -94,16 +100,17 @@ class TestFileSystem(unittest.TestCase):
             bad_string + bad_string: "",
             bad_string + "a good string" + bad_string: "a_good_string"
         }
-        self.battery_test(self.assertEqual, tests, partial(models.FileSystem.prettify, r="_"))
+        self.battery_test(self.assertEqual, tests,
+                          partial(models.FileSystem.prettify, r="_"))
 
     def test_ls_dir(self):
-        return True   # TODO: maybe create some folder first
+        return True  # TODO: maybe create some folder first
 
     def test_ls_recurse(self):
-        return True   # TODO: maybe create some folder first
+        return True  # TODO: maybe create some folder first
 
     def test_ls(self):
-        return True   # TODO: maybe create some folder first
+        return True  # TODO: maybe create some folder first
 
 
 if __name__ == '__main__':

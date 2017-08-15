@@ -75,8 +75,10 @@ class GithubRawApi(object):
         api_content_request = urllib.request.Request(self.api_url)
         api_content_request.add_header("Authorization", "token %s" % API_TOKEN)
         api_content_request.add_header("User-Agent", "Github PyAPI")
-        api_content_response = urllib.request.urlopen(api_content_request).read()
-        self.api_content = json.loads(api_content_response.decode("utf-8"))  # parse response
+        api_content_response = urllib.request.urlopen(
+            api_content_request).read()
+        self.api_content = json.loads(
+            api_content_response.decode("utf-8"))  # parse response
 
 
 class GithubApi(GithubRawApi):
@@ -109,9 +111,11 @@ class GithubApi(GithubRawApi):
 
         url = "https://github.com/trending?since=daily"
         api_content_request = urllib.request.Request(url)
-        api_content_response = urllib.request.urlopen(api_content_request).read().decode("utf-8")  # parse response
+        api_content_response = urllib.request.urlopen(
+            api_content_request).read().decode("utf-8")  # parse response
         soup = BeautifulSoup(api_content_response, "lxml")  # html parser
-        raw_repo_list = soup.find_all("ol", {"class": "repo-list"})[0].find_all("li")
+        raw_repo_list = soup.find_all("ol", {"class": "repo-list"})[
+            0].find_all("li")
         repos_list = []
         for r in raw_repo_list:
             details = r.find_all("div")[0].a.text.split("/")
@@ -142,7 +146,8 @@ class GithubUser(GithubApi):
         """
 
         user_repos_url = self["repos_url"]
-        api_driver = GithubRawApi(user_repos_url, True)  # driver to parse API content
+        api_driver = GithubRawApi(user_repos_url,
+                                  True)  # driver to parse API content
         repos_list = []
         for r in api_driver.api_content:  # list of raw repository
             repo_name = r["name"]
@@ -160,12 +165,15 @@ class GithubUser(GithubApi):
         current_page = 1
         repos_list = []
         while keep_finding:
-            api_url = starred_url + "?page=" + str(current_page)  # request starred list url with exact page number
-            api_driver = GithubRawApi(api_url, True)  # driver to parse API content
+            api_url = starred_url + "?page=" + str(
+                current_page)  # request starred list url with page number
+            api_driver = GithubRawApi(api_url,
+                                      True)  # driver to parse API content
             for s in api_driver.api_content:
                 repo_username = s["owner"]["login"]
                 repo_name = s["name"]
-                repos_list.append(GithubUserRepository(repo_username, repo_name))
+                repos_list.append(
+                    GithubUserRepository(repo_username, repo_name))
 
             if len(api_driver.api_content) < 1:  # no more repo to find
                 keep_finding = False
@@ -173,8 +181,8 @@ class GithubUser(GithubApi):
         return repos_list
 
     def get_trending_daily_not_starred(self):
-        trending_daily = self.get_trending_daily()  # list of repos trending daily
-        starred_repos = self.get_starred_repos()  # list of repos starred by user
+        trending_daily = self.get_trending_daily()  # repos trending daily
+        starred_repos = self.get_starred_repos()  # repos starred by user
         repos_list = []
         for r in trending_daily:
             if r not in starred_repos:
@@ -200,4 +208,5 @@ class GithubUserRepository(GithubApi):
         self.api_url += self.username + "/" + self.repository_name
 
     def __eq__(self, other):
-        return self.username == other.username and self.repository_name == other.repository_name
+        return self.username == other.username \
+               and self.repository_name == other.repository_name

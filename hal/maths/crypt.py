@@ -58,7 +58,8 @@ class MD6(object):
         self.plain = string
         self.size = int(size)
         if self.size not in self.ALLOWED_SIZE:
-            raise ValueError('Cannot create MD6 hash of size ' + str(self.size))
+            raise ValueError(
+                'Cannot create MD6 hash of size ' + str(self.size))
         self.hashed = None
 
     def hash(self):
@@ -206,7 +207,10 @@ class MD6(object):
 
         def mid(B, C, i, p, z):
             U = ((ell & 0xff) << 56) | i & 0xffffffffffffff
-            V = ((r & 0xfff) << 48) | ((L & 0xff) << 40) | ((z & 0xf) << 36) | ((p & 0xffff) << 20) | ((k & 0xff) << 12) | (d & 0xfff)
+            V = ((r & 0xfff) << 48) | ((L & 0xff) << 40) | (
+                (z & 0xf) << 36) | ((p & 0xffff) << 20) | (
+                    (k & 0xff) << 12) | (
+                    d & 0xfff)
 
             return f(Q + K + [U, V] + C + B)
 
@@ -242,7 +246,8 @@ class MD6(object):
         def seq(M):
             P = 0
             B = []
-            C = [0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0]
+            C = [0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0,
+                 0x0, 0x0, 0x0, 0x0]
 
             while len(M) < 1 or (len(M) % (b - c)) > 0:
                 M.append(0x00)
@@ -349,7 +354,8 @@ class SHA(object):
         self.size = int(size)
         self.salt = salt
         if self.size not in self.ALLOWED_SIZE:
-            raise ValueError('Cannot create SHA hash of size ' + str(self.size))
+            raise ValueError(
+                'Cannot create SHA hash of size ' + str(self.size))
         self.hashed = None
 
     def hash(self):
@@ -441,7 +447,8 @@ class DES(object):
         self.key = key
         self.size = int(size)
         if self.size not in self.ALLOWED_SIZE:
-            raise ValueError('Cannot create DES hash of size ' + str(self.size))
+            raise ValueError(
+                'Cannot create DES hash of size ' + str(self.size))
         self.hashed = None
 
     def hash(self):
@@ -486,7 +493,8 @@ class ARC(object):
         self.key = key
         self.size = int(size)
         if self.size not in self.ALLOWED_SIZE:
-            raise ValueError('Cannot create ARC hash of size ' + str(self.size))
+            raise ValueError(
+                'Cannot create ARC hash of size ' + str(self.size))
         self.hashed = None
 
     def hash(self):

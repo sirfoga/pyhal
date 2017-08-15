@@ -16,7 +16,7 @@
 # limitations under the License.
 
 
-""" Collection of methods to find weights of features and select the best 
+""" Collection of methods to find weights of features and select the best
 ones. """
 
 from sklearn.cross_validation import StratifiedKFold

@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 - badges in README
 - converted to sklearn.model_selection
+- flake8-ed all modules
 
 ## 4.5
 ### Added

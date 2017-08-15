@@ -44,7 +44,8 @@ def create_bar_chart(title, x_labels, y_values, y_label):
     plt.gcf().subplots_adjust(bottom=0.25)  # include long x-labels
 
     ax1.set_xticks(list(range(len(x_labels))))
-    ax1.set_xticklabels([x_labels[i] for i in range(len(x_labels))], rotation=90)
+    ax1.set_xticklabels([x_labels[i] for i in range(len(x_labels))],
+                        rotation=90)
     plt.ylabel(y_label)
 
     x_pos = range(len(x_labels))
@@ -53,7 +54,8 @@ def create_bar_chart(title, x_labels, y_values, y_label):
     return ax1
 
 
-def create_multiple_bar_chart(title, x_labels, mul_y_values, mul_y_labels, normalize=False):
+def create_multiple_bar_chart(title, x_labels, mul_y_values, mul_y_labels,
+                              normalize=False):
     """
     :param title: str
         Title of chart
@@ -76,21 +78,26 @@ def create_multiple_bar_chart(title, x_labels, mul_y_values, mul_y_labels, norma
     plt.gcf().subplots_adjust(bottom=0.25)  # include long x-labels
 
     ax1.set_xticks(list(range(len(x_labels))))
-    ax1.set_xticklabels([x_labels[i] for i in range(len(x_labels))], rotation=90)
+    ax1.set_xticklabels([x_labels[i] for i in range(len(x_labels))],
+                        rotation=90)
 
     y_counts = len(mul_y_values)
     colors = cm.rainbow(np.linspace(0, 1, y_counts))  # different colors
     max_bar_width = 0.6
     bar_width = max_bar_width / y_counts  # width of each bar
-    x_shifts = np.linspace(0, max_bar_width, y_counts) - max_bar_width * 0.5  # center in 0
+    x_shifts = np.linspace(0, max_bar_width,
+                           y_counts) - max_bar_width * 0.5  # center in 0
     ax_series = []
     for i in range(y_counts):
         x_pos = range(len(x_labels))  # x points
-        x_pos = np.array(x_pos) + x_shifts[i]  # shift x points for each y series
+        x_pos = np.array(x_pos) + x_shifts[
+            i]  # shift x points for each y series
         if normalize:  # normalize array
-            b = ax1.bar(x_pos, normalize_array(mul_y_values[i]), width=bar_width, align="center", color=colors[i])
+            b = ax1.bar(x_pos, normalize_array(mul_y_values[i]),
+                        width=bar_width, align="center", color=colors[i])
         else:
-            b = ax1.bar(x_pos, mul_y_values[i], width=bar_width, align="center", color=colors[i])
+            b = ax1.bar(x_pos, mul_y_values[i], width=bar_width,
+                        align="center", color=colors[i])
         ax_series.append(b)
 
     ax1.legend(ax_series, mul_y_labels)

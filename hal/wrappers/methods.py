@@ -44,18 +44,28 @@ def handle_exceptions(function):
         """
 
         function_name = function.__name__
-        exception_string = "name: " + function_name + "\n" \
-                           "*args: " + str(args) + "\n" \
-                           "**kwargs: " + str(kwargs)
+        exception_string = \
+            "name: " + function_name + "\n" + \
+            "*args: " + str(args) + "\n" + \
+            "**kwargs: " + str(kwargs)
 
         colorama.init()  # start color mode
 
         try:
             return function(*args, **kwargs)
         except KeyboardInterrupt:
-            print(colorama.Fore.RED + colorama.Style.BRIGHT + "\r[!] User stopped program in function" + colorama.Style.RESET_ALL)
+            print(
+                colorama.Fore.RED + colorama.Style.BRIGHT + "\r[!] User "
+                                                            "stopped program"
+                                                            " in function" +
+                colorama.Style.RESET_ALL)
             print(exception_string)
         except Exception:
-            print(colorama.Fore.RED + colorama.Style.BRIGHT + "\r[!] Unhandled exception occured...\n%s" % sys.exc_info()[1] + colorama.Style.RESET_ALL)
+            print(
+                colorama.Fore.RED + colorama.Style.BRIGHT + "\r[!] Unhandled "
+                                                            "exception "
+                                                            "occured...\n%s" %
+                sys.exc_info()[1] + colorama.Style.RESET_ALL)
             print(exception_string)
+
     return _handle_exceptions

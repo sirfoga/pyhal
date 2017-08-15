@@ -17,7 +17,6 @@
 
 
 import os
-import time
 
 import numpy as np
 from matplotlib import pyplot
@@ -26,6 +25,7 @@ from hal.charts import correlation as cr_plot
 from hal.files.models import Document, FileSystem
 from hal.ml.data.parser import parse_csv_file
 from hal.ml.utils.matrix import get_column_of_matrix
+from time import time
 
 
 def get_correlation_matrix(matrix):
@@ -51,7 +51,8 @@ def show_correlation_matrix(correlation_matrix, title, feature_list):
         shows the given correlation matrix as image
     """
 
-    cr_plot.create_correlation_matrix_plot(correlation_matrix, title, feature_list)
+    cr_plot.create_correlation_matrix_plot(correlation_matrix, title,
+                                           feature_list)
     pyplot.show()
 
 
@@ -97,12 +98,14 @@ def show_correlation_matrix_of_columns(title, headers_to_test, headers, data):
         Shows on screen correlation matrix of selected headers
     """
 
-    correlation_matrix = get_correlation_matrix_of_columns(headers_to_test, headers, data)
+    correlation_matrix = get_correlation_matrix_of_columns(headers_to_test,
+                                                           headers, data)
     show_correlation_matrix(correlation_matrix, title, headers_to_test)
     pyplot.show()
 
 
-def save_correlation_matrix_of_columns(title, headers_to_test, headers, data, out_file):
+def save_correlation_matrix_of_columns(title, headers_to_test, headers, data,
+                                       out_file):
     """
     :param title: str
         Title to show
@@ -118,8 +121,10 @@ def save_correlation_matrix_of_columns(title, headers_to_test, headers, data, ou
         Saves correlation matrix of selected headers
     """
 
-    correlation_matrix = get_correlation_matrix_of_columns(headers_to_test, headers, data)
-    cr_plot.create_correlation_matrix_plot(correlation_matrix, title, headers_to_test)
+    correlation_matrix = get_correlation_matrix_of_columns(headers_to_test,
+                                                           headers, data)
+    cr_plot.create_correlation_matrix_plot(correlation_matrix, title,
+                                           headers_to_test)
 
     fig = pyplot.gcf()  # get reference to figure
     fig.set_size_inches(23.4, 23.4)
@@ -134,7 +139,8 @@ def save_correlation_matrix_of_data_files_in_folder(folder_path):
         Saves each file's correlation matrix of common headers
     """
 
-    output_folder = os.path.join(folder_path, "output-" + str(int(time.time())))
+    output_folder = os.path.join(folder_path,
+                                 "output-" + str(int(time())))
     os.makedirs(output_folder)  # make necessary folders to create directory
 
     for f in FileSystem.ls(folder_path, False, False):
@@ -147,8 +153,11 @@ def save_correlation_matrix_of_data_files_in_folder(folder_path):
 
             try:
                 headers, data = parse_csv_file(f)  # parse raw data
-                save_correlation_matrix_of_columns("Correlation of logs data for file " + file_name, headers, headers,
-                                                   data, output_file_path)
+                save_correlation_matrix_of_columns(
+                    "Correlation of logs data for file " + file_name, headers,
+                    headers,
+                    data, output_file_path)
             except Exception as e:
-                print("Cannot save correlation matrix of file \"", str(f), "\" because of")
+                print("Cannot save correlation matrix of file \"", str(f),
+                      "\" because of")
                 print(str(e))

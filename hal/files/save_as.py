@@ -31,7 +31,8 @@ def save_dicts_to_csv(dicts, output_file):
 
     csv_headers = dicts[0].keys()
     with open(output_file, "w") as o:  # write to file
-        dict_writer = csv.DictWriter(o, csv_headers, delimiter=",", quotechar="\"")
+        dict_writer = csv.DictWriter(o, csv_headers, delimiter=",",
+                                     quotechar="\"")
         dict_writer.writeheader()
         dict_writer.writerows(dicts)
 

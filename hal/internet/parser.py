@@ -18,7 +18,6 @@
 
 """ Parse anything there is on the Internet. """
 
-
 from bs4 import BeautifulSoup
 
 
@@ -86,7 +85,8 @@ def html_stripper(string):
     """
 
     out = string
-    while not is_string_well_formatted(out):  # while there are some improvements to do
+    while not is_string_well_formatted(
+            out):  # while there are some improvements to do
         out = out.replace(":", "") \
             .replace("\\'", "\'") \
             .replace("\\n", "") \

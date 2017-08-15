@@ -45,12 +45,12 @@ class Plot2d(object):
         else:
             raise ValueError("Cannot plot vectors of different length.")
 
-    def param(self, functionx, functiony, min, max, points):
+    def param(self, functionx, functiony, min_val, max_val, points):
         """
         :param functionx: function in x value
         :param functiony: function in y value
-        ::param min: minimum value
-        :param max: maximum value
+        :param min_val: minimum value
+        :param max_val: maximum value
         :param points: number of points to display
         :return: 2d parametric graph of given function from min to max
         """
@@ -58,8 +58,8 @@ class Plot2d(object):
         if points < 0:
             raise ValueError("Number of points to plot must be positive.")
         else:
-            if min > max:
-                self.param(functionx, functiony, max, min, points)
+            if min_val > max_val:
+                self.param(functionx, functiony, max_val, min_val, points)
             pass
 
     def plot(self, function, min, max, points):
@@ -106,13 +106,13 @@ class Plot3d(object):
         else:
             raise ValueError("Cannot plot vectors of different length.")
 
-    def param(self, functionx, functiony, functionz, min, max, points):
+    def param(self, functionx, functiony, functionz, min_val, max_val, points):
         """
         :param functionx: function in x
         :param functiony: function in y
         :param functionz: function in z
-        :param min: minimum
-        :param max: maximum
+        :param min_val: minimum
+        :param max_val: maximum
         :param points: number of points
         :return: 3d parametric graph of given function from min to max
         """
@@ -120,26 +120,32 @@ class Plot3d(object):
         if points < 0:
             raise ValueError("Number of points to plot must be positive.")
         else:
-            if min > max:
-                self.param(functionx, functiony, max, min, points)
-            else:
-                # general settings
-                fig = plt.figure()
-                ax = fig.gca(projection="3d")
+            if min_val > max_val:
+                self.param(
+                    functionx,
+                    functiony,
+                    functionz,
+                    max_val,
+                    min_val,
+                    points
+                )
+            # general settings
+            fig = plt.figure()
+            ax = fig.gca(projection="3d")
 
-                # limits and plot
-                theta = linspace(min, max, points)
+            # limits and plot
+            theta = linspace(min_val, max_val, points)
 
-                # z = linspace(-2, 2, 100)
-                # r = z**2 + 1
-                x = functionx(theta)
-                y = functiony(theta)
-                z = functionz(theta)
-                ax.plot(x, y, z)
-                ax.legend()
+            # z = linspace(-2, 2, 100)
+            # r = z**2 + 1
+            x = functionx(theta)
+            y = functiony(theta)
+            z = functionz(theta)
+            ax.plot(x, y, z)
+            ax.legend()
 
-                # show
-                plt.show()
+            # show
+            plt.show()
 
     def plot(self, function, minx, maxx, pointsx, miny, maxy, pointsy):
         """
@@ -171,7 +177,8 @@ class Plot3d(object):
         z = function(x, y)
 
         # plot
-        ax.plot_surface(x, y, z, cmap=plt.cm.jet, rstride=1, cstride=1, linewidth=0)
+        ax.plot_surface(x, y, z, cmap=plt.cm.jet, rstride=1, cstride=1,
+                        linewidth=0)
         plt.show()
 
 
@@ -190,28 +197,8 @@ class Plot4d(object):
         else:
             raise ValueError("Cannot plot vectors of different length.")
 
-    def param(self, functionx, functiony, functionz, functionw, min, max, points):
-        """
-        :param functionx: function in x
-        :param functiony: function in y
-        :param functionz: function in z
-        :param functionw: function in w
-        :param min: minimum
-        :param max: maximum
-        :param points: number of points
-        :return: 4d parametric graph of given function from min to max
-        """
-
-        if points < 0:
-            raise ValueError("Number of points to plot must be positive.")
-
-        else:
-            if min > max:
-                self.plot(functionx, functiony, functionz, functionw, max, min, points)
-            else:
-                pass
-
-    def plot(self, function, minx, maxx, miny, maxy, minz, maxz, precision, kind):
+    def plot(self, function, minx, maxx, miny, maxy, minz, maxz, precision,
+             kind):
         """
         :param function: function to plot
         :param minx: minimum of x-values
@@ -221,8 +208,9 @@ class Plot4d(object):
         :param minz: minimum of z-values
         :param maxz: maximum of z-values
         :param precision: precision
-        :param kind: slice: x cont -> 3d plot with y,z variables in plane and w as "z"-axis
-                     contour: x cont -> 3d plot with y,z variables in plane and w colored
+        :param kind: slice: x cont -> 3d plot with y, z variables in plane
+            and w as "z"-axis contour: x cont -> 3d plot with y,z variables in
+            plane and w colored
         :return: plot 4d function
         """
 
@@ -230,16 +218,20 @@ class Plot4d(object):
             raise ValueError("Precision cannot be negative.")
 
         if minx > maxx:
-            self.plot(function, maxx, minx, miny, maxy, minz, maxz, precision, kind)
+            self.plot(function, maxx, minx, miny, maxy, minz, maxz, precision,
+                      kind)
 
         if miny > maxy:
-            self.plot(function, minx, maxx, maxy, miny, minz, maxz, precision, kind)
+            self.plot(function, minx, maxx, maxy, miny, minz, maxz, precision,
+                      kind)
 
         if minz > maxz:
-            self.plot(function, minx, maxx, miny, maxy, maxz, minz, precision, kind)
+            self.plot(function, minx, maxx, miny, maxy, maxz, minz, precision,
+                      kind)
 
         if kind != "slice" and kind != "contour":
-            raise ValueError("Plot type not supported, only \"slice\" and \"contour\" are.")
+            raise ValueError(
+                "Plot type not supported, only \"slice\" and \"contour\" are.")
 
         def set_labels(graph, labelx, labely, labelz):
             """
@@ -254,58 +246,53 @@ class Plot4d(object):
             graph.set_ylabel(labely)
             graph.set_zlabel(labelz)
 
-        def set_limits(graph, minx, maxx, maxy, miny, minz, maxz):
+        def set_limits(graph, min_x, max_x, max_y, min_y, min_z, max_z):
             """
             :param graph: plot
-            :param minx: minimum of x-values
-            :param maxx: maximum of x-values
-            :param miny: minimum of y-values
-            :param maxy: maximum of y-values
-            :param minz: minimum of z-values
-            :param maxz: maximum of z-values
+            :param min_x: minimum of x-values
+            :param max_x: maximum of x-values
+            :param min_y: minimum of y-values
+            :param max_y: maximum of y-values
+            :param min_z: minimum of z-values
+            :param max_z: maximum of z-values
             :return: set given limits to axes of graph
             """
 
-            graph.set_xlim(minx, maxx)
-            graph.set_ylim(miny, maxy)
-            graph.set_zlim(minz, maxz)
+            graph.set_xlim(min_x, max_x)
+            graph.set_ylim(min_y, max_y)
+            graph.set_zlim(min_z, max_z)
 
-        def get_precision(min, max):
+        def get_precision(min_val, max_val):
             """
-            :param min: minimum
-            :param max: maximum
+            :param min_val: minimum
+            :param max_val: maximum
             :return: default number of points = interval / 0.1
             """
 
-            return int((max - min) * (1 + precision))
+            return int((max_val - min_val) * (1 + precision))
 
-        def get_precision_delta(min, max, precision):
+        def get_precision_delta(min_val, max_val, prec):
             """
-            :param min: mnimum
-            :param max: maximum
-            :param precision: precision
+            :param min_val: mnimum
+            :param max_val: maximum
+            :param prec: precision
             :return: default Delta = interval / points
             """
 
-            return float(max - min) / float(10 * precision)
+            return float(max_val - min_val) / float(10 * prec)
 
         if kind == "slice":
-            # general settings
-            fig = plt.figure()
-            ax = plt.axes(projection="3d")
-            # x_const = minx
-
-            # points
+            ax = plt.axes(projection="3d")  # general settings
             pointsx = get_precision(minx, maxx)
             pointsy = get_precision(miny, maxz)
 
-            # create axes
-            X = numpy.outer(linspace(minx, maxx, pointsx), pointsx)
-            Y = numpy.outer(linspace(miny, maxy, pointsy).flatten(), pointsy).T
+            x_ax = numpy.outer(linspace(minx, maxx, pointsx), pointsx)  # axes
+            y_ax = numpy.outer(
+                linspace(miny, maxy, pointsy).flatten(), pointsy
+            ).T
             # slider
             axis_slider = plt.axes([0.12, 0.03, 0.78, 0.03], axisbg="white")
             slider = Slider(axis_slider, "x", minx, maxx, valinit=minx)
-            # update
 
             def update(val):
                 """
@@ -315,8 +302,8 @@ class Plot4d(object):
 
                 ax.clear()
                 x_const = slider.val
-                Z = function(x_const, X, Y)
-                ax.plot_surface(X, Y, Z, alpha=0.3, linewidth=2.0)
+                Z = function(x_const, x_ax, y_ax)
+                ax.plot_surface(x_ax, y_ax, Z, alpha=0.3, linewidth=2.0)
                 set_labels(ax, "y", "z", "w")
 
             slider.on_changed(update)
@@ -329,9 +316,11 @@ class Plot4d(object):
             ax = fig.gca(projection="3d")
 
             # create axes
-            X = numpy.arange(minx, maxx, get_precision_delta(minx, maxx, precision)).tolist()
-            Y = numpy.arange(miny, maxy, get_precision_delta(miny, maxy, precision)).tolist()
-            X, Y = numpy.meshgrid(X, Y)
+            x_ax = numpy.arange(minx, maxx, get_precision_delta(
+                minx, maxx, precision)).tolist()
+            y_ax = numpy.arange(miny, maxy, get_precision_delta(
+                miny, maxy, precision)).tolist()
+            x_ax, y_ax = numpy.meshgrid(x_ax, y_ax)
 
             # slider
             axis_slider = plt.axes([0.12, 0.03, 0.78, 0.03], axisbg="white")
@@ -351,8 +340,8 @@ class Plot4d(object):
                 Z = []
 
                 # add new points
-                for i in range(len(X)):
-                    Z.append(function(x_const, X[i], Y[i]))
+                for i in range(len(x_ax)):
+                    Z.append(function(x_const, x_ax[i], y_ax[i]))
 
                 # show
                 # cset = ax.contour(X, Y, Z, zdir="x", offset=minx)

@@ -18,7 +18,6 @@
 
 """ Various tools and utilities to deal with database and machine learning. """
 
-
 import numpy as np
 
 

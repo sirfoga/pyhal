@@ -18,7 +18,6 @@
 
 """ Abstract search engines. """
 
-
 from hal.internet.web import Webpage
 
 
@@ -54,10 +53,13 @@ class SearchEngine(object):
         :param query: string
             Query to search engine.
         :return: string
-            Parse given query in order to meet search criteria of search engine.
+            Parse given query in order to meet search criteria of search engine
         """
 
-        return query.strip().replace(" ", self.blank_replace).lower()  # remove trailing blanks, then replace with search engine blanks
+        return query.strip().replace(
+            " ",
+            self.blank_replace
+        ).lower()  # remove trailing blanks, replace with search engine blanks
 
     def get_search_page(self, query, using_tor=False):
         """
@@ -69,6 +71,7 @@ class SearchEngine(object):
             Get HTML source of search page of given query.
         """
 
-        query_web_page = Webpage(self.url + self.parse_query(query), using_tor=using_tor)
+        query_web_page = Webpage(self.url + self.parse_query(query),
+                                 using_tor=using_tor)
         query_web_page.get_html_source(tor=using_tor)  # get html source
         return query_web_page.source

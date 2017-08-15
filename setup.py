@@ -51,6 +51,7 @@ setup(
     install_requires=[  # TODO: uncomment packages (but travis will fail)
         "bs4",
         "mutagen",
+        "matplotlib",
         "numpy",
         "pycrypto",
         "scipy",

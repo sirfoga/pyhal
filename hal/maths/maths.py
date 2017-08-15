@@ -18,25 +18,33 @@
 
 """ A few elegant and powerful mathematical functions. """
 
-
 import random
 
 
 class Integer(object):
-    LOW_PRIMES = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101,
-                  103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199,
-                  211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317,
-                  331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421, 431, 433, 439, 443,
-                  449, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509, 521, 523, 541, 547, 557, 563, 569, 571, 577,
-                  587, 593, 599, 601, 607, 613, 617, 619, 631, 641, 643, 647, 653, 659, 661, 673, 677, 683, 691, 701,
-                  709, 719, 727, 733, 739, 743, 751, 757, 761, 769, 773, 787, 797, 809, 811, 821, 823, 827, 829, 839,
-                  853, 857, 859, 863, 877, 881, 883, 887, 907, 911, 919, 929, 937, 941, 947, 953, 967, 971, 977, 983,
+    LOW_PRIMES = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53,
+                  59, 61, 67, 71, 73, 79, 83, 89, 97, 101,
+                  103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163,
+                  167, 173, 179, 181, 191, 193, 197, 199,
+                  211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271,
+                  277, 281, 283, 293, 307, 311, 313, 317,
+                  331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397,
+                  401, 409, 419, 421, 431, 433, 439, 443,
+                  449, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509, 521,
+                  523, 541, 547, 557, 563, 569, 571, 577,
+                  587, 593, 599, 601, 607, 613, 617, 619, 631, 641, 643, 647,
+                  653, 659, 661, 673, 677, 683, 691, 701,
+                  709, 719, 727, 733, 739, 743, 751, 757, 761, 769, 773, 787,
+                  797, 809, 811, 821, 823, 827, 829, 839,
+                  853, 857, 859, 863, 877, 881, 883, 887, 907, 911, 919, 929,
+                  937, 941, 947, 953, 967, 971, 977, 983,
                   991, 997]
 
     def __init__(self, string):
         self.to_int = int(string)
         self.to_string = string
-        self.is_pprime = (self.to_int % 2 != 0) and (self.to_int in self.LOW_PRIMES)
+        self.is_pprime = (self.to_int % 2 != 0) and (
+            self.to_int in self.LOW_PRIMES)
 
     def is_probably_prime(self):
         """
@@ -50,14 +58,22 @@ class Integer(object):
         elif self.to_int % 2 == 0:
             return False
 
-        low_primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101,
-                      103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199,
-                      211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317,
-                      331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421, 431, 433, 439, 443,
-                      449, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509, 521, 523, 541, 547, 557, 563, 569, 571, 577,
-                      587, 593, 599, 601, 607, 613, 617, 619, 631, 641, 643, 647, 653, 659, 661, 673, 677, 683, 691, 701,
-                      709, 719, 727, 733, 739, 743, 751, 757, 761, 769, 773, 787, 797, 809, 811, 821, 823, 827, 829, 839,
-                      853, 857, 859, 863, 877, 881, 883, 887, 907, 911, 919, 929, 937, 941, 947, 953, 967, 971, 977, 983,
+        low_primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47,
+                      53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101,
+                      103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157,
+                      163, 167, 173, 179, 181, 191, 193, 197, 199,
+                      211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269,
+                      271, 277, 281, 283, 293, 307, 311, 313, 317,
+                      331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389,
+                      397, 401, 409, 419, 421, 431, 433, 439, 443,
+                      449, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509,
+                      521, 523, 541, 547, 557, 563, 569, 571, 577,
+                      587, 593, 599, 601, 607, 613, 617, 619, 631, 641, 643,
+                      647, 653, 659, 661, 673, 677, 683, 691, 701,
+                      709, 719, 727, 733, 739, 743, 751, 757, 761, 769, 773,
+                      787, 797, 809, 811, 821, 823, 827, 829, 839,
+                      853, 857, 859, 863, 877, 881, 883, 887, 907, 911, 919,
+                      929, 937, 941, 947, 953, 967, 971, 977, 983,
                       991, 997]
 
         if self.to_int in low_primes:
@@ -68,13 +84,14 @@ class Integer(object):
             if self.to_int % prime == 0:
                 return False
 
-        # If all else fails, call rabinMiller to determine if self.to_int is a prime
+        # if all else fails, call rabinMiller to determine if to_int is prime
         self.is_pprime = self.test_miller_rabin(5)
         return self.is_pprime
 
     def test_miller_rabin(self, precision):
         """
-        :param precision: number of rounds to perform (higher -> better precision)
+        :param precision: number of rounds to perform (higher -> better
+        precision)
         :return: True iff probably prime
         """
 
@@ -143,8 +160,8 @@ class EightQueen(object):
 
         smaller_solutions = self.solve(n - 1)
         solutions = []
-        for solution in smaller_solutions:  # I moved this around, so it makes more sense
-            for column in range(1, self.board_size + 1):  # I changed this, so it makes more sense
+        for solution in smaller_solutions:
+            for column in range(1, self.board_size + 1):
                 # try adding a new queen to row = n, column = column
                 if not self.under_attack(column, solution):
                     solutions.append(solution + [(n, column)])
@@ -160,7 +177,7 @@ def get_prime(bits):
     if bits < 0:
         raise ValueError('\'bits\' field cannot be negative')
     while True:
-        num = random.randrange(2**(bits - 1), 2 ** bits)
+        num = random.randrange(2 ** (bits - 1), 2 ** bits)
         if Integer(str(num)).is_probably_prime():
             return num
 
@@ -174,12 +191,14 @@ def blumblumshub(seed, amount, prime0, prime1):
     :return: pseudo-number generator
     """
 
-    assert(amount >= 0)  # amount cannot be negative
+    assert (amount >= 0)  # amount cannot be negative
     if amount == 0:
         return []
 
-    assert(seed > 0 and prime0 > 0 and prime1 > 0)  # seed and primes cannot be negative
-    assert(prime0 % 4 == 3 and prime1 % 4 == 3)  # primes must be congruent 3 mod 4
+    assert (seed > 0 and
+            prime0 > 0 and prime1 > 0)  # seed and primes cannot be negative
+    assert (prime0 % 4 == 3 and
+            prime1 % 4 == 3)  # primes must be congruent 3 mod 4
 
     mod = prime0 * prime1
     rand = [seed]

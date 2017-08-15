@@ -28,10 +28,12 @@ from statsmodels.tsa.stattools import adfuller
 
 
 def test_stationarity(timeseries):
-    rolmean = pd.rolling_mean(timeseries, window=12)  # Determing rolling statistics
+    rolmean = pd.rolling_mean(timeseries,
+                              window=12)  # rolling statistics
     rolstd = pd.rolling_std(timeseries, window=12)
 
-    plt.plot(timeseries, color='blue', label='Original')  # Plot rolling statistics:
+    plt.plot(timeseries, color='blue',
+             label='Original')  # Plot rolling statistics:
     plt.plot(rolmean, color='red', label='Rolling Mean')
     plt.plot(rolstd, color='black', label='Rolling Std')
     plt.legend(loc='best')
@@ -41,7 +43,9 @@ def test_stationarity(timeseries):
     # Perform Dickey-Fuller test:
     print('Results of Dickey-Fuller Test:')
     dftest = adfuller(timeseries, autolag='AIC')
-    dfoutput = pd.Series(dftest[0:4], index=['Test Statistic', 'p-value', '# Lags Used', '# Observations Used'])
+    dfoutput = pd.Series(dftest[0:4],
+                         index=['Test Statistic', 'p-value', '# Lags Used',
+                                '# Observations Used'])
     for key, value in list(dftest[4].items()):
         dfoutput['Critical Value (%s)' % key] = value
     print(dfoutput)

@@ -16,7 +16,7 @@
 # limitations under the License.
 
 
-import time
+from time import time
 
 
 def get_time_eta(total_done, total, start_time):
@@ -31,7 +31,7 @@ def get_time_eta(total_done, total, start_time):
         Time to go
     """
 
-    time_done = int(time.time()) - start_time
+    time_done = int(time()) - start_time
     try:
         speed = total_done / time_done
     except:
@@ -88,8 +88,10 @@ def print_time_eta(time_to_go, note=""):
     """
 
     print(
-        str(note), str(time_to_go["done"]) + "/" + str(time_to_go["tot"]), "(" + str(time_to_go["%"]) + "%)",
+        str(note), str(time_to_go["done"]) + "/" + str(time_to_go["tot"]),
+                   "(" + str(time_to_go["%"]) + "%)",
         "ETA {:20.19}".format(
-            str(time_to_go["h"]) + "h " + str(time_to_go["m"]) + "\' " + str(time_to_go["s"]) + "\""
+            str(time_to_go["h"]) + "h " + str(time_to_go["m"]) + "\' " + str(
+                time_to_go["s"]) + "\""
         )
     )

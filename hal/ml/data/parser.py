@@ -23,7 +23,8 @@ import csv
 
 class Parser(object):
     def __init__(self, database_file):
-        """ :param database_file: a raw .csv file that contains any data about anything """
+        """ :param database_file: a raw .csv file that contains any data
+        about anything """
 
         object.__init__(self)
         self.database_file = database_file
@@ -37,13 +38,15 @@ class Parser(object):
 
 class CSVParser(Parser):
     def __init__(self, database_file):
-        """ :param database_file: a raw .csv file that contains any data about anything """
+        """ :param database_file: a raw .csv file that contains any data
+        about anything """
 
         Parser.__init__(self, database_file)
         self.data = []
 
     def parse_data(self):
-        """ store values in array, store lines in array; the result is a 2D matrix"""
+        """ store values in array, store lines in array; the result is a 2D
+        matrix """
 
         with open(self.database_file) as csvfile:
             csv_reader = csv.reader(csvfile, delimiter=",", quotechar="\"")

@@ -27,32 +27,57 @@ from mutagen.mp3 import MP3
 from send2trash import send2trash
 
 BAD_CHARS = [
-    ".", ":", "\"", "’", "&", "720p", "1080p", "yify", ",", "brrip", "bluray", "Bokutox", "x264", "[", "]", "sparks", "h264",
-    "aac", "ozlem", "ac3", "ozlem", "etrg", "dvdrip", "xvid", "nydic", "sujaidr", "x265", "hevc", "(pimprg)", "aac",
-    "ozlem", "remastered", "anoxmous", "yts"]  # official formats based on wikipedia
-RUSSIAN_CHARS = ["ш", "а", "б", "л", "о", "н", "ы", "р", "е", "а", "л", "и", "з", "а", "ц", "и", "и", "к",
-    "о", "р", "п", "о", "р", "а", "т", "и", "в", "н", "ы", "х", "п", "р", "и", "л", "о", "ж", "е", "н", "и", "й",
-    "в", "о", "п", "р", "о", "с", "ы", "и", "о", "т", "в", "е", "т", "ы", "п", "о", "б", "е", "з", "о", "п",
-    "а", "с", "н", "о", "с", "т", "и", "д", "а", "н", "н", "ы", "х"]
-VIDEO_FORMAT = [".", ".3g2", ".3gp", ".amv", ".asf", ".avi", ".drc", ".f4a", ".f4b", ".f4p", ".f4v", ".flv",
-    ".gifv", ".m2v", ".m4p", ".m4v", ".mkv", ".mng", ".mov", ".mp2", ".mp4", ".mpe", ".mpeg", ".mpg", ".mpv", ".mxf",
-    ".nsv", ".ogg", ".ogv", ".qt", ".rm", ".rmvb", ".roq", ".svi", ".vob", ".webm", ".wmv", ".yuv"]
-ARCHIVE_FORMAT = [".7z", ".??_", ".?Q?", ".?Z?", ".a", ".ace", ".afa", ".alz", ".apk", ".ar", ".arc", ".arj",
-                      ".b1", ".ba", ".bh", ".bz2", ".cab", ".car", ".cfs", ".cpio", ".cpt", ".dar", ".dd", ".dgc",
-                      ".dmg", ".ear", ".ecc", ".F", ".gca", ".gz", ".ha", ".hki", ".ice", ".infl", ".iso", ".jar",
-                      ".kgb", ".LBR", ".lbr", ".lha", ".lz", ".lzh", ".lzma", ".lzo", ".lzx", ".mar", ".pak", ".paq6",
-                      ".paq7", ".paq8", ".par", ".par2", ".partimg", ".pea", ".pim", ".pit", ".qda", ".rar", ".rk",
-                      ".rz", ".s7z", ".sda", ".sea", ".sen", ".sfark", ".sfx", ".shar", ".shk", ".sit", ".sitx",
-                      ".sqx", ".sz", ".tar", ".tar.bz2", ".tar.gz", ".tar.lzma", ".tar.Z", ".tbz2", ".tgz", ".tlz",
-                      ".uc", ".uc0", ".uc2", ".uca", ".ucn", ".ue2", ".uha", ".ur2", ".war", ".wim", ".xar", ".xp3",
-                      ".xz", ".yz1", ".z", ".Z", ".zip", ".zipx", ".zoo", ".zpaq", ".zz"]
+    ".", ":", "\"", "’", "&", "720p", "1080p", "yify", ",", "brrip", "bluray",
+    "Bokutox", "x264", "[", "]", "sparks", "h264",
+    "aac", "ozlem", "ac3", "ozlem", "etrg", "dvdrip", "xvid", "nydic",
+    "sujaidr", "x265", "hevc", "(pimprg)", "aac",
+    "ozlem", "remastered", "anoxmous",
+    "yts"]  # official formats based on wikipedia
+RUSSIAN_CHARS = ["ш", "а", "б", "л", "о", "н", "ы", "р", "е", "а", "л", "и",
+                 "з", "а", "ц", "и", "и", "к",
+                 "о", "р", "п", "о", "р", "а", "т", "и", "в", "н", "ы", "х",
+                 "п", "р", "и", "л", "о", "ж", "е", "н", "и", "й",
+                 "в", "о", "п", "р", "о", "с", "ы", "и", "о", "т", "в", "е",
+                 "т", "ы", "п", "о", "б", "е", "з", "о", "п",
+                 "а", "с", "н", "о", "с", "т", "и", "д", "а", "н", "н", "ы",
+                 "х"]
+VIDEO_FORMAT = [".", ".3g2", ".3gp", ".amv", ".asf", ".avi", ".drc", ".f4a",
+                ".f4b", ".f4p", ".f4v", ".flv",
+                ".gifv", ".m2v", ".m4p", ".m4v", ".mkv", ".mng", ".mov",
+                ".mp2", ".mp4", ".mpe", ".mpeg", ".mpg", ".mpv", ".mxf",
+                ".nsv", ".ogg", ".ogv", ".qt", ".rm", ".rmvb", ".roq", ".svi",
+                ".vob", ".webm", ".wmv", ".yuv"]
+ARCHIVE_FORMAT = [".7z", ".??_", ".?Q?", ".?Z?", ".a", ".ace", ".afa", ".alz",
+                  ".apk", ".ar", ".arc", ".arj",
+                  ".b1", ".ba", ".bh", ".bz2", ".cab", ".car", ".cfs", ".cpio",
+                  ".cpt", ".dar", ".dd", ".dgc",
+                  ".dmg", ".ear", ".ecc", ".F", ".gca", ".gz", ".ha", ".hki",
+                  ".ice", ".infl", ".iso", ".jar",
+                  ".kgb", ".LBR", ".lbr", ".lha", ".lz", ".lzh", ".lzma",
+                  ".lzo", ".lzx", ".mar", ".pak", ".paq6",
+                  ".paq7", ".paq8", ".par", ".par2", ".partimg", ".pea",
+                  ".pim", ".pit", ".qda", ".rar", ".rk",
+                  ".rz", ".s7z", ".sda", ".sea", ".sen", ".sfark", ".sfx",
+                  ".shar", ".shk", ".sit", ".sitx",
+                  ".sqx", ".sz", ".tar", ".tar.bz2", ".tar.gz", ".tar.lzma",
+                  ".tar.Z", ".tbz2", ".tgz", ".tlz",
+                  ".uc", ".uc0", ".uc2", ".uca", ".ucn", ".ue2", ".uha",
+                  ".ur2", ".war", ".wim", ".xar", ".xp3",
+                  ".xz", ".yz1", ".z", ".Z", ".zip", ".zipx", ".zoo", ".zpaq",
+                  ".zz"]
 SUBTITLE_FORMAT = [".srt", ".sub", ".sbv"]
-TEXT_FORMAT = [".cnf", ".conf", ".cfg", ".chm", ".epub", ".log", ".asc", ".txt", ".url"]
-IMAGE_FORMAT = [".ani", ".bmp", ".cal", ".fax", ".gif", ".img", ".jbg", ".jpe", ".jpe", ".jpg", ".mac", ".pbm",
-                ".pcd", ".pcx", ".pct", ".pgm", ".png", ".ppm", ".psd", ".ras", ".tga", ".tif", ".wmf"]
-AUDIO_FORMAT = [".3gp", ".aa", ".aac", ".aax", ".act", ".aiff", ".amr", ".ape", ".au", ".awb", ".dct", ".dss", ".dvf",
-                ".flac", ".gsm", ".iklax", ".ivs", ".m4a", ".m4b", ".m4p", ".mmf", ".mogg", ".mp3", ".mpc", ".msv",
-                ".oga", ".ogg", ".opus", ".ra", ".raw", ".rm", ".sln", ".tta", ".vox", ".wav", ".webm", ".wma", ".wv"]
+TEXT_FORMAT = [".cnf", ".conf", ".cfg", ".chm", ".epub", ".log", ".asc",
+               ".txt", ".url"]
+IMAGE_FORMAT = [".ani", ".bmp", ".cal", ".fax", ".gif", ".img", ".jbg", ".jpe",
+                ".jpe", ".jpg", ".mac", ".pbm",
+                ".pcd", ".pcx", ".pct", ".pgm", ".png", ".ppm", ".psd", ".ras",
+                ".tga", ".tif", ".wmf"]
+AUDIO_FORMAT = [".3gp", ".aa", ".aac", ".aax", ".act", ".aiff", ".amr", ".ape",
+                ".au", ".awb", ".dct", ".dss", ".dvf",
+                ".flac", ".gsm", ".iklax", ".ivs", ".m4a", ".m4b", ".m4p",
+                ".mmf", ".mogg", ".mp3", ".mpc", ".msv",
+                ".oga", ".ogg", ".opus", ".ra", ".raw", ".rm", ".sln", ".tta",
+                ".vox", ".wav", ".webm", ".wma", ".wv"]
 PATH_SEPARATOR = "/" if "posix" in os.name else "\\"
 
 
@@ -78,8 +103,10 @@ class FileSystem(object):
         """
 
         double_path_separator = PATH_SEPARATOR + PATH_SEPARATOR
-        while path.find(double_path_separator) >= 0:  # there are double separators
-            path = path.replace(double_path_separator, PATH_SEPARATOR)  # remove double path separators
+        while path.find(
+                double_path_separator) >= 0:  # there are double separators
+            path = path.replace(double_path_separator,
+                                PATH_SEPARATOR)  # remove double path separator
         return path
 
     @staticmethod
@@ -91,10 +118,12 @@ class FileSystem(object):
             Given string bu with no years.
         """
 
-        for i in range(len(name) - 3):  # last index is lenght - 3 - 1 = length - 4
+        for i in range(len(
+                name) - 3):  # last index is lenght - 3 - 1 = length - 4
             if name[i: i + 4].isdigit():
                 name = name[:i] + name[i + 4:]
-                return FileSystem.remove_year(name)  # if there is a removal, start again
+                return FileSystem.remove_year(
+                    name)  # if there is a removal, start again
         return name
 
     @staticmethod
@@ -106,7 +135,8 @@ class FileSystem(object):
             Given string bu with no barckets.
         """
 
-        name = re.sub("([\(\[]).*?([\)\]])", "\g<1>\g<2>", name)  # remove anything in between brackets
+        name = re.sub("([\(\[]).*?([\)\]])", "\g<1>\g<2>",
+                      name)  # remove anything in between brackets
         brackets = "()[]{}"  # list of brackets
         for bracket in brackets:
             name = name.replace(bracket, "")
@@ -126,13 +156,15 @@ class FileSystem(object):
         """
 
         if max_chars <= 0:
-            raise ValueError("Maximum chars of new name must be greater than 0")
+            raise ValueError(
+                "Maximum chars of new name must be greater than 0")
 
         new_name = name.strip()
         if len(new_name) > max_chars:
             new_name = new_name[:max_chars]  # get at most 64 chars
             if new_name.rfind(blank) > 0:
-                new_name = new_name[:new_name.rfind(blank)]  # truncate to nearest word
+                new_name = new_name[
+                           :new_name.rfind(blank)]  # truncate to nearest word
         return new_name
 
     @staticmethod
@@ -158,9 +190,13 @@ class FileSystem(object):
         while name.find(r + r) >= 0:  # while there are blanks to remove
             name = name.replace(r + r, r)
 
-        for i in range(1, len(name) - 2):  # loop through characters except 1 and end
+        for i in range(1, len(
+                name) - 2):  # loop through characters except 1 and end
             try:
-                if name[i - 1] == r and name[i + 1] == r and name[i] in bad_chars:  # 2 blanks hug one bad char
+                if name[i - 1] == r and \
+                                name[i + 1] == r and \
+                                name[
+                                    i] in bad_chars:  # 2 blanks hug one bad char
                     name = name[:i - 1] + name[i + 2:]
             except:  # out of bounds
                 pass
@@ -206,8 +242,10 @@ class FileSystem(object):
             if include_hidden or not Document(f).is_hidden():
                 list_.append(os.path.join(path, f))
                 if os.path.isdir(os.path.join(path, f)):
-                    list_ += Directory.ls_recurse(os.path.join(path, f),
-                                        include_hidden=include_hidden)  # get list of files in directory
+                    list_ += Directory.ls_recurse(
+                        os.path.join(path, f),
+                        include_hidden=include_hidden
+                    )  # get list of files in directory
         return list_
 
     @staticmethod
@@ -293,7 +331,8 @@ class Document(FileSystem):
         file_name = os.path.basename(file_path)  # get name of file
         if not os.path.exists(directory_path):
             os.makedirs(directory_path)  # create directory if necessary
-        os.rename(file_path, os.path.join(directory_path, file_name))  # move file to location
+        os.rename(file_path, os.path.join(directory_path,
+                                          file_name))  # move file to location
 
     @staticmethod
     def move_file_to_file(old_path, new_path):
@@ -309,15 +348,18 @@ class Document(FileSystem):
             os.rename(old_path, new_path)
         except:
             old_file = os.path.basename(old_path)
-            target_directory, target_file = os.path.dirname(os.path.abspath(new_path)), os.path.basename(new_path)
+            target_directory, target_file = os.path.dirname(
+                os.path.abspath(new_path)), os.path.basename(new_path)
             try:
                 Document.move_file_to_directory(
                     old_path,
                     target_directory
-                )  # move old file to new directory then change name ot new name
-                os.rename(os.path.join(target_directory, old_file), os.path.join(target_directory, target_file))
+                )  # move old file to new directory, change name to new name
+                os.rename(os.path.join(target_directory, old_file),
+                          os.path.join(target_directory, target_file))
             except:
-                print("[CRITICAL]", "Failed renaming", old_path, ">>", new_path)
+                print("[CRITICAL]", "Failed renaming", old_path, ">>",
+                      new_path)
 
     @staticmethod
     def write_data_to_file(data, out_file):
@@ -427,7 +469,8 @@ class Directory(FileSystem):
         """
 
         p = os.path.dirname(os.path.abspath(self.path))
-        name = self.path.replace(p + PATH_SEPARATOR, "")[: -1]  # replace in full path, dir path to get name
+        name = self.path.replace(p + PATH_SEPARATOR, "")[
+               : -1]  # replace in full path, dir path to get name
         return p, name
 
     def is_empty(self):
