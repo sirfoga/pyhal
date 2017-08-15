@@ -76,12 +76,12 @@ def true_neg_rate(matrix):
 
 
 def accuracy(matrix):
-    """ Calcualtes recall on database
+    """ Calculates recall on database
 
-        :param matrix: 2x2 matrix that looks like
-        True Positive  - False Negative
-             |         -       |
-        False Positive - True Negative
+    :param matrix: 2x2 matrix that looks like
+    True Positive  - False Negative
+         |         -       |
+    False Positive - True Negative
     """
 
     true_pos = matrix[0][0]
@@ -90,8 +90,9 @@ def accuracy(matrix):
     true_neg = matrix[1][1]
 
     try:
-        return 1.0 * (true_pos + true_neg) / (
-        true_pos + true_neg + false_pos + false_neg)
+        return \
+            1.0 * (true_pos + true_neg) / (true_pos + true_neg + false_pos +
+                                           false_neg)
     except:  # division by 0
         return 0
 

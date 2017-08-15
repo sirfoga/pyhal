@@ -148,7 +148,6 @@ class MD6(object):
 
         b = 512
         c = 128
-        n = 89
         d = size
         M = data
 

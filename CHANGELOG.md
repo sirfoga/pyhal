@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file.
 ## 4.6
 ### Fixed
 - duplicate code in ml.utils.misc
+- cleaned code (PEP8 compliant, score: 8.78/10)
 
 ## 4.5.1
 ### Added
