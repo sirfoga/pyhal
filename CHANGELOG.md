@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 - badges in README
 - converted to sklearn.model_selection
 - flake8-ed all modules
+- pylint-ed all modules
 ### Refactored
 - selenium -> selenium_bots to avoid misunderstandings in imports
 ### Removed

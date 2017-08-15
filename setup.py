@@ -55,6 +55,7 @@ setup(
         "numpy",
         "pycrypto",
         "scipy",
+        "statsmodels",
         "sklearn",
         "requests",
         "lxml",

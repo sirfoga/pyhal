@@ -28,14 +28,19 @@ from statsmodels.tsa.stattools import adfuller
 
 
 def test_stationarity(timeseries):
-    rolmean = pd.rolling_mean(timeseries,
-                              window=12)  # rolling statistics
-    rolstd = pd.rolling_std(timeseries, window=12)
+    """
+    :param timeseries: []
+    :return: void
+        Shows plot and checks for stationary series
+    """
+
+    rolling_mean = pd.rolling_mean(timeseries, window=12)  # rolling stats
+    rolling_std = pd.rolling_std(timeseries, window=12)
 
     plt.plot(timeseries, color='blue',
              label='Original')  # Plot rolling statistics:
-    plt.plot(rolmean, color='red', label='Rolling Mean')
-    plt.plot(rolstd, color='black', label='Rolling Std')
+    plt.plot(rolling_mean, color='red', label='Rolling Mean')
+    plt.plot(rolling_std, color='black', label='Rolling Std')
     plt.legend(loc='best')
     plt.title('Rolling Mean and Standard Deviation')
     plt.show()
@@ -67,8 +72,8 @@ def arma(dates, values, start=None, end=None, plot=False):
         end += 1  # next day in database
         end = str(end)
 
-    y = pd.TimeSeries(values, index=dates)
-    model = ar.ARMA(y, order=(2, 1, 0))
+    y_series = pd.Series(values, index=dates)
+    model = ar.ARMA(y_series, order=(2, 1, 0))
     model = model.fit(trend="nc", maxiter=1000, disp=False)
 
     graph = None
@@ -92,49 +97,32 @@ def arima(dates, values, start=None, end=None):
         end += 1  # next day in database
         end = str(end)
 
-    y = pd.TimeSeries(values, index=dates)
-    model = ar.ARIMA(y, order=(2, 1, 0))
+    y_series = pd.Series(values, index=dates)
+    model = ar.ARIMA(y_series, order=(2, 1, 0))
     model = model.fit(trend="nc", maxiter=1000, disp=False)
     return model.predict(start, end, dynamic=True)
 
 
-def var(dates, values, start=None, end=None):
+def var(dates, values):
     """ Predict days values using ARIMA algorithm.
     :param dates: list of str date
     :param values: list of float values
     :param start: start predicting in this day
     :param end: end of prediction """
 
-    if start is None:
-        start = dates[0]
-
-    if end is None:
-        end = np.datetime64(dates[-1])
-        end += 1  # next day in database
-        end = str(end)
-
-    y = pd.TimeSeries(values, index=dates)
-    model = vr.VAR(y)
+    y_series = pd.Series(values, index=dates)
+    model = vr.VAR(y_series)
     model = model.fit(trend="nc")
-    return model.predict(start=start, end=end)
+    return model.forecast(y_series, steps=1)
 
 
-def dynamic_var(dates, values, start=None, end=None):
+def dynamic_var(dates, values):
     """ Predict days values using ARIMA algorithm.
     :param dates: list of str date
     :param values: list of float values
     :param start: start predicting in this day
     :param end: end of prediction """
 
-    if start is None:
-        start = dates[0]
-
-    if end is None:
-        end = np.datetime64(dates[-1])
-        end += 1  # next day in database
-        end = str(end)
-
-    y = pd.TimeSeries(values, index=dates)
-    model = dr.DynamicVAR(y, (2, 1, 0))
-    model = model.fit(trend="nc")
-    return model.predict(start=start, end=end)
+    y_series = pd.Series(values, index=dates)
+    model = dr.DynamicVAR(y_series, (2, 1, 0), trend="nc")
+    return model.forecast(y_series)
