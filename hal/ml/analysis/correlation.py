@@ -144,7 +144,7 @@ def save_correlation_matrix_of_data_files_in_folder(folder_path):
                                  "output-" + str(int(time())))
     os.makedirs(output_folder)  # make necessary folders to create directory
 
-    for file in FileSystem.ls(folder_path, False, False):
+    for file in FileSystem.list_content(folder_path, False, False):
         if os.path.isfile(file) and str(file).endswith("csv"):
             print("Analysing file ", str(file))
 

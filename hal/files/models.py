@@ -82,6 +82,8 @@ PATH_SEPARATOR = "/" if "posix" in os.name else "\\"
 
 
 class FileSystem(object):
+    """ Models a folder/file in a OS """
+
     def __init__(self, path):
         """
         :param path: string
@@ -91,7 +93,7 @@ class FileSystem(object):
         object.__init__(self)
 
         self.path = self.fix_raw_path(path)
-        self.name, extension = os.path.splitext(self.path)
+        self.name, self.extension = os.path.splitext(self.path)
 
     @staticmethod
     def fix_raw_path(path):
@@ -135,8 +137,11 @@ class FileSystem(object):
             Given string bu with no barckets.
         """
 
-        name = re.sub("([\(\[]).*?([\)\]])", "\g<1>\g<2>",
-                      name)  # remove anything in between brackets
+        name = re.sub(
+            r"([\(\[]).*?([\)\]])",
+            r"\g<1>\g<2>",
+            name
+        )  # remove anything in between brackets
         brackets = "()[]{}"  # list of brackets
         for bracket in brackets:
             name = name.replace(bracket, "")
@@ -163,18 +168,15 @@ class FileSystem(object):
         if len(new_name) > max_chars:
             new_name = new_name[:max_chars]  # get at most 64 chars
             if new_name.rfind(blank) > 0:
-                new_name = new_name[
-                           :new_name.rfind(blank)]  # truncate to nearest word
+                new_name = new_name[:new_name.rfind(blank)]  # nearest word
         return new_name
 
     @staticmethod
-    def prettify(name, bad_chars=BAD_CHARS, r=" "):
+    def prettify(name, blank=" "):
         """
         :param name: string
             Name to edit
-        :param bad_chars: []
-            List of bad strings to remove
-        :param r: string
+        :param blank: string
             Default blanks in name.
         :return: string
             Prettier name from given one: replace bad chars with good ones.
@@ -183,27 +185,26 @@ class FileSystem(object):
         if name.startswith("."):  # remove starting .
             name = name[1:]
 
-        for t in bad_chars:
-            name = name.replace(t, r)  # remove token
+        for bad_char in BAD_CHARS:
+            name = name.replace(bad_char, blank)  # remove token
 
-        name = name.replace(" ", r)  # replace blanks
-        while name.find(r + r) >= 0:  # while there are blanks to remove
-            name = name.replace(r + r, r)
+        name = name.replace(" ", blank)  # replace blanks
+        while name.find(blank + blank) >= 0:  # while there are blanks
+            name = name.replace(blank + blank, blank)
 
-        for i in range(1, len(
-                name) - 2):  # loop through characters except 1 and end
+        for i in range(1, len(name) - 2):
             try:
-                if name[i - 1] == r and \
-                                name[i + 1] == r and \
-                                name[i] in bad_chars:
+                if name[i - 1] == blank and \
+                                name[i + 1] == blank and \
+                                name[i] in BAD_CHARS:
                     name = name[:i - 1] + name[i + 2:]
             except:  # out of bounds
                 pass
 
-        if name.startswith(r):
+        if name.startswith(blank):
             name = name[1:]
 
-        if name.endswith(r):  # remove ending replacement
+        if name.endswith(blank):  # remove ending replacement
             name = name[:-1]
 
         return name
@@ -220,9 +221,9 @@ class FileSystem(object):
         """
 
         list_ = []
-        for f in os.listdir(path):
-            if include_hidden or not Document(f).is_hidden():
-                list_.append(os.path.join(path, f))
+        for file in os.listdir(path):
+            if include_hidden or not Document(file).is_hidden():
+                list_.append(os.path.join(path, file))
         return list_
 
     @staticmethod
@@ -237,18 +238,18 @@ class FileSystem(object):
         """
 
         list_ = []
-        for f in os.listdir(path):
-            if include_hidden or not Document(f).is_hidden():
-                list_.append(os.path.join(path, f))
-                if os.path.isdir(os.path.join(path, f)):
+        for file in os.listdir(path):
+            if include_hidden or not Document(file).is_hidden():
+                list_.append(os.path.join(path, file))
+                if os.path.isdir(os.path.join(path, file)):
                     list_ += Directory.ls_recurse(
-                        os.path.join(path, f),
+                        os.path.join(path, file),
                         include_hidden=include_hidden
                     )  # get list of files in directory
         return list_
 
     @staticmethod
-    def ls(path, recurse, include_hidden=False):
+    def list_content(path, recurse, include_hidden=False):
         """
         :param path: string
             Path to directory to get list of files and folders
@@ -261,8 +262,8 @@ class FileSystem(object):
         """
         if recurse:
             return Directory.ls_recurse(path, include_hidden=include_hidden)
-        else:
-            return Directory.ls_dir(path, include_hidden=include_hidden)
+
+        return Directory.ls_dir(path, include_hidden=include_hidden)
 
     def is_archive_mac(self):
         """
@@ -277,8 +278,8 @@ class FileSystem(object):
         """
 
         russian_chars = 0
-        for c in RUSSIAN_CHARS:
-            if c in self.name:
+        for char in RUSSIAN_CHARS:
+            if char in self.name:
                 russian_chars += 1  # found a russian char
         return russian_chars > len(RUSSIAN_CHARS) / 2.0
 
@@ -306,6 +307,8 @@ class FileSystem(object):
 
 
 class Document(FileSystem):
+    """ File with content in a OS """
+
     def __init__(self, path):
         """
         :param path: string
@@ -371,8 +374,8 @@ class Document(FileSystem):
             Writes given data to given path file.
         """
 
-        with open(out_file, "w") as f:
-            f.write(data)
+        with open(out_file, "w") as out_f:
+            out_f.write(data)
 
     @staticmethod
     def extract_name_extension(file_name):
@@ -439,6 +442,8 @@ class Document(FileSystem):
 
 
 class Directory(FileSystem):
+    """ Folder of a OS """
+
     def __init__(self, path):
         """
         :param path: string
@@ -467,10 +472,9 @@ class Directory(FileSystem):
             Name of path, name of file (or folder)
         """
 
-        p = os.path.dirname(os.path.abspath(self.path))
-        name = self.path.replace(p + PATH_SEPARATOR, "")[
-               : -1]  # replace in full path, dir path to get name
-        return p, name
+        complete_path = os.path.dirname(os.path.abspath(self.path))
+        name = self.path.replace(complete_path + PATH_SEPARATOR, "")[: -1]
+        return complete_path, name
 
     def is_empty(self):
         """
@@ -485,27 +489,67 @@ class MP3Song(FileSystem):
     """ mp3 song """
 
     def __init__(self, path):
+        """
+        :param path: str
+            Location of .mp3 file
+        """
+
         FileSystem.__init__(self, path)
 
         self.song = MP3(self.path, ID3=ID3)
         self.tags = self.song.tags
 
     def set_name(self, name):
+        """
+        :param name: str
+            Song's title
+        :return: void
+            Sets song's title
+        """
+
         self.tags.add(TIT2(encoding=3, text=name.decode('utf-8')))
         self.song.save()
 
     def set_artist(self, artist):
+        """
+        :param artist: str
+            Song's artist
+        :return: void
+            Sets song's artist
+        """
+
         self.tags.add(TPE1(encoding=3, text=artist.decode('utf-8')))
         self.song.save()
 
     def set_album(self, album):
+        """
+        :param album: str
+            Song's album
+        :return: void
+            Sets song's albu
+        """
+
         self.tags.add(TALB(encoding=3, text=album.decode('utf-8')))
         self.song.save()
 
     def set_nr_track(self, nr_track):
+        """
+        :param nr_track: int
+            Number of track
+        :return: void
+            Sets song's track number
+        """
+
         self.tags.add(TRCK(encoding=3, text=str(nr_track)))
         self.song.save()
 
     def set_year(self, year):
+        """
+        :param year: int
+            Year of song
+        :return: void
+            Sets song's year
+        """
+
         self.tags.add(TDRC(encoding=3, text=str(year)))
         self.song.save()

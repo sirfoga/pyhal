@@ -16,6 +16,8 @@
 # limitations under the License.
 
 
+""" Save various data to file """
+
 import csv
 
 
@@ -30,8 +32,8 @@ def save_dicts_to_csv(dicts, output_file):
     """
 
     csv_headers = dicts[0].keys()
-    with open(output_file, "w") as o:  # write to file
-        dict_writer = csv.DictWriter(o, csv_headers, delimiter=",",
+    with open(output_file, "w") as out_file:  # write to file
+        dict_writer = csv.DictWriter(out_file, csv_headers, delimiter=",",
                                      quotechar="\"")
         dict_writer.writeheader()
         dict_writer.writerows(dicts)
@@ -49,7 +51,7 @@ def save_matrix_to_csv(headers, data, output_file):
         Saves .csv file with data
     """
 
-    with open(output_file, "w") as o:  # write to file
-        data_writer = csv.writer(o, delimiter=",")
+    with open(output_file, "w") as out_file:  # write to file
+        data_writer = csv.writer(out_file, delimiter=",")
         data_writer.writerow(headers)  # write headers
         data_writer.writerows(data)  # write all data
