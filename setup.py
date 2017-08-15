@@ -16,23 +16,29 @@
 # limitations under the License.
 
 
+""" Setups library and install dependencies """
+
+
 from setuptools import setup, find_packages
 
 
 DESCRIPTION = \
     "HAL\n\n\
-    Handy Algorithmic Library: a multipurpose library homemade from scratch to perform great stuff in a pythonic way.\n\
+    Handy Algorithmic Library: a multipurpose library homemade from scratch" + \
+    " to perform great stuff in a pythonic way.\n\
     \n\
     Examples\n\n\
-    You can take a look at my other repository: there are lots of implementations from various HAL modules.\n\
+    You can take a look at my other repository: there are lots of " + \
+    "implementations from various HAL modules.\n\
     \n\
     Install\n\n\
     - $ python3 setup.py install from the source\n\
     - $ pip3 install pyhal via pip\n\
     \n\
     Questions and issues\n\n\
-    The github issue tracker is only for bug reports and feature requests." \
-    "Anything else, such as questions for help in using the library, should be posted in StackOverflow.\n\
+    The Github issue tracker is only for bug reports and feature requests." \
+    "Anything else, such as questions for help in using the library, " + \
+    "should be posted in StackOverflow.\n\
     \n\
     License: Apache License Version 2.0, January 2004"
 
@@ -42,13 +48,14 @@ setup(
     version="4.5.1",
     author="sirfoga",
     author_email="sirfoga@protonmail.com",
-    description="Hal is a from-scratch home-made multipurpose library to perform most of stuff in python.",
+    description="Hal is a from-scratch home-made multipurpose library to "
+                "perform most of stuff in python.",
     long_description=DESCRIPTION,
     license="Apache License, Version 2.0",
     keywords="library scratch maths",
     url="https://github.com/sirfoga/hal",
     packages=find_packages(exclude=["tests"]),
-    install_requires=[  # TODO: uncomment packages (but travis will fail)
+    install_requires=[
         "bs4",
         "mutagen",
         "matplotlib",
@@ -60,7 +67,8 @@ setup(
         "requests",
         "lxml",
         "send2trash",
-        "pymongo"
+        "pymongo",
+        "psutil"
     ],
     test_suite="tests"
 )
