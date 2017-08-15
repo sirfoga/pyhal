@@ -28,7 +28,6 @@ from Crypto.Cipher import DES3, ARC2, ARC4, Blowfish, CAST
 from Crypto.Hash import SHA224, SHA256
 from Crypto.PublicKey import DSA
 from Crypto.Random import random
-from Crypto.Util import Counter
 
 
 class MD5(object):
@@ -70,7 +69,8 @@ class MD6(object):
         self.hashed = self.hex(self.plain, self.size)
         return self.hashed
 
-    def __to_word(self, i_byte):
+    @staticmethod
+    def _to_word(i_byte):
         """
         :param i_byte: i-th byte
         :return: to word representation
@@ -93,7 +93,8 @@ class MD6(object):
 
         return o_word
 
-    def __from_word(self, i_word):
+    @staticmethod
+    def _from_word(i_word):
         """
         :param i_word: i-th word
         :return: partial hash
@@ -114,7 +115,8 @@ class MD6(object):
 
         return o_byte
 
-    def __crop(self, size, data, right):
+    @staticmethod
+    def _crop(size, data, right):
         """
         :param size: bytes
         :param data: plaintext
@@ -135,7 +137,7 @@ class MD6(object):
 
         return data
 
-    def __hash(self, size, data, key, levels):
+    def _hash(self, size, data, key, levels):
         """
         :param size: size of hash
         :param data: plaintext
@@ -156,7 +158,7 @@ class MD6(object):
         while len(K) < 64:
             K.append(0x00)
 
-        K = self.__to_word(K)
+        K = self._to_word(K)
 
         r = max(80 if k else 0, 40 + int(d / 4))
 
@@ -181,7 +183,7 @@ class MD6(object):
             A = list(N)
 
             j = 0
-            i = n
+            i = N
 
             while j < r:
                 for s in range(16):
@@ -207,28 +209,27 @@ class MD6(object):
 
         def mid(B, C, i, p, z):
             U = ((ell & 0xff) << 56) | i & 0xffffffffffffff
-            V = ((r & 0xfff) << 48) | ((L & 0xff) << 40) | (
-                (z & 0xf) << 36) | ((p & 0xffff) << 20) | (
-                    (k & 0xff) << 12) | (
-                    d & 0xfff)
+            V = ((r & 0xfff) << 48) | ((L & 0xff) << 40) | \
+                ((z & 0xf) << 36) | ((p & 0xffff) << 20) | \
+                ((k & 0xff) << 12) | (d & 0xfff)
 
             return f(Q + K + [U, V] + C + B)
 
-        def par(M):
+        def par(m):
             P = 0
             B = []
             C = []
-            z = 0 if len(M) > b else 1
+            z = 0 if len(m) > b else 1
 
-            while len(M) < 1 or (len(M) % b) > 0:
-                M.append(0x00)
+            while len(m) < 1 or (len(m) % b) > 0:
+                m.append(0x00)
                 P += 8
 
-            M = self.__to_word(M)
+            m = self._to_word(m)
 
-            while len(M) > 0:
-                B.append(M[:int(b / 8)])
-                M = M[int(b / 8):]
+            while m:
+                B.append(m[:int(b / 8)])
+                m = m[int(b / 8):]
 
             i = 0
             p = 0
@@ -241,23 +242,23 @@ class MD6(object):
                 i += 1
                 p = 0
 
-            return self.__from_word(C)
+            return self._from_word(C)
 
-        def seq(M):
+        def seq(m):
             P = 0
             B = []
             C = [0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0,
                  0x0, 0x0, 0x0, 0x0]
 
-            while len(M) < 1 or (len(M) % (b - c)) > 0:
-                M.append(0x00)
+            while len(m) < 1 or (len(m) % (b - c)) > 0:
+                m.append(0x00)
                 P += 8
 
-            M = self.__to_word(M)
+            m = self._to_word(m)
 
-            while len(M) > 0:
-                B.append(M[:int((b - c) / 8)])
-                M = M[int((b - c) / 8):]
+            while m:
+                B.append(m[:int((b - c) / 8)])
+                m = m[int((b - c) / 8):]
 
             i = 0
             p = 0
@@ -271,7 +272,7 @@ class MD6(object):
                 i += 1
                 p = 0
 
-            return self.__from_word(C)
+            return self._from_word(C)
 
         while True:
             ell += 1
@@ -280,9 +281,10 @@ class MD6(object):
             if len(M) == c:
                 break
 
-        return self.__crop(d, M, True)
+        return self._crop(d, M, True)
 
-    def __bytes(self, i_str):
+    @staticmethod
+    def _bytes(i_str):
         """
         :param i_str: word
         :return: bytes of word
@@ -293,7 +295,7 @@ class MD6(object):
 
         return o_byte
 
-    def __prehash(self, data, size, key, levels):
+    def _pre_hash(self, data, size, key, levels):
         """
         :param data: plaintext
         :param size: bytes
@@ -302,15 +304,15 @@ class MD6(object):
         :return: pre-hash md6
         """
 
-        data = self.__bytes(data)
-        key = self.__bytes(key)
+        data = self._bytes(data)
+        key = self._bytes(key)
 
         if size <= 0:
             size = 1
         elif size > 512:
             size = 512
 
-        return self.__hash(size, data, key, levels)
+        return self._hash(size, data, key, levels)
 
     def hex(self, data, size):
         """
@@ -319,7 +321,7 @@ class MD6(object):
         :return: hex representation
         """
 
-        byte = self.__prehash(data, size, '', 64)
+        byte = self._pre_hash(data, size, '', 64)
         hexstr = ''
 
         for i in byte:
@@ -334,7 +336,7 @@ class MD6(object):
         :return: raw representation
         """
 
-        byte = self.__prehash(data, size, key='', levels=64)
+        byte = self._pre_hash(data, size, key='', levels=64)
         rawstr = ''
 
         for i in byte:
@@ -348,7 +350,7 @@ class SHA(object):
 
     ALLOWED_SIZE = [1, 224, 256, 384, 512]
 
-    def __init__(self, string, size, salt=None):
+    def __init__(self, string, size=1, salt=None):
         object.__init__(self)
         self.plain = string
         self.size = int(size)
@@ -382,9 +384,9 @@ class SHA(object):
         :return: sha1 hash
         """
 
-        h = SHA.new()
-        h.update(self.plain)
-        self.hashed = h.hexdigest()
+        h = SHA(self.plain)
+        h.hash()
+        self.hashed = h.hashed.hexdigest()
         return self.hashed
 
     def hash_sha224(self):
@@ -476,10 +478,7 @@ class DES(object):
         :return: des3 hash
         """
 
-        nonce = Random.new().read(DES.block_size / 2)
-        ctr = Counter.new(DES.block_size * 8 / 2, prefix=nonce)
-        cipher = DES.new(self.key, DES.MODE_CTR, counter=ctr)
-        return nonce + cipher.encrypt(self.plain)
+        pass  # TODO
 
 
 class ARC(object):
@@ -523,8 +522,9 @@ class ARC(object):
         """
 
         nonce = Random.new().read(16)
-        tempkey = SHA.new(self.key + nonce).digest()
-        cipher = ARC4.new(tempkey)
+        sha_sum = SHA(self.key + nonce)
+        sha_sum.hash()
+        cipher = ARC4.new(sha_sum.hashed)
         self.hashed = nonce + cipher.encrypt(self.plain)
         return self.hashed
 
@@ -543,10 +543,7 @@ class AES(object):
         :return: hash plaintext
         """
 
-        iv = Random.new().read(AES.block_size)
-        cipher = AES.new(self.key, AES.MODE_CFB, iv)
-        self.hashed = iv + cipher.encrypt(self.plain)
-        return self.hashed
+        pass  # TODO
 
 
 class HMAC(object):
@@ -563,8 +560,9 @@ class HMAC(object):
         :return: hash plaintext
         """
 
-        h = HMAC.new(self.key, self.plain)
-        self.hashed = h.hexdigest()
+        h = HMAC(self.key, self.plain)
+        h.hash()
+        self.hashed = h.hashed.hexdigest()
         return self.hashed
 
 
@@ -609,7 +607,8 @@ class IDEA(object):
         self.hashed = hex(self.encrypt())
         return self.hashed
 
-    def _mul(self, x, y):
+    @staticmethod
+    def _mul(x, y):
         """
         :param x: first operand
         :param y: second operand
@@ -632,7 +631,7 @@ class IDEA(object):
         assert 0 <= r <= 0xFFFF
         return r
 
-    def _KA_layer(self, x1, x2, x3, x4, round_keys):
+    def _ka_layer(self, x1, x2, x3, x4, round_keys):
         """
         :param x1: x1
         :param x2: x2
@@ -659,7 +658,7 @@ class IDEA(object):
 
         return y1, y2, y3, y4
 
-    def _MA_layer(self, y1, y2, y3, y4, round_keys):
+    def _ma_layer(self, y1, y2, y3, y4, round_keys):
         """
         :param y1: y1
         :param y2: y2
@@ -726,15 +725,15 @@ class IDEA(object):
         for i in range(8):
             round_keys = self._keys[i]
 
-            y1, y2, y3, y4 = self._KA_layer(x1, x2, x3, x4, round_keys)
-            x1, x2, x3, x4 = self._MA_layer(y1, y2, y3, y4, round_keys)
+            y1, y2, y3, y4 = self._ka_layer(x1, x2, x3, x4, round_keys)
+            x1, x2, x3, x4 = self._ma_layer(y1, y2, y3, y4, round_keys)
 
             x2, x3 = x3, x2
 
         # Note: The words x2 and x3 are not permuted in the last round
         # So here we use x1, x3, x2, x4 as input instead of x1, x2, x3, x4
         # in order to cancel the last permutation x2, x3 = x3, x2
-        y1, y2, y3, y4 = self._KA_layer(x1, x3, x2, x4, self._keys[8])
+        y1, y2, y3, y4 = self._ka_layer(x1, x3, x2, x4, self._keys[8])
 
         ciphertext = (y1 << 48) | (y2 << 32) | (y3 << 16) | y4
         return ciphertext
@@ -750,12 +749,22 @@ class CAST128(object):
         self.answer = None
 
     def encrypt(self):
+        """
+        :return: str
+            Encrypt
+        """
+
         iv = Random.new().read(CAST.block_size)
         cipher = CAST.new(self.key, CAST.MODE_OPENPGP, iv)
         self.answer = cipher.encrypt(self.plain)
         return self.answer
 
     def decrypt(self):
+        """
+        :return: str
+            Decrypt
+        """
+
         eiv = self.plain[:CAST.block_size + 2]
         ciphertext = self.plain[CAST.block_size + 2:]
         cipher = CAST.new(self.key, CAST.MODE_OPENPGP, eiv)
@@ -777,7 +786,8 @@ class Dsa(object):
         """
 
         key = DSA.generate(1024)
-        h = SHA.new(self.plain).digest()
+        sha1 = SHA(self.plain)
+        sha1.hash()
         k = random.StrongRandom().randint(1, key.q - 1)
-        self.hashed = key.sign(h, k)
+        self.hashed = key.sign(sha1.hashed, k)
         return self.hashed

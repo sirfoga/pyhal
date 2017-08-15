@@ -22,6 +22,8 @@ import random
 
 
 class Integer(object):
+    """ Big int std python won't recognize """
+
     LOW_PRIMES = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53,
                   59, 61, 67, 71, 73, 79, 83, 89, 97, 101,
                   103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163,
@@ -116,15 +118,14 @@ class Integer(object):
             s /= 2
             t += 1
 
-        '''loop:
-        let a = random in the range 2, n-1
-        v = a^d mod n
-        if v = +-1 mod n:
-            repeat this s-1 times:
-            v = v^2 mod n
-            if v = 1 -> composite
-        -> prime'''
-        for trials in range(precision):
+        # let a = random in the range 2, n-1
+        # v = a^d mod n
+        # if v = +-1 mod n:
+        #     repeat this s-1 times:
+        #     v = v^2 mod n
+        #     if v = 1 -> composite
+        # -> prime
+        for _ in range(precision):
             a = random.randrange(2, self.to_int - 1)
             v = pow(a, s, self.to_int)
             if v != 1:
@@ -147,24 +148,40 @@ class EightQueen(object):
 
     @staticmethod
     def under_attack(col, queens):
+        """
+        :param col: int
+            Column number
+        :param queens: []
+            List of queens
+        :return: bool
+            True iff queen is under attack
+        """
+
         left = right = col
-        for r, c in reversed(queens):
+        for _, column in reversed(queens):
             left, right = left - 1, right + 1
-            if c in (left, col, right):
+            if column in (left, col, right):
                 return True
         return False
 
-    def solve(self, n):
-        if n == 0:
+    def solve(self, table_size):
+        """
+        :param table_size: int
+            Size of table
+        :return: []
+            List of possible solutions
+        """
+
+        if table_size == 0:
             return [[]]
 
-        smaller_solutions = self.solve(n - 1)
+        smaller_solutions = self.solve(table_size - 1)
         solutions = []
         for solution in smaller_solutions:
             for column in range(1, self.board_size + 1):
                 # try adding a new queen to row = n, column = column
                 if not self.under_attack(column, solution):
-                    solutions.append(solution + [(n, column)])
+                    solutions.append(solution + [(table_size, column)])
         return solutions
 
 
@@ -191,7 +208,7 @@ def blumblumshub(seed, amount, prime0, prime1):
     :return: pseudo-number generator
     """
 
-    assert (amount >= 0)  # amount cannot be negative
+    assert amount >= 0  # amount cannot be negative
     if amount == 0:
         return []
 
@@ -203,7 +220,7 @@ def blumblumshub(seed, amount, prime0, prime1):
     mod = prime0 * prime1
     rand = [seed]
 
-    for i in range(1, amount):
+    for _ in range(amount):
         last_num = rand[len(rand) - 1]
         next_num = (last_num * last_num) % mod
         rand.append(next_num)
