@@ -18,8 +18,7 @@
 
 """" General model to make prediction about everything. """
 
-
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
 
 
 class BasePrediction(object):
@@ -27,8 +26,13 @@ class BasePrediction(object):
         object.__init__(self)
 
         self.model = model  # ml algorithm to use for prediction
-        self.rounds = rounds  # number of times to make prediction (then get average)
+        self.rounds = rounds  # number of times to make prediction
 
     def train(self, x, y):
-        x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.67, random_state=None)  # cross-split
+        x_train, x_test, y_train, y_test = train_test_split(
+            x,
+            y,
+            test_size=0.67,
+            random_state=None
+        )  # cross-split
         self.model.fit(x_train, y_train)  # fit model

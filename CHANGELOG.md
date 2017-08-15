@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 - pretty printer for tables
 ### Fixed
 - badges in README
+- converted to sklearn.model_selection
 
 ## 4.5
 ### Added
