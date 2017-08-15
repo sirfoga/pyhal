@@ -26,18 +26,29 @@ from sklearn.tree import DecisionTreeClassifier
 
 
 def extra_trees_classifier():
+    """
+    :return: sklearn ExtraTreesClassifier
+        Classical extra tree classifier
+    """
+
     return ExtraTreesClassifier(n_estimators=10, max_depth=None,
                                 min_samples_split=1, random_state=0)
 
 
 def random_forest():
+    """
+    :return: sklearn RandomForestClassifier
+        Classical random forest classifier
+    """
+
     return RandomForestClassifier(n_estimators=10, max_depth=None,
                                   min_samples_split=1, random_state=0)
 
 
 def knn():
     """
-        very fast and slightly more accurate than AdaBoost
+    :return: sklearn KNN
+        Classical knn
     """
 
     return KNeighborsClassifier(n_neighbors=3, leaf_size=125)
@@ -45,7 +56,8 @@ def knn():
 
 def ada_boost():
     """
-        fast, accurate but too uncertainty
+    :return: sklearn AdaBoostClassifier
+        Classical Ada boost
     """
 
     return AdaBoostClassifier(DecisionTreeClassifier(max_depth=20),
@@ -53,11 +65,18 @@ def ada_boost():
 
 
 def bayes_gauss():
-    """ slower than svr but equally accuarte
+    """
+    :return: sklearn GaussianNB
+        Slower than svr but equally accuarate
     """
 
     return naive_bayes.GaussianNB()
 
 
 def bayes_bernoulli():
+    """
+    :return: sklearn BernoulliNB
+        Bayes-Bernoulli model
+    """
+
     return naive_bayes.BernoulliNB()

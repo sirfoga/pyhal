@@ -16,12 +16,14 @@
 # limitations under the License.
 
 
-""" Parsers for raw databases. """
+""" Parsers for raw databases """
 
 import csv
 
 
 class Parser(object):
+    """ Mother of all data-files parsers """
+
     def __init__(self, database_file):
         """ :param database_file: a raw .csv file that contains any data
         about anything """
@@ -31,12 +33,19 @@ class Parser(object):
         self.lines = self.get_lines()  # list of lines in database
 
     def get_lines(self):
+        """
+        :return: [] of str
+            Lines in file
+        """
+
         with open(self.database_file) as data:
             self.lines = data.readlines()  # store data in arrays
         return self.lines
 
 
 class CSVParser(Parser):
+    """ Parses CSV data files """
+
     def __init__(self, database_file):
         """ :param database_file: a raw .csv file that contains any data
         about anything """

@@ -18,7 +18,7 @@
 		\hyperpage{31--35}
       \subsubitem hal.internet.parser \textit{(module)}, 
 		\hyperpage{36--37}
-      \subsubitem hal.internet.selenium \textit{(module)}, 
+      \subsubitem hal.internet.selenium\_bots \textit{(module)}, 
 		\hyperpage{38--39}
       \subsubitem hal.internet.web \textit{(module)}, 
 		\hyperpage{40--42}
@@ -30,26 +30,26 @@
     \subitem hal.ml \textit{(package)}, \hyperpage{60}
       \subsubitem hal.ml.analysis \textit{(package)}, \hyperpage{61}
       \subsubitem hal.ml.data \textit{(package)}, \hyperpage{64}
-      \subsubitem hal.ml.features \textit{(module)}, \hyperpage{67}
-      \subsubitem hal.ml.models \textit{(package)}, \hyperpage{68}
-      \subsubitem hal.ml.predict \textit{(module)}, \hyperpage{73}
-      \subsubitem hal.ml.utils \textit{(package)}, \hyperpage{74}
-    \subitem hal.mongodb \textit{(package)}, \hyperpage{80}
-      \subsubitem hal.mongodb.utils \textit{(module)}, \hyperpage{81}
-    \subitem hal.profile \textit{(package)}, \hyperpage{82}
-      \subsubitem hal.profile.mem \textit{(module)}, \hyperpage{83}
+      \subsubitem hal.ml.features \textit{(module)}, \hyperpage{68}
+      \subsubitem hal.ml.models \textit{(package)}, \hyperpage{69}
+      \subsubitem hal.ml.predict \textit{(module)}, \hyperpage{74--75}
+      \subsubitem hal.ml.utils \textit{(package)}, \hyperpage{76}
+    \subitem hal.mongodb \textit{(package)}, \hyperpage{82}
+      \subsubitem hal.mongodb.utils \textit{(module)}, \hyperpage{83}
+    \subitem hal.profile \textit{(package)}, \hyperpage{84}
+      \subsubitem hal.profile.mem \textit{(module)}, \hyperpage{85}
       \subsubitem hal.profile.performance \textit{(module)}, 
-		\hyperpage{84--85}
-    \subitem hal.streams \textit{(package)}, \hyperpage{86}
+		\hyperpage{86--87}
+    \subitem hal.streams \textit{(package)}, \hyperpage{88}
       \subsubitem hal.streams.pretty\_table \textit{(module)}, 
-		\hyperpage{87--88}
-    \subitem hal.strings \textit{(package)}, \hyperpage{89}
-      \subsubitem hal.strings.utils \textit{(module)}, \hyperpage{90}
-    \subitem hal.time \textit{(package)}, \hyperpage{91}
-      \subsubitem hal.time.profile \textit{(module)}, \hyperpage{92}
-      \subsubitem hal.time.utils \textit{(module)}, \hyperpage{93}
-    \subitem hal.wrappers \textit{(package)}, \hyperpage{94}
+		\hyperpage{89--90}
+    \subitem hal.strings \textit{(package)}, \hyperpage{91}
+      \subsubitem hal.strings.utils \textit{(module)}, \hyperpage{92}
+    \subitem hal.time \textit{(package)}, \hyperpage{93}
+      \subsubitem hal.time.profile \textit{(module)}, \hyperpage{94}
+      \subsubitem hal.time.utils \textit{(module)}, \hyperpage{95}
+    \subitem hal.wrappers \textit{(package)}, \hyperpage{96}
       \subsubitem hal.wrappers.methods \textit{(module)}, 
-		\hyperpage{95}
+		\hyperpage{97}
 
 \end{theindex}

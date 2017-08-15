@@ -111,8 +111,6 @@ Collaboration diagram for hal.charts.plotter.Plot4d:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a925008c5f9e89231a632fdad42a6cdff"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhal_1_1charts_1_1plotter_1_1_plot4d.html#a925008c5f9e89231a632fdad42a6cdff">param</a> (self, functionx, functiony, functionz, functionw, min, max, points)</td></tr>
-<tr class="separator:a925008c5f9e89231a632fdad42a6cdff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0826f5d596a40fb6ec31f6f2636b55e9"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhal_1_1charts_1_1plotter_1_1_plot4d.html#a0826f5d596a40fb6ec31f6f2636b55e9">plot</a> (self, function, minx, maxx, miny, maxy, minz, maxz, precision, kind)</td></tr>
 <tr class="separator:a0826f5d596a40fb6ec31f6f2636b55e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -122,76 +120,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:aa5b31430953600e79cdb0dd609d0e971"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a925008c5f9e89231a632fdad42a6cdff"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">def hal.charts.plotter.Plot4d.param </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>functionx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>functiony</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>functionz</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>functionw</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>min</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>max</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>points</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<pre class="fragment">:param functionx: function in x
-:param functiony: function in y
-:param functionz: function in z
-:param functionw: function in w
-:param min: minimum
-:param max: maximum
-:param points: number of points
-:return: 4d parametric graph of given function from min to max
-</pre> 
-</div>
-</div>
 <a class="anchor" id="a0826f5d596a40fb6ec31f6f2636b55e9"></a>
 <div class="memitem">
 <div class="memproto">
@@ -271,8 +199,9 @@ Static Public Member Functions</h2></td></tr>
 :param minz: minimum of z-values
 :param maxz: maximum of z-values
 :param precision: precision
-:param kind: slice: x cont -&gt; 3d plot with y,z variables in plane and w as "z"-axis
-     contour: x cont -&gt; 3d plot with y,z variables in plane and w colored
+:param kind: slice: x cont -&gt; 3d plot with y, z variables in plane
+    and w as "z"-axis contour: x cont -&gt; 3d plot with y,z variables in
+    plane and w colored
 :return: plot 4d function
 </pre> 
 </div>

@@ -15,6 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+""" Correlate values in arrays producing fancy good-looking matrices """
 
 import os
 
@@ -76,8 +77,8 @@ def get_correlation_matrix_of_columns(headers_to_test, headers, data):
     for header in headers_to_test:
         header_column = get_column_of_matrix(header_to_column[header], data)
 
-        for i in range(len(header_column)):
-            header_column[i] = float(header_column[i])  # get float
+        for i, value in enumerate(header_column):
+            header_column[i] = float(value)  # get float
 
         data_to_test.append(header_column)
 
@@ -143,21 +144,20 @@ def save_correlation_matrix_of_data_files_in_folder(folder_path):
                                  "output-" + str(int(time())))
     os.makedirs(output_folder)  # make necessary folders to create directory
 
-    for f in FileSystem.ls(folder_path, False, False):
-        if os.path.isfile(f) and str(f).endswith("csv"):
-            print("Analysing file ", str(f))
+    for file in FileSystem.ls(folder_path, False, False):
+        if os.path.isfile(file) and str(file).endswith("csv"):
+            print("Analysing file ", str(file))
 
-            file_name = Document(f).name.strip()
+            file_name = Document(file).name.strip()
             output_file_name = file_name + ".png"  # save output as image
             output_file_path = os.path.join(output_folder, output_file_name)
 
             try:
-                headers, data = parse_csv_file(f)  # parse raw data
+                headers, data = parse_csv_file(file)  # parse raw data
                 save_correlation_matrix_of_columns(
                     "Correlation of logs data for file " + file_name, headers,
                     headers,
                     data, output_file_path)
-            except Exception as e:
-                print("Cannot save correlation matrix of file \"", str(f),
-                      "\" because of")
-                print(str(e))
+            except:
+                print("Cannot save correlation matrix of file \"", str(file),
+                      "\"")

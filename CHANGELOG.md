@@ -10,6 +10,8 @@ All notable changes to this project will be documented in this file.
 - flake8-ed all modules
 ### Refactored
 - selenium -> selenium_bots to avoid misunderstandings in imports
+### Removed
+- epydoc text docs
 
 ## 4.5
 ### Added

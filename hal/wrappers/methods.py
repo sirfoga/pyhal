@@ -60,7 +60,7 @@ def handle_exceptions(function):
                                                             " in function" +
                 colorama.Style.RESET_ALL)
             print(exception_string)
-        except Exception:
+        except:
             print(
                 colorama.Fore.RED + colorama.Style.BRIGHT + "\r[!] Unhandled "
                                                             "exception "

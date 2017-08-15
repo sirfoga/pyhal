@@ -7,7 +7,7 @@
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-# http://www.apache.org/licenses/LICENSE-2.0
+# httrue_pos://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -30,12 +30,12 @@ def precision(matrix):
         False Positive - True Negative
     """
 
-    tp = matrix[0][0]
-    fp = matrix[1][0]
+    true_pos = matrix[0][0]
+    false_pos = matrix[1][0]
 
     try:
-        return 1.0 * tp / (tp + fp)
-    except Exception:  # division by 0
+        return 1.0 * true_pos / (true_pos + false_pos)
+    except:  # division by 0
         return 0
 
 
@@ -48,16 +48,16 @@ def recall(matrix):
         False Positive - True Negative
     """
 
-    tp = matrix[0][0]
-    fn = matrix[0][1]
+    true_pos = matrix[0][0]
+    false_neg = matrix[0][1]
 
     try:
-        return 1.0 * tp / (tp + fn)
-    except Exception:  # division by 0
+        return 1.0 * true_pos / (true_pos + false_neg)
+    except:  # division by 0
         return 0
 
 
-def tn_rate(matrix):
+def true_neg_rate(matrix):
     """ Calcualtes true negative rate on database
 
         :param matrix: 2x2 matrix that looks like
@@ -66,12 +66,12 @@ def tn_rate(matrix):
         False Positive - True Negative
     """
 
-    fp = matrix[1][0]
-    tn = matrix[1][1]
+    false_pos = matrix[1][0]
+    true_neg = matrix[1][1]
 
     try:
-        return 1.0 * tn / (tn + fp)
-    except Exception:  # division by 0
+        return 1.0 * true_neg / (true_neg + false_pos)
+    except:  # division by 0
         return 0
 
 
@@ -84,14 +84,15 @@ def accuracy(matrix):
         False Positive - True Negative
     """
 
-    tp = matrix[0][0]
-    fp = matrix[1][0]
-    fn = matrix[0][1]
-    tn = matrix[1][1]
+    true_pos = matrix[0][0]
+    false_pos = matrix[1][0]
+    false_neg = matrix[0][1]
+    true_neg = matrix[1][1]
 
     try:
-        return 1.0 * (tp + tn) / (tp + tn + fp + fn)
-    except Exception:  # division by 0
+        return 1.0 * (true_pos + true_neg) / (
+        true_pos + true_neg + false_pos + false_neg)
+    except:  # division by 0
         return 0
 
 
@@ -104,12 +105,12 @@ def f1_score(matrix):
         False Positive - True Negative
     """
 
-    p = precision(matrix)
-    r = recall(matrix)
+    prec = precision(matrix)
+    rec = recall(matrix)
 
     try:
-        return 2.0 / (1.0 / p + 1.0 / r)  # harmonic mean
-    except Exception:  # division by 0
+        return 2.0 / (1.0 / prec + 1.0 / rec)  # harmonic mean
+    except:  # division by 0
         return 0
 
 
@@ -152,8 +153,8 @@ def get_subset_of_matrix(headers_to_sample, all_headers, data):
         header_ind = header_to_column[header]  # index of header
         header_column = get_column_of_matrix(header_ind, data)
 
-        for i in range(len(header_column)):
-            header_column[i] = float(header_column[i])  # get float
+        for i, value in enumerate(header_column):
+            header_column[i] = float(value)  # get float
 
         subset_columns.append(header_column)
 
@@ -194,11 +195,12 @@ def add_columns_to_matrix(headers, data, new_headers, new_columns):
     """
 
     new_data = []  # add each column
-    for row in range(len(data)):
+    for i, row in range(len(data)):
         new_row = []
-        for col in data[row]:
+        for col in row:
             new_row.append(col)  # add old columns
-        for new_col in new_columns[row]:
+
+        for new_col in new_columns[i]:
             new_row.append(new_col)  # add new columns
         new_data.append(new_row)  # add new row
 

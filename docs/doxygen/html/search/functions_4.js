@@ -3,6 +3,7 @@ var searchData=
   ['get_5fdomain',['get_domain',['../classhal_1_1internet_1_1web_1_1_webpage.html#a1879c8695e4e1c7c0155d24100fbbbc0',1,'hal::internet::web::Webpage']]],
   ['get_5fhostname',['get_hostname',['../classhal_1_1internet_1_1web_1_1_webpage.html#ad3059e24c2ea962b13944209e086b1c8',1,'hal::internet::web::Webpage']]],
   ['get_5fhtml_5fsource',['get_html_source',['../classhal_1_1internet_1_1web_1_1_webpage.html#ad813eba8e41c06f110311ada3ae86f2c',1,'hal::internet::web::Webpage']]],
+  ['get_5flines',['get_lines',['../classhal_1_1ml_1_1data_1_1parser_1_1_parser.html#aaf10b0c434100a1c3effd5e5ee0ee2a3',1,'hal::ml::data::parser::Parser']]],
   ['get_5flinks',['get_links',['../classhal_1_1internet_1_1web_1_1_webpage.html#a73b639e5eaa4506a653c9a4792f7dead',1,'hal::internet::web::Webpage']]],
   ['get_5fpath_5fname',['get_path_name',['../classhal_1_1files_1_1models_1_1_document.html#a157a403918f676d1bdaaa58177cafca2',1,'hal.files.models.Document.get_path_name()'],['../classhal_1_1files_1_1models_1_1_directory.html#a58118af8552193237b38f7f341773707',1,'hal.files.models.Directory.get_path_name()']]],
   ['get_5frepos',['get_repos',['../classhal_1_1internet_1_1github_1_1_github_user.html#a61ee4bb9d16a50058a8d5e125ef5197f',1,'hal::internet::github::GithubUser']]],

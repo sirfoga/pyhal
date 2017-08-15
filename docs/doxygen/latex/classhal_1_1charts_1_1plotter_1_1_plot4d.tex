@@ -11,8 +11,6 @@ Collaboration diagram for hal.\+charts.\+plotter.\+Plot4d\+:
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-def \hyperlink{classhal_1_1charts_1_1plotter_1_1_plot4d_a925008c5f9e89231a632fdad42a6cdff}{param} (self, functionx, functiony, functionz, functionw, min, max, points)
-\item 
 def \hyperlink{classhal_1_1charts_1_1plotter_1_1_plot4d_a0826f5d596a40fb6ec31f6f2636b55e9}{plot} (self, function, minx, maxx, miny, maxy, minz, maxz, precision, kind)
 \end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
@@ -23,30 +21,7 @@ def \hyperlink{classhal_1_1charts_1_1plotter_1_1_plot4d_aa5b31430953600e79cdb0dd
 
 
 \subsection{Member Function Documentation}
-\index{hal\+::charts\+::plotter\+::\+Plot4d@{hal\+::charts\+::plotter\+::\+Plot4d}!param@{param}}
-\index{param@{param}!hal\+::charts\+::plotter\+::\+Plot4d@{hal\+::charts\+::plotter\+::\+Plot4d}}
-\subsubsection[{\texorpdfstring{param(self, functionx, functiony, functionz, functionw, min, max, points)}{param(self, functionx, functiony, functionz, functionw, min, max, points)}}]{\setlength{\rightskip}{0pt plus 5cm}def hal.\+charts.\+plotter.\+Plot4d.\+param (
-\begin{DoxyParamCaption}
-\item[{}]{self, }
-\item[{}]{functionx, }
-\item[{}]{functiony, }
-\item[{}]{functionz, }
-\item[{}]{functionw, }
-\item[{}]{min, }
-\item[{}]{max, }
-\item[{}]{points}
-\end{DoxyParamCaption}
-)}\hypertarget{classhal_1_1charts_1_1plotter_1_1_plot4d_a925008c5f9e89231a632fdad42a6cdff}{}\label{classhal_1_1charts_1_1plotter_1_1_plot4d_a925008c5f9e89231a632fdad42a6cdff}
-\begin{DoxyVerb}:param functionx: function in x
-:param functiony: function in y
-:param functionz: function in z
-:param functionw: function in w
-:param min: minimum
-:param max: maximum
-:param points: number of points
-:return: 4d parametric graph of given function from min to max
-\end{DoxyVerb}
- \index{hal\+::charts\+::plotter\+::\+Plot4d@{hal\+::charts\+::plotter\+::\+Plot4d}!plot@{plot}}
+\index{hal\+::charts\+::plotter\+::\+Plot4d@{hal\+::charts\+::plotter\+::\+Plot4d}!plot@{plot}}
 \index{plot@{plot}!hal\+::charts\+::plotter\+::\+Plot4d@{hal\+::charts\+::plotter\+::\+Plot4d}}
 \subsubsection[{\texorpdfstring{plot(self, function, minx, maxx, miny, maxy, minz, maxz, precision, kind)}{plot(self, function, minx, maxx, miny, maxy, minz, maxz, precision, kind)}}]{\setlength{\rightskip}{0pt plus 5cm}def hal.\+charts.\+plotter.\+Plot4d.\+plot (
 \begin{DoxyParamCaption}
@@ -70,8 +45,9 @@ def \hyperlink{classhal_1_1charts_1_1plotter_1_1_plot4d_aa5b31430953600e79cdb0dd
 :param minz: minimum of z-values
 :param maxz: maximum of z-values
 :param precision: precision
-:param kind: slice: x cont -> 3d plot with y,z variables in plane and w as "z"-axis
-     contour: x cont -> 3d plot with y,z variables in plane and w colored
+:param kind: slice: x cont -> 3d plot with y, z variables in plane
+    and w as "z"-axis contour: x cont -> 3d plot with y,z variables in
+    plane and w colored
 :return: plot 4d function
 \end{DoxyVerb}
  \index{hal\+::charts\+::plotter\+::\+Plot4d@{hal\+::charts\+::plotter\+::\+Plot4d}!scatter@{scatter}}

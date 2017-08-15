@@ -27,6 +27,10 @@ from sklearn.pipeline import Pipeline
 
 
 def logistic_rbm():
+    """
+    :return: rbm -> logistic
+    """
+
     logistic = linear_model.LogisticRegression()
     logistic.C = 6000.0
     rbm = BernoulliRBM(random_state=0)
@@ -38,6 +42,10 @@ def logistic_rbm():
 
 
 def anova_svm():
+    """
+    :return: anova -> svc
+    """
+
     anova_filter = SelectKBest(f_regression)
     svr = svm.SVR(kernel='poly', degree=2)  # fit a parabola
     clf = Pipeline([('anova', anova_filter), ('svc', svr)])

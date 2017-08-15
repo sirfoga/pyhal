@@ -36,8 +36,8 @@ hal.internet.parser	hal.internet.parser-module.html
 hal.internet.parser.html_stripper	hal.internet.parser-module.html#html_stripper
 hal.internet.parser.is_string_well_formatted	hal.internet.parser-module.html#is_string_well_formatted
 hal.internet.parser.__package__	hal.internet.parser-module.html#__package__
-hal.internet.selenium	hal.internet.selenium-module.html
-hal.internet.selenium.__package__	hal.internet.selenium-module.html#__package__
+hal.internet.selenium_bots	hal.internet.selenium_bots-module.html
+hal.internet.selenium_bots.__package__	hal.internet.selenium_bots-module.html#__package__
 hal.internet.web	hal.internet.web-module.html
 hal.internet.web.CHROME_USER_AGENT	hal.internet.web-module.html#CHROME_USER_AGENT
 hal.internet.web.download_url	hal.internet.web-module.html#download_url
@@ -107,9 +107,9 @@ hal.ml.utils.matrix	hal.ml.utils.matrix-module.html
 hal.ml.utils.matrix.f1_score	hal.ml.utils.matrix-module.html#f1_score
 hal.ml.utils.matrix.add_columns_to_matrix	hal.ml.utils.matrix-module.html#add_columns_to_matrix
 hal.ml.utils.matrix.recall	hal.ml.utils.matrix-module.html#recall
-hal.ml.utils.matrix.tn_rate	hal.ml.utils.matrix-module.html#tn_rate
 hal.ml.utils.matrix.precision	hal.ml.utils.matrix-module.html#precision
 hal.ml.utils.matrix.get_column_of_matrix	hal.ml.utils.matrix-module.html#get_column_of_matrix
+hal.ml.utils.matrix.true_neg_rate	hal.ml.utils.matrix-module.html#true_neg_rate
 hal.ml.utils.matrix.get_subset_of_matrix	hal.ml.utils.matrix-module.html#get_subset_of_matrix
 hal.ml.utils.matrix.remove_column_from_matrix	hal.ml.utils.matrix-module.html#remove_column_from_matrix
 hal.ml.utils.matrix.accuracy	hal.ml.utils.matrix-module.html#accuracy
@@ -118,8 +118,8 @@ hal.ml.utils.misc.f1_score	hal.ml.utils.misc-module.html#f1_score
 hal.ml.utils.misc.pearson	hal.ml.utils.misc-module.html#pearson
 hal.ml.utils.misc.normalize_array	hal.ml.utils.misc-module.html#normalize_array
 hal.ml.utils.misc.recall	hal.ml.utils.misc-module.html#recall
-hal.ml.utils.misc.tn_rate	hal.ml.utils.misc-module.html#tn_rate
 hal.ml.utils.misc.precision	hal.ml.utils.misc-module.html#precision
+hal.ml.utils.misc.true_neg_rate	hal.ml.utils.misc-module.html#true_neg_rate
 hal.ml.utils.misc.accuracy	hal.ml.utils.misc-module.html#accuracy
 hal.mongodb	hal.mongodb-module.html
 hal.mongodb.__package__	hal.mongodb-module.html#__package__
@@ -175,7 +175,6 @@ hal.charts.plotter.Plot3d.param	hal.charts.plotter.Plot3d-class.html#param
 hal.charts.plotter.Plot3d.scatter	hal.charts.plotter.Plot3d-class.html#scatter
 hal.charts.plotter.Plot4d	hal.charts.plotter.Plot4d-class.html
 hal.charts.plotter.Plot4d.plot	hal.charts.plotter.Plot4d-class.html#plot
-hal.charts.plotter.Plot4d.param	hal.charts.plotter.Plot4d-class.html#param
 hal.charts.plotter.Plot4d.scatter	hal.charts.plotter.Plot4d-class.html#scatter
 hal.files.models.Directory	hal.files.models.Directory-class.html
 hal.files.models.FileSystem.rename	hal.files.models.FileSystem-class.html#rename
@@ -292,10 +291,10 @@ hal.internet.github.GithubUserRepository.__init__	hal.internet.github.GithubUser
 hal.internet.parser.HtmlTable	hal.internet.parser.HtmlTable-class.html
 hal.internet.parser.HtmlTable.parse	hal.internet.parser.HtmlTable-class.html#parse
 hal.internet.parser.HtmlTable.__init__	hal.internet.parser.HtmlTable-class.html#__init__
-hal.internet.selenium.SeleniumForm	hal.internet.selenium.SeleniumForm-class.html
-hal.internet.selenium.SeleniumForm.fill_form_field	hal.internet.selenium.SeleniumForm-class.html#fill_form_field
-hal.internet.selenium.SeleniumForm.submit_form	hal.internet.selenium.SeleniumForm-class.html#submit_form
-hal.internet.selenium.SeleniumForm.fill_login_form	hal.internet.selenium.SeleniumForm-class.html#fill_login_form
+hal.internet.selenium_bots.SeleniumForm	hal.internet.selenium_bots.SeleniumForm-class.html
+hal.internet.selenium_bots.SeleniumForm.fill_form_field	hal.internet.selenium_bots.SeleniumForm-class.html#fill_form_field
+hal.internet.selenium_bots.SeleniumForm.submit_form	hal.internet.selenium_bots.SeleniumForm-class.html#submit_form
+hal.internet.selenium_bots.SeleniumForm.fill_login_form	hal.internet.selenium_bots.SeleniumForm-class.html#fill_login_form
 hal.internet.web.Webpage	hal.internet.web.Webpage-class.html
 hal.internet.web.Webpage.get_scheme	hal.internet.web.Webpage-class.html#get_scheme
 hal.internet.web.Webpage.parse_url	hal.internet.web.Webpage-class.html#parse_url

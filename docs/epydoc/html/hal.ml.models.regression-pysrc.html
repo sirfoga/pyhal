@@ -80,20 +80,26 @@
 <a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"> </tt>
 <a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"><tt class="py-docstring">""" Prediction methods based on regression algorithms. """</tt> </tt>
 <a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"> </tt>
-<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"> </tt>
-<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">sklearn</tt> <tt class="py-keyword">import</tt> <tt class="py-name">svm</tt><tt class="py-op">,</tt> <tt class="py-name">linear_model</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">sklearn</tt> <tt class="py-keyword">import</tt> <tt class="py-name">svm</tt><tt class="py-op">,</tt> <tt class="py-name">linear_model</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"> </tt>
 <a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"> </tt>
-<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line"> </tt>
-<a name="support_vector_machine"></a><div id="support_vector_machine-def"><a name="L25"></a><tt class="py-lineno">25</tt> <a class="py-toggle" href="#" id="support_vector_machine-toggle" onclick="return toggle('support_vector_machine');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="hal.ml.models.regression-module.html#support_vector_machine">support_vector_machine</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
-</div><div id="support_vector_machine-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="support_vector_machine-expanded"><a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line">    <tt class="py-docstring">""" super fast and precise</tt> </tt>
-<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
-<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"> </tt>
-<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">svm</tt><tt class="py-op">.</tt><tt class="py-name">SVR</tt><tt class="py-op">(</tt><tt class="py-name">kernel</tt><tt class="py-op">=</tt><tt class="py-string">'poly'</tt><tt class="py-op">,</tt> <tt class="py-name">C</tt><tt class="py-op">=</tt><tt class="py-number">1e3</tt><tt class="py-op">,</tt> <tt class="py-name">degree</tt><tt class="py-op">=</tt><tt class="py-number">2</tt><tt class="py-op">)</tt>  <tt class="py-comment"># fit a parabola</tt> </tt>
-</div><a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line"> </tt>
-<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line"> </tt>
-<a name="logistic_regression"></a><div id="logistic_regression-def"><a name="L32"></a><tt class="py-lineno">32</tt> <a class="py-toggle" href="#" id="logistic_regression-toggle" onclick="return toggle('logistic_regression');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="hal.ml.models.regression-module.html#logistic_regression">logistic_regression</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
-</div><div id="logistic_regression-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="logistic_regression-expanded"><a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">linear_model</tt><tt class="py-op">.</tt><tt class="py-name">LogisticRegression</tt><tt class="py-op">(</tt><tt class="py-name">C</tt><tt class="py-op">=</tt><tt class="py-number">1e5</tt><tt class="py-op">)</tt> </tt>
-</div><a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<a name="support_vector_machine"></a><div id="support_vector_machine-def"><a name="L24"></a><tt class="py-lineno">24</tt> <a class="py-toggle" href="#" id="support_vector_machine-toggle" onclick="return toggle('support_vector_machine');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="hal.ml.models.regression-module.html#support_vector_machine">support_vector_machine</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="support_vector_machine-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="support_vector_machine-expanded"><a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line"><tt class="py-docstring">    :return: sklearn svm.SVR</tt> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line"><tt class="py-docstring">        Classical polynomial SVM</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line"> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">svm</tt><tt class="py-op">.</tt><tt class="py-name">SVR</tt><tt class="py-op">(</tt><tt class="py-name">kernel</tt><tt class="py-op">=</tt><tt class="py-string">'poly'</tt><tt class="py-op">,</tt> <tt class="py-name">C</tt><tt class="py-op">=</tt><tt class="py-number">1e3</tt><tt class="py-op">,</tt> <tt class="py-name">degree</tt><tt class="py-op">=</tt><tt class="py-number">2</tt><tt class="py-op">)</tt>  <tt class="py-comment"># fit a parabola</tt> </tt>
+</div><a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line"> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line"> </tt>
+<a name="logistic_regression"></a><div id="logistic_regression-def"><a name="L33"></a><tt class="py-lineno">33</tt> <a class="py-toggle" href="#" id="logistic_regression-toggle" onclick="return toggle('logistic_regression');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="hal.ml.models.regression-module.html#logistic_regression">logistic_regression</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="logistic_regression-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="logistic_regression-expanded"><a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line"><tt class="py-docstring">    :return: sklearn LogisticRegression</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line"><tt class="py-docstring">        Logistic regression model</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line"> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">linear_model</tt><tt class="py-op">.</tt><tt class="py-name">LogisticRegression</tt><tt class="py-op">(</tt><tt class="py-name">C</tt><tt class="py-op">=</tt><tt class="py-number">1e5</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line"> </tt><script type="text/javascript">
 <!--
 expandto(location.href);
 // -->
@@ -128,7 +134,7 @@ expandto(location.href);
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Tue Aug 15 15:07:58 2017
+    Generated by Epydoc 3.0.1 on Tue Aug 15 21:46:14 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"
