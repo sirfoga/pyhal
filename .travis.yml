@@ -1,17 +1,12 @@
+sudo: false
 language: "python"
 python:
   - "3.3"
   - "3.4"
   - "3.5"
-  - "3.5-dev"
 install:
   - "pip3 install -U pip"  # upgrade pip
-  - "pip3 install coveralls"  # for test coverage
-  - "pip3 install pyhal"  # pyhal
-script:
-  - "coverage"
-after_success:
-  - "coverage run --source=hal setup.py test"
-  - "coveralls"
+  - "git clone https://github.com/sirfoga/pyhal.git"  # clone repo
+  - "pip3 install ."  # run local setup
 notifications:
   email: "false"  # no email notifications
