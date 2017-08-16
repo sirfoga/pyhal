@@ -315,7 +315,6 @@ acs-*.bib
 # cprotect
 *.cpt
 
-# fixme
 *.lox
 
 # feynmf/feynmp
@@ -423,7 +422,6 @@ pythontex-files-*/
 # todonotes
 *.tdo
 
-# easy-todo
 *.lod
 
 # xindy
@@ -482,8 +480,6 @@ TSWLatexianTemp*
 
 # cprotect
 
-# fixme
-
 # feynmf/feynmp
 
 #(r)(e)ledmac/(r)(e)ledpar
@@ -528,8 +524,6 @@ TSWLatexianTemp*
 # TikZ & PGF
 
 # todonotes
-
-# easy-todo
 
 # xindy
 
