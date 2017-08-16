@@ -1,7 +1,7 @@
 # HAL: Handy Algorithmic Library
 
-[![Build Status](https://travis-ci.org/sirfoga/pyhal.svg?branch=master)](https://travis-ci.org/sirfoga/pyhal) [![Code Health](https://landscape.io/github/sirfoga/pyhal/master/landscape.svg?style=flat)](https://landscape.io/github/sirfoga/hal/master) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fsirfoga%2Fpyhal.svg?type=shield)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fsirfoga%2Fpyhal?ref=badge_shield) [![PyPI version](https://badge.fury.io/py/PyHal.svg)](https://pypi.python.org/pypi/PyHal)
-
+[![Build Status](https://travis-ci.org/sirfoga/pyhal.svg?branch=master)](https://travis-ci.org/sirfoga/pyhal) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fsirfoga%2Fpyhal.svg?type=shield)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fsirfoga%2Fpyhal?ref=badge_shield) [![PyPI version](https://badge.fury.io/py/PyHal.svg)](https://pypi.python.org/pypi/PyHal) [![Code Health](https://landscape.io/github/sirfoga/pyhal/master/landscape.svg?style=flat)](https://landscape.io/github/sirfoga/hal/master)
+ 
 [![Coverage Status](https://coveralls.io/repos/github/sirfoga/pyhal/badge.svg?branch=master)](https://coveralls.io/github/sirfoga/pyhal?branch=master)
 ![pylint Score](https://mperlet.de/pybadge/badges/8.78.svg)
 <!-- [![Stories in Ready](https://badge.waffle.io/sirfoga/hal.svg?label=ready&title=Ready)](http://waffle.io/sirfoga/hal) -->

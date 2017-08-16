@@ -43,7 +43,7 @@ class MD5(object):
         :return: hash plaintext
         """
 
-        self.hashed = hashlib.md5(self.plain.encode('utf-8'))
+        self.hashed = hashlib.md5(self.plain.encode("utf-8"))
         return self.hashed
 
 
@@ -58,7 +58,7 @@ class MD6(object):
         self.size = int(size)
         if self.size not in self.ALLOWED_SIZE:
             raise ValueError(
-                'Cannot create MD6 hash of size ' + str(self.size))
+                "Cannot create MD6 hash of size " + str(self.size))
         self.hashed = None
 
     def hash(self):
@@ -289,7 +289,7 @@ class MD6(object):
         :return: bytes of word
         """
 
-        i_str = binascii.hexlify(i_str.encode('ascii'))
+        i_str = binascii.hexlify(i_str.encode("ascii"))
         o_byte = [int(i_str[i:i + 2], 16) for i in range(0, len(i_str), 2)]
 
         return o_byte
@@ -320,11 +320,11 @@ class MD6(object):
         :return: hex representation
         """
 
-        byte = self._pre_hash(data, size, '', 64)
-        hexstr = ''
+        byte = self._pre_hash(data, size, "", 64)
+        hexstr = ""
 
         for i in byte:
-            hexstr += '%02x' % i
+            hexstr += "%02x" % i
 
         return hexstr
 
@@ -335,8 +335,8 @@ class MD6(object):
         :return: raw representation
         """
 
-        byte = self._pre_hash(data, size, key='', levels=64)
-        rawstr = ''
+        byte = self._pre_hash(data, size, key="", levels=64)
+        rawstr = ""
 
         for i in byte:
             rawstr += chr(i)
@@ -349,14 +349,14 @@ class SHA(object):
 
     ALLOWED_SIZE = [1, 224, 256, 384, 512]
 
-    def __init__(self, string, size=1, salt=None):
+    def __init__(self, string, size=ALLOWED_SIZE[0], salt=None):
         object.__init__(self)
         self.plain = string
         self.size = int(size)
         self.salt = salt
         if self.size not in self.ALLOWED_SIZE:
             raise ValueError(
-                'Cannot create SHA hash of size ' + str(self.size))
+                "Cannot create SHA hash of size " + str(self.size))
         self.hashed = None
 
     def hash(self):
@@ -449,7 +449,7 @@ class DES(object):
         self.size = int(size)
         if self.size not in self.ALLOWED_SIZE:
             raise ValueError(
-                'Cannot create DES hash of size ' + str(self.size))
+                "Cannot create DES hash of size " + str(self.size))
         self.hashed = None
 
     def hash(self):
@@ -492,7 +492,7 @@ class ARC(object):
         self.size = int(size)
         if self.size not in self.ALLOWED_SIZE:
             raise ValueError(
-                'Cannot create ARC hash of size ' + str(self.size))
+                "Cannot create ARC hash of size " + str(self.size))
         self.hashed = None
 
     def hash(self):
@@ -584,7 +584,7 @@ class BLOWFISH(object):
         cipher = Blowfish.new(self.key, Blowfish.MODE_CBC, iv)
         plen = bs - divmod(len(self.plain), bs)[1]
         padding = [plen] * plen
-        padding = pack('b' * plen, *padding)
+        padding = pack("b" * plen, *padding)
         self.hashed = iv + cipher.encrypt(self.plain + padding)
         return self.hashed
 

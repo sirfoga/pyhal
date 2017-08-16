@@ -53,10 +53,11 @@ setup(
     long_description=DESCRIPTION,
     license="Apache License, Version 2.0",
     keywords="library scratch maths",
-    url="https://github.com/sirfoga/hal",
+    url="https://github.com/sirfoga/pyhal",
     packages=find_packages(exclude=["tests"]),
     install_requires=[
         "bs4",
+        "Crypto",
         "lxml",
         "matplotlib",
         "mutagen",
