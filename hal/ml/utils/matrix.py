@@ -22,12 +22,12 @@ import numpy as np
 
 
 def precision(matrix):
-    """ Calculates accuracy on database
-
-        :param matrix: 2x2 matrix that looks like
-        True Positive  - False Negative
-             |         -       |
-        False Positive - True Negative
+    """
+    :param matrix: 2 x 2 matrix
+        True positives are in [0,0], true negatives are in [1,1],
+        false negatives are in [0,1] and false positives are in [1,0]
+    :return: float
+        Calculates accuracy on database
     """
 
     true_pos = matrix[0][0]
@@ -40,12 +40,12 @@ def precision(matrix):
 
 
 def recall(matrix):
-    """ Calculates recall on database
-
-        :param matrix: 2x2 matrix that looks like
-        True Positive  - False Negative
-             |         -       |
-        False Positive - True Negative
+    """
+    :param matrix: 2 x 2 matrix
+        True positives are in [0,0], true negatives are in [1,1],
+        false negatives are in [0,1] and false positives are in [1,0]
+    :return: float
+        Calculates recall on database
     """
 
     true_pos = matrix[0][0]
@@ -58,12 +58,12 @@ def recall(matrix):
 
 
 def true_neg_rate(matrix):
-    """ Calculates true negative rate on database
-
-        :param matrix: 2x2 matrix that looks like
-        True Positive  - False Negative
-             |         -       |
-        False Positive - True Negative
+    """
+    :param matrix: 2 x 2 matrix
+        True positives are in [0,0], true negatives are in [1,1],
+        false negatives are in [0,1] and false positives are in [1,0]
+    :return: float
+        Calculates true negative rate on database
     """
 
     false_pos = matrix[1][0]
@@ -76,12 +76,12 @@ def true_neg_rate(matrix):
 
 
 def accuracy(matrix):
-    """ Calculates recall on database
-
-    :param matrix: 2x2 matrix that looks like
-    True Positive  - False Negative
-         |         -       |
-    False Positive - True Negative
+    """
+    :param matrix: 2 x 2 matrix
+        True positives are in [0,0], true negatives are in [1,1],
+        false negatives are in [0,1] and false positives are in [1,0]
+    :return: float
+        Calculates accuracy on database
     """
 
     true_pos = matrix[0][0]
@@ -98,12 +98,12 @@ def accuracy(matrix):
 
 
 def f1_score(matrix):
-    """ Calculates f1 score on database
-
-        :param matrix: 2x2 matrix that looks like
-        True Positive  - False Negative
-             |         -       |
-        False Positive - True Negative
+    """
+    :param matrix: 2 x 2 matrix
+        True positives are in [0,0], true negatives are in [1,1],
+        false negatives are in [0,1] and false positives are in [1,0]
+    :return: float
+        Calculates F1 score on database
     """
 
     m_pre = precision(matrix)
