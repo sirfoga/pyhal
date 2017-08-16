@@ -46,11 +46,12 @@ class Integer(object):
         self.to_int = int(string)
         self.to_string = string
         self.is_probably_prime = (self.to_int % 2 != 0) and (
-            self.to_int in self.LOW_PRIMES)
+            self.to_int in LOW_PRIMES)
 
-    def is_probably_prime(self):
+    def is_naive_prime(self):
         """
-        :return: test with miller-rabin
+        :return: bool
+            Checks if prime in very naive way
         """
 
         if self.to_int < 2:
@@ -60,17 +61,25 @@ class Integer(object):
         elif self.to_int % 2 == 0:
             return False
 
-        if self.to_int in LOW_PRIMES:
-            return True
+    def is_probably_prime(self):
+        """
+        :return: test with miller-rabin
+        """
 
-        # check if multiple pf low primes
-        for prime in LOW_PRIMES:
-            if self.to_int % prime == 0:
-                return False
+        if not self.is_naive_prime():
+            if self.to_int in LOW_PRIMES:
+                return True
 
-        # if all else fails, call rabinMiller to determine if to_int is prime
-        self.is_probably_prime = self.test_miller_rabin(5)
-        return self.is_probably_prime
+            # check if multiple pf low primes
+            for prime in LOW_PRIMES:
+                if self.to_int % prime == 0:
+                    return False
+
+            # if all else fails, call rabin to determine if to_int is prime
+            self.is_probably_prime = self.test_miller_rabin(5)
+            return self.is_probably_prime
+
+        return True
 
     def test_miller_rabin(self, precision):
         """
@@ -79,45 +88,48 @@ class Integer(object):
         :return: True iff probably prime
         """
 
-        if precision < 0:
-            raise ValueError('precision must be positive')
+        if not self.is_naive_prime():
+            if precision < 0:
+                raise ValueError('precision must be positive')
 
-        # basic sort out
-        if self.to_int < 2:
-            return False
-        elif self.to_int == 2:
+            # basic sort out
+            if self.to_int < 2:
+                return False
+            elif self.to_int == 2:
+                return True
+            elif self.to_int % 2 == 0:
+                return False
+
+            # true -> probably prime
+            # false -> composite
+
+            # write n = d*2^s, d odd
+            s = self.to_int - 1
+            t = 0
+            while s % 2 == 0:
+                s /= 2
+                t += 1
+
+            # let a = random in the range 2, n-1
+            # v = a^d mod n
+            # if v = +-1 mod n:
+            #     repeat this s-1 times:
+            #     v = v^2 mod n
+            #     if v = 1 -> composite
+            # -> prime
+            for _ in range(precision):
+                a = random.randrange(2, self.to_int - 1)
+                v = pow(a, s, self.to_int)
+                if v != 1:
+                    i = 0
+                    while v != (self.to_int - 1):
+                        if i == t - 1:
+                            return False
+                        else:
+                            i += 1
+                            v = (v ** 2) % self.to_int
             return True
-        elif self.to_int % 2 == 0:
-            return False
 
-        # true -> probably prime
-        # false -> composite
-
-        # write n = d*2^s, d odd
-        s = self.to_int - 1
-        t = 0
-        while s % 2 == 0:
-            s /= 2
-            t += 1
-
-        # let a = random in the range 2, n-1
-        # v = a^d mod n
-        # if v = +-1 mod n:
-        #     repeat this s-1 times:
-        #     v = v^2 mod n
-        #     if v = 1 -> composite
-        # -> prime
-        for _ in range(precision):
-            a = random.randrange(2, self.to_int - 1)
-            v = pow(a, s, self.to_int)
-            if v != 1:
-                i = 0
-                while v != (self.to_int - 1):
-                    if i == t - 1:
-                        return False
-                    else:
-                        i += 1
-                        v = (v ** 2) % self.to_int
         return True
 
 

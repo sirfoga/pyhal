@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file.
 ## 4.6.2
 ### Removed
 - duplicate primes matrix in maths module
+- duplicate code in maths prime checking
 
 ## 4.6.1
 ### Added
