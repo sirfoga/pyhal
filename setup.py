@@ -45,11 +45,11 @@ DESCRIPTION = \
 
 setup(
     name="PyHal",
-    version="4.6",
+    version="4.6.1",
     author="sirfoga",
     author_email="sirfoga@protonmail.com",
-    description="Hal is a from-scratch home-made multipurpose library to "
-                "perform most of stuff in python.",
+    description="A multipurpose library to perform great stuff in the most "
+                "easy, short and pythonic way.",
     long_description=DESCRIPTION,
     license="Apache License, Version 2.0",
     keywords="library scratch maths",
