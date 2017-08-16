@@ -10,7 +10,7 @@
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fsirfoga%2Fpyhal.svg?type=shield)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fsirfoga%2Fpyhal?ref=badge_shield) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/licenses/Apache-2.0)
-[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/sirfoga/scrapebots/issues)
+[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/sirfoga/pyhal/issues)
 
 
 <!-- [![Stories in Ready](https://badge.waffle.io/sirfoga/hal.svg?label=ready&title=Ready)](http://waffle.io/sirfoga/hal) -->
@@ -48,6 +48,7 @@ Take a look [here](https://github.com/sirfoga/pyhal/blob/master/setup.py#L58) fo
 You can take a look at [my other repository](https://github.com/sirfoga/pymisc/tree/master/misc): there are lots of implementations from various HAL modules.
 Browse extra examples here:
 - [`charts`](docs/examples/CHARTS.md) module
+- [`tests`](docs/examples/TESTS.md) module
 
 
 ## Usage and documentation

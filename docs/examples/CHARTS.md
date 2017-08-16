@@ -1,4 +1,4 @@
-# Charts
+# hal.charts.plotter
 
 ## Plot3d.param()
 ```python

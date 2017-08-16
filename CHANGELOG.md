@@ -6,11 +6,14 @@ All notable changes to this project will be documented in this file.
 - duplicate primes matrix in maths module
 - duplicate code in maths prime checking
 - duplicate code in ml time series
+- low primality checking in maths.Integer
 ### Fixed
 - matplotlib dependencies
 - Plot4d.plot canvas updater
+- maths is_probably_prime power int
 ### Added
 - charts module examples
+- tests module examples
 
 ## 4.6.1
 ### Added

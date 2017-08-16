@@ -45,8 +45,6 @@ class Integer(object):
     def __init__(self, string):
         self.to_int = int(string)
         self.to_string = string
-        self.is_probably_prime = (self.to_int % 2 != 0) and (
-            self.to_int in LOW_PRIMES)
 
     def is_naive_prime(self):
         """
@@ -76,8 +74,7 @@ class Integer(object):
                     return False
 
             # if all else fails, call rabin to determine if to_int is prime
-            self.is_probably_prime = self.test_miller_rabin(5)
-            return self.is_probably_prime
+            return self.test_miller_rabin(5)
 
         return True
 
@@ -111,7 +108,7 @@ class Integer(object):
             # -> prime
             for _ in range(precision):
                 a = random.randrange(2, self.to_int - 1)
-                v = pow(a, s, self.to_int)
+                v = pow(int(a), int(s), self.to_int)
                 if v != 1:
                     i = 0
                     while v != (self.to_int - 1):
