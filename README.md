@@ -11,9 +11,28 @@
 <div style="text-align:center"><img src ="https://github.com/sirfoga/pyhal/raw/master/logo.png" /></div>
 
 ## Install
-* ``` $ pip3 install . --upgrade --force-reinstall ``` from the source
-* ``` $ pip3 install pyhal``` via [pip](https://pypi.org/project/PyHal/)
+- ``` $ pip3 install . --upgrade --force-reinstall ``` from the source
+- ``` $ pip3 install pyhal``` via [pip](https://pypi.org/project/PyHal/)
 
+## Requirements
+- ```python 3.4``` or greater
+
+### Python dependencies
+Take a look [here](https://github.com/sirfoga/pyhal/blob/master/setup.py#L58) for the complete and updated list
+- bs4
+- Crypto
+- lxml
+- matplotlib
+- mutagen
+- numpy
+- psutil
+- pycrypto
+- pymongo
+- requests
+- scipy
+- send2trash
+- sklearn
+- statsmodels
 
 ## Examples
 You can take a look at [my other repository](https://github.com/sirfoga/pymisc/tree/master/misc): there are lots of implementations from various HAL modules.
