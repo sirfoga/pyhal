@@ -8,7 +8,9 @@ All notable changes to this project will be documented in this file.
 - duplicate code in ml time series
 ### Fixed
 - matplotlib dependencies
-- Plot4d.plot cavas updater
+- Plot4d.plot canvas updater
+### Added
+- charts module examples
 
 ## 4.6.1
 ### Added

@@ -46,12 +46,8 @@ Take a look [here](https://github.com/sirfoga/pyhal/blob/master/setup.py#L58) fo
 
 ## Examples
 You can take a look at [my other repository](https://github.com/sirfoga/pymisc/tree/master/misc): there are lots of implementations from various HAL modules.
-Soon there will be some specific examples here.
-
-
-## API
-See [```Usage and documentation```](#usage-and-documentation) for detailed usage.
-Take a look at the [Java API](https://github.com/sirfoga/jhal) for the Java equivalent.
+Browse extra examples here:
+- [`charts`](docs/examples/CHARTS.md) module
 
 
 ## Usage and documentation
