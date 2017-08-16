@@ -24,7 +24,7 @@ import hashlib
 from struct import pack
 
 from Crypto import Random
-from Crypto.Cipher import DES3, ARC2, ARC4, Blowfish, CAST
+from Crypto.Cipher import ARC2, ARC4, Blowfish, CAST
 from Crypto.Hash import SHA224, SHA256
 from Crypto.PublicKey import DSA
 from Crypto.Random import random
@@ -437,49 +437,6 @@ class SHA(object):
         return self.hashed
 
 
-class DES(object):
-    """ DES hash """
-
-    ALLOWED_SIZE = [1, 3]
-
-    def __init__(self, string, key, size):
-        object.__init__(self)
-        self.plain = string
-        self.key = key
-        self.size = int(size)
-        if self.size not in self.ALLOWED_SIZE:
-            raise ValueError(
-                "Cannot create DES hash of size " + str(self.size))
-        self.hashed = None
-
-    def hash(self):
-        """
-        :return: hash of given size
-        """
-
-        if self.size == 1:
-            self.hash_des()
-        else:  # 3
-            self.hash_des3()
-
-    def hash_des(self):
-        """
-        :return: des hash
-        """
-
-        iv = Random.new().read(DES3.block_size)
-        cipher = DES3.new(self.key, DES3.MODE_OFB, iv)
-        self.hashed = iv + cipher.encrypt(self.plain)
-        return self.hashed
-
-    def hash_des3(self):
-        """
-        :return: des3 hash
-        """
-
-        pass  # TODO
-
-
 class ARC(object):
     """ ARC hash """
 
@@ -526,23 +483,6 @@ class ARC(object):
         cipher = ARC4.new(sha_sum.hashed)
         self.hashed = nonce + cipher.encrypt(self.plain)
         return self.hashed
-
-
-class AES(object):
-    """ aes hash """
-
-    def __init__(self, string, key):
-        object.__init__(self)
-        self.plain = string
-        self.key = key
-        self.hashed = None
-
-    def hash(self):
-        """
-        :return: hash plaintext
-        """
-
-        pass  # TODO
 
 
 class HMAC(object):
