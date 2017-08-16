@@ -113,7 +113,7 @@ def create_multiple_bar_chart(title, x_labels, mul_y_values, mul_y_labels,
     return ax1
 
 
-def create_symlog_bar_chart(title, x_labels, y_values, y_label):
+def create_sym_log_bar_chart(title, x_labels, y_values, y_label):
     """
     :param title: str
         Title of chart
@@ -124,9 +124,9 @@ def create_symlog_bar_chart(title, x_labels, y_values, y_label):
     :param y_label: str
         Label of y axis
     :return: return
-        Symlog bar chart
+        Sym-log bar chart
     """
 
     ax1 = create_bar_chart(title, x_labels, y_values, y_label)
-    ax1.set_yscale("symlog", linthreshy=1e-12)  # logarithmic plot
+    ax1.set_yscale("sym-log", linthreshy=1e-12)  # logarithmic plot
     return ax1

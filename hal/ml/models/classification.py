@@ -67,7 +67,7 @@ def ada_boost():
 def bayes_gauss():
     """
     :return: sklearn GaussianNB
-        Slower than svr but equally accuarate
+        Slower than svr but equally accurate
     """
 
     return naive_bayes.GaussianNB()

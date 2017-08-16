@@ -16,7 +16,7 @@
 # limitations under the License.
 
 
-""" Deal with webpages. """
+""" Deal with web-pages. """
 
 import random
 import re
@@ -242,7 +242,7 @@ class Webpage(object):
         :param times: int
             Times to open webpage in browser
         :return: void
-            Open a wendrive and go to webpage
+            Open a web-driver and go to webpage
         """
 
         for _ in range(times):

@@ -121,7 +121,7 @@ class FileSystem(object):
         """
 
         for i in range(len(
-                name) - 3):  # last index is lenght - 3 - 1 = length - 4
+                name) - 3):  # last index is length - 3 - 1 = length - 4
             if name[i: i + 4].isdigit():
                 name = name[:i] + name[i + 4:]
                 return FileSystem.remove_year(
@@ -134,11 +134,11 @@ class FileSystem(object):
         :param name: string
             Name to edit
         :return: string
-            Given string bu with no barckets.
+            Given string bu with no brackets
         """
 
         name = re.sub(
-            r"([\(\[]).*?([\)\]])",
+            r"([(\[]).*?([)\]])",
             r"\g<1>\g<2>",
             name
         )  # remove anything in between brackets

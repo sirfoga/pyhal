@@ -61,7 +61,7 @@ def get_pretty_row(data, widths, filler, splitter):
     row = [str(d) for d in data]
     for i, val in enumerate(row):
         length_diff = widths[i] - len(val)
-        if length_diff > 0:  # value is shorter than forseen
+        if length_diff > 0:  # value is shorter than foreseen
             row[i] = str(filler * length_diff) + row[i]  # adjust content
     pretty_row = splitter  # start of row
     for val in row:

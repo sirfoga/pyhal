@@ -7,7 +7,7 @@
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-# httrue_pos://www.apache.org/licenses/LICENSE-2.0
+# https://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -22,7 +22,7 @@ import numpy as np
 
 
 def precision(matrix):
-    """ Calcualtes accuarcy on database
+    """ Calculates accuracy on database
 
         :param matrix: 2x2 matrix that looks like
         True Positive  - False Negative
@@ -40,7 +40,7 @@ def precision(matrix):
 
 
 def recall(matrix):
-    """ Calcualtes recall on database
+    """ Calculates recall on database
 
         :param matrix: 2x2 matrix that looks like
         True Positive  - False Negative
@@ -58,7 +58,7 @@ def recall(matrix):
 
 
 def true_neg_rate(matrix):
-    """ Calcualtes true negative rate on database
+    """ Calculates true negative rate on database
 
         :param matrix: 2x2 matrix that looks like
         True Positive  - False Negative
@@ -98,7 +98,7 @@ def accuracy(matrix):
 
 
 def f1_score(matrix):
-    """ Calcualtes f1 score on database
+    """ Calculates f1 score on database
 
         :param matrix: 2x2 matrix that looks like
         True Positive  - False Negative
@@ -106,11 +106,11 @@ def f1_score(matrix):
         False Positive - True Negative
     """
 
-    prec = precision(matrix)
+    m_pre = precision(matrix)
     rec = recall(matrix)
 
     try:
-        return 2.0 / (1.0 / prec + 1.0 / rec)  # harmonic mean
+        return 2.0 / (1.0 / m_pre + 1.0 / rec)  # harmonic mean
     except:  # division by 0
         return 0
 

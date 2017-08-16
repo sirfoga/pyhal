@@ -27,17 +27,17 @@ import statsmodels.tsa.vector_ar.var_model as vr
 from statsmodels.tsa.stattools import adfuller
 
 
-def test_stationarity(timeseries):
+def test_stationary(time_series):
     """
-    :param timeseries: []
+    :param time_series: []
     :return: void
         Shows plot and checks for stationary series
     """
 
-    rolling_mean = pd.rolling_mean(timeseries, window=12)  # rolling stats
-    rolling_std = pd.rolling_std(timeseries, window=12)
+    rolling_mean = pd.rolling_mean(time_series, window=12)  # rolling stats
+    rolling_std = pd.rolling_std(time_series, window=12)
 
-    plt.plot(timeseries, color='blue',
+    plt.plot(time_series, color='blue',
              label='Original')  # Plot rolling statistics:
     plt.plot(rolling_mean, color='red', label='Rolling Mean')
     plt.plot(rolling_std, color='black', label='Rolling Std')
@@ -47,13 +47,19 @@ def test_stationarity(timeseries):
 
     # Perform Dickey-Fuller test:
     print('Results of Dickey-Fuller Test:')
-    dftest = adfuller(timeseries, autolag='AIC')
-    dfoutput = pd.Series(dftest[0:4],
-                         index=['Test Statistic', 'p-value', '# Lags Used',
-                                '# Observations Used'])
-    for key, value in list(dftest[4].items()):
-        dfoutput['Critical Value (%s)' % key] = value
-    print(dfoutput)
+    df_test = adfuller(time_series, autolag='AIC')
+    df_out = pd.Series(
+        df_test[0:4],
+        index=[
+            'Test Statistic',
+            'p-value',
+            '# Lags Used',
+            '# Observations Used'
+        ]
+    )
+    for key, value in list(df_test[4].items()):
+        df_out['Critical Value (%s)' % key] = value
+    print(df_out)
 
 
 def arma(dates, values, start=None, end=None, plot=False):
@@ -106,9 +112,7 @@ def arima(dates, values, start=None, end=None):
 def var(dates, values):
     """ Predict days values using ARIMA algorithm.
     :param dates: list of str date
-    :param values: list of float values
-    :param start: start predicting in this day
-    :param end: end of prediction """
+    :param values: list of float values """
 
     y_series = pd.Series(values, index=dates)
     model = vr.VAR(y_series)
@@ -119,9 +123,7 @@ def var(dates, values):
 def dynamic_var(dates, values):
     """ Predict days values using ARIMA algorithm.
     :param dates: list of str date
-    :param values: list of float values
-    :param start: start predicting in this day
-    :param end: end of prediction """
+    :param values: list of float values """
 
     y_series = pd.Series(values, index=dates)
     model = dr.DynamicVAR(y_series, (2, 1, 0), trend="nc")

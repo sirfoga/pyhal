@@ -22,8 +22,8 @@ from bs4 import BeautifulSoup
 
 from hal.internet.web import Webpage
 
-YOUTUBE_USER_BASEURL = "https://www.youtube.com/user/"
-YOUTUBE_FEED_BASEURL = "https://www.youtube.com/feeds/videos.xml?channel_id="
+YOUTUBE_USER_BASE_URL = "https://www.youtube.com/user/"
+YOUTUBE_FEED_BASE_URL = "https://www.youtube.com/feeds/videos.xml?channel_id="
 
 
 def get_channel_page_from_name(channel_name):
@@ -35,7 +35,7 @@ def get_channel_page_from_name(channel_name):
         source page of youtube channel.
     """
 
-    channel_url = YOUTUBE_USER_BASEURL + channel_name  # url of channel
+    channel_url = YOUTUBE_USER_BASE_URL + channel_name  # url of channel
     source_page = Webpage(
         channel_url).get_html_source()  # get source page of channel homepage
     return source_page
@@ -74,7 +74,7 @@ def get_channel_feed_url_from_id(channel_id):
         rss url feed of youtube channel
     """
 
-    return YOUTUBE_FEED_BASEURL + channel_id
+    return YOUTUBE_FEED_BASE_URL + channel_id
 
 
 def get_channel_feed_url_from_name(channel_name):

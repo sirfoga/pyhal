@@ -28,27 +28,27 @@ class Plot2d(object):
     """ 2d plot """
 
     @staticmethod
-    def scatter(vectorx, vectory):
+    def scatter(vector_x, vector_y):
         """
-        :param vectorx: vector in x axis
-        :param vectory: vector in y axis
+        :param vector_x: vector in x axis
+        :param vector_y: vector in y axis
         :return: 2d scatter plot
         """
 
-        if len(vectorx) == len(vectory):
+        if len(vector_x) == len(vector_y):
             # fig = plt.figure()
             # ax = fig.add_subplot(111)
-            # ax.scatter(vectorx, vectory, c="r", marker="o")
+            # ax.scatter(vector_x, vector_y, c="r", marker="o")
 
-            plt.plot(vectorx, vectory, "-o")
+            plt.plot(vector_x, vector_y, "-o")
             plt.show()
         else:
             raise ValueError("Cannot plot vectors of different length.")
 
-    def param(self, functionx, functiony, min_val, max_val, points):
+    def param(self, function_x, function_y, min_val, max_val, points):
         """
-        :param functionx: function in x value
-        :param functiony: function in y value
+        :param function_x: function in x value
+        :param function_y: function in y value
         :param min_val: minimum value
         :param max_val: maximum value
         :param points: number of points to display
@@ -59,7 +59,7 @@ class Plot2d(object):
             raise ValueError("Number of points to plot must be positive.")
         else:
             if min_val > max_val:
-                self.param(functionx, functiony, max_val, min_val, points)
+                self.param(function_x, function_y, max_val, min_val, points)
 
     def plot(self, function, min_val, max_val, points):
         """
@@ -85,30 +85,31 @@ class Plot3d(object):
     """ 3D plot """
 
     @staticmethod
-    def scatter(vectorx, vectory, vectorz):
+    def scatter(vector_x, vector_y, vector_z):
         """
-        :param vectorx: vector in x axis
-        :param vectory: vector in y axis
-        :param vectorz: vector in z axis
+        :param vector_x: vector in x axis
+        :param vector_y: vector in y axis
+        :param vector_z: vector in z axis
         :return: plot 3d scattered points
         """
 
-        if len(vectorx) == len(vectory) == len(vectorz):
+        if len(vector_x) == len(vector_y) == len(vector_z):
             # general settings
             fig = plt.figure()
             chart = fig.add_subplot(111, projection="3d")
 
             # plot
-            chart.scatter(vectorx, vectory, vectorz, c="r", marker="o")
+            chart.scatter(vector_x, vector_y, vector_z, c="r", marker="o")
             plt.show()
         else:
             raise ValueError("Cannot plot vectors of different length.")
 
-    def param(self, functionx, functiony, functionz, min_val, max_val, points):
+    def param(self, function_x, function_y, function_z, min_val, max_val,
+              points):
         """
-        :param functionx: function in x
-        :param functiony: function in y
-        :param functionz: function in z
+        :param function_x: function in x
+        :param function_y: function in y
+        :param function_z: function in z
         :param min_val: minimum
         :param max_val: maximum
         :param points: number of points
@@ -120,9 +121,9 @@ class Plot3d(object):
         else:
             if min_val > max_val:
                 self.param(
-                    functionx,
-                    functiony,
-                    functionz,
+                    function_x,
+                    function_y,
+                    function_z,
                     max_val,
                     min_val,
                     points
@@ -133,47 +134,44 @@ class Plot3d(object):
 
             # limits and plot
             theta = linspace(min_val, max_val, points)
-
-            # z = linspace(-2, 2, 100)
-            # r = z**2 + 1
-            x_axis = functionx(theta)
-            y_axis = functiony(theta)
-            z_axis = functionz(theta)
+            x_axis = function_x(theta)
+            y_axis = function_y(theta)
+            z_axis = function_z(theta)
             chart.plot(x_axis, y_axis, z_axis)
             chart.legend()
 
             # show
             plt.show()
 
-    def plot(self, function, minx, maxx, pointsx, miny, maxy, pointsy):
+    def plot(self, function, min_x, max_x, points_x, min_y, max_y, points_y):
         """
         :param function: function to plot
-        :param minx: minimum of x-values
-        :param maxx: maximum of x-values
-        :param pointsx: points in x axis
-        :param miny: minimum of y-values
-        :param maxy: maximum of y-values
-        :param pointsy: points in y axis
+        :param min_x: minimum of x-values
+        :param max_x: maximum of x-values
+        :param points_x: points in x axis
+        :param min_y: minimum of y-values
+        :param max_y: maximum of y-values
+        :param points_y: points in y axis
         :return: plot 3d function
         """
-        if pointsx < 0 or pointsy < 0:
+        if points_x < 0 or points_y < 0:
             raise ValueError("Number of points to plot must be positive.")
 
-        if minx > maxx:
-            self.plot(function, maxx, minx, pointsx, miny, maxy, pointsy)
+        if min_x > max_x:
+            self.plot(function, max_x, min_x, points_x, min_y, max_y, points_y)
 
-        if miny > maxy:
-            self.plot(function, minx, maxx, pointsx, maxy, miny, pointsy)
+        if min_y > max_y:
+            self.plot(function, min_x, max_x, points_x, max_y, min_y, points_y)
 
         # general settings
         chart = plt.axes(projection="3d")
 
         # points
         x_axis = numpy.outer(
-            linspace(minx, maxx, pointsx), numpy.ones(pointsx)
+            linspace(min_x, max_x, points_x), numpy.ones(points_x)
         )
         y_axis = numpy.outer(
-            linspace(miny, maxy, pointsy), numpy.ones(pointsy)
+            linspace(min_y, max_y, points_y), numpy.ones(points_y)
         ).T
         z_axis = function(x_axis, y_axis)
 
@@ -189,29 +187,29 @@ class Plot4d(object):
     """ 4D plot generator with slider """
 
     @staticmethod
-    def scatter(vectorx, vectory, vectorz, vectorw):
+    def scatter(vector_x, vector_y, vector_z, vector_w):
         """
-        :param vectorx: vector in x axis
-        :param vectory: vector in y axis
-        :param vectorz: vector in z axis
-        :param vectorw: vector in w axis
+        :param vector_x: vector in x axis
+        :param vector_y: vector in y axis
+        :param vector_z: vector in z axis
+        :param vector_w: vector in w axis
         :return: plot 4d scattered points
         """
-        if len(vectorx) == len(vectory) == len(vectorz) == len(vectorw):
+        if len(vector_x) == len(vector_y) == len(vector_z) == len(vector_w):
             pass
         else:
             raise ValueError("Cannot plot vectors of different length.")
 
-    def plot(self, function, minx, maxx, miny, maxy, minz, maxz, precision,
-             kind):
+    def plot(self, function, min_x, max_x, min_y, max_y, min_z, max_z,
+             precision, kind):
         """
         :param function: function to plot
-        :param minx: minimum of x-values
-        :param maxx: maximum of x-values
-        :param miny: minimum of y-values
-        :param maxy: maximum of y-values
-        :param minz: minimum of z-values
-        :param maxz: maximum of z-values
+        :param min_x: minimum of x-values
+        :param max_x: maximum of x-values
+        :param min_y: minimum of y-values
+        :param max_y: maximum of y-values
+        :param min_z: minimum of z-values
+        :param max_z: maximum of z-values
         :param precision: precision
         :param kind: slice: x cont -> 3d plot with y, z variables in plane
             and w as "z"-axis contour: x cont -> 3d plot with y,z variables in
@@ -222,44 +220,38 @@ class Plot4d(object):
         if precision < 0:
             raise ValueError("Precision cannot be negative.")
 
-        if minx > maxx:
-            self.plot(function, maxx, minx, miny, maxy, minz, maxz, precision,
-                      kind)
+        if min_x > max_x:
+            self.plot(function, max_x, min_x, min_y, max_y, min_z, max_z,
+                      precision, kind)
 
-        if miny > maxy:
-            self.plot(function, minx, maxx, maxy, miny, minz, maxz, precision,
-                      kind)
+        if min_y > max_y:
+            self.plot(function, min_x, max_x, max_y, min_y, min_z, max_z,
+                      precision, kind)
 
-        if minz > maxz:
-            self.plot(function, minx, maxx, miny, maxy, maxz, minz, precision,
-                      kind)
+        if min_z > max_z:
+            self.plot(function, min_x, max_x, min_y, max_y, max_z, min_z,
+                      precision, kind)
 
         if kind != "slice" and kind != "contour":
             raise ValueError(
                 "Plot type not supported, only \"slice\" and \"contour\" are.")
 
-        def set_labels(graph, labelx, labely, labelz):
+        def set_labels(graph, label_x, label_y, label_z):
             """
             :param graph: plot
-            :param labelx: new label on x axis
-            :param labely: new label on y axis
-            :param labelz: new label on z axis
+            :param label_x: new label on x axis
+            :param label_y: new label on y axis
+            :param label_z: new label on z axis
             :return: set given labels to axes of graph
             """
 
-            graph.set_xlabel(labelx)
-            graph.set_ylabel(labely)
-            graph.set_zlabel(labelz)
+            graph.set_xlabel(label_x)
+            graph.set_ylabel(label_y)
+            graph.set_zlabel(label_z)
 
-        def set_limits(graph, min_x, max_x, max_y, min_y, min_z, max_z):
+        def set_limits(graph):
             """
             :param graph: plot
-            :param min_x: minimum of x-values
-            :param max_x: maximum of x-values
-            :param min_y: minimum of y-values
-            :param max_y: maximum of y-values
-            :param min_z: minimum of z-values
-            :param max_z: maximum of z-values
             :return: set given limits to axes of graph
             """
 
@@ -276,32 +268,30 @@ class Plot4d(object):
 
             return int((max_val - min_val) * (1 + precision))
 
-        def get_precision_delta(min_val, max_val, prec):
+        def get_precision_delta(min_val, max_val):
             """
-            :param min_val: mnimum
+            :param min_val: minimum
             :param max_val: maximum
-            :param prec: precision
             :return: default Delta = interval / points
             """
 
-            return float(max_val - min_val) / float(10 * prec)
+            return float(max_val - min_val) / float(10 * precision)
 
         if kind == "slice":
             chart_axis = plt.axes(projection="3d")  # general settings
-            pointsx = get_precision(minx, maxx)
-            pointsy = get_precision(miny, maxz)
+            points_x = get_precision(min_x, max_x)
+            points_y = get_precision(min_y, max_z)
 
-            x_ax = numpy.outer(linspace(minx, maxx, pointsx), pointsx)  # axes
+            x_ax = numpy.outer(linspace(min_x, max_x, points_x), points_x)
             y_ax = numpy.outer(
-                linspace(miny, maxy, pointsy).flatten(), pointsy
+                linspace(min_y, max_y, points_y).flatten(), points_y
             ).T
             # slider
             axis_slider = plt.axes([0.12, 0.03, 0.78, 0.03], axisbg="white")
-            slider = Slider(axis_slider, "x", minx, maxx, valinit=minx)
+            slider = Slider(axis_slider, "x", min_x, max_x, valinit=min_x)
 
-            def update(val):
+            def update():
                 """
-                :param val: new value
                 :return: re-plot
                 """
 
@@ -323,25 +313,24 @@ class Plot4d(object):
             chart_axis = fig.gca(projection="3d")
 
             # create axes
-            x_ax = numpy.arange(minx, maxx, get_precision_delta(
-                minx, maxx, precision)).tolist()
-            y_ax = numpy.arange(miny, maxy, get_precision_delta(
-                miny, maxy, precision)).tolist()
+            x_ax = numpy.arange(min_x, max_x, get_precision_delta(
+                min_x, max_x, precision)).tolist()
+            y_ax = numpy.arange(min_y, max_y, get_precision_delta(
+                min_y, max_y, precision)).tolist()
             x_ax, y_ax = numpy.meshgrid(x_ax, y_ax)
 
             # slider
             axis_slider = plt.axes([0.12, 0.03, 0.78, 0.03], axisbg="white")
-            slider = Slider(axis_slider, "x", minx, maxx, valinit=minx)
+            slider = Slider(axis_slider, "x", min_x, max_x, valinit=min_x)
 
             # update
 
-            def update(val):
+            def update():
                 """
-                :param val: new value
                 :return: re-plot plot
                 """
 
-                chart_axis.clear()  # replot
+                chart_axis.clear()  # re-plot
                 x_const = slider.val
                 z_axis = []
 
@@ -350,12 +339,8 @@ class Plot4d(object):
                     z_axis.append(function(x_const, x_ax[i], y_ax[i]))
 
                 # show
-                # cset = ax.contour(X, Y, Z, zdir="x", offset=minx)
-                # cset = ax.contour(X, Y, Z, zdir="y", offset=miny)
-                # cset = ax.contour(X, Y, Z, zdir="z", offset=minz)
-                # cset = ax.contour(X, Y, Z, extend3d=True)
                 set_labels(chart_axis, "y", "z", "w")
 
             slider.on_changed(update)
-            set_limits(chart_axis, minx, maxx, miny, maxy, minz, maxz)
+            set_limits(chart_axis)
             plt.show()

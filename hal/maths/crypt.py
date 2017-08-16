@@ -231,7 +231,6 @@ class MD6(object):
                 m = m[int(b / 8):]
 
             i = 0
-            p = 0
             l = len(B)
 
             while i < l:
@@ -239,7 +238,6 @@ class MD6(object):
                 C += mid(B[i], [], i, p, z)
 
                 i += 1
-                p = 0
 
             return self._from_word(C)
 
@@ -260,7 +258,6 @@ class MD6(object):
                 m = m[int((b - c) / 8):]
 
             i = 0
-            p = 0
             l = len(B)
 
             while i < l:
@@ -269,7 +266,6 @@ class MD6(object):
                 C = mid(B[i], C, i, p, z)
 
                 i += 1
-                p = 0
 
             return self._from_word(C)
 
@@ -321,12 +317,12 @@ class MD6(object):
         """
 
         byte = self._pre_hash(data, size, "", 64)
-        hexstr = ""
+        hex_str = ""
 
         for i in byte:
-            hexstr += "%02x" % i
+            hex_str += "%02x" % i
 
-        return hexstr
+        return hex_str
 
     def raw(self, data, size):
         """
@@ -336,12 +332,12 @@ class MD6(object):
         """
 
         byte = self._pre_hash(data, size, key="", levels=64)
-        rawstr = ""
+        raw_str = ""
 
         for i in byte:
-            rawstr += chr(i)
+            raw_str += chr(i)
 
-        return rawstr
+        return raw_str
 
 
 class SHA(object):
@@ -376,7 +372,7 @@ class SHA(object):
             else:  # 512
                 self.hash_sha512()
         else:
-            self.hash_shasalted()
+            self.hash_sha_salted()
 
     def hash_sha1(self):
         """
@@ -428,7 +424,7 @@ class SHA(object):
         self.hashed = h.hexdigest()
         return self.hashed
 
-    def hash_shasalted(self):
+    def hash_sha_salted(self):
         """
         :return: sha512 hash
         """
@@ -522,9 +518,9 @@ class BLOWFISH(object):
         bs = Blowfish.block_size
         iv = Random.new().read(bs)
         cipher = Blowfish.new(self.key, Blowfish.MODE_CBC, iv)
-        plen = bs - divmod(len(self.plain), bs)[1]
-        padding = [plen] * plen
-        padding = pack("b" * plen, *padding)
+        p_len = bs - divmod(len(self.plain), bs)[1]
+        padding = [p_len] * p_len
+        padding = pack("b" * p_len, *padding)
         self.hashed = iv + cipher.encrypt(self.plain + padding)
         return self.hashed
 
@@ -674,8 +670,8 @@ class IDEA(object):
         # in order to cancel the last permutation x2, x3 = x3, x2
         y1, y2, y3, y4 = self._ka_layer(x1, x3, x2, x4, self._keys[8])
 
-        ciphertext = (y1 << 48) | (y2 << 32) | (y3 << 16) | y4
-        return ciphertext
+        cipher_text = (y1 << 48) | (y2 << 32) | (y3 << 16) | y4
+        return cipher_text
 
 
 class CAST128(object):
@@ -705,9 +701,9 @@ class CAST128(object):
         """
 
         eiv = self.plain[:CAST.block_size + 2]
-        ciphertext = self.plain[CAST.block_size + 2:]
+        cipher_text = self.plain[CAST.block_size + 2:]
         cipher = CAST.new(self.key, CAST.MODE_OPENPGP, eiv)
-        self.answer = cipher.decrypt(ciphertext)
+        self.answer = cipher.decrypt(cipher_text)
         return self.answer
 
 

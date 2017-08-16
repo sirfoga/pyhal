@@ -64,7 +64,7 @@ def handle_exceptions(function):
             print(
                 colorama.Fore.RED + colorama.Style.BRIGHT + "\r[!] Unhandled "
                                                             "exception "
-                                                            "occured...\n%s" %
+                                                            "occurred...\n%s" %
                 sys.exc_info()[1] + colorama.Style.RESET_ALL)
             print(exception_string)
 

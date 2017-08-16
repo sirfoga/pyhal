@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 - sphinx docs script
 ### Fixed
 - hal hidden ls
+- code misspelling
 
 ## 4.6
 ### Added
@@ -152,7 +153,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 - .pdf and .html docs generated with epydoc (I'm not enough brave to try sphinx)
 ### Changed
-- Refactored Changelog (didn't you see??)
+- Refactored changelog
 
 ## 4.3.0.1
 ### Changed

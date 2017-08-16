@@ -45,7 +45,7 @@ class Integer(object):
     def __init__(self, string):
         self.to_int = int(string)
         self.to_string = string
-        self.is_pprime = (self.to_int % 2 != 0) and (
+        self.is_probably_prime = (self.to_int % 2 != 0) and (
             self.to_int in self.LOW_PRIMES)
 
     def is_probably_prime(self):
@@ -87,8 +87,8 @@ class Integer(object):
                 return False
 
         # if all else fails, call rabinMiller to determine if to_int is prime
-        self.is_pprime = self.test_miller_rabin(5)
-        return self.is_pprime
+        self.is_probably_prime = self.test_miller_rabin(5)
+        return self.is_probably_prime
 
     def test_miller_rabin(self, precision):
         """
@@ -199,7 +199,7 @@ def get_prime(bits):
             return num
 
 
-def blumblumshub(seed, amount, prime0, prime1):
+def blum_blum_shub(seed, amount, prime0, prime1):
     """
     :param seed: seeder
     :param amount: amount of number to generate

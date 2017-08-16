@@ -1,9 +1,12 @@
 # HAL: Handy Algorithmic Library
 
-[![Build Status](https://travis-ci.org/sirfoga/pyhal.svg?branch=master)](https://travis-ci.org/sirfoga/pyhal) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fsirfoga%2Fpyhal.svg?type=shield)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fsirfoga%2Fpyhal?ref=badge_shield) [![PyPI version](https://badge.fury.io/py/PyHal.svg)](https://pypi.org/project/PyHal/) [![Code Health](https://landscape.io/github/sirfoga/pyhal/master/landscape.svg?style=flat)](https://landscape.io/github/sirfoga/hal/master)
+[![Build Status](https://travis-ci.org/sirfoga/pyhal.svg?branch=master)](https://travis-ci.org/sirfoga/pyhal) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fsirfoga%2Fpyhal.svg?type=shield)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fsirfoga%2Fpyhal?ref=badge_shield) [![Code Health](https://landscape.io/github/sirfoga/pyhal/master/landscape.svg?style=flat)](https://landscape.io/github/sirfoga/hal/master)
  
 [![Coverage Status](https://coveralls.io/repos/github/sirfoga/pyhal/badge.svg?branch=master)](https://coveralls.io/github/sirfoga/pyhal?branch=master)
 ![pylint Score](https://mperlet.de/pybadge/badges/8.78.svg)
+
+[![PyPI version](https://badge.fury.io/py/PyHal.svg)](https://pypi.org/project/PyHal/) [![Documentation Status](https://readthedocs.org/projects/pyhal/badge/?version=latest)](http://pyhal.readthedocs.io/en/latest/?badge=latest)
+
 <!-- [![Stories in Ready](https://badge.waffle.io/sirfoga/hal.svg?label=ready&title=Ready)](http://waffle.io/sirfoga/hal) -->
 
 *A multipurpose library to perform great stuff in the most easy, short and pythonic way.*
@@ -20,6 +23,7 @@
 ### Python dependencies
 Take a look [here](https://github.com/sirfoga/pyhal/blob/master/setup.py#L58) for the complete and updated list
 - bs4
+- colorama
 - Crypto
 - lxml
 - matplotlib
@@ -48,6 +52,7 @@ Take a look at the [Java API](https://github.com/sirfoga/jhal) for the Java equi
 - you can browse the [html](docs/doxygen/html/index.html) (or if you prefer the [epydoc docs](docs/epydoc/html/index.html))
 - there is also the [pdf](docs/doxygen/pdf/api.pdf) version (for the epydoc pdfs go [here](docs/epydoc/pdf)
 - download the repository and open the [sphinx](docs/sphinx/_build/html/index.html) documentation
+- read online at the official [readthedocs](http://pyhal.readthedocs.io) web-page
 
 
 ## Questions and issues

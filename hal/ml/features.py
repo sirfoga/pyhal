@@ -19,8 +19,8 @@
 """ Collection of methods to find weights of features and select the best
 ones. """
 
-from sklearn.cross_validation import StratifiedKFold
 from sklearn.feature_selection import SelectKBest, chi2, RFECV, RFE
+from sklearn.model_selection import StratifiedKFold
 from sklearn.svm import SVC
 
 

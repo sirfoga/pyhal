@@ -16,23 +16,23 @@
 # limitations under the License.
 
 
-""" Some utils methods for a selenium webdriver """
+""" Some utils methods for a selenium web-driver """
 
 
 class SeleniumForm:
-    """ Great and simple static methods to deal with selenium webdrivers. """
+    """ Great and simple static methods to deal with selenium web-drivers. """
 
     @staticmethod
     def fill_form_field(browser, field_name, field_value):
         """
-        :param browser: webdriver
+        :param browser: web-driver
             Browser to use to submit form.
         :param field_name :string
             Name of field to fill
         :param field_value: string
             Value with which to fill field.
         :return: void
-            Fill given field wiht given value.
+            Fill given field with given value.
         """
 
         browser.execute_script(
@@ -40,32 +40,32 @@ class SeleniumForm:
                 field_name) + "\")[0].value = \"" + str(field_value) + "\"")
 
     @staticmethod
-    def fill_login_form(browser, username, username_field, userpassword,
-                        userpassword_field):
+    def fill_login_form(browser, username, username_field, user_password,
+                        user_password_field):
         """
-        :param browser: webdriver
-            Browser to use to submit form.
+        :param browser: web-driver
+            Browser to use to submit form
         :param username: string
-            Username of user to login.
+            Username of user to login
         :param username_field: string
-            Name of field to fill with username.
-        :param userpassword: string
-            Password of user to login.
-        :param userpassword_field: string
-            Name of field to fill with userpassword.
+            Name of field to fill with username
+        :param user_password: string
+            Password of user to login
+        :param user_password_field: string
+            Name of field to fill with user password
         :return: void
-            Form filled with given information.
+            Form filled with given information
         """
 
         SeleniumForm.fill_form_field(browser, username_field,
                                      username)  # set username
-        SeleniumForm.fill_form_field(browser, userpassword_field,
-                                     userpassword)  # set password
+        SeleniumForm.fill_form_field(browser, user_password_field,
+                                     user_password)  # set password
 
     @staticmethod
     def submit_form(browser, button_name):
         """
-        :param browser: webdriver
+        :param browser: web-driver
             Browser to use to submit form.
         :param button_name: string
             Name of button to press to submit form

@@ -35,7 +35,7 @@ def parse_hh_mm_ss(string):
         Time parsed
     """
 
-    string = str(string).strip()  # discard jibberish
+    string = str(string).strip()  # discard gibberish
     split_count = string.count(":")
     if split_count == 2:  # hh:mm:ss
         return datetime.strptime(str(string).strip(), "%H:%M:%S").time()
@@ -68,7 +68,7 @@ def parse_hh_mm(string):
         Time parsed
     """
 
-    string = str(string).strip()  # discard jibberish
+    string = str(string).strip()  # discard gibberish
     split_count = string.count(":")
     if split_count == 1:  # hh:mm
         return datetime.strptime(str(string).strip(), "%H:%M").time()

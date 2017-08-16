@@ -49,4 +49,4 @@ def create_correlation_matrix_plot(correlation_matrix, title, feature_list):
                      cmap=cm.get_cmap("jet", 30))
     fig.colorbar(cax, ticks=np.linspace(-1, 1, 21))
 
-    pyplot.gcf().subplots_adjust(bottom=0.25)  # include xlabels
+    pyplot.gcf().subplots_adjust(bottom=0.25)  # include x-labels

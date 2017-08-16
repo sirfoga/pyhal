@@ -57,8 +57,8 @@ class CSVParser(Parser):
         """ store values in array, store lines in array; the result is a 2D
         matrix """
 
-        with open(self.database_file) as csvfile:
-            csv_reader = csv.reader(csvfile, delimiter=",", quotechar="\"")
+        with open(self.database_file) as csv_file:
+            csv_reader = csv.reader(csv_file, delimiter=",", quotechar="\"")
             for row in csv_reader:
                 self.data.append(row)
 
