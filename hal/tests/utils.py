@@ -21,7 +21,7 @@
 import uuid
 
 
-def battery_test(assert_type, tests, function):
+def battery_test(assert_type, tests, function, args=None):
     """
     :param assert_type: function
         Type of assert
@@ -29,12 +29,17 @@ def battery_test(assert_type, tests, function):
         key= params in function, value= what should be the result
     :param function: function
         Function to apply
+    :param args: *
+        Extra args for function to call
     :return: bool
         True iff all tests pass
     """
 
+    if args is None:
+        args = {}
+
     for test, good_result in tests.items():
-        assert_type(function(test), good_result)
+        assert_type(function(test, *args), good_result)
 
 
 def random_name():

@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 ## 4.6.1
 ### Added
 - tests utils
+- test suite on files
+### Fixed
+- hal hidden ls
 
 ## 4.6
 ### Added

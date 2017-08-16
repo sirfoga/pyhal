@@ -19,6 +19,7 @@
 """ Tests files handling methods in hal """
 
 import os
+import shutil
 from functools import partial
 from unittest import TestCase, main
 
@@ -26,7 +27,7 @@ from hal.files import models
 from hal.tests import utils
 
 
-class TestFileSystemPaths(TestCase):
+class TestPaths(TestCase):
     """ Tests hal.files.models.FileSystem path handlers """
 
     def test_fix_raw_path(self):
@@ -115,13 +116,18 @@ class TestFileSystemPaths(TestCase):
             bad_string + "a good string" + bad_string: "a_good_string"
         }
         utils.battery_test(self.assertEqual, tests, partial(
-            models.FileSystem.prettify, r="_"))
+            models.FileSystem.prettify, blank="_"))
 
 
-class Test(TestCase):
+class TestLs(TestCase):
     """ Tests hal.files.models.FileSystem folders/files functions """
 
-    def __init__(self):
+    def prepare_temp_files(self):
+        """
+        :return: void
+            Creates temp file for testing
+        """
+
         TestCase.__init__(self)
 
         # create folder structure, at the end it will be like
@@ -157,9 +163,9 @@ class Test(TestCase):
             self.inner_folder,
             utils.random_name()
         )
-        self.create_test_files()
+        self._create_temp_files()
 
-    def create_test_files(self):
+    def _create_temp_files(self):
         """
         :return: void
             Creates files/folders structure for tests
@@ -171,18 +177,34 @@ class Test(TestCase):
                      self.file12]:
             open(file, "a").close()  # create files
 
+    def purge_temp_files(self):
+        """
+        :return: void
+            Removes all temp files
+        """
+
+        shutil.rmtree(self.working_folder)  # remove main folder
+
     def test_ls_dir(self):
         """
         :return: bool
             True iff FileSystem.ls_dir correctly list only folders
         """
 
+        self.prepare_temp_files()
         tests = {
             self.working_folder: [self.file1, self.file2, self.inner_folder],
             self.inner_folder: [self.file11, self.file12]
         }
-        utils.battery_test(self.assertEqual, tests,
-                           models.FileSystem.ls_dir)
+
+        try:
+            utils.battery_test(
+                self.assertCountEqual, tests, models.FileSystem.ls_dir
+            )
+        except Exception as exception:
+            raise exception
+        finally:
+            self.purge_temp_files()
 
     def test_ls_recurse(self):
         """
@@ -190,12 +212,42 @@ class Test(TestCase):
             True iff FileSystem.ls_recurse correctly list recursively
         """
 
+        self.prepare_temp_files()
         tests = {
             self.working_folder: [self.file1, self.file2, self.inner_folder,
                                   self.file11, self.file12]
         }
-        utils.battery_test(self.assertEqual, tests,
-                           models.FileSystem.ls_recurse)
+
+        try:
+            utils.battery_test(
+                self.assertCountEqual, tests, models.FileSystem.ls_recurse
+            )
+        except Exception as exception:
+            raise exception
+        finally:
+            self.purge_temp_files()
+
+    def test_ls_hidden(self):
+        """
+        :return: bool
+            True iff FileSystem.ls correctly list hidden files
+        """
+
+        self.prepare_temp_files()
+        tests = {
+            self.working_folder: [self.file1, self.file2, self.inner_folder,
+                                  self.file11, self.file12, self.hidden_file]
+        }
+
+        try:
+            utils.battery_test(
+                self.assertCountEqual, tests, models.FileSystem.ls_recurse,
+                {"include_hidden": True}
+            )
+        except Exception as exception:
+            raise exception
+        finally:
+            self.purge_temp_files()
 
 
 if __name__ == '__main__':

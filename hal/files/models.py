@@ -220,11 +220,12 @@ class FileSystem(object):
             List of paths in given directory.
         """
 
-        list_ = []
+        lst = []
         for file in os.listdir(path):
-            if include_hidden or not Document(file).is_hidden():
-                list_.append(os.path.join(path, file))
-        return list_
+            hidden_file = Document(file).is_hidden()
+            if (hidden_file and include_hidden) or (not hidden_file):
+                lst.append(os.path.join(path, file))
+        return lst
 
     @staticmethod
     def ls_recurse(path, include_hidden=False):
@@ -237,16 +238,17 @@ class FileSystem(object):
             List of paths in given directory recursively.
         """
 
-        list_ = []
+        lst = []
         for file in os.listdir(path):
-            if include_hidden or not Document(file).is_hidden():
-                list_.append(os.path.join(path, file))
+            hidden_file = Document(file).is_hidden()
+            if (hidden_file and include_hidden) or (not hidden_file):
+                lst.append(os.path.join(path, file))
                 if os.path.isdir(os.path.join(path, file)):
-                    list_ += Directory.ls_recurse(
+                    lst += Directory.ls_recurse(
                         os.path.join(path, file),
                         include_hidden=include_hidden
                     )  # get list of files in directory
-        return list_
+        return lst
 
     @staticmethod
     def list_content(path, recurse, include_hidden=False):
@@ -437,8 +439,7 @@ class Document(FileSystem):
             True iff path is hidden
         """
 
-        hidden_start_path = "/."
-        return hidden_start_path in self.path
+        return self.name.startswith(".")
 
 
 class Directory(FileSystem):
