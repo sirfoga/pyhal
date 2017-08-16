@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 4.6.1
+### Added
+- tests utils
+
 ## 4.6
 ### Added
 - Pylint badge in README
