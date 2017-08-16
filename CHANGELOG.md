@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 - tests utils
 - test suite on files
+- sphinx docs script
 ### Fixed
 - hal hidden ls
 

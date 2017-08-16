@@ -8,7 +8,7 @@
 
 *A multipurpose library to perform great stuff in the most easy, short and pythonic way.*
 
-<div style="text-align:center"><img src ="https://github.com/sirfoga/pyhal/raw/master/logo.png" /></div>
+![screenshot](logo.png)
 
 ## Install
 - ``` $ pip3 install . --upgrade --force-reinstall ``` from the source
