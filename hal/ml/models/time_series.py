@@ -62,6 +62,24 @@ def test_stationary(time_series):
     print(df_out)
 
 
+def get_str_end(dates, end):
+    """
+    :param dates: []
+        List of str date
+    :param end: float
+        End of prediction
+    :return: str
+        End of prediction
+    """
+
+    if end is None:
+        end = np.datetime64(dates[-1])
+        end += 1  # next day in database
+        end = str(end)
+
+    return end
+
+
 def arma(dates, values, start=None, end=None, plot=False):
     """ Predict days values using ARMA algorithm.
     :param dates: list of str date
@@ -73,11 +91,7 @@ def arma(dates, values, start=None, end=None, plot=False):
     if start is None:
         start = dates[0]
 
-    if end is None:
-        end = np.datetime64(dates[-1])
-        end += 1  # next day in database
-        end = str(end)
-
+    end = get_str_end(dates, end)
     y_series = pd.Series(values, index=dates)
     model = ar.ARMA(y_series, order=(2, 1, 0))
     model = model.fit(trend="nc", maxiter=1000, disp=False)
@@ -98,11 +112,7 @@ def arima(dates, values, start=None, end=None):
     if start is None:
         start = dates[0]
 
-    if end is None:
-        end = np.datetime64(dates[-1])
-        end += 1  # next day in database
-        end = str(end)
-
+    end = get_str_end(dates, end)
     y_series = pd.Series(values, index=dates)
     model = ar.ARIMA(y_series, order=(2, 1, 0))
     model = model.fit(trend="nc", maxiter=1000, disp=False)

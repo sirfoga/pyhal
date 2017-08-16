@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 ### Removed
 - duplicate primes matrix in maths module
 - duplicate code in maths prime checking
+- duplicate code in ml time series
 
 ## 4.6.1
 ### Added
