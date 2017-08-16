@@ -16,11 +16,16 @@
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-#
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
 
+import os
+import sys
+
+cwd = os.getcwd()  # current working folder
+docs_folder = os.path.dirname(cwd)
+project_root = os.path.dirname(docs_folder)
+project_root = os.path.join(project_root, "hal")
+
+sys.path.insert(0, project_root)  # add root
 
 # -- General configuration ------------------------------------------------
 
@@ -32,10 +37,10 @@
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = ['sphinx.ext.autodoc',
-    'sphinx.ext.doctest',
-    'sphinx.ext.coverage',
-    'sphinx.ext.viewcode',
-    'sphinx.ext.githubpages']
+              'sphinx.ext.doctest',
+              'sphinx.ext.coverage',
+              'sphinx.ext.viewcode',
+              'sphinx.ext.githubpages']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -59,7 +64,7 @@ author = 'Stefano Fogarollo'
 # built documents.
 #
 # The short X.Y version.
-version = '4.6.1'
+version = '4.6'
 # The full version, including alpha/beta/rc tags.
 release = '4.6.1'
 
@@ -80,7 +85,6 @@ pygments_style = 'sphinx'
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
-
 
 # -- Options for HTML output ----------------------------------------------
 
@@ -115,12 +119,10 @@ html_sidebars = {
     ]
 }
 
-
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'PyHaldoc'
-
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -150,7 +152,6 @@ latex_documents = [
      'Stefano Fogarollo', 'manual'),
 ]
 
-
 # -- Options for manual page output ---------------------------------------
 
 # One entry per manual page. List of tuples
@@ -159,7 +160,6 @@ man_pages = [
     (master_doc, 'pyhal', 'PyHal Documentation',
      [author], 1)
 ]
-
 
 # -- Options for Texinfo output -------------------------------------------
 
@@ -171,6 +171,3 @@ texinfo_documents = [
      author, 'PyHal', 'One line description of project.',
      'Miscellaneous'),
 ]
-
-
-

@@ -45,8 +45,9 @@ Take a look at the [Java API](https://github.com/sirfoga/jhal) for the Java equi
 
 
 ## Usage and documentation
-- You can browse the [html](docs/doxygen/html/index.html) (or if you prefer the [epydoc docs](docs/epydoc/html/index.html))
-- There is also the [pdf](docs/doxygen/pdf/api.pdf) version (for the epydoc pdfs go [here](docs/epydoc/pdf)
+- you can browse the [html](docs/doxygen/html/index.html) (or if you prefer the [epydoc docs](docs/epydoc/html/index.html))
+- there is also the [pdf](docs/doxygen/pdf/api.pdf) version (for the epydoc pdfs go [here](docs/epydoc/pdf)
+- download the repository and open the [sphinx](docs/sphinx/_build/html/index.html) documentation
 
 
 ## Questions and issues
