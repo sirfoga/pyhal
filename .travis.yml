@@ -10,6 +10,6 @@ install:
   - "cd pyhal"
   - "pip3 install ."  # run local setup
 script:
-  - "coverage"
+  - "coveralls"
 notifications:
   email: "false"  # no email notifications
