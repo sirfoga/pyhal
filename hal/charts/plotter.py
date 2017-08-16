@@ -96,7 +96,7 @@ class Plot3d(object):
         if len(vector_x) == len(vector_y) == len(vector_z):
             # general settings
             fig = plt.figure()
-            chart = fig.add_subplot(111, projection="3d")
+            chart = fig.add_subplot(111, projection='3d')
 
             # plot
             chart.scatter(vector_x, vector_y, vector_z, c="r", marker="o")
@@ -201,7 +201,7 @@ class Plot4d(object):
             raise ValueError("Cannot plot vectors of different length.")
 
     def plot(self, function, min_x, max_x, min_y, max_y, min_z, max_z,
-             precision, kind):
+             precision=0.5, kind="contour"):
         """
         :param function: function to plot
         :param min_x: minimum of x-values
@@ -278,46 +278,46 @@ class Plot4d(object):
             return float(max_val - min_val) / float(10 * precision)
 
         if kind == "slice":
-            chart_axis = plt.axes(projection="3d")  # general settings
+            chart = plt.axes(projection="3d")  # general settings
             points_x = get_precision(min_x, max_x)
             points_y = get_precision(min_y, max_z)
 
-            x_ax = numpy.outer(linspace(min_x, max_x, points_x), points_x)
-            y_ax = numpy.outer(
+            x_axis = numpy.outer(linspace(min_x, max_x, points_x), points_x)
+            y_axis = numpy.outer(
                 linspace(min_y, max_y, points_y).flatten(), points_y
             ).T
             # slider
             axis_slider = plt.axes([0.12, 0.03, 0.78, 0.03], axisbg="white")
             slider = Slider(axis_slider, "x", min_x, max_x, valinit=min_x)
 
-            def update():
+            def update(val):
                 """
                 :return: re-plot
                 """
 
-                chart_axis.clear()
+                chart.clear()
                 x_const = slider.val
-                z_axis = function(x_const, x_ax, y_ax)
-                chart_axis.plot_surface(
-                    x_ax, y_ax, z_axis, alpha=0.3, linewidth=2.0
+                z_axis = function(x_const, x_axis, y_axis)
+                chart.plot_surface(
+                    x_axis, y_axis, z_axis, alpha=0.3, linewidth=2.0
                 )
-                set_labels(chart_axis, "y", "z", "w")
+                set_labels(chart, "y", "z", "w")
 
             slider.on_changed(update)
-            set_labels(chart_axis, "y", "z", "w")
+            set_labels(chart, "y", "z", "w")
             # plot
             plt.show()
         else:  # kind = contour
             # general settings
             fig = plt.figure()
-            chart_axis = fig.gca(projection="3d")
+            chart = fig.gca(projection="3d")
 
             # create axes
-            x_ax = numpy.arange(min_x, max_x, get_precision_delta(
-                min_x, max_x, precision)).tolist()
-            y_ax = numpy.arange(min_y, max_y, get_precision_delta(
-                min_y, max_y, precision)).tolist()
-            x_ax, y_ax = numpy.meshgrid(x_ax, y_ax)
+            x_axis = numpy.arange(min_x, max_x, get_precision_delta(
+                min_x, max_x)).tolist()
+            y_axis = numpy.arange(min_y, max_y, get_precision_delta(
+                min_y, max_y)).tolist()
+            x_axis, y_axis = numpy.meshgrid(x_axis, y_axis)
 
             # slider
             axis_slider = plt.axes([0.12, 0.03, 0.78, 0.03], axisbg="white")
@@ -325,22 +325,32 @@ class Plot4d(object):
 
             # update
 
-            def update():
+            def update(val):
                 """
                 :return: re-plot plot
                 """
 
-                chart_axis.clear()  # re-plot
+                chart.clear()  # re-plot
                 x_const = slider.val
                 z_axis = []
 
                 # add new points
-                for i, _ in enumerate(x_ax):
-                    z_axis.append(function(x_const, x_ax[i], y_ax[i]))
+                for i, _ in enumerate(x_axis):
+                    z_axis.append(function(x_const, x_axis[i], y_axis[i]))
 
                 # show
-                set_labels(chart_axis, "y", "z", "w")
+                chart.contour(
+                    x_axis, y_axis, z_axis, zdir="x", offset=min_x
+                )
+                chart.contour(
+                    x_axis, y_axis, z_axis, zdir="y", offset=min_y
+                )
+                chart.contour(
+                    x_axis, y_axis, z_axis, zdir="z", offset=min_z
+                )
+                chart.contour(x_axis, y_axis, z_axis, extend3d=True)
+                set_labels(chart, "y", "z", "w")
 
             slider.on_changed(update)
-            set_limits(chart_axis)
+            set_limits(chart)
             plt.show()

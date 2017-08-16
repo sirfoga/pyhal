@@ -6,6 +6,9 @@ All notable changes to this project will be documented in this file.
 - duplicate primes matrix in maths module
 - duplicate code in maths prime checking
 - duplicate code in ml time series
+### Fixed
+- matplotlib dependencies
+- Plot4d.plot cavas updater
 
 ## 4.6.1
 ### Added
