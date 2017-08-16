@@ -92,14 +92,6 @@ class Integer(object):
             if precision < 0:
                 raise ValueError('precision must be positive')
 
-            # basic sort out
-            if self.to_int < 2:
-                return False
-            elif self.to_int == 2:
-                return True
-            elif self.to_int % 2 == 0:
-                return False
-
             # true -> probably prime
             # false -> composite
 
