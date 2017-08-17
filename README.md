@@ -13,9 +13,7 @@
 [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/sirfoga/pyhal/issues)
 
 
-<!-- [![Stories in Ready](https://badge.waffle.io/sirfoga/hal.svg?label=ready&title=Ready)](http://waffle.io/sirfoga/hal) -->
-
-*A multipurpose library to perform great stuff in the most easy, short and pythonic way.*
+*A multipurpose library to perform great stuff in the most easy, fast and pythonic way.*
 
 ![screenshot](logo.png)
 
