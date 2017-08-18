@@ -4,8 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ### 4.6.3
 
-### 
-
+### Added
+- language option in github api
 
 ### 4.6.2
 

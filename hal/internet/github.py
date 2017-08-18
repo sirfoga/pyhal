@@ -102,19 +102,24 @@ class GithubApi(GithubRawApi):
         super(GithubApi, self).__init__(GithubApi._API_URL_TYPE[api_type])
 
     @staticmethod
-    def get_trending_daily():
+    def get_trending_daily(lang=""):
         """
+        :param lang: str
+            Coding language
         :return: []
             List of GithubUserRepository
         """
 
-        url = "https://github.com/trending?since=daily"
+        url = "https://github.com/trending/"
+        url += str(lang).lower().replace(" ", "") + "?since=daily"
         api_content_request = urllib.request.Request(url)
         api_content_response = urllib.request.urlopen(
             api_content_request).read().decode("utf-8")  # parse response
         soup = BeautifulSoup(api_content_response, "lxml")  # html parser
-        raw_repo_list = soup.find_all("ol", {"class": "repo-list"})[
-            0].find_all("li")
+        raw_repo_list = soup.find(
+            "ol", {"class": "repo-list"}
+        ).find_all("li")
+
         repos_list = []
         for repo in raw_repo_list:
             details = repo.find_all("div")[0].a.text.split("/")
