@@ -24,6 +24,8 @@ Collaboration diagram for hal.\+maths.\+maths.\+Integer\+:\nopagebreak
 def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, string)\hypertarget{classhal_1_1maths_1_1maths_1_1_integer_ab02daf8f7df66b9739514805740d2e29}{}\label{classhal_1_1maths_1_1maths_1_1_integer_ab02daf8f7df66b9739514805740d2e29}
 
 \item 
+def \hyperlink{classhal_1_1maths_1_1maths_1_1_integer_a5833e790dc98122d0e5d0e92fb5bee49}{is\+\_\+naive\+\_\+prime} (self)
+\item 
 def \hyperlink{classhal_1_1maths_1_1maths_1_1_integer_a813e392f81a6c01f87a9ef8d1c8c1250}{is\+\_\+probably\+\_\+prime} (self)
 \item 
 def \hyperlink{classhal_1_1maths_1_1maths_1_1_integer_a3cd7d69cc1e8bb8271e61bbeba6d2a50}{test\+\_\+miller\+\_\+rabin} (self, precision)
@@ -36,19 +38,25 @@ def \hyperlink{classhal_1_1maths_1_1maths_1_1_integer_a3cd7d69cc1e8bb8271e61bbeb
 \item 
 {\bfseries to\+\_\+string}\hypertarget{classhal_1_1maths_1_1maths_1_1_integer_a18958bf743811b233e9524cbaf355138}{}\label{classhal_1_1maths_1_1maths_1_1_integer_a18958bf743811b233e9524cbaf355138}
 
-\item 
-{\bfseries is\+\_\+pprime}\hypertarget{classhal_1_1maths_1_1maths_1_1_integer_a1cc838d9ba075f9237ca4079468bef4c}{}\label{classhal_1_1maths_1_1maths_1_1_integer_a1cc838d9ba075f9237ca4079468bef4c}
-
-\end{DoxyCompactItemize}
-\subsection*{Static Public Attributes}
-\begin{DoxyCompactItemize}
-\item 
-list {\bfseries L\+O\+W\+\_\+\+P\+R\+I\+M\+ES}
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Big int std python won't recognize \end{DoxyVerb}
+ 
 
 \subsection{Member Function Documentation}
-\index{hal\+::maths\+::maths\+::\+Integer@{hal\+::maths\+::maths\+::\+Integer}!is\+\_\+probably\+\_\+prime@{is\+\_\+probably\+\_\+prime}}
+\index{hal\+::maths\+::maths\+::\+Integer@{hal\+::maths\+::maths\+::\+Integer}!is\+\_\+naive\+\_\+prime@{is\+\_\+naive\+\_\+prime}}
+\index{is\+\_\+naive\+\_\+prime@{is\+\_\+naive\+\_\+prime}!hal\+::maths\+::maths\+::\+Integer@{hal\+::maths\+::maths\+::\+Integer}}
+\subsubsection[{\texorpdfstring{is\+\_\+naive\+\_\+prime(self)}{is_naive_prime(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def hal.\+maths.\+maths.\+Integer.\+is\+\_\+naive\+\_\+prime (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classhal_1_1maths_1_1maths_1_1_integer_a5833e790dc98122d0e5d0e92fb5bee49}{}\label{classhal_1_1maths_1_1maths_1_1_integer_a5833e790dc98122d0e5d0e92fb5bee49}
+\begin{DoxyVerb}:return: bool
+    Checks if prime in very naive way
+\end{DoxyVerb}
+ \index{hal\+::maths\+::maths\+::\+Integer@{hal\+::maths\+::maths\+::\+Integer}!is\+\_\+probably\+\_\+prime@{is\+\_\+probably\+\_\+prime}}
 \index{is\+\_\+probably\+\_\+prime@{is\+\_\+probably\+\_\+prime}!hal\+::maths\+::maths\+::\+Integer@{hal\+::maths\+::maths\+::\+Integer}}
 \subsubsection[{\texorpdfstring{is\+\_\+probably\+\_\+prime(self)}{is_probably_prime(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def hal.\+maths.\+maths.\+Integer.\+is\+\_\+probably\+\_\+prime (
 \begin{DoxyParamCaption}
@@ -70,32 +78,6 @@ precision)
 :return: True iff probably prime
 \end{DoxyVerb}
  
-
-\subsection{Member Data Documentation}
-\index{hal\+::maths\+::maths\+::\+Integer@{hal\+::maths\+::maths\+::\+Integer}!L\+O\+W\+\_\+\+P\+R\+I\+M\+ES@{L\+O\+W\+\_\+\+P\+R\+I\+M\+ES}}
-\index{L\+O\+W\+\_\+\+P\+R\+I\+M\+ES@{L\+O\+W\+\_\+\+P\+R\+I\+M\+ES}!hal\+::maths\+::maths\+::\+Integer@{hal\+::maths\+::maths\+::\+Integer}}
-\subsubsection[{\texorpdfstring{L\+O\+W\+\_\+\+P\+R\+I\+M\+ES}{LOW_PRIMES}}]{\setlength{\rightskip}{0pt plus 5cm}list hal.\+maths.\+maths.\+Integer.\+L\+O\+W\+\_\+\+P\+R\+I\+M\+ES\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classhal_1_1maths_1_1maths_1_1_integer_a96c3647159f9eb8631f519bd088b8eda}{}\label{classhal_1_1maths_1_1maths_1_1_integer_a96c3647159f9eb8631f519bd088b8eda}
-{\bfseries Initial value\+:}
-\begin{DoxyCode}
-1 = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53,
-2                   59, 61, 67, 71, 73, 79, 83, 89, 97, 101,
-3                   103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163,
-4                   167, 173, 179, 181, 191, 193, 197, 199,
-5                   211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271,
-6                   277, 281, 283, 293, 307, 311, 313, 317,
-7                   331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397,
-8                   401, 409, 419, 421, 431, 433, 439, 443,
-9                   449, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509, 521,
-10                   523, 541, 547, 557, 563, 569, 571, 577,
-11                   587, 593, 599, 601, 607, 613, 617, 619, 631, 641, 643, 647,
-12                   653, 659, 661, 673, 677, 683, 691, 701,
-13                   709, 719, 727, 733, 739, 743, 751, 757, 761, 769, 773, 787,
-14                   797, 809, 811, 821, 823, 827, 829, 839,
-15                   853, 857, 859, 863, 877, 881, 883, 887, 907, 911, 919, 929,
-16                   937, 941, 947, 953, 967, 971, 977, 983,
-17                   991, 997]
-\end{DoxyCode}
-
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

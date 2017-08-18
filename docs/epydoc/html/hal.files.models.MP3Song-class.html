@@ -94,7 +94,7 @@ mp3 song
         <tr>
           <td><span class="summary-sig"><a href="hal.files.models.MP3Song-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">path</span>)</span><br />
-      :param path: string...</td>
+      :param path: str...</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="hal.files.models-pysrc.html#MP3Song.__init__">source&nbsp;code</a></span>
             
@@ -110,8 +110,9 @@ mp3 song
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="set_name"></a><span class="summary-sig-name">set_name</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">name</span>)</span></td>
+          <td><span class="summary-sig"><a href="hal.files.models.MP3Song-class.html#set_name" class="summary-sig-name">set_name</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>)</span><br />
+      :param name: str...</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="hal.files.models-pysrc.html#MP3Song.set_name">source&nbsp;code</a></span>
             
@@ -127,8 +128,9 @@ mp3 song
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="set_artist"></a><span class="summary-sig-name">set_artist</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">artist</span>)</span></td>
+          <td><span class="summary-sig"><a href="hal.files.models.MP3Song-class.html#set_artist" class="summary-sig-name">set_artist</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">artist</span>)</span><br />
+      :param artist: str...</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="hal.files.models-pysrc.html#MP3Song.set_artist">source&nbsp;code</a></span>
             
@@ -144,8 +146,9 @@ mp3 song
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="set_album"></a><span class="summary-sig-name">set_album</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">album</span>)</span></td>
+          <td><span class="summary-sig"><a href="hal.files.models.MP3Song-class.html#set_album" class="summary-sig-name">set_album</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">album</span>)</span><br />
+      :param album: str...</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="hal.files.models-pysrc.html#MP3Song.set_album">source&nbsp;code</a></span>
             
@@ -161,8 +164,9 @@ mp3 song
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="set_nr_track"></a><span class="summary-sig-name">set_nr_track</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">nr_track</span>)</span></td>
+          <td><span class="summary-sig"><a href="hal.files.models.MP3Song-class.html#set_nr_track" class="summary-sig-name">set_nr_track</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">nr_track</span>)</span><br />
+      :param nr_track: int...</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="hal.files.models-pysrc.html#MP3Song.set_nr_track">source&nbsp;code</a></span>
             
@@ -178,8 +182,9 @@ mp3 song
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="set_year"></a><span class="summary-sig-name">set_year</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">year</span>)</span></td>
+          <td><span class="summary-sig"><a href="hal.files.models.MP3Song-class.html#set_year" class="summary-sig-name">set_year</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">year</span>)</span><br />
+      :param year: int...</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="hal.files.models-pysrc.html#MP3Song.set_year">source&nbsp;code</a></span>
             
@@ -236,7 +241,7 @@ mp3 song
     <p class="indent-wrapped-lines"><b>Inherited from <code><a href="hal.files.models.FileSystem-class.html">FileSystem</a></code></b>:
       <code><a href="hal.files.models.FileSystem-class.html#extract_name_max_chars">extract_name_max_chars</a></code>,
       <code><a href="hal.files.models.FileSystem-class.html#fix_raw_path">fix_raw_path</a></code>,
-      <code><a href="hal.files.models.FileSystem-class.html#ls">ls</a></code>,
+      <code><a href="hal.files.models.FileSystem-class.html#list_content">list_content</a></code>,
       <code><a href="hal.files.models.FileSystem-class.html#ls_dir">ls_dir</a></code>,
       <code><a href="hal.files.models.FileSystem-class.html#ls_recurse">ls_recurse</a></code>,
       <code><a href="hal.files.models.FileSystem-class.html#prettify">prettify</a></code>,
@@ -307,15 +312,149 @@ mp3 song
   
   <pre class="literalblock">
 
-:param path: string
-    Path to file
+:param path: str
+    Location of .mp3 file
 
 </pre>
   <dl class="fields">
     <dt>Overrides:
         object.__init__
-        <dd><em class="note">(inherited documentation)</em></dd>
     </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="set_name"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">set_name</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">name</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="hal.files.models-pysrc.html#MP3Song.set_name">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+:param name: str
+    Song's title
+:return: void
+    Sets song's title
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="set_artist"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">set_artist</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">artist</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="hal.files.models-pysrc.html#MP3Song.set_artist">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+:param artist: str
+    Song's artist
+:return: void
+    Sets song's artist
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="set_album"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">set_album</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">album</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="hal.files.models-pysrc.html#MP3Song.set_album">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+:param album: str
+    Song's album
+:return: void
+    Sets song's albu
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="set_nr_track"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">set_nr_track</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">nr_track</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="hal.files.models-pysrc.html#MP3Song.set_nr_track">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+:param nr_track: int
+    Number of track
+:return: void
+    Sets song's track number
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="set_year"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">set_year</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">year</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="hal.files.models-pysrc.html#MP3Song.set_year">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+:param year: int
+    Year of song
+:return: void
+    Sets song's year
+
+</pre>
+  <dl class="fields">
   </dl>
 </td></tr></table>
 </div>
@@ -348,7 +487,7 @@ mp3 song
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Tue Aug 15 21:46:14 2017
+    Generated by Epydoc 3.0.1 on Fri Aug 18 12:34:55 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

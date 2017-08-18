@@ -64,6 +64,11 @@
 
 </center>
 <hr />
+<pre class="literalblock">
+3D plot 
+
+</pre>
+
 <!-- ==================== INSTANCE METHODS ==================== -->
 <a name="section-InstanceMethods"></a>
 <table class="summary" border="1" cellpadding="3"
@@ -88,13 +93,13 @@
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a href="hal.charts.plotter.Plot3d-class.html#param" class="summary-sig-name">param</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">functionx</span>,
-        <span class="summary-sig-arg">functiony</span>,
-        <span class="summary-sig-arg">functionz</span>,
+        <span class="summary-sig-arg">function_x</span>,
+        <span class="summary-sig-arg">function_y</span>,
+        <span class="summary-sig-arg">function_z</span>,
         <span class="summary-sig-arg">min_val</span>,
         <span class="summary-sig-arg">max_val</span>,
         <span class="summary-sig-arg">points</span>)</span><br />
-      :param functionx: function in x...</td>
+      :param function_x: function in x...</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="hal.charts.plotter-pysrc.html#Plot3d.param">source&nbsp;code</a></span>
             
@@ -112,12 +117,12 @@
         <tr>
           <td><span class="summary-sig"><a href="hal.charts.plotter.Plot3d-class.html#plot" class="summary-sig-name">plot</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">function</span>,
-        <span class="summary-sig-arg">minx</span>,
-        <span class="summary-sig-arg">maxx</span>,
-        <span class="summary-sig-arg">pointsx</span>,
-        <span class="summary-sig-arg">miny</span>,
-        <span class="summary-sig-arg">maxy</span>,
-        <span class="summary-sig-arg">pointsy</span>)</span><br />
+        <span class="summary-sig-arg">min_x</span>,
+        <span class="summary-sig-arg">max_x</span>,
+        <span class="summary-sig-arg">points_x</span>,
+        <span class="summary-sig-arg">min_y</span>,
+        <span class="summary-sig-arg">max_y</span>,
+        <span class="summary-sig-arg">points_y</span>)</span><br />
       :param function: function to plot...</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="hal.charts.plotter-pysrc.html#Plot3d.plot">source&nbsp;code</a></span>
@@ -171,10 +176,10 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="hal.charts.plotter.Plot3d-class.html#scatter" class="summary-sig-name">scatter</a>(<span class="summary-sig-arg">vectorx</span>,
-        <span class="summary-sig-arg">vectory</span>,
-        <span class="summary-sig-arg">vectorz</span>)</span><br />
-      :param vectorx: vector in x axis...</td>
+          <td><span class="summary-sig"><a href="hal.charts.plotter.Plot3d-class.html#scatter" class="summary-sig-name">scatter</a>(<span class="summary-sig-arg">vector_x</span>,
+        <span class="summary-sig-arg">vector_y</span>,
+        <span class="summary-sig-arg">vector_z</span>)</span><br />
+      :param vector_x: vector in x axis...</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="hal.charts.plotter-pysrc.html#Plot3d.scatter">source&nbsp;code</a></span>
             
@@ -235,9 +240,9 @@
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">scatter</span>(<span class="sig-arg">vectorx</span>,
-        <span class="sig-arg">vectory</span>,
-        <span class="sig-arg">vectorz</span>)</span>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">scatter</span>(<span class="sig-arg">vector_x</span>,
+        <span class="sig-arg">vector_y</span>,
+        <span class="sig-arg">vector_z</span>)</span>
     <br /><em class="fname">Static Method</em>
   </h3>
   </td><td align="right" valign="top"
@@ -247,9 +252,9 @@
   
   <pre class="literalblock">
 
-:param vectorx: vector in x axis
-:param vectory: vector in y axis
-:param vectorz: vector in z axis
+:param vector_x: vector in x axis
+:param vector_y: vector in y axis
+:param vector_z: vector in z axis
 :return: plot 3d scattered points
 
 </pre>
@@ -265,9 +270,9 @@
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
   <h3 class="epydoc"><span class="sig"><span class="sig-name">param</span>(<span class="sig-arg">self</span>,
-        <span class="sig-arg">functionx</span>,
-        <span class="sig-arg">functiony</span>,
-        <span class="sig-arg">functionz</span>,
+        <span class="sig-arg">function_x</span>,
+        <span class="sig-arg">function_y</span>,
+        <span class="sig-arg">function_z</span>,
         <span class="sig-arg">min_val</span>,
         <span class="sig-arg">max_val</span>,
         <span class="sig-arg">points</span>)</span>
@@ -279,9 +284,9 @@
   
   <pre class="literalblock">
 
-:param functionx: function in x
-:param functiony: function in y
-:param functionz: function in z
+:param function_x: function in x
+:param function_y: function in y
+:param function_z: function in z
 :param min_val: minimum
 :param max_val: maximum
 :param points: number of points
@@ -301,12 +306,12 @@
   <tr valign="top"><td>
   <h3 class="epydoc"><span class="sig"><span class="sig-name">plot</span>(<span class="sig-arg">self</span>,
         <span class="sig-arg">function</span>,
-        <span class="sig-arg">minx</span>,
-        <span class="sig-arg">maxx</span>,
-        <span class="sig-arg">pointsx</span>,
-        <span class="sig-arg">miny</span>,
-        <span class="sig-arg">maxy</span>,
-        <span class="sig-arg">pointsy</span>)</span>
+        <span class="sig-arg">min_x</span>,
+        <span class="sig-arg">max_x</span>,
+        <span class="sig-arg">points_x</span>,
+        <span class="sig-arg">min_y</span>,
+        <span class="sig-arg">max_y</span>,
+        <span class="sig-arg">points_y</span>)</span>
   </h3>
   </td><td align="right" valign="top"
     ><span class="codelink"><a href="hal.charts.plotter-pysrc.html#Plot3d.plot">source&nbsp;code</a></span>&nbsp;
@@ -316,12 +321,12 @@
   <pre class="literalblock">
 
 :param function: function to plot
-:param minx: minimum of x-values
-:param maxx: maximum of x-values
-:param pointsx: points in x axis
-:param miny: minimum of y-values
-:param maxy: maximum of y-values
-:param pointsy: points in y axis
+:param min_x: minimum of x-values
+:param max_x: maximum of x-values
+:param points_x: points in x axis
+:param min_y: minimum of y-values
+:param max_y: maximum of y-values
+:param points_y: points in y axis
 :return: plot 3d function
 
 </pre>
@@ -358,7 +363,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Tue Aug 15 21:46:14 2017
+    Generated by Epydoc 3.0.1 on Fri Aug 18 12:34:55 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

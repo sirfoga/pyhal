@@ -77,23 +77,23 @@
 <a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line"><tt class="py-comment"># limitations under the License.</tt> </tt>
 <a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line"> </tt>
 <a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"> </tt>
-<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"><tt class="py-docstring">""" Some utils methods for a selenium webdriver """</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"><tt class="py-docstring">""" Some utils methods for a selenium web-driver """</tt> </tt>
 <a name="SeleniumForm"></a><div id="SeleniumForm-def"><a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"> </tt>
 <a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"> </tt>
 <a name="L22"></a><tt class="py-lineno">22</tt> <a class="py-toggle" href="#" id="SeleniumForm-toggle" onclick="return toggle('SeleniumForm');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="hal.internet.selenium_bots.SeleniumForm-class.html">SeleniumForm</a><tt class="py-op">:</tt> </tt>
-</div><div id="SeleniumForm-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="SeleniumForm-expanded"><a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line">    <tt class="py-docstring">""" Great and simple static methods to deal with selenium webdrivers. """</tt> </tt>
+</div><div id="SeleniumForm-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="SeleniumForm-expanded"><a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line">    <tt class="py-docstring">""" Great and simple static methods to deal with selenium web-drivers. """</tt> </tt>
 <a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line"> </tt>
 <a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">staticmethod</tt> </tt>
 <a name="SeleniumForm.fill_form_field"></a><div id="SeleniumForm.fill_form_field-def"><a name="L26"></a><tt class="py-lineno">26</tt> <a class="py-toggle" href="#" id="SeleniumForm.fill_form_field-toggle" onclick="return toggle('SeleniumForm.fill_form_field');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="hal.internet.selenium_bots.SeleniumForm-class.html#fill_form_field">fill_form_field</a><tt class="py-op">(</tt><tt class="py-param">browser</tt><tt class="py-op">,</tt> <tt class="py-param">field_name</tt><tt class="py-op">,</tt> <tt class="py-param">field_value</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
 </div><div id="SeleniumForm.fill_form_field-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="SeleniumForm.fill_form_field-expanded"><a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
-<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"><tt class="py-docstring">        :param browser: webdriver</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"><tt class="py-docstring">        :param browser: web-driver</tt> </tt>
 <a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line"><tt class="py-docstring">            Browser to use to submit form.</tt> </tt>
 <a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line"><tt class="py-docstring">        :param field_name :string</tt> </tt>
 <a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line"><tt class="py-docstring">            Name of field to fill</tt> </tt>
 <a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line"><tt class="py-docstring">        :param field_value: string</tt> </tt>
 <a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line"><tt class="py-docstring">            Value with which to fill field.</tt> </tt>
 <a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line"><tt class="py-docstring">        :return: void</tt> </tt>
-<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line"><tt class="py-docstring">            Fill given field wiht given value.</tt> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line"><tt class="py-docstring">            Fill given field with given value.</tt> </tt>
 <a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
 <a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line"> </tt>
 <a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line">        <tt class="py-name">browser</tt><tt class="py-op">.</tt><tt class="py-name">execute_script</tt><tt class="py-op">(</tt> </tt>
@@ -101,32 +101,32 @@
 <a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">                <tt class="py-name">field_name</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">"\")[0].value = \""</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">field_value</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">"\""</tt><tt class="py-op">)</tt> </tt>
 </div><a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line"> </tt>
 <a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">staticmethod</tt> </tt>
-<a name="SeleniumForm.fill_login_form"></a><div id="SeleniumForm.fill_login_form-def"><a name="L43"></a><tt class="py-lineno">43</tt> <a class="py-toggle" href="#" id="SeleniumForm.fill_login_form-toggle" onclick="return toggle('SeleniumForm.fill_login_form');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="hal.internet.selenium_bots.SeleniumForm-class.html#fill_login_form">fill_login_form</a><tt class="py-op">(</tt><tt class="py-param">browser</tt><tt class="py-op">,</tt> <tt class="py-param">username</tt><tt class="py-op">,</tt> <tt class="py-param">username_field</tt><tt class="py-op">,</tt> <tt class="py-param">userpassword</tt><tt class="py-op">,</tt> </tt>
-<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line">                        <tt class="py-param">userpassword_field</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="SeleniumForm.fill_login_form"></a><div id="SeleniumForm.fill_login_form-def"><a name="L43"></a><tt class="py-lineno">43</tt> <a class="py-toggle" href="#" id="SeleniumForm.fill_login_form-toggle" onclick="return toggle('SeleniumForm.fill_login_form');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="hal.internet.selenium_bots.SeleniumForm-class.html#fill_login_form">fill_login_form</a><tt class="py-op">(</tt><tt class="py-param">browser</tt><tt class="py-op">,</tt> <tt class="py-param">username</tt><tt class="py-op">,</tt> <tt class="py-param">username_field</tt><tt class="py-op">,</tt> <tt class="py-param">user_password</tt><tt class="py-op">,</tt> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line">                        <tt class="py-param">user_password_field</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
 </div><div id="SeleniumForm.fill_login_form-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="SeleniumForm.fill_login_form-expanded"><a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
-<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line"><tt class="py-docstring">        :param browser: webdriver</tt> </tt>
-<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line"><tt class="py-docstring">            Browser to use to submit form.</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line"><tt class="py-docstring">        :param browser: web-driver</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line"><tt class="py-docstring">            Browser to use to submit form</tt> </tt>
 <a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line"><tt class="py-docstring">        :param username: string</tt> </tt>
-<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line"><tt class="py-docstring">            Username of user to login.</tt> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line"><tt class="py-docstring">            Username of user to login</tt> </tt>
 <a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line"><tt class="py-docstring">        :param username_field: string</tt> </tt>
-<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line"><tt class="py-docstring">            Name of field to fill with username.</tt> </tt>
-<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line"><tt class="py-docstring">        :param userpassword: string</tt> </tt>
-<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line"><tt class="py-docstring">            Password of user to login.</tt> </tt>
-<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line"><tt class="py-docstring">        :param userpassword_field: string</tt> </tt>
-<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line"><tt class="py-docstring">            Name of field to fill with userpassword.</tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line"><tt class="py-docstring">            Name of field to fill with username</tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line"><tt class="py-docstring">        :param user_password: string</tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line"><tt class="py-docstring">            Password of user to login</tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line"><tt class="py-docstring">        :param user_password_field: string</tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line"><tt class="py-docstring">            Name of field to fill with user password</tt> </tt>
 <a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line"><tt class="py-docstring">        :return: void</tt> </tt>
-<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line"><tt class="py-docstring">            Form filled with given information.</tt> </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line"><tt class="py-docstring">            Form filled with given information</tt> </tt>
 <a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
 <a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line"> </tt>
 <a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line">        <tt id="link-0" class="py-name" targets="Class hal.internet.selenium_bots.SeleniumForm=hal.internet.selenium_bots.SeleniumForm-class.html"><a title="hal.internet.selenium_bots.SeleniumForm" class="py-name" href="#" onclick="return doclink('link-0', 'SeleniumForm', 'link-0');">SeleniumForm</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Static Method hal.internet.selenium_bots.SeleniumForm.fill_form_field()=hal.internet.selenium_bots.SeleniumForm-class.html#fill_form_field"><a title="hal.internet.selenium_bots.SeleniumForm.fill_form_field" class="py-name" href="#" onclick="return doclink('link-1', 'fill_form_field', 'link-1');">fill_form_field</a></tt><tt class="py-op">(</tt><tt class="py-name">browser</tt><tt class="py-op">,</tt> <tt class="py-name">username_field</tt><tt class="py-op">,</tt> </tt>
 <a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line">                                     <tt class="py-name">username</tt><tt class="py-op">)</tt>  <tt class="py-comment"># set username</tt> </tt>
-<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line">        <tt id="link-2" class="py-name"><a title="hal.internet.selenium_bots.SeleniumForm" class="py-name" href="#" onclick="return doclink('link-2', 'SeleniumForm', 'link-0');">SeleniumForm</a></tt><tt class="py-op">.</tt><tt id="link-3" class="py-name"><a title="hal.internet.selenium_bots.SeleniumForm.fill_form_field" class="py-name" href="#" onclick="return doclink('link-3', 'fill_form_field', 'link-1');">fill_form_field</a></tt><tt class="py-op">(</tt><tt class="py-name">browser</tt><tt class="py-op">,</tt> <tt class="py-name">userpassword_field</tt><tt class="py-op">,</tt> </tt>
-<a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line">                                     <tt class="py-name">userpassword</tt><tt class="py-op">)</tt>  <tt class="py-comment"># set password</tt> </tt>
+<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line">        <tt id="link-2" class="py-name"><a title="hal.internet.selenium_bots.SeleniumForm" class="py-name" href="#" onclick="return doclink('link-2', 'SeleniumForm', 'link-0');">SeleniumForm</a></tt><tt class="py-op">.</tt><tt id="link-3" class="py-name"><a title="hal.internet.selenium_bots.SeleniumForm.fill_form_field" class="py-name" href="#" onclick="return doclink('link-3', 'fill_form_field', 'link-1');">fill_form_field</a></tt><tt class="py-op">(</tt><tt class="py-name">browser</tt><tt class="py-op">,</tt> <tt class="py-name">user_password_field</tt><tt class="py-op">,</tt> </tt>
+<a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line">                                     <tt class="py-name">user_password</tt><tt class="py-op">)</tt>  <tt class="py-comment"># set password</tt> </tt>
 </div><a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line"> </tt>
 <a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">staticmethod</tt> </tt>
 <a name="SeleniumForm.submit_form"></a><div id="SeleniumForm.submit_form-def"><a name="L66"></a><tt class="py-lineno">66</tt> <a class="py-toggle" href="#" id="SeleniumForm.submit_form-toggle" onclick="return toggle('SeleniumForm.submit_form');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="hal.internet.selenium_bots.SeleniumForm-class.html#submit_form">submit_form</a><tt class="py-op">(</tt><tt class="py-param">browser</tt><tt class="py-op">,</tt> <tt class="py-param">button_name</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
 </div><div id="SeleniumForm.submit_form-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="SeleniumForm.submit_form-expanded"><a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
-<a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line"><tt class="py-docstring">        :param browser: webdriver</tt> </tt>
+<a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line"><tt class="py-docstring">        :param browser: web-driver</tt> </tt>
 <a name="L69"></a><tt class="py-lineno">69</tt>  <tt class="py-line"><tt class="py-docstring">            Browser to use to submit form.</tt> </tt>
 <a name="L70"></a><tt class="py-lineno">70</tt>  <tt class="py-line"><tt class="py-docstring">        :param button_name: string</tt> </tt>
 <a name="L71"></a><tt class="py-lineno">71</tt>  <tt class="py-line"><tt class="py-docstring">            Name of button to press to submit form</tt> </tt>
@@ -172,7 +172,7 @@ expandto(location.href);
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Tue Aug 15 21:46:14 2017
+    Generated by Epydoc 3.0.1 on Fri Aug 18 12:34:55 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

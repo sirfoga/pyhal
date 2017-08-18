@@ -93,12 +93,12 @@
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a href="hal.charts.plotter.Plot2d-class.html#param" class="summary-sig-name">param</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">functionx</span>,
-        <span class="summary-sig-arg">functiony</span>,
+        <span class="summary-sig-arg">function_x</span>,
+        <span class="summary-sig-arg">function_y</span>,
         <span class="summary-sig-arg">min_val</span>,
         <span class="summary-sig-arg">max_val</span>,
         <span class="summary-sig-arg">points</span>)</span><br />
-      :param functionx: function in x value...</td>
+      :param function_x: function in x value...</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="hal.charts.plotter-pysrc.html#Plot2d.param">source&nbsp;code</a></span>
             
@@ -116,8 +116,8 @@
         <tr>
           <td><span class="summary-sig"><a href="hal.charts.plotter.Plot2d-class.html#plot" class="summary-sig-name">plot</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">function</span>,
-        <span class="summary-sig-arg">min</span>,
-        <span class="summary-sig-arg">max</span>,
+        <span class="summary-sig-arg">min_val</span>,
+        <span class="summary-sig-arg">max_val</span>,
         <span class="summary-sig-arg">points</span>)</span><br />
       :param function: function to plot...</td>
           <td align="right" valign="top">
@@ -172,9 +172,9 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="hal.charts.plotter.Plot2d-class.html#scatter" class="summary-sig-name">scatter</a>(<span class="summary-sig-arg">vectorx</span>,
-        <span class="summary-sig-arg">vectory</span>)</span><br />
-      :param vectorx: vector in x axis...</td>
+          <td><span class="summary-sig"><a href="hal.charts.plotter.Plot2d-class.html#scatter" class="summary-sig-name">scatter</a>(<span class="summary-sig-arg">vector_x</span>,
+        <span class="summary-sig-arg">vector_y</span>)</span><br />
+      :param vector_x: vector in x axis...</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="hal.charts.plotter-pysrc.html#Plot2d.scatter">source&nbsp;code</a></span>
             
@@ -235,8 +235,8 @@
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">scatter</span>(<span class="sig-arg">vectorx</span>,
-        <span class="sig-arg">vectory</span>)</span>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">scatter</span>(<span class="sig-arg">vector_x</span>,
+        <span class="sig-arg">vector_y</span>)</span>
     <br /><em class="fname">Static Method</em>
   </h3>
   </td><td align="right" valign="top"
@@ -246,8 +246,8 @@
   
   <pre class="literalblock">
 
-:param vectorx: vector in x axis
-:param vectory: vector in y axis
+:param vector_x: vector in x axis
+:param vector_y: vector in y axis
 :return: 2d scatter plot
 
 </pre>
@@ -263,8 +263,8 @@
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
   <h3 class="epydoc"><span class="sig"><span class="sig-name">param</span>(<span class="sig-arg">self</span>,
-        <span class="sig-arg">functionx</span>,
-        <span class="sig-arg">functiony</span>,
+        <span class="sig-arg">function_x</span>,
+        <span class="sig-arg">function_y</span>,
         <span class="sig-arg">min_val</span>,
         <span class="sig-arg">max_val</span>,
         <span class="sig-arg">points</span>)</span>
@@ -276,8 +276,8 @@
   
   <pre class="literalblock">
 
-:param functionx: function in x value
-:param functiony: function in y value
+:param function_x: function in x value
+:param function_y: function in y value
 :param min_val: minimum value
 :param max_val: maximum value
 :param points: number of points to display
@@ -297,8 +297,8 @@
   <tr valign="top"><td>
   <h3 class="epydoc"><span class="sig"><span class="sig-name">plot</span>(<span class="sig-arg">self</span>,
         <span class="sig-arg">function</span>,
-        <span class="sig-arg">min</span>,
-        <span class="sig-arg">max</span>,
+        <span class="sig-arg">min_val</span>,
+        <span class="sig-arg">max_val</span>,
         <span class="sig-arg">points</span>)</span>
   </h3>
   </td><td align="right" valign="top"
@@ -309,8 +309,8 @@
   <pre class="literalblock">
 
 :param function: function to plot
-:param min: minimum value
-:param max: maximum value
+:param min_val: minimum value
+:param max_val: maximum value
 :param points: number of points
 :return: plot 2d function
 
@@ -348,7 +348,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Tue Aug 15 21:46:14 2017
+    Generated by Epydoc 3.0.1 on Fri Aug 18 12:34:55 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

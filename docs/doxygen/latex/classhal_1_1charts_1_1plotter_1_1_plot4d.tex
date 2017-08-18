@@ -11,39 +11,43 @@ Collaboration diagram for hal.\+charts.\+plotter.\+Plot4d\+:
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-def \hyperlink{classhal_1_1charts_1_1plotter_1_1_plot4d_a0826f5d596a40fb6ec31f6f2636b55e9}{plot} (self, function, minx, maxx, miny, maxy, minz, maxz, precision, kind)
+def \hyperlink{classhal_1_1charts_1_1plotter_1_1_plot4d_ae8bb51872773a8f3f7030ed4709d27e6}{plot} (self, function, min\+\_\+x, max\+\_\+x, min\+\_\+y, max\+\_\+y, min\+\_\+z, max\+\_\+z, precision=0.\+5, kind=\char`\"{}contour\char`\"{})
 \end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-def \hyperlink{classhal_1_1charts_1_1plotter_1_1_plot4d_aa5b31430953600e79cdb0dd609d0e971}{scatter} (vectorx, vectory, vectorz, vectorw)
+def \hyperlink{classhal_1_1charts_1_1plotter_1_1_plot4d_a54e937ece691908b033344968da476e6}{scatter} (vector\+\_\+x, vector\+\_\+y, vector\+\_\+z, vector\+\_\+w)
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}4D plot generator with slider \end{DoxyVerb}
+ 
 
 \subsection{Member Function Documentation}
 \index{hal\+::charts\+::plotter\+::\+Plot4d@{hal\+::charts\+::plotter\+::\+Plot4d}!plot@{plot}}
 \index{plot@{plot}!hal\+::charts\+::plotter\+::\+Plot4d@{hal\+::charts\+::plotter\+::\+Plot4d}}
-\subsubsection[{\texorpdfstring{plot(self, function, minx, maxx, miny, maxy, minz, maxz, precision, kind)}{plot(self, function, minx, maxx, miny, maxy, minz, maxz, precision, kind)}}]{\setlength{\rightskip}{0pt plus 5cm}def hal.\+charts.\+plotter.\+Plot4d.\+plot (
+\subsubsection[{\texorpdfstring{plot(self, function, min\+\_\+x, max\+\_\+x, min\+\_\+y, max\+\_\+y, min\+\_\+z, max\+\_\+z, precision=0.\+5, kind=""contour"")}{plot(self, function, min_x, max_x, min_y, max_y, min_z, max_z, precision=0.5, kind="contour")}}]{\setlength{\rightskip}{0pt plus 5cm}def hal.\+charts.\+plotter.\+Plot4d.\+plot (
 \begin{DoxyParamCaption}
 \item[{}]{self, }
 \item[{}]{function, }
-\item[{}]{minx, }
-\item[{}]{maxx, }
-\item[{}]{miny, }
-\item[{}]{maxy, }
-\item[{}]{minz, }
-\item[{}]{maxz, }
-\item[{}]{precision, }
-\item[{}]{kind}
+\item[{}]{min\+\_\+x, }
+\item[{}]{max\+\_\+x, }
+\item[{}]{min\+\_\+y, }
+\item[{}]{max\+\_\+y, }
+\item[{}]{min\+\_\+z, }
+\item[{}]{max\+\_\+z, }
+\item[{}]{precision = {\ttfamily 0.5}, }
+\item[{}]{kind = {\ttfamily \char`\"{}contour\char`\"{}}}
 \end{DoxyParamCaption}
-)}\hypertarget{classhal_1_1charts_1_1plotter_1_1_plot4d_a0826f5d596a40fb6ec31f6f2636b55e9}{}\label{classhal_1_1charts_1_1plotter_1_1_plot4d_a0826f5d596a40fb6ec31f6f2636b55e9}
+)}\hypertarget{classhal_1_1charts_1_1plotter_1_1_plot4d_ae8bb51872773a8f3f7030ed4709d27e6}{}\label{classhal_1_1charts_1_1plotter_1_1_plot4d_ae8bb51872773a8f3f7030ed4709d27e6}
 \begin{DoxyVerb}:param function: function to plot
-:param minx: minimum of x-values
-:param maxx: maximum of x-values
-:param miny: minimum of y-values
-:param maxy: maximum of y-values
-:param minz: minimum of z-values
-:param maxz: maximum of z-values
+:param min_x: minimum of x-values
+:param max_x: maximum of x-values
+:param min_y: minimum of y-values
+:param max_y: maximum of y-values
+:param min_z: minimum of z-values
+:param max_z: maximum of z-values
 :param precision: precision
 :param kind: slice: x cont -> 3d plot with y, z variables in plane
     and w as "z"-axis contour: x cont -> 3d plot with y,z variables in
@@ -52,18 +56,18 @@ def \hyperlink{classhal_1_1charts_1_1plotter_1_1_plot4d_aa5b31430953600e79cdb0dd
 \end{DoxyVerb}
  \index{hal\+::charts\+::plotter\+::\+Plot4d@{hal\+::charts\+::plotter\+::\+Plot4d}!scatter@{scatter}}
 \index{scatter@{scatter}!hal\+::charts\+::plotter\+::\+Plot4d@{hal\+::charts\+::plotter\+::\+Plot4d}}
-\subsubsection[{\texorpdfstring{scatter(vectorx, vectory, vectorz, vectorw)}{scatter(vectorx, vectory, vectorz, vectorw)}}]{\setlength{\rightskip}{0pt plus 5cm}def hal.\+charts.\+plotter.\+Plot4d.\+scatter (
+\subsubsection[{\texorpdfstring{scatter(vector\+\_\+x, vector\+\_\+y, vector\+\_\+z, vector\+\_\+w)}{scatter(vector_x, vector_y, vector_z, vector_w)}}]{\setlength{\rightskip}{0pt plus 5cm}def hal.\+charts.\+plotter.\+Plot4d.\+scatter (
 \begin{DoxyParamCaption}
-\item[{}]{vectorx, }
-\item[{}]{vectory, }
-\item[{}]{vectorz, }
-\item[{}]{vectorw}
+\item[{}]{vector\+\_\+x, }
+\item[{}]{vector\+\_\+y, }
+\item[{}]{vector\+\_\+z, }
+\item[{}]{vector\+\_\+w}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classhal_1_1charts_1_1plotter_1_1_plot4d_aa5b31430953600e79cdb0dd609d0e971}{}\label{classhal_1_1charts_1_1plotter_1_1_plot4d_aa5b31430953600e79cdb0dd609d0e971}
-\begin{DoxyVerb}:param vectorx: vector in x axis
-:param vectory: vector in y axis
-:param vectorz: vector in z axis
-:param vectorw: vector in w axis
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classhal_1_1charts_1_1plotter_1_1_plot4d_a54e937ece691908b033344968da476e6}{}\label{classhal_1_1charts_1_1plotter_1_1_plot4d_a54e937ece691908b033344968da476e6}
+\begin{DoxyVerb}:param vector_x: vector in x axis
+:param vector_y: vector in y axis
+:param vector_z: vector in z axis
+:param vector_w: vector in w axis
 :return: plot 4d scattered points
 \end{DoxyVerb}
  

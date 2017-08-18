@@ -42,21 +42,28 @@ def \hyperlink{classhal_1_1files_1_1models_1_1_file_system_ab97d14ce121829510e40
 \item 
 def \hyperlink{classhal_1_1files_1_1models_1_1_file_system_a809f1abc2282567f89f809a510e7d665}{extract\+\_\+name\+\_\+max\+\_\+chars} (name, max\+\_\+chars=64, blank=\char`\"{} \char`\"{})
 \item 
-def \hyperlink{classhal_1_1files_1_1models_1_1_file_system_a81206c773e9176fb2c0537a731381b7a}{prettify} (name, bad\+\_\+chars=B\+A\+D\+\_\+\+C\+H\+A\+RS, r=\char`\"{} \char`\"{})
+def \hyperlink{classhal_1_1files_1_1models_1_1_file_system_adc5cc642a247ed7cb24f98341d3e1a8b}{prettify} (name, blank=\char`\"{} \char`\"{})
 \item 
 def \hyperlink{classhal_1_1files_1_1models_1_1_file_system_a60f66aeec22d00b67067f3527d06db74}{ls\+\_\+dir} (path, include\+\_\+hidden=False)
 \item 
 def \hyperlink{classhal_1_1files_1_1models_1_1_file_system_a2df7cb545b239ccb239b71f808ce5808}{ls\+\_\+recurse} (path, include\+\_\+hidden=False)
 \item 
-def \hyperlink{classhal_1_1files_1_1models_1_1_file_system_aaf2fadb1bb388e4b565da0db6823f4f5}{ls} (path, recurse, include\+\_\+hidden=False)
+def \hyperlink{classhal_1_1files_1_1models_1_1_file_system_a10b078501fd008d3991f7aacf6464540}{list\+\_\+content} (path, recurse, include\+\_\+hidden=False)
 \end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 {\bfseries path}\hypertarget{classhal_1_1files_1_1models_1_1_file_system_a261fa17468126979cedf206b69a1d071}{}\label{classhal_1_1files_1_1models_1_1_file_system_a261fa17468126979cedf206b69a1d071}
 
+\item 
+{\bfseries extension}\hypertarget{classhal_1_1files_1_1models_1_1_file_system_aa969fb80f1304031fa62267a5c45f2a7}{}\label{classhal_1_1files_1_1models_1_1_file_system_aa969fb80f1304031fa62267a5c45f2a7}
+
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Models a folder/file in a OS \end{DoxyVerb}
+ 
 
 \subsection{Constructor \& Destructor Documentation}
 \index{hal\+::files\+::models\+::\+File\+System@{hal\+::files\+::models\+::\+File\+System}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
@@ -121,15 +128,15 @@ def \hyperlink{classhal_1_1files_1_1models_1_1_file_system_aaf2fadb1bb388e4b565d
 )}\hypertarget{classhal_1_1files_1_1models_1_1_file_system_a073400419be263c865c0971136d2898b}{}\label{classhal_1_1files_1_1models_1_1_file_system_a073400419be263c865c0971136d2898b}
 \begin{DoxyVerb}:return: True iff document has a russian name.
 \end{DoxyVerb}
- \index{hal\+::files\+::models\+::\+File\+System@{hal\+::files\+::models\+::\+File\+System}!ls@{ls}}
-\index{ls@{ls}!hal\+::files\+::models\+::\+File\+System@{hal\+::files\+::models\+::\+File\+System}}
-\subsubsection[{\texorpdfstring{ls(path, recurse, include\+\_\+hidden=\+False)}{ls(path, recurse, include_hidden=False)}}]{\setlength{\rightskip}{0pt plus 5cm}def hal.\+files.\+models.\+File\+System.\+ls (
+ \index{hal\+::files\+::models\+::\+File\+System@{hal\+::files\+::models\+::\+File\+System}!list\+\_\+content@{list\+\_\+content}}
+\index{list\+\_\+content@{list\+\_\+content}!hal\+::files\+::models\+::\+File\+System@{hal\+::files\+::models\+::\+File\+System}}
+\subsubsection[{\texorpdfstring{list\+\_\+content(path, recurse, include\+\_\+hidden=\+False)}{list_content(path, recurse, include_hidden=False)}}]{\setlength{\rightskip}{0pt plus 5cm}def hal.\+files.\+models.\+File\+System.\+list\+\_\+content (
 \begin{DoxyParamCaption}
 \item[{}]{path, }
 \item[{}]{recurse, }
 \item[{}]{include\+\_\+hidden = {\ttfamily False}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classhal_1_1files_1_1models_1_1_file_system_aaf2fadb1bb388e4b565da0db6823f4f5}{}\label{classhal_1_1files_1_1models_1_1_file_system_aaf2fadb1bb388e4b565da0db6823f4f5}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classhal_1_1files_1_1models_1_1_file_system_a10b078501fd008d3991f7aacf6464540}{}\label{classhal_1_1files_1_1models_1_1_file_system_a10b078501fd008d3991f7aacf6464540}
 \begin{DoxyVerb}:param path: string
     Path to directory to get list of files and folders
 :param recurse: bool
@@ -171,18 +178,15 @@ def \hyperlink{classhal_1_1files_1_1models_1_1_file_system_aaf2fadb1bb388e4b565d
 \end{DoxyVerb}
  \index{hal\+::files\+::models\+::\+File\+System@{hal\+::files\+::models\+::\+File\+System}!prettify@{prettify}}
 \index{prettify@{prettify}!hal\+::files\+::models\+::\+File\+System@{hal\+::files\+::models\+::\+File\+System}}
-\subsubsection[{\texorpdfstring{prettify(name, bad\+\_\+chars=\+B\+A\+D\+\_\+\+C\+H\+A\+R\+S, r="" "")}{prettify(name, bad_chars=BAD_CHARS, r=" ")}}]{\setlength{\rightskip}{0pt plus 5cm}def hal.\+files.\+models.\+File\+System.\+prettify (
+\subsubsection[{\texorpdfstring{prettify(name, blank="" "")}{prettify(name, blank=" ")}}]{\setlength{\rightskip}{0pt plus 5cm}def hal.\+files.\+models.\+File\+System.\+prettify (
 \begin{DoxyParamCaption}
 \item[{}]{name, }
-\item[{}]{bad\+\_\+chars = {\ttfamily BAD\+\_\+CHARS}, }
-\item[{}]{r = {\ttfamily \char`\"{}~\char`\"{}}}
+\item[{}]{blank = {\ttfamily \char`\"{}~\char`\"{}}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classhal_1_1files_1_1models_1_1_file_system_a81206c773e9176fb2c0537a731381b7a}{}\label{classhal_1_1files_1_1models_1_1_file_system_a81206c773e9176fb2c0537a731381b7a}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classhal_1_1files_1_1models_1_1_file_system_adc5cc642a247ed7cb24f98341d3e1a8b}{}\label{classhal_1_1files_1_1models_1_1_file_system_adc5cc642a247ed7cb24f98341d3e1a8b}
 \begin{DoxyVerb}:param name: string
     Name to edit
-:param bad_chars: []
-    List of bad strings to remove
-:param r: string
+:param blank: string
     Default blanks in name.
 :return: string
     Prettier name from given one: replace bad chars with good ones.
@@ -197,7 +201,7 @@ def \hyperlink{classhal_1_1files_1_1models_1_1_file_system_aaf2fadb1bb388e4b565d
 \begin{DoxyVerb}:param name: string
     Name to edit
 :return: string
-    Given string bu with no barckets.
+    Given string bu with no brackets
 \end{DoxyVerb}
  \index{hal\+::files\+::models\+::\+File\+System@{hal\+::files\+::models\+::\+File\+System}!remove\+\_\+year@{remove\+\_\+year}}
 \index{remove\+\_\+year@{remove\+\_\+year}!hal\+::files\+::models\+::\+File\+System@{hal\+::files\+::models\+::\+File\+System}}

@@ -61,7 +61,7 @@
 <!-- ==================== CLASS DESCRIPTION ==================== -->
 <h1 class="epydoc">Class SeleniumForm</h1><p class="nomargin-top"><span class="codelink"><a href="hal.internet.selenium_bots-pysrc.html#SeleniumForm">source&nbsp;code</a></span></p>
 <pre class="literalblock">
-Great and simple static methods to deal with selenium webdrivers. 
+Great and simple static methods to deal with selenium web-drivers. 
 
 </pre>
 
@@ -91,7 +91,7 @@ Great and simple static methods to deal with selenium webdrivers.
           <td><span class="summary-sig"><a href="hal.internet.selenium_bots.SeleniumForm-class.html#fill_form_field" class="summary-sig-name">fill_form_field</a>(<span class="summary-sig-arg">browser</span>,
         <span class="summary-sig-arg">field_name</span>,
         <span class="summary-sig-arg">field_value</span>)</span><br />
-      :param browser: webdriver
+      :param browser: web-driver
     Browser to use to submit form.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="hal.internet.selenium_bots-pysrc.html#SeleniumForm.fill_form_field">source&nbsp;code</a></span>
@@ -111,10 +111,9 @@ Great and simple static methods to deal with selenium webdrivers.
           <td><span class="summary-sig"><a href="hal.internet.selenium_bots.SeleniumForm-class.html#fill_login_form" class="summary-sig-name">fill_login_form</a>(<span class="summary-sig-arg">browser</span>,
         <span class="summary-sig-arg">username</span>,
         <span class="summary-sig-arg">username_field</span>,
-        <span class="summary-sig-arg">userpassword</span>,
-        <span class="summary-sig-arg">userpassword_field</span>)</span><br />
-      :param browser: webdriver
-    Browser to use to submit form.</td>
+        <span class="summary-sig-arg">user_password</span>,
+        <span class="summary-sig-arg">user_password_field</span>)</span><br />
+      :param browser: web-driver...</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="hal.internet.selenium_bots-pysrc.html#SeleniumForm.fill_login_form">source&nbsp;code</a></span>
             
@@ -132,7 +131,7 @@ Great and simple static methods to deal with selenium webdrivers.
         <tr>
           <td><span class="summary-sig"><a href="hal.internet.selenium_bots.SeleniumForm-class.html#submit_form" class="summary-sig-name">submit_form</a>(<span class="summary-sig-arg">browser</span>,
         <span class="summary-sig-arg">button_name</span>)</span><br />
-      :param browser: webdriver
+      :param browser: web-driver
     Browser to use to submit form.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="hal.internet.selenium_bots-pysrc.html#SeleniumForm.submit_form">source&nbsp;code</a></span>
@@ -181,14 +180,14 @@ Great and simple static methods to deal with selenium webdrivers.
   
   <pre class="literalblock">
 
-:param browser: webdriver
+:param browser: web-driver
     Browser to use to submit form.
 :param field_name :string
     Name of field to fill
 :param field_value: string
     Value with which to fill field.
 :return: void
-    Fill given field wiht given value.
+    Fill given field with given value.
 
 </pre>
   <dl class="fields">
@@ -205,8 +204,8 @@ Great and simple static methods to deal with selenium webdrivers.
   <h3 class="epydoc"><span class="sig"><span class="sig-name">fill_login_form</span>(<span class="sig-arg">browser</span>,
         <span class="sig-arg">username</span>,
         <span class="sig-arg">username_field</span>,
-        <span class="sig-arg">userpassword</span>,
-        <span class="sig-arg">userpassword_field</span>)</span>
+        <span class="sig-arg">user_password</span>,
+        <span class="sig-arg">user_password_field</span>)</span>
     <br /><em class="fname">Static Method</em>
   </h3>
   </td><td align="right" valign="top"
@@ -216,18 +215,18 @@ Great and simple static methods to deal with selenium webdrivers.
   
   <pre class="literalblock">
 
-:param browser: webdriver
-    Browser to use to submit form.
+:param browser: web-driver
+    Browser to use to submit form
 :param username: string
-    Username of user to login.
+    Username of user to login
 :param username_field: string
-    Name of field to fill with username.
-:param userpassword: string
-    Password of user to login.
-:param userpassword_field: string
-    Name of field to fill with userpassword.
+    Name of field to fill with username
+:param user_password: string
+    Password of user to login
+:param user_password_field: string
+    Name of field to fill with user password
 :return: void
-    Form filled with given information.
+    Form filled with given information
 
 </pre>
   <dl class="fields">
@@ -252,7 +251,7 @@ Great and simple static methods to deal with selenium webdrivers.
   
   <pre class="literalblock">
 
-:param browser: webdriver
+:param browser: web-driver
     Browser to use to submit form.
 :param button_name: string
     Name of button to press to submit form
@@ -293,7 +292,7 @@ Great and simple static methods to deal with selenium webdrivers.
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Tue Aug 15 21:46:14 2017
+    Generated by Epydoc 3.0.1 on Fri Aug 18 12:34:55 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

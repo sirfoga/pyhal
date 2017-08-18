@@ -64,6 +64,11 @@
 
 </center>
 <hr />
+<pre class="literalblock">
+Big int std python won't recognize 
+
+</pre>
+
 <!-- ==================== INSTANCE METHODS ==================== -->
 <a name="section-InstanceMethods"></a>
 <table class="summary" border="1" cellpadding="3"
@@ -92,6 +97,23 @@
       x.__init__(...) initializes x; see help(type(x)) for signature</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="hal.maths.maths-pysrc.html#Integer.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="hal.maths.maths.Integer-class.html#is_naive_prime" class="summary-sig-name">is_naive_prime</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      :return: bool...</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="hal.maths.maths-pysrc.html#Integer.is_naive_prime">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -150,39 +172,6 @@
       <code>__str__</code>,
       <code>__subclasshook__</code>
       </p>
-    </td>
-  </tr>
-</table>
-<!-- ==================== CLASS VARIABLES ==================== -->
-<a name="section-ClassVariables"></a>
-<table class="summary" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr bgcolor="#70b0f0" class="table-header">
-  <td colspan="2" class="table-header">
-    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-      <tr valign="top">
-        <td align="left"><span class="table-header">Class Variables</span></td>
-        <td align="right" valign="top"
-         ><span class="options">[<a href="#section-ClassVariables"
-         class="privatelink" onclick="toggle_private();"
-         >hide private</a>]</span></td>
-      </tr>
-    </table>
-  </td>
-</tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a href="hal.maths.maths.Integer-class.html#LOW_PRIMES" class="summary-name">LOW_PRIMES</a> = <code title="[2,
- 3,
- 5,
- 7,
- 11,
- 13,
- 17,
- 19,
-..."><code class="variable-group">[</code>2<code class="variable-op">, </code>3<code class="variable-op">, </code>5<code class="variable-op">, </code>7<code class="variable-op">, </code>11<code class="variable-op">, </code>13<code class="variable-op">, </code>17<code class="variable-op">, </code>19<code class="variable-op">, </code>23<code class="variable-op">, </code>29<code class="variable-op">, </code>31<code class="variable-op">, </code>37<code class="variable-op">, </code>41<code class="variable-op">, </code><code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 </table>
@@ -257,6 +246,30 @@ x.__init__(...) initializes x; see help(type(x)) for signature
   </dl>
 </td></tr></table>
 </div>
+<a name="is_naive_prime"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">is_naive_prime</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="hal.maths.maths-pysrc.html#Integer.is_naive_prime">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+:return: bool
+    Checks if prime in very naive way
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
 <a name="test_miller_rabin"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
@@ -280,51 +293,6 @@ precision)
 
 </pre>
   <dl class="fields">
-  </dl>
-</td></tr></table>
-</div>
-<br />
-<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
-<a name="section-ClassVariableDetails"></a>
-<table class="details" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr bgcolor="#70b0f0" class="table-header">
-  <td colspan="2" class="table-header">
-    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-      <tr valign="top">
-        <td align="left"><span class="table-header">Class Variable Details</span></td>
-        <td align="right" valign="top"
-         ><span class="options">[<a href="#section-ClassVariableDetails"
-         class="privatelink" onclick="toggle_private();"
-         >hide private</a>]</span></td>
-      </tr>
-    </table>
-  </td>
-</tr>
-</table>
-<a name="LOW_PRIMES"></a>
-<div>
-<table class="details" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr><td>
-  <h3 class="epydoc">LOW_PRIMES</h3>
-  
-  <dl class="fields">
-  </dl>
-  <dl class="fields">
-    <dt>Value:</dt>
-      <dd><table><tr><td><pre class="variable">
-<code class="variable-group">[</code>2<code class="variable-op">,</code>
- 3<code class="variable-op">,</code>
- 5<code class="variable-op">,</code>
- 7<code class="variable-op">,</code>
- 11<code class="variable-op">,</code>
- 13<code class="variable-op">,</code>
- 17<code class="variable-op">,</code>
- 19<code class="variable-op">,</code>
-<code class="variable-ellipsis">...</code>
-</pre></td></tr></table>
-</dd>
   </dl>
 </td></tr></table>
 </div>
@@ -357,7 +325,7 @@ precision)
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Tue Aug 15 21:46:14 2017
+    Generated by Epydoc 3.0.1 on Fri Aug 18 12:34:55 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

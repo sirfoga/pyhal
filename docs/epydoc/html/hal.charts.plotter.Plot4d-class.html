@@ -64,6 +64,11 @@
 
 </center>
 <hr />
+<pre class="literalblock">
+4D plot generator with slider 
+
+</pre>
+
 <!-- ==================== INSTANCE METHODS ==================== -->
 <a name="section-InstanceMethods"></a>
 <table class="summary" border="1" cellpadding="3"
@@ -89,14 +94,14 @@
         <tr>
           <td><span class="summary-sig"><a href="hal.charts.plotter.Plot4d-class.html#plot" class="summary-sig-name">plot</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">function</span>,
-        <span class="summary-sig-arg">minx</span>,
-        <span class="summary-sig-arg">maxx</span>,
-        <span class="summary-sig-arg">miny</span>,
-        <span class="summary-sig-arg">maxy</span>,
-        <span class="summary-sig-arg">minz</span>,
-        <span class="summary-sig-arg">maxz</span>,
-        <span class="summary-sig-arg">precision</span>,
-        <span class="summary-sig-arg">kind</span>)</span><br />
+        <span class="summary-sig-arg">min_x</span>,
+        <span class="summary-sig-arg">max_x</span>,
+        <span class="summary-sig-arg">min_y</span>,
+        <span class="summary-sig-arg">max_y</span>,
+        <span class="summary-sig-arg">min_z</span>,
+        <span class="summary-sig-arg">max_z</span>,
+        <span class="summary-sig-arg">precision</span>=<span class="summary-sig-default">0.5</span>,
+        <span class="summary-sig-arg">kind</span>=<span class="summary-sig-default">&quot;contour&quot;</span>)</span><br />
       :param function: function to plot...</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="hal.charts.plotter-pysrc.html#Plot4d.plot">source&nbsp;code</a></span>
@@ -150,11 +155,11 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="hal.charts.plotter.Plot4d-class.html#scatter" class="summary-sig-name">scatter</a>(<span class="summary-sig-arg">vectorx</span>,
-        <span class="summary-sig-arg">vectory</span>,
-        <span class="summary-sig-arg">vectorz</span>,
-        <span class="summary-sig-arg">vectorw</span>)</span><br />
-      :param vectorx: vector in x axis...</td>
+          <td><span class="summary-sig"><a href="hal.charts.plotter.Plot4d-class.html#scatter" class="summary-sig-name">scatter</a>(<span class="summary-sig-arg">vector_x</span>,
+        <span class="summary-sig-arg">vector_y</span>,
+        <span class="summary-sig-arg">vector_z</span>,
+        <span class="summary-sig-arg">vector_w</span>)</span><br />
+      :param vector_x: vector in x axis...</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="hal.charts.plotter-pysrc.html#Plot4d.scatter">source&nbsp;code</a></span>
             
@@ -215,10 +220,10 @@
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">scatter</span>(<span class="sig-arg">vectorx</span>,
-        <span class="sig-arg">vectory</span>,
-        <span class="sig-arg">vectorz</span>,
-        <span class="sig-arg">vectorw</span>)</span>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">scatter</span>(<span class="sig-arg">vector_x</span>,
+        <span class="sig-arg">vector_y</span>,
+        <span class="sig-arg">vector_z</span>,
+        <span class="sig-arg">vector_w</span>)</span>
     <br /><em class="fname">Static Method</em>
   </h3>
   </td><td align="right" valign="top"
@@ -228,10 +233,10 @@
   
   <pre class="literalblock">
 
-:param vectorx: vector in x axis
-:param vectory: vector in y axis
-:param vectorz: vector in z axis
-:param vectorw: vector in w axis
+:param vector_x: vector in x axis
+:param vector_y: vector in y axis
+:param vector_z: vector in z axis
+:param vector_w: vector in w axis
 :return: plot 4d scattered points
 
 </pre>
@@ -248,14 +253,14 @@
   <tr valign="top"><td>
   <h3 class="epydoc"><span class="sig"><span class="sig-name">plot</span>(<span class="sig-arg">self</span>,
         <span class="sig-arg">function</span>,
-        <span class="sig-arg">minx</span>,
-        <span class="sig-arg">maxx</span>,
-        <span class="sig-arg">miny</span>,
-        <span class="sig-arg">maxy</span>,
-        <span class="sig-arg">minz</span>,
-        <span class="sig-arg">maxz</span>,
-        <span class="sig-arg">precision</span>,
-        <span class="sig-arg">kind</span>)</span>
+        <span class="sig-arg">min_x</span>,
+        <span class="sig-arg">max_x</span>,
+        <span class="sig-arg">min_y</span>,
+        <span class="sig-arg">max_y</span>,
+        <span class="sig-arg">min_z</span>,
+        <span class="sig-arg">max_z</span>,
+        <span class="sig-arg">precision</span>=<span class="sig-default">0.5</span>,
+        <span class="sig-arg">kind</span>=<span class="sig-default">&quot;contour&quot;</span>)</span>
   </h3>
   </td><td align="right" valign="top"
     ><span class="codelink"><a href="hal.charts.plotter-pysrc.html#Plot4d.plot">source&nbsp;code</a></span>&nbsp;
@@ -265,12 +270,12 @@
   <pre class="literalblock">
 
 :param function: function to plot
-:param minx: minimum of x-values
-:param maxx: maximum of x-values
-:param miny: minimum of y-values
-:param maxy: maximum of y-values
-:param minz: minimum of z-values
-:param maxz: maximum of z-values
+:param min_x: minimum of x-values
+:param max_x: maximum of x-values
+:param min_y: minimum of y-values
+:param max_y: maximum of y-values
+:param min_z: minimum of z-values
+:param max_z: maximum of z-values
 :param precision: precision
 :param kind: slice: x cont -&gt; 3d plot with y, z variables in plane
     and w as &quot;z&quot;-axis contour: x cont -&gt; 3d plot with y,z variables in
@@ -311,7 +316,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Tue Aug 15 21:46:14 2017
+    Generated by Epydoc 3.0.1 on Fri Aug 18 12:34:55 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

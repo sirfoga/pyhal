@@ -11,6 +11,7 @@ var searchData=
   ['get_5fsearch_5fpage',['get_search_page',['../classhal_1_1internet_1_1engines_1_1_search_engine.html#a05d68c392a6d698cd59df41927ddbc90',1,'hal::internet::engines::SearchEngine']]],
   ['get_5fstarred_5frepos',['get_starred_repos',['../classhal_1_1internet_1_1github_1_1_github_user.html#a4affc82985348023676461d9ee29d513',1,'hal::internet::github::GithubUser']]],
   ['get_5ftrending_5fdaily',['get_trending_daily',['../classhal_1_1internet_1_1github_1_1_github_api.html#ae2304c3d7d4a319174395e819163013b',1,'hal::internet::github::GithubApi']]],
+  ['get_5ftrending_5fdaily_5fnot_5fstarred',['get_trending_daily_not_starred',['../classhal_1_1internet_1_1github_1_1_github_user.html#a15a4fec1eb59b1227c7167ef2b45eb49',1,'hal::internet::github::GithubUser']]],
   ['githubapi',['GithubApi',['../classhal_1_1internet_1_1github_1_1_github_api.html',1,'hal::internet::github']]],
   ['githubrawapi',['GithubRawApi',['../classhal_1_1internet_1_1github_1_1_github_raw_api.html',1,'hal::internet::github']]],
   ['githubuser',['GithubUser',['../classhal_1_1internet_1_1github_1_1_github_user.html',1,'hal::internet::github']]],

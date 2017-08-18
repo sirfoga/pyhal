@@ -111,16 +111,17 @@ Collaboration diagram for hal.charts.plotter.Plot4d:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0826f5d596a40fb6ec31f6f2636b55e9"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhal_1_1charts_1_1plotter_1_1_plot4d.html#a0826f5d596a40fb6ec31f6f2636b55e9">plot</a> (self, function, minx, maxx, miny, maxy, minz, maxz, precision, kind)</td></tr>
-<tr class="separator:a0826f5d596a40fb6ec31f6f2636b55e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8bb51872773a8f3f7030ed4709d27e6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhal_1_1charts_1_1plotter_1_1_plot4d.html#ae8bb51872773a8f3f7030ed4709d27e6">plot</a> (self, function, min_x, max_x, min_y, max_y, min_z, max_z, precision=0.5, kind=&quot;contour&quot;)</td></tr>
+<tr class="separator:ae8bb51872773a8f3f7030ed4709d27e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aa5b31430953600e79cdb0dd609d0e971"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhal_1_1charts_1_1plotter_1_1_plot4d.html#aa5b31430953600e79cdb0dd609d0e971">scatter</a> (vectorx, vectory, vectorz, vectorw)</td></tr>
-<tr class="separator:aa5b31430953600e79cdb0dd609d0e971"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54e937ece691908b033344968da476e6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhal_1_1charts_1_1plotter_1_1_plot4d.html#a54e937ece691908b033344968da476e6">scatter</a> (vector_x, vector_y, vector_z, vector_w)</td></tr>
+<tr class="separator:a54e937ece691908b033344968da476e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a0826f5d596a40fb6ec31f6f2636b55e9"></a>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><pre class="fragment">4D plot generator with slider </pre> </div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ae8bb51872773a8f3f7030ed4709d27e6"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -140,49 +141,49 @@ Static Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>minx</em>, </td>
+          <td class="paramname"><em>min_x</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>maxx</em>, </td>
+          <td class="paramname"><em>max_x</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>miny</em>, </td>
+          <td class="paramname"><em>min_y</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>maxy</em>, </td>
+          <td class="paramname"><em>max_y</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>minz</em>, </td>
+          <td class="paramname"><em>min_z</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>maxz</em>, </td>
+          <td class="paramname"><em>max_z</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>precision</em>, </td>
+          <td class="paramname"><em>precision</em> = <code>0.5</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>kind</em>&#160;</td>
+          <td class="paramname"><em>kind</em> = <code>&quot;contour&quot;</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -192,12 +193,12 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <pre class="fragment">:param function: function to plot
-:param minx: minimum of x-values
-:param maxx: maximum of x-values
-:param miny: minimum of y-values
-:param maxy: maximum of y-values
-:param minz: minimum of z-values
-:param maxz: maximum of z-values
+:param min_x: minimum of x-values
+:param max_x: maximum of x-values
+:param min_y: minimum of y-values
+:param max_y: maximum of y-values
+:param min_z: minimum of z-values
+:param max_z: maximum of z-values
 :param precision: precision
 :param kind: slice: x cont -&gt; 3d plot with y, z variables in plane
     and w as "z"-axis contour: x cont -&gt; 3d plot with y,z variables in
@@ -206,7 +207,7 @@ Static Public Member Functions</h2></td></tr>
 </pre> 
 </div>
 </div>
-<a class="anchor" id="aa5b31430953600e79cdb0dd609d0e971"></a>
+<a class="anchor" id="a54e937ece691908b033344968da476e6"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -217,25 +218,25 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">def hal.charts.plotter.Plot4d.scatter </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>vectorx</em>, </td>
+          <td class="paramname"><em>vector_x</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>vectory</em>, </td>
+          <td class="paramname"><em>vector_y</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>vectorz</em>, </td>
+          <td class="paramname"><em>vector_z</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>vectorw</em>&#160;</td>
+          <td class="paramname"><em>vector_w</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -249,10 +250,10 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<pre class="fragment">:param vectorx: vector in x axis
-:param vectory: vector in y axis
-:param vectorz: vector in z axis
-:param vectorw: vector in w axis
+<pre class="fragment">:param vector_x: vector in x axis
+:param vector_y: vector in y axis
+:param vector_z: vector in z axis
+:param vector_w: vector in w axis
 :return: plot 4d scattered points
 </pre> 
 </div>

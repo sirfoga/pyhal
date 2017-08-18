@@ -88,9 +88,28 @@ Multi-purpose prediction methods to be used in time-series.
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="test_stationarity"></a><span class="summary-sig-name">test_stationarity</span>(<span class="summary-sig-arg">timeseries</span>)</span></td>
+          <td><span class="summary-sig"><a href="hal.ml.models.time_series-module.html#test_stationary" class="summary-sig-name">test_stationary</a>(<span class="summary-sig-arg">time_series</span>)</span><br />
+      :param time_series: []...</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="hal.ml.models.time_series-pysrc.html#test_stationarity">source&nbsp;code</a></span>
+            <span class="codelink"><a href="hal.ml.models.time_series-pysrc.html#test_stationary">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="hal.ml.models.time_series-module.html#get_str_end" class="summary-sig-name">get_str_end</a>(<span class="summary-sig-arg">dates</span>,
+        <span class="summary-sig-arg">end</span>)</span><br />
+      :param dates: []...</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="hal.ml.models.time_series-pysrc.html#get_str_end">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -146,9 +165,7 @@ Multi-purpose prediction methods to be used in time-series.
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a href="hal.ml.models.time_series-module.html#var" class="summary-sig-name">var</a>(<span class="summary-sig-arg">dates</span>,
-        <span class="summary-sig-arg">values</span>,
-        <span class="summary-sig-arg">start</span>=<span class="summary-sig-default">None</span>,
-        <span class="summary-sig-arg">end</span>=<span class="summary-sig-default">None</span>)</span><br />
+        <span class="summary-sig-arg">values</span>)</span><br />
       Predict days values using ARIMA algorithm.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="hal.ml.models.time_series-pysrc.html#var">source&nbsp;code</a></span>
@@ -166,9 +183,7 @@ Multi-purpose prediction methods to be used in time-series.
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a href="hal.ml.models.time_series-module.html#dynamic_var" class="summary-sig-name">dynamic_var</a>(<span class="summary-sig-arg">dates</span>,
-        <span class="summary-sig-arg">values</span>,
-        <span class="summary-sig-arg">start</span>=<span class="summary-sig-default">None</span>,
-        <span class="summary-sig-arg">end</span>=<span class="summary-sig-default">None</span>)</span><br />
+        <span class="summary-sig-arg">values</span>)</span><br />
       Predict days values using ARIMA algorithm.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="hal.ml.models.time_series-pysrc.html#dynamic_var">source&nbsp;code</a></span>
@@ -207,6 +222,60 @@ Multi-purpose prediction methods to be used in time-series.
   </td>
 </tr>
 </table>
+<a name="test_stationary"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">test_stationary</span>(<span class="sig-arg">time_series</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="hal.ml.models.time_series-pysrc.html#test_stationary">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+:param time_series: []
+:return: void
+    Shows plot and checks for stationary series
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_str_end"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_str_end</span>(<span class="sig-arg">dates</span>,
+        <span class="sig-arg">end</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="hal.ml.models.time_series-pysrc.html#get_str_end">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+:param dates: []
+    List of str date
+:param end: float
+    End of prediction
+:return: str
+    End of prediction
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
 <a name="arma"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
@@ -275,9 +344,7 @@ Predict days values using ARIMA algorithm.
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
   <h3 class="epydoc"><span class="sig"><span class="sig-name">var</span>(<span class="sig-arg">dates</span>,
-        <span class="sig-arg">values</span>,
-        <span class="sig-arg">start</span>=<span class="sig-default">None</span>,
-        <span class="sig-arg">end</span>=<span class="sig-default">None</span>)</span>
+        <span class="sig-arg">values</span>)</span>
   </h3>
   </td><td align="right" valign="top"
     ><span class="codelink"><a href="hal.ml.models.time_series-pysrc.html#var">source&nbsp;code</a></span>&nbsp;
@@ -287,9 +354,7 @@ Predict days values using ARIMA algorithm.
   <pre class="literalblock">
 Predict days values using ARIMA algorithm.
 :param dates: list of str date
-:param values: list of float values
-:param start: start predicting in this day
-:param end: end of prediction 
+:param values: list of float values 
 
 </pre>
   <dl class="fields">
@@ -304,9 +369,7 @@ Predict days values using ARIMA algorithm.
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
   <h3 class="epydoc"><span class="sig"><span class="sig-name">dynamic_var</span>(<span class="sig-arg">dates</span>,
-        <span class="sig-arg">values</span>,
-        <span class="sig-arg">start</span>=<span class="sig-default">None</span>,
-        <span class="sig-arg">end</span>=<span class="sig-default">None</span>)</span>
+        <span class="sig-arg">values</span>)</span>
   </h3>
   </td><td align="right" valign="top"
     ><span class="codelink"><a href="hal.ml.models.time_series-pysrc.html#dynamic_var">source&nbsp;code</a></span>&nbsp;
@@ -316,9 +379,7 @@ Predict days values using ARIMA algorithm.
   <pre class="literalblock">
 Predict days values using ARIMA algorithm.
 :param dates: list of str date
-:param values: list of float values
-:param start: start predicting in this day
-:param end: end of prediction 
+:param values: list of float values 
 
 </pre>
   <dl class="fields">
@@ -354,7 +415,7 @@ Predict days values using ARIMA algorithm.
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Tue Aug 15 21:46:14 2017
+    Generated by Epydoc 3.0.1 on Fri Aug 18 12:34:55 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

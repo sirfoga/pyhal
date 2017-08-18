@@ -128,26 +128,7 @@ IDEA hash
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="hal.maths.crypt.IDEA-class.html#_mul" class="summary-sig-name" onclick="show_private();">_mul</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">x</span>,
-        <span class="summary-sig-arg">y</span>)</span><br />
-      :param x: first operand...</td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="hal.maths.crypt-pysrc.html#IDEA._mul">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr class="private">
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a href="hal.maths.crypt.IDEA-class.html#_KA_layer" class="summary-sig-name" onclick="show_private();">_KA_layer</a>(<span class="summary-sig-arg">self</span>,
+          <td><span class="summary-sig"><a href="hal.maths.crypt.IDEA-class.html#_ka_layer" class="summary-sig-name" onclick="show_private();">_ka_layer</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">x1</span>,
         <span class="summary-sig-arg">x2</span>,
         <span class="summary-sig-arg">x3</span>,
@@ -155,7 +136,7 @@ IDEA hash
         <span class="summary-sig-arg">round_keys</span>)</span><br />
       :param x1: x1...</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="hal.maths.crypt-pysrc.html#IDEA._KA_layer">source&nbsp;code</a></span>
+            <span class="codelink"><a href="hal.maths.crypt-pysrc.html#IDEA._ka_layer">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -169,7 +150,7 @@ IDEA hash
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="hal.maths.crypt.IDEA-class.html#_MA_layer" class="summary-sig-name" onclick="show_private();">_MA_layer</a>(<span class="summary-sig-arg">self</span>,
+          <td><span class="summary-sig"><a href="hal.maths.crypt.IDEA-class.html#_ma_layer" class="summary-sig-name" onclick="show_private();">_ma_layer</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">y1</span>,
         <span class="summary-sig-arg">y2</span>,
         <span class="summary-sig-arg">y3</span>,
@@ -177,7 +158,7 @@ IDEA hash
         <span class="summary-sig-arg">round_keys</span>)</span><br />
       :param y1: y1...</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="hal.maths.crypt-pysrc.html#IDEA._MA_layer">source&nbsp;code</a></span>
+            <span class="codelink"><a href="hal.maths.crypt-pysrc.html#IDEA._ma_layer">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -236,6 +217,42 @@ IDEA hash
       <code>__str__</code>,
       <code>__subclasshook__</code>
       </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== STATIC METHODS ==================== -->
+<a name="section-StaticMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Static Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-StaticMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="hal.maths.crypt.IDEA-class.html#_mul" class="summary-sig-name" onclick="show_private();">_mul</a>(<span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>)</span><br />
+      :param x: first operand...</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="hal.maths.crypt-pysrc.html#IDEA._mul">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
     </td>
   </tr>
 </table>
@@ -318,9 +335,9 @@ x.__init__(...) initializes x; see help(type(x)) for signature
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">_mul</span>(<span class="sig-arg">self</span>,
-        <span class="sig-arg">x</span>,
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_mul</span>(<span class="sig-arg">x</span>,
         <span class="sig-arg">y</span>)</span>
+    <br /><em class="fname">Static Method</em>
   </h3>
   </td><td align="right" valign="top"
     ><span class="codelink"><a href="hal.maths.crypt-pysrc.html#IDEA._mul">source&nbsp;code</a></span>&nbsp;
@@ -338,14 +355,14 @@ x.__init__(...) initializes x; see help(type(x)) for signature
   </dl>
 </td></tr></table>
 </div>
-<a name="_KA_layer"></a>
+<a name="_ka_layer"></a>
 <div class="private">
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">_KA_layer</span>(<span class="sig-arg">self</span>,
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_ka_layer</span>(<span class="sig-arg">self</span>,
         <span class="sig-arg">x1</span>,
         <span class="sig-arg">x2</span>,
         <span class="sig-arg">x3</span>,
@@ -353,7 +370,7 @@ x.__init__(...) initializes x; see help(type(x)) for signature
         <span class="sig-arg">round_keys</span>)</span>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="hal.maths.crypt-pysrc.html#IDEA._KA_layer">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="hal.maths.crypt-pysrc.html#IDEA._ka_layer">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
@@ -371,14 +388,14 @@ x.__init__(...) initializes x; see help(type(x)) for signature
   </dl>
 </td></tr></table>
 </div>
-<a name="_MA_layer"></a>
+<a name="_ma_layer"></a>
 <div class="private">
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">_MA_layer</span>(<span class="sig-arg">self</span>,
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_ma_layer</span>(<span class="sig-arg">self</span>,
         <span class="sig-arg">y1</span>,
         <span class="sig-arg">y2</span>,
         <span class="sig-arg">y3</span>,
@@ -386,7 +403,7 @@ x.__init__(...) initializes x; see help(type(x)) for signature
         <span class="sig-arg">round_keys</span>)</span>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="hal.maths.crypt-pysrc.html#IDEA._MA_layer">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="hal.maths.crypt-pysrc.html#IDEA._ma_layer">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
@@ -458,7 +475,7 @@ x.__init__(...) initializes x; see help(type(x)) for signature
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Tue Aug 15 21:46:14 2017
+    Generated by Epydoc 3.0.1 on Fri Aug 18 12:34:55 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

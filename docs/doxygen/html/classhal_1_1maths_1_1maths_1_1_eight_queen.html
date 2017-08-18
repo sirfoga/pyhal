@@ -113,14 +113,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a71642e4346629fda32e51c647c28fa3f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a71642e4346629fda32e51c647c28fa3f"></a>
 def&#160;</td><td class="memItemRight" valign="bottom"><b>__init__</b> (self, board_size)</td></tr>
 <tr class="separator:a71642e4346629fda32e51c647c28fa3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8147e8ea2dabfa44b3c8d13e04d7b529"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8147e8ea2dabfa44b3c8d13e04d7b529"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>solve</b> (self, n)</td></tr>
-<tr class="separator:a8147e8ea2dabfa44b3c8d13e04d7b529"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac58c55f41bc0deaa00176cd17056e258"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhal_1_1maths_1_1maths_1_1_eight_queen.html#ac58c55f41bc0deaa00176cd17056e258">solve</a> (self, table_size)</td></tr>
+<tr class="separator:ac58c55f41bc0deaa00176cd17056e258"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:af5dc0defb59e9865853cf7d9f1337427"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af5dc0defb59e9865853cf7d9f1337427"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>under_attack</b> (col, queens)</td></tr>
+<tr class="memitem:af5dc0defb59e9865853cf7d9f1337427"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhal_1_1maths_1_1maths_1_1_eight_queen.html#af5dc0defb59e9865853cf7d9f1337427">under_attack</a> (col, queens)</td></tr>
 <tr class="separator:af5dc0defb59e9865853cf7d9f1337427"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -130,7 +128,78 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a8d242fe77a100b25c6ab6e861069623b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><pre class="fragment">8 queen problem solver </pre> </div><hr/>The documentation for this class was generated from the following file:<ul>
+<div class="textblock"><pre class="fragment">8 queen problem solver </pre> </div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ac58c55f41bc0deaa00176cd17056e258"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def hal.maths.maths.EightQueen.solve </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>table_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">:param table_size: int
+    Size of table
+:return: []
+    List of possible solutions
+</pre> 
+</div>
+</div>
+<a class="anchor" id="af5dc0defb59e9865853cf7d9f1337427"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def hal.maths.maths.EightQueen.under_attack </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>queens</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">:param col: int
+    Column number
+:param queens: []
+    List of queens
+:return: bool
+    True iff queen is under attack
+</pre> 
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>/home/stefano/Coding/Python/projects/pyhal/hal/maths/maths.py</li>
 </ul>
 </div><!-- contents -->

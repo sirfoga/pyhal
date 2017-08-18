@@ -64,6 +64,11 @@
 
 </center>
 <hr />
+<pre class="literalblock">
+Models a folder/file in a OS 
+
+</pre>
+
 <!-- ==================== INSTANCE METHODS ==================== -->
 <a name="section-InstanceMethods"></a>
 <table class="summary" border="1" cellpadding="3"
@@ -247,11 +252,8 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="remove_brackets"></a><span class="summary-sig-name">remove_brackets</span>(<span class="summary-sig-arg">name</span>)</span><br />
-      :param name: string
-    Name to edit
-:return: string
-    Given string bu with no barckets.</td>
+          <td><span class="summary-sig"><a href="hal.files.models.FileSystem-class.html#remove_brackets" class="summary-sig-name">remove_brackets</a>(<span class="summary-sig-arg">name</span>)</span><br />
+      :param name: string...</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="hal.files.models-pysrc.html#FileSystem.remove_brackets">source&nbsp;code</a></span>
             
@@ -292,13 +294,10 @@
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a href="hal.files.models.FileSystem-class.html#prettify" class="summary-sig-name">prettify</a>(<span class="summary-sig-arg">name</span>,
-        <span class="summary-sig-arg">bad_chars</span>=<span class="summary-sig-default">BAD_CHARS</span>,
-        <span class="summary-sig-arg">r</span>=<span class="summary-sig-default">&quot; &quot;</span>)</span><br />
+        <span class="summary-sig-arg">blank</span>=<span class="summary-sig-default">&quot; &quot;</span>)</span><br />
       :param name: string
     Name to edit
-:param bad_chars: []
-    List of bad strings to remove
-:param r: string
+:param blank: string
     Default blanks in name.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="hal.files.models-pysrc.html#FileSystem.prettify">source&nbsp;code</a></span>
@@ -357,7 +356,7 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="hal.files.models.FileSystem-class.html#ls" class="summary-sig-name">ls</a>(<span class="summary-sig-arg">path</span>,
+          <td><span class="summary-sig"><a href="hal.files.models.FileSystem-class.html#list_content" class="summary-sig-name">list_content</a>(<span class="summary-sig-arg">path</span>,
         <span class="summary-sig-arg">recurse</span>,
         <span class="summary-sig-arg">include_hidden</span>=<span class="summary-sig-default">False</span>)</span><br />
       :param path: string
@@ -365,7 +364,7 @@
 :param recurse: bool
     Whether to recurse into subdirectories or not.</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="hal.files.models-pysrc.html#FileSystem.ls">source&nbsp;code</a></span>
+            <span class="codelink"><a href="hal.files.models-pysrc.html#FileSystem.list_content">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -473,6 +472,33 @@
   </dl>
 </td></tr></table>
 </div>
+<a name="remove_brackets"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">remove_brackets</span>(<span class="sig-arg">name</span>)</span>
+    <br /><em class="fname">Static Method</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="hal.files.models-pysrc.html#FileSystem.remove_brackets">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+:param name: string
+    Name to edit
+:return: string
+    Given string bu with no brackets
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
 <a name="extract_name_max_chars"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
@@ -514,8 +540,7 @@
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
   <h3 class="epydoc"><span class="sig"><span class="sig-name">prettify</span>(<span class="sig-arg">name</span>,
-        <span class="sig-arg">bad_chars</span>=<span class="sig-default">BAD_CHARS</span>,
-        <span class="sig-arg">r</span>=<span class="sig-default">&quot; &quot;</span>)</span>
+        <span class="sig-arg">blank</span>=<span class="sig-default">&quot; &quot;</span>)</span>
     <br /><em class="fname">Static Method</em>
   </h3>
   </td><td align="right" valign="top"
@@ -527,9 +552,7 @@
 
 :param name: string
     Name to edit
-:param bad_chars: []
-    List of bad strings to remove
-:param r: string
+:param blank: string
     Default blanks in name.
 :return: string
     Prettier name from given one: replace bad chars with good ones.
@@ -599,20 +622,20 @@
   </dl>
 </td></tr></table>
 </div>
-<a name="ls"></a>
+<a name="list_content"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">ls</span>(<span class="sig-arg">path</span>,
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">list_content</span>(<span class="sig-arg">path</span>,
         <span class="sig-arg">recurse</span>,
         <span class="sig-arg">include_hidden</span>=<span class="sig-default">False</span>)</span>
     <br /><em class="fname">Static Method</em>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="hal.files.models-pysrc.html#FileSystem.ls">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="hal.files.models-pysrc.html#FileSystem.list_content">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
@@ -712,7 +735,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Tue Aug 15 21:46:14 2017
+    Generated by Epydoc 3.0.1 on Fri Aug 18 12:34:55 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"
