@@ -112,6 +112,11 @@ URL_VALID_REGEX = re.compile(
     r"(?:/?|[/?]\S+)$",
     re.IGNORECASE
 )
+APP_VALID_HEADERS = {
+    "User-Agent": "Mozilla/5.0",
+    "Accept": "text/html,application/xhtml+xml,application/xml,"
+              "application/pdf;q=0.9,*/*;q=0.8 "
+}
 
 
 def is_url(candidate_url):
@@ -263,26 +268,28 @@ def download_url(url, local_file):
     downloader.retrieve(url, local_file)
 
 
-def download_pdf_to_file(url, local_file, chunk_size=1024):
+def download_to_file(url, local_file, headers=APP_VALID_HEADERS, cookies=None,
+                     chunk_size=1024):
     """
-    :param url: string
+    :param url: str
         PDF url to download
-    :param local_file: string
+    :param local_file: str
         Save url as this path
+    :param headers: {}
+        Headers to fetch url
+    :param cookies: {}
+        Cookies to fetch url
     :param chunk_size: int
         Download file in this specific chunk size
     :return: void
         Download link to local file
     """
 
-    headers = {
-        'User-Agent': 'Mozilla/5.0',
-        'Accept': 'text/html,application/xhtml+xml,application/xml,'
-                  'application/pdf;q=0.9,*/*;q=0.8 '
-    }
+    if not cookies:
+        cookies = {}
 
-    req = requests.get(url, headers=headers, stream=True)
-    with open(local_file, 'wb') as local_download:
+    req = requests.get(url, headers=headers, cookies=cookies, stream=True)
+    with open(local_file, "wb") as local_download:
         for chunk in req.iter_content(chunk_size):
             if chunk:
                 local_download.write(chunk)
