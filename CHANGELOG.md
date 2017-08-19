@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - language option in github api
+- async utils
 
 ### Removed
 - print_item_info() in time.profile

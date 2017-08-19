@@ -56,6 +56,8 @@ setup(
     url="https://github.com/sirfoga/pyhal",
     packages=find_packages(exclude=["tests"]),
     install_requires=[
+        "aiohttp",
+        "aiosocks",
         "bs4",
         "colorama",
         "Crypto",
