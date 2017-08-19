@@ -4,7 +4,7 @@
 
 [![Code Health](https://landscape.io/github/sirfoga/pyhal/master/landscape.svg?style=flat)](https://landscape.io/github/sirfoga/hal/master)
 [![Code Climate](https://lima.codeclimate.com/github/sirfoga/pyhal/badges/gpa.svg)](https://codeclimate.com/github/sirfoga/pyhal)
-![pylint Score](https://mperlet.de/pybadge/badges/8.74.svg)
+![pylint Score](https://mperlet.de/pybadge/badges/8.82.svg)
 
 [![PyPI version](https://badge.fury.io/py/PyHal.svg)](https://pypi.org/project/PyHal/) [![Documentation Status](https://readthedocs.org/projects/pyhal/badge/?version=latest)](http://pyhal.readthedocs.io/en/latest/?badge=latest)
 

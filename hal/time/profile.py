@@ -65,20 +65,6 @@ def get_time_eta(total_done, total, start_time):
     }
 
 
-def print_item_info(details):
-    """
-    :param details: {}
-        Details of AthletePerformance
-    :return: void
-        Prints debug info to screen
-    """
-
-    print(
-        "{:20.19}".format(details["name"]),
-        "{:20.19}".format(details["finish_time"])
-    )  # debug info
-
-
 def print_time_eta(time_to_go, note=""):
     """
     :param time_to_go: {}
