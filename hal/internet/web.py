@@ -25,7 +25,7 @@ import urllib.request
 import webbrowser
 from urllib.parse import urljoin
 
-import requests  # fetch source via tor
+import requests
 import socks
 from bs4 import BeautifulSoup
 
