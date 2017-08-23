@@ -1,6 +1,6 @@
 # HAL: Handy Algorithmic Library
 
-[![Build Status](https://travis-ci.org/sirfoga/pyhal.svg?branch=master)](https://travis-ci.org/sirfoga/pyhal) [![Coverage Status](https://coveralls.io/repos/github/sirfoga/pyhal/badge.svg?branch=master)](https://coveralls.io/github/sirfoga/pyhal?branch=master)
+[![Build Status](https://travis-ci.org/sirfoga/pyhal.svg?branch=master)](https://travis-ci.org/sirfoga/pyhal) [![Build status](https://ci.appveyor.com/api/projects/status/isfmmdaqhkbgqaeu?svg=true)](https://ci.appveyor.com/project/sirfoga/pyhal) [![Coverage Status](https://coveralls.io/repos/github/sirfoga/pyhal/badge.svg?branch=master)](https://coveralls.io/github/sirfoga/pyhal?branch=master)
 
 [![Code Health](https://landscape.io/github/sirfoga/pyhal/master/landscape.svg?style=flat)](https://landscape.io/github/sirfoga/hal/master)
 [![Code Climate](https://lima.codeclimate.com/github/sirfoga/pyhal/badges/gpa.svg)](https://codeclimate.com/github/sirfoga/pyhal)
