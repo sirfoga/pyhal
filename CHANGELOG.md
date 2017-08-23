@@ -2,12 +2,13 @@
 All notable changes to this project will be documented in this file.
 
 
-### 4.6.3
+### 4.6.3 - 2017-08-23
 
 ### Added
 - language option in github api
 - async utils
 - download to file with headers and cookies options
+- appveyor config
 
 ### Removed
 - print_item_info() in time.profile
