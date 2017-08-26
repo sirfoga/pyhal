@@ -2,9 +2,7 @@
 
 [![Build Status](https://travis-ci.org/sirfoga/pyhal.svg?branch=master)](https://travis-ci.org/sirfoga/pyhal) [![Build status](https://ci.appveyor.com/api/projects/status/isfmmdaqhkbgqaeu?svg=true)](https://ci.appveyor.com/project/sirfoga/pyhal) [![Coverage Status](https://coveralls.io/repos/github/sirfoga/pyhal/badge.svg?branch=master)](https://coveralls.io/github/sirfoga/pyhal?branch=master)
 
-[![Code Health](https://landscape.io/github/sirfoga/pyhal/master/landscape.svg?style=flat)](https://landscape.io/github/sirfoga/hal/master)
-[![Code Climate](https://lima.codeclimate.com/github/sirfoga/pyhal/badges/gpa.svg)](https://codeclimate.com/github/sirfoga/pyhal)
-![pylint Score](https://mperlet.de/pybadge/badges/8.83.svg)
+[![Code Health](https://landscape.io/github/sirfoga/pyhal/master/landscape.svg?style=flat)](https://landscape.io/github/sirfoga/hal/master) [![Code Climate](https://lima.codeclimate.com/github/sirfoga/pyhal/badges/gpa.svg)](https://codeclimate.com/github/sirfoga/pyhal) ![pylint Score](https://mperlet.de/pybadge/badges/8.83.svg)
 
 [![PyPI version](https://badge.fury.io/py/PyHal.svg)](https://pypi.org/project/PyHal/) [![Requirements Status](https://requires.io/github/sirfoga/pyhal/requirements.svg?branch=master)](https://requires.io/github/sirfoga/pyhal/requirements/?branch=master) [![Documentation Status](https://readthedocs.org/projects/pyhal/badge/?version=latest)](http://pyhal.readthedocs.io/en/latest/?badge=latest)
 
@@ -16,6 +14,16 @@
 *A multipurpose library to perform great stuff in the most easy, fast and pythonic way.*
 
 ![screenshot](logo.png)
+
+**Table of Contents**
+
+- [Install](#install)
+- [Requirements](#requirements)
+- [Python dependencies](#python-dependencies)
+- [Examples](#examples)
+- [Usage and documentation](#usage-and-documentation)
+- [Questions and issues](#questions-and-issues)
+- [LICENSE](#license)
 
 ## Install
 - ``` $ pip3 install . --upgrade --force-reinstall ``` from the source
