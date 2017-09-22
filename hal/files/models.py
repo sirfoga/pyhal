@@ -22,7 +22,7 @@ import os
 import re
 
 from mutagen.id3 import ID3
-from mutagen.id3._frames import TIT2, TPE1, TALB, TRCK, TDRC
+from mutagen.id3._frames import TIT2, TPE1, TALB, TRCK, TDRC, TCON
 from mutagen.mp3 import MP3
 from send2trash import send2trash
 
@@ -553,4 +553,15 @@ class MP3Song(FileSystem):
         """
 
         self.tags.add(TDRC(encoding=3, text=str(year)))
+        self.song.save()
+
+    def set_genre(self, genre):
+        """
+        :param genre: str
+            Genre of song
+        :return: void
+            Sets song's genre
+        """
+
+        self.tags.add(TCON(encoding=3, text=str(genre)))
         self.song.save()

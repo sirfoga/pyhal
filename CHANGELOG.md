@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+### 4.6.4 - 2017-09-22
+
+### Added
+- mp3 set genre
 
 ### 4.6.3 - 2017-08-23
 
