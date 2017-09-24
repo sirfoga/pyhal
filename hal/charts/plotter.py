@@ -206,7 +206,8 @@ class Plot4d(object):
         else:
             raise ValueError("Cannot plot vectors of different length.")
 
-    def plot(self, function, min_x, max_x, min_y, max_y, min_z, max_z,
+    @staticmethod
+    def plot(function, min_x, max_x, min_y, max_y, min_z, max_z,
              precision=0.5, kind="contour"):
         """
         :param function: function to plot
@@ -227,16 +228,16 @@ class Plot4d(object):
             raise ValueError("Precision cannot be negative.")
 
         if min_x > max_x:
-            self.plot(function, max_x, min_x, min_y, max_y, min_z, max_z,
-                      precision, kind)
+            Plot4d.plot(function, max_x, min_x, min_y, max_y, min_z, max_z,
+                        precision, kind)
 
         if min_y > max_y:
-            self.plot(function, min_x, max_x, max_y, min_y, min_z, max_z,
-                      precision, kind)
+            Plot4d.plot(function, min_x, max_x, max_y, min_y, min_z, max_z,
+                        precision, kind)
 
         if min_z > max_z:
-            self.plot(function, min_x, max_x, min_y, max_y, max_z, min_z,
-                      precision, kind)
+            Plot4d.plot(function, min_x, max_x, min_y, max_y, max_z, min_z,
+                        precision, kind)
 
         if kind != "slice" and kind != "contour":
             raise ValueError(
