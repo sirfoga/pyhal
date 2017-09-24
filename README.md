@@ -78,6 +78,18 @@ If you want to do this stuff in a fast and easy way, this library is for ya.
     
     Plot2d.plot(np.sin, 1, 100, 100)
     ```
+- Get YouTube RSS feed of channel
+    #### Classic way
+    
+    No easy way that I know of
+
+    #### Using `pyhal`
+    ```python
+    from hal.internet.youtube import get_channel_feed_url_from_video
+    
+    video_url = "my awesome video of an awesome channel"
+    channel_feed = get_channel_feed_url_from_video(video_url)
+    ```
 
 <!-- ## The solution -->
 
