@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+### 4.7 - 2017-09-24
+
+### Added
+- examples of usage in readme
+
+### Fixed
+- static methods in Plot2d/Plot3d
+
 ### 4.6.4 - 2017-09-22
 
 ### Added
@@ -34,7 +42,6 @@ All notable changes to this project will be documented in this file.
 - charts module examples
 - tests module examples
 
-
 ### 4.6.1
 
 ### Added
@@ -46,7 +53,6 @@ All notable changes to this project will be documented in this file.
 - hal hidden ls
 - code misspelling
 
-
 ### 4.6
 
 ### Added
@@ -55,7 +61,6 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 - duplicate code in ml.utils.misc
 - cleaned code (PEP8 compliant, score: 8.78/10)
-
 
 ### 4.5.1
 
@@ -74,18 +79,15 @@ All notable changes to this project will be documented in this file.
 ### Removed
 - epydoc text docs
 
-
 ### 4.5
 
 ### Added
 - pymongo utils
 
-
 ### 4.4.9
 
 ### Added
 - memory profiling and gc collector
-
 
 ### 4.4.8
 
@@ -95,18 +97,15 @@ All notable changes to this project will be documented in this file.
 ### Changed
 - time.utils eta time
 
-
 ### 4.4.7
 
 ### Added
 - download_pdf_to_file
 
-
 ### 4.4.6
 
 ### Added
 - get_time_eta
-
 
 ### 4.4.5
 
@@ -116,7 +115,6 @@ All notable changes to this project will be documented in this file.
 - MONTHS_NAMES in time utils
 - normalize option in create_multiple_bar_chart
 
-
 ### 4.4.4
 
 ### Added
@@ -124,7 +122,6 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 - extremely annoying bug on csv parser
-
 
 ### 4.4.3
 
@@ -134,7 +131,6 @@ All notable changes to this project will be documented in this file.
 - charts.bar
 - ml.utils normalize array
 
-
 ### 4.4.2
 
 ### Fixed
@@ -143,12 +139,10 @@ All notable changes to this project will be documented in this file.
 ### Refactored
 - show correlation matrix
 
-
 ### 4.4.1
 
 ### Fixed
 - ml.utils.matrix.get_subset_of_matrix transpose bug
-
 
 ### 4.4.0
 
@@ -156,12 +150,10 @@ All notable changes to this project will be documented in this file.
 - ml.utils.matrix
 - ml.utils.misc
 
-
 ### 4.3.9
 
 ### Added
 - github api models
-
 
 ### 4.3.8
 
@@ -173,7 +165,6 @@ All notable changes to this project will be documented in this file.
 ### Changed
 - updated copyright to 2017
 
-
 ### 4.3.7
 
 ### Refactored
@@ -182,12 +173,10 @@ All notable changes to this project will be documented in this file.
 ### Added
 - youtube feed fetcher from id, video url
 
-
 ### 4.3.6
 
 ### Fixed
 - ml.analysis.correlation minor bugs
-
 
 ### 4.3.5
 
@@ -200,18 +189,15 @@ All notable changes to this project will be documented in this file.
 - CSVParser
 - create_visual_correlation_matrix
 
-
 ### 4.3.4
 
 ### Fixed
 - EightQueen performance tester
 
-
 ### 4.3.3
 
 ### Fixed
 - now search engines can fetch pages using onion (tor) protocol
-
 
 ### 4.3.2
 
@@ -221,12 +207,10 @@ All notable changes to this project will be documented in this file.
 ### Added
 - method to get correlation matrix
 
-
 ### 4.3.1.4
 
 ### Fixed
 - backward compatibility for Webpage.get_html_source()
-
 
 ### 4.3.1.3
 
@@ -234,18 +218,15 @@ All notable changes to this project will be documented in this file.
 - design but in webpage (would load webpage in class constructor)
 - search engine updated to latest Webpage
 
-
 ### 4.3.1.2
 
 ### Added
 - url validator with regex
 
-
 ### 4.3.1.1
 
 ### Fixed
 - now Webpage does NOT use TOR as default internet connection 
-
 
 ### 4.3.1
 
@@ -255,13 +236,11 @@ All notable changes to this project will be documented in this file.
 ### Changed
 - Refactored changelog
 
-
 ### 4.3.0.1
 
 ### Changed
 - Now path separator works also in windows
 - Fixed more annoying bugs in files.models
-
 
 ### 4.3
 
@@ -271,48 +250,40 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 - Fixed annoying bugs in files.models
 
-
 ### 4.2
 
 ### Added
 - Google image search engine.
-
 
 ### 4.1.1
 
 ### Changed
 - YouTube RSS channel creator, moved engines.
 
-
 ### 4.1
 
 ### Changed
 - Reformat code, removed lots of useless modules, improved performance.
-
 
 ### 3.3
 
 ### Added
 - Search engine module (torrent at least ...)
 
-
 ### 3.0
 
 ### Changed
 - Converted to Python 3.x (also imports and libraries)
-
 
 ### 2.0
 
 ### Changed
 - Refactored python modules, ready to bring in machine learning one
 
-
 ### 1.0
 
 ### Added
 - Installation tool, examples, and docs
-
 
 ### 0.2.1
 
@@ -322,13 +293,11 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Folder.sync
 
-
 ### 0.2
 
 ### Changed
 - Created new modules, classes and functions
 - Got qt to work
-
 
 ### 0.1
 
@@ -337,7 +306,6 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - Previously created modules following PEP rules
-
 
 ### 0.0
 

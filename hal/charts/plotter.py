@@ -45,7 +45,8 @@ class Plot2d(object):
         else:
             raise ValueError("Cannot plot vectors of different length.")
 
-    def param(self, function_x, function_y, min_val, max_val, points):
+    @staticmethod
+    def param(function_x, function_y, min_val, max_val, points):
         """
         :param function_x: function in x value
         :param function_y: function in y value
@@ -59,9 +60,10 @@ class Plot2d(object):
             raise ValueError("Number of points to plot must be positive.")
         else:
             if min_val > max_val:
-                self.param(function_x, function_y, max_val, min_val, points)
+                Plot2d.param(function_x, function_y, max_val, min_val, points)
 
-    def plot(self, function, min_val, max_val, points):
+    @staticmethod
+    def plot(function, min_val, max_val, points):
         """
         :param function: function to plot
         :param min_val: minimum value
@@ -74,7 +76,7 @@ class Plot2d(object):
             raise ValueError("Number of points to plot must be positive.")
         else:
             if min_val > max_val:
-                self.plot(function, max_val, min_val, points)
+                Plot2d.plot(function, max_val, min_val, points)
             else:
                 x_values = linspace(min_val, max_val, points)
                 plt.plot(x_values, function(x_values))
@@ -104,7 +106,8 @@ class Plot3d(object):
         else:
             raise ValueError("Cannot plot vectors of different length.")
 
-    def param(self, function_x, function_y, function_z, min_val, max_val,
+    @staticmethod
+    def param(function_x, function_y, function_z, min_val, max_val,
               points):
         """
         :param function_x: function in x
@@ -120,7 +123,7 @@ class Plot3d(object):
             raise ValueError("Number of points to plot must be positive.")
         else:
             if min_val > max_val:
-                self.param(
+                Plot3d.param(
                     function_x,
                     function_y,
                     function_z,
@@ -143,7 +146,8 @@ class Plot3d(object):
             # show
             plt.show()
 
-    def plot(self, function, min_x, max_x, points_x, min_y, max_y, points_y):
+    @staticmethod
+    def plot(function, min_x, max_x, points_x, min_y, max_y, points_y):
         """
         :param function: function to plot
         :param min_x: minimum of x-values
@@ -158,10 +162,12 @@ class Plot3d(object):
             raise ValueError("Number of points to plot must be positive.")
 
         if min_x > max_x:
-            self.plot(function, max_x, min_x, points_x, min_y, max_y, points_y)
+            Plot3d.plot(function, max_x, min_x, points_x, min_y, max_y,
+                        points_y)
 
         if min_y > max_y:
-            self.plot(function, min_x, max_x, points_x, max_y, min_y, points_y)
+            Plot3d.plot(function, min_x, max_x, points_x, max_y, min_y,
+                        points_y)
 
         # general settings
         chart = plt.axes(projection="3d")

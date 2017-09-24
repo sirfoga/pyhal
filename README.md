@@ -17,6 +17,9 @@
 
 **Table of Contents**
 
+- [The problem](#the-problem)
+- [An example](#an-example)
+- [The solution](#the-solution)
 - [Install](#install)
 - [Requirements](#requirements)
 - [Python dependencies](#python-dependencies)
@@ -24,6 +27,59 @@
 - [Usage and documentation](#usage-and-documentation)
 - [Questions and issues](#questions-and-issues)
 - [LICENSE](#license)
+
+## The problem
+Say you want to edit the tags of all the songs in a folder. Say you wish to 
+plot 2D/3D or even 4D points. Say you'd like to know the RSS feed of a 
+YouTube channel.
+
+If you want to do this stuff in a fast and easy way, this library is for ya.
+
+## An example
+
+- Edit songs tags
+    #### Classic way
+    ```python
+    import os
+    from mutagen.mp3 import MP3
+    
+    my_folder = "path to folder containing songs"
+    
+    for root, dirs, files in os.walk(my_folder):
+        for file in files:
+            audio = MP3(file)
+            audio["artist"] = "An example"
+            audio.save()
+    ```
+    #### Using `pyhal`
+    ```python
+    from hal.files.models import FileSystem, MP3Song
+    
+    my_folder = "path to folder containing songs"
+    
+    for file in FileSystem.ls_recurse(my_folder):
+        MP3Song(file).set_artist("An example")
+    ```
+- Plot data
+    #### Classic way
+    ```python
+    import numpy as np
+    import matplotlib.pyplot as plt
+    
+    x = np.arange(1., 100.)
+    y = np.sin(x)
+    plt.plot(x, y)
+    plt.show()
+    ```
+    #### Using `pyhal`
+    ```python
+    import numpy as np
+    from hal.charts.plotter import Plot2d
+    
+    Plot2d.plot(np.sin, 1, 100, 100)
+    ```
+
+<!-- ## The solution -->
 
 ## Install
 - ``` $ pip3 install . --upgrade --force-reinstall ``` from the source
