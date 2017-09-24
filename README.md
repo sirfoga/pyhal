@@ -91,7 +91,9 @@ If you want to do this stuff in a fast and easy way, this library is for ya.
     channel_feed = get_channel_feed_url_from_video(video_url)
     ```
 
-<!-- ## The solution -->
+## The solution
+One-line, fast and extensible python commands to deal with most of every-day
+ situation.
 
 ## Install
 - ``` $ pip3 install . --upgrade --force-reinstall ``` from the source
