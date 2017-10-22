@@ -47,6 +47,6 @@ def get_next_weekday(weekday):
         return now + datetime.timedelta(days=7)
 
     t = datetime.timedelta(
-        (7 + weekday - now.weekday()) % 7
+        (7 + weekday.value - now.weekday()) % 7
     )  # time delta to next instance
     return now + t
