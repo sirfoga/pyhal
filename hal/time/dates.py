@@ -49,16 +49,20 @@ def get_just_date(date):
     )
 
 
-def get_next_weekday(weekday):
+def get_next_weekday(weekday, including_today=False):
     """
     :param weekday: Weekday
         Weekday to get
+    :param including_today: bool
+        If today is sunday and requesting next sunday, I shall return today
     :return: datetime
         Date of next monday, tuesday ...
     """
 
     now = datetime.datetime.now()
-    if now.weekday() == weekday.value:
+    if now.weekday() == weekday.value and including_today:
+        delta = datetime.timedelta(days=0)
+    elif now.weekday() == weekday.value and not including_today:
         delta = datetime.timedelta(days=7)
     else:
         delta = datetime.timedelta(
@@ -67,19 +71,38 @@ def get_next_weekday(weekday):
     return get_just_date(now + delta)
 
 
-def get_last_weekday(weekday):
+def get_last_weekday(weekday, including_today=False):
     """
     :param weekday: Weekday
         Weekday to get
+    :param including_today: bool
+        If today is sunday and requesting next sunday, I shall return today
     :return: datetime
         Date of next monday, tuesday ...
     """
 
     now = datetime.datetime.now()
-    if now.weekday() == weekday.value:
+    if now.weekday() == weekday.value and including_today:
+        delta = datetime.timedelta(days=0)
+    elif now.weekday() == weekday.value and not including_today:
         delta = - datetime.timedelta(days=7)
     else:
         delta = datetime.timedelta(
             - now.weekday() + weekday.value
         )  # time D to last sunday
     return get_just_date(now + delta)
+
+
+def is_date_in_between(date, start, end):
+    """
+    :param date: datetime
+        Date to check
+    :param start: datetime
+        Date cannot be before this date
+    :param end: datetime
+        Date cannot be after this date
+    :return: bool
+        True iff date is in between dates
+    """
+
+    return get_just_date(start) <= get_just_date(date) <= get_just_date(end)
