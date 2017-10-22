@@ -101,31 +101,3 @@ class GoogleApiOAuth(object):
         user_credentials = self.get_user_credentials()  # get credentials
         return discovery.build(name, version, http=self.authenticate(
             user_credentials))  # get sheets driver
-
-
-class GMailApiOAuth(GoogleApiOAuth):
-    def __init__(self, app_name, client_secrets_file, oauth_path):
-        """
-        :param app_name: str
-            Name of app to display
-        :param client_secrets_file: str
-            Path to client_secret.json file
-        :param oauth_path: str
-            Path to gmail.json file
-        """
-
-        GoogleApiOAuth.__init__(
-            self,
-            "https://www.googleapis.com/auth/gmail.send",  # scope
-            app_name,
-            os.path.join(client_secrets_file),  # app secrets
-            os.path.join(oauth_path),  # user credential
-        )
-
-    def create_driver(self):
-        """
-        :return: driver
-            GMail API driver
-        """
-
-        return super().get_driver("gmail", "v1")
