@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+### 4.7.4 - 2017-10-22
+
+### Added
+- email templates and utils
+
 ### 4.7.3 - 2017-10-22
 
 ### Added
