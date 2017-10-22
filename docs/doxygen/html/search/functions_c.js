@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['raw',['raw',['../classhal_1_1maths_1_1crypt_1_1_m_d6.html#a325f687cdf1081ae62d54638a5774293',1,'hal::maths::crypt::MD6']]],
-  ['remove_5fbrackets',['remove_brackets',['../classhal_1_1files_1_1models_1_1_file_system.html#ab97d14ce121829510e40c3f052c176df',1,'hal::files::models::FileSystem']]],
-  ['remove_5fyear',['remove_year',['../classhal_1_1files_1_1models_1_1_file_system.html#af473fc3f0450ffe57c2484fd76d3a40d',1,'hal::files::models::FileSystem']]],
-  ['rename',['rename',['../classhal_1_1files_1_1models_1_1_file_system.html#a3388d434e8ae2be2f2b7b9a227ac418e',1,'hal::files::models::FileSystem']]],
-  ['run_5ftest_5fwith_5fsize',['run_test_with_size',['../classhal_1_1profile_1_1performance_1_1_eight_queen_test.html#a1830ea92c280cbd39a65c7fc36176e89',1,'hal::profile::performance::EightQueenTest']]]
+  ['param',['param',['../classhal_1_1charts_1_1plotter_1_1_plot2d.html#a006c4d6028a4c0e851583df91e41377a',1,'hal.charts.plotter.Plot2d.param()'],['../classhal_1_1charts_1_1plotter_1_1_plot3d.html#ab90291c736da933b3966c36f755e6ee7',1,'hal.charts.plotter.Plot3d.param()']]],
+  ['parse',['parse',['../classhal_1_1internet_1_1parser_1_1_html_table.html#addcc7238344dce5f6f71426ae03ce362',1,'hal::internet::parser::HtmlTable']]],
+  ['parse_5fdata',['parse_data',['../classhal_1_1ml_1_1data_1_1parser_1_1_c_s_v_parser.html#ac47a4070d172a1ada61060610749f5e8',1,'hal::ml::data::parser::CSVParser']]],
+  ['parse_5fquery',['parse_query',['../classhal_1_1internet_1_1engines_1_1_search_engine.html#afde9fa1646b6057ecd94746132c9b7c1',1,'hal::internet::engines::SearchEngine']]],
+  ['parse_5furl',['parse_url',['../classhal_1_1internet_1_1web_1_1_webpage.html#af6e3dcd4dbebe8e1b196fded24e4025e',1,'hal::internet::web::Webpage']]],
+  ['plot',['plot',['../classhal_1_1charts_1_1plotter_1_1_plot2d.html#a9fbe61a1e91e25e77ae76b409df6433a',1,'hal.charts.plotter.Plot2d.plot()'],['../classhal_1_1charts_1_1plotter_1_1_plot3d.html#a21a7b721bb7e21b150a3141efd5e50cf',1,'hal.charts.plotter.Plot3d.plot()'],['../classhal_1_1charts_1_1plotter_1_1_plot4d.html#a8de036772398808b390cbf7ed0c11f93',1,'hal.charts.plotter.Plot4d.plot()']]],
+  ['prettify',['prettify',['../classhal_1_1files_1_1models_1_1_file_system.html#adc5cc642a247ed7cb24f98341d3e1a8b',1,'hal::files::models::FileSystem']]]
 ];

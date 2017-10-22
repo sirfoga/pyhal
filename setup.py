@@ -45,7 +45,7 @@ DESCRIPTION = \
 
 setup(
     name="PyHal",
-    version="4.6.3",
+    version="4.7.1",
     author="sirfoga",
     author_email="sirfoga@protonmail.com",
     description="A multipurpose library to perform great stuff in the most "
@@ -74,7 +74,6 @@ setup(
         "sklearn",
         "statsmodels",
         "httplib2",
-        "googleapiclient",
         "oauth2client"
     ],
     test_suite="tests"

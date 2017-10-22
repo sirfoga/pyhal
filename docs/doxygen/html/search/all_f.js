@@ -6,6 +6,7 @@ var searchData=
   ['seleniumform',['SeleniumForm',['../classhal_1_1internet_1_1selenium__bots_1_1_selenium_form.html',1,'hal::internet::selenium_bots']]],
   ['set_5falbum',['set_album',['../classhal_1_1files_1_1models_1_1_m_p3_song.html#afda62b2b1519b7bc65e8cd98d8f2e2bf',1,'hal::files::models::MP3Song']]],
   ['set_5fartist',['set_artist',['../classhal_1_1files_1_1models_1_1_m_p3_song.html#abecb2c34045dbd2133e898114198d518',1,'hal::files::models::MP3Song']]],
+  ['set_5fgenre',['set_genre',['../classhal_1_1files_1_1models_1_1_m_p3_song.html#a36a9fd62c8251b47d192a46b0f812c51',1,'hal::files::models::MP3Song']]],
   ['set_5fname',['set_name',['../classhal_1_1files_1_1models_1_1_m_p3_song.html#ae4f958b7afa7212cff8470163854a0ed',1,'hal::files::models::MP3Song']]],
   ['set_5fnr_5ftrack',['set_nr_track',['../classhal_1_1files_1_1models_1_1_m_p3_song.html#a6b456dde38763b13fb10266b7910b63f',1,'hal::files::models::MP3Song']]],
   ['set_5fyear',['set_year',['../classhal_1_1files_1_1models_1_1_m_p3_song.html#ac14c40460b53a47979a58864409a366c',1,'hal::files::models::MP3Song']]],

@@ -119,6 +119,9 @@ Take a look [here](https://github.com/sirfoga/pyhal/blob/master/setup.py#L58) fo
 - send2trash
 - sklearn
 - statsmodels
+- httplib2
+- googleapiclient
+- oauth2client
 
 ## Examples
 You can take a look at [my other repository](https://github.com/sirfoga/pymisc/tree/master/misc): there are lots of implementations from various HAL modules.

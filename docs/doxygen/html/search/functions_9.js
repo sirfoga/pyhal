@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['move_5ffile_5fto_5fdirectory',['move_file_to_directory',['../classhal_1_1files_1_1models_1_1_document.html#a667fad984369339c6c03f21a91394f54',1,'hal::files::models::Document']]],
-  ['move_5ffile_5fto_5ffile',['move_file_to_file',['../classhal_1_1files_1_1models_1_1_document.html#ae1d5c82d81497dcea679f77bdbc84387',1,'hal::files::models::Document']]]
+  ['list_5fcontent',['list_content',['../classhal_1_1files_1_1models_1_1_file_system.html#a10b078501fd008d3991f7aacf6464540',1,'hal::files::models::FileSystem']]],
+  ['ls_5fdir',['ls_dir',['../classhal_1_1files_1_1models_1_1_file_system.html#a60f66aeec22d00b67067f3527d06db74',1,'hal::files::models::FileSystem']]],
+  ['ls_5frecurse',['ls_recurse',['../classhal_1_1files_1_1models_1_1_file_system.html#a2df7cb545b239ccb239b71f808ce5808',1,'hal::files::models::FileSystem']]]
 ];
