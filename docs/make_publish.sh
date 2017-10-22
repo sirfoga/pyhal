@@ -28,6 +28,6 @@ epydoc --config epydoc/Epydoc_html  # make docs
 mv ${OUTPUT_FOLDER}* ${BUILD_FOLDER}  # move to build folder
 
 git checkout gh-pages  # change branch (to publish docs)
-mv ${BUILD_FOLDER} ../  # publish docs at root folder
+git checkout master ${BUILD_FOLDER}  # publish docs at root folder
 git add --all
 git commit -m "${COMMIT_MSG} | generated docs"
