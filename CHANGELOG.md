@@ -6,6 +6,9 @@ All notable changes to this project will be documented in this file.
 ### Added
 - email templates and utils
 
+### Refactored
+- move gmail module to email module
+
 ### 4.7.3 - 2017-10-22
 
 ### Added
