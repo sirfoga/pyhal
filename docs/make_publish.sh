@@ -28,7 +28,6 @@ mkdir ${BUILD_FOLDER}  # prepare build folder
 
 epydoc --config epydoc/Epydoc_html  # make docs
 mv ${OUTPUT_FOLDER} ${BUILD_FOLDER}  # move to build folder
-cd ..  # to root folder
 
 git checkout gh-pages  # change branch (to publish docs)
 mv ${BUILD_FOLDER}/* .
