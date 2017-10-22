@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # coding: utf_8
 
-# Copyright 2016 Stefano Fogarollo
+# Copyright 2016-2018 Stefano Fogarollo
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,22 +21,22 @@ DOCS_FOLDER="docs/"
 BUILD_FOLDER="build/"
 COMMIT_MSG=$(git log -1 --pretty=%B)  # last commit message
 
-echo "<<<<    CLEANING    >>>>"
+echo "\n\n<<<<    CLEANING    >>>>\n\n"
 rm -rf ${OUTPUT_FOLDER}  # clean
 rm -rf ${BUILD_FOLDER}
 mkdir ${BUILD_FOLDER}  # prepare build folder
 
-echo "<<<<    GENERATING DOCS    >>>>"
+echo "\n\n<<<<    GENERATING DOCS    >>>>\n\n"
 epydoc --config epydoc/Epydoc_html  # make docs
 mv ${OUTPUT_FOLDER}* ${BUILD_FOLDER}  # move to build folder
 
-echo "<<<<    MOVING TO GH-PAGES    >>>>"
+echo "\n\n<<<<    MOVING TO GH-PAGES    >>>>\n\n"
 git checkout gh-pages  # change branch (to publish docs)
 mv ${BUILD_FOLDER}* ../
 
 rm -rf ${BUILD_FOLDER}  # clean
 
-echo "<<<<    COMMITTING    >>>>"
+echo "\n\n<<<<    COMMITTING    >>>>\n\n"
 git add --all
 git commit -m "${COMMIT_MSG} (generated docs)"
 git push origin gh-pages
