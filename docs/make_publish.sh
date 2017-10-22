@@ -17,6 +17,7 @@
 
 
 OUTPUT_FOLDER="epydoc/html/"
+DOCS_FOLDER="docs/"
 BUILD_FOLDER="build"
 COMMIT_MSG=$(git log -1 --pretty=%B)  # last commit message
 COMMIT_MSG="${COMMIT_MSG} | generated docs"  # last commit message
@@ -30,10 +31,10 @@ mv ${OUTPUT_FOLDER} ${BUILD_FOLDER}  # move to build folder
 cd ..  # to root folder
 
 git checkout gh-pages  # change branch (to publish docs)
-git checkout master "docs/"${BUILD_FOLDER}  # publish docs at root folder
 mv ${BUILD_FOLDER}/* .
 
-rm -rf ${BUILD_FOLDER}  # clean
+rm -rf ${DOCS_FOLDER}  # clean
 
 git add --all
 git commit -m ${COMMIT_MSG}
+git push origin gh-pages
