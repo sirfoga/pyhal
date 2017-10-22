@@ -29,5 +29,10 @@ mv ${OUTPUT_FOLDER}* ${BUILD_FOLDER}  # move to build folder
 
 git checkout gh-pages  # change branch (to publish docs)
 git checkout master ${BUILD_FOLDER}  # publish docs at root folder
+mv ${BUILD_FOLDER} ../
+
+rm -rf ${OUTPUT_FOLDER}  # clean
+rm -rf ${BUILD_FOLDER}
+
 git add --all
 git commit -m "${COMMIT_MSG} | generated docs"
