@@ -1,4 +1,4 @@
-# !/usr/bin/env bash
+#!/usr/bin/env bash
 # coding: utf_8
 
 # Copyright 2016 Stefano Fogarollo
@@ -22,7 +22,7 @@ epydoc --config epydoc/Epydoc_html  # epydoc docs
 epydoc --config epydoc/Epydoc_latex
 epydoc --config epydoc/Epydoc_pdf
 
-cd sphinx  # sphunx docs
+cd sphinx  # sphinx docs
 make html
 make latex
 cd _build/latex && make  # compile latex
