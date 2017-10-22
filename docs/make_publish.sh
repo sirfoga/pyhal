@@ -20,7 +20,7 @@ OUTPUT_FOLDER="epydoc/html/"
 DOCS_FOLDER="docs/"
 BUILD_FOLDER="build/"
 COMMIT_MSG=$(git log -1 --pretty=%B)  # last commit message
-COMMIT_MSG="${COMMIT_MSG} | generated docs"  # last commit message
+COMMIT_MSG="${COMMIT_MSG} >> generated docs"  # last commit message
 
 rm -rf ${OUTPUT_FOLDER}  # clean
 rm -rf ${BUILD_FOLDER}
