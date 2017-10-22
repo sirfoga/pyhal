@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+### 4.7.3 - 2017-10-22
+
+### Added
+- app cron lock, notifications utils, internet utils
+
 ### 4.7.2 - 2017-10-22
 
 ### Added
