@@ -24,16 +24,15 @@ from oauth2client import client
 from oauth2client import tools
 from oauth2client.file import Storage
 
-# app settings
-APP_NAME = "Happy Birthday sender + Cake reminder"
-APP_ORGANIZATION_WEBSITE = "www.raceup.it"
-
 
 class GoogleApiOAuth(object):
-    def __init__(self, scope, app_secrets_path, user_credentials_path):
+    def __init__(self, scope, app_name, app_secrets_path,
+                 user_credentials_path):
         """
         :param scope: string
             scope of api
+        :param app_name: str
+            Name of app to display
         :param app_secrets_path: string
             path to app secrets
         :param user_credentials_path: string
@@ -43,6 +42,7 @@ class GoogleApiOAuth(object):
         object.__init__(self)
 
         self.scope = str(scope)
+        self.app_name = str(app_name)
         self.app_secrets = str(app_secrets_path)
         self.user_credentials = str(user_credentials_path)
         self.store = Storage(user_credentials_path)
@@ -55,7 +55,7 @@ class GoogleApiOAuth(object):
 
         flow = client.flow_from_clientsecrets(self.app_secrets,
                                               self.scope)  # perform OAuth2.0 authorization flow.
-        flow.user_agent = APP_NAME
+        flow.user_agent = self.app_name
         return tools.run_flow(flow, self.store)
 
     def get_user_credentials(self):
@@ -104,8 +104,10 @@ class GoogleApiOAuth(object):
 
 
 class GMailApiOAuth(GoogleApiOAuth):
-    def __init__(self, client_secrets_file, oauth_path):
+    def __init__(self, app_name, client_secrets_file, oauth_path):
         """
+        :param app_name: str
+            Name of app to display
         :param client_secrets_file: str
             Path to client_secret.json file
         :param oauth_path: str
@@ -115,6 +117,7 @@ class GMailApiOAuth(GoogleApiOAuth):
         GoogleApiOAuth.__init__(
             self,
             "https://www.googleapis.com/auth/gmail.send",  # scope
+            app_name,
             os.path.join(client_secrets_file),  # app secrets
             os.path.join(oauth_path),  # user credential
         )
