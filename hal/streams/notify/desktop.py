@@ -15,7 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-""" Sends desktop notifications with notify-send tool """
+""" Sends desktop notify with notify-send tool """
 
 import subprocess
 
@@ -27,7 +27,7 @@ def send_notification(app_name, message):
     :param message: str
         Details of app to show
     :return: void
-        Shows notifications to screen
+        Shows notify to screen
     """
 
     subprocess.call([

@@ -11,4 +11,4 @@ install:
 script:
   - "coveralls"
 notifications:
-  email: "false"  # no email notifications
+  email: "false"  # no email notify
