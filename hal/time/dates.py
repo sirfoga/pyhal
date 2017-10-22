@@ -105,4 +105,19 @@ def is_date_in_between(date, start, end):
         True iff date is in between dates
     """
 
-    return get_just_date(start) <= get_just_date(date) <= get_just_date(end)
+    return get_just_date(start) <= get_just_date(date) < get_just_date(end)
+
+
+def is_in_this_week(date):
+    """
+    :param date: datetime
+        Date
+    :return: bool
+        True iff date is in this week (from sunday to sunday)
+    """
+
+    return is_date_in_between(
+        get_just_date(date),
+        get_last_weekday(Weekday.SUNDAY, including_today=True),
+        get_next_weekday(Weekday.SUNDAY)
+    )
