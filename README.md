@@ -134,7 +134,7 @@ Browse extra examples here:
 - you can browse the [html](docs/doxygen/html/index.html) (or if you prefer the [epydoc docs](docs/epydoc/html/index.html))
 - there is also the [pdf](docs/doxygen/pdf/api.pdf) version (for the epydoc pdfs go [here](docs/epydoc/pdf)
 - download the repository and open the [sphinx](docs/sphinx/_build/html/index.html) documentation
-- read online at the official [readthedocs](http://pyhal.readthedocs.io) web-page
+- read online at the official [readthedocs](http://pyhal.readthedocs.io) web-page or the [official Github pages](https://sirfoga.github.io/pyhal/).
 
 
 ## Questions and issues

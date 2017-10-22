@@ -16,6 +16,8 @@
 # limitations under the License.
 
 
+""" Authenticate your Google APIs """
+
 import os
 
 import httplib2
