@@ -34,6 +34,21 @@ class Weekday(Enum):
     SUNDAY = 6
 
 
+def get_just_date(date):
+    """
+    :param date: datetime
+        Date with possible hours
+    :return: date
+        Just day, month and year (setting hours to 00:00:00)
+    """
+
+    return datetime.datetime(
+        date.year,
+        date.month,
+        date.day
+    )
+
+
 def get_next_weekday(weekday):
     """
     :param weekday: Weekday
@@ -43,10 +58,28 @@ def get_next_weekday(weekday):
     """
 
     now = datetime.datetime.now()
-    if now.weekday() == weekday:
-        return now + datetime.timedelta(days=7)
+    if now.weekday() == weekday.value:
+        delta = datetime.timedelta(days=7)
+    else:
+        delta = datetime.timedelta(
+            (7 + weekday.value - now.weekday()) % 7
+        )  # time delta to next instance
+    return get_just_date(now + delta)
 
-    t = datetime.timedelta(
-        (7 + weekday.value - now.weekday()) % 7
-    )  # time delta to next instance
-    return now + t
+
+def get_last_weekday(weekday):
+    """
+    :param weekday: Weekday
+        Weekday to get
+    :return: datetime
+        Date of next monday, tuesday ...
+    """
+
+    now = datetime.datetime.now()
+    if now.weekday() == weekday.value:
+        delta = - datetime.timedelta(days=7)
+    else:
+        delta = datetime.timedelta(
+            - now.weekday() + weekday.value
+        )  # time D to last sunday
+    return get_just_date(now + delta)
