@@ -72,7 +72,10 @@ setup(
         "scipy",
         "send2trash",
         "sklearn",
-        "statsmodels"
+        "statsmodels",
+        "httplib2",
+        "googleapiclient",
+        "oauth2client"
     ],
     test_suite="tests"
 )

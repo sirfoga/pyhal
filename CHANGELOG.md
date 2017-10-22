@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+### 4.7.1 - 2017-10-22
+
+### Added
+- google authenticator (gmail module)
+
 ### 4.7 - 2017-09-24
 
 ### Added
