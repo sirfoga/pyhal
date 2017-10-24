@@ -87,9 +87,14 @@ def get_last_weekday(weekday, including_today=False):
     elif now.weekday() == weekday.value and not including_today:
         delta = - datetime.timedelta(days=7)
     else:
-        delta = - datetime.timedelta(
-            now.weekday() + (7 - weekday.value)
-        )  # time D to last sunday
+        if now.weekday() > weekday.value:
+            delta = - datetime.timedelta(
+                now.weekday() - weekday.value
+            )  # time delta
+        else:
+            delta = - datetime.timedelta(
+                now.weekday() + (7 - weekday.value)
+            )  # time delta
     return get_just_date(now + delta)
 
 
