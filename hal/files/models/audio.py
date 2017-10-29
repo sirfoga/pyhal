@@ -41,7 +41,7 @@ class MP3Song(FileSystem):
 
     # setters
 
-    def set_name(self, name):
+    def set_title(self, name):
         """
         :param name: str
             Song's title
@@ -109,13 +109,18 @@ class MP3Song(FileSystem):
 
     # getters
 
-    def get_name(self):
+    def get_title(self):
         """
         :return: str
             Gets song's title
         """
 
-        return self.tags.get("TIT2").text[0]
+        try:
+            return self.tags.get("TIT2").text[0]
+        except Exception as e:
+            print("Cannot find attribute 'title' in song")
+            print(e)
+            return None
 
     def get_artist(self):
         """
@@ -123,7 +128,12 @@ class MP3Song(FileSystem):
             Gets song's artist
         """
 
-        return self.tags.get("TPE1").text[0]
+        try:
+            return self.tags.get("TPE1").text[0]
+        except Exception as e:
+            print("Cannot find attribute 'artist' in song")
+            print(e)
+            return None
 
     def get_album(self):
         """
@@ -131,7 +141,12 @@ class MP3Song(FileSystem):
             Gets song's albu
         """
 
-        return self.tags.get("TALB").text[0]
+        try:
+            return self.tags.get("TALB").text[0]
+        except Exception as e:
+            print("Cannot find attribute 'album' in song")
+            print(e)
+            return None
 
     def get_nr_track(self):
         """
@@ -139,7 +154,12 @@ class MP3Song(FileSystem):
             Gets song's track number
         """
 
-        return self.tags.get("TRCK").text[0]
+        try:
+            return self.tags.get("TRCK").text[0]
+        except Exception as e:
+            print("Cannot find attribute '# track' in song")
+            print(e)
+            return None
 
     def get_year(self):
         """
@@ -147,7 +167,12 @@ class MP3Song(FileSystem):
             Gets song's year
         """
 
-        return self.tags.get("TDRC").text[0]
+        try:
+            return self.tags.get("TDRC").text[0]
+        except Exception as e:
+            print("Cannot find attribute 'year' in song")
+            print(e)
+            return None
 
     def get_genre(self):
         """
@@ -155,4 +180,9 @@ class MP3Song(FileSystem):
             Gets song's genre
         """
 
-        return self.tags.get("TCON").text[0]
+        try:
+            return self.tags.get("TCON").text[0]
+        except Exception as e:
+            print("Cannot find attribute 'genre' in song")
+            print(e)
+            return None

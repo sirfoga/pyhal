@@ -151,14 +151,6 @@ class Document(FileSystem):
 
         return self.extension.lower() in AUDIO_FORMAT
 
-    def is_hidden(self):
-        """
-        :return: bool
-            True iff path is hidden
-        """
-
-        return self.name.startswith(".")
-
 
 class Directory(FileSystem):
     """ Folder of a OS """

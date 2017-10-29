@@ -23,8 +23,6 @@ import re
 
 from send2trash import send2trash
 
-from hal.files.models.files import Document
-
 BAD_CHARS = [
     ".", ":", "\"", "’", "&", "720p", "1080p", "yify", ",", "brrip", "bluray",
     "Bokutox", "x264", "[", "]", "sparks", "h264",
@@ -206,7 +204,7 @@ def ls_dir(path, include_hidden=False):
 
     lst = []
     for file in os.listdir(path):
-        hidden_file = Document(file).is_hidden()
+        hidden_file = FileSystem(file).is_hidden()
         if (hidden_file and include_hidden) or (not hidden_file):
             lst.append(os.path.join(path, file))
     return lst
@@ -224,7 +222,7 @@ def ls_recurse(path, include_hidden=False):
 
     lst = []
     for file in os.listdir(path):
-        hidden_file = Document(file).is_hidden()
+        hidden_file = FileSystem(file).is_hidden()
         if (hidden_file and include_hidden) or (not hidden_file):
             lst.append(os.path.join(path, file))
             if os.path.isdir(os.path.join(path, file)):
@@ -265,6 +263,14 @@ class FileSystem(object):
 
         self.path = fix_raw_path(path)
         self.name, self.extension = os.path.splitext(self.path)
+
+    def is_hidden(self):
+        """
+        :return: bool
+            True iff path is hidden
+        """
+
+        return self.name.startswith(".")
 
     def is_archive_mac(self):
         """
