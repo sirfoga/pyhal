@@ -41,8 +41,6 @@ class MP3Song(FileSystem):
             MP3(path)
             return True
         except Exception as e:
-            print("Given song '", path, "' is not MP3 encoded")
-            print(e)
             return False
 
     def __init__(self, path):
