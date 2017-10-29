@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 
 
+### 4.7.6 - 2017-10-29
+
+### Added
+- song utils
+
 ### 4.7.5 - 2017-10-29
 
 ### Refactor
