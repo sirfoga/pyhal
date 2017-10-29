@@ -113,7 +113,7 @@ class Document(FileSystem):
             Name of path, name of file (or folder)
         """
 
-        path = self.fix_raw_path(os.path.dirname(os.path.abspath(self.path)))
+        path = fix_raw_path(os.path.dirname(os.path.abspath(self.path)))
         name = os.path.basename(self.path)
         return path, name
 
