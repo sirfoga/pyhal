@@ -39,7 +39,7 @@ rm -rf ${BUILD_FOLDER}  # clean
 echo "\n\n<<<<    COMMITTING    >>>>\n\n"
 git add --all
 git commit -m "${COMMIT_MSG} (generated docs)"
-git push origin gh-pages
+# git push origin gh-pages
 
 echo "\n\n<<<<    GETTING BACK TO MASTER    >>>>\n\n"
 git checkout master

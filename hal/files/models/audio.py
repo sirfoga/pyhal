@@ -28,6 +28,23 @@ from hal.files.models.system import FileSystem
 class MP3Song(FileSystem):
     """ mp3 song """
 
+    @staticmethod
+    def is_valid_mp3(path):
+        """
+        :param path: str
+            Path to candidate .mp3 song
+        :return: bool
+            True iff song is MP3 encoded
+        """
+
+        try:
+            MP3(path)
+            return True
+        except Exception as e:
+            print("Given song '", path, "' is not MP3 encoded")
+            print(e)
+            return False
+
     def __init__(self, path):
         """
         :param path: str
