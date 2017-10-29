@@ -22,26 +22,27 @@ LOCAL_DOCS_FOLDER="$HOME/Coding/Python/docs/pyhal"
 BUILD_FOLDER="build/"
 COMMIT_MSG=$(git log -1 --pretty=%B)  # last commit message
 
-echo "\n\n<<<<    CLEANING    >>>>\n\n"
+echo "        <<<<    CLEANING    >>>>"
 rm -rf ${OUTPUT_FOLDER}  # clean
 rm -rf ${BUILD_FOLDER}
 rm -rf ${LOCAL_DOCS_FOLDER}
 mkdir ${BUILD_FOLDER}  # prepare build folder
+mkdir ${LOCAL_DOCS_FOLDER}
 
-echo "\n\n<<<<    GENERATING DOCS    >>>>\n\n"
+echo "        <<<<    GENERATING DOCS    >>>>"
 epydoc --config epydoc/Epydoc_html  # make docs
 cp ${OUTPUT_FOLDER}* ${LOCAL_DOCS_FOLDER}  # copy docs
 mv ${OUTPUT_FOLDER}* ${BUILD_FOLDER}  # move to build folder
 
-echo "\n\n<<<<    MOVING TO GH-PAGES    >>>>\n\n"
+echo "        <<<<    MOVING TO GH-PAGES    >>>>"
 git checkout gh-pages  # change branch (to publish docs)
 mv ${BUILD_FOLDER}* ../
 
 rm -rf ${BUILD_FOLDER}  # clean
 
-echo "\n\n<<<<    COMMITTING    >>>>\n\n"
+echo "        <<<<    COMMITTING    >>>>"
 git add --all
 git commit -m "${COMMIT_MSG} (generated docs)"
 
-echo "\n\n<<<<    GETTING BACK TO MASTER    >>>>\n\n"
+echo "        <<<<    GETTING BACK TO MASTER    >>>>"
 git checkout master
