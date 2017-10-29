@@ -94,9 +94,9 @@ class UserInput(object):
         if with_help:
             self.show_help()
 
-        return self.get_raw_answer(self.last_question)
+        return self.get_answer(self.last_question)
 
-    def get_raw_answer(self, question):
+    def get_answer(self, question):
         """
         :param question: str
             Question to ask user
@@ -108,7 +108,7 @@ class UserInput(object):
         user_answer = input(self.last_question)
         return user_answer.strip()
 
-    def get_yn_answer(self, question):
+    def get_yes_no(self, question):
         """
         :param question: str
             Question to ask user
@@ -116,7 +116,7 @@ class UserInput(object):
             User answer
         """
 
-        user_answer = self.get_raw_answer(question).lower()
+        user_answer = self.get_answer(question).lower()
         if user_answer in self.YES:
             return True
 
@@ -133,22 +133,46 @@ class UserInput(object):
 
         if self.interactive:
             self.show_help()
-            self.get_yn_answer(self.last_question)
+            self.get_yes_no(self.last_question)
         else:
             return False
 
-    def get_int_answer(self, question):
+    def get_number(self, question,
+                   min_i=float("-inf"), max_i=float("inf"), just_these=None):
         """
         :param question: str
             Question to ask
+        :param min_i: float
+            Min acceptable number
+        :param max_i: float
+            Max acceptable number
+        :param just_these: [] of float
+            Accept only these numbers
         :return: int
             User answer
         """
 
+        user_question = question
+        user_question += " [min is " + str(min_i)
+        user_question += " | max is " + str(max_i) + "]"
+
         try:
-            user_answer = self.get_raw_answer(question)
-            return int(user_answer)
+            user_answer = self.get_answer(user_question)
+            user_answer = float(user_answer)
+            if min_i < user_answer < max_i:
+                if just_these:
+                    if user_answer in just_these:
+                        return user_answer
+                    else:
+                        exc = "Number cannot be accepted. Just these: "
+                        exc += str(just_these)
+                        raise Exception(exc)
+                else:
+                    return user_answer
+            else:
+                exc = "Number is not within limits. "
+                exc += "Min is " + str(min_i) + ". Max is " + str(max_i) + ""
+                raise Exception(exc)
         except Exception as e:
-            print("Int not properly formatted")
             print(str(e))
-            self.get_int_answer(self.last_question)
+            self.get_number(self.last_question)
