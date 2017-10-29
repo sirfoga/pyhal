@@ -71,6 +71,24 @@ class MP3Song(FileSystem):
         self.song = MP3(self.path, ID3=ID3)
         self.tags = self.song.tags
 
+    def get_details(self):
+        """
+        :return: {}
+            Dictionary with songs details about title, artist, album and year
+        """
+
+        title = str(self.get_title()).strip()
+        artist = str(self.get_artist()).strip()
+        album = str(self.get_album()).strip()
+        year = str(self.get_year()).strip()
+
+        return {
+            "title": title,
+            "artist": artist,
+            "album": album,
+            "year": year
+        }
+
     # setters
 
     def set_title(self, name):
