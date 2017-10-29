@@ -23,6 +23,23 @@ from mutagen.id3._frames import TIT2, TPE1, TALB, TRCK, TDRC, TCON
 from mutagen.mp3 import MP3
 
 from hal.files.models.system import FileSystem
+from hal.files.models.system import list_content
+
+
+def find_songs(folder, recursive):
+    """
+    :param folder: str
+        Path
+    :param recursive: bool
+        True iff want to search recursively
+    :return: generator of MP3Song
+        List of paths of the songs in folder
+    """
+
+    paths = list_content(folder, recursive)
+    for p in paths:
+        if MP3Song.is_valid_mp3(p):
+            yield MP3Song(p)
 
 
 class MP3Song(FileSystem):
