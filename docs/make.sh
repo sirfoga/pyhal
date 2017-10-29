@@ -32,7 +32,7 @@ mkdir ${LOCAL_DOCS_FOLDER}
 echo "        <<<<    GENERATING DOCS    >>>>"
 epydoc --config epydoc/Epydoc_html  # make docs
 mv ${OUTPUT_FOLDER}* ${BUILD_FOLDER}  # move to build folder
-cp ${BUILD_FOLDER}* ${LOCAL_DOCS_FOLDER}
+cp -r ${BUILD_FOLDER} ${LOCAL_DOCS_FOLDER}
 
 echo "        <<<<    MOVING TO GH-PAGES    >>>>"
 git checkout gh-pages  # change branch (to publish docs)
