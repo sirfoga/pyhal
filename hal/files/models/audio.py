@@ -39,6 +39,8 @@ class MP3Song(FileSystem):
         self.song = MP3(self.path, ID3=ID3)
         self.tags = self.song.tags
 
+    # setters
+
     def set_name(self, name):
         """
         :param name: str
@@ -104,3 +106,53 @@ class MP3Song(FileSystem):
 
         self.tags.add(TCON(encoding=3, text=str(genre)))
         self.song.save()
+
+    # getters
+
+    def get_name(self):
+        """
+        :return: str
+            Gets song's title
+        """
+
+        return self.tags.get("TIT2").text[0]
+
+    def get_artist(self):
+        """
+        :return: str
+            Gets song's artist
+        """
+
+        return self.tags.get("TPE1").text[0]
+
+    def get_album(self):
+        """
+        :return: str
+            Gets song's albu
+        """
+
+        return self.tags.get("TALB").text[0]
+
+    def get_nr_track(self):
+        """
+        :return: str
+            Gets song's track number
+        """
+
+        return self.tags.get("TRCK").text[0]
+
+    def get_year(self):
+        """
+        :return: str
+            Gets song's year
+        """
+
+        return self.tags.get("TDRC").text[0]
+
+    def get_genre(self):
+        """
+        :return: str
+            Gets song's genre
+        """
+
+        return self.tags.get("TCON").text[0]

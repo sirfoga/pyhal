@@ -7,6 +7,9 @@ All notable changes to this project will be documented in this file.
 ### Refactor
 - file models in `audio`, `files` and `system` packages
 
+### Added
+- getters in mp3 audio
+
 ### 4.7.4 - 2017-10-22
 
 ### Added
