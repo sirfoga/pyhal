@@ -55,6 +55,24 @@ def how_similar_dicts(d1, d2):
     return np.mean(values)  # average
 
 
+def get_max_similar(string, lst):
+    """
+    :param string: str
+        String to find
+    :param lst: [] of str
+        Strings available
+    :return: (float, int)
+        Max similarity and index of max similar
+    """
+
+    max_similarity, index = 0.0, -1
+    for i, candidate in enumerate(lst):
+        sim = how_similar_are(str(string), str(candidate))
+        if sim > max_similarity:
+            max_similarity, index = sim, i
+    return max_similarity, index
+
+
 def get_average_length_of_word(words):
     """
     :param words: [] of str
