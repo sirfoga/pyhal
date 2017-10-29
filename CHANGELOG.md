@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+
+### 4.7.5 - 2017-10-29
+
+### Refactor
+- file models in `audio`, `files` and `system` packages
+
 ### 4.7.4 - 2017-10-22
 
 ### Added
