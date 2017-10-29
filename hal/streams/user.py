@@ -148,17 +148,14 @@ class UserInput(object):
             Max acceptable number
         :param just_these: [] of float
             Accept only these numbers
-        :return: int
+        :return: float
             User answer
         """
 
-        user_question = question
-        user_question += " [min is " + str(min_i)
-        user_question += " | max is " + str(max_i) + "]"
-
         try:
-            user_answer = self.get_answer(user_question)
+            user_answer = self.get_answer(question)
             user_answer = float(user_answer)
+
             if min_i < user_answer < max_i:
                 if just_these:
                     if user_answer in just_these:
@@ -175,4 +172,45 @@ class UserInput(object):
                 raise Exception(exc)
         except Exception as e:
             print(str(e))
-            self.get_number(self.last_question)
+            self.get_number(
+                self.last_question,
+                min_i=min_i,
+                max_i=max_i,
+                just_these=just_these
+            )
+
+    def get_list(self, question,
+                 splitter=",", at_least=0, at_most=float("inf")):
+        """
+        :param question: str
+            Question to ask user
+        :param splitter: str
+            Split list elements with this char/str
+        :param at_least: int
+            List must have at least this amount of elements
+        :param at_most: int
+            List must have at most this amount of elements
+        :return: []
+            User answer
+        """
+
+        try:
+            user_answer = self.get_answer(question)  # ask question
+            user_answer = user_answer.split(splitter)  # split items
+            user_answer = [str(item).strip() for item in user_answer]  # strip
+
+            if at_least < len(user_answer) < at_most:
+                return user_answer
+            else:
+                exc = "List is not correct. "
+                exc += "There must be at least " + str(at_least) + " items, "
+                exc += "and at most " + str(at_most) + ". "
+                exc += "Use '" + str(splitter) + "' to separate items"
+                raise Exception(exc)
+        except Exception as e:
+            print(str(e))
+            self.get_list(
+                self.last_question,
+                at_least=at_least,
+                at_most=at_most
+            )

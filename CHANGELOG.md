@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 ### 4.7.6 - 2017-10-29
 
 ### Added
-- song utils
+- user input handler
 
 ### 4.7.5 - 2017-10-29
 
@@ -14,6 +14,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - getters in mp3 audio
+- song utils
 
 ### 4.7.4 - 2017-10-22
 
