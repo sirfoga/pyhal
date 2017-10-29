@@ -18,16 +18,19 @@
 
 OUTPUT_FOLDER="epydoc/html/"
 DOCS_FOLDER="docs/"
+LOCAL_DOCS_FOLDER="$HOME/Coding/Python/docs/pyhal"
 BUILD_FOLDER="build/"
 COMMIT_MSG=$(git log -1 --pretty=%B)  # last commit message
 
 echo "\n\n<<<<    CLEANING    >>>>\n\n"
 rm -rf ${OUTPUT_FOLDER}  # clean
 rm -rf ${BUILD_FOLDER}
+rm -rf ${LOCAL_DOCS_FOLDER}
 mkdir ${BUILD_FOLDER}  # prepare build folder
 
 echo "\n\n<<<<    GENERATING DOCS    >>>>\n\n"
 epydoc --config epydoc/Epydoc_html  # make docs
+cp ${OUTPUT_FOLDER}* ${LOCAL_DOCS_FOLDER}  # copy docs
 mv ${OUTPUT_FOLDER}* ${BUILD_FOLDER}  # move to build folder
 
 echo "\n\n<<<<    MOVING TO GH-PAGES    >>>>\n\n"
@@ -39,7 +42,6 @@ rm -rf ${BUILD_FOLDER}  # clean
 echo "\n\n<<<<    COMMITTING    >>>>\n\n"
 git add --all
 git commit -m "${COMMIT_MSG} (generated docs)"
-# git push origin gh-pages
 
 echo "\n\n<<<<    GETTING BACK TO MASTER    >>>>\n\n"
 git checkout master

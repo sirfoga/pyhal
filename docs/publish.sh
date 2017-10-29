@@ -16,14 +16,11 @@
 # limitations under the License.
 
 
-doxygen doxygen/Doxyfile  # doxygen docs
+bash make.sh
 
-epydoc --config epydoc/Epydoc_html  # epydoc docs
-epydoc --config epydoc/Epydoc_latex
-epydoc --config epydoc/Epydoc_pdf
+echo "\n\n<<<<    MOVING TO GH-PAGES    >>>>\n\n"
+git checkout gh-pages  # change branch (to publish docs)
+git push origin gh-pages
 
-cd sphinx  # sphinx docs
-make html
-make latex
-cd _build/latex && make  # compile latex
-cd _build/html && make  # compile html
+echo "\n\n<<<<    GETTING BACK TO MASTER    >>>>\n\n"
+git checkout master
