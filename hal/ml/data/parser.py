@@ -24,12 +24,12 @@ import csv
 class Parser(object):
     """ Mother of all data-files parsers """
 
-    def __init__(self, database_file):
-        """ :param database_file: a raw .csv file that contains any data
+    def __init__(self, file_path):
+        """ :param file_path: a raw .csv file that contains any data
         about anything """
 
         object.__init__(self)
-        self.database_file = database_file
+        self.path = file_path
         self.lines = self.get_lines()  # list of lines in database
 
     def get_lines(self):
@@ -38,7 +38,7 @@ class Parser(object):
             Lines in file
         """
 
-        with open(self.database_file) as data:
+        with open(self.path) as data:
             self.lines = data.readlines()  # store data in arrays
         return self.lines
 
@@ -46,46 +46,44 @@ class Parser(object):
 class CSVParser(Parser):
     """ Parses CSV data files """
 
-    def __init__(self, database_file):
-        """ :param database_file: a raw .csv file that contains any data
-        about anything """
+    def __init__(self, file_path):
+        """
+        :param file_path: a raw .csv file that contains any data
+            about anything
+        """
 
-        Parser.__init__(self, database_file)
-        self.data = []
+        Parser.__init__(self, file_path)
 
-    def parse_data(self):
-        """ store values in array, store lines in array; the result is a 2D
-        matrix """
+    def get_matrix(self):
+        """
+        :return: store values in array, store lines in array. The result is
+            a 2D matrix
+        """
 
-        with open(self.database_file) as csv_file:
+        data = []
+        with open(self.path) as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=",", quotechar="\"")
             for row in csv_reader:
-                self.data.append(row)
+                data.append(row)
 
-        return self.data
+        return data
 
+    def get_headers_data(self):
+        """
+        :return: tuple [], [] of []
+            headers of csv file and data
+        """
 
-def parse_csv_file(file_path):
-    """
-    :param file_path: str
-        Path to file to parse
-    :return: tuple [], [] of []
-        headers of csv file and data
-    """
+        data = self.get_matrix()
+        return data[0], data[1:]  # headers, data
 
-    raw_data = CSVParser(file_path).parse_data()
-    return raw_data[0], raw_data[1:]  # headers, data
+    def get_dicts(self):
+        """
+        :return: (generator of) [] of {}
+            List of dicts with data from .csv file
+        """
 
-
-def get_list_of_dict_from_csv(file_path):
-    """
-    :param file_path: str
-        Path to file to parse
-    :return: (generator of) [] of {}
-        List of dicts with data from .csv file
-    """
-
-    reader = csv.DictReader(open(file_path, "r"))
-    for row in reader:
-        if row:
-            yield row
+        reader = csv.DictReader(open(self.path, "r"))
+        for row in reader:
+            if row:
+                yield row
