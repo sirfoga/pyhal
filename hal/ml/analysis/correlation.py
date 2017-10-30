@@ -18,15 +18,15 @@
 """ Correlate values in arrays producing fancy good-looking matrices """
 
 import os
+from time import time
 
 import numpy as np
 from matplotlib import pyplot
 
 from hal.charts import correlation as cr_plot
 from hal.files.models import Document, FileSystem
-from hal.ml.data.parser import parse_csv_file
+from hal.files.parsers import parse_csv_file
 from hal.ml.utils.matrix import get_column_of_matrix
-from time import time
 
 
 def get_correlation_matrix(matrix):

@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 
 
+### 4.7.7 - 2017-10-30
+
+### Refactored
+- `CSVParser`
+
 ### 4.7.6 - 2017-10-29
 
 ### Added
