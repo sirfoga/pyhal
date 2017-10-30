@@ -192,6 +192,17 @@ def prettify(name, blank=" "):
     return name
 
 
+def is_file(path):
+    """
+    :param path: str
+        Path to check
+    :return: bool
+        True iff path is a file
+    """
+
+    return os.path.isfile(path)
+
+
 def ls_dir(path, include_hidden=False):
     """
     :param path: string
