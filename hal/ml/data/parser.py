@@ -75,3 +75,17 @@ def parse_csv_file(file_path):
 
     raw_data = CSVParser(file_path).parse_data()
     return raw_data[0], raw_data[1:]  # headers, data
+
+
+def get_list_of_dict_from_csv(file_path):
+    """
+    :param file_path: str
+        Path to file to parse
+    :return: (generator of) [] of {}
+        List of dicts with data from .csv file
+    """
+
+    reader = csv.DictReader(open(file_path, "r"))
+    for row in reader:
+        if row:
+            yield row
