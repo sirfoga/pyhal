@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - `write_dicts_to_json`
+- `JSONParser`
 
 ### 4.7.6 - 2017-10-29
 
