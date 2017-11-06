@@ -19,9 +19,10 @@
 """ Save various data to file """
 
 import csv
+import json
 
 
-def save_dicts_to_csv(dicts, output_file):
+def write_dicts_to_csv(dicts, output_file):
     """
     :param dicts: [] of {}
         Dictionaries with same values
@@ -39,7 +40,7 @@ def save_dicts_to_csv(dicts, output_file):
         dict_writer.writerows(dicts)
 
 
-def save_matrix_to_csv(headers, data, output_file):
+def write_matrix_to_csv(headers, data, output_file):
     """
     :param headers: [] of str
         Column names
@@ -55,3 +56,21 @@ def save_matrix_to_csv(headers, data, output_file):
         data_writer = csv.writer(out_file, delimiter=",")
         data_writer.writerow(headers)  # write headers
         data_writer.writerows(data)  # write all data
+
+
+def write_dicts_to_json(data, output_file):
+    """
+    :param data: list of {} or {}
+        Data to write
+    :param output_file: str
+        Path to output file
+    :return: void
+        Saves output file as .json
+    """
+
+    with open(output_file, "w") as out:
+        json.dump(
+            data,  # data
+            out,  # file handler
+            indent=4, sort_keys=True  # pretty print
+        )

@@ -7,6 +7,9 @@ All notable changes to this project will be documented in this file.
 ### Refactored
 - `CSVParser`
 
+### Added
+- `write_dicts_to_json`
+
 ### 4.7.6 - 2017-10-29
 
 ### Added
