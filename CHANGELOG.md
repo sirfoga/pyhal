@@ -11,6 +11,9 @@ All notable changes to this project will be documented in this file.
 - `write_dicts_to_json`
 - `JSONParser`
 
+### Fixed
+- bug in `UserInput` (not recognizing `YES` answer)
+
 ### 4.7.6 - 2017-10-29
 
 ### Added

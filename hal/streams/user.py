@@ -57,8 +57,8 @@ class UserInput(object):
             True iff considered a "yes" answer
         """
 
-        yes_sim, = get_max_similar(answer, self.YES)
-        no_sim, = get_max_similar(answer, self.NO)
+        yes_sim, _ = get_max_similar(answer, self.YES)
+        no_sim, _ = get_max_similar(answer, self.NO)
         return yes_sim > no_sim and yes_sim > self.THRESHOLD_INPUT
 
     def is_no(self, answer):
@@ -69,8 +69,8 @@ class UserInput(object):
             True iff considered a "yes" answer
         """
 
-        yes_sim, = get_max_similar(answer, self.YES)
-        no_sim, = get_max_similar(answer, self.NO)
+        yes_sim, _ = get_max_similar(answer, self.YES)
+        no_sim, _ = get_max_similar(answer, self.NO)
         return no_sim > yes_sim and no_sim > self.THRESHOLD_INPUT
 
     def show_help(self):
@@ -133,7 +133,7 @@ class UserInput(object):
 
         if self.interactive:
             self.show_help()
-            self.get_yes_no(self.last_question)
+            return self.get_yes_no(self.last_question)
         else:
             return False
 
