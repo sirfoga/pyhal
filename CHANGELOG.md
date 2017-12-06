@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file.
 
 
+### 4.7.8 - 2017-12-06
+
+### Fixed
+- malformed `Github API` url
+
+### Added
+- github email retriever
+
 ### 4.7.7 - 2017-10-30
 
 ### Refactored

@@ -45,7 +45,7 @@ DESCRIPTION = \
 
 setup(
     name="PyHal",
-    version="4.7.7",
+    version="4.7.8",
     author="sirfoga",
     author_email="sirfoga@protonmail.com",
     description="A multipurpose library to perform great stuff in the most "

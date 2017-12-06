@@ -23,28 +23,37 @@ import urllib.request
 
 from bs4 import BeautifulSoup
 
-GITHUB_URL_BASE = "https://github.com"
-API_TOKEN_FILE = "api_token"
-API_TOKEN = open(API_TOKEN_FILE).read().strip()
+GITHUB_URL = "https://github.com"
+API_URL = "https://api.github.com/"  # Github api url
 
 
 class GithubRawApi(object):
     """ Wrapper for generic Github API """
 
-    _API_URL_BASE = "https://api.github.com/"  # Github api url
+    _API_URL_TYPE = {
+        k: API_URL + k
+        for k in [
+        "users", "repos", "orgs", "authorizations", "gists", "feeds",
+        "search"
+    ]
+    }  # possible types of Github API
 
-    def __init__(self, url=_API_URL_BASE, get_api_content_now=False):
+    def __init__(self, url=API_URL, get_api_content_now=False,
+                 token=None):
         """
         :param url: str
             Url of API content to get
         :param get_api_content_now: bool
             True iff you want to get API content response when building object
+        :param token: str
+            Token to use for API call
         """
 
         object.__init__(self)
 
         self.api_url = url
         self.api_content = None
+        self.token = token
 
         if get_api_content_now:
             self._get_api_content()
@@ -72,8 +81,12 @@ class GithubRawApi(object):
         """
 
         api_content_request = urllib.request.Request(self.api_url)
-        api_content_request.add_header("Authorization", "token %s" % API_TOKEN)
-        api_content_request.add_header("User-Agent", "Github PyAPI")
+        if self.token is not None:
+            api_content_request.add_header("User-Agent", "Github PyAPI")
+            api_content_request.add_header(
+                "Authorization", "token %s" % self.token
+            )
+
         api_content_response = urllib.request.urlopen(
             api_content_request).read()
         self.api_content = json.loads(
@@ -83,23 +96,16 @@ class GithubRawApi(object):
 class GithubApi(GithubRawApi):
     """ Wrapper for generic Github API """
 
-    _API_URL_TYPE = {
-        "users": GithubRawApi._API_URL_BASE + "users/",
-        "repos": GithubRawApi._API_URL_BASE + "repos/",
-        "orgs": GithubRawApi._API_URL_BASE + "orgs/",
-        "authorizations": GithubRawApi._API_URL_BASE + "authorizations/",
-        "gists": GithubRawApi._API_URL_BASE + "gists/",
-        "feeds": GithubRawApi._API_URL_BASE + "feeds/",
-        "search": GithubRawApi._API_URL_BASE + "search/"
-    }  # possible types of Github API
-
     def __init__(self, api_type):
         """
         :param api_type: str
             Type of API to build
         """
 
-        super(GithubApi, self).__init__(GithubApi._API_URL_TYPE[api_type])
+        super(GithubApi, self).__init__(
+            url=GithubRawApi._API_URL_TYPE[api_type],
+            get_api_content_now=False
+        )
 
     @staticmethod
     def get_trending_daily(lang=""):
@@ -141,7 +147,26 @@ class GithubUser(GithubApi):
         super(GithubUser, self).__init__("users")
 
         self.username = str(username)
-        self.api_url += self.username
+        self.api_url += "/" + self.username
+
+    def get_email(self):
+        """
+        :return: str
+            Email of user
+        """
+
+        api_url = self.api_url + "/events/public"
+        api_content = GithubRawApi(
+            api_url,
+            get_api_content_now=True
+        ).api_content
+
+        try:
+            for event in api_content:
+                if event["type"] == "PushEvent":
+                    return event["payload"]["commits"][0]["author"]["email"]
+        except:
+            return None
 
     def get_repos(self):
         """
@@ -171,9 +196,11 @@ class GithubUser(GithubApi):
         while keep_finding:
             api_url = starred_url + "?page=" + str(
                 current_page)  # request starred list url with page number
-            api_driver = GithubRawApi(api_url,
-                                      True)  # driver to parse API content
-            for repo in api_driver.api_content:
+            api_driver = GithubRawApi(
+                api_url,
+                True
+            )  # driver to parse API content
+            for repo in api_driver:
                 repo_username = repo["owner"]["login"]
                 repo_name = repo["name"]
                 repos_list.append(
