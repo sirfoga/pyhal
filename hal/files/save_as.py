@@ -32,10 +32,11 @@ def write_dicts_to_csv(dicts, output_file):
         Saves .csv file with posts data
     """
 
-    csv_headers = dicts[0].keys()
+    csv_headers = sorted(dicts[0].keys())
     with open(output_file, "w") as out_file:  # write to file
-        dict_writer = csv.DictWriter(out_file, csv_headers, delimiter=",",
-                                     quotechar="\"")
+        dict_writer = csv.DictWriter(
+            out_file, csv_headers, delimiter=",", quotechar="\""
+        )
         dict_writer.writeheader()
         dict_writer.writerows(dicts)
 
