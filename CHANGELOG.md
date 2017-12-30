@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 
 
+### 4.7.9 - 2017-12-30
+
+### Added
+- tor sessions renewal
+
 ### 4.7.8 - 2017-12-06
 
 ### Fixed

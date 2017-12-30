@@ -20,16 +20,15 @@
 
 import random
 import re
-import socket
+import time
 import urllib.request
 import webbrowser
 from urllib.parse import urljoin
 
 import requests
-import socks
 from bs4 import BeautifulSoup
-
-import time
+from stem import Signal
+from stem.control import Controller
 
 CHROME_USER_AGENT = [
     "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.19 ("
@@ -133,19 +132,16 @@ def is_url(candidate_url):
 class Webpage(object):
     """ representation of URL (web page)"""
 
-    def __init__(self, url, using_tor=False):
+    def __init__(self, url):
         """
         :param url: string
             Url of webpage
-        :param using_tor: bool
-            Whether using tor or not to fetch source page
         """
 
         object.__init__(self)
 
         self.url = self.parse_url(url)
         self.domain = self.get_domain()
-        self.using_tor = using_tor
 
         self.source = None
         self.soup = None
@@ -195,31 +191,22 @@ class Webpage(object):
         return "{uri.scheme}://{uri.netloc}/".format(
             uri=urllib.request.urlparse(self.url))
 
-    def get_html_source(self, tor=False):
+    def get_html_source(self, to_json=False):
         """
         :return: str
             HTML source of webpage
         """
 
-        if tor:
-            try:
-                socks.setdefaultproxy(proxy_type=socks.PROXY_TYPE_SOCKS5,
-                                      addr="127.0.0.1", port=9050)
-                socket.socket = socks.socksocket
-                req_text = requests.get(self.url).text
-            except:
-                print(
-                    "To be able to fetch HTML source pages via Tor the "
-                    "following command is required:")
-                print("apt-get install tor && tor &")
-                req_text = ""
-        else:
-            req = urllib.request.Request(self.url)
-            req.add_header("user-agent", random.choice(CHROME_USER_AGENT))
-            req_text = urllib.request.urlopen(req).read()
+        req = urllib.request.Request(self.url)
+        req.add_header("user-agent", random.choice(CHROME_USER_AGENT))
+        raw_result = urllib.request.urlopen(req).read()
 
-        self.source = str(req_text)
-        self.soup = BeautifulSoup(self.source, "lxml")
+        if to_json:
+            self.source = raw_result.json()
+        else:
+            self.source = raw_result.text
+            self.soup = BeautifulSoup(self.source, "lxml")
+
         return self.source
 
     def get_links(self, recall, timeout):
@@ -293,3 +280,24 @@ def download_to_file(url, local_file, headers=APP_VALID_HEADERS, cookies=None,
         for chunk in req.iter_content(chunk_size):
             if chunk:
                 local_download.write(chunk)
+
+
+def get_tor_session():
+    session = requests.session()
+    # Tor uses the 9050 port as the default socks port
+    session.proxies = {
+        "http": "socks5://127.0.0.1:9050",
+        "https": "socks5://127.0.0.1:9050"
+    }
+    return session
+
+
+def renew_connection(password):
+    """
+    :return: void
+        signal TOR for a new connection
+    """
+
+    with Controller.from_port(port=9051) as controller:
+        controller.authenticate(password=password)
+        controller.signal(Signal.NEWNYM)

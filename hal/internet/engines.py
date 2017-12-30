@@ -75,7 +75,6 @@ class SearchEngine(object):
             Get HTML source of search page of given query.
         """
 
-        query_web_page = Webpage(self.url + self.parse_query(query),
-                                 using_tor=using_tor)
+        query_web_page = Webpage(self.url + self.parse_query(query))
         query_web_page.get_html_source(tor=using_tor)  # get html source
         return query_web_page.source

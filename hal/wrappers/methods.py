@@ -24,15 +24,15 @@ import sys
 import colorama
 
 
-def handle_exceptions(function):
+def handle_exceptions(func):
     """
-    :param function: callback function
+    :param func: callback function
         function to wrap
     :return: callback function return type
         wraps callback function
     """
 
-    @functools.wraps(function)
+    @functools.wraps(func)
     def _handle_exceptions(*args, **kwargs):
         """
         :param args: *
@@ -43,7 +43,7 @@ def handle_exceptions(function):
             handle exception of callback function
         """
 
-        function_name = function.__name__
+        function_name = func.__name__
         exception_string = \
             "name: " + function_name + "\n" + \
             "*args: " + str(args) + "\n" + \
@@ -52,7 +52,7 @@ def handle_exceptions(function):
         colorama.init()  # start color mode
 
         try:
-            return function(*args, **kwargs)
+            return func(*args, **kwargs)
         except KeyboardInterrupt:
             print(
                 colorama.Fore.RED + colorama.Style.BRIGHT + "\r[!] User "
