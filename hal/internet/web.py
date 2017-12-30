@@ -191,7 +191,7 @@ class Webpage(object):
         return "{uri.scheme}://{uri.netloc}/".format(
             uri=urllib.request.urlparse(self.url))
 
-    def get_html_source(self, to_json=False):
+    def get_html_source(self):
         """
         :return: str
             HTML source of webpage
@@ -199,14 +199,9 @@ class Webpage(object):
 
         req = urllib.request.Request(self.url)
         req.add_header("user-agent", random.choice(CHROME_USER_AGENT))
-        raw_result = urllib.request.urlopen(req).read()
-
-        if to_json:
-            self.source = raw_result.json()
-        else:
-            self.source = raw_result.text
-            self.soup = BeautifulSoup(self.source, "lxml")
-
+        req_text = urllib.request.urlopen(req).read()
+        self.source = str(req_text)
+        self.soup = BeautifulSoup(self.source, "lxml")
         return self.source
 
     def get_links(self, recall, timeout):
