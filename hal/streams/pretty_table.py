@@ -17,6 +17,9 @@
 
 """ Pretty prints table in SQL style """
 
+from pyparsing import Literal, Word, nums, Combine, Optional, delimitedList, \
+    alphas, oneOf, Suppress
+
 
 def get_optimal_column_widths(labels, data):
     """
@@ -29,8 +32,9 @@ def get_optimal_column_widths(labels, data):
     """
 
     columns = len(data[0])  # number of columns
-    str_labels = [str(l) for l in labels]  # labels as strings
-    str_data = [[str(col) for col in row] for row in data]  # values as strings
+    str_labels = [parse_colorama(str(l)) for l in labels]  # labels as strings
+    str_data = [[parse_colorama(str(col)) for col in row] for row in data]
+    # values as strings
 
     widths = [0] * columns  # length of longest string in each column
     for row in str_data:  # calculate max width in each column
@@ -60,7 +64,7 @@ def get_pretty_row(data, widths, filler, splitter):
 
     row = [str(d) for d in data]
     for i, val in enumerate(row):
-        length_diff = widths[i] - len(val)
+        length_diff = widths[i] - len(parse_colorama(val))
         if length_diff > 0:  # value is shorter than foreseen
             row[i] = str(filler * length_diff) + row[i]  # adjust content
     pretty_row = splitter  # start of row
@@ -131,3 +135,20 @@ def pretty_format_table(labels, data, line_separator="\n"):
         pretty_table += pretty_format_row(row, widths) + line_separator
     pretty_table += get_blank_row(widths)  # ending line
     return pretty_table
+
+
+def parse_colorama(text):
+    """
+    :param text: str
+        Colorama text to parse
+    :return: str
+        Parsed colorama text
+    """
+
+    esc_key = Literal('\x1b')
+    integer = Word(nums)
+    escape_seq = Combine(
+        esc_key + '[' + Optional(delimitedList(integer, ';')) +
+        oneOf(list(alphas)))
+    non_ansi_string = lambda s: Suppress(escape_seq).transformString(s)
+    return non_ansi_string(text)
