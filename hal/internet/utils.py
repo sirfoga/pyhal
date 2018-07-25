@@ -19,7 +19,27 @@
 """ Internet tools """
 
 import socket
+import urllib.parse as urlparse
+from urllib.parse import urlencode
+
 import time
+
+
+def add_params_to_url(url, params):
+    """
+    :param url: str
+        Url to add params to
+    :param params: {}
+        List of params to add to url
+    :return: void
+        Adds params to url
+    """
+
+    url_parts = list(urlparse.urlparse(url))  # get url parts
+    query = dict(urlparse.parse_qsl(url_parts[4]))  # get url query
+    query.update(params)  # add new params
+    url_parts[4] = urlencode(query)
+    return urlparse.urlunparse(url_parts)
 
 
 def is_internet_on(host="8.8.8.8", port=53, timeout=3):

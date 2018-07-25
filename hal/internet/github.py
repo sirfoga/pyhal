@@ -23,8 +23,15 @@ import urllib.request
 
 from bs4 import BeautifulSoup
 
+from internet.utils import add_params_to_url
+
 GITHUB_URL = "https://github.com"
 API_URL = "https://api.github.com/"  # Github api url
+GITHUB_TOKEN = None
+
+
+def get_token():
+    return GITHUB_TOKEN
 
 
 class GithubRawApi(object):
@@ -38,22 +45,22 @@ class GithubRawApi(object):
     ]
     }  # possible types of Github API
 
-    def __init__(self, url=API_URL, get_api_content_now=False,
-                 token=None):
+    def __init__(self, url=API_URL, url_params=None,
+                 get_api_content_now=False):
         """
         :param url: str
             Url of API content to get
         :param get_api_content_now: bool
             True iff you want to get API content response when building object
-        :param token: str
-            Token to use for API call
         """
 
         object.__init__(self)
 
         self.api_url = url
         self.api_content = None
-        self.token = token
+
+        if url_params:
+            self.add_params_to_url(url_params)
 
         if get_api_content_now:
             self._get_api_content()
@@ -81,16 +88,26 @@ class GithubRawApi(object):
         """
 
         api_content_request = urllib.request.Request(self.api_url)
-        if self.token is not None:
+        if GITHUB_TOKEN is not None:
             api_content_request.add_header("User-Agent", "Github PyAPI")
             api_content_request.add_header(
-                "Authorization", "token %s" % self.token
+                "Authorization", "token %s" % GITHUB_TOKEN
             )
 
-        api_content_response = urllib.request.urlopen(
-            api_content_request).read()
+        api_content_response = urllib.request.urlopen(api_content_request)
+        print(api_content_response)
         self.api_content = json.loads(
-            api_content_response.decode("utf-8"))  # parse response
+            api_content_response.read().decode("utf-8"))  # parse response
+
+    def add_params_to_url(self, params):
+        """
+        :param params: {}
+            List of params to add to url
+        :return: void
+            Adds params to url
+        """
+
+        self.api_url = add_params_to_url(self.api_url, params)
 
 
 class GithubApi(GithubRawApi):
@@ -175,8 +192,9 @@ class GithubUser(GithubApi):
         """
 
         user_repos_url = self["repos_url"]
-        api_driver = GithubRawApi(user_repos_url,
-                                  True)  # driver to parse API content
+        api_driver = GithubRawApi(
+            user_repos_url, True
+        )  # driver to parse API content
         repos_list = []
         for repo in api_driver.api_content:  # list of raw repository
             repo_name = repo["name"]
