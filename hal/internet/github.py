@@ -241,7 +241,7 @@ class GithubUserRepository(GithubApi):
 
         self.username = str(username)
         self.repository_name = str(repository_name)
-        self.api_url += self.username + "/" + self.repository_name
+        self.api_url += "/" + self.username + "/" + self.repository_name
 
     def __eq__(self, other):
         return self.username == other.username \
