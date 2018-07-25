@@ -23,7 +23,7 @@ echo "> generating..."
 # todo mv ${OUTPUT_FOLDER}* ${BUILD_FOLDER}  # move to build folder
 
 echo "> moving to docs branch"
-# todo git checkout ${DOCS_BRANCH}  # change branch (to publish docs)
+git checkout ${DOCS_BRANCH}  # change branch (to publish docs)
 # todo mv ${BUILD_FOLDER}* ../  # move to root
 
 rm -rf ${BUILD_FOLDER}  # clean
