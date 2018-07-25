@@ -16,7 +16,8 @@
 # limitations under the License.
 
 
-bash make.sh
+chmod +x make.sh
+./make.sh
 
 echo "\n\n<<<<    MOVING TO GH-PAGES    >>>>\n\n"
 git checkout gh-pages  # change branch (to publish docs)
