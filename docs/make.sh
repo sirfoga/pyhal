@@ -29,10 +29,12 @@ mv ${BUILD_FOLDER}* ../  # move to root
 
 rm -rf ${BUILD_FOLDER}  # clean
 rm -rf ${OUTPUT_FOLDER}
+cd ..
+rm -rf ${DOCS_FOLDER}
 
 echo "> committing changes"
 git add --all
 git commit -m "${COMMIT_MSG} (generated docs)"
 
 echo "> exiting..."
-# todo git checkout master
+git checkout master
