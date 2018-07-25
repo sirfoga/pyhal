@@ -2,7 +2,7 @@
 <h1>HAL | Handy Algorithmic Library</h1>
 <em>A multipurpose library homemade from scratch to perform great stuff in a pythonic way</em></br></br>
 
-<a href="https://travis-ci.org/sirfoga/pyhal"><img alt="Build Status" src="https://travis-ci.org/sirfoga/pyhal.svg?branch=master"></a> <a href="https://ci.appveyor.com/project/sirfoga/pyhal"><img alt="Build status" src="https://ci.appveyor.com/api/projects/status/isfmmdaqhkbgqaeu?svg=true"></a> <a href="https://coveralls.io/github/sirfoga/pyhal?branch=master"><img alt="Coverage Status" src="https://coveralls.io/repos/github/sirfoga/pyhal/badge.svg?branch=master"></a>
+<a href="https://travis-ci.org/sirfoga/pyhal"><img alt="Build Status" src="https://travis-ci.org/sirfoga/pyhal.svg?branch=master"></a> <a href="https://coveralls.io/github/sirfoga/pyhal?branch=master"><img alt="Coverage Status" src="https://coveralls.io/repos/github/sirfoga/pyhal/badge.svg?branch=master"></a>
 </div>
 
 <div align="center">
