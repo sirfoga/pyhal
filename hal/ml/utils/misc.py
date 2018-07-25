@@ -15,7 +15,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 """ Various tools and utilities to deal with database and machine learning. """
 
 import numpy as np

@@ -1,20 +1,6 @@
 # !/usr/bin/python3
 # coding: utf-8
 
-# Copyright 2016-2018 Stefano Fogarollo
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-# http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
 """ Various utilities to deal with MondoDB databases """
 
 from pymongo import MongoClient
@@ -32,7 +18,7 @@ def get_documents_count(db_name):
     database = mongo_client[db_name]  # db to scan
     db_collections = [
         database[c] for c in database.collection_names()
-        ]  # list of all collections in database
+    ]  # list of all collections in database
     return sum([c.count() for c in db_collections])  # sum
 
 
@@ -53,7 +39,7 @@ def get_documents_in_collection(db_name, collection_name, with_id=True):
     documents_iterator = database[collection_name].find()
     documents = [
         d for d in documents_iterator
-        ]  # list of all documents in collection in database
+    ]  # list of all documents in collection in database
     if not with_id:  # remove id key
         for doc in documents:
             doc.pop("_id")
