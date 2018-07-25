@@ -7,9 +7,6 @@
 chmod +x make.sh
 
 echo "> always remember to commit any changes before checking out branches"
-echo "> generating..."
-./make.sh
-
 echo "> moving to docs branch"
 git checkout gh-pages  # change branch (to publish docs)
 git push origin gh-pages
