@@ -25,7 +25,7 @@ mv -v ${OUTPUT_FOLDER}* ${BUILD_FOLDER}  # move to build folder
 
 echo "> moving to docs branch"
 git checkout ${DOCS_BRANCH}  # change branch (to publish docs)
-mv ${BUILD_FOLDER}* ../  # move to root
+mv -v ${BUILD_FOLDER}* ../  # move to root
 
 rm -rf ${BUILD_FOLDER}  # clean
 rm -rf ${OUTPUT_FOLDER}
@@ -38,3 +38,4 @@ git commit -m "${COMMIT_MSG} (generated docs)"
 
 echo "> exiting..."
 git checkout master
+rm *.md5  # clean
