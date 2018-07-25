@@ -23,7 +23,7 @@ import urllib.request
 
 from bs4 import BeautifulSoup
 
-from internet.utils import add_params_to_url
+from .utils import add_params_to_url
 
 GITHUB_URL = "https://github.com"
 API_URL = "https://api.github.com/"  # Github api url
@@ -95,7 +95,6 @@ class GithubRawApi(object):
             )
 
         api_content_response = urllib.request.urlopen(api_content_request)
-        print(api_content_response)
         self.api_content = json.loads(
             api_content_response.read().decode("utf-8"))  # parse response
 
@@ -192,13 +191,25 @@ class GithubUser(GithubApi):
         """
 
         user_repos_url = self["repos_url"]
-        api_driver = GithubRawApi(
-            user_repos_url, True
-        )  # driver to parse API content
+        current_page = 1
+        there_is_something_left = True
         repos_list = []
-        for repo in api_driver.api_content:  # list of raw repository
-            repo_name = repo["name"]
-            repos_list.append(GithubUserRepository(self.username, repo_name))
+
+        while there_is_something_left:
+            api_driver = GithubRawApi(
+                user_repos_url,
+                url_params={"page": current_page},
+                get_api_content_now=True
+            )  # driver to parse API content
+
+            for repo in api_driver.api_content:  # list of raw repository
+                repo_name = repo["name"]
+                repos_list.append(
+                    GithubUserRepository(self.username, repo_name))
+
+            there_is_something_left = len(api_driver.api_content) > 0
+            current_page += 1
+
         return repos_list
 
     def get_starred_repos(self):
