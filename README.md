@@ -131,11 +131,11 @@ Browse extra examples here:
 
 
 ## Contributing
-[Fork](https://github.com/sirfoga/IronWorks/fork) | Patch | Push | [Pull request](https://github.com/sirfoga/IronWorks/pulls)
+[Fork](https://github.com/sirfoga/pyhal/fork) | Patch | Push | [Pull request](https://github.com/sirfoga/pyhal/pulls)
 
 
 ## Feedback
-Suggestions and improvements [welcome](https://github.com/sirfoga/IronWorks/issues)!
+Suggestions and improvements [welcome](https://github.com/sirfoga/pyhal/issues)!
 
 
 ## Authors
