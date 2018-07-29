@@ -57,6 +57,7 @@ setup(
     packages=find_packages(exclude=["tests"]),
     install_requires=[
         "aiohttp",
+        "aiosocks",
         "bs4",
         "colorama",
         "Crypto",

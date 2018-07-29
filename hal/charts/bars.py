@@ -8,7 +8,25 @@ import numpy as np
 from matplotlib import cm
 from matplotlib import pyplot as plt
 
+from hal.charts.models import SimpleChart
 from hal.ml.utils.misc import normalize_array
+
+
+def setup_chart(title, bottom=None):
+    """
+    :param title: str
+        Title of chart
+    :param bottom: float
+        Bottom margin
+    :return: axis
+        Chart axis
+    """
+
+    chart = SimpleChart(title)
+    if bottom:
+        chart.setup(bottom)
+
+    return chart.create()
 
 
 def create_bar_chart(title, x_labels, y_values, y_label):
@@ -25,12 +43,7 @@ def create_bar_chart(title, x_labels, y_values, y_label):
         Bar chart
     """
 
-    fig = plt.figure()
-    ax1 = fig.add_subplot(111)
-    plt.title(title)
-    plt.grid(True)
-    plt.gcf().subplots_adjust(bottom=0.25)  # include long x-labels
-
+    ax1 = setup_chart(title, bottom=0.25)
     ax1.set_xticks(list(range(len(x_labels))))
     ax1.set_xticklabels([x_labels[i] for i in range(len(x_labels))],
                         rotation=90)
@@ -59,12 +72,7 @@ def create_multiple_bar_chart(title, x_labels, mul_y_values, mul_y_labels,
         Bar chart
     """
 
-    fig = plt.figure()
-    ax1 = fig.add_subplot(111)
-    plt.title(title)
-    plt.grid(True)
-    plt.gcf().subplots_adjust(bottom=0.25)  # include long x-labels
-
+    ax1 = setup_chart(title)
     ax1.set_xticks(list(range(len(x_labels))))
     ax1.set_xticklabels([x_labels[i] for i in range(len(x_labels))],
                         rotation=90)
