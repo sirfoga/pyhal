@@ -7,6 +7,8 @@
 from git import Repo
 from unidiff import PatchSet
 
+from cvs.versioning.models import Version
+
 
 class Diff:
     """ Git diff result """
@@ -68,6 +70,18 @@ class Commit:
         date_time = self.c.authored_datetime.strftime(date_format)
         return "(" + hash_value + ") at " + date_time
 
+    def get_author(self):
+        author = self.c.author
+
+        out = ""
+        if author.name is not None:
+            out += author.name
+
+        if author.email is not None:
+            out += " (" + author.email + ")"
+
+        return out
+
 
 class Repository:
     """ Git repository """
@@ -95,10 +109,15 @@ class Repository:
         """
 
         diffs = []
+
         last_commit = None
         for commit in self.r.iter_commits():
             if last_commit is not None:
                 diff = self.get_diff(commit, last_commit)
+                total_changed = diff[Diff.ADD] + diff[Diff.DEL]
+                diffs.append(total_changed)
+
+        return diffs
 
     def get_diff(self, commit, other_commit):
         """
@@ -112,3 +131,28 @@ class Repository:
 
         diff = self.r.git.diff(commit.hexsha, other_commit.hexsha)
         return Diff(diff).get_totals()
+
+    def get_version(self):
+        """
+        :return: Version
+            Version of this code, based on commits diffs
+        """
+
+        diffs = self.get_diff_amounts()
+        diff_to_increase_ratio = 1 / 100
+        version = Version()
+
+        for diff in diffs:
+            version.increase_by_changes(diff, diff_to_increase_ratio)
+
+        return version
+
+    def get_pretty_version(self):
+        """
+        :return: str
+            Pretty version of this repository
+        """
+
+        version = self.get_version()
+        last = self.get_last_commit()
+        return str(version) + " " + str(last)
