@@ -2,7 +2,7 @@
 # coding: utf_8
 
 
-""" Tests files handling methods in hal """
+""" Tests files handling methods """
 
 import os
 import shutil
