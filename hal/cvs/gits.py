@@ -121,6 +121,8 @@ class Repository:
                 total_changed = diff[Diff.ADD] + diff[Diff.DEL]
                 diffs.append(total_changed)
 
+            last_commit = commit
+
         return diffs
 
     def get_diff(self, commit, other_commit):
@@ -159,4 +161,4 @@ class Repository:
 
         version = self.get_version()
         last = self.get_last_commit()
-        return str(version) + " " + str(last)
+        return str(version) + " " + str(Commit(last))
