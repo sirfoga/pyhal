@@ -7,7 +7,7 @@
 from git import Repo
 from unidiff import PatchSet
 
-from cvs.versioning.models import Version
+from hal.cvs.versioning import Version
 
 
 class Diff:
@@ -23,6 +23,10 @@ class Diff:
         """
 
         self.d = diff
+
+    def __str__(self):
+        totals = self.get_totals()
+        return "+", totals[self.ADD], " -", totals[self.DEL]
 
     def get_totals(self):
         """
