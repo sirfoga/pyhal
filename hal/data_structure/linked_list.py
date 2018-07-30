@@ -191,6 +191,18 @@ class LinkedList:
 
         return out
 
+    def execute(self, func):
+        """
+        :param func: function
+            Function to execute on each item
+        :return: []
+            Results of calling the function on each item
+        """
+
+        return [
+            func(item) for item in self.to_lst()
+        ]
+
     def __str__(self):
         lst = self.to_lst()
         lst = [
