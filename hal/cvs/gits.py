@@ -72,7 +72,7 @@ class Commit:
 
         hash_value = self.c.hexsha
         date_time = self.c.authored_datetime.strftime(date_format)
-        return "(" + hash_value + ") at " + date_time
+        return hash_value + " at " + date_time
 
     def get_author(self):
         author = self.c.author
@@ -164,4 +164,4 @@ class Repository:
 
         version = self.get_version(diff_to_increase_ratio)
         last = self.get_last_commit()
-        return str(version) + " " + str(Commit(last))
+        return str(version) + " (" + str(Commit(last)) + ")"
