@@ -138,14 +138,15 @@ class Repository:
         diff = self.r.git.diff(commit.hexsha, other_commit.hexsha)
         return Diff(diff).get_totals()
 
-    def get_version(self):
+    def get_version(self, diff_to_increase_ratio):
         """
+        :param diff_to_increase_ratio: float
+            Ratio to convert number of changes into version increases
         :return: Version
             Version of this code, based on commits diffs
         """
 
         diffs = self.get_diff_amounts()
-        diff_to_increase_ratio = 1 / 100
         version = Version()
 
         for diff in diffs:
@@ -153,12 +154,14 @@ class Repository:
 
         return version
 
-    def get_pretty_version(self):
+    def get_pretty_version(self, diff_to_increase_ratio):
         """
+        :param diff_to_increase_ratio: float
+            Ratio to convert number of changes into version increases
         :return: str
             Pretty version of this repository
         """
 
-        version = self.get_version()
+        version = self.get_version(diff_to_increase_ratio)
         last = self.get_last_commit()
         return str(version) + " " + str(Commit(last))
