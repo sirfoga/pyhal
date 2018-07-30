@@ -31,6 +31,29 @@ class LinkedList:
 
         self.head = LinkedList.from_list(lst)
 
+    def get_head(self):
+        """
+        :return: Node
+            Head of linked list
+        """
+
+        return self.head
+
+    def get_tail(self):
+        """
+        :return: Node
+            Tail of linked list
+        """
+
+        node = self.head
+        last_node = self.head
+
+        while node is not None:
+            last_node = node
+            node = node.next_node
+
+        return last_node
+
     def length(self):
         """
         :return: int
@@ -184,6 +207,9 @@ class LinkedList:
             Nodes from list
         """
 
+        if not lst:
+            return None
+
         head = Node(lst[0], None)
 
         if len(lst) == 1:
@@ -196,9 +222,6 @@ class LinkedList:
 if __name__ == '__main__':
     lst1 = [1, 2, 3, 4, 5]
     l = LinkedList(lst1)
-
-    print("built")
-    print(l)
 
     print("insert 0 at 5")
     ok = l.insert(0, at=5)
