@@ -61,10 +61,13 @@ setup(
         "bs4",
         "colorama",
         "Crypto",
+        "GitPython",
+        "httplib2",
         "lxml",
         "matplotlib",
         "mutagen",
         "numpy",
+        "oauth2client",
         "psutil",
         "pycrypto",
         "pymongo",
@@ -73,8 +76,8 @@ setup(
         "send2trash",
         "sklearn",
         "statsmodels",
-        "httplib2",
-        "oauth2client", 'stem'
+        "stem",
+        "unidiff"
     ],
     test_suite="tests"
 )
