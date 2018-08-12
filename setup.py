@@ -13,7 +13,7 @@ DESCRIPTION = \
     \n\
     Install\n\n\
     - $ pip3 install . --upgrade --force-reinstall, from the source\n\
-    - $ pip3 install pyhal, via pip\n\
+    - $ pip3 install PyHal, via pip\n\
     \n\
     Questions and issues\n\n\
     The Github issue tracker is only for bug reports and feature requests."
