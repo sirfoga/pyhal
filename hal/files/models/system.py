@@ -77,6 +77,10 @@ def fix_raw_path(path):
             double_path_separator) >= 0:  # there are double separators
         path = path.replace(double_path_separator,
                             PATH_SEPARATOR)  # remove double path separator
+
+    if is_folder(path) and not path.endswith("/"):
+        path = path + "/"
+
     return path
 
 
@@ -187,6 +191,17 @@ def is_file(path):
     """
 
     return os.path.isfile(path)
+
+
+def is_folder(path):
+    """
+    :param path: str
+        Path to check
+    :return: bool
+        True iff path is a file
+    """
+
+    return os.path.isdir(path)
 
 
 def ls_dir(path, include_hidden=False):
