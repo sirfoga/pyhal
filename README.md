@@ -114,8 +114,11 @@ One-line, fast and extensible python commands to deal with most of every-day
 
 
 ## Install
-- ``` $ pip3 install . --upgrade --force-reinstall ``` from the source
-- ``` $ pip3 install PyHal``` via [pip](https://pypi.org/project/PyHal/)
+- ```$ pip3 install . --upgrade --force-reinstall``` from the source
+- ```$ pip3 install PyHal``` via [pip](https://pypi.org/project/PyHal/)
+
+Just run `pip3 install . --upgrade` to upgrade from local
+installation
 
 
 ## Examples

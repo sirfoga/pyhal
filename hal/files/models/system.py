@@ -204,6 +204,17 @@ def is_folder(path):
     return os.path.isdir(path)
 
 
+def get_parent_folder(file_path):
+    """
+    :param file_path: str
+        Path to file or folder
+    :return: str
+        Name of folder container
+    """
+
+    return os.path.split(os.path.split(os.path.abspath(file_path))[0])[-1]
+
+
 def ls_dir(path, include_hidden=False):
     """
     :param path: string
