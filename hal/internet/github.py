@@ -5,8 +5,8 @@
 """ Common classes and entities in Github """
 
 import json
-import urllib.request
 
+import requests
 from bs4 import BeautifulSoup
 
 from .utils import add_params_to_url
@@ -73,16 +73,15 @@ class GithubRawApi(object):
             Updates class api content by calling Github api and storing result
         """
 
-        api_content_request = urllib.request.Request(self.api_url)
         if GITHUB_TOKEN is not None:
-            api_content_request.add_header("User-Agent", "Github PyAPI")
-            api_content_request.add_header(
-                "Authorization", "token %s" % GITHUB_TOKEN
-            )
+            self.add_params_to_url({
+                "access_token": GITHUB_TOKEN
+            })
 
-        api_content_response = urllib.request.urlopen(api_content_request)
+        api_content_response = requests.get(self.api_url)
         self.api_content = json.loads(
-            api_content_response.read().decode("utf-8"))  # parse response
+            api_content_response.text
+        )  # parse response
 
     def add_params_to_url(self, params):
         """
@@ -170,33 +169,56 @@ class GithubUser(GithubApi):
         except:
             return None
 
-    def get_repos(self):
+    @staticmethod
+    def _get_repos(url):
         """
         :return: [] of GithubUserRepository
-            List of user repositories
+            List of repositories in given url
         """
 
-        user_repos_url = self["repos_url"]
         current_page = 1
         there_is_something_left = True
         repos_list = []
 
         while there_is_something_left:
             api_driver = GithubRawApi(
-                user_repos_url,
+                url,
                 url_params={"page": current_page},
                 get_api_content_now=True
             )  # driver to parse API content
 
             for repo in api_driver.api_content:  # list of raw repository
                 repo_name = repo["name"]
+                repo_user = repo["owner"]["login"]
                 repos_list.append(
-                    GithubUserRepository(self.username, repo_name))
+                    GithubUserRepository(repo_user, repo_name))
 
             there_is_something_left = len(api_driver.api_content) > 0
             current_page += 1
 
         return repos_list
+
+    def get_repos(self):
+        """
+        :return: [] of GithubUserRepository
+            List of public user repositories
+        """
+
+        url = self["repos_url"]
+        return self._get_repos(url)
+
+    def get_all_repos(self):
+        """
+        :return: [] of GithubUserRepository
+            List of all user repositories (public, orgs and private)
+        """
+
+        url = "https://api.github.com/user/repos"
+        params = {
+            "access_token": GITHUB_TOKEN
+        }  # add auth params
+        url = add_params_to_url(url, params)
+        return self._get_repos(url)
 
     def get_starred_repos(self):
         """

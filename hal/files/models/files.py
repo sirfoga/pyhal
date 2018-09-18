@@ -170,7 +170,10 @@ class Directory(FileSystem):
         """
 
         complete_path = os.path.dirname(os.path.abspath(self.path))
-        name = self.path.replace(complete_path + PATH_SEPARATOR, "")[: -1]
+        name = self.path.replace(complete_path + PATH_SEPARATOR, "")
+        if name.endswith("/"):
+            name = name[: -1]
+
         return complete_path, name
 
     def is_empty(self):

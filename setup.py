@@ -27,7 +27,7 @@ setup(
     description="A multipurpose library to perform great stuff in the most "
                 "easy, short and pythonic way.",
     long_description=DESCRIPTION,
-    keywords="library scratch maths",
+    keywords="library scratch awesome",
     url="https://github.com/sirfoga/pyhal",
     packages=find_packages(exclude=["tests"]),
     install_requires=[
@@ -44,7 +44,7 @@ setup(
         "numpy",
         "oauth2client",
         "psutil",
-        "pycrypto",
+        # "pycrypto",
         "pymongo",
         "requests",
         "scipy",
