@@ -6,17 +6,16 @@
 
 from setuptools import setup, find_packages
 
-
+LITTLE_DESCRIPTION = "A multipurpose library homemade from scratch to perform " \
+                     "great stuff in a pythonic way "
 DESCRIPTION = \
-    "HAL\n\n\
-    A multipurpose library homemade from scratch to perform great stuff in a pythonic way\n\
-    \n\
+    "HAL\n\n" + LITTLE_DESCRIPTION + "\n\
     Install\n\n\
     - $ pip3 install . --upgrade --force-reinstall, from the source\n\
     - $ pip3 install PyHal, via pip\n\
-    \n\
     Questions and issues\n\n\
     The Github issue tracker is only for bug reports and feature requests."
+VERSION = open("VERSION").readlines()[0]
 
 
 setup(
@@ -24,8 +23,7 @@ setup(
     version="10.0.3",
     author="sirfoga",
     author_email="sirfoga@protonmail.com",
-    description="A multipurpose library to perform great stuff in the most "
-                "easy, short and pythonic way.",
+    description=LITTLE_DESCRIPTION,
     long_description=DESCRIPTION,
     keywords="library scratch awesome",
     url="https://github.com/sirfoga/pyhal",
