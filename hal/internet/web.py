@@ -17,7 +17,7 @@ from stem.control import Controller
 
 import time
 
-CHROME_USER_AGENT = [
+USER_AGENTS = [
     "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.19 ("
     "KHTML, like Gecko) Chrome/1.0.154.53 Safari/525.19",
     "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.19 ("
@@ -98,8 +98,8 @@ URL_VALID_REGEX = re.compile(
     r"(?:/?|[/?]\S+)$",
     re.IGNORECASE
 )
-APP_VALID_HEADERS = {
-    "User-Agent": "Mozilla/5.0",
+HEADERS = {
+    "User-Agent": random.choice(USER_AGENTS),
     "Accept": "text/html,application/xhtml+xml,application/xml,"
               "application/pdf;q=0.9,*/*;q=0.8 "
 }
@@ -185,7 +185,7 @@ class Webpage(object):
         """
 
         req = urllib.request.Request(self.url)
-        req.add_header("user-agent", random.choice(CHROME_USER_AGENT))
+        req.add_header("user-agent", random.choice(USER_AGENTS))
         req_text = urllib.request.urlopen(req).read()
         self.source = str(req_text)
         self.soup = BeautifulSoup(self.source, "lxml")
@@ -237,7 +237,7 @@ def download_url(url, local_file):
     downloader.retrieve(url, local_file)
 
 
-def download_to_file(url, local_file, headers=APP_VALID_HEADERS, cookies=None,
+def download_to_file(url, local_file, headers=HEADERS, cookies=None,
                      chunk_size=1024):
     """
     :param url: str

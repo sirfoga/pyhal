@@ -71,3 +71,26 @@ def get_average_length_of_word(words):
         return 0
 
     return sum(len(word) for word in words) / len(words)
+
+
+def just_alphanum(string):
+    """
+    :param string: str
+        String
+    :return: str
+        All numbers and letters in string
+    """
+
+    chars = []
+
+    i = 0
+    while i < len(string):
+        char = string[i]
+        if char == "\\":
+            i += 1
+        else:
+            chars.append(char)
+
+        i += 1
+
+    return "".join(chars)
