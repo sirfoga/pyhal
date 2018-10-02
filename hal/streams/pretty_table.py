@@ -3,7 +3,7 @@
 
 """ Pretty prints table in SQL style """
 
-from hal.streams.pretty_table import non_ansi_string
+from hal.strings.utils import non_ansi_string
 
 
 def parse_colorama(text):
