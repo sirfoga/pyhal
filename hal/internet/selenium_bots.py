@@ -8,6 +8,9 @@
 class SeleniumForm:
     """ Great and simple static methods to deal with selenium web-drivers """
 
+    def __init__(self, browser):
+        self.browser = browser
+
     @staticmethod
     def fill_form_field(browser, field_name, field_value):
         """

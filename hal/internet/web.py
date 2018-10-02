@@ -6,6 +6,7 @@
 
 import random
 import re
+import time
 import urllib.request
 import webbrowser
 from urllib.parse import urljoin
@@ -14,8 +15,6 @@ import requests
 from bs4 import BeautifulSoup
 from stem import Signal
 from stem.control import Controller
-
-import times
 
 USER_AGENTS = [
     "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.19 ("
@@ -209,17 +208,17 @@ class Webpage(object):
 
                 return sorted(out_links)  # sort array
             except:
-                times.sleep(timeout)  # times to wait for another attempt
+                time.sleep(timeout)  # times to wait for another attempt
 
-    def open_in_browser(self, times):
+    def open_in_browser(self, n_times):
         """
-        :param times: int
+        :param n_times: int
             Times to open webpage in browser
         :return: void
             Open a web-driver and go to webpage
         """
 
-        for _ in range(times):
+        for _ in range(n_times):
             webbrowser.open(self.url)
 
 

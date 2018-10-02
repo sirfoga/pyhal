@@ -6,7 +6,7 @@
 
 from bs4 import BeautifulSoup
 
-from strings.utils import html_stripper
+from hal.strings.utils import html_stripper
 
 
 class HtmlTable:

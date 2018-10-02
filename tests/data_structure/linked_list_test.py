@@ -6,7 +6,7 @@
 
 from unittest import TestCase, main
 
-from hal.data_structure.linked_list import LinkedList
+from data.linked_list import LinkedList
 
 
 def from_and_to_lst(lst):
