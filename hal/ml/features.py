@@ -5,7 +5,7 @@
 """ Collection of methods to find weights of features and select the best
 ones. """
 
-from sklearn.feature_selection import SelectKBest, chi2, RFECV, RFE
+from sklearn.feature_selection import SelectKBest, chi2, RFECV
 from sklearn.model_selection import StratifiedKFold
 from sklearn.svm import SVC
 
@@ -29,12 +29,3 @@ def get_best_features(x_data, y_data):
     )
     rfecv.fit(x_data, y_data)
     return rfecv.n_features_, rfecv.ranking_
-
-
-def get_features(x_data, y_data, num_features):
-    """ finds the optimal features """
-
-    svc = SVC(kernel="linear", C=1)
-    rfe = RFE(estimator=svc, n_features_to_select=num_features, step=1)
-    rfe.fit(x_data, y_data)
-    return rfe.ranking_

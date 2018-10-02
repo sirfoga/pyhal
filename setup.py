@@ -9,11 +9,11 @@ from setuptools import setup, find_packages
 LITTLE_DESCRIPTION = "A multipurpose library homemade from scratch to perform " \
                      "great stuff in a pythonic way "
 DESCRIPTION = \
-    "HAL\n\n" + LITTLE_DESCRIPTION + "\n\
-    Install\n\n\
+    "HAL\n" + LITTLE_DESCRIPTION + "\n\
+    Install\n\
     - $ pip3 install . --upgrade --force-reinstall, from the source\n\
     - $ pip3 install PyHal, via pip\n\
-    Questions and issues\n\n\
+    Questions and issues\n\
     The Github issue tracker is only for bug reports and feature requests."
 VERSION = open("VERSION").readlines()[0]
 
