@@ -2,7 +2,7 @@
 # coding: utf-8
 
 
-""" Deal with web-pages. """
+""" Deal with web-pages """
 
 import random
 import re

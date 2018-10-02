@@ -2,7 +2,7 @@
 # coding: utf-8
 
 
-""" Abstract search engines. """
+""" Abstract search engines """
 
 from hal.internet.web import Webpage
 

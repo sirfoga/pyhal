@@ -2,7 +2,7 @@
 # coding: utf-8
 
 
-""" A few elegant and powerful mathematical functions. """
+""" A few elegant and powerful mathematical functions """
 
 import random
 

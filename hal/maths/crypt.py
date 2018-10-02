@@ -2,7 +2,7 @@
 # coding: utf-8
 
 
-""" Perform fast hash, encryption and calculations related to cryptography. """
+""" Perform fast hash, encryption and calculations related to cryptography """
 
 import binascii
 import crypt

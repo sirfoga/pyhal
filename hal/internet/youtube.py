@@ -2,7 +2,7 @@
 # coding: utf-8
 
 
-""" Get rss feed for youtube channel. """
+""" Get rss feed for youtube channel """
 
 from bs4 import BeautifulSoup
 

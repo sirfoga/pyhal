@@ -2,7 +2,7 @@
 # coding: utf-8
 
 
-""" Parse anything there is on the Internet. """
+""" Parse anything there is on the Internet """
 
 from bs4 import BeautifulSoup
 

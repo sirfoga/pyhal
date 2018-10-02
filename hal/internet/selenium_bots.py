@@ -6,7 +6,7 @@
 
 
 class SeleniumForm:
-    """ Great and simple static methods to deal with selenium web-drivers. """
+    """ Great and simple static methods to deal with selenium web-drivers """
 
     @staticmethod
     def fill_form_field(browser, field_name, field_value):

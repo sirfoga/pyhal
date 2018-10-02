@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-""" Various tools and utilities to deal with database and machine learning. """
+""" Tools to deal with lists """
 
 import numpy as np
 

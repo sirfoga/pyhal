@@ -2,7 +2,7 @@
 # coding: utf-8
 
 
-""" Perform benchmarks and tests on your PC. """
+""" Perform benchmarks and tests on your PC """
 
 import getpass
 import os
