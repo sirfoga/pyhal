@@ -50,7 +50,7 @@ setup(
         "sklearn",
         "statsmodels",
         "stem",
-        "unidiff"
+        "unidiff", 'pyparsing'
     ],
     test_suite="tests"
 )

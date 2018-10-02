@@ -47,10 +47,6 @@ class PrettyTable:
 
     def _calculate_optimal_column_widths(self):
         """
-        :param labels: [] of str
-            List of labels of data
-        :param data: ([] of []) of anything
-            Matrix of any type
         :return: [] of int
             Length of longest data in each column (labels and data)
         """
@@ -73,12 +69,10 @@ class PrettyTable:
 
         self.widths = widths
 
-    def get_pretty_row(self, filler, splitter):
+    def get_pretty_row(self, row, filler, splitter):
         """
-        :param data: [] of anything
+        :param row: [] of anything
             List of data
-        :param widths: [] of int
-            Length of longest data in each column
         :param filler: char
             Fill empty columns with this char
         :param splitter: char
@@ -87,7 +81,7 @@ class PrettyTable:
             Pretty formatted row
         """
 
-        row = [str(d) for d in self.data]
+        row = [str(d) for d in row]
         for i, val in enumerate(row):
             length_diff = self.widths[i] - len(parse_colorama(val))
             if length_diff > 0:  # value is shorter than foreseen
@@ -99,8 +93,6 @@ class PrettyTable:
 
     def get_blank_row(self, filler="-", splitter="+"):
         """
-        :param widths: [] of int
-            Length of longest data in each column
         :param filler: char
             Fill empty columns with this char
         :param splitter: char
@@ -110,16 +102,15 @@ class PrettyTable:
         """
 
         return self.get_pretty_row(
+            ["" for _ in self.widths],  # blanks
             filler,  # fill with this
             splitter,  # split columns with this
         )
 
-    def pretty_format_row(self, filler=" ", splitter="|"):
+    def pretty_format_row(self, row, filler=" ", splitter="|"):
         """
-        :param data: [] of anything
+        :param row: [] of anything
             List of data
-        :param widths: [] of int
-            Length of longest data in each column
         :param filler: char
             Fill empty columns with this char
         :param splitter: char
@@ -129,14 +120,16 @@ class PrettyTable:
         """
 
         return self.get_pretty_row(
+            row,
             filler,
             splitter
         )
 
     def build(self):
         self._calculate_optimal_column_widths()
+
         pretty_table = self.get_blank_row() + self.new_line  # first row
-        pretty_table += self.pretty_format_row() + self.new_line
+        pretty_table += self.pretty_format_row(self.labels) + self.new_line
         pretty_table += self.get_blank_row() + self.new_line
 
         for row in self.data:  # append each row
