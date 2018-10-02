@@ -3,17 +3,7 @@
 
 """ Pretty prints table in SQL style """
 
-from pyparsing import Literal, Word, nums, Combine, Optional, delimitedList, \
-    alphas, oneOf, Suppress
-
-
-def non_ansi_string(text):
-    esc_key = Literal('\x1b')
-    integer = Word(nums)
-    escape_seq = Combine(
-        esc_key + '[' + Optional(delimitedList(integer, ';')) +
-        oneOf(list(alphas)))
-    return Suppress(escape_seq).transformString(text)
+from hal.streams.pretty_table import non_ansi_string
 
 
 def parse_colorama(text):

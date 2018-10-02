@@ -6,7 +6,8 @@
 
 from difflib import SequenceMatcher
 
-import numpy as np
+from pyparsing import Literal, Word, nums, Combine, Optional, delimitedList, \
+    alphas, oneOf, Suppress
 
 
 def how_similar_are(str1, str2):
@@ -20,25 +21,6 @@ def how_similar_are(str1, str2):
     """
 
     return SequenceMatcher(None, str1, str2).ratio()
-
-
-def how_similar_dicts(d1, d2):
-    """
-    :param d1: {}
-        Dictionary
-    :param d2: {}
-        Dictionary
-    :return: float in [0 - 1]
-        A measure of how much similar values of dictionaries are
-    """
-
-    values = []
-    for k in d1:  # iterate keys
-        if k in d2 and d1[k] and d2[k]:  # make sure values are comparable
-            values.append(
-                how_similar_are(str(d1[k]), str(d2[k]))
-            )
-    return np.mean(values)  # average
 
 
 def get_max_similar(string, lst):
@@ -59,18 +41,18 @@ def get_max_similar(string, lst):
     return max_similarity, index
 
 
-def get_average_length_of_word(words):
+def get_average_length_of_string(strings):
     """
-    :param words: [] of str
+    :param strings: [] of str
         Words
     :return: float
         Average length of word on list
     """
 
-    if not words:
+    if not strings:
         return 0
 
-    return sum(len(word) for word in words) / len(words)
+    return sum(len(word) for word in strings) / len(strings)
 
 
 def just_alphanum(string):
@@ -94,3 +76,12 @@ def just_alphanum(string):
         i += 1
 
     return "".join(chars)
+
+
+def non_ansi_string(text):
+    esc_key = Literal('\x1b')
+    integer = Word(nums)
+    escape_seq = Combine(
+        esc_key + '[' + Optional(delimitedList(integer, ';')) +
+        oneOf(list(alphas)))
+    return Suppress(escape_seq).transformString(text)

@@ -9,7 +9,7 @@ from matplotlib import cm
 from matplotlib import pyplot as plt
 
 from hal.charts.models import SimpleChart
-from hal.ml.utils.misc import normalize_array
+from ml.utils import normalize_array
 
 
 def setup_chart(title, bottom=None):
