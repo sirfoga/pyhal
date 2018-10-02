@@ -137,10 +137,11 @@ class Matrix:
             Headers without header removed and data without column removed
         """
 
-        column_index_to_remove = headers.index(header_to_remove)
-        new_data = np.delete(self.matrix, column_index_to_remove, 1)  # remove
-        new_headers = headers  # copy headers
-        new_headers.remove(header_to_remove)  # remove date header
+        index_to_remove = headers.index(header_to_remove)
+
+        new_data = np.delete(self.matrix, index_to_remove, 1)  # remove
+        new_headers = np.delete(headers, index_to_remove, 0)  # remove
+
         return new_headers, new_data
 
     def add_columns(self, headers, new_headers, new_columns):
@@ -170,11 +171,34 @@ class Matrix:
 
     def encode(self):
         """
-        :return: tuple (LabelEncoder, matrix)
+        :return: tuple (LabelEncoder, Matrix)
             Encoder, encoded matrix
         """
 
         lb = LabelEncoder()  # convert
-        return lb, [
-            lb.fit_transform(row) for row in self.matrix
+        concatenated_rows = sum([
+            row
+            for row in self.matrix
+        ], [])  # long list of raw values
+        encoded = lb.fit_transform(concatenated_rows)  # long list of encoded
+        n_columns = len(self.matrix[0])
+        n_rows = len(self.matrix)
+        matrix = [
+            encoded[i: i + n_columns]
+            for i in range(0, n_rows * n_columns, n_columns)
         ]
+
+        return lb, Matrix(matrix)
+
+    def decode(self, lb):
+        """
+        :param lb: LabelEncoder
+            Encoder used to encode matrix
+        :return: Matrix
+            Decoded matrix
+        """
+
+        return Matrix([
+            lb.inverse_transform(row)
+            for row in self.matrix
+        ])
