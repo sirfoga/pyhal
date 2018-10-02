@@ -53,7 +53,7 @@ def get_next_weekday(weekday, including_today=False):
     else:
         delta = datetime.timedelta(
             (7 + weekday.value - now.weekday()) % 7
-        )  # time delta to next instance
+        )  # times delta to next instance
     return get_just_date(now + delta)
 
 
@@ -76,11 +76,11 @@ def get_last_weekday(weekday, including_today=False):
         if now.weekday() > weekday.value:
             delta = - datetime.timedelta(
                 now.weekday() - weekday.value
-            )  # time delta
+            )  # times delta
         else:
             delta = - datetime.timedelta(
                 now.weekday() + (7 - weekday.value)
-            )  # time delta
+            )  # times delta
     return get_just_date(now + delta)
 
 

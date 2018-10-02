@@ -39,7 +39,7 @@ class AppCronLock(object):
     def can_proceed(self):
         """
         :return: bool
-            True iff app is not locked and time since last update < app
+            True iff app is not locked and times since last update < app
             update interval
         """
 

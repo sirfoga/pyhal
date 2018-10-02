@@ -6,6 +6,8 @@
 
 from bs4 import BeautifulSoup
 
+from strings.utils import html_stripper
+
 
 class HtmlTable:
     """ Table written in HTML language """
@@ -47,49 +49,3 @@ class HtmlTable:
             if not is_empty:
                 data.append(data_row)
         return data
-
-
-def is_string_well_formatted(string):
-    """
-    :param string: string
-        String to parse
-    :return: bool
-        True iff string is good formatted
-    """
-
-    # False iff there are at least \n, \r, \t,"  "
-    is_bad_formatted = ":" in string or \
-                       "\\'" in string or \
-                       "\n" in string or \
-                       "\r" in string or \
-                       "\t" in string or \
-                       "\\n" in string or \
-                       "\\r" in string or \
-                       "\\t" in string or \
-                       "  " in string
-    return not is_bad_formatted
-
-
-def html_stripper(string):
-    """
-    :param string: string
-        String to parse
-    :return: string
-        Given string with raw HTML elements removed
-    """
-
-    out = string
-    while not is_string_well_formatted(
-            out):  # while there are some improvements to do
-        out = out.replace(":", "") \
-            .replace("\\'", "\'") \
-            .replace("\\n", "") \
-            .replace("\\r", "") \
-            .replace("\\t", "") \
-            .replace("\n", "") \
-            .replace("\r", "") \
-            .replace("\t", "") \
-            .replace("  ", " ") \
-            .strip()
-
-    return str(out)

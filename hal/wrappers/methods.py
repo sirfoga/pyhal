@@ -2,7 +2,7 @@
 # coding: utf-8
 
 
-""" Typical (and useful) function wrappers """
+""" Useful function wrappers """
 
 import functools
 import sys

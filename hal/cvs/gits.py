@@ -65,7 +65,7 @@ class Commit:
     def __str__(self, date_format="%H:%M:%S %y-%m-%d %z"):
         """
         :param date_format: str
-            Format date and time with this format
+            Format date and times with this format
         :return: str
             Pretty description of commit
         """

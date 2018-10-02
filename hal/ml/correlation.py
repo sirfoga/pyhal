@@ -13,7 +13,7 @@ from hal.charts import correlation as cr_plot
 from hal.files.models.files import Document
 from hal.files.models.system import list_content
 from hal.files.parsers import CSVParser
-from time import time
+from times import time
 
 
 class CorrelationMatrix:

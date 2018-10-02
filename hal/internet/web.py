@@ -15,7 +15,7 @@ from bs4 import BeautifulSoup
 from stem import Signal
 from stem.control import Controller
 
-import time
+import times
 
 USER_AGENTS = [
     "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.19 ("
@@ -193,8 +193,8 @@ class Webpage(object):
 
     def get_links(self, recall, timeout):
         """
-        :param recall: max time to attempt to fetch url
-        :param timeout: max time (s) to wait for web_page response
+        :param recall: max times to attempt to fetch url
+        :param timeout: max times (s) to wait for web_page response
         :return: array of out_links
         """
 
@@ -209,7 +209,7 @@ class Webpage(object):
 
                 return sorted(out_links)  # sort array
             except:
-                time.sleep(timeout)  # time to wait for another attempt
+                times.sleep(timeout)  # times to wait for another attempt
 
     def open_in_browser(self, times):
         """

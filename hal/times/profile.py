@@ -4,7 +4,7 @@
 
 """ Tired of formatting ETA times? This is just for you """
 
-from time import time
+from times import time
 
 
 def get_time_eta(total_done, total, start_time):
@@ -13,9 +13,9 @@ def get_time_eta(total_done, total, start_time):
         Item processed
     :param total: int
         Total number of items to process
-    :param start_time: time
+    :param start_time: times
         Time of start processing items
-    :return: time
+    :return: times
         Time to go
     """
 

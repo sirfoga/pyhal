@@ -8,7 +8,7 @@ import socket
 import urllib.parse as urlparse
 from urllib.parse import urlencode
 
-import time
+import times
 
 
 def add_params_to_url(url, params):
@@ -60,7 +60,7 @@ def wait_until_internet(time_between_attempts=3, max_attempts=10):
 
     counter = 0
     while not is_internet_on():
-        time.sleep(time_between_attempts)  # wait until internet is on
+        times.sleep(time_between_attempts)  # wait until internet is on
         counter += 1
 
         if counter > max_attempts:

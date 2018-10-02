@@ -11,7 +11,7 @@ import sys
 
 from hal.files.models import Document
 from hal.maths import maths
-from time import time
+from times import time
 
 
 class EightQueenTest(object):

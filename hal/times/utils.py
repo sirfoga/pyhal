@@ -2,7 +2,7 @@
 # coding: utf-8
 
 
-""" Parse, convert time formats """
+""" Parse, convert times formats """
 
 from datetime import datetime
 
@@ -17,7 +17,7 @@ def parse_hh_mm_ss(string):
     """
     :param string: str
         Hours, minutes and seconds in the form hh:mm:ss to parse
-    :return: datetime.time
+    :return: datetime.times
         Time parsed
     """
 
@@ -36,10 +36,10 @@ def get_seconds(string):
     :param string: str
         Datetime in the form %H:%M:%S
     :return: int
-        Seconds in time
+        Seconds in times
     """
 
-    parsed_string = parse_hh_mm_ss(string)  # get time
+    parsed_string = parse_hh_mm_ss(string)  # get times
     total_seconds = parsed_string.second
     total_seconds += parsed_string.minute * 60.0
     total_seconds += parsed_string.hour * 60.0 * 60.0
@@ -50,7 +50,7 @@ def parse_hh_mm(string):
     """
     :param string: str
         Hours and minutes in the form hh:mm to parse
-    :return: datetime.time
+    :return: datetime.times
         Time parsed
     """
 
