@@ -10,22 +10,34 @@ from sklearn.model_selection import StratifiedKFold
 from sklearn.svm import SVC
 
 
-def select_k_best(x_data, y_data, num_features):
-    """ select k best features in dataset """
+class FeatureSelect:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
 
-    x_new = SelectKBest(chi2, k=num_features).fit_transform(x_data, y_data)
-    return x_new
+    def select_k_best(self, k):
+        """
+        :param k: int
+            K features to select
+        :return: matrix
+            Select k best features in dataset
+        """
 
+        x_new = SelectKBest(chi2, k=k).fit_transform(self.x, self.y)
+        return x_new
 
-def get_best_features(x_data, y_data):
-    """ finds the optimal number of features """
+    def get_best(self):
+        """
+        :return: tuple
+            Finds the optimal number of features
+        """
 
-    svc = SVC(kernel="linear")
-    rfecv = RFECV(
-        estimator=svc,
-        step=1,
-        cv=StratifiedKFold(y_data, 2),
-        scoring="log_loss"
-    )
-    rfecv.fit(x_data, y_data)
-    return rfecv.n_features_, rfecv.ranking_
+        svc = SVC(kernel="linear")
+        rfecv = RFECV(
+            estimator=svc,
+            step=1,
+            cv=StratifiedKFold(self.y, 2),
+            scoring="log_loss"
+        )
+        rfecv.fit(self.x, self.y)
+        return rfecv.n_features_, rfecv.ranking_

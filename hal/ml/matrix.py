@@ -6,6 +6,10 @@
 import numpy as np
 
 
+class Matrix:
+    def __init__(self, matrix):
+        self.matrix = matrix
+
 def precision(matrix):
     """
     :param matrix: 2 x 2 matrix
