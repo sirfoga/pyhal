@@ -4,6 +4,7 @@
 """ Functions to deal with matrices """
 
 import numpy as np
+from sklearn.preprocessing import LabelEncoder
 
 
 class Matrix:
@@ -166,3 +167,14 @@ class Matrix:
 
         new_column_names = headers + new_headers
         return new_column_names, new_data
+
+    def encode(self):
+        """
+        :return: tuple (LabelEncoder, matrix)
+            Encoder, encoded matrix
+        """
+
+        lb = LabelEncoder()  # convert
+        return lb, [
+            lb.fit_transform(row) for row in self.matrix
+        ]
