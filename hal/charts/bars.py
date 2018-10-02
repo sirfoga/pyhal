@@ -8,8 +8,8 @@ import numpy as np
 from matplotlib import cm
 from matplotlib import pyplot as plt
 
+from data.lists import normalize_array
 from hal.charts.models import SimpleChart
-from ml.lists import normalize_array
 
 
 def setup_chart(title, bottom=None):

@@ -8,11 +8,11 @@ import os
 import numpy as np
 from matplotlib import pyplot
 
+from data.matrix import get_column_of_matrix
 from hal.charts import correlation as cr_plot
 from hal.files.models.files import Document
 from hal.files.models.system import list_content
 from hal.files.parsers import CSVParser
-from ml.matrix import get_column_of_matrix
 from time import time
 
 
