@@ -7,98 +7,143 @@ from pyparsing import Literal, Word, nums, Combine, Optional, delimitedList, \
     alphas, oneOf, Suppress
 
 
-def get_optimal_column_widths(labels, data):
+def non_ansi_string(text):
+    esc_key = Literal('\x1b')
+    integer = Word(nums)
+    escape_seq = Combine(
+        esc_key + '[' + Optional(delimitedList(integer, ';')) +
+        oneOf(list(alphas)))
+    return Suppress(escape_seq).transformString(text)
+
+
+def parse_colorama(text):
     """
-    :param labels: [] of str
-        List of labels of data
-    :param data: ([] of []) of anything
-        Matrix of any type
-    :return: [] of int
-        Length of longest data in each column (labels and data)
-    """
-
-    columns = len(data[0])  # number of columns
-    str_labels = [parse_colorama(str(l)) for l in labels]  # labels as strings
-    str_data = [[parse_colorama(str(col)) for col in row] for row in data]
-    # values as strings
-
-    widths = [0] * columns  # length of longest string in each column
-    for row in str_data:  # calculate max width in each column
-        widths = [max(w, len(c)) for w, c in zip(widths, row)]
-
-    # check if label name is longer than data
-    for col, label in enumerate(str_labels):
-        if len(label) > widths[col]:
-            widths[col] = len(label)
-
-    return widths
-
-
-def get_pretty_row(data, widths, filler, splitter):
-    """
-    :param data: [] of anything
-        List of data
-    :param widths: [] of int
-        Length of longest data in each column
-    :param filler: char
-        Fill empty columns with this char
-    :param splitter: char
-        Separate columns with this char
+    :param text: str
+        Colorama text to parse
     :return: str
-        Pretty formatted row
+        Parsed colorama text
     """
 
-    row = [str(d) for d in data]
-    for i, val in enumerate(row):
-        length_diff = widths[i] - len(parse_colorama(val))
-        if length_diff > 0:  # value is shorter than foreseen
-            row[i] = str(filler * length_diff) + row[i]  # adjust content
-    pretty_row = splitter  # start of row
-    for val in row:
-        pretty_row += filler + val + filler + splitter
-    return pretty_row
+    return non_ansi_string(text)
 
 
-def get_blank_row(widths, filler="-", splitter="+"):
-    """
-    :param widths: [] of int
-        Length of longest data in each column
-    :param filler: char
-        Fill empty columns with this char
-    :param splitter: char
-        Separate columns with this char
-    :return: str
-        Pretty formatted blank row (with no meaningful data in it)
-    """
+class PrettyTable:
+    def __init__(self, labels, data, line_separator):
+        """
+        :param labels: [] of str
+            List of labels of data
+        :param data: ([] of []) of anything
+            Matrix of any type
+        :param line_separator: str
+            Separate each new line with this
+        :return: str
+            Pretty formatted table (first row is labels, then actual data)
+        """
 
-    return get_pretty_row(
-        ["" for _ in widths],  # blanks
-        widths,  # same columns widths
-        filler,  # fill with this
-        splitter,  # split columns with this
-    )
+        self.labels = labels
+        self.data = data
+        self.new_line = line_separator
+        self.widths = None
 
+    def _calculate_optimal_column_widths(self):
+        """
+        :param labels: [] of str
+            List of labels of data
+        :param data: ([] of []) of anything
+            Matrix of any type
+        :return: [] of int
+            Length of longest data in each column (labels and data)
+        """
 
-def pretty_format_row(data, widths, filler=" ", splitter="|"):
-    """
-    :param data: [] of anything
-        List of data
-    :param widths: [] of int
-        Length of longest data in each column
-    :param filler: char
-        Fill empty columns with this char
-    :param splitter: char
-        Separate columns with this char
-    :return: str
-        Pretty formatted row
-    """
+        columns = len(self.data[0])  # number of columns
+        str_labels = [parse_colorama(str(l)) for l in
+                      self.labels]  # labels as strings
+        str_data = [[parse_colorama(str(col)) for col in row] for row in
+                    self.data]
+        # values as strings
 
-    return get_pretty_row(
-        data,
-        widths,
-        filler,
-        splitter
-    )
+        widths = [0] * columns  # length of longest string in each column
+        for row in str_data:  # calculate max width in each column
+            widths = [max(w, len(c)) for w, c in zip(widths, row)]
+
+        # check if label name is longer than data
+        for col, label in enumerate(str_labels):
+            if len(label) > widths[col]:
+                widths[col] = len(label)
+
+        self.widths = widths
+
+    def get_pretty_row(self, filler, splitter):
+        """
+        :param data: [] of anything
+            List of data
+        :param widths: [] of int
+            Length of longest data in each column
+        :param filler: char
+            Fill empty columns with this char
+        :param splitter: char
+            Separate columns with this char
+        :return: str
+            Pretty formatted row
+        """
+
+        row = [str(d) for d in self.data]
+        for i, val in enumerate(row):
+            length_diff = self.widths[i] - len(parse_colorama(val))
+            if length_diff > 0:  # value is shorter than foreseen
+                row[i] = str(filler * length_diff) + row[i]  # adjust content
+        pretty_row = splitter  # start of row
+        for val in row:
+            pretty_row += filler + val + filler + splitter
+        return pretty_row
+
+    def get_blank_row(self, filler="-", splitter="+"):
+        """
+        :param widths: [] of int
+            Length of longest data in each column
+        :param filler: char
+            Fill empty columns with this char
+        :param splitter: char
+            Separate columns with this char
+        :return: str
+            Pretty formatted blank row (with no meaningful data in it)
+        """
+
+        return self.get_pretty_row(
+            filler,  # fill with this
+            splitter,  # split columns with this
+        )
+
+    def pretty_format_row(self, filler=" ", splitter="|"):
+        """
+        :param data: [] of anything
+            List of data
+        :param widths: [] of int
+            Length of longest data in each column
+        :param filler: char
+            Fill empty columns with this char
+        :param splitter: char
+            Separate columns with this char
+        :return: str
+            Pretty formatted row
+        """
+
+        return self.get_pretty_row(
+            filler,
+            splitter
+        )
+
+    def build(self):
+        self._calculate_optimal_column_widths()
+        pretty_table = self.get_blank_row() + self.new_line  # first row
+        pretty_table += self.pretty_format_row() + self.new_line
+        pretty_table += self.get_blank_row() + self.new_line
+
+        for row in self.data:  # append each row
+            pretty_table += self.pretty_format_row(row) + self.new_line
+        pretty_table += self.get_blank_row()  # ending line
+
+        return pretty_table
 
 
 def pretty_format_table(labels, data, line_separator="\n"):
@@ -113,28 +158,5 @@ def pretty_format_table(labels, data, line_separator="\n"):
         Pretty formatted table (first row is labels, then actual data)
     """
 
-    widths = get_optimal_column_widths(labels, data)
-    pretty_table = get_blank_row(widths) + line_separator  # first row
-    pretty_table += pretty_format_row(labels, widths) + line_separator
-    pretty_table += get_blank_row(widths) + line_separator
-    for row in data:  # append each row
-        pretty_table += pretty_format_row(row, widths) + line_separator
-    pretty_table += get_blank_row(widths)  # ending line
-    return pretty_table
-
-
-def parse_colorama(text):
-    """
-    :param text: str
-        Colorama text to parse
-    :return: str
-        Parsed colorama text
-    """
-
-    esc_key = Literal('\x1b')
-    integer = Word(nums)
-    escape_seq = Combine(
-        esc_key + '[' + Optional(delimitedList(integer, ';')) +
-        oneOf(list(alphas)))
-    non_ansi_string = lambda s: Suppress(escape_seq).transformString(s)
-    return non_ansi_string(text)
+    table = PrettyTable(labels, data, line_separator)
+    return table.build()
