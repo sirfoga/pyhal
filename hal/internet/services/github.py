@@ -14,10 +14,24 @@ from internet.utils import add_params_to_url
 GITHUB_URL = "https://github.com"
 API_URL = "https://api.github.com/"  # Github api url
 GITHUB_TOKEN = None
+GITHUB_REMOTE = "https://{}:x-oauth-basic@github.com/"
 
 
 def get_token():
     return GITHUB_TOKEN
+
+
+def get_clone_url(remote_shortcut, token):
+    """
+    :param remote_shortcut: str
+        Remote relative path of repository to clone
+    :param token: str
+        Github OAUTH token
+    :return: str
+        Url to clone
+    """
+
+    return GITHUB_REMOTE.format(token) + remote_shortcut
 
 
 class GithubRawApi(object):
