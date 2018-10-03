@@ -6,7 +6,7 @@
 
 from abc import abstractmethod
 
-from data.linked_list import LinkedList
+from hal.data.linked_list import LinkedList
 
 
 class VersionNumber:
