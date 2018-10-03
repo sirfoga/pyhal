@@ -9,7 +9,7 @@ import json
 import requests
 from bs4 import BeautifulSoup
 
-from .utils import add_params_to_url
+from internet.utils import add_params_to_url
 
 GITHUB_URL = "https://github.com"
 API_URL = "https://api.github.com/"  # Github api url
