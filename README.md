@@ -12,11 +12,11 @@
 </div>
 
 <div align="center">
-<a href="https://pypi.org/project/PyHal/"><img alt="PyPI version" src="https://badge.fury.io/py/PyHal.svg"></a> <a href="https://requires.io/github/sirfoga/pyhal/requirements/?branch=master"><img alt="Requirements Status" src="https://requires.io/github/sirfoga/pyhal/requirements.svg?branch=master"></a>
+<a href="https://pypi.org/project/PyHal/"><img alt="PyPI version" src="https://badge.fury.io/py/PyHal.svg"></a> <a href="https://requires.io/github/sirfoga/pyhal/requirements/?branch=master"><img alt="Requirements Status" src="https://requires.io/github/sirfoga/pyhal/requirements.svg?branch=master"></a> <a href="https://snyk.io/test/github/sirfoga/pyhal"><img alt="Known Vulnerabilities" src="https://snyk.io/test/github/sirfoga/pyhal/badge.svg"></a>
 </div>
 
 <div align="center">
-<a href="https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fsirfoga%2Fpyhal?ref=badge_shield"><img alt="FOSSA Status" src="https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fsirfoga%2Fpyhal.svg?type=shield"></a> <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg"></a> <a href="https://opensource.org/licenses/MIT"><img alt="Open Source Love" src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103"></a> <a href="https://github.com/sirfoga/pyhal/issues"><img alt="Contributions welcome" src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"></a>
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg"></a> <a href="https://opensource.org/licenses/MIT"><img alt="Open Source Love" src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103"></a> <a href="https://github.com/sirfoga/pyhal/issues"><img alt="Contributions welcome" src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"></a>
 </div>
 
 </br>
