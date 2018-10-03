@@ -16,7 +16,7 @@ class YoutubeChannel:
     def __init__(self, channel_name):
         self.channel_name = channel_name
 
-    def get_channel_page_from_name(self):
+    def get_channel_page(self):
         """
         :return string
             source page of youtube channel.
@@ -27,14 +27,15 @@ class YoutubeChannel:
             channel_url).get_html_source()  # get source page of channel
         return source_page
 
-    def get_channel_id_from_name(self):
+    def get_channel_id(self):
         """
         :return string
             id of youtube channel
         """
 
         soup = BeautifulSoup(
-            self.get_channel_page_from_name(), "lxml")  # parser for source page
+            self.get_channel_page(), "lxml"
+        )  # parser for source page
         channel_id = soup.find_all(
             "span",
             {
@@ -46,17 +47,17 @@ class YoutubeChannel:
         channel_id = channel_id["data-channel-external-id"]  # get id
         return channel_id
 
-    def get_channel_feed_url_from_name(self):
+    def get_feed_url(self):
         """
         :return string
             rss url feed of youtube channel
         """
 
-        channel_id = self.get_channel_id_from_name()  # get id
-        return YoutubeChannel.get_channel_feed_url_from_id(channel_id)
+        channel_id = self.get_channel_id()  # get id
+        return YoutubeChannel.get_feed_url_from_id(channel_id)
 
     @staticmethod
-    def get_channel_feed_url_from_id(channel_id):
+    def get_feed_url_from_id(channel_id):
         """
         :param channel_id: string
             id of channel (e.g in
@@ -69,7 +70,7 @@ class YoutubeChannel:
         return YOUTUBE_FEED_BASE_URL + channel_id
 
     @staticmethod
-    def get_channel_feed_url_from_video(video_url):
+    def get_feed_url_from_video(video_url):
         """
         :param video_url: string
             Url of video (e.g in https://www.youtube.com/watch?v=KB_iTbDrkxE)
@@ -84,4 +85,4 @@ class YoutubeChannel:
             "href"]
         channel_id = str(channel_id).strip().replace("/channel/",
                                                      "")  # get channel id
-        return YoutubeChannel.get_channel_feed_url_from_id(channel_id)
+        return YoutubeChannel.get_feed_url_from_id(channel_id)
