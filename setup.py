@@ -34,7 +34,6 @@ setup(
         "aiosocks",
         "bs4",
         "colorama",
-        "Crypto",
         "GitPython",
         "httplib2",
         "lxml",
