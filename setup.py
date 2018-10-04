@@ -42,7 +42,6 @@ setup(
         "numpy",
         "oauth2client",
         "psutil",
-        # "pycrypto", distutils installed project
         "pymongo",
         "requests",
         "scipy",
