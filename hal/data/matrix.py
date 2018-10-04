@@ -3,7 +3,6 @@
 
 """ Functions to deal with matrices """
 
-import numpy as np
 from sklearn.preprocessing import LabelEncoder
 
 
@@ -86,119 +85,126 @@ class Matrix:
         except:  # division by 0
             return 0
 
-    def get_column(self, column_index):
+    def get_as_list(self):
         """
-        :param column_index: int >= 0
+        :return: [] of anything
+            List of all values in matrix
+        """
+
+        return sum([
+            row
+            for row in self.matrix
+        ], [])
+
+    def get_column(self, index):
+        """
+        :param index: int >= 0
             Column index to take
         :return: []
             Column of array at position given
         """
 
-        try:
-            np_matrix = np.array(self.matrix)
-            np_column = np_matrix[:, column_index]
-            return list(np_column)
-        except:
-            return []
+        return [
+            row[index]
+            for row in self.matrix
+        ]
 
-    def get_subset(self, headers_to_sample, all_headers):
+    def get_columns(self, indices):
         """
-        :param headers_to_sample: [] of str
-            List of columns to get
-        :param all_headers: [] of str
-            List of all headers in matrix
+        :param indices: [] of int
+            List of all index to get
         :return: [] of []
-            Correlation matrix of selected columns
+            Selected columns
         """
 
-        header_to_column = {}  # create index of headers
-        for header in all_headers:
-            header_to_column[header] = all_headers.index(header)
+        return [
+            [
+                row[index]
+                for index in indices
+            ]
+            for row in self.matrix
+        ]
 
-        subset_columns = []
-        for header in headers_to_sample:
-            header_ind = header_to_column[header]  # index of header
-            header_column = self.get_column(header_ind)
-
-            for i, value in enumerate(header_column):
-                header_column[i] = float(value)  # get float
-
-            subset_columns.append(header_column)
-
-        return np.transpose(subset_columns)
-
-    def remove_column(self, headers, header_to_remove):
+    def add_column(self, column):
         """
-        :param headers: [] of str
-            Column names
-        :param header_to_remove: str
-            Name of column to remove
-        :return: headers, data
-            Headers without header removed and data without column removed
+        :param column: [] of anything
+            New column to add
+        :return: void
+            Data with new column
         """
 
-        index_to_remove = headers.index(header_to_remove)
+        self.matrix = [
+            row + [column[i]]
+            for i, row in enumerate(self.matrix)
+        ]
 
-        new_data = np.delete(self.matrix, index_to_remove, 1)  # remove
-        new_headers = np.delete(headers, index_to_remove, 0)  # remove
-
-        return new_headers, new_data
-
-    def add_columns(self, headers, new_headers, new_columns):
+    def add_columns(self, columns):
         """
-        :param headers: headers: [] of str
-            Column names
-        :param new_headers: [] of str
-            Names of new columns
-        :param new_columns: ([] of [])
+        :param columns: [] of [] of anything
             New columns to add
-        :return: headers, data
-            New headers (with new headers) and data with new columns
+        :return: void
+            Data with new columns
         """
 
-        new_data = []  # add each column
-        for i, row in enumerate(self.matrix):
-            new_row = []
-            for col in row:
-                new_row.append(col)  # add old columns
+        for column in columns:
+            self.add_column(column)
 
-            for new_col in new_columns[i]:
-                new_row.append(new_col)  # add new columns
-            new_data.append(new_row)  # add new row
+    def remove_column(self, index):
+        """
+        :param index: int
+            Index of column to remove
+        :return: void
+            Matrix without column removed
+        """
 
-        new_column_names = headers + new_headers
-        return new_column_names, new_data
+        self.matrix = [
+            [
+                val
+                for i, val in enumerate(row)
+                if i != index
+            ]
+            for row in self.matrix
+        ]
+
+    def remove_columns(self, indices):
+        """
+        :param indices: [] of int
+            Indices of columns to remove
+        :return: void
+            Matrix without column removed
+        """
+
+        for index in sorted(indices, reverse=True):  # start from last column
+            self.remove_column(index)
 
     def encode(self):
         """
-        :return: tuple (LabelEncoder, Matrix)
-            Encoder, encoded matrix
+        :return: LabelEncoder
+            Encoder
         """
 
-        lb = LabelEncoder()  # convert
-        concatenated_rows = sum([
-            row
-            for row in self.matrix
-        ], [])  # long list of raw values
-        encoded = lb.fit_transform(concatenated_rows)  # long list of encoded
+        lb = LabelEncoder()  # encoder
+        values = self.get_as_list()
+        encoded = lb.fit_transform(values)  # long list of encoded
         n_columns = len(self.matrix[0])
         n_rows = len(self.matrix)
-        matrix = [
+
+        self.matrix = [
             encoded[i: i + n_columns]
             for i in range(0, n_rows * n_columns, n_columns)
         ]
 
-        return lb, Matrix(matrix)
+        return lb
 
     def decode(self, lb):
         """
         :param lb: LabelEncoder
             Encoder used to encode matrix
-        :return: Matrix
-            Decoded matrix
+        :return: void
+            Decodes matrix
         """
 
-        return Matrix([
+        self.matrix = [
             lb.inverse_transform(row)
             for row in self.matrix
-        ])
+        ]
