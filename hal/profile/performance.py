@@ -10,7 +10,7 @@ import random
 import sys
 
 from hal.files.models import Document
-from hal.maths import maths
+from hal.maths import primes
 from times import time
 
 
@@ -72,7 +72,7 @@ class EightQueenTest(object):
         """
 
         timing = time()
-        problem = maths.EightQueen(size)
+        problem = primes.problems.EightQueen(size)
         problem.solve(problem.board_size)
         return time() - timing
 

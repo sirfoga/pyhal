@@ -16,6 +16,14 @@ class DbBrowser:
         self.client = MongoClient()
         self.db = self.client[db_name]
 
+    def get_collection_names(self):
+        """
+        :return: [] of str
+            List of names of all collections
+        """
+
+        return self.db.collection_names()
+
     def get_documents_count(self):
         """
         :return: int
@@ -23,7 +31,7 @@ class DbBrowser:
         """
 
         db_collections = [
-            self.db[c] for c in self.db.collection_names()
+            self.db[c] for c in self.get_collection_names()
         ]  # list of all collections in database
         return sum([c.count() for c in db_collections])  # sum
 
@@ -37,7 +45,7 @@ class DbBrowser:
             List of documents in collection in self.db
         """
 
-        documents_iterator = self.db[collection_name].find()
+        documents_iterator = self.db[collection_name].find()  # anything
         documents = [
             d for d in documents_iterator
         ]  # list of all documents in collection in database
@@ -48,6 +56,16 @@ class DbBrowser:
 
         return documents
 
+    def get_collection(self, key):
+        """
+        :param key: str
+            Name of collection
+        :return: Collection
+            Data in collection with given key
+        """
+
+        return self.db[key]
+
     def get_documents_in_database(self, with_id=True):
         """
         :param with_id: bool
@@ -57,7 +75,7 @@ class DbBrowser:
         """
 
         documents = []
-        for coll in self.db.collection_names():
+        for coll in self.get_collection_names():
             documents += self.get_documents_in_collection(
                 coll,
                 with_id=with_id
