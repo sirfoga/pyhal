@@ -26,7 +26,6 @@
 
 - [The problem](#the-problem)
 - [An example](#an-example)
-- [The solution](#the-solution)
 - [Install](#install)
 - [Requirements](#requirements)
 - [Python dependencies](#python-dependencies)
@@ -106,11 +105,6 @@ from hal.internet.youtube import get_channel_feed_url_from_video
 video_url = "my awesome video of an awesome channel"
 channel_feed = get_channel_feed_url_from_video(video_url)
 ```
-
-
-## The solution
-One-line, fast and extensible python commands to deal with most of every-day
- situation.
 
 
 ## Install
