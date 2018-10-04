@@ -17,7 +17,7 @@ def parse_colorama(text):
     return non_ansi_string(text)
 
 
-class PrettyTable:
+class SqlTable:
     def __init__(self, labels, data, line_separator):
         """
         :param labels: [] of str
@@ -128,6 +128,19 @@ class PrettyTable:
 
         return pretty_table
 
+    @staticmethod
+    def from_df(df):
+        """
+        :param df: pandas.DataFrame
+            Data
+        :return: SqlTable
+            Parses data and builds an instance of this class
+        """
+
+        labels = df.columns.tolist()
+        data = df.reset_index().values.tolist()
+        return SqlTable(labels, data, "\n")
+
 
 def pretty_format_table(labels, data, line_separator="\n"):
     """
@@ -141,5 +154,17 @@ def pretty_format_table(labels, data, line_separator="\n"):
         Pretty formatted table (first row is labels, then actual data)
     """
 
-    table = PrettyTable(labels, data, line_separator)
+    table = SqlTable(labels, data, line_separator)
+    return table.build()
+
+
+def pretty_df(df):
+    """
+    :param df: pandas.DataFrame
+        Data
+    :return: str
+        Pretty formatted table (first row is labels, then actual data)
+    """
+
+    table = SqlTable.from_df(df)
     return table.build()

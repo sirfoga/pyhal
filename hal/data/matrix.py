@@ -208,3 +208,21 @@ class Matrix:
             lb.inverse_transform(row)
             for row in self.matrix
         ]
+
+    @staticmethod
+    def from_columns(columns):
+        """
+        :param columns: [] of [] of anything
+            Matrix divided into columns
+        :return: Matrix
+            Merge the columns to form a matrix
+        """
+
+        data = [
+            [
+                column[i]
+                for i in range(len(column))
+            ]
+            for column in columns
+        ]
+        return Matrix(data)
