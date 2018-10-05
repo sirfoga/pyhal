@@ -18,12 +18,14 @@ def parse_colorama(text):
 
 
 class SqlTable:
-    def __init__(self, labels, data, line_separator):
+    def __init__(self, labels, data, num_format, line_separator):
         """
         :param labels: [] of str
             List of labels of data
         :param data: ([] of []) of anything
             Matrix of any type
+        :param num_format: str
+            Format numbers with this format
         :param line_separator: str
             Separate each new line with this
         :return: str
@@ -32,6 +34,7 @@ class SqlTable:
 
         self.labels = labels
         self.data = data
+        self.num_format = num_format
         self.new_line = line_separator
         self.widths = None
 
@@ -73,12 +76,20 @@ class SqlTable:
 
         row = [str(d) for d in row]
         for i, val in enumerate(row):
+            try:
+                x = float(val)
+                row[i] = self.num_format.format(x)
+            except:
+                pass
+
             length_diff = self.widths[i] - len(parse_colorama(val))
             if length_diff > 0:  # value is shorter than foreseen
                 row[i] = str(filler * length_diff) + row[i]  # adjust content
+
         pretty_row = splitter  # start of row
         for val in row:
             pretty_row += filler + val + filler + splitter
+
         return pretty_row
 
     def get_blank_row(self, filler="-", splitter="+"):
@@ -139,22 +150,24 @@ class SqlTable:
 
         labels = df.keys().tolist()
         data = df.values.tolist()
-        return SqlTable(labels, data, "\n")
+        return SqlTable(labels, data, "{:.3f}", "\n")
 
 
-def pretty_format_table(labels, data, line_separator="\n"):
+def pretty_format_table(labels, data, num_format="{:.3f}", line_separator="\n"):
     """
     :param labels: [] of str
         List of labels of data
     :param data: ([] of []) of anything
         Matrix of any type
+    :param num_format: str
+        Format numbers with this format
     :param line_separator: str
         Separate each new line with this
     :return: str
         Pretty formatted table (first row is labels, then actual data)
     """
 
-    table = SqlTable(labels, data, line_separator)
+    table = SqlTable(labels, data, num_format, line_separator)
     return table.build()
 
 
