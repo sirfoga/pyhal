@@ -137,8 +137,8 @@ class SqlTable:
             Parses data and builds an instance of this class
         """
 
-        labels = df.columns.tolist()
-        data = df.reset_index().values.tolist()
+        labels = df.keys().tolist()
+        data = df.values.tolist()
         return SqlTable(labels, data, "\n")
 
 

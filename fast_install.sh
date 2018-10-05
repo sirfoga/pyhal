@@ -1,9 +1,10 @@
 # !/bin/bash
 # coding: utf_8
 
-LOCAL_FOLDER="${PWD}/hal/*"
+PACKAGE="hal"
+LOCAL_FOLDER="${PWD}/${PACKAGE}/*"
 PYTHON_VERSION="python3.6"
-DIST_FOLDER="/usr/local/lib/${PYTHON_VERSION}/dist-packages/hal"
+DIST_FOLDER="/usr/local/lib/${PYTHON_VERSION}/dist-packages/${PACKAGE}"
 
 rm -rf ${DIST_FOLDER}  # clean
 mkdir ${DIST_FOLDER}
