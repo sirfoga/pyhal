@@ -7,7 +7,7 @@
 import os
 from email.mime.text import MIMEText
 
-from internet.services.google import GoogleApiOAuth
+from hal.internet.services.google.gauthenticator import GoogleApiOAuth
 
 
 class GMailApiOAuth(GoogleApiOAuth):

@@ -8,7 +8,7 @@ import socket
 import urllib.parse as urlparse
 from urllib.parse import urlencode
 
-import times
+from hal import times
 
 
 def add_params_to_url(url, params):
