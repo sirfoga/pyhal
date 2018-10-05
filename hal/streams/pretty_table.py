@@ -38,6 +38,17 @@ class SqlTable:
         self.new_line = line_separator
         self.widths = None
 
+        self._parse()
+
+    def _parse(self):
+        for i, row in enumerate(self.data):
+            for j, col in enumerate(row):
+                try:
+                    x = float(col)
+                    self.data[i][j] = self.num_format.format(x)
+                except:
+                    self.data[i][j] = str(self.data[i][j])
+
     def _calculate_optimal_column_widths(self):
         """
         :return: [] of int
@@ -74,14 +85,7 @@ class SqlTable:
             Pretty formatted row
         """
 
-        row = [str(d) for d in row]
         for i, val in enumerate(row):
-            try:
-                x = float(val)
-                row[i] = self.num_format.format(x)
-            except:
-                pass
-
             length_diff = self.widths[i] - len(parse_colorama(val))
             if length_diff > 0:  # value is shorter than foreseen
                 row[i] = str(filler * length_diff) + row[i]  # adjust content
