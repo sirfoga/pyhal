@@ -52,7 +52,7 @@ class MP3Song(FileSystem):
             Location of .mp3 file
         """
 
-        FileSystem.__init__(self, path)
+        super().__init__(path)
 
         self.song = MP3(self.path, ID3=ID3)
         self.tags = self.song.tags

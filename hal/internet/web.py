@@ -115,7 +115,7 @@ def is_url(candidate_url):
     return re.match(URL_VALID_REGEX, candidate_url)
 
 
-class Webpage(object):
+class Webpage:
     """ representation of URL (web page)"""
 
     def __init__(self, url):
@@ -123,8 +123,6 @@ class Webpage(object):
         :param url: string
             Url of webpage
         """
-
-        object.__init__(self)
 
         self.url = self.parse_url(url)
         self.domain = self.get_domain()

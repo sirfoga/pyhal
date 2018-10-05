@@ -7,7 +7,7 @@
 from sklearn.model_selection import train_test_split
 
 
-class BasePrediction(object):
+class BasePrediction:
     """ The mother of all predictions """
 
     def __init__(self, model, rounds):
@@ -17,8 +17,6 @@ class BasePrediction(object):
         :param rounds: int
             Number of rounds to repeat prediction (and get better results)
         """
-
-        object.__init__(self)
 
         self.model = model  # ml algorithm to use for prediction
         self.rounds = rounds  # number of times to make prediction

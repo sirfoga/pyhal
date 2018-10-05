@@ -114,7 +114,7 @@ class TestLs(TestCase):
             Creates temp file for testing
         """
 
-        TestCase.__init__(self)
+        super().__init__()
 
         # create folder structure, at the end it will be like
         # working_folder/

@@ -7,7 +7,7 @@
 from hal.strings.utils import get_max_similar
 
 
-class UserInput(object):
+class UserInput:
     """ Chat with user and ask questions """
 
     YES = ["yes", "ok", "fine"]
@@ -26,8 +26,6 @@ class UserInput(object):
         :param interactive: bool
             True iff program should deal with user not answering properly
         """
-
-        object.__init__(self)
 
         self.THRESHOLD_INPUT = threshold
         self.YES = yes_choices

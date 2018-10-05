@@ -273,7 +273,7 @@ def list_content(path, recurse, include_hidden=False):
     return ls_dir(path, include_hidden=include_hidden)
 
 
-class FileSystem(object):
+class FileSystem:
     """ Models a folder/file in a OS """
 
     def __init__(self, path):
@@ -281,8 +281,6 @@ class FileSystem(object):
         :param path: string
             Path to file
         """
-
-        object.__init__(self)
 
         self.path = fix_raw_path(path)
         self.name, self.extension = os.path.splitext(self.path)

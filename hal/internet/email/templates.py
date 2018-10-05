@@ -8,7 +8,7 @@ from email.mime.text import MIMEText
 from hal.internet.email.utils import get_email_content
 
 
-class EmailTemplate(object):
+class EmailTemplate:
     """ Default email template """
 
     def __init__(self,
@@ -28,8 +28,6 @@ class EmailTemplate(object):
         :param extra_args: {}
             Extra arguments and details about recipient
         """
-
-        object.__init__(self)
 
         self.recipient = str(recipient).title().strip()
         self.email_subject = subject

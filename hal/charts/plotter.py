@@ -10,7 +10,7 @@ from matplotlib.widgets import Slider
 from scipy import linspace
 
 
-class Plot2d(object):
+class Plot2d:
     """ 2d plot """
 
     @staticmethod
@@ -69,7 +69,7 @@ class Plot2d(object):
                 plt.show()
 
 
-class Plot3d(object):
+class Plot3d:
     """ 3D plot """
 
     @staticmethod
@@ -175,7 +175,7 @@ class Plot3d(object):
         plt.show()
 
 
-class Plot4d(object):
+class Plot4d:
     """ 4D plot generator with slider """
 
     @staticmethod

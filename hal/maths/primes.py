@@ -26,7 +26,7 @@ LOW_PRIMES = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53,
               991, 997]  # primes until 1000
 
 
-class Integer(object):
+class Integer:
     """ Big int std python won't recognize """
 
     def __init__(self, string):

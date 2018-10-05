@@ -7,11 +7,11 @@
 from hal.internet.web import Webpage
 
 
-class SearchEngineResult(object):
+class SearchEngineResult:
     """ Result of general search engine """
 
     def __init__(self, title, link, description=""):
-        object.__init__(self)
+
 
         self.title = title
         self.link = link
@@ -21,7 +21,7 @@ class SearchEngineResult(object):
         return self.title
 
 
-class SearchEngine(object):
+class SearchEngine:
     """ Internet general search engine """
 
     def __init__(self, url, blank_replace="+"):
@@ -31,7 +31,6 @@ class SearchEngine(object):
         :param blank_replace:
             Every search engine has to replace blanks in query
         """
-        object.__init__(self)
 
         self.url = str(url)
         self.web_page = Webpage(self.url)

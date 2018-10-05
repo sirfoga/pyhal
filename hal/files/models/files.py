@@ -21,7 +21,7 @@ class Document(FileSystem):
             Path to file
         """
 
-        FileSystem.__init__(self, path)
+        super().__init__(path)
 
         self.root_path, self.full_name = self.get_path_name()
         self.name, self.extension = os.path.splitext(self.full_name)
@@ -147,7 +147,7 @@ class Directory(FileSystem):
             Path to file
         """
 
-        FileSystem.__init__(self, fix_raw_path(path))
+        super().__init__(fix_raw_path(path))
 
         self.root_path, self.name = self.get_path_name()
 

@@ -8,7 +8,7 @@ import csv
 import json
 
 
-class Parser(object):
+class Parser:
     """ Mother of all data-files parsers """
 
     def __init__(self, file_path):
@@ -17,7 +17,7 @@ class Parser(object):
             about anything
         """
 
-        object.__init__(self)
+
         self.path = file_path
         self.lines = None  # list of lines in database
 
@@ -44,7 +44,7 @@ class CSVParser(Parser):
             Encoding to open file with
         """
 
-        Parser.__init__(self, file_path)
+        super().__init__(file_path)
         self.encoding = str(encoding).strip()
 
     def get_matrix(self):

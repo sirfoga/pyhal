@@ -8,7 +8,7 @@ import datetime
 import json
 
 
-class AppCronLock(object):
+class AppCronLock:
     """ Checks if app can proceed; generates lock """
 
     DATETIME_FORMAT = "%Y-%m-%d %H:%M:%S"
@@ -19,7 +19,6 @@ class AppCronLock(object):
             Path to lock file
         """
 
-        object.__init__(self)
         self.lock_file = lock_file
         self.update_interval = 7
         self.last_update = datetime.datetime.fromtimestamp(0)

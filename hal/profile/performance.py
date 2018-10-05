@@ -14,12 +14,10 @@ from hal.maths import primes
 from times import time
 
 
-class EightQueenTest(object):
+class EightQueenTest:
     """ Test CPU by solving eight-queen problem """
 
     def __init__(self, size):
-        object.__init__(self)
-
         self.size = size
         self.benchmark = ""
 

@@ -13,7 +13,7 @@ from oauth2client import tools
 from oauth2client.file import Storage
 
 
-class GoogleApiOAuth(object):
+class GoogleApiOAuth:
     def __init__(self, scope, app_name, app_secrets_path,
                  user_credentials_path):
         """
@@ -26,8 +26,6 @@ class GoogleApiOAuth(object):
         :param user_credentials_path: string
             path to user credentials
         """
-
-        object.__init__(self)
 
         self.scope = str(scope)
         self.app_name = str(app_name)

@@ -5,11 +5,10 @@
 """ Useful problems """
 
 
-class EightQueen(object):
+class EightQueen:
     """ 8 queen problem solver """
 
     def __init__(self, board_size):
-        object.__init__(self)
         self.board_size = board_size
 
     @staticmethod

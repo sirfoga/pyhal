@@ -34,7 +34,7 @@ def get_clone_url(remote_shortcut, token):
     return GITHUB_REMOTE.format(token) + remote_shortcut
 
 
-class GithubRawApi(object):
+class GithubRawApi:
     """ Wrapper for generic Github API """
 
     _API_URL_TYPE = {
@@ -53,8 +53,6 @@ class GithubRawApi(object):
         :param get_api_content_now: bool
             True iff you want to get API content response when building object
         """
-
-        object.__init__(self)
 
         self.api_url = url
         self.api_content = None
