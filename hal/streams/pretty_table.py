@@ -45,7 +45,11 @@ class SqlTable:
             for j, col in enumerate(row):
                 try:
                     x = float(col)
-                    self.data[i][j] = self.num_format.format(x)
+                    if (x % 1) == 0:  # integer
+                        x = int(col)
+                        self.data[i][j] = str(x)
+                    else:
+                        self.data[i][j] = self.num_format.format(x)
                 except:
                     self.data[i][j] = str(self.data[i][j])
 
