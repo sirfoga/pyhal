@@ -10,7 +10,7 @@ from hal.data.linked_list import LinkedList
 
 
 class VersionNumber:
-    """ """
+    """ Version """
 
     @abstractmethod
     def get_current_amount(self):
@@ -18,7 +18,7 @@ class VersionNumber:
         Gets current set amount
 
         # Returns
-        Current set amount
+            amount: Current set amount
         """
         pass
 
@@ -28,7 +28,7 @@ class VersionNumber:
             amount: Amount to increase
 
         # Returns
-        True iff this number can be increased by such amount
+            bool: True iff this number can be increased by such amount
         """
         return amount <= self.max_amount_allowed()
 
@@ -41,7 +41,7 @@ class VersionNumber:
             amount: Increase number by this amount (Default value = 1)
 
         # Returns
-        True iff increase was successful
+            bool: True iff increase was successful
         """
         pass
 
@@ -71,7 +71,8 @@ class VersionNumber:
         Calculates number of increases available
 
         # Returns
-        Number of increases that can be done before reaching maximum
+            increases: Number of increases that can be done before reaching
+            maximum
         """
         pass
 
@@ -81,8 +82,8 @@ class VersionNumber:
         Calculates max increases
 
         # Returns
-        Number of increases that can be done before reaching maximum
-            starting at 0
+            inreases: Number of increases that can be done before reaching
+            maximum starting at 0
         """
         pass
 
@@ -105,21 +106,13 @@ class Level(VersionNumber):
 
     def get_current_amount(self):
         """
-        Gets current amount
-
-        # Returns
-        Current amount
+        See also: #get_current_amount()
         """
         return self.current
 
     def increase(self, amount=1):
         """
-        Increases version by this amount
-
-        # Arguments
-            amount: amount to increase by
-        # Returns
-        Increases version by this amount
+        See also: #increase()
         """
         if self.can_increase(amount):
             self.current += amount
@@ -129,37 +122,25 @@ class Level(VersionNumber):
 
     def maximize(self):
         """
-        Maximizes this version
-
-        # Returns
-        Maximizes this version
+        See also: #maximize()
         """
         self.current = self.max_inner
 
     def reset(self):
         """
-        Resets this version
-
-        # Returns
-        Resets this version
+        See also: #reset()
         """
         self.current = 0
 
     def max_amount_allowed(self):
         """
-        Gets max amounts of version
-
-        # Returns
-        Gets max amounts of version
+        See also: #max_amount_allowed()
         """
         return self.max_inner - self.current
 
     def max(self):
         """
-        Gets max of version
-
-        # Returns
-        Gets max of version
+        See also: #max()
         """
         return self.max_inner
 
@@ -187,19 +168,13 @@ class Subsystem(VersionNumber):
 
     def get_current_amount(self):
         """
-        Gets current amount
-
-        # Returns
-        Current amount
+        See also: #get_current_amount()
         """
         return self.current
 
     def reset(self):
         """
-        Resets version
-
-        # Returns
-        Resets version
+        See also: #reset()
         """
         node = self.ll.head
 
@@ -209,13 +184,7 @@ class Subsystem(VersionNumber):
 
     def increase(self, amount=1):
         """
-        Increases version
-
-        # Arguments
-          amount: amount to increase version by
-
-        # Returns
-        Increases version
+        See also: #increase()
         """
         if self.ll.head.val.increase(amount):
             return True
@@ -241,10 +210,7 @@ class Subsystem(VersionNumber):
 
     def maximize(self):
         """
-        Maximizes version
-
-        # Returns
-        Maximizes version
+        See also: #maximize()
         """
         node = self.ll.head
 
@@ -254,10 +220,7 @@ class Subsystem(VersionNumber):
 
     def max_amount_allowed(self):
         """
-        Calculates number of increases available
-
-        # Returns
-        Number of increases that can be done before reaching maximum
+        See also: #max_amount_allowed()
         """
         amount_allowed = self.ll.head.val.max_amount_allowed()
         multiplier = self.ll.head.val.max()
@@ -272,10 +235,7 @@ class Subsystem(VersionNumber):
 
     def max(self):
         """
-        Maximizes this version
-
-        # Returns
-        Maximizes this version
+        See also: #max()
         """
         multiplier = 1
         node = self.ll.head
@@ -303,36 +263,26 @@ class Version(VersionNumber):
         return str(self.s)
 
     def get_current_amount(self):
-        """ """
+        """
+        See also: #get_current_amount()
+        """
         return self.s.get_current_amount()
 
     def reset(self):
         """
-        Zeroes this number
-
-        # Returns
-        Zeroes this number
+        See also: #reset()
         """
         return self.s.reset()
 
     def max_amount_allowed(self):
         """
-        Calculates number of increases available
-
-        # Returns
-        Number of increases that can be done before reaching maximum
+        See also: #max_amount_allowed()
         """
         return self.s.max_amount_allowed()
 
     def increase(self, amount=1):
         """
-        Increase version by this amount
-
-        # Arguments
-            amount: Increase number by this amount (Default value = 1)
-
-        # Returns
-        True iff increase was successful
+        See also: #increase()
         """
         return self.s.increase(amount)
 
@@ -345,7 +295,9 @@ class Version(VersionNumber):
           ratio: Ratio changes / version increases
 
         # Returns
-        Increase version accordingly to changes
+            bool: Increases version accordingly to changes
+
+        See also: #increase()
         """
         increases = round(changes_amount * ratio)
         return self.increase(int(increases))
@@ -361,11 +313,7 @@ class Version(VersionNumber):
 
     def max(self):
         """
-        Calculates max increases
-
-        # Returns
-        Number of increases that can be done before reaching maximum
-            starting at 0
+        See also: #maximize()
         """
         return self.s.max()
 
@@ -380,7 +328,7 @@ class Version(VersionNumber):
           separator: Version numbers are separated with this split
 
         # Returns
-        Parses string and returns object
+            version: Parses string and returns object
         """
         tokens = string.split(separator)
         tokens = list(reversed(tokens))  # reverse order of importance

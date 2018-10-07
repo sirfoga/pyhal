@@ -33,7 +33,7 @@ class LinkedList:
         Gets head
 
         # Returns
-        Head of linked list
+            head: Head of linked list
         """
         return self.head
 
@@ -42,7 +42,7 @@ class LinkedList:
         Gets tail
 
         # Returns
-        Tail of linked list
+            tail: Tail of linked list
         """
         node = self.head
         last_node = self.head
@@ -58,7 +58,7 @@ class LinkedList:
         Gets length
 
         # Returns
-        How many items in linked list of linked list
+            length: How many items in linked list of linked list
         """
         item = self.head
         counter = 0
@@ -77,7 +77,7 @@ class LinkedList:
             val: Object to insert
 
         # Returns
-        Appends element to last
+            bool: Appends element to last
         """
         return self.insert(val, self.length())
 
@@ -90,7 +90,7 @@ class LinkedList:
             at: Index of insertion (Default value = 0)
 
         # Returns
-        True iff insertion completed successfully
+            bool: True iff insertion completed successfully
         """
         if at < 0 or at > self.length():
             return False
@@ -123,7 +123,7 @@ class LinkedList:
         Removes first
 
         # Returns
-        True iff head has been removed
+            bool: True iff head has been removed
         """
         if self.head.next_node is not None:
             self.head = self.head.next_node
@@ -136,7 +136,7 @@ class LinkedList:
         Removes last
 
         # Returns
-        True iff last element has been removed
+            bool: True iff last element has been removed
         """
         node = self.head
 
@@ -157,7 +157,7 @@ class LinkedList:
             at: Index of removal
 
         # Returns
-        True iff removal completed successfully
+            bool: True iff removal completed successfully
         """
         if at < 0 or at > self.length():
             return False
@@ -188,7 +188,7 @@ class LinkedList:
         Cycle all items and puts them in a list
 
         # Returns
-        list representation
+            list: list representation
         """
         out = []
         node = self.head
@@ -207,7 +207,7 @@ class LinkedList:
             func: Function to execute on each item
 
         # Returns
-        Results of calling the function on each item
+            list: Results of calling the function on each item
         """
         return [
             func(item) for item in self.to_lst()
@@ -229,7 +229,7 @@ class LinkedList:
             lst: list of elements
 
         # Returns
-        Nodes from list
+            LinkedList: Nodes from list
         """
         if not lst:
             return None

@@ -18,7 +18,7 @@ def how_similar_dicts(d1, d2):
         d2: Dictionary
 
     # Returns
-        similarity: A measure of how much similar values of dictionaries are
+        value: A measure of how much similar values of dictionaries are
     """
     values = []
     for k in d1:  # iterate keys

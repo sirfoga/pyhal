@@ -17,7 +17,7 @@ class Matrix:
         Calculates precision
 
         # Returns
-        precision
+            value: Precision of matrix
         """
         true_pos = self.matrix[0][0]
         false_pos = self.matrix[1][0]
@@ -32,7 +32,7 @@ class Matrix:
         Calculates recall
 
         # Returns
-        recall
+            value: Recall
         """
         true_pos = self.matrix[0][0]
         false_neg = self.matrix[0][1]
@@ -47,7 +47,7 @@ class Matrix:
         Calculates true negative rate
 
         # Returns
-        true negative rate
+            value: true negative rate
         """
         false_pos = self.matrix[1][0]
         true_neg = self.matrix[1][1]
@@ -62,7 +62,7 @@ class Matrix:
         Calculates accuracy
 
         # Returns:
-            accuracy
+            value: Accuracy
         """
         true_pos = self.matrix[0][0]
         false_pos = self.matrix[1][0]
@@ -82,7 +82,7 @@ class Matrix:
         Calculates F1 score
 
         # Returns
-        F1 score
+            value: F1 score
         """
         m_pre = self.precision()
         rec = self.recall()
@@ -97,7 +97,7 @@ class Matrix:
         List of all values in matrix
 
         # Returns
-        list representation
+            list: list representation
         """
         return sum([
             row
@@ -109,7 +109,7 @@ class Matrix:
         Encodes matrix
 
         # Returns
-        Encoder used
+            encoder: Encoder used
         """
         lb = LabelEncoder()  # encoder
         values = self.get_as_list()
@@ -132,7 +132,7 @@ class Matrix:
           lb: Encoder used to encode matrix
 
         # Returns
-        Decodes matrix
+            list: Decodes matrix
         """
         self.matrix = [
             lb.inverse_transform(row)
@@ -148,7 +148,7 @@ class Matrix:
           columns:  atrix divided into columns
 
         # Returns
-        Merge the columns to form a matrix
+            Matrix: Merge the columns to form a matrix
         """
         data = [
             [

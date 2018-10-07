@@ -23,7 +23,7 @@ class Plot2d:
             vector_y: vector in y axis
 
         # Returns
-        2d scatter plot
+            Shows 2d scatter plot
         """
         if len(vector_x) == len(vector_y):
             # fig = plt.figure()
@@ -48,7 +48,7 @@ class Plot2d:
             points: number of points to display
 
         # Returns
-        2d parametric graph of given function from min to max
+            Shows 2d parametric graph of given function from min to max
         """
         if points < 0:
             raise ValueError("Number of points to plot must be positive.")
@@ -68,7 +68,7 @@ class Plot2d:
             points: number of points
 
         # Returns
-        plots 2d function
+            Plots 2d function
         """
         if points < 0:
             raise ValueError("Number of points to plot must be positive.")
@@ -95,7 +95,7 @@ class Plot3d:
             vector_z: vector in z axis
 
         # Returns
-        plots 3d scattered points
+            Plots 3d scattered points
         """
         if len(vector_x) == len(vector_y) == len(vector_z):
             # general settings
@@ -123,7 +123,7 @@ class Plot3d:
             points: number of points
 
         # Returns
-        3d parametric graph of given function from min to max
+            Shows 3d parametric graph of given function from min to max
         """
         if points < 0:
             raise ValueError("Number of points to plot must be positive.")
@@ -167,7 +167,7 @@ class Plot3d:
             points_y: points in y axis
 
         # Returns
-        Plots 3d function
+            Plots 3d function
         """
         if points_x < 0 or points_y < 0:
             raise ValueError("Number of points to plot must be positive.")
@@ -215,7 +215,7 @@ class Plot4d:
             vector_w: vector in w axis
 
         # Returns
-        Pplot 4d scattered points
+            Plots 4d scattered points
         """
         if len(vector_x) == len(vector_y) == len(vector_z) == len(vector_w):
             pass
@@ -242,7 +242,7 @@ class Plot4d:
                 in plane and w colored (Default value = "contour")
 
         # Returns
-        Plots 4d function
+            Plots 4d function
         """
         if precision < 0:
             raise ValueError("Precision cannot be negative.")
@@ -274,7 +274,7 @@ class Plot4d:
                 label_z: new label on z axis
 
             # Returns
-        Set given labels to axes of graph
+                Sets given labels to axes of graph
             """
             graph.set_xlabel(label_x)
             graph.set_ylabel(label_y)
@@ -288,7 +288,7 @@ class Plot4d:
                 graph: plot
 
             # Returns
-        set given limits to axes of graph
+                Sets given limits to axes of graph
             """
             graph.set_xlim(min_x, max_x)
             graph.set_ylim(min_y, max_y)
@@ -303,7 +303,7 @@ class Plot4d:
                 max_val: maximum
 
             # Returns
-        precision
+                precision: prevision of values
             """
             return int((max_val - min_val) * (1 + precision))
 
@@ -316,7 +316,7 @@ class Plot4d:
                 max_val: maximum
 
             # Returns
-        precision delte
+                delta: Precision delta
             """
             return float(max_val - min_val) / float(10 * precision)
 
@@ -341,7 +341,7 @@ class Plot4d:
                     val: value
 
                 # Returns
-        re-plot
+                    Re-plots
                 """
                 chart.clear()
                 x_const = slider.val
@@ -380,7 +380,7 @@ class Plot4d:
                     val: value
 
                 # Returns
-        re-plot
+                    Re-plots
                 """
                 chart.clear()  # re-plot
                 x_const = slider.val

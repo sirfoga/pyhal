@@ -32,7 +32,7 @@ class Diff:
         Calculates otal additions and deletions
 
         # Returns
-        Dictionary with total additions and deletions
+            dictionary: Dictionary with total additions and deletions
         """
         total_added = 0
         total_removed = 0
@@ -69,7 +69,7 @@ class Commit:
             date_format: Format date and times with this format
 
         # Returns:
-            Pretty description of commit
+            string: Pretty description of commit
         """
         hash_value = self.c.hexsha
         date_time = self.c.authored_datetime.strftime(date_format)
@@ -80,7 +80,7 @@ class Commit:
         Gets author
 
         # Returns
-        author of commit
+            author: author of commit
         """
         author = self.c.author
 
@@ -109,7 +109,7 @@ class Repository:
         Gets last commit
 
         # Returns
-        Last commit of repository
+            commit: Last commit of repository
         """
         return self.r.head.commit
 
@@ -118,7 +118,7 @@ class Repository:
         Gets list of total diff
 
         # Returns
-        List of total diff between 2 consecutive commits since start
+            list: List of total diff between 2 consecutive commits since start
         """
         diffs = []
 
@@ -142,7 +142,7 @@ class Repository:
             other_commit: Second commit
 
         # Returns
-        Dictionary with total additions and deletions
+            dictionary: Dictionary with total additions and deletions
         """
         diff = self.r.git.diff(commit.hexsha, other_commit.hexsha)
         return Diff(diff).get_totals()
@@ -156,8 +156,7 @@ class Repository:
                 version increases
 
         # Returns
-        Version of this code, based on commits diffs
-
+            version: Version of this code, based on commits diffs
         """
         diffs = self.get_diff_amounts()
         version = Version()
@@ -175,7 +174,7 @@ class Repository:
           diff_to_increase_ratio: Ratio to convert number of changes into version increases
 
         # Returns
-        Pretty version of this repository
+            string: Pretty version of this repository
         """
         version = self.get_version(diff_to_increase_ratio)
         last = self.get_last_commit()

@@ -15,8 +15,8 @@ class SimpleChart:
         Setups bottom margin
 
         # Attributes
-        title: Title of chart
-        fig: Matplotlib figure
+            title: Title of chart
+            fig: Matplotlib figure
         """
         self.title = title
         self.fig = plt.figure()
@@ -28,7 +28,7 @@ class SimpleChart:
         Setups bottom margin
 
         # Arguments
-        bottom: Bottom margin
+            bottom: Bottom margin
         """
         plt.gcf().subplots_adjust(bottom=bottom)  # add bottom
 
@@ -37,7 +37,7 @@ class SimpleChart:
         Gets chart canvas
 
         # Returns
-        figure: matplotlib figure
+            figure: matplotlib figure
         """
         return self.fig
 
@@ -46,6 +46,6 @@ class SimpleChart:
         Adds to figure
 
         # Returns
-        completed: operation completed
+            completed: operation completed
         """
         return self.fig.add_subplot(111)
