@@ -18,11 +18,12 @@ class Plot2d:
         """
         Plots scatter data
 
-        Args:
+        # Arguments
             vector_x: vector in x axis
             vector_y: vector in y axis
 
-        Returns: 2d scatter plot
+        # Returns
+        2d scatter plot
         """
         if len(vector_x) == len(vector_y):
             # fig = plt.figure()
@@ -39,14 +40,15 @@ class Plot2d:
         """
         Plots parametric data
 
-        Args:
+        # Arguments
             function_x: function in x value
             function_y: function in y value
             min_val: minimum value
             max_val: maximum value
             points: number of points to display
 
-        Returns: 2d parametric graph of given function from min to max
+        # Returns
+        2d parametric graph of given function from min to max
         """
         if points < 0:
             raise ValueError("Number of points to plot must be positive.")
@@ -59,13 +61,14 @@ class Plot2d:
         """
         Plots data
 
-        Args:
+        # Arguments
             func: function to plot
             min_val: minimum value
             max_val: maximum value
             points: number of points
 
-        Returns: plots 2d function
+        # Returns
+        plots 2d function
         """
         if points < 0:
             raise ValueError("Number of points to plot must be positive.")
@@ -86,12 +89,13 @@ class Plot3d:
         """
         Plots scatter data
 
-        Args:
+        # Arguments
             vector_x: vector in x axis
             vector_y: vector in y axis
             vector_z: vector in z axis
 
-        Returns: plots 3d scattered points
+        # Returns
+        plots 3d scattered points
         """
         if len(vector_x) == len(vector_y) == len(vector_z):
             # general settings
@@ -110,7 +114,7 @@ class Plot3d:
         """
         Plots parametric functions
 
-        Args:
+        # Arguments
             function_x: function in x
             function_y: function in y
             function_z: function in z
@@ -118,7 +122,8 @@ class Plot3d:
             max_val: maximum
             points: number of points
 
-        Returns: 3d parametric graph of given function from min to max
+        # Returns
+        3d parametric graph of given function from min to max
         """
         if points < 0:
             raise ValueError("Number of points to plot must be positive.")
@@ -152,7 +157,7 @@ class Plot3d:
         """
         Plots function
 
-        Args:
+        # Arguments
             func: function to plot
             min_x: minimum of x-values
             max_x: maximum of x-values
@@ -161,7 +166,8 @@ class Plot3d:
             max_y: maximum of y-values
             points_y: points in y axis
 
-        Returns: Plots 3d function
+        # Returns
+        Plots 3d function
         """
         if points_x < 0 or points_y < 0:
             raise ValueError("Number of points to plot must be positive.")
@@ -202,13 +208,14 @@ class Plot4d:
         """
         Plots scatter data
 
-        Args:
+        # Arguments
             vector_x: vector in x axis
             vector_y: vector in y axis
             vector_z: vector in z axis
             vector_w: vector in w axis
 
-        Returns: Pplot 4d scattered points
+        # Returns
+        Pplot 4d scattered points
         """
         if len(vector_x) == len(vector_y) == len(vector_z) == len(vector_w):
             pass
@@ -221,7 +228,7 @@ class Plot4d:
         """
         Plots function
 
-        Args:
+        # Arguments
             func: function to plot
             min_x: minimum of x-values
             max_x: maximum of x-values
@@ -234,7 +241,8 @@ class Plot4d:
                 and w as "z"-axis contour: x cont -> 3d plot with y,z variables
                 in plane and w colored (Default value = "contour")
 
-        Returns: Plots 4d function
+        # Returns
+        Plots 4d function
         """
         if precision < 0:
             raise ValueError("Precision cannot be negative.")
@@ -259,13 +267,14 @@ class Plot4d:
             """
             Set chart labels
 
-            Args:
+            # Arguments
                 graph: plot
                label_x: new label on x axis
                 label_y: new label on y axis
                 label_z: new label on z axis
 
-            Returns: Set given labels to axes of graph
+            # Returns
+        Set given labels to axes of graph
             """
             graph.set_xlabel(label_x)
             graph.set_ylabel(label_y)
@@ -275,10 +284,11 @@ class Plot4d:
             """
             Set chart limits
 
-            Args:
+            # Arguments
                 graph: plot
 
-            Returns: set given limits to axes of graph
+            # Returns
+        set given limits to axes of graph
             """
             graph.set_xlim(min_x, max_x)
             graph.set_ylim(min_y, max_y)
@@ -288,11 +298,12 @@ class Plot4d:
             """
             Calculates precision
 
-            Args:
+            # Arguments
                 min_val: minimum
                 max_val: maximum
 
-            Returns: precision
+            # Returns
+        precision
             """
             return int((max_val - min_val) * (1 + precision))
 
@@ -300,11 +311,12 @@ class Plot4d:
             """
             Calculates precision delta
 
-            Args:
+            # Arguments
                 min_val: minimum
                 max_val: maximum
 
-            Returns: precision delte
+            # Returns
+        precision delte
             """
             return float(max_val - min_val) / float(10 * precision)
 
@@ -325,10 +337,11 @@ class Plot4d:
                 """
                 Updates chart with value
 
-                Args:
+                # Arguments
                     val: value
 
-                Returns: re-plot
+                # Returns
+        re-plot
                 """
                 chart.clear()
                 x_const = slider.val
@@ -363,10 +376,11 @@ class Plot4d:
                 """
                 Updates chart with value
 
-                Args:
+                # Arguments
                     val: value
 
-                Returns: re-plot
+                # Returns
+        re-plot
                 """
                 chart.clear()  # re-plot
                 x_const = slider.val

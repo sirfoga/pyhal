@@ -12,13 +12,13 @@ from pyparsing import Literal, Word, nums, Combine, Optional, delimitedList, \
 
 def how_similar_are(str1, str2):
     """
-    Args:
+    # Arguments
       str1: str
     First string
       str2: str
     Second string
 
-    Returns:
+    # Returns:
       float in [0, 1]
       Similarity of a VS b
     """
@@ -27,13 +27,13 @@ def how_similar_are(str1, str2):
 
 def get_max_similar(string, lst):
     """
-    Args:
+    # Arguments
       string: str
     String to find
       lst: of str
     Strings available
 
-    Returns:
+    # Returns:
       float, int)
       Max similarity and index of max similar
     """
@@ -47,11 +47,11 @@ def get_max_similar(string, lst):
 
 def get_average_length_of_string(strings):
     """
-    Args:
+    # Arguments
       strings: of str
     Words
 
-    Returns:
+    # Returns:
       float
       Average length of word on list
     """
@@ -63,11 +63,11 @@ def get_average_length_of_string(strings):
 
 def just_alphanum(string):
     """
-    Args:
+    # Arguments
       string: str
     String
 
-    Returns:
+    # Returns:
       str
       All numbers and letters in string
     """
@@ -88,10 +88,10 @@ def just_alphanum(string):
 
 def non_ansi_string(text):
     """
-    Args:
+    # Arguments
       text: 
 
-    Returns:
+    # Returns:
     """
     esc_key = Literal('\x1b')
     integer = Word(nums)
@@ -103,11 +103,11 @@ def non_ansi_string(text):
 
 def is_string_well_formatted(string):
     """
-    Args:
+    # Arguments
       string: string
     String to parse
 
-    Returns:
+    # Returns:
       bool
       True iff string is good formatted
     """
@@ -126,11 +126,11 @@ def is_string_well_formatted(string):
 
 def html_stripper(string):
     """
-    Args:
+    # Arguments
       string: string
     String to parse
 
-    Returns:
+    # Returns:
       string
       Given string with raw HTML elements removed
     """

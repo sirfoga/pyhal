@@ -24,13 +24,13 @@ def get_token():
 
 def get_clone_url(remote_shortcut, token):
     """
-    Args:
+    # Arguments
       remote_shortcut: str
     Remote relative path of repository to clone
       token: str
     Github OAUTH token
 
-    Returns:
+    # Returns:
       str
       Url to clone
     """
@@ -84,9 +84,9 @@ class GithubRawApi:
         """:return: void
             Updates class api content by calling Github api and storing result
 
-        Args:
+        # Arguments
 
-        Returns:
+        # Returns:
 
         """
         if GITHUB_TOKEN is not None:
@@ -101,10 +101,10 @@ class GithubRawApi:
 
     def add_params_to_url(self, params):
         """
-        Args:
+        # Arguments
           params: list of params to add to url
 
-        Returns:
+        # Returns:
           void
           Adds params to url
 
@@ -128,11 +128,11 @@ class GithubApi(GithubRawApi):
     @staticmethod
     def get_trending_daily(lang=""):
         """
-        Args:
+        # Arguments
           lang: str
         Coding language (Default value = "")
 
-        Returns:
+        # Returns:
           List of GithubUserRepository
 
         """
@@ -172,9 +172,9 @@ class GithubUser(GithubApi):
         """:return: str
             Email of user
 
-        Args:
+        # Arguments
 
-        Returns:
+        # Returns:
 
         """
         api_url = self.api_url + "/events/public"
@@ -195,10 +195,10 @@ class GithubUser(GithubApi):
         """:return: [] of GithubUserRepository
             List of repositories in given url
 
-        Args:
+        # Arguments
           url: 
 
-        Returns:
+        # Returns:
 
         """
         current_page = 1
@@ -227,9 +227,9 @@ class GithubUser(GithubApi):
         """:return: [] of GithubUserRepository
             List of public user repositories
 
-        Args:
+        # Arguments
 
-        Returns:
+        # Returns:
 
         """
         url = self["repos_url"]
@@ -239,9 +239,9 @@ class GithubUser(GithubApi):
         """:return: [] of GithubUserRepository
             List of all user repositories (public, orgs and private)
 
-        Args:
+        # Arguments
 
-        Returns:
+        # Returns:
 
         """
         url = "https://api.github.com/user/repos"
@@ -255,9 +255,9 @@ class GithubUser(GithubApi):
         """:return: [] of GithubUserRepository
             List of starred repositories
 
-        Args:
+        # Arguments
 
-        Returns:
+        # Returns:
 
         """
         starred_url = self.api_url + "/starred"
@@ -286,9 +286,9 @@ class GithubUser(GithubApi):
         """:return: []
             List of daily-trending repositories which are not starred by user
 
-        Args:
+        # Arguments
 
-        Returns:
+        # Returns:
 
         """
         trending_daily = self.get_trending_daily()  # repos trending daily

@@ -8,20 +8,20 @@ import numpy as np
 from matplotlib import cm
 from matplotlib import pyplot as plt
 
-from data.lists import normalize_array
 from hal.charts.models import SimpleChart
+from hal.data.lists import normalize_array
 
 
 def setup_chart(title, bottom=None):
     """
     Setups chart
 
-    Args:
+    # Arguments
         title: Title of chart
         bottom: Bottom margin (Default value = None)
 
-    Returns:
-        Chart axis
+    # Returns:
+        axis: Chart axis
     """
     chart = SimpleChart(title)
     if bottom:
@@ -34,13 +34,14 @@ def create_bar_chart(title, x_labels, y_values, y_label):
     """
     Creates bar char
 
-    Args:
+    # Arguments
         title: Title of chart
         x_labels: Names for each variable
         y_values: Values of x labels
         y_label: Label of y axis
 
-    Returns: Bar chart
+    # Returns
+        chart: Bar chart
     """
     ax1 = setup_chart(title, bottom=0.25)
     ax1.set_xticks(list(range(len(x_labels))))
@@ -59,14 +60,15 @@ def create_multiple_bar_chart(title, x_labels, mul_y_values, mul_y_labels,
     """
     Creates bar chart with multiple lines
 
-    Args:
+    # Arguments
         title: Title of chart
         x_labels: Names for each variable
         mul_y_values: list of values of x labels
         mul_y_labels: list of labels for each y value
         normalize: True iff you want to normalize each y series
 
-    Returns: Bar chart
+    # Returns
+        chart: Bar chart
     """
     ax1 = setup_chart(title)
     ax1.set_xticks(list(range(len(x_labels))))
@@ -107,13 +109,14 @@ def create_sym_log_bar_chart(title, x_labels, y_values, y_label):
     """
     Creates bar chart (log version)
 
-    Args:
+    # Arguments
         title: Title of chart
         x_labels: Names for each variable
         y_values: Values of x labels
         y_label: Label of y axis
 
-    Returns: Sym-log bar chart
+    # Returns
+        chart: Sym-log bar chart
     """
     ax1 = create_bar_chart(title, x_labels, y_values, y_label)
     ax1.set_yscale("sym-log", linthreshy=1e-12)  # logarithmic plot

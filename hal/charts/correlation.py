@@ -14,12 +14,13 @@ def create_correlation_matrix_plot(correlation_matrix, title, feature_list):
     """
     Creates plot for correlation matrix
 
-    Args:
+    # Arguments
         correlation_matrix: Correlation matrix of features
         title: Title of plot
         feature_list: List of names of features
 
-    Returns: Shows the given correlation matrix as image
+    # Returns
+        Shows the given correlation matrix as image
     """
     chart = SimpleChart(title)
     ax1 = chart.create()

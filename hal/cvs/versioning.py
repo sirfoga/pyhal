@@ -17,16 +17,18 @@ class VersionNumber:
         """
         Gets current set amount
 
-        Returns: Current set amount
+        # Returns
+        Current set amount
         """
         pass
 
     def can_increase(self, amount):
         """
-        Args:
+        # Arguments
             amount: Amount to increase
 
-        Returns: True iff this number can be increased by such amount
+        # Returns
+        True iff this number can be increased by such amount
         """
         return amount <= self.max_amount_allowed()
 
@@ -35,10 +37,11 @@ class VersionNumber:
         """
         Increase version by this amount
 
-        Args:
+        # Arguments
             amount: Increase number by this amount (Default value = 1)
 
-        Returns: True iff increase was successful
+        # Returns
+        True iff increase was successful
         """
         pass
 
@@ -47,7 +50,8 @@ class VersionNumber:
         """
         Maximizes this version
 
-        Returns: Maximizes this version
+        # Returns
+        Maximizes this version
         """
         pass
 
@@ -56,7 +60,8 @@ class VersionNumber:
         """
         Zeroes this number
 
-        Returns: Zeroes this number
+        # Returns
+        Zeroes this number
         """
         pass
 
@@ -65,7 +70,8 @@ class VersionNumber:
         """
         Calculates number of increases available
 
-        Returns: Number of increases that can be done before reaching maximum
+        # Returns
+        Number of increases that can be done before reaching maximum
         """
         pass
 
@@ -74,7 +80,8 @@ class VersionNumber:
         """
         Calculates max increases
 
-        Returns: Number of increases that can be done before reaching maximum
+        # Returns
+        Number of increases that can be done before reaching maximum
             starting at 0
         """
         pass
@@ -100,7 +107,8 @@ class Level(VersionNumber):
         """
         Gets current amount
 
-        Returns: Current amount
+        # Returns
+        Current amount
         """
         return self.current
 
@@ -108,9 +116,10 @@ class Level(VersionNumber):
         """
         Increases version by this amount
 
-        Args:
+        # Arguments
             amount: amount to increase by
-        Returns: Increases version by this amount
+        # Returns
+        Increases version by this amount
         """
         if self.can_increase(amount):
             self.current += amount
@@ -122,7 +131,8 @@ class Level(VersionNumber):
         """
         Maximizes this version
 
-        Returns: Maximizes this version
+        # Returns
+        Maximizes this version
         """
         self.current = self.max_inner
 
@@ -130,7 +140,8 @@ class Level(VersionNumber):
         """
         Resets this version
 
-        Returns: Resets this version
+        # Returns
+        Resets this version
         """
         self.current = 0
 
@@ -138,7 +149,8 @@ class Level(VersionNumber):
         """
         Gets max amounts of version
 
-        Returns: Gets max amounts of version
+        # Returns
+        Gets max amounts of version
         """
         return self.max_inner - self.current
 
@@ -146,7 +158,8 @@ class Level(VersionNumber):
         """
         Gets max of version
 
-        Returns: Gets max of version
+        # Returns
+        Gets max of version
         """
         return self.max_inner
 
@@ -156,7 +169,7 @@ class Subsystem(VersionNumber):
 
     def __init__(self, levels, separator="."):
         """
-        Args:
+        # Arguments
             levels: Levels in order of importance (from left to right the
                 importance increases). The version number is the reversed
             separator: Compose version number separating with this split
@@ -176,7 +189,8 @@ class Subsystem(VersionNumber):
         """
         Gets current amount
 
-        Returns: Current amount
+        # Returns
+        Current amount
         """
         return self.current
 
@@ -184,7 +198,8 @@ class Subsystem(VersionNumber):
         """
         Resets version
 
-        Returns: Resets version
+        # Returns
+        Resets version
         """
         node = self.ll.head
 
@@ -196,10 +211,11 @@ class Subsystem(VersionNumber):
         """
         Increases version
 
-        Args:
+        # Arguments
           amount: amount to increase version by
 
-        Returns: Increases version
+        # Returns
+        Increases version
         """
         if self.ll.head.val.increase(amount):
             return True
@@ -227,7 +243,8 @@ class Subsystem(VersionNumber):
         """
         Maximizes version
 
-        Returns: Maximizes version
+        # Returns
+        Maximizes version
         """
         node = self.ll.head
 
@@ -239,7 +256,8 @@ class Subsystem(VersionNumber):
         """
         Calculates number of increases available
 
-        Returns: Number of increases that can be done before reaching maximum
+        # Returns
+        Number of increases that can be done before reaching maximum
         """
         amount_allowed = self.ll.head.val.max_amount_allowed()
         multiplier = self.ll.head.val.max()
@@ -256,7 +274,8 @@ class Subsystem(VersionNumber):
         """
         Maximizes this version
 
-        Returns: Maximizes this version
+        # Returns
+        Maximizes this version
         """
         multiplier = 1
         node = self.ll.head
@@ -273,7 +292,7 @@ class Version(VersionNumber):
 
     def __init__(self, start="0.0.0", max_number=9, separator="."):
         """
-        Args:
+        # Arguments
             start:  Current version
             max_number: Max number reachable by sub-versions numbers
             separator: Compose version number separating with this split
@@ -291,7 +310,8 @@ class Version(VersionNumber):
         """
         Zeroes this number
 
-        Returns: Zeroes this number
+        # Returns
+        Zeroes this number
         """
         return self.s.reset()
 
@@ -299,7 +319,8 @@ class Version(VersionNumber):
         """
         Calculates number of increases available
 
-        Returns: Number of increases that can be done before reaching maximum
+        # Returns
+        Number of increases that can be done before reaching maximum
         """
         return self.s.max_amount_allowed()
 
@@ -307,10 +328,11 @@ class Version(VersionNumber):
         """
         Increase version by this amount
 
-        Args:
+        # Arguments
             amount: Increase number by this amount (Default value = 1)
 
-        Returns: True iff increase was successful
+        # Returns
+        True iff increase was successful
         """
         return self.s.increase(amount)
 
@@ -318,11 +340,12 @@ class Version(VersionNumber):
         """
         Increase version by amount of changes
 
-        Args:
+        # Arguments
           changes_amount: Number of changes done
           ratio: Ratio changes / version increases
 
-        Returns: Increase version accordingly to changes
+        # Returns
+        Increase version accordingly to changes
         """
         increases = round(changes_amount * ratio)
         return self.increase(int(increases))
@@ -331,7 +354,8 @@ class Version(VersionNumber):
         """
         Maximizes this version
 
-        Returns: Maximizes this version
+        # Returns
+        Maximizes this version
         """
         return self.s.maximize()
 
@@ -339,7 +363,8 @@ class Version(VersionNumber):
         """
         Calculates max increases
 
-        Returns: Number of increases that can be done before reaching maximum
+        # Returns
+        Number of increases that can be done before reaching maximum
             starting at 0
         """
         return self.s.max()
@@ -349,12 +374,13 @@ class Version(VersionNumber):
         """
         Parses string
 
-        Args:
+        # Arguments
           string: Version
           max_number: Max number reachable by sub-versions numbers
           separator: Version numbers are separated with this split
 
-        Returns: Parses string and returns object
+        # Returns
+        Parses string and returns object
         """
         tokens = string.split(separator)
         tokens = list(reversed(tokens))  # reverse order of importance

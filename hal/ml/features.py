@@ -19,11 +19,11 @@ class FeatureSelect:
 
     def select_k_best(self, k):
         """
-        Args:
+        # Arguments
           k: int
         K features to select
 
-        Returns:
+        # Returns:
           matrix
           Select k best features in dataset
 
@@ -35,9 +35,9 @@ class FeatureSelect:
         """:return: tuple
             Finds the optimal number of features
 
-        Args:
+        # Arguments
 
-        Returns:
+        # Returns:
 
         """
         svc = SVC(kernel="linear")

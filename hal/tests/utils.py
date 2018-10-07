@@ -9,7 +9,7 @@ import uuid
 
 def battery_test(assert_type, tests, func, args=None):
     """
-    Args:
+    # Arguments
       assert_type: function
     Type of assert
       tests: dict
@@ -18,7 +18,7 @@ def battery_test(assert_type, tests, func, args=None):
     Function to apply
       args: Extra args for function to call (Default value = None)
 
-    Returns:
+    # Returns:
       bool
       True iff all tests pass
     """
@@ -33,8 +33,8 @@ def random_name():
     """:return: str
         Pseudo-random name
 
-    Args:
+    # Arguments
 
-    Returns:
+    # Returns:
     """
     return str(uuid.uuid4())

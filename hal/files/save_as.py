@@ -10,13 +10,13 @@ import json
 
 def write_dicts_to_csv(dicts, output_file):
     """
-    Args:
+    # Arguments
       dicts: of {}
     Dictionaries with same values
       output_file: str
     Path to output file to write data
 
-    Returns:
+    # Returns:
       void
       Saves .csv file with posts data
     """
@@ -31,7 +31,7 @@ def write_dicts_to_csv(dicts, output_file):
 
 def write_matrix_to_csv(headers, data, output_file):
     """
-    Args:
+    # Arguments
       headers: of str
     Column names
       data: matrix ([] of [])
@@ -39,7 +39,7 @@ def write_matrix_to_csv(headers, data, output_file):
       output_file: str
     Path to output file to write data
 
-    Returns:
+    # Returns:
       void
       Saves .csv file with data
     """
@@ -51,13 +51,13 @@ def write_matrix_to_csv(headers, data, output_file):
 
 def write_dicts_to_json(data, output_file):
     """
-    Args:
+    # Arguments
       data: list of {} or {}
     Data to write
       output_file: str
     Path to output file
 
-    Returns:
+    # Returns:
       void
       Saves output file as .json
     """

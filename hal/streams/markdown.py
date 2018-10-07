@@ -50,10 +50,10 @@ class MarkdownTable:
     @staticmethod
     def _get_row(items):
         """
-        Args:
+        # Arguments
           items: 
 
-        Returns:
+        # Returns:
 
         """
         items = [

@@ -22,11 +22,11 @@ class Weekday(Enum):
 
 def get_just_date(date):
     """
-    Args:
+    # Arguments
       date: datetime
     Date with possible hours
 
-    Returns:
+    # Returns:
       date
       Just day, month and year (setting hours to 00:00:00)
     """
@@ -39,13 +39,13 @@ def get_just_date(date):
 
 def get_next_weekday(weekday, including_today=False):
     """
-    Args:
+    # Arguments
       weekday: Weekday
     Weekday to get
       including_today: bool
     If today is sunday and requesting next sunday, I shall return today (Default value = False)
 
-    Returns:
+    # Returns:
       datetime
       Date of next monday, tuesday ...
     """
@@ -63,13 +63,13 @@ def get_next_weekday(weekday, including_today=False):
 
 def get_last_weekday(weekday, including_today=False):
     """
-    Args:
+    # Arguments
       weekday: Weekday
     Weekday to get
       including_today: bool
     If today is sunday and requesting next sunday, I shall return today (Default value = False)
 
-    Returns:
+    # Returns:
       datetime
       Date of next monday, tuesday ...
     """
@@ -92,7 +92,7 @@ def get_last_weekday(weekday, including_today=False):
 
 def is_date_in_between(date, start, end):
     """
-    Args:
+    # Arguments
       date: datetime
     Date to check
       start: datetime
@@ -100,7 +100,7 @@ def is_date_in_between(date, start, end):
       end: datetime
     Date cannot be after this date
 
-    Returns:
+    # Returns:
       bool
       True iff date is in between dates
     """
@@ -109,11 +109,11 @@ def is_date_in_between(date, start, end):
 
 def is_in_this_week(date):
     """
-    Args:
+    # Arguments
       date: datetime
     Date
 
-    Returns:
+    # Returns:
       bool
       True iff date is in this week (from sunday to sunday)
     """

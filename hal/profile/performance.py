@@ -26,9 +26,9 @@ class EightQueenTest:
         """:return: string
             Welcomes user to this test sessions
 
-        Args:
+        # Arguments
 
-        Returns:
+        # Returns:
 
         """
         user = getpass.getuser()
@@ -45,9 +45,9 @@ class EightQueenTest:
         """:return: string
             Welcomes user to this test sessions
 
-        Args:
+        # Arguments
 
-        Returns:
+        # Returns:
 
         """
         output = "So, let\'s get into the details.. I\'m going to solve the " \
@@ -70,11 +70,11 @@ class EightQueenTest:
     @staticmethod
     def run_test_with_size(size):
         """
-        Args:
+        # Arguments
           size: int
         Number of rows in grid
 
-        Returns:
+        # Returns:
           int
           Time to solve problem with given size
 
@@ -86,11 +86,11 @@ class EightQueenTest:
 
     def update_std_out_and_log(self, string):
         """
-        Args:
+        # Arguments
           string: string
         Stuff to print
 
-        Returns:
+        # Returns:
           void
           Prints to stdout and updates log
 
@@ -102,9 +102,9 @@ class EightQueenTest:
         """:return: void
             Starts profiling
 
-        Args:
+        # Arguments
 
-        Returns:
+        # Returns:
 
         """
         self.update_std_out_and_log(self.welcome())

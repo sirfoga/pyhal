@@ -22,9 +22,9 @@ class Parser:
         """:return: [] of str
             Lines in file
 
-        Args:
+        # Arguments
 
-        Returns:
+        # Returns:
 
         """
         with open(self.path) as data:
@@ -50,9 +50,9 @@ class CSVParser(Parser):
         """:return: store values in array, store lines in array. The result is
             a 2D matrix
 
-        Args:
+        # Arguments
 
-        Returns:
+        # Returns:
 
         """
         data = []
@@ -67,9 +67,9 @@ class CSVParser(Parser):
         """:return: tuple [], [] of []
             headers of csv file and data
 
-        Args:
+        # Arguments
 
-        Returns:
+        # Returns:
 
         """
         data = self.get_matrix()
@@ -79,9 +79,9 @@ class CSVParser(Parser):
         """:return: (generator of) [] of {}
             List of dicts with data from .csv file
 
-        Args:
+        # Arguments
 
-        Returns:
+        # Returns:
 
         """
         reader = csv.DictReader(open(self.path, "r", encoding=self.encoding))

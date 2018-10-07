@@ -14,9 +14,9 @@ class SimpleChart:
         """
         Setups bottom margin
 
-        Args:
-            title: Title of chart
-            grid: True iff you want a chart with the grid
+        # Attributes
+        title: Title of chart
+        fig: Matplotlib figure
         """
         self.title = title
         self.fig = plt.figure()
@@ -27,8 +27,8 @@ class SimpleChart:
         """
         Setups bottom margin
 
-        Args:
-            bottom: Bottom margin
+        # Arguments
+        bottom: Bottom margin
         """
         plt.gcf().subplots_adjust(bottom=bottom)  # add bottom
 
@@ -36,7 +36,8 @@ class SimpleChart:
         """
         Gets chart canvas
 
-        Returns: matplotlib figure
+        # Returns
+        figure: matplotlib figure
         """
         return self.fig
 
@@ -44,6 +45,7 @@ class SimpleChart:
         """
         Adds to figure
 
-        Returns: operation completed
+        # Returns
+        completed: operation completed
         """
         return self.fig.add_subplot(111)

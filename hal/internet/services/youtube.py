@@ -22,9 +22,9 @@ class YoutubeChannel:
         """:return string
             source page of youtube channel.
 
-        Args:
+        # Arguments
 
-        Returns:
+        # Returns:
 
         """
         channel_url = YOUTUBE_USER_BASE_URL + self.channel_name  # url
@@ -36,9 +36,9 @@ class YoutubeChannel:
         """:return string
             id of youtube channel
 
-        Args:
+        # Arguments
 
-        Returns:
+        # Returns:
 
         """
         soup = BeautifulSoup(
@@ -59,9 +59,9 @@ class YoutubeChannel:
         """:return string
             rss url feed of youtube channel
 
-        Args:
+        # Arguments
 
-        Returns:
+        # Returns:
 
         """
         channel_id = self.get_channel_id()  # get id
@@ -70,7 +70,7 @@ class YoutubeChannel:
     @staticmethod
     def get_feed_url_from_id(channel_id):
         """
-        Args:
+        # Arguments
           channel_id: string
         id of channel (e.g in
         "https://www.youtube.com/channel/UC2zjki3bJIaXmgV_LBQ2jTg" you should
@@ -78,7 +78,7 @@ class YoutubeChannel:
         :return string
         rss url feed of youtube channel
 
-        Returns:
+        # Returns:
 
         """
         return YOUTUBE_FEED_BASE_URL + channel_id
@@ -86,13 +86,13 @@ class YoutubeChannel:
     @staticmethod
     def get_feed_url_from_video(video_url):
         """
-        Args:
+        # Arguments
           video_url: string
         Url of video (e.g in https://www.youtube.com/watch?v=KB_iTbDrkxE)
         :return string
         rss url feed of youtube channel.
 
-        Returns:
+        # Returns:
 
         """
         web_page = Webpage(video_url)

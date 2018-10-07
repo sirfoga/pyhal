@@ -6,11 +6,11 @@
 
 def get_email_content(file_path):
     """
-    Args:
+    # Arguments
       file_path: str
     Path to file with email text
 
-    Returns:
+    # Returns:
       str
       Email text (html formatted)
     """

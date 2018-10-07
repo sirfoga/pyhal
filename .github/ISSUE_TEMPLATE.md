@@ -12,6 +12,6 @@
 
 ## Specifications
 
-  - pyhal version (check `setup.py`):
+  - Version (check `VERSION`):
   - Platform:
   - python version (check `python --version`):

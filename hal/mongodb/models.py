@@ -10,11 +10,11 @@ class DbBrowser:
     def __init__(self, db_name):
 
         """
-        Args:
+        # Arguments
           db_name: str
         Name of db
 
-        Returns:
+        # Returns:
 
         """
         self.client = MongoClient()
@@ -24,9 +24,9 @@ class DbBrowser:
         """:return: [] of str
             List of names of all collections
 
-        Args:
+        # Arguments
 
-        Returns:
+        # Returns:
 
         """
         return self.db.collection_names()
@@ -35,9 +35,9 @@ class DbBrowser:
         """:return: int
             Number of documents in db
 
-        Args:
+        # Arguments
 
-        Returns:
+        # Returns:
 
         """
         db_collections = [
@@ -47,13 +47,13 @@ class DbBrowser:
 
     def get_documents_in_collection(self, collection_name, with_id=True):
         """
-        Args:
+        # Arguments
           collection_name: str
         Name of collection
           with_id: bool
         True iff each document should also come with its id (Default value = True)
 
-        Returns:
+        # Returns:
           of {}
           List of documents in collection in self.db
 
@@ -71,11 +71,11 @@ class DbBrowser:
 
     def get_collection(self, key):
         """
-        Args:
+        # Arguments
           key: str
         Name of collection
 
-        Returns:
+        # Returns:
           Collection
           Data in collection with given key
 
@@ -84,11 +84,11 @@ class DbBrowser:
 
     def get_documents_in_database(self, with_id=True):
         """
-        Args:
+        # Arguments
           with_id: bool
         True iff each document should also come with its id (Default value = True)
 
-        Returns:
+        # Returns:
           of {}
           List of documents in collection in database
 

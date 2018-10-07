@@ -14,13 +14,13 @@ from hal.files.models.system import list_content
 
 def find_songs(folder, recursive):
     """
-    Args:
+    # Arguments
       folder: str
     Path
       recursive: bool
     True iff want to search recursively
 
-    Returns:
+    # Returns:
       generator of MP3Song
       List of paths of the songs in folder
     """
@@ -36,11 +36,11 @@ class MP3Song(FileSystem):
     @staticmethod
     def is_valid_mp3(path):
         """
-        Args:
+        # Arguments
           path: str
         Path to candidate .mp3 song
 
-        Returns:
+        # Returns:
           bool
           True iff song is MP3 encoded
 
@@ -65,9 +65,9 @@ class MP3Song(FileSystem):
         """:return: {}
             Dictionary with songs details about title, artist, album and year
 
-        Args:
+        # Arguments
 
-        Returns:
+        # Returns:
 
         """
         title = str(self.get_title()).strip()
@@ -86,11 +86,11 @@ class MP3Song(FileSystem):
 
     def set_title(self, name):
         """
-        Args:
+        # Arguments
           name: str
         Song's title
 
-        Returns:
+        # Returns:
           void
           Sets song's title
 
@@ -100,11 +100,11 @@ class MP3Song(FileSystem):
 
     def set_artist(self, artist):
         """
-        Args:
+        # Arguments
           artist: str
         Song's artist
 
-        Returns:
+        # Returns:
           void
           Sets song's artist
 
@@ -114,11 +114,11 @@ class MP3Song(FileSystem):
 
     def set_album(self, album):
         """
-        Args:
+        # Arguments
           album: str
         Song's album
 
-        Returns:
+        # Returns:
           void
           Sets song's albu
 
@@ -128,11 +128,11 @@ class MP3Song(FileSystem):
 
     def set_nr_track(self, nr_track):
         """
-        Args:
+        # Arguments
           nr_track: int
         Number of track
 
-        Returns:
+        # Returns:
           void
           Sets song's track number
 
@@ -142,11 +142,11 @@ class MP3Song(FileSystem):
 
     def set_year(self, year):
         """
-        Args:
+        # Arguments
           year: int
         Year of song
 
-        Returns:
+        # Returns:
           void
           Sets song's year
 
@@ -156,11 +156,11 @@ class MP3Song(FileSystem):
 
     def set_genre(self, genre):
         """
-        Args:
+        # Arguments
           genre: str
         Genre of song
 
-        Returns:
+        # Returns:
           void
           Sets song's genre
 
@@ -174,9 +174,9 @@ class MP3Song(FileSystem):
         """:return: str
             Gets song's title
 
-        Args:
+        # Arguments
 
-        Returns:
+        # Returns:
 
         """
         try:
@@ -188,9 +188,9 @@ class MP3Song(FileSystem):
         """:return: str
             Gets song's artist
 
-        Args:
+        # Arguments
 
-        Returns:
+        # Returns:
 
         """
         try:
@@ -202,9 +202,9 @@ class MP3Song(FileSystem):
         """:return: str
             Gets song's albu
 
-        Args:
+        # Arguments
 
-        Returns:
+        # Returns:
 
         """
         try:
@@ -216,9 +216,9 @@ class MP3Song(FileSystem):
         """:return: str
             Gets song's track number
 
-        Args:
+        # Arguments
 
-        Returns:
+        # Returns:
 
         """
         try:
@@ -230,9 +230,9 @@ class MP3Song(FileSystem):
         """:return: str
             Gets song's year
 
-        Args:
+        # Arguments
 
-        Returns:
+        # Returns:
 
         """
         try:
@@ -244,9 +244,9 @@ class MP3Song(FileSystem):
         """:return: str
             Gets song's genre
 
-        Args:
+        # Arguments
 
-        Returns:
+        # Returns:
 
         """
         try:

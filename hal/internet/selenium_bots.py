@@ -14,7 +14,7 @@ class SeleniumForm:
     @staticmethod
     def fill_form_field(browser, field_name, field_value):
         """
-        Args:
+        # Arguments
           browser: web-driver
         Browser to use to submit form.
           field_name: string
@@ -22,7 +22,7 @@ class SeleniumForm:
           field_value: string
         Value with which to fill field.
 
-        Returns:
+        # Returns:
           void
           Fill given field with given value.
 
@@ -35,7 +35,7 @@ class SeleniumForm:
     def fill_login_form(browser, username, username_field, user_password,
                         user_password_field):
         """
-        Args:
+        # Arguments
           browser: web-driver
         Browser to use to submit form
           username: string
@@ -47,7 +47,7 @@ class SeleniumForm:
           user_password_field: string
         Name of field to fill with user password
 
-        Returns:
+        # Returns:
           void
           Form filled with given information
 
@@ -60,13 +60,13 @@ class SeleniumForm:
     @staticmethod
     def submit_form(browser, button_name):
         """
-        Args:
+        # Arguments
           browser: web-driver
         Browser to use to submit form.
           button_name: string
         Name of button to press to submit form
 
-        Returns:
+        # Returns:
           void
           Submit form.
 

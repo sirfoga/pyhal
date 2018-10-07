@@ -105,7 +105,7 @@ installation
 
 
 ## Usage and documentation
-- you can browse the [html](docs/doxygen/html/index.html)
+Browse the [readthedocs](https://sirfoga.github.io/pyhal/) on-line documentation
 
 
 ## Contributing

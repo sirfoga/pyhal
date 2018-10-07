@@ -38,9 +38,9 @@ class EmailTemplate:
         """:return: str
             Email header
 
-        Args:
+        # Arguments
 
-        Returns:
+        # Returns:
 
         """
         return "<h2>Ciao " + str(self.recipient).title() + "!</h2><br>"
@@ -49,9 +49,9 @@ class EmailTemplate:
         """:return: str
             Email text (html formatted)
 
-        Args:
+        # Arguments
 
-        Returns:
+        # Returns:
 
         """
         return get_email_content(self.footer_file)
@@ -60,9 +60,9 @@ class EmailTemplate:
         """:return: MIMEText
             Email formatted as HTML ready to be sent
 
-        Args:
+        # Arguments
 
-        Returns:
+        # Returns:
 
         """
         message = MIMEText(

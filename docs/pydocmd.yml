@@ -1,15 +1,46 @@
 site_name: PyHal documentation
 repo_url: https://github.com/sirfoga/pyhal
+
 generate:
-- charts.md:
-  - pyhal.charts++
-- cvs.md:
-  - pyhal.cvs++
-- data.md:
-  - pyhal.data++
+  - charts/bars.md:
+    - hal.charts.bars++
+  - charts/correlation.md:
+    - hal.charts.correlation++
+  - charts/models.md:
+    - hal.charts.models++
+  - charts/plotter.md:
+    - hal.charts.plotter++
+
+  - cvs/gits.md:
+    - hal.cvs.gits++
+  - cvs/versioning.md:
+    - hal.cvs.versioning++
+
+  - data/dicts.md:
+    - hal.data.dicts++
+  - data/linked_list.md:
+    - hal.data.linked_list++
+  - data/lists.md:
+    - hal.data.lists++
+  - data/matrix.md:
+    - hal.data.matrix++
+
 pages:
-- Home: index.md << ../README.md
-- API Documentation:
-  - Charts: charts.md
-  - CVS: cvs.md
-  - Data: data.md
+  - Home: index.md << ../README.md
+  - "hal.charts: Charts":
+    - Bar charts: charts/bars.md
+    - Correlation charts: charts/correlation.md
+    - Models: charts/models.md
+    - Plotters: charts/plotter.md
+  - "hal.cvs: Concurrent Versions System":
+    - Git tools: cvs/gits.md
+    - Versioning: cvs/versioning.md
+  - "hal.data: Data structures":
+    - Dicts: data/dicts.md
+    - Linked List: data/linked_list.md
+    - Lists: data/lists.md
+    - Matrix: data/matrix.md
+
+additional_search_paths:
+   - ..
+   - /usr/local/lib/python3.6/dist-packages/

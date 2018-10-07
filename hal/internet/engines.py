@@ -36,11 +36,11 @@ class SearchEngine:
 
     def parse_query(self, query):
         """
-        Args:
+        # Arguments
           query: string
         Query to search engine.
 
-        Returns:
+        # Returns:
           string
           Parse given query in order to meet search criteria of search engine
 
@@ -52,13 +52,13 @@ class SearchEngine:
 
     def get_search_page(self, query, using_tor=False):
         """
-        Args:
+        # Arguments
           query: string
         Query to search engine.
           using_tor: bool
         Whether use tor or not to fetch web pages (Default value = False)
 
-        Returns:
+        # Returns:
           string
           Get HTML source of search page of given query.
 

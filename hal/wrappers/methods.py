@@ -12,11 +12,11 @@ import colorama
 
 def handle_exceptions(func):
     """
-    Args:
+    # Arguments
       func: callback function
     function to wrap
 
-    Returns:
+    # Returns:
       callback function return type
       wraps callback function
     """
@@ -24,13 +24,13 @@ def handle_exceptions(func):
     @functools.wraps(func)
     def _handle_exceptions(*args, **kwargs):
         """
-        Args:
+        # Arguments
           args: args for callback function
           kwargs: kwargs for callback function
           *args: 
           **kwargs: 
 
-        Returns:
+        # Returns:
           callback function return type
           handle exception of callback function
 
