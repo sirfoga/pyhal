@@ -6,13 +6,11 @@
 
 def get_percentage_relative_to(val, other):
     """
-
     Args:
       val: 
       other: 
 
     Returns:
-
     """
     val = float(val)
     other = float(other)

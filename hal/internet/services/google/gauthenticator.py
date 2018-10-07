@@ -15,6 +15,7 @@ from oauth2client.file import Storage
 
 class GoogleApiOAuth:
     """ """
+
     def __init__(self, scope, app_name, app_secrets_path,
                  user_credentials_path):
         """
@@ -27,7 +28,6 @@ class GoogleApiOAuth:
         :param user_credentials_path: string
             path to user credentials
         """
-
         self.scope = str(scope)
         self.app_name = str(app_name)
         self.app_secrets = str(app_secrets_path)
@@ -43,7 +43,6 @@ class GoogleApiOAuth:
         Returns:
 
         """
-
         flow = client.flow_from_clientsecrets(self.app_secrets,
                                               self.scope)  # perform OAuth2.0 authorization flow.
         flow.user_agent = self.app_name
@@ -58,7 +57,6 @@ class GoogleApiOAuth:
         Returns:
 
         """
-
         if not os.path.exists(os.path.dirname(
                 self.user_credentials)):  # create path to user credentials if needed
             os.makedirs(os.path.dirname(self.user_credentials))
@@ -73,7 +71,6 @@ class GoogleApiOAuth:
     @staticmethod
     def authenticate(credentials):
         """
-
         Args:
           credentials: string
         User authentication code created via OAuth
@@ -83,14 +80,12 @@ class GoogleApiOAuth:
           Http authenticated credentials
 
         """
-
         http = httplib2.Http()
         credentials.authorize(http)
         return http
 
     def get_driver(self, name, version):
         """
-
         Args:
           name: string
         Name of driver
@@ -102,7 +97,6 @@ class GoogleApiOAuth:
           Authenticates and creates new API driver to perform scope stuff
 
         """
-
         user_credentials = self.get_user_credentials()  # get credentials
         return discovery.build(name, version, http=self.authenticate(
             user_credentials))  # get sheets driver

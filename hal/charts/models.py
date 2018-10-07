@@ -12,12 +12,12 @@ class SimpleChart:
 
     def __init__(self, title, grid=True):
         """
-        :param title: str
-            Title of chart
-        :param grid: bool
-            True iff you want a chart with the grid
-        """
+        Setups bottom margin
 
+        Args:
+          title: Title of chart
+          grid: True iff you want a chart with the grid
+        """
         self.title = title
         self.fig = plt.figure()
         plt.title(title)
@@ -25,31 +25,25 @@ class SimpleChart:
 
     def setup(self, bottom):
         """
+        Setups bottom margin
 
         Args:
-          bottom: float
-        Bottom margin
-
-        Returns:
-          void
-          Setups bottom margin
-
+          bottom: Bottom margin
         """
-
         plt.gcf().subplots_adjust(bottom=bottom)  # add bottom
 
     def get_fig(self):
-        """:return: matplotlib figure
-            Chart canvas
-
-        Args:
-
-        Returns:
-
         """
+        Gets chart canvas
 
+        Returns: matplotlib figure
+        """
         return self.fig
 
     def create(self):
-        """ """
+        """
+        Adds to figure
+
+        Returns: operation completed
+        """
         return self.fig.add_subplot(111)

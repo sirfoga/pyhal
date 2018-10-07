@@ -21,7 +21,6 @@ class Diff:
         :param diff: git.Diff
             Diff between 2 commits
         """
-
         self.d = diff
 
     def __str__(self):
@@ -37,7 +36,6 @@ class Diff:
         Returns:
 
         """
-
         total_added = 0
         total_removed = 0
 
@@ -63,7 +61,6 @@ class Commit:
         :param commit: git.Commit
             Commit of repository
         """
-
         self.c = commit
 
     def __str__(self, date_format="%H:%M:%S %y-%m-%d %z"):
@@ -73,7 +70,6 @@ class Commit:
         :return: str
             Pretty description of commit
         """
-
         hash_value = self.c.hexsha
         date_time = self.c.authored_datetime.strftime(date_format)
         return hash_value + " at " + date_time
@@ -100,7 +96,6 @@ class Repository:
         :param repo_path: str
             Path to repository
         """
-
         self.r = Repo(repo_path)
 
     def get_last_commit(self):
@@ -112,7 +107,6 @@ class Repository:
         Returns:
 
         """
-
         return self.r.head.commit
 
     def get_diff_amounts(self):
@@ -124,7 +118,6 @@ class Repository:
         Returns:
 
         """
-
         diffs = []
 
         last_commit = None
@@ -140,7 +133,6 @@ class Repository:
 
     def get_diff(self, commit, other_commit):
         """
-
         Args:
           commit: git.Commit
         First commit
@@ -151,13 +143,11 @@ class Repository:
           Dictionary with total additions and deletions
 
         """
-
         diff = self.r.git.diff(commit.hexsha, other_commit.hexsha)
         return Diff(diff).get_totals()
 
     def get_version(self, diff_to_increase_ratio):
         """
-
         Args:
           diff_to_increase_ratio: float
         Ratio to convert number of changes into version increases
@@ -167,7 +157,6 @@ class Repository:
           Version of this code, based on commits diffs
 
         """
-
         diffs = self.get_diff_amounts()
         version = Version()
 
@@ -178,7 +167,6 @@ class Repository:
 
     def get_pretty_version(self, diff_to_increase_ratio):
         """
-
         Args:
           diff_to_increase_ratio: float
         Ratio to convert number of changes into version increases
@@ -188,7 +176,6 @@ class Repository:
           Pretty version of this repository
 
         """
-
         version = self.get_version(diff_to_increase_ratio)
         last = self.get_last_commit()
         return str(version) + " (" + str(Commit(last)) + ")"

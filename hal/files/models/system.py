@@ -66,7 +66,6 @@ PATH_SEPARATOR = "/" if "posix" in os.name else "\\"
 
 def fix_raw_path(path):
     """
-
     Args:
       path: string
     Path to fix
@@ -74,9 +73,7 @@ def fix_raw_path(path):
     Returns:
       string
       Right path
-
     """
-
     double_path_separator = PATH_SEPARATOR + PATH_SEPARATOR
     while path.find(
             double_path_separator) >= 0:  # there are double separators
@@ -91,7 +88,6 @@ def fix_raw_path(path):
 
 def remove_year(name):
     """
-
     Args:
       name: string
     Name to edit
@@ -99,9 +95,7 @@ def remove_year(name):
     Returns:
       string
       Given string bu with no years.
-
     """
-
     for i in range(len(
             name) - 3):  # last index is length - 3 - 1 = length - 4
         if name[i: i + 4].isdigit():
@@ -113,7 +107,6 @@ def remove_year(name):
 
 def remove_brackets(name):
     """
-
     Args:
       name: string
     Name to edit
@@ -121,9 +114,7 @@ def remove_brackets(name):
     Returns:
       string
       Given string bu with no brackets
-
     """
-
     name = re.sub(
         r"([(\[]).*?([)\]])",
         r"\g<1>\g<2>",
@@ -137,7 +128,6 @@ def remove_brackets(name):
 
 def extract_name_max_chars(name, max_chars=64, blank=" "):
     """
-
     Args:
       name: string
     Name to edit
@@ -149,9 +139,7 @@ def extract_name_max_chars(name, max_chars=64, blank=" "):
     Returns:
       string
       Name edited to contain at most max_chars (truncate to nearest word)
-
     """
-
     if max_chars <= 0:
         raise ValueError(
             "Maximum chars of new name must be greater than 0")
@@ -166,7 +154,6 @@ def extract_name_max_chars(name, max_chars=64, blank=" "):
 
 def prettify(name, blank=" "):
     """
-
     Args:
       name: string
     Name to edit
@@ -176,9 +163,7 @@ def prettify(name, blank=" "):
     Returns:
       string
       Prettier name from given one: replace bad chars with good ones.
-
     """
-
     if name.startswith("."):  # remove starting .
         name = name[1:]
 
@@ -209,7 +194,6 @@ def prettify(name, blank=" "):
 
 def is_file(path):
     """
-
     Args:
       path: str
     Path to check
@@ -217,15 +201,12 @@ def is_file(path):
     Returns:
       bool
       True iff path is a file
-
     """
-
     return os.path.isfile(path)
 
 
 def is_folder(path):
     """
-
     Args:
       path: str
     Path to check
@@ -233,15 +214,12 @@ def is_folder(path):
     Returns:
       bool
       True iff path is a file
-
     """
-
     return os.path.isdir(path)
 
 
 def get_parent_folder(file_path):
     """
-
     Args:
       file_path: str
     Path to file or folder
@@ -249,15 +227,12 @@ def get_parent_folder(file_path):
     Returns:
       str
       Name of folder container
-
     """
-
     return os.path.split(os.path.split(os.path.abspath(file_path))[0])[-1]
 
 
 def ls_dir(path, include_hidden=False):
     """
-
     Args:
       path: string
     Path to directory to get list of files and folders
@@ -267,9 +242,7 @@ def ls_dir(path, include_hidden=False):
     Returns:
       list
       List of paths in given directory.
-
     """
-
     lst = []
     for file in os.listdir(path):
         hidden_file = FileSystem(file).is_hidden()
@@ -280,7 +253,6 @@ def ls_dir(path, include_hidden=False):
 
 def ls_recurse(path, include_hidden=False):
     """
-
     Args:
       path: string
     Path to directory to get list of files and folders
@@ -290,9 +262,7 @@ def ls_recurse(path, include_hidden=False):
     Returns:
       list
       List of paths in given directory recursively.
-
     """
-
     lst = []
     for file in os.listdir(path):
         hidden_file = FileSystem(file).is_hidden()
@@ -308,7 +278,6 @@ def ls_recurse(path, include_hidden=False):
 
 def list_content(path, recurse, include_hidden=False):
     """
-
     Args:
       path: string
     Path to directory to get list of files and folders
@@ -320,7 +289,6 @@ def list_content(path, recurse, include_hidden=False):
     Returns:
       list
       List of paths in given directory recursively.
-
     """
     if recurse:
         return ls_recurse(path, include_hidden=include_hidden)
@@ -336,7 +304,6 @@ class FileSystem:
         :param path: string
             Path to file
         """
-
         self.path = fix_raw_path(path)
         self.name, self.extension = os.path.splitext(self.path)
 
@@ -349,7 +316,6 @@ class FileSystem:
         Returns:
 
         """
-
         return self.name.startswith(".")
 
     def is_archive_mac(self):
@@ -375,12 +341,10 @@ class FileSystem:
         Returns:
 
         """
-
         send2trash(self.path)
 
     def rename(self, new_path):
         """
-
         Args:
           new_path: string
         New path to use
@@ -390,7 +354,6 @@ class FileSystem:
           Rename to new path
 
         """
-
         rename_path = fix_raw_path(new_path)
         if os.path.isdir(self.path):
             os.rename(self.path, rename_path)

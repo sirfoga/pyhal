@@ -12,7 +12,6 @@ from pyparsing import Literal, Word, nums, Combine, Optional, delimitedList, \
 
 def how_similar_are(str1, str2):
     """
-
     Args:
       str1: str
     First string
@@ -22,15 +21,12 @@ def how_similar_are(str1, str2):
     Returns:
       float in [0, 1]
       Similarity of a VS b
-
     """
-
     return SequenceMatcher(None, str1, str2).ratio()
 
 
 def get_max_similar(string, lst):
     """
-
     Args:
       string: str
     String to find
@@ -40,9 +36,7 @@ def get_max_similar(string, lst):
     Returns:
       float, int)
       Max similarity and index of max similar
-
     """
-
     max_similarity, index = 0.0, -1
     for i, candidate in enumerate(lst):
         sim = how_similar_are(str(string), str(candidate))
@@ -53,7 +47,6 @@ def get_max_similar(string, lst):
 
 def get_average_length_of_string(strings):
     """
-
     Args:
       strings: of str
     Words
@@ -61,9 +54,7 @@ def get_average_length_of_string(strings):
     Returns:
       float
       Average length of word on list
-
     """
-
     if not strings:
         return 0
 
@@ -72,7 +63,6 @@ def get_average_length_of_string(strings):
 
 def just_alphanum(string):
     """
-
     Args:
       string: str
     String
@@ -80,9 +70,7 @@ def just_alphanum(string):
     Returns:
       str
       All numbers and letters in string
-
     """
-
     chars = []
 
     i = 0
@@ -100,12 +88,10 @@ def just_alphanum(string):
 
 def non_ansi_string(text):
     """
-
     Args:
       text: 
 
     Returns:
-
     """
     esc_key = Literal('\x1b')
     integer = Word(nums)
@@ -117,7 +103,6 @@ def non_ansi_string(text):
 
 def is_string_well_formatted(string):
     """
-
     Args:
       string: string
     String to parse
@@ -125,9 +110,7 @@ def is_string_well_formatted(string):
     Returns:
       bool
       True iff string is good formatted
-
     """
-
     # False iff there are at least \n, \r, \t,"  "
     is_bad_formatted = ":" in string or \
                        "\\'" in string or \
@@ -143,7 +126,6 @@ def is_string_well_formatted(string):
 
 def html_stripper(string):
     """
-
     Args:
       string: string
     String to parse
@@ -151,9 +133,7 @@ def html_stripper(string):
     Returns:
       string
       Given string with raw HTML elements removed
-
     """
-
     out = string
     while not is_string_well_formatted(
             out):  # while there are some improvements to do

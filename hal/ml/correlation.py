@@ -20,7 +20,6 @@ class CorrelationMatrix:
     def __init__(self, title, headers_to_test, headers, data):
 
         """
-
         Args:
           title: str
         Title to show
@@ -34,7 +33,6 @@ class CorrelationMatrix:
         Returns:
 
         """
-
         self.title = title
         self.headers_to_test = headers_to_test
         self.headers = headers
@@ -43,7 +41,6 @@ class CorrelationMatrix:
     @staticmethod
     def get_correlation_matrix(matrix):
         """
-
         Args:
           matrix: of []
         List of features to get correlation matrix
@@ -53,12 +50,10 @@ class CorrelationMatrix:
           correlation matrix
 
         """
-
         return np.corrcoef(matrix)
 
     def show_correlation_matrix(self, correlation_matrix):
         """
-
         Args:
           correlation_matrix: of []
         Correlation matrix of features
@@ -68,7 +63,6 @@ class CorrelationMatrix:
           shows the given correlation matrix as image
 
         """
-
         cr_plot.create_correlation_matrix_plot(
             correlation_matrix, self.title, self.headers_to_test
         )
@@ -88,7 +82,6 @@ class CorrelationMatrix:
         Returns:
 
         """
-
         header_to_column = {}  # create index of headers
         for header in self.headers:
             header_to_column[header] = self.headers.index(header)
@@ -108,7 +101,6 @@ class CorrelationMatrix:
 
     def save_to_file(self, out_file):
         """
-
         Args:
           out_file: str
         Output file
@@ -118,7 +110,6 @@ class CorrelationMatrix:
           Saves correlation matrix of selected headers
 
         """
-
         correlation_matrix = self.get_correlation_matrix_of_columns()
         cr_plot.create_correlation_matrix_plot(
             correlation_matrix, self.title, self.headers_to_test)
@@ -130,7 +121,6 @@ class CorrelationMatrix:
     @staticmethod
     def save_correlation_matrix_of_data_files_in_folder(folder_path):
         """
-
         Args:
           folder_path: str
         Folder containing logs data
@@ -140,7 +130,6 @@ class CorrelationMatrix:
           Saves each file's correlation matrix of common headers
 
         """
-
         output_folder = os.path.join(folder_path, "output-" + str(int(time())))
         os.makedirs(output_folder)  # make necessary folders to create directory
 

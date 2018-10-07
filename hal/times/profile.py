@@ -9,7 +9,6 @@ from times import time
 
 def get_time_eta(total_done, total, start_time):
     """
-
     Args:
       total_done: int
     Item processed
@@ -21,9 +20,7 @@ def get_time_eta(total_done, total, start_time):
     Returns:
       times
       Time to go
-
     """
-
     time_done = int(time()) - start_time
     try:
         speed = total_done / time_done
@@ -58,7 +55,6 @@ def get_time_eta(total_done, total, start_time):
 
 def print_time_eta(time_to_go, note=""):
     """
-
     Args:
       time_to_go: Result of a call get_time_eta(...)
       note: str
@@ -67,9 +63,7 @@ def print_time_eta(time_to_go, note=""):
     Returns:
       void
       Prints debug info to screen
-
     """
-
     print(
         str(note),
         str(time_to_go["done"]) + "/" + str(time_to_go["tot"]),

@@ -21,7 +21,6 @@ class MarkdownItem:
             Extra param, like url, ref ... Each key MUST be in
             MarkdownItem.ATTRIBUTES
         """
-
         self.text = str(text)
         self.type = type
         self.attributes = attributes
@@ -51,7 +50,6 @@ class MarkdownTable:
     @staticmethod
     def _get_row(items):
         """
-
         Args:
           items: 
 

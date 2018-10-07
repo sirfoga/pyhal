@@ -24,7 +24,6 @@ def get_token():
 
 def get_clone_url(remote_shortcut, token):
     """
-
     Args:
       remote_shortcut: str
     Remote relative path of repository to clone
@@ -34,9 +33,7 @@ def get_clone_url(remote_shortcut, token):
     Returns:
       str
       Url to clone
-
     """
-
     return GITHUB_REMOTE.format(token) + remote_shortcut
 
 
@@ -59,7 +56,6 @@ class GithubRawApi:
         :param get_api_content_now: bool
             True iff you want to get API content response when building object
         """
-
         self.api_url = url
         self.api_content = None
 
@@ -76,7 +72,6 @@ class GithubRawApi:
         :return: str
             Dictionary value of given key
         """
-
         if self.api_content is None:  # update API content
             self._get_api_content()
 
@@ -94,7 +89,6 @@ class GithubRawApi:
         Returns:
 
         """
-
         if GITHUB_TOKEN is not None:
             self.add_params_to_url({
                 "access_token": GITHUB_TOKEN
@@ -107,16 +101,14 @@ class GithubRawApi:
 
     def add_params_to_url(self, params):
         """
-
         Args:
-          params: List of params to add to url
+          params: list of params to add to url
 
         Returns:
           void
           Adds params to url
 
         """
-
         self.api_url = add_params_to_url(self.api_url, params)
 
 
@@ -128,7 +120,6 @@ class GithubApi(GithubRawApi):
         :param api_type: str
             Type of API to build
         """
-
         super(GithubApi, self).__init__(
             url=GithubRawApi._API_URL_TYPE[api_type],
             get_api_content_now=False
@@ -137,7 +128,6 @@ class GithubApi(GithubRawApi):
     @staticmethod
     def get_trending_daily(lang=""):
         """
-
         Args:
           lang: str
         Coding language (Default value = "")
@@ -146,7 +136,6 @@ class GithubApi(GithubRawApi):
           List of GithubUserRepository
 
         """
-
         url = "https://github.com/trending/"
         url += str(lang).lower().replace(" ", "") + "?since=daily"
         api_content_request = urllib.request.Request(url)
@@ -174,7 +163,6 @@ class GithubUser(GithubApi):
         :param username: str
             Username of user
         """
-
         super(GithubUser, self).__init__("users")
 
         self.username = str(username)
@@ -189,7 +177,6 @@ class GithubUser(GithubApi):
         Returns:
 
         """
-
         api_url = self.api_url + "/events/public"
         api_content = GithubRawApi(
             api_url,
@@ -214,7 +201,6 @@ class GithubUser(GithubApi):
         Returns:
 
         """
-
         current_page = 1
         there_is_something_left = True
         repos_list = []
@@ -246,7 +232,6 @@ class GithubUser(GithubApi):
         Returns:
 
         """
-
         url = self["repos_url"]
         return self._get_repos(url)
 
@@ -259,7 +244,6 @@ class GithubUser(GithubApi):
         Returns:
 
         """
-
         url = "https://api.github.com/user/repos"
         params = {
             "access_token": GITHUB_TOKEN
@@ -276,7 +260,6 @@ class GithubUser(GithubApi):
         Returns:
 
         """
-
         starred_url = self.api_url + "/starred"
         keep_finding = True  # False when there are no more stars to find
         current_page = 1
@@ -308,7 +291,6 @@ class GithubUser(GithubApi):
         Returns:
 
         """
-
         trending_daily = self.get_trending_daily()  # repos trending daily
         starred_repos = self.get_starred_repos()  # repos starred by user
         repos_list = []
@@ -328,7 +310,6 @@ class GithubUserRepository(GithubApi):
         :param repository_name: str
             Name of repository
         """
-
         super(GithubUserRepository, self).__init__("repos")
 
         self.username = str(username)

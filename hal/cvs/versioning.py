@@ -11,6 +11,7 @@ from hal.data.linked_list import LinkedList
 
 class VersionNumber:
     """ """
+
     @abstractmethod
     def get_current_amount(self):
         """:return: int
@@ -21,12 +22,10 @@ class VersionNumber:
         Returns:
 
         """
-
         pass
 
     def can_increase(self, amount):
         """
-
         Args:
           amount: int
         Amount to increase
@@ -36,13 +35,11 @@ class VersionNumber:
           True iff this number can be increased by such amount
 
         """
-
         return amount <= self.max_amount_allowed()
 
     @abstractmethod
     def increase(self, amount=1):
         """
-
         Args:
           amount: int
         Increase number by this amount (Default value = 1)
@@ -52,7 +49,6 @@ class VersionNumber:
           True iff increase was successful
 
         """
-
         pass
 
     @abstractmethod
@@ -65,7 +61,6 @@ class VersionNumber:
         Returns:
 
         """
-
         pass
 
     @abstractmethod
@@ -78,7 +73,6 @@ class VersionNumber:
         Returns:
 
         """
-
         pass
 
     @abstractmethod
@@ -91,7 +85,6 @@ class VersionNumber:
         Returns:
 
         """
-
         pass
 
     @abstractmethod
@@ -105,7 +98,6 @@ class VersionNumber:
         Returns:
 
         """
-
         pass
 
 
@@ -120,7 +112,6 @@ class Level(VersionNumber):
         :param start: int
             Start at this number
         """
-
         self.max_inner = max_inner
         self.current = start
 
@@ -133,7 +124,6 @@ class Level(VersionNumber):
 
     def increase(self, amount=1):
         """
-
         Args:
           amount:  (Default value = 1)
 
@@ -174,7 +164,6 @@ class Subsystem(VersionNumber):
         :param separator: str
             Compose version number separating with this split
         """
-
         self.ll = LinkedList(levels)
         self.current = self.max() - self.max_amount_allowed()  # inverse
         self.split = separator
@@ -200,7 +189,6 @@ class Subsystem(VersionNumber):
 
     def increase(self, amount=1):
         """
-
         Args:
           amount:  (Default value = 1)
 
@@ -274,7 +262,6 @@ class Version(VersionNumber):
         :param separator: str
             Compose version number separating with this split
         """
-
         self.s = Version.from_str(start, max_number, separator)
 
     def __str__(self):
@@ -294,7 +281,6 @@ class Version(VersionNumber):
 
     def increase(self, amount=1):
         """
-
         Args:
           amount:  (Default value = 1)
 
@@ -305,7 +291,6 @@ class Version(VersionNumber):
 
     def increase_by_changes(self, changes_amount, ratio):
         """
-
         Args:
           changes_amount: int
         Number of changes done
@@ -317,7 +302,6 @@ class Version(VersionNumber):
           Increase version accordingly to changes
 
         """
-
         increases = round(changes_amount * ratio)
         return self.increase(int(increases))
 
@@ -332,7 +316,6 @@ class Version(VersionNumber):
     @staticmethod
     def from_str(string, max_number=9, separator="."):
         """
-
         Args:
           string: str
         Version
@@ -346,7 +329,6 @@ class Version(VersionNumber):
           Parse string and returns object
 
         """
-
         tokens = string.split(separator)
         tokens = list(reversed(tokens))  # reverse order of importance
         most_important = tokens[-1]  # cannot be parsed like the others

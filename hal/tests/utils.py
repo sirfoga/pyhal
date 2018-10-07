@@ -9,7 +9,6 @@ import uuid
 
 def battery_test(assert_type, tests, func, args=None):
     """
-
     Args:
       assert_type: function
     Type of assert
@@ -22,9 +21,7 @@ def battery_test(assert_type, tests, func, args=None):
     Returns:
       bool
       True iff all tests pass
-
     """
-
     if args is None:
         args = {}
 
@@ -39,7 +36,5 @@ def random_name():
     Args:
 
     Returns:
-
     """
-
     return str(uuid.uuid4())

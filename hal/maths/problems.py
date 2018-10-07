@@ -14,18 +14,16 @@ class EightQueen:
     @staticmethod
     def under_attack(col, queens):
         """
-
         Args:
           col: int
         Column number
-          queens: List of queens
+          queens: list of queens
 
         Returns:
           bool
           True iff queen is under attack
 
         """
-
         left = right = col
         for _, column in reversed(queens):
             left, right = left - 1, right + 1
@@ -35,7 +33,6 @@ class EightQueen:
 
     def solve(self, table_size):
         """
-
         Args:
           table_size: int
         Size of table
@@ -44,7 +41,6 @@ class EightQueen:
           List of possible solutions
 
         """
-
         if table_size == 0:
             return [[]]
 

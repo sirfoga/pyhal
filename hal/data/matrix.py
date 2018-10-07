@@ -8,6 +8,7 @@ from sklearn.preprocessing import LabelEncoder
 
 class Matrix:
     """ """
+
     def __init__(self, matrix):
         self.matrix = matrix
 
@@ -20,7 +21,6 @@ class Matrix:
         Returns:
 
         """
-
         true_pos = self.matrix[0][0]
         false_pos = self.matrix[1][0]
 
@@ -38,7 +38,6 @@ class Matrix:
         Returns:
 
         """
-
         true_pos = self.matrix[0][0]
         false_neg = self.matrix[0][1]
 
@@ -56,7 +55,6 @@ class Matrix:
         Returns:
 
         """
-
         false_pos = self.matrix[1][0]
         true_neg = self.matrix[1][1]
 
@@ -66,15 +64,12 @@ class Matrix:
             return 0
 
     def accuracy(self):
-        """:return: float
-            Calculates accuracy on database
-
-        Args:
+        """
+        Calculates accuracy on database
 
         Returns:
-
+            accuracy
         """
-
         true_pos = self.matrix[0][0]
         false_pos = self.matrix[1][0]
         false_neg = self.matrix[0][1]
@@ -97,7 +92,6 @@ class Matrix:
         Returns:
 
         """
-
         m_pre = self.precision()
         rec = self.recall()
 
@@ -115,7 +109,6 @@ class Matrix:
         Returns:
 
         """
-
         return sum([
             row
             for row in self.matrix
@@ -130,7 +123,6 @@ class Matrix:
         Returns:
 
         """
-
         lb = LabelEncoder()  # encoder
         values = self.get_as_list()
         encoded = lb.fit_transform(values)  # long list of encoded
@@ -146,7 +138,6 @@ class Matrix:
 
     def decode(self, lb):
         """
-
         Args:
           lb: LabelEncoder
         Encoder used to encode matrix
@@ -156,7 +147,6 @@ class Matrix:
           Decodes matrix
 
         """
-
         self.matrix = [
             lb.inverse_transform(row)
             for row in self.matrix
@@ -165,7 +155,6 @@ class Matrix:
     @staticmethod
     def from_columns(columns):
         """
-
         Args:
           columns: of [] of anything
         Matrix divided into columns
@@ -175,7 +164,6 @@ class Matrix:
           Merge the columns to form a matrix
 
         """
-
         data = [
             [
                 column[i]

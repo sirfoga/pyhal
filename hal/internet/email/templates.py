@@ -28,7 +28,6 @@ class EmailTemplate:
         :param extra_args: {}
             Extra arguments and details about recipient
         """
-
         self.recipient = str(recipient).title().strip()
         self.email_subject = subject
         self.content_file = str(content_file)
@@ -44,7 +43,6 @@ class EmailTemplate:
         Returns:
 
         """
-
         return "<h2>Ciao " + str(self.recipient).title() + "!</h2><br>"
 
     def get_email_footer(self):
@@ -56,7 +54,6 @@ class EmailTemplate:
         Returns:
 
         """
-
         return get_email_content(self.footer_file)
 
     def get_mime_message(self):
@@ -68,7 +65,6 @@ class EmailTemplate:
         Returns:
 
         """
-
         message = MIMEText(
             "<html>" +
             self.get_email_header() +

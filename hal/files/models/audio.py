@@ -14,7 +14,6 @@ from hal.files.models.system import list_content
 
 def find_songs(folder, recursive):
     """
-
     Args:
       folder: str
     Path
@@ -24,9 +23,7 @@ def find_songs(folder, recursive):
     Returns:
       generator of MP3Song
       List of paths of the songs in folder
-
     """
-
     paths = list_content(folder, recursive)
     for p in paths:
         if MP3Song.is_valid_mp3(p):
@@ -39,7 +36,6 @@ class MP3Song(FileSystem):
     @staticmethod
     def is_valid_mp3(path):
         """
-
         Args:
           path: str
         Path to candidate .mp3 song
@@ -49,7 +45,6 @@ class MP3Song(FileSystem):
           True iff song is MP3 encoded
 
         """
-
         try:
             MP3(path)
             return True
@@ -61,7 +56,6 @@ class MP3Song(FileSystem):
         :param path: str
             Location of .mp3 file
         """
-
         super().__init__(path)
 
         self.song = MP3(self.path, ID3=ID3)
@@ -76,7 +70,6 @@ class MP3Song(FileSystem):
         Returns:
 
         """
-
         title = str(self.get_title()).strip()
         artist = str(self.get_artist()).strip()
         album = str(self.get_album()).strip()
@@ -93,7 +86,6 @@ class MP3Song(FileSystem):
 
     def set_title(self, name):
         """
-
         Args:
           name: str
         Song's title
@@ -103,13 +95,11 @@ class MP3Song(FileSystem):
           Sets song's title
 
         """
-
         self.tags.add(TIT2(encoding=3, text=name.decode('utf-8')))
         self.song.save()
 
     def set_artist(self, artist):
         """
-
         Args:
           artist: str
         Song's artist
@@ -119,13 +109,11 @@ class MP3Song(FileSystem):
           Sets song's artist
 
         """
-
         self.tags.add(TPE1(encoding=3, text=artist.decode('utf-8')))
         self.song.save()
 
     def set_album(self, album):
         """
-
         Args:
           album: str
         Song's album
@@ -135,13 +123,11 @@ class MP3Song(FileSystem):
           Sets song's albu
 
         """
-
         self.tags.add(TALB(encoding=3, text=album.decode('utf-8')))
         self.song.save()
 
     def set_nr_track(self, nr_track):
         """
-
         Args:
           nr_track: int
         Number of track
@@ -151,13 +137,11 @@ class MP3Song(FileSystem):
           Sets song's track number
 
         """
-
         self.tags.add(TRCK(encoding=3, text=str(nr_track)))
         self.song.save()
 
     def set_year(self, year):
         """
-
         Args:
           year: int
         Year of song
@@ -167,13 +151,11 @@ class MP3Song(FileSystem):
           Sets song's year
 
         """
-
         self.tags.add(TDRC(encoding=3, text=str(year)))
         self.song.save()
 
     def set_genre(self, genre):
         """
-
         Args:
           genre: str
         Genre of song
@@ -183,7 +165,6 @@ class MP3Song(FileSystem):
           Sets song's genre
 
         """
-
         self.tags.add(TCON(encoding=3, text=str(genre)))
         self.song.save()
 
@@ -198,7 +179,6 @@ class MP3Song(FileSystem):
         Returns:
 
         """
-
         try:
             return self.tags.get("TIT2").text[0]
         except Exception:
@@ -213,7 +193,6 @@ class MP3Song(FileSystem):
         Returns:
 
         """
-
         try:
             return self.tags.get("TPE1").text[0]
         except Exception:
@@ -228,7 +207,6 @@ class MP3Song(FileSystem):
         Returns:
 
         """
-
         try:
             return self.tags.get("TALB").text[0]
         except Exception:
@@ -243,7 +221,6 @@ class MP3Song(FileSystem):
         Returns:
 
         """
-
         try:
             return self.tags.get("TRCK").text[0]
         except Exception:
@@ -258,7 +235,6 @@ class MP3Song(FileSystem):
         Returns:
 
         """
-
         try:
             return self.tags.get("TDRC").text[0]
         except Exception:
@@ -273,7 +249,6 @@ class MP3Song(FileSystem):
         Returns:
 
         """
-
         try:
             return self.tags.get("TCON").text[0]
         except Exception:

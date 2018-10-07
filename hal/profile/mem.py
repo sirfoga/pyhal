@@ -17,9 +17,7 @@ def get_memory_usage():
     Args:
 
     Returns:
-
     """
-
     process = psutil.Process(os.getpid())
     mem = process.memory_info().rss
     return mem / (1024 * 1024)
@@ -32,7 +30,5 @@ def force_garbage_collect():
     Args:
 
     Returns:
-
     """
-
     gc.collect()

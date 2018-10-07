@@ -18,7 +18,6 @@ class AppCronLock:
         :param lock_file: str
             Path to lock file
         """
-
         self.lock_file = lock_file
         self.update_interval = 7
         self.last_update = datetime.datetime.fromtimestamp(0)
@@ -27,7 +26,6 @@ class AppCronLock:
 
     def set_update_interval(self, days=7):
         """
-
         Args:
           days: int
         Days between 2 consecutive app updates (Default value = 7)
@@ -37,7 +35,6 @@ class AppCronLock:
           Sets app interval update
 
         """
-
         self.update_interval = days
 
     def can_proceed(self):
@@ -50,7 +47,6 @@ class AppCronLock:
         Returns:
 
         """
-
         now = datetime.datetime.now()
         return now >= self.last_update + \
                       datetime.timedelta(days=self.update_interval)
@@ -64,7 +60,6 @@ class AppCronLock:
         Returns:
 
         """
-
         try:
             with open(self.lock_file, "r") as reader:
                 data = json.loads(reader.read())
@@ -86,7 +81,6 @@ class AppCronLock:
         Returns:
 
         """
-
         data = {
             "last_update": last_update.strftime(AppCronLock.DATETIME_FORMAT)
         }

@@ -17,13 +17,11 @@ class BasePrediction:
         :param rounds: int
             Number of rounds to repeat prediction (and get better results)
         """
-
         self.model = model  # ml algorithm to use for prediction
         self.rounds = rounds  # number of times to make prediction
 
     def train(self, x_data, y_data):
         """
-
         Args:
           x_data: data
         Input x
@@ -35,7 +33,6 @@ class BasePrediction:
           Train model on inputs
 
         """
-
         x_train, _, y_train, _ = train_test_split(
             x_data,
             y_data,

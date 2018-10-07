@@ -6,7 +6,6 @@
 
 def get_email_content(file_path):
     """
-
     Args:
       file_path: str
     Path to file with email text
@@ -14,9 +13,7 @@ def get_email_content(file_path):
     Returns:
       str
       Email text (html formatted)
-
     """
-
     with open(file_path, "r") as in_file:
         text = str(in_file.read())
         return text.replace("\n", "<br>")

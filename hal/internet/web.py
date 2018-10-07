@@ -106,7 +106,6 @@ HEADERS = {
 
 def is_url(candidate_url):
     """
-
     Args:
       candidate_url: str
     Possible url to check for url
@@ -114,9 +113,7 @@ def is_url(candidate_url):
     Returns:
       bool
       True iff candidate is a valid url
-
     """
-
     return re.match(URL_VALID_REGEX, candidate_url)
 
 
@@ -128,7 +125,6 @@ class Webpage:
         :param url: string
             Url of webpage
         """
-
         self.url = self.parse_url(url)
         self.domain = self.get_domain()
 
@@ -138,7 +134,6 @@ class Webpage:
     @staticmethod
     def parse_url(raw_url):
         """
-
         Args:
           raw_url: url to parse
 
@@ -146,7 +141,6 @@ class Webpage:
           parses correctly url
 
         """
-
         parsed = raw_url
 
         if not raw_url.startswith("http://") and not raw_url.startswith(
@@ -188,7 +182,6 @@ class Webpage:
         Returns:
 
         """
-
         req = urllib.request.Request(self.url)
         req.add_header("user-agent", random.choice(USER_AGENTS))
         req_text = urllib.request.urlopen(req).read()
@@ -198,7 +191,6 @@ class Webpage:
 
     def get_links(self, recall, timeout):
         """
-
         Args:
           recall: max times to attempt to fetch url
           timeout: max times (s) to wait for web_page response
@@ -207,7 +199,6 @@ class Webpage:
           array of out_links
 
         """
-
         for _ in range(recall):
             try:  # setting timeout
                 soup = BeautifulSoup(self.source)  # parse source
@@ -223,7 +214,6 @@ class Webpage:
 
     def open_in_browser(self, n_times):
         """
-
         Args:
           n_times: int
         Times to open webpage in browser
@@ -233,14 +223,12 @@ class Webpage:
           Open a web-driver and go to webpage
 
         """
-
         for _ in range(n_times):
             webbrowser.open(self.url)
 
 
 def download_url(url, local_file):
     """
-
     Args:
       url: string
     Url to download
@@ -250,9 +238,7 @@ def download_url(url, local_file):
     Returns:
       void
       Download link to local file
-
     """
-
     downloader = urllib.request.URLopener()
     downloader.retrieve(url, local_file)
 
@@ -260,7 +246,6 @@ def download_url(url, local_file):
 def download_to_file(url, local_file, headers=HEADERS, cookies=None,
                      chunk_size=1024):
     """
-
     Args:
       url: str
     PDF url to download
@@ -274,9 +259,7 @@ def download_to_file(url, local_file, headers=HEADERS, cookies=None,
     Returns:
       void
       Download link to local file
-
     """
-
     if not cookies:
         cookies = {}
 
@@ -306,9 +289,7 @@ def renew_connection(password):
       password: 
 
     Returns:
-
     """
-
     with Controller.from_port(port=9051) as controller:
         controller.authenticate(password=password)
         controller.signal(Signal.NEWNYM)

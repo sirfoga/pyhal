@@ -15,7 +15,6 @@ MONTHS = {
 
 def parse_hh_mm_ss(string):
     """
-
     Args:
       string: str
     Hours, minutes and seconds in the form hh:mm:ss to parse
@@ -23,9 +22,7 @@ def parse_hh_mm_ss(string):
     Returns:
       datetime.times
       Time parsed
-
     """
-
     string = str(string).strip()  # discard gibberish
     split_count = string.count(":")
     if split_count == 2:  # hh:mm:ss
@@ -38,7 +35,6 @@ def parse_hh_mm_ss(string):
 
 def get_seconds(string):
     """
-
     Args:
       string: str
     Datetime in the form %H:%M:%S
@@ -46,9 +42,7 @@ def get_seconds(string):
     Returns:
       int
       Seconds in times
-
     """
-
     parsed_string = parse_hh_mm_ss(string)  # get times
     total_seconds = parsed_string.second
     total_seconds += parsed_string.minute * 60.0
@@ -58,7 +52,6 @@ def get_seconds(string):
 
 def parse_hh_mm(string):
     """
-
     Args:
       string: str
     Hours and minutes in the form hh:mm to parse
@@ -66,9 +59,7 @@ def parse_hh_mm(string):
     Returns:
       datetime.times
       Time parsed
-
     """
-
     string = str(string).strip()  # discard gibberish
     split_count = string.count(":")
     if split_count == 1:  # hh:mm

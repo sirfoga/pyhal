@@ -26,7 +26,6 @@ class UserInput:
         :param interactive: bool
             True iff program should deal with user not answering properly
         """
-
         self.THRESHOLD_INPUT = threshold
         self.YES = yes_choices
         self.NO = no_choices
@@ -35,7 +34,6 @@ class UserInput:
 
     def is_yes(self, answer):
         """
-
         Args:
           answer: str
         User answer
@@ -45,14 +43,12 @@ class UserInput:
           True iff considered a "yes" answer
 
         """
-
         yes_sim, _ = get_max_similar(answer, self.YES)
         no_sim, _ = get_max_similar(answer, self.NO)
         return yes_sim > no_sim and yes_sim > self.THRESHOLD_INPUT
 
     def is_no(self, answer):
         """
-
         Args:
           answer: str
         User answer
@@ -62,7 +58,6 @@ class UserInput:
           True iff considered a "yes" answer
 
         """
-
         yes_sim, _ = get_max_similar(answer, self.YES)
         no_sim, _ = get_max_similar(answer, self.NO)
         return no_sim > yes_sim and no_sim > self.THRESHOLD_INPUT
@@ -76,14 +71,12 @@ class UserInput:
         Returns:
 
         """
-
         print("Sorry, not well understood.")
         print("- use", str(self.YES), "to answer 'YES'")
         print("- use", str(self.NO), "to answer 'NO'")
 
     def re_ask(self, with_help=True):
         """
-
         Args:
           with_help: bool
         True iff you want to show help on how to answer questions (Default value = True)
@@ -93,7 +86,6 @@ class UserInput:
           Re-asks user the last question
 
         """
-
         if with_help:
             self.show_help()
 
@@ -101,7 +93,6 @@ class UserInput:
 
     def get_answer(self, question):
         """
-
         Args:
           question: str
         Question to ask user
@@ -111,14 +102,12 @@ class UserInput:
           User answer
 
         """
-
         self.last_question = str(question).strip()
         user_answer = input(self.last_question)
         return user_answer.strip()
 
     def get_yes_no(self, question):
         """
-
         Args:
           question: str
         Question to ask user
@@ -128,7 +117,6 @@ class UserInput:
           User answer
 
         """
-
         user_answer = self.get_answer(question).lower()
         if user_answer in self.YES:
             return True
@@ -153,7 +141,6 @@ class UserInput:
     def get_number(self, question,
                    min_i=float("-inf"), max_i=float("inf"), just_these=None):
         """
-
         Args:
           question: str
         Question to ask
@@ -169,7 +156,6 @@ class UserInput:
           User answer
 
         """
-
         try:
             user_answer = self.get_answer(question)
             user_answer = float(user_answer)
@@ -200,7 +186,6 @@ class UserInput:
     def get_list(self, question,
                  splitter=",", at_least=0, at_most=float("inf")):
         """
-
         Args:
           question: str
         Question to ask user
@@ -216,7 +201,6 @@ class UserInput:
           User answer
 
         """
-
         try:
             user_answer = self.get_answer(question)  # ask question
             user_answer = user_answer.split(splitter)  # split items

@@ -16,16 +16,14 @@ class Plot2d:
     @staticmethod
     def scatter(vector_x, vector_y):
         """
+        Plots scatter data
 
         Args:
           vector_x: vector in x axis
           vector_y: vector in y axis
 
-        Returns:
-          2d scatter plot
-
+        Returns: 2d scatter plot
         """
-
         if len(vector_x) == len(vector_y):
             # fig = plt.figure()
             # ax = fig.add_subplot(111)
@@ -39,6 +37,7 @@ class Plot2d:
     @staticmethod
     def param(function_x, function_y, min_val, max_val, points):
         """
+        Plots parametric data
 
         Args:
           function_x: function in x value
@@ -47,11 +46,8 @@ class Plot2d:
           max_val: maximum value
           points: number of points to display
 
-        Returns:
-          2d parametric graph of given function from min to max
-
+        Returns: 2d parametric graph of given function from min to max
         """
-
         if points < 0:
             raise ValueError("Number of points to plot must be positive.")
         else:
@@ -59,28 +55,26 @@ class Plot2d:
                 Plot2d.param(function_x, function_y, max_val, min_val, points)
 
     @staticmethod
-    def plot(function, min_val, max_val, points):
+    def plot(func, min_val, max_val, points):
         """
+        Plots data
 
         Args:
-          function: function to plot
+          func: function to plot
           min_val: minimum value
           max_val: maximum value
           points: number of points
 
-        Returns:
-          plot 2d function
-
+        Returns: plots 2d function
         """
-
         if points < 0:
             raise ValueError("Number of points to plot must be positive.")
         else:
             if min_val > max_val:
-                Plot2d.plot(function, max_val, min_val, points)
+                Plot2d.plot(func, max_val, min_val, points)
             else:
                 x_values = linspace(min_val, max_val, points)
-                plt.plot(x_values, function(x_values))
+                plt.plot(x_values, func(x_values))
                 plt.show()
 
 
@@ -90,17 +84,15 @@ class Plot3d:
     @staticmethod
     def scatter(vector_x, vector_y, vector_z):
         """
+        Plots scatter data
 
         Args:
           vector_x: vector in x axis
           vector_y: vector in y axis
           vector_z: vector in z axis
 
-        Returns:
-          plot 3d scattered points
-
+        Returns: plots 3d scattered points
         """
-
         if len(vector_x) == len(vector_y) == len(vector_z):
             # general settings
             fig = plt.figure()
@@ -116,6 +108,7 @@ class Plot3d:
     def param(function_x, function_y, function_z, min_val, max_val,
               points):
         """
+        Plots parametric functions
 
         Args:
           function_x: function in x
@@ -125,11 +118,8 @@ class Plot3d:
           max_val: maximum
           points: number of points
 
-        Returns:
-          3d parametric graph of given function from min to max
-
+        Returns: 3d parametric graph of given function from min to max
         """
-
         if points < 0:
             raise ValueError("Number of points to plot must be positive.")
         else:
@@ -158,11 +148,12 @@ class Plot3d:
             plt.show()
 
     @staticmethod
-    def plot(function, min_x, max_x, points_x, min_y, max_y, points_y):
+    def plot(func, min_x, max_x, points_x, min_y, max_y, points_y):
         """
+        Plots function
 
         Args:
-          function: function to plot
+          func: function to plot
           min_x: minimum of x-values
           max_x: maximum of x-values
           points_x: points in x axis
@@ -170,19 +161,17 @@ class Plot3d:
           max_y: maximum of y-values
           points_y: points in y axis
 
-        Returns:
-          plot 3d function
-
+        Returns: Plots 3d function
         """
         if points_x < 0 or points_y < 0:
             raise ValueError("Number of points to plot must be positive.")
 
         if min_x > max_x:
-            Plot3d.plot(function, max_x, min_x, points_x, min_y, max_y,
+            Plot3d.plot(func, max_x, min_x, points_x, min_y, max_y,
                         points_y)
 
         if min_y > max_y:
-            Plot3d.plot(function, min_x, max_x, points_x, max_y, min_y,
+            Plot3d.plot(func, min_x, max_x, points_x, max_y, min_y,
                         points_y)
 
         # general settings
@@ -195,7 +184,7 @@ class Plot3d:
         y_axis = numpy.outer(
             linspace(min_y, max_y, points_y), numpy.ones(points_y)
         ).T
-        z_axis = function(x_axis, y_axis)
+        z_axis = func(x_axis, y_axis)
 
         # plot
         chart.plot_surface(
@@ -211,6 +200,7 @@ class Plot4d:
     @staticmethod
     def scatter(vector_x, vector_y, vector_z, vector_w):
         """
+        Plots scatter data
 
         Args:
           vector_x: vector in x axis
@@ -218,9 +208,7 @@ class Plot4d:
           vector_z: vector in z axis
           vector_w: vector in w axis
 
-        Returns:
-          plot 4d scattered points
-
+        Returns: Pplot 4d scattered points
         """
         if len(vector_x) == len(vector_y) == len(vector_z) == len(vector_w):
             pass
@@ -228,12 +216,13 @@ class Plot4d:
             raise ValueError("Cannot plot vectors of different length.")
 
     @staticmethod
-    def plot(function, min_x, max_x, min_y, max_y, min_z, max_z,
+    def plot(func, min_x, max_x, min_y, max_y, min_z, max_z,
              precision=0.5, kind="contour"):
         """
+        Plots function
 
         Args:
-          function: function to plot
+          func: function to plot
           min_x: minimum of x-values
           max_x: maximum of x-values
           min_y: minimum of y-values
@@ -241,28 +230,25 @@ class Plot4d:
           min_z: minimum of z-values
           max_z: maximum of z-values
           precision: precision (Default value = 0.5)
-          kind: slice: x cont -> 3d plot with y, z variables in plane
-        and w as "z"-axis contour: x cont -> 3d plot with y,z variables in
-        plane and w colored (Default value = "contour")
+          kind: x cont -> 3d plot with y, z variables in plane
+            and w as "z"-axis contour: x cont -> 3d plot with y,z variables in
+            plane and w colored (Default value = "contour")
 
-        Returns:
-          plot 4d function
-
+        Returns: Plots 4d function
         """
-
         if precision < 0:
             raise ValueError("Precision cannot be negative.")
 
         if min_x > max_x:
-            Plot4d.plot(function, max_x, min_x, min_y, max_y, min_z, max_z,
+            Plot4d.plot(func, max_x, min_x, min_y, max_y, min_z, max_z,
                         precision, kind)
 
         if min_y > max_y:
-            Plot4d.plot(function, min_x, max_x, max_y, min_y, min_z, max_z,
+            Plot4d.plot(func, min_x, max_x, max_y, min_y, min_z, max_z,
                         precision, kind)
 
         if min_z > max_z:
-            Plot4d.plot(function, min_x, max_x, min_y, max_y, max_z, min_z,
+            Plot4d.plot(func, min_x, max_x, min_y, max_y, max_z, min_z,
                         precision, kind)
 
         if kind != "slice" and kind != "contour":
@@ -271,6 +257,7 @@ class Plot4d:
 
         def set_labels(graph, label_x, label_y, label_z):
             """
+            Set chart labels
 
             Args:
               graph: plot
@@ -278,56 +265,48 @@ class Plot4d:
               label_y: new label on y axis
               label_z: new label on z axis
 
-            Returns:
-              set given labels to axes of graph
-
+            Returns: Set given labels to axes of graph
             """
-
             graph.set_xlabel(label_x)
             graph.set_ylabel(label_y)
             graph.set_zlabel(label_z)
 
         def set_limits(graph):
             """
+            Set chart limits
 
             Args:
               graph: plot
 
-            Returns:
-              set given limits to axes of graph
+            Returns: set given limits to axes of graph
 
             """
-
             graph.set_xlim(min_x, max_x)
             graph.set_ylim(min_y, max_y)
             graph.set_zlim(min_z, max_z)
 
         def get_precision(min_val, max_val):
             """
+            Calculates precision
 
             Args:
               min_val: minimum
               max_val: maximum
 
-            Returns:
-              default number of points = interval / 0.1
-
+            Returns: precision
             """
-
             return int((max_val - min_val) * (1 + precision))
 
         def get_precision_delta(min_val, max_val):
             """
+            Calculates precision delta
 
             Args:
               min_val: minimum
               max_val: maximum
 
-            Returns:
-              default Delta = interval / points
-
+            Returns: precision delte
             """
-
             return float(max_val - min_val) / float(10 * precision)
 
         if kind == "slice":
@@ -344,18 +323,17 @@ class Plot4d:
             slider = Slider(axis_slider, "x", min_x, max_x, valinit=min_x)
 
             def update(val):
-                """:return: re-plot
+                """
+                Updates chart with value
 
                 Args:
-                  val: 
+                  val: value
 
-                Returns:
-
+                Returns: re-plot
                 """
-
                 chart.clear()
                 x_const = slider.val
-                z_axis = function(x_const, x_axis, y_axis)
+                z_axis = func(x_const, x_axis, y_axis)
                 chart.plot_surface(
                     x_axis, y_axis, z_axis, alpha=0.3, linewidth=2.0
                 )
@@ -363,8 +341,7 @@ class Plot4d:
 
             slider.on_changed(update)
             set_labels(chart, "y", "z", "w")
-            # plot
-            plt.show()
+            plt.show()  # plot
         else:  # kind = contour
             # general settings
             fig = plt.figure()
@@ -384,22 +361,21 @@ class Plot4d:
             # update
 
             def update(val):
-                """:return: re-plot plot
+                """
+                Updates chart with value
 
                 Args:
-                  val: 
+                  val: value
 
-                Returns:
-
+                Returns: re-plot
                 """
-
                 chart.clear()  # re-plot
                 x_const = slider.val
                 z_axis = []
 
                 # add new points
                 for i, _ in enumerate(x_axis):
-                    z_axis.append(function(x_const, x_axis[i], y_axis[i]))
+                    z_axis.append(func(x_const, x_axis[i], y_axis[i]))
 
                 # show
                 chart.contour(

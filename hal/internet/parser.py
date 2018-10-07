@@ -17,7 +17,6 @@ class HtmlTable:
         :param html_source: string
             Html source of table
         """
-
         self.source = html_source
         self.soup = BeautifulSoup(self.source, "lxml")
 
@@ -30,7 +29,6 @@ class HtmlTable:
         Returns:
 
         """
-
         data = []  # add name of section
         for row in self.soup.find_all("tr"):  # cycle through all rows
             is_empty = True

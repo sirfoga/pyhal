@@ -14,6 +14,7 @@ YOUTUBE_FEED_BASE_URL = "https://www.youtube.com/feeds/videos.xml?channel_id="
 
 class YoutubeChannel:
     """ """
+
     def __init__(self, channel_name):
         self.channel_name = channel_name
 
@@ -26,7 +27,6 @@ class YoutubeChannel:
         Returns:
 
         """
-
         channel_url = YOUTUBE_USER_BASE_URL + self.channel_name  # url
         source_page = Webpage(
             channel_url).get_html_source()  # get source page of channel
@@ -41,7 +41,6 @@ class YoutubeChannel:
         Returns:
 
         """
-
         soup = BeautifulSoup(
             self.get_channel_page(), "lxml"
         )  # parser for source page
@@ -65,14 +64,12 @@ class YoutubeChannel:
         Returns:
 
         """
-
         channel_id = self.get_channel_id()  # get id
         return YoutubeChannel.get_feed_url_from_id(channel_id)
 
     @staticmethod
     def get_feed_url_from_id(channel_id):
         """
-
         Args:
           channel_id: string
         id of channel (e.g in
@@ -84,13 +81,11 @@ class YoutubeChannel:
         Returns:
 
         """
-
         return YOUTUBE_FEED_BASE_URL + channel_id
 
     @staticmethod
     def get_feed_url_from_video(video_url):
         """
-
         Args:
           video_url: string
         Url of video (e.g in https://www.youtube.com/watch?v=KB_iTbDrkxE)
@@ -100,12 +95,11 @@ class YoutubeChannel:
         Returns:
 
         """
-
         web_page = Webpage(video_url)
         web_page.get_html_source()
         channel_id = \
-        web_page.soup.find_all("div", {"class": "yt-user-info"})[0].a[
-            "href"]
+            web_page.soup.find_all("div", {"class": "yt-user-info"})[0].a[
+                "href"]
         channel_id = str(channel_id).strip().replace("/channel/",
                                                      "")  # get channel id
         return YoutubeChannel.get_feed_url_from_id(channel_id)

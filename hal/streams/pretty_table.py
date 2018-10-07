@@ -8,7 +8,6 @@ from hal.strings.utils import non_ansi_string
 
 def parse_colorama(text):
     """
-
     Args:
       text: str
     Colorama text to parse
@@ -16,9 +15,7 @@ def parse_colorama(text):
     Returns:
       str
       Parsed colorama text
-
     """
-
     return non_ansi_string(text)
 
 
@@ -26,7 +23,6 @@ class SqlTable:
     def __init__(self, labels, data, num_format, line_separator):
 
         """
-
         Args:
           labels: of str
         List of labels of data
@@ -42,7 +38,6 @@ class SqlTable:
           Pretty formatted table (first row is labels, then actual data)
 
         """
-
         self.labels = labels
         self.data = data
         self.num_format = num_format
@@ -74,7 +69,6 @@ class SqlTable:
         Returns:
 
         """
-
         columns = len(self.data[0])  # number of columns
         str_labels = [parse_colorama(str(l)) for l in
                       self.labels]  # labels as strings
@@ -95,7 +89,6 @@ class SqlTable:
 
     def get_pretty_row(self, row, filler, splitter):
         """
-
         Args:
           row: of anything
         List of data
@@ -109,7 +102,6 @@ class SqlTable:
           Pretty formatted row
 
         """
-
         for i, val in enumerate(row):
             length_diff = self.widths[i] - len(parse_colorama(val))
             if length_diff > 0:  # value is shorter than foreseen
@@ -123,7 +115,6 @@ class SqlTable:
 
     def get_blank_row(self, filler="-", splitter="+"):
         """
-
         Args:
           filler: char
         Fill empty columns with this char (Default value = "-")
@@ -135,7 +126,6 @@ class SqlTable:
           Pretty formatted blank row (with no meaningful data in it)
 
         """
-
         return self.get_pretty_row(
             ["" for _ in self.widths],  # blanks
             filler,  # fill with this
@@ -144,7 +134,6 @@ class SqlTable:
 
     def pretty_format_row(self, row, filler=" ", splitter="|"):
         """
-
         Args:
           row: of anything
         List of data
@@ -158,7 +147,6 @@ class SqlTable:
           Pretty formatted row
 
         """
-
         return self.get_pretty_row(
             row,
             filler,
@@ -182,7 +170,6 @@ class SqlTable:
     @staticmethod
     def from_df(df):
         """
-
         Args:
           df: pandas.DataFrame
         Data
@@ -192,7 +179,6 @@ class SqlTable:
           Parses data and builds an instance of this class
 
         """
-
         labels = df.keys().tolist()
         data = df.values.tolist()
         return SqlTable(labels, data, "{:.3f}", "\n")
@@ -200,7 +186,6 @@ class SqlTable:
 
 def pretty_format_table(labels, data, num_format="{:.3f}", line_separator="\n"):
     """
-
     Args:
       labels: of str
     List of labels of data
@@ -214,16 +199,13 @@ def pretty_format_table(labels, data, num_format="{:.3f}", line_separator="\n"):
     Returns:
       str
       Pretty formatted table (first row is labels, then actual data)
-
     """
-
     table = SqlTable(labels, data, num_format, line_separator)
     return table.build()
 
 
 def pretty_df(df):
     """
-
     Args:
       df: pandas.DataFrame
     Data
@@ -231,8 +213,6 @@ def pretty_df(df):
     Returns:
       str
       Pretty formatted table (first row is labels, then actual data)
-
     """
-
     table = SqlTable.from_df(df)
     return table.build()

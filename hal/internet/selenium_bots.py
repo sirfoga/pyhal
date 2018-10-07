@@ -14,7 +14,6 @@ class SeleniumForm:
     @staticmethod
     def fill_form_field(browser, field_name, field_value):
         """
-
         Args:
           browser: web-driver
         Browser to use to submit form.
@@ -28,7 +27,6 @@ class SeleniumForm:
           Fill given field with given value.
 
         """
-
         browser.execute_script(
             "document.getElementsByName(\"" + str(
                 field_name) + "\")[0].value = \"" + str(field_value) + "\"")
@@ -37,7 +35,6 @@ class SeleniumForm:
     def fill_login_form(browser, username, username_field, user_password,
                         user_password_field):
         """
-
         Args:
           browser: web-driver
         Browser to use to submit form
@@ -55,7 +52,6 @@ class SeleniumForm:
           Form filled with given information
 
         """
-
         SeleniumForm.fill_form_field(browser, username_field,
                                      username)  # set username
         SeleniumForm.fill_form_field(browser, user_password_field,
@@ -64,7 +60,6 @@ class SeleniumForm:
     @staticmethod
     def submit_form(browser, button_name):
         """
-
         Args:
           browser: web-driver
         Browser to use to submit form.
@@ -76,7 +71,6 @@ class SeleniumForm:
           Submit form.
 
         """
-
         browser.execute_script(
             "document.getElementsByName(\"" + button_name + "\")[0].click()"
         )  # click button

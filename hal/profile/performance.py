@@ -31,7 +31,6 @@ class EightQueenTest:
         Returns:
 
         """
-
         user = getpass.getuser()
         os_name = os.name
 
@@ -51,7 +50,6 @@ class EightQueenTest:
         Returns:
 
         """
-
         output = "So, let\'s get into the details.. I\'m going to solve the " \
                  "classic Eight Queens Puzzle: it\'s the problem of placing " \
                  "eight chess queens on an 8×8 chessboard so that no two " \
@@ -72,7 +70,6 @@ class EightQueenTest:
     @staticmethod
     def run_test_with_size(size):
         """
-
         Args:
           size: int
         Number of rows in grid
@@ -82,7 +79,6 @@ class EightQueenTest:
           Time to solve problem with given size
 
         """
-
         timing = time()
         problem = primes.problems.EightQueen(size)
         problem.solve(problem.board_size)
@@ -90,7 +86,6 @@ class EightQueenTest:
 
     def update_std_out_and_log(self, string):
         """
-
         Args:
           string: string
         Stuff to print
@@ -100,7 +95,6 @@ class EightQueenTest:
           Prints to stdout and updates log
 
         """
-
         print(string)  # update stdout
         self.benchmark += "\n" + string  # update log
 
@@ -113,7 +107,6 @@ class EightQueenTest:
         Returns:
 
         """
-
         self.update_std_out_and_log(self.welcome())
         print(EightQueenTest.introduction())
 

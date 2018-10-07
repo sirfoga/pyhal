@@ -11,8 +11,6 @@ class SearchEngineResult:
     """Result of general search engine"""
 
     def __init__(self, title, link, description=""):
-
-
         self.title = title
         self.link = link
         self.description = description
@@ -31,7 +29,6 @@ class SearchEngine:
         :param blank_replace:
             Every search engine has to replace blanks in query
         """
-
         self.url = str(url)
         self.web_page = Webpage(self.url)
         self.domain = self.web_page.get_domain()
@@ -39,7 +36,6 @@ class SearchEngine:
 
     def parse_query(self, query):
         """
-
         Args:
           query: string
         Query to search engine.
@@ -49,7 +45,6 @@ class SearchEngine:
           Parse given query in order to meet search criteria of search engine
 
         """
-
         return query.strip().replace(
             " ",
             self.blank_replace
@@ -57,7 +52,6 @@ class SearchEngine:
 
     def get_search_page(self, query, using_tor=False):
         """
-
         Args:
           query: string
         Query to search engine.
@@ -69,7 +63,6 @@ class SearchEngine:
           Get HTML source of search page of given query.
 
         """
-
         query_web_page = Webpage(self.url + self.parse_query(query))
         query_web_page.get_html_source(tor=using_tor)  # get html source
         return query_web_page.source

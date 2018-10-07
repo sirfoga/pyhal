@@ -6,7 +6,6 @@
 
 import random
 
-
 LOW_PRIMES = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53,
               59, 61, 67, 71, 73, 79, 83, 89, 97, 101,
               103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163,
@@ -42,7 +41,6 @@ class Integer:
         Returns:
 
         """
-
         if self.to_int < 2:
             return False
         elif self.to_int % 2 == 0:
@@ -69,7 +67,6 @@ class Integer:
 
     def test_miller_rabin(self, precision):
         """
-
         Args:
           precision: number of rounds to perform (higher -> better
         precision)
@@ -78,7 +75,6 @@ class Integer:
           True iff probably prime
 
         """
-
         if not self.is_naive_prime():
             if precision < 0:
                 raise ValueError('precision must be positive')
@@ -118,15 +114,12 @@ class Integer:
 
 def get_prime(bits):
     """
-
     Args:
       bits: size of number to generate (bits)
 
     Returns:
       prime number of given size
-
     """
-
     if bits < 0:
         raise ValueError('\'bits\' field cannot be negative')
     while True:
@@ -137,7 +130,6 @@ def get_prime(bits):
 
 def blum_blum_shub(seed, amount, prime0, prime1):
     """
-
     Args:
       seed: seeder
       amount: amount of number to generate
@@ -146,9 +138,7 @@ def blum_blum_shub(seed, amount, prime0, prime1):
 
     Returns:
       pseudo-number generator
-
     """
-
     assert amount >= 0  # amount cannot be negative
     if amount == 0:
         return []

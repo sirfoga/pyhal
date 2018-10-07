@@ -8,7 +8,6 @@ import subprocess
 
 def send_notification(app_name, message):
     """
-
     Args:
       app_name: str
     Name of app to show
@@ -18,9 +17,7 @@ def send_notification(app_name, message):
     Returns:
       void
       Shows notify to screen
-
     """
-
     subprocess.call([
         "notify-send",
         str(app_name),

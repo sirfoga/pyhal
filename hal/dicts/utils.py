@@ -11,7 +11,6 @@ from hal.strings.utils import how_similar_are
 
 def how_similar_dicts(d1, d2):
     """
-
     Args:
       d1: Dictionary
       d2: Dictionary
@@ -19,9 +18,7 @@ def how_similar_dicts(d1, d2):
     Returns:
       float in [0 - 1]
       A measure of how much similar values of dictionaries are
-
     """
-
     values = []
     for k in d1:  # iterate keys
         if k in d2 and d1[k] and d2[k]:  # make sure values are comparable

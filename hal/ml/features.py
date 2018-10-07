@@ -12,13 +12,13 @@ from sklearn.svm import SVC
 
 class FeatureSelect:
     """ """
+
     def __init__(self, x, y):
         self.x = x
         self.y = y
 
     def select_k_best(self, k):
         """
-
         Args:
           k: int
         K features to select
@@ -28,7 +28,6 @@ class FeatureSelect:
           Select k best features in dataset
 
         """
-
         x_new = SelectKBest(chi2, k=k).fit_transform(self.x, self.y)
         return x_new
 
@@ -41,7 +40,6 @@ class FeatureSelect:
         Returns:
 
         """
-
         svc = SVC(kernel="linear")
         rfecv = RFECV(
             estimator=svc,

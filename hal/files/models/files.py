@@ -20,7 +20,6 @@ class Document(FileSystem):
         :param path: string
             Path to file
         """
-
         super().__init__(path)
 
         self.root_path, self.full_name = self.get_path_name()
@@ -29,7 +28,6 @@ class Document(FileSystem):
     @staticmethod
     def move_file_to_directory(file_path, directory_path):
         """
-
         Args:
           file_path: string
         Path to file to move
@@ -50,7 +48,6 @@ class Document(FileSystem):
     @staticmethod
     def move_file_to_file(old_path, new_path):
         """
-
         Args:
           old_path: string
         Old path of file to move
@@ -82,7 +79,6 @@ class Document(FileSystem):
     @staticmethod
     def write_data_to_file(data, out_file):
         """
-
         Args:
           data: string
         Data to write to file.
@@ -94,14 +90,12 @@ class Document(FileSystem):
           Writes given data to given path file.
 
         """
-
         with open(out_file, "w") as out_f:
             out_f.write(data)
 
     @staticmethod
     def extract_name_extension(file_name):
         """
-
         Args:
           file_name: string
         Name of file
@@ -122,7 +116,6 @@ class Document(FileSystem):
         Returns:
 
         """
-
         path = fix_raw_path(os.path.dirname(os.path.abspath(self.path)))
         name = os.path.basename(self.path)
         return path, name
@@ -160,7 +153,6 @@ class Directory(FileSystem):
         :param path: string
             Path to file
         """
-
         super().__init__(fix_raw_path(path))
 
         self.root_path, self.name = self.get_path_name()
@@ -168,7 +160,6 @@ class Directory(FileSystem):
     @staticmethod
     def create_new(path):
         """
-
         Args:
           path: string
         Path to directory to create
@@ -178,7 +169,6 @@ class Directory(FileSystem):
           Creates new directory
 
         """
-
         if not os.path.exists(path):
             os.makedirs(path)
 
@@ -191,7 +181,6 @@ class Directory(FileSystem):
         Returns:
 
         """
-
         complete_path = os.path.dirname(os.path.abspath(self.path))
         name = self.path.replace(complete_path + PATH_SEPARATOR, "")
         if name.endswith("/"):
@@ -208,5 +197,4 @@ class Directory(FileSystem):
         Returns:
 
         """
-
         return not os.listdir(self.path)

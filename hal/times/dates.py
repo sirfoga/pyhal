@@ -22,7 +22,6 @@ class Weekday(Enum):
 
 def get_just_date(date):
     """
-
     Args:
       date: datetime
     Date with possible hours
@@ -30,9 +29,7 @@ def get_just_date(date):
     Returns:
       date
       Just day, month and year (setting hours to 00:00:00)
-
     """
-
     return datetime.datetime(
         date.year,
         date.month,
@@ -42,7 +39,6 @@ def get_just_date(date):
 
 def get_next_weekday(weekday, including_today=False):
     """
-
     Args:
       weekday: Weekday
     Weekday to get
@@ -52,9 +48,7 @@ def get_next_weekday(weekday, including_today=False):
     Returns:
       datetime
       Date of next monday, tuesday ...
-
     """
-
     now = datetime.datetime.now()
     if now.weekday() == weekday.value and including_today:
         delta = datetime.timedelta(days=0)
@@ -69,7 +63,6 @@ def get_next_weekday(weekday, including_today=False):
 
 def get_last_weekday(weekday, including_today=False):
     """
-
     Args:
       weekday: Weekday
     Weekday to get
@@ -79,9 +72,7 @@ def get_last_weekday(weekday, including_today=False):
     Returns:
       datetime
       Date of next monday, tuesday ...
-
     """
-
     now = datetime.datetime.now()
     if now.weekday() == weekday.value and including_today:
         delta = datetime.timedelta(days=0)
@@ -101,7 +92,6 @@ def get_last_weekday(weekday, including_today=False):
 
 def is_date_in_between(date, start, end):
     """
-
     Args:
       date: datetime
     Date to check
@@ -113,15 +103,12 @@ def is_date_in_between(date, start, end):
     Returns:
       bool
       True iff date is in between dates
-
     """
-
     return get_just_date(start) <= get_just_date(date) < get_just_date(end)
 
 
 def is_in_this_week(date):
     """
-
     Args:
       date: datetime
     Date
@@ -129,9 +116,7 @@ def is_in_this_week(date):
     Returns:
       bool
       True iff date is in this week (from sunday to sunday)
-
     """
-
     return is_date_in_between(
         get_just_date(date),
         get_last_weekday(Weekday.SUNDAY, including_today=True),

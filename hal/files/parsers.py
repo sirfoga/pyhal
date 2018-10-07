@@ -16,8 +16,6 @@ class Parser:
         :param file_path: a raw .csv file that contains any data
             about anything
         """
-
-
         self.path = file_path
         self.lines = None  # list of lines in database
 
@@ -30,7 +28,6 @@ class Parser:
         Returns:
 
         """
-
         with open(self.path) as data:
             self.lines = data.readlines()  # store data in arrays
 
@@ -47,7 +44,6 @@ class CSVParser(Parser):
         :param encoding: str
             Encoding to open file with
         """
-
         super().__init__(file_path)
         self.encoding = str(encoding).strip()
 
@@ -60,7 +56,6 @@ class CSVParser(Parser):
         Returns:
 
         """
-
         data = []
         with open(self.path, encoding=self.encoding) as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=",", quotechar="\"")
@@ -78,7 +73,6 @@ class CSVParser(Parser):
         Returns:
 
         """
-
         data = self.get_matrix()
         return data[0], data[1:]  # headers, data
 
@@ -91,7 +85,6 @@ class CSVParser(Parser):
         Returns:
 
         """
-
         reader = csv.DictReader(open(self.path, "r", encoding=self.encoding))
         for row in reader:
             if row:
@@ -100,6 +93,7 @@ class CSVParser(Parser):
 
 class JSONParser(Parser):
     """ """
+
     def get_content(self):
         """ """
         with open(self.path, "r") as in_file:
