@@ -6,18 +6,18 @@
 
 import numpy as np
 
-from hal.strings.utils import how_similar_are
+from strings.utils import how_similar_are
 
 
 def how_similar_dicts(d1, d2):
     """
+    Calculates similarity
+
     Args:
       d1: Dictionary
       d2: Dictionary
 
-    Returns:
-      float in [0 - 1]
-      A measure of how much similar values of dictionaries are
+    Returns: A measure of how much similar values of dictionaries are
     """
     values = []
     for k in d1:  # iterate keys
