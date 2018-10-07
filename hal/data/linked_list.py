@@ -10,10 +10,9 @@ class Node:
 
     def __init__(self, val, next_node=None):
         """
-        :param val: object
-            Value of node
-        :param next_node: Node
-            Next node
+        Args:
+            val: Value of node
+            next_node: Next node
         """
         self.val = val
         self.next_node = next_node  # the pointer initially points to nothing
@@ -24,30 +23,24 @@ class LinkedList:
 
     def __init__(self, lst):
         """
-        :param lst: []
-            List of elements
+        Args:
+            lst: List of elements
         """
         self.head = LinkedList.from_list(lst)
 
     def get_head(self):
-        """:return: Node
-            Head of linked list
+        """
+        Gets head
 
-        Args:
-
-        Returns:
-
+        Returns: Head of linked list
         """
         return self.head
 
     def get_tail(self):
-        """:return: Node
-            Tail of linked list
+        """
+        Gets tail
 
-        Args:
-
-        Returns:
-
+        Returns: Tail of linked list
         """
         node = self.head
         last_node = self.head
@@ -59,13 +52,10 @@ class LinkedList:
         return last_node
 
     def length(self):
-        """:return: int
-            Length of linked list
+        """
+        Gets length
 
-        Args:
-
-        Returns:
-
+        Returns: How many items in linked list of linked list
         """
         item = self.head
         counter = 0
@@ -78,29 +68,24 @@ class LinkedList:
 
     def append(self, val):
         """
+        Appends to list
+
         Args:
-          val: obj
-        Object to insert
+            val: Object to insert
 
-        Returns:
-          bool
-          Appends element to last
-
+        Returns: Appends element to last
         """
         return self.insert(val, self.length())
 
     def insert(self, val, at=0):
         """
+        Insert in position
+
         Args:
-          val: obj
-        Object to insert
-          at: int
-        Index of insertion (Default value = 0)
+            val: Object to insert
+            at: Index of insertion (Default value = 0)
 
-        Returns:
-          bool
-          True iff insertion completed successfully
-
+        Returns: True iff insertion completed successfully
         """
         if at < 0 or at > self.length():
             return False
@@ -129,13 +114,10 @@ class LinkedList:
         return False
 
     def remove_first(self):
-        """:return: bool
-            True iff head has been removed
+        """
+        Removes first
 
-        Args:
-
-        Returns:
-
+        Returns: True iff head has been removed
         """
         if self.head.next_node is not None:
             self.head = self.head.next_node
@@ -144,13 +126,10 @@ class LinkedList:
         return False
 
     def remove_last(self):
-        """:return: bool
-            True iff last element has been removed
+        """
+        Removes last
 
-        Args:
-
-        Returns:
-
+        Returns: True iff last element has been removed
         """
         node = self.head
 
@@ -165,14 +144,12 @@ class LinkedList:
 
     def remove(self, at):
         """
+        Removes at index
+
         Args:
-          at: int
-        Index of removal
+            at: Index of removal
 
-        Returns:
-          bool
-          True iff removal completed successfully
-
+        Returns: True iff removal completed successfully
         """
         if at < 0 or at > self.length():
             return False
@@ -199,13 +176,10 @@ class LinkedList:
         return False
 
     def to_lst(self):
-        """:return: []
-            Cycle all items and puts them in a list
+        """
+        Cycle all items and puts them in a list
 
-        Args:
-
-        Returns:
-
+        Returns: list representation
         """
         out = []
         node = self.head
@@ -218,13 +192,12 @@ class LinkedList:
 
     def execute(self, func):
         """
+        Executes function on each item
+
         Args:
-          func: function
-        Function to execute on each item
+            func: Function to execute on each item
 
-        Returns:
-          Results of calling the function on each item
-
+        Returns: Results of calling the function on each item
         """
         return [
             func(item) for item in self.to_lst()
@@ -240,13 +213,12 @@ class LinkedList:
     @staticmethod
     def from_list(lst):
         """
+        Parses list
+
         Args:
-          lst: list of elements
+            lst: list of elements
 
-        Returns:
-          Node
-          Nodes from list
-
+        Returns: Nodes from list
         """
         if not lst:
             return None
@@ -258,24 +230,3 @@ class LinkedList:
 
         head.next_node = LinkedList.from_list(lst[1:])
         return head
-
-
-if __name__ == '__main__':
-    lst1 = [1, 2, 3, 4, 5]
-    l = LinkedList(lst1)
-
-    print("insert 0 at 5")
-    ok = l.insert(0, at=5)
-    print(ok, l)
-
-    print("removed first")
-    ok = l.remove_first()
-    print(ok, l)
-
-    print("removed last")
-    ok = l.remove_last()
-    print(ok, l)
-
-    print("removed at 2")
-    ok = l.remove(2)
-    print(ok, l)

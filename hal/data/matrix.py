@@ -7,19 +7,16 @@ from sklearn.preprocessing import LabelEncoder
 
 
 class Matrix:
-    """ """
+    """Table of data"""
 
     def __init__(self, matrix):
         self.matrix = matrix
 
     def precision(self):
-        """:return: float
-            Calculates accuracy on database
+        """
+        Calculates precision
 
-        Args:
-
-        Returns:
-
+        Returns: precision
         """
         true_pos = self.matrix[0][0]
         false_pos = self.matrix[1][0]
@@ -30,13 +27,10 @@ class Matrix:
             return 0
 
     def recall(self):
-        """:return: float
-            Calculates recall on database
+        """
+        Calculates recall
 
-        Args:
-
-        Returns:
-
+        Returns: recall
         """
         true_pos = self.matrix[0][0]
         false_neg = self.matrix[0][1]
@@ -47,13 +41,10 @@ class Matrix:
             return 0
 
     def true_neg_rate(self):
-        """:return: float
-            Calculates true negative rate on database
+        """
+        Calculates true negative rate
 
-        Args:
-
-        Returns:
-
+        Returns: true negative rate
         """
         false_pos = self.matrix[1][0]
         true_neg = self.matrix[1][1]
@@ -65,7 +56,7 @@ class Matrix:
 
     def accuracy(self):
         """
-        Calculates accuracy on database
+        Calculates accuracy
 
         Returns:
             accuracy
@@ -84,13 +75,10 @@ class Matrix:
             return 0
 
     def f1_score(self):
-        """:return: float
-            Calculates F1 score on database
+        """
+        Calculates F1 score
 
-        Args:
-
-        Returns:
-
+        Returns: F1 score
         """
         m_pre = self.precision()
         rec = self.recall()
@@ -101,13 +89,10 @@ class Matrix:
             return 0
 
     def get_as_list(self):
-        """:return: [] of anything
-            List of all values in matrix
+        """
+        List of all values in matrix
 
-        Args:
-
-        Returns:
-
+        Returns: list representation
         """
         return sum([
             row
@@ -115,13 +100,10 @@ class Matrix:
         ], [])
 
     def encode(self):
-        """:return: LabelEncoder
-            Encoder
+        """
+        Encodes matrix
 
-        Args:
-
-        Returns:
-
+        Returns: Encoder used
         """
         lb = LabelEncoder()  # encoder
         values = self.get_as_list()
@@ -138,14 +120,12 @@ class Matrix:
 
     def decode(self, lb):
         """
+        Decodes matrix
+
         Args:
-          lb: LabelEncoder
-        Encoder used to encode matrix
+          lb: Encoder used to encode matrix
 
-        Returns:
-          void
-          Decodes matrix
-
+        Returns: Decodes matrix
         """
         self.matrix = [
             lb.inverse_transform(row)
@@ -155,14 +135,12 @@ class Matrix:
     @staticmethod
     def from_columns(columns):
         """
+        Parses raw columns
+
         Args:
-          columns: of [] of anything
-        Matrix divided into columns
+          columns:  atrix divided into columns
 
-        Returns:
-          Matrix
-          Merge the columns to form a matrix
-
+        Returns: Merge the columns to form a matrix
         """
         data = [
             [
