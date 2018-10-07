@@ -4,6 +4,7 @@
 INSTALL_FOLDER=${PWD}
 TWINE_FOLDER="${HOME}/bin/twine/twine/"
 
+cd ..
 rm -rf build dist *.egg-info  # clean
 python3 setup.py sdist bdist_wheel  # build
 

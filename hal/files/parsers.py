@@ -5,7 +5,6 @@
 """ Parsers for raw databases """
 
 import csv
-import json
 
 
 class Parser:
@@ -89,14 +88,3 @@ class CSVParser(Parser):
         for row in reader:
             if row:
                 yield row
-
-
-class JSONParser(Parser):
-    """ """
-
-    def get_content(self):
-        """ """
-        with open(self.path, "r") as in_file:
-            return json.loads(
-                in_file.read()
-            )  # read and return json object

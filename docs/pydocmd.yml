@@ -1,0 +1,15 @@
+site_name: PyHal documentation
+repo_url: https://github.com/sirfoga/pyhal
+generate:
+- charts.md:
+  - pyhal.charts++
+- cvs.md:
+  - pyhal.cvs++
+- data.md:
+  - pyhal.data++
+pages:
+- Home: index.md << ../README.md
+- API Documentation:
+  - Charts: charts.md
+  - CVS: cvs.md
+  - Data: data.md

@@ -6,6 +6,7 @@ LOCAL_FOLDER="${PWD}/${PACKAGE}/*"
 PYTHON_VERSION="python3.6"
 DIST_FOLDER="/usr/local/lib/${PYTHON_VERSION}/dist-packages/${PACKAGE}"
 
+cd ..
 rm -rf ${DIST_FOLDER}  # clean
 mkdir ${DIST_FOLDER}
 cp -r ${LOCAL_FOLDER} ${DIST_FOLDER}  # copy recursively
