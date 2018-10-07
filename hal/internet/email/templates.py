@@ -9,7 +9,7 @@ from hal.internet.email.utils import get_email_content
 
 
 class EmailTemplate:
-    """ Default email template """
+    """Default email template"""
 
     def __init__(self,
                  recipient,
@@ -36,25 +36,37 @@ class EmailTemplate:
         self.data = {} if not extra_args else extra_args
 
     def get_email_header(self):
-        """
-        :return: str
+        """:return: str
             Email header
+
+        Args:
+
+        Returns:
+
         """
 
         return "<h2>Ciao " + str(self.recipient).title() + "!</h2><br>"
 
     def get_email_footer(self):
-        """
-        :return: str
+        """:return: str
             Email text (html formatted)
+
+        Args:
+
+        Returns:
+
         """
 
         return get_email_content(self.footer_file)
 
     def get_mime_message(self):
-        """
-        :return: MIMEText
+        """:return: MIMEText
             Email formatted as HTML ready to be sent
+
+        Args:
+
+        Returns:
+
         """
 
         message = MIMEText(

@@ -9,7 +9,7 @@ import json
 
 
 class Parser:
-    """ Mother of all data-files parsers """
+    """Mother of all data-files parsers"""
 
     def __init__(self, file_path):
         """
@@ -22,9 +22,13 @@ class Parser:
         self.lines = None  # list of lines in database
 
     def get_lines(self):
-        """
-        :return: [] of str
+        """:return: [] of str
             Lines in file
+
+        Args:
+
+        Returns:
+
         """
 
         with open(self.path) as data:
@@ -34,7 +38,7 @@ class Parser:
 
 
 class CSVParser(Parser):
-    """ Parses CSV data files """
+    """Parses CSV data files"""
 
     def __init__(self, file_path, encoding="utf-8"):
         """
@@ -48,9 +52,13 @@ class CSVParser(Parser):
         self.encoding = str(encoding).strip()
 
     def get_matrix(self):
-        """
-        :return: store values in array, store lines in array. The result is
+        """:return: store values in array, store lines in array. The result is
             a 2D matrix
+
+        Args:
+
+        Returns:
+
         """
 
         data = []
@@ -62,18 +70,26 @@ class CSVParser(Parser):
         return data
 
     def get_headers_data(self):
-        """
-        :return: tuple [], [] of []
+        """:return: tuple [], [] of []
             headers of csv file and data
+
+        Args:
+
+        Returns:
+
         """
 
         data = self.get_matrix()
         return data[0], data[1:]  # headers, data
 
     def get_dicts(self):
-        """
-        :return: (generator of) [] of {}
+        """:return: (generator of) [] of {}
             List of dicts with data from .csv file
+
+        Args:
+
+        Returns:
+
         """
 
         reader = csv.DictReader(open(self.path, "r", encoding=self.encoding))
@@ -83,7 +99,9 @@ class CSVParser(Parser):
 
 
 class JSONParser(Parser):
+    """ """
     def get_content(self):
+        """ """
         with open(self.path, "r") as in_file:
             return json.loads(
                 in_file.read()

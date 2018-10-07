@@ -13,12 +13,16 @@ from hal import times
 
 def add_params_to_url(url, params):
     """
-    :param url: str
-        Url to add params to
-    :param params: {}
-        List of params to add to url
-    :return: void
-        Adds params to url
+
+    Args:
+      url: str
+    Url to add params to
+      params: List of params to add to url
+
+    Returns:
+      void
+      Adds params to url
+
     """
 
     url_parts = list(urlparse.urlparse(url))  # get url parts
@@ -30,14 +34,19 @@ def add_params_to_url(url, params):
 
 def is_internet_on(host="8.8.8.8", port=53, timeout=3):
     """
-    :param host: str
-        Google-public-dns-a.google.com
-    :param port: int
-        53/tcp
-    :param timeout: int
-        Seconds
-    :return: bool
-        True iff machine has internet connection
+
+    Args:
+      host: str
+    Google-public-dns-a.google.com (Default value = "8.8.8.8")
+      port: int
+    53/tcp (Default value = 53)
+      timeout: int
+    Seconds (Default value = 3)
+
+    Returns:
+      bool
+      True iff machine has internet connection
+
     """
 
     try:
@@ -50,12 +59,17 @@ def is_internet_on(host="8.8.8.8", port=53, timeout=3):
 
 def wait_until_internet(time_between_attempts=3, max_attempts=10):
     """
-    :param time_between_attempts: int
-        Seconds between 2 consecutive attempts
-    :param max_attempts: int
-        Max number of attempts to try
-    :return: bool
-        True iff there is internet connection
+
+    Args:
+      time_between_attempts: int
+    Seconds between 2 consecutive attempts (Default value = 3)
+      max_attempts: int
+    Max number of attempts to try (Default value = 10)
+
+    Returns:
+      bool
+      True iff there is internet connection
+
     """
 
     counter = 0

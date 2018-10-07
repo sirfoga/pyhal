@@ -15,10 +15,15 @@ MONTHS = {
 
 def parse_hh_mm_ss(string):
     """
-    :param string: str
-        Hours, minutes and seconds in the form hh:mm:ss to parse
-    :return: datetime.times
-        Time parsed
+
+    Args:
+      string: str
+    Hours, minutes and seconds in the form hh:mm:ss to parse
+
+    Returns:
+      datetime.times
+      Time parsed
+
     """
 
     string = str(string).strip()  # discard gibberish
@@ -33,10 +38,15 @@ def parse_hh_mm_ss(string):
 
 def get_seconds(string):
     """
-    :param string: str
-        Datetime in the form %H:%M:%S
-    :return: int
-        Seconds in times
+
+    Args:
+      string: str
+    Datetime in the form %H:%M:%S
+
+    Returns:
+      int
+      Seconds in times
+
     """
 
     parsed_string = parse_hh_mm_ss(string)  # get times
@@ -48,10 +58,15 @@ def get_seconds(string):
 
 def parse_hh_mm(string):
     """
-    :param string: str
-        Hours and minutes in the form hh:mm to parse
-    :return: datetime.times
-        Time parsed
+
+    Args:
+      string: str
+    Hours and minutes in the form hh:mm to parse
+
+    Returns:
+      datetime.times
+      Time parsed
+
     """
 
     string = str(string).strip()  # discard gibberish

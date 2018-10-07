@@ -12,12 +12,17 @@ from pyparsing import Literal, Word, nums, Combine, Optional, delimitedList, \
 
 def how_similar_are(str1, str2):
     """
-    :param str1: str
-        First string
-    :param str2: str
-        Second string
-    :return: float in [0, 1]
-        Similarity of a VS b
+
+    Args:
+      str1: str
+    First string
+      str2: str
+    Second string
+
+    Returns:
+      float in [0, 1]
+      Similarity of a VS b
+
     """
 
     return SequenceMatcher(None, str1, str2).ratio()
@@ -25,12 +30,17 @@ def how_similar_are(str1, str2):
 
 def get_max_similar(string, lst):
     """
-    :param string: str
-        String to find
-    :param lst: [] of str
-        Strings available
-    :return: (float, int)
-        Max similarity and index of max similar
+
+    Args:
+      string: str
+    String to find
+      lst: of str
+    Strings available
+
+    Returns:
+      float, int)
+      Max similarity and index of max similar
+
     """
 
     max_similarity, index = 0.0, -1
@@ -43,10 +53,15 @@ def get_max_similar(string, lst):
 
 def get_average_length_of_string(strings):
     """
-    :param strings: [] of str
-        Words
-    :return: float
-        Average length of word on list
+
+    Args:
+      strings: of str
+    Words
+
+    Returns:
+      float
+      Average length of word on list
+
     """
 
     if not strings:
@@ -57,10 +72,15 @@ def get_average_length_of_string(strings):
 
 def just_alphanum(string):
     """
-    :param string: str
-        String
-    :return: str
-        All numbers and letters in string
+
+    Args:
+      string: str
+    String
+
+    Returns:
+      str
+      All numbers and letters in string
+
     """
 
     chars = []
@@ -79,6 +99,14 @@ def just_alphanum(string):
 
 
 def non_ansi_string(text):
+    """
+
+    Args:
+      text: 
+
+    Returns:
+
+    """
     esc_key = Literal('\x1b')
     integer = Word(nums)
     escape_seq = Combine(
@@ -89,10 +117,15 @@ def non_ansi_string(text):
 
 def is_string_well_formatted(string):
     """
-    :param string: string
-        String to parse
-    :return: bool
-        True iff string is good formatted
+
+    Args:
+      string: string
+    String to parse
+
+    Returns:
+      bool
+      True iff string is good formatted
+
     """
 
     # False iff there are at least \n, \r, \t,"  "
@@ -110,10 +143,15 @@ def is_string_well_formatted(string):
 
 def html_stripper(string):
     """
-    :param string: string
-        String to parse
-    :return: string
-        Given string with raw HTML elements removed
+
+    Args:
+      string: string
+    String to parse
+
+    Returns:
+      string
+      Given string with raw HTML elements removed
+
     """
 
     out = string

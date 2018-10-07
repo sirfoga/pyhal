@@ -6,7 +6,7 @@
 
 
 class EightQueen:
-    """ 8 queen problem solver """
+    """8 queen problem solver"""
 
     def __init__(self, board_size):
         self.board_size = board_size
@@ -14,12 +14,16 @@ class EightQueen:
     @staticmethod
     def under_attack(col, queens):
         """
-        :param col: int
-            Column number
-        :param queens: []
-            List of queens
-        :return: bool
-            True iff queen is under attack
+
+        Args:
+          col: int
+        Column number
+          queens: List of queens
+
+        Returns:
+          bool
+          True iff queen is under attack
+
         """
 
         left = right = col
@@ -31,10 +35,14 @@ class EightQueen:
 
     def solve(self, table_size):
         """
-        :param table_size: int
-            Size of table
-        :return: []
-            List of possible solutions
+
+        Args:
+          table_size: int
+        Size of table
+
+        Returns:
+          List of possible solutions
+
         """
 
         if table_size == 0:

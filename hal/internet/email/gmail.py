@@ -12,13 +12,19 @@ from hal.internet.services.google.gauthenticator import GoogleApiOAuth
 
 class GMailApiOAuth(GoogleApiOAuth):
     def __init__(self, app_name, client_secrets_file, oauth_path):
+
         """
-        :param app_name: str
-            Name of app to display
-        :param client_secrets_file: str
-            Path to client_secret.json file
-        :param oauth_path: str
-            Path to gmail.json file
+
+        Args:
+          app_name: str
+        Name of app to display
+          client_secrets_file: str
+        Path to client_secret.json file
+          oauth_path: str
+        Path to gmail.json file
+
+        Returns:
+
         """
 
         GoogleApiOAuth.__init__(
@@ -30,9 +36,13 @@ class GMailApiOAuth(GoogleApiOAuth):
         )
 
     def create_driver(self):
-        """
-        :return: driver
+        """:return: driver
             GMail API driver
+
+        Args:
+
+        Returns:
+
         """
 
         return super().get_driver("gmail", "v1")
@@ -40,12 +50,17 @@ class GMailApiOAuth(GoogleApiOAuth):
 
 def get_mime_message(subject, text):
     """
-    :param subject: str
-        Subject of email
-    :param text: str
-        Email content
-    :return: MIMEText
-        Email formatted as HTML ready to be sent
+
+    Args:
+      subject: str
+    Subject of email
+      text: str
+    Email content
+
+    Returns:
+      MIMEText
+      Email formatted as HTML ready to be sent
+
     """
 
     message = MIMEText(
@@ -59,14 +74,19 @@ def get_mime_message(subject, text):
 
 def send_email(sender, msg, driver):
     """
-    :param sender: str
-        Sender of email
-    :param msg: str
-        Message to send to me
-    :param driver: GMailApiOAuth driver
-        GMail authenticator
-    :return: void
-        Sends email to me with this message
+
+    Args:
+      sender: str
+    Sender of email
+      msg: str
+    Message to send to me
+      driver: GMailApiOAuth driver
+    GMail authenticator
+
+    Returns:
+      void
+      Sends email to me with this message
+
     """
 
     driver.users().messages().send(

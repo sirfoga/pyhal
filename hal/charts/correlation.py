@@ -12,14 +12,19 @@ from hal.charts.models import SimpleChart
 
 def create_correlation_matrix_plot(correlation_matrix, title, feature_list):
     """
-    :param correlation_matrix: [] of []
-        Correlation matrix of features
-    :param title: str
-        Title of plot
-    :param feature_list: [] of str
-        List of names of features
-    :return: void
-        shows the given correlation matrix as image
+
+    Args:
+      correlation_matrix: of []
+    Correlation matrix of features
+      title: str
+    Title of plot
+      feature_list: of str
+    List of names of features
+
+    Returns:
+      void
+      shows the given correlation matrix as image
+
     """
 
     chart = SimpleChart(title)

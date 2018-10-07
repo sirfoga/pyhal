@@ -9,7 +9,7 @@ import json
 
 
 class AppCronLock:
-    """ Checks if app can proceed; generates lock """
+    """Checks if app can proceed; generates lock"""
 
     DATETIME_FORMAT = "%Y-%m-%d %H:%M:%S"
 
@@ -27,19 +27,28 @@ class AppCronLock:
 
     def set_update_interval(self, days=7):
         """
-        :param days: int
-            Days between 2 consecutive app updates
-        :return: void
-            Sets app interval update
+
+        Args:
+          days: int
+        Days between 2 consecutive app updates (Default value = 7)
+
+        Returns:
+          void
+          Sets app interval update
+
         """
 
         self.update_interval = days
 
     def can_proceed(self):
-        """
-        :return: bool
+        """:return: bool
             True iff app is not locked and times since last update < app
             update interval
+
+        Args:
+
+        Returns:
+
         """
 
         now = datetime.datetime.now()
@@ -47,9 +56,13 @@ class AppCronLock:
                       datetime.timedelta(days=self.update_interval)
 
     def parse_lock(self):
-        """
-        :return: {}
+        """:return: {}
             Details about last update
+
+        Args:
+
+        Returns:
+
         """
 
         try:
@@ -64,9 +77,14 @@ class AppCronLock:
             self.parse_lock()
 
     def write_lock(self, last_update=datetime.datetime.now()):
-        """
-        :return: void
+        """:return: void
             Writes lock file
+
+        Args:
+          last_update:  (Default value = datetime.datetime.now())
+
+        Returns:
+
         """
 
         data = {

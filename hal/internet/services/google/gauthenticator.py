@@ -14,6 +14,7 @@ from oauth2client.file import Storage
 
 
 class GoogleApiOAuth:
+    """ """
     def __init__(self, scope, app_name, app_secrets_path,
                  user_credentials_path):
         """
@@ -34,9 +35,13 @@ class GoogleApiOAuth:
         self.store = Storage(user_credentials_path)
 
     def get_new_user_credentials(self):
-        """
-        :return: credentials
+        """:return: credentials
             New user credentials file upon user prompt
+
+        Args:
+
+        Returns:
+
         """
 
         flow = client.flow_from_clientsecrets(self.app_secrets,
@@ -45,9 +50,13 @@ class GoogleApiOAuth:
         return tools.run_flow(flow, self.store)
 
     def get_user_credentials(self):
-        """
-        :return: string
+        """:return: string
             User credentials created via OAuth
+
+        Args:
+
+        Returns:
+
         """
 
         if not os.path.exists(os.path.dirname(
@@ -64,10 +73,15 @@ class GoogleApiOAuth:
     @staticmethod
     def authenticate(credentials):
         """
-        :param credentials: string
-            User authentication code created via OAuth
-        :return: http
-            Http authenticated credentials
+
+        Args:
+          credentials: string
+        User authentication code created via OAuth
+
+        Returns:
+          http
+          Http authenticated credentials
+
         """
 
         http = httplib2.Http()
@@ -76,12 +90,17 @@ class GoogleApiOAuth:
 
     def get_driver(self, name, version):
         """
-        :param name: string
-            Name of driver
-        :param version: string
-            Version of driver
-        :return: api driver
-            Authenticates and creates new API driver to perform scope stuff
+
+        Args:
+          name: string
+        Name of driver
+          version: string
+        Version of driver
+
+        Returns:
+          api driver
+          Authenticates and creates new API driver to perform scope stuff
+
         """
 
         user_credentials = self.get_user_credentials()  # get credentials

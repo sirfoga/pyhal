@@ -8,7 +8,7 @@ from hal.strings.utils import get_max_similar
 
 
 class UserInput:
-    """ Chat with user and ask questions """
+    """Chat with user and ask questions"""
 
     YES = ["yes", "ok", "fine"]
     NO = ["no", "not ok", "none"]
@@ -35,10 +35,15 @@ class UserInput:
 
     def is_yes(self, answer):
         """
-        :param answer: str
-            User answer
-        :return: bool
-            True iff considered a "yes" answer
+
+        Args:
+          answer: str
+        User answer
+
+        Returns:
+          bool
+          True iff considered a "yes" answer
+
         """
 
         yes_sim, _ = get_max_similar(answer, self.YES)
@@ -47,10 +52,15 @@ class UserInput:
 
     def is_no(self, answer):
         """
-        :param answer: str
-            User answer
-        :return: bool
-            True iff considered a "yes" answer
+
+        Args:
+          answer: str
+        User answer
+
+        Returns:
+          bool
+          True iff considered a "yes" answer
+
         """
 
         yes_sim, _ = get_max_similar(answer, self.YES)
@@ -58,9 +68,13 @@ class UserInput:
         return no_sim > yes_sim and no_sim > self.THRESHOLD_INPUT
 
     def show_help(self):
-        """
-        :return: void
+        """:return: void
             Prints to stdout help on how to answer properly
+
+        Args:
+
+        Returns:
+
         """
 
         print("Sorry, not well understood.")
@@ -69,10 +83,15 @@ class UserInput:
 
     def re_ask(self, with_help=True):
         """
-        :param with_help: bool
-            True iff you want to show help on how to answer questions
-        :return: void
-            Re-asks user the last question
+
+        Args:
+          with_help: bool
+        True iff you want to show help on how to answer questions (Default value = True)
+
+        Returns:
+          void
+          Re-asks user the last question
+
         """
 
         if with_help:
@@ -82,10 +101,15 @@ class UserInput:
 
     def get_answer(self, question):
         """
-        :param question: str
-            Question to ask user
-        :return: str
-            User answer
+
+        Args:
+          question: str
+        Question to ask user
+
+        Returns:
+          str
+          User answer
+
         """
 
         self.last_question = str(question).strip()
@@ -94,10 +118,15 @@ class UserInput:
 
     def get_yes_no(self, question):
         """
-        :param question: str
-            Question to ask user
-        :return: bool
-            User answer
+
+        Args:
+          question: str
+        Question to ask user
+
+        Returns:
+          bool
+          User answer
+
         """
 
         user_answer = self.get_answer(question).lower()
@@ -124,16 +153,21 @@ class UserInput:
     def get_number(self, question,
                    min_i=float("-inf"), max_i=float("inf"), just_these=None):
         """
-        :param question: str
-            Question to ask
-        :param min_i: float
-            Min acceptable number
-        :param max_i: float
-            Max acceptable number
-        :param just_these: [] of float
-            Accept only these numbers
-        :return: float
-            User answer
+
+        Args:
+          question: str
+        Question to ask
+          min_i: float
+        Min acceptable number (Default value = float("-inf"))
+          max_i: float
+        Max acceptable number (Default value = float("inf"))
+          just_these: of float
+        Accept only these numbers (Default value = None)
+
+        Returns:
+          float
+          User answer
+
         """
 
         try:
@@ -166,16 +200,21 @@ class UserInput:
     def get_list(self, question,
                  splitter=",", at_least=0, at_most=float("inf")):
         """
-        :param question: str
-            Question to ask user
-        :param splitter: str
-            Split list elements with this char/str
-        :param at_least: int
-            List must have at least this amount of elements
-        :param at_most: int
-            List must have at most this amount of elements
-        :return: []
-            User answer
+
+        Args:
+          question: str
+        Question to ask user
+          splitter: str
+        Split list elements with this char/str (Default value = ")
+          at_least: int
+        List must have at least this amount of elements (Default value = 0)
+          at_most: int
+        List must have at most this amount of elements (Default value = float("inf"))
+          ": 
+
+        Returns:
+          User answer
+
         """
 
         try:

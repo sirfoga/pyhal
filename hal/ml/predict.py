@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 
 
 class BasePrediction:
-    """ The mother of all predictions """
+    """The mother of all predictions"""
 
     def __init__(self, model, rounds):
         """
@@ -23,12 +23,17 @@ class BasePrediction:
 
     def train(self, x_data, y_data):
         """
-        :param x_data: data
-            Input x
-        :param y_data: data
-            Input y
-        :return: void
-            Train model on inputs
+
+        Args:
+          x_data: data
+        Input x
+          y_data: data
+        Input y
+
+        Returns:
+          void
+          Train model on inputs
+
         """
 
         x_train, _, y_train, _ = train_test_split(

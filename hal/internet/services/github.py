@@ -18,24 +18,30 @@ GITHUB_REMOTE = "https://{}:x-oauth-basic@github.com/"
 
 
 def get_token():
+    """ """
     return GITHUB_TOKEN
 
 
 def get_clone_url(remote_shortcut, token):
     """
-    :param remote_shortcut: str
-        Remote relative path of repository to clone
-    :param token: str
-        Github OAUTH token
-    :return: str
-        Url to clone
+
+    Args:
+      remote_shortcut: str
+    Remote relative path of repository to clone
+      token: str
+    Github OAUTH token
+
+    Returns:
+      str
+      Url to clone
+
     """
 
     return GITHUB_REMOTE.format(token) + remote_shortcut
 
 
 class GithubRawApi:
-    """ Wrapper for generic Github API """
+    """Wrapper for generic Github API"""
 
     _API_URL_TYPE = {
         k: API_URL + k
@@ -80,9 +86,13 @@ class GithubRawApi:
             return None
 
     def _get_api_content(self):
-        """
-        :return: void
+        """:return: void
             Updates class api content by calling Github api and storing result
+
+        Args:
+
+        Returns:
+
         """
 
         if GITHUB_TOKEN is not None:
@@ -97,17 +107,21 @@ class GithubRawApi:
 
     def add_params_to_url(self, params):
         """
-        :param params: {}
-            List of params to add to url
-        :return: void
-            Adds params to url
+
+        Args:
+          params: List of params to add to url
+
+        Returns:
+          void
+          Adds params to url
+
         """
 
         self.api_url = add_params_to_url(self.api_url, params)
 
 
 class GithubApi(GithubRawApi):
-    """ Wrapper for generic Github API """
+    """Wrapper for generic Github API"""
 
     def __init__(self, api_type):
         """
@@ -123,10 +137,14 @@ class GithubApi(GithubRawApi):
     @staticmethod
     def get_trending_daily(lang=""):
         """
-        :param lang: str
-            Coding language
-        :return: []
-            List of GithubUserRepository
+
+        Args:
+          lang: str
+        Coding language (Default value = "")
+
+        Returns:
+          List of GithubUserRepository
+
         """
 
         url = "https://github.com/trending/"
@@ -149,7 +167,7 @@ class GithubApi(GithubRawApi):
 
 
 class GithubUser(GithubApi):
-    """ Model of a generic Github user profile """
+    """Model of a generic Github user profile"""
 
     def __init__(self, username):
         """
@@ -163,9 +181,13 @@ class GithubUser(GithubApi):
         self.api_url += "/" + self.username
 
     def get_email(self):
-        """
-        :return: str
+        """:return: str
             Email of user
+
+        Args:
+
+        Returns:
+
         """
 
         api_url = self.api_url + "/events/public"
@@ -183,9 +205,14 @@ class GithubUser(GithubApi):
 
     @staticmethod
     def _get_repos(url):
-        """
-        :return: [] of GithubUserRepository
+        """:return: [] of GithubUserRepository
             List of repositories in given url
+
+        Args:
+          url: 
+
+        Returns:
+
         """
 
         current_page = 1
@@ -211,18 +238,26 @@ class GithubUser(GithubApi):
         return repos_list
 
     def get_repos(self):
-        """
-        :return: [] of GithubUserRepository
+        """:return: [] of GithubUserRepository
             List of public user repositories
+
+        Args:
+
+        Returns:
+
         """
 
         url = self["repos_url"]
         return self._get_repos(url)
 
     def get_all_repos(self):
-        """
-        :return: [] of GithubUserRepository
+        """:return: [] of GithubUserRepository
             List of all user repositories (public, orgs and private)
+
+        Args:
+
+        Returns:
+
         """
 
         url = "https://api.github.com/user/repos"
@@ -233,9 +268,13 @@ class GithubUser(GithubApi):
         return self._get_repos(url)
 
     def get_starred_repos(self):
-        """
-        :return: [] of GithubUserRepository
+        """:return: [] of GithubUserRepository
             List of starred repositories
+
+        Args:
+
+        Returns:
+
         """
 
         starred_url = self.api_url + "/starred"
@@ -261,9 +300,13 @@ class GithubUser(GithubApi):
         return repos_list
 
     def get_trending_daily_not_starred(self):
-        """
-        :return: []
+        """:return: []
             List of daily-trending repositories which are not starred by user
+
+        Args:
+
+        Returns:
+
         """
 
         trending_daily = self.get_trending_daily()  # repos trending daily
@@ -276,7 +319,7 @@ class GithubUser(GithubApi):
 
 
 class GithubUserRepository(GithubApi):
-    """ Model of a generic Github user repository """
+    """Model of a generic Github user repository"""
 
     def __init__(self, username, repository_name):
         """

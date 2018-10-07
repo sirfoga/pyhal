@@ -14,12 +14,17 @@ from hal.files.models.system import list_content
 
 def find_songs(folder, recursive):
     """
-    :param folder: str
-        Path
-    :param recursive: bool
-        True iff want to search recursively
-    :return: generator of MP3Song
-        List of paths of the songs in folder
+
+    Args:
+      folder: str
+    Path
+      recursive: bool
+    True iff want to search recursively
+
+    Returns:
+      generator of MP3Song
+      List of paths of the songs in folder
+
     """
 
     paths = list_content(folder, recursive)
@@ -29,15 +34,20 @@ def find_songs(folder, recursive):
 
 
 class MP3Song(FileSystem):
-    """ mp3 song """
+    """mp3 song"""
 
     @staticmethod
     def is_valid_mp3(path):
         """
-        :param path: str
-            Path to candidate .mp3 song
-        :return: bool
-            True iff song is MP3 encoded
+
+        Args:
+          path: str
+        Path to candidate .mp3 song
+
+        Returns:
+          bool
+          True iff song is MP3 encoded
+
         """
 
         try:
@@ -58,9 +68,13 @@ class MP3Song(FileSystem):
         self.tags = self.song.tags
 
     def get_details(self):
-        """
-        :return: {}
+        """:return: {}
             Dictionary with songs details about title, artist, album and year
+
+        Args:
+
+        Returns:
+
         """
 
         title = str(self.get_title()).strip()
@@ -79,10 +93,15 @@ class MP3Song(FileSystem):
 
     def set_title(self, name):
         """
-        :param name: str
-            Song's title
-        :return: void
-            Sets song's title
+
+        Args:
+          name: str
+        Song's title
+
+        Returns:
+          void
+          Sets song's title
+
         """
 
         self.tags.add(TIT2(encoding=3, text=name.decode('utf-8')))
@@ -90,10 +109,15 @@ class MP3Song(FileSystem):
 
     def set_artist(self, artist):
         """
-        :param artist: str
-            Song's artist
-        :return: void
-            Sets song's artist
+
+        Args:
+          artist: str
+        Song's artist
+
+        Returns:
+          void
+          Sets song's artist
+
         """
 
         self.tags.add(TPE1(encoding=3, text=artist.decode('utf-8')))
@@ -101,10 +125,15 @@ class MP3Song(FileSystem):
 
     def set_album(self, album):
         """
-        :param album: str
-            Song's album
-        :return: void
-            Sets song's albu
+
+        Args:
+          album: str
+        Song's album
+
+        Returns:
+          void
+          Sets song's albu
+
         """
 
         self.tags.add(TALB(encoding=3, text=album.decode('utf-8')))
@@ -112,10 +141,15 @@ class MP3Song(FileSystem):
 
     def set_nr_track(self, nr_track):
         """
-        :param nr_track: int
-            Number of track
-        :return: void
-            Sets song's track number
+
+        Args:
+          nr_track: int
+        Number of track
+
+        Returns:
+          void
+          Sets song's track number
+
         """
 
         self.tags.add(TRCK(encoding=3, text=str(nr_track)))
@@ -123,10 +157,15 @@ class MP3Song(FileSystem):
 
     def set_year(self, year):
         """
-        :param year: int
-            Year of song
-        :return: void
-            Sets song's year
+
+        Args:
+          year: int
+        Year of song
+
+        Returns:
+          void
+          Sets song's year
+
         """
 
         self.tags.add(TDRC(encoding=3, text=str(year)))
@@ -134,10 +173,15 @@ class MP3Song(FileSystem):
 
     def set_genre(self, genre):
         """
-        :param genre: str
-            Genre of song
-        :return: void
-            Sets song's genre
+
+        Args:
+          genre: str
+        Genre of song
+
+        Returns:
+          void
+          Sets song's genre
+
         """
 
         self.tags.add(TCON(encoding=3, text=str(genre)))
@@ -146,9 +190,13 @@ class MP3Song(FileSystem):
     # getters
 
     def get_title(self):
-        """
-        :return: str
+        """:return: str
             Gets song's title
+
+        Args:
+
+        Returns:
+
         """
 
         try:
@@ -157,9 +205,13 @@ class MP3Song(FileSystem):
             return None
 
     def get_artist(self):
-        """
-        :return: str
+        """:return: str
             Gets song's artist
+
+        Args:
+
+        Returns:
+
         """
 
         try:
@@ -168,9 +220,13 @@ class MP3Song(FileSystem):
             return None
 
     def get_album(self):
-        """
-        :return: str
+        """:return: str
             Gets song's albu
+
+        Args:
+
+        Returns:
+
         """
 
         try:
@@ -179,9 +235,13 @@ class MP3Song(FileSystem):
             return None
 
     def get_nr_track(self):
-        """
-        :return: str
+        """:return: str
             Gets song's track number
+
+        Args:
+
+        Returns:
+
         """
 
         try:
@@ -190,9 +250,13 @@ class MP3Song(FileSystem):
             return None
 
     def get_year(self):
-        """
-        :return: str
+        """:return: str
             Gets song's year
+
+        Args:
+
+        Returns:
+
         """
 
         try:
@@ -201,9 +265,13 @@ class MP3Song(FileSystem):
             return None
 
     def get_genre(self):
-        """
-        :return: str
+        """:return: str
             Gets song's genre
+
+        Args:
+
+        Returns:
+
         """
 
         try:

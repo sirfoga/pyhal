@@ -106,17 +106,22 @@ HEADERS = {
 
 def is_url(candidate_url):
     """
-    :param candidate_url: str
-        Possible url to check for url
-    :return: bool
-        True iff candidate is a valid url
+
+    Args:
+      candidate_url: str
+    Possible url to check for url
+
+    Returns:
+      bool
+      True iff candidate is a valid url
+
     """
 
     return re.match(URL_VALID_REGEX, candidate_url)
 
 
 class Webpage:
-    """ representation of URL (web page)"""
+    """representation of URL (web page)"""
 
     def __init__(self, url):
         """
@@ -133,8 +138,13 @@ class Webpage:
     @staticmethod
     def parse_url(raw_url):
         """
-        :param raw_url: url to parse
-        :return: parses correctly url
+
+        Args:
+          raw_url: url to parse
+
+        Returns:
+          parses correctly url
+
         """
 
         parsed = raw_url
@@ -154,31 +164,29 @@ class Webpage:
         return parsed
 
     def get_scheme(self):
-        """
-        :return: get scheme (HTTP, HTTPS, FTP ..) from given url
-        """
+        """:return: get scheme (HTTP, HTTPS, FTP ..) from given url"""
 
         return urllib.request.urlparse(self.url).scheme
 
     def get_hostname(self):
-        """
-        :return: extract hostname from given url
-        """
+        """:return: extract hostname from given url"""
 
         return urllib.request.urlparse(self.url).hostname
 
     def get_domain(self):
-        """
-        :return: get domain from given url
-        """
+        """:return: get domain from given url"""
 
         return "{uri.scheme}://{uri.netloc}/".format(
             uri=urllib.request.urlparse(self.url))
 
     def get_html_source(self):
-        """
-        :return: str
+        """:return: str
             HTML source of webpage
+
+        Args:
+
+        Returns:
+
         """
 
         req = urllib.request.Request(self.url)
@@ -190,9 +198,14 @@ class Webpage:
 
     def get_links(self, recall, timeout):
         """
-        :param recall: max times to attempt to fetch url
-        :param timeout: max times (s) to wait for web_page response
-        :return: array of out_links
+
+        Args:
+          recall: max times to attempt to fetch url
+          timeout: max times (s) to wait for web_page response
+
+        Returns:
+          array of out_links
+
         """
 
         for _ in range(recall):
@@ -210,10 +223,15 @@ class Webpage:
 
     def open_in_browser(self, n_times):
         """
-        :param n_times: int
-            Times to open webpage in browser
-        :return: void
-            Open a web-driver and go to webpage
+
+        Args:
+          n_times: int
+        Times to open webpage in browser
+
+        Returns:
+          void
+          Open a web-driver and go to webpage
+
         """
 
         for _ in range(n_times):
@@ -222,12 +240,17 @@ class Webpage:
 
 def download_url(url, local_file):
     """
-    :param url: string
-        Url to download
-    :param local_file: string
-        Save url as this path
-    :return: void
-        Download link to local file
+
+    Args:
+      url: string
+    Url to download
+      local_file: string
+    Save url as this path
+
+    Returns:
+      void
+      Download link to local file
+
     """
 
     downloader = urllib.request.URLopener()
@@ -237,18 +260,21 @@ def download_url(url, local_file):
 def download_to_file(url, local_file, headers=HEADERS, cookies=None,
                      chunk_size=1024):
     """
-    :param url: str
-        PDF url to download
-    :param local_file: str
-        Save url as this path
-    :param headers: {}
-        Headers to fetch url
-    :param cookies: {}
-        Cookies to fetch url
-    :param chunk_size: int
-        Download file in this specific chunk size
-    :return: void
-        Download link to local file
+
+    Args:
+      url: str
+    PDF url to download
+      local_file: str
+    Save url as this path
+      headers: Headers to fetch url (Default value = HEADERS)
+      cookies: Cookies to fetch url (Default value = None)
+      chunk_size: int
+    Download file in this specific chunk size (Default value = 1024)
+
+    Returns:
+      void
+      Download link to local file
+
     """
 
     if not cookies:
@@ -262,6 +288,7 @@ def download_to_file(url, local_file, headers=HEADERS, cookies=None,
 
 
 def get_tor_session():
+    """ """
     session = requests.session()
     # Tor uses the 9050 port as the default socks port
     session.proxies = {
@@ -272,9 +299,14 @@ def get_tor_session():
 
 
 def renew_connection(password):
-    """
-    :return: void
+    """:return: void
         signal TOR for a new connection
+
+    Args:
+      password: 
+
+    Returns:
+
     """
 
     with Controller.from_port(port=9051) as controller:

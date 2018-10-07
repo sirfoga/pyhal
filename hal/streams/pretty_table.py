@@ -8,10 +8,15 @@ from hal.strings.utils import non_ansi_string
 
 def parse_colorama(text):
     """
-    :param text: str
-        Colorama text to parse
-    :return: str
-        Parsed colorama text
+
+    Args:
+      text: str
+    Colorama text to parse
+
+    Returns:
+      str
+      Parsed colorama text
+
     """
 
     return non_ansi_string(text)
@@ -19,17 +24,23 @@ def parse_colorama(text):
 
 class SqlTable:
     def __init__(self, labels, data, num_format, line_separator):
+
         """
-        :param labels: [] of str
-            List of labels of data
-        :param data: ([] of []) of anything
-            Matrix of any type
-        :param num_format: str
-            Format numbers with this format
-        :param line_separator: str
-            Separate each new line with this
-        :return: str
-            Pretty formatted table (first row is labels, then actual data)
+
+        Args:
+          labels: of str
+        List of labels of data
+          data: of []) of anything
+        Matrix of any type
+          num_format: str
+        Format numbers with this format
+          line_separator: str
+        Separate each new line with this
+
+        Returns:
+          str
+          Pretty formatted table (first row is labels, then actual data)
+
         """
 
         self.labels = labels
@@ -41,6 +52,7 @@ class SqlTable:
         self._parse()
 
     def _parse(self):
+        """ """
         for i, row in enumerate(self.data):
             for j, col in enumerate(row):
                 try:
@@ -54,9 +66,13 @@ class SqlTable:
                     self.data[i][j] = str(self.data[i][j])
 
     def _calculate_optimal_column_widths(self):
-        """
-        :return: [] of int
+        """:return: [] of int
             Length of longest data in each column (labels and data)
+
+        Args:
+
+        Returns:
+
         """
 
         columns = len(self.data[0])  # number of columns
@@ -79,14 +95,19 @@ class SqlTable:
 
     def get_pretty_row(self, row, filler, splitter):
         """
-        :param row: [] of anything
-            List of data
-        :param filler: char
-            Fill empty columns with this char
-        :param splitter: char
-            Separate columns with this char
-        :return: str
-            Pretty formatted row
+
+        Args:
+          row: of anything
+        List of data
+          filler: char
+        Fill empty columns with this char
+          splitter: char
+        Separate columns with this char
+
+        Returns:
+          str
+          Pretty formatted row
+
         """
 
         for i, val in enumerate(row):
@@ -102,12 +123,17 @@ class SqlTable:
 
     def get_blank_row(self, filler="-", splitter="+"):
         """
-        :param filler: char
-            Fill empty columns with this char
-        :param splitter: char
-            Separate columns with this char
-        :return: str
-            Pretty formatted blank row (with no meaningful data in it)
+
+        Args:
+          filler: char
+        Fill empty columns with this char (Default value = "-")
+          splitter: char
+        Separate columns with this char (Default value = "+")
+
+        Returns:
+          str
+          Pretty formatted blank row (with no meaningful data in it)
+
         """
 
         return self.get_pretty_row(
@@ -118,14 +144,19 @@ class SqlTable:
 
     def pretty_format_row(self, row, filler=" ", splitter="|"):
         """
-        :param row: [] of anything
-            List of data
-        :param filler: char
-            Fill empty columns with this char
-        :param splitter: char
-            Separate columns with this char
-        :return: str
-            Pretty formatted row
+
+        Args:
+          row: of anything
+        List of data
+          filler: char
+        Fill empty columns with this char (Default value = " ")
+          splitter: char
+        Separate columns with this char (Default value = "|")
+
+        Returns:
+          str
+          Pretty formatted row
+
         """
 
         return self.get_pretty_row(
@@ -135,6 +166,7 @@ class SqlTable:
         )
 
     def build(self):
+        """ """
         self._calculate_optimal_column_widths()
 
         pretty_table = self.get_blank_row() + self.new_line  # first row
@@ -150,10 +182,15 @@ class SqlTable:
     @staticmethod
     def from_df(df):
         """
-        :param df: pandas.DataFrame
-            Data
-        :return: SqlTable
-            Parses data and builds an instance of this class
+
+        Args:
+          df: pandas.DataFrame
+        Data
+
+        Returns:
+          SqlTable
+          Parses data and builds an instance of this class
+
         """
 
         labels = df.keys().tolist()
@@ -163,16 +200,21 @@ class SqlTable:
 
 def pretty_format_table(labels, data, num_format="{:.3f}", line_separator="\n"):
     """
-    :param labels: [] of str
-        List of labels of data
-    :param data: ([] of []) of anything
-        Matrix of any type
-    :param num_format: str
-        Format numbers with this format
-    :param line_separator: str
-        Separate each new line with this
-    :return: str
-        Pretty formatted table (first row is labels, then actual data)
+
+    Args:
+      labels: of str
+    List of labels of data
+      data: of []) of anything
+    Matrix of any type
+      num_format: str
+    Format numbers with this format (Default value = "{:.3f}")
+      line_separator: str
+    Separate each new line with this (Default value = "\n")
+
+    Returns:
+      str
+      Pretty formatted table (first row is labels, then actual data)
+
     """
 
     table = SqlTable(labels, data, num_format, line_separator)
@@ -181,10 +223,15 @@ def pretty_format_table(labels, data, num_format="{:.3f}", line_separator="\n"):
 
 def pretty_df(df):
     """
-    :param df: pandas.DataFrame
-        Data
-    :return: str
-        Pretty formatted table (first row is labels, then actual data)
+
+    Args:
+      df: pandas.DataFrame
+    Data
+
+    Returns:
+      str
+      Pretty formatted table (first row is labels, then actual data)
+
     """
 
     table = SqlTable.from_df(df)

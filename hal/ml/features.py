@@ -11,25 +11,35 @@ from sklearn.svm import SVC
 
 
 class FeatureSelect:
+    """ """
     def __init__(self, x, y):
         self.x = x
         self.y = y
 
     def select_k_best(self, k):
         """
-        :param k: int
-            K features to select
-        :return: matrix
-            Select k best features in dataset
+
+        Args:
+          k: int
+        K features to select
+
+        Returns:
+          matrix
+          Select k best features in dataset
+
         """
 
         x_new = SelectKBest(chi2, k=k).fit_transform(self.x, self.y)
         return x_new
 
     def get_best(self):
-        """
-        :return: tuple
+        """:return: tuple
             Finds the optimal number of features
+
+        Args:
+
+        Returns:
+
         """
 
         svc = SVC(kernel="linear")

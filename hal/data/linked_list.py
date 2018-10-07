@@ -6,7 +6,7 @@
 
 
 class Node:
-    """ Node of a linked list """
+    """Node of a linked list"""
 
     def __init__(self, val, next_node=None):
         """
@@ -21,7 +21,7 @@ class Node:
 
 
 class LinkedList:
-    """ Models a linked list """
+    """Models a linked list"""
 
     def __init__(self, lst):
         """
@@ -32,17 +32,25 @@ class LinkedList:
         self.head = LinkedList.from_list(lst)
 
     def get_head(self):
-        """
-        :return: Node
+        """:return: Node
             Head of linked list
+
+        Args:
+
+        Returns:
+
         """
 
         return self.head
 
     def get_tail(self):
-        """
-        :return: Node
+        """:return: Node
             Tail of linked list
+
+        Args:
+
+        Returns:
+
         """
 
         node = self.head
@@ -55,9 +63,13 @@ class LinkedList:
         return last_node
 
     def length(self):
-        """
-        :return: int
+        """:return: int
             Length of linked list
+
+        Args:
+
+        Returns:
+
         """
 
         item = self.head
@@ -71,22 +83,32 @@ class LinkedList:
 
     def append(self, val):
         """
-        :param val: obj
-            Object to insert
-        :return: bool
-            Appends element to last
+
+        Args:
+          val: obj
+        Object to insert
+
+        Returns:
+          bool
+          Appends element to last
+
         """
 
         return self.insert(val, self.length())
 
     def insert(self, val, at=0):
         """
-        :param val: obj
-            Object to insert
-        :param at: int
-            Index of insertion
-        :return: bool
-            True iff insertion completed successfully
+
+        Args:
+          val: obj
+        Object to insert
+          at: int
+        Index of insertion (Default value = 0)
+
+        Returns:
+          bool
+          True iff insertion completed successfully
+
         """
 
         if at < 0 or at > self.length():
@@ -116,9 +138,13 @@ class LinkedList:
         return False
 
     def remove_first(self):
-        """
-        :return: bool
+        """:return: bool
             True iff head has been removed
+
+        Args:
+
+        Returns:
+
         """
 
         if self.head.next_node is not None:
@@ -128,9 +154,13 @@ class LinkedList:
         return False
 
     def remove_last(self):
-        """
-        :return: bool
+        """:return: bool
             True iff last element has been removed
+
+        Args:
+
+        Returns:
+
         """
 
         node = self.head
@@ -146,10 +176,15 @@ class LinkedList:
 
     def remove(self, at):
         """
-        :param at: int
-            Index of removal
-        :return: bool
-            True iff removal completed successfully
+
+        Args:
+          at: int
+        Index of removal
+
+        Returns:
+          bool
+          True iff removal completed successfully
+
         """
 
         if at < 0 or at > self.length():
@@ -177,9 +212,13 @@ class LinkedList:
         return False
 
     def to_lst(self):
-        """
-        :return: []
+        """:return: []
             Cycle all items and puts them in a list
+
+        Args:
+
+        Returns:
+
         """
 
         out = []
@@ -193,10 +232,14 @@ class LinkedList:
 
     def execute(self, func):
         """
-        :param func: function
-            Function to execute on each item
-        :return: []
-            Results of calling the function on each item
+
+        Args:
+          func: function
+        Function to execute on each item
+
+        Returns:
+          Results of calling the function on each item
+
         """
 
         return [
@@ -213,10 +256,14 @@ class LinkedList:
     @staticmethod
     def from_list(lst):
         """
-        :param lst: []
-            List of elements
-        :return: Node
-            Nodes from list
+
+        Args:
+          lst: List of elements
+
+        Returns:
+          Node
+          Nodes from list
+
         """
 
         if not lst:

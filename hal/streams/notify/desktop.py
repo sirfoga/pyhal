@@ -8,12 +8,17 @@ import subprocess
 
 def send_notification(app_name, message):
     """
-    :param app_name: str
-        Name of app to show
-    :param message: str
-        Details of app to show
-    :return: void
-        Shows notify to screen
+
+    Args:
+      app_name: str
+    Name of app to show
+      message: str
+    Details of app to show
+
+    Returns:
+      void
+      Shows notify to screen
+
     """
 
     subprocess.call([

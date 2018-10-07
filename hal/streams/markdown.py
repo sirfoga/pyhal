@@ -6,7 +6,7 @@
 
 
 class MarkdownItem:
-    """Models anything that can be written in Markdown """
+    """Models anything that can be written in Markdown"""
 
     TYPES = ["text", "url", "image", "title"]
     ATTRIBUTES = ["ref", "size"]
@@ -27,6 +27,7 @@ class MarkdownItem:
         self.attributes = attributes
 
     def to_markdown(self):
+        """ """
         if self.type == "text":
             return self.text
         elif self.type == "url" or self.type == "image":
@@ -49,6 +50,14 @@ class MarkdownTable:
 
     @staticmethod
     def _get_row(items):
+        """
+
+        Args:
+          items: 
+
+        Returns:
+
+        """
         items = [
             str(item)
             for item in items
@@ -56,12 +65,14 @@ class MarkdownTable:
         return "|" + "|".join(items) + "|"
 
     def _get_header(self):
+        """ """
         out = self._get_row(self.labels)
         out += "\n"
         out += self._get_row(["---"] * len(self.labels))  # line below headers
         return out
 
     def to_markdown(self):
+        """ """
         out = self._get_header()
         out += "\n"
 

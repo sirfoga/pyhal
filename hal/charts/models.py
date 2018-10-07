@@ -8,7 +8,7 @@ from matplotlib import pyplot as plt
 
 
 class SimpleChart:
-    """ Simple matplotlib chart """
+    """Simple matplotlib chart"""
 
     def __init__(self, title, grid=True):
         """
@@ -25,21 +25,31 @@ class SimpleChart:
 
     def setup(self, bottom):
         """
-        :param bottom: float
-            Bottom margin
-        :return: void
-            Setups bottom margin
+
+        Args:
+          bottom: float
+        Bottom margin
+
+        Returns:
+          void
+          Setups bottom margin
+
         """
 
         plt.gcf().subplots_adjust(bottom=bottom)  # add bottom
 
     def get_fig(self):
-        """
-        :return: matplotlib figure
+        """:return: matplotlib figure
             Chart canvas
+
+        Args:
+
+        Returns:
+
         """
 
         return self.fig
 
     def create(self):
+        """ """
         return self.fig.add_subplot(111)

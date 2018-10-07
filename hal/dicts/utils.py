@@ -11,12 +11,15 @@ from hal.strings.utils import how_similar_are
 
 def how_similar_dicts(d1, d2):
     """
-    :param d1: {}
-        Dictionary
-    :param d2: {}
-        Dictionary
-    :return: float in [0 - 1]
-        A measure of how much similar values of dictionaries are
+
+    Args:
+      d1: Dictionary
+      d2: Dictionary
+
+    Returns:
+      float in [0 - 1]
+      A measure of how much similar values of dictionaries are
+
     """
 
     values = []

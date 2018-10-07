@@ -13,13 +13,18 @@ YOUTUBE_FEED_BASE_URL = "https://www.youtube.com/feeds/videos.xml?channel_id="
 
 
 class YoutubeChannel:
+    """ """
     def __init__(self, channel_name):
         self.channel_name = channel_name
 
     def get_channel_page(self):
-        """
-        :return string
+        """:return string
             source page of youtube channel.
+
+        Args:
+
+        Returns:
+
         """
 
         channel_url = YOUTUBE_USER_BASE_URL + self.channel_name  # url
@@ -28,9 +33,13 @@ class YoutubeChannel:
         return source_page
 
     def get_channel_id(self):
-        """
-        :return string
+        """:return string
             id of youtube channel
+
+        Args:
+
+        Returns:
+
         """
 
         soup = BeautifulSoup(
@@ -48,9 +57,13 @@ class YoutubeChannel:
         return channel_id
 
     def get_feed_url(self):
-        """
-        :return string
+        """:return string
             rss url feed of youtube channel
+
+        Args:
+
+        Returns:
+
         """
 
         channel_id = self.get_channel_id()  # get id
@@ -59,12 +72,17 @@ class YoutubeChannel:
     @staticmethod
     def get_feed_url_from_id(channel_id):
         """
-        :param channel_id: string
-            id of channel (e.g in
-            "https://www.youtube.com/channel/UC2zjki3bJIaXmgV_LBQ2jTg" you should
-            take "UC2zjki3bJIaXmgV_LBQ2jTg")
+
+        Args:
+          channel_id: string
+        id of channel (e.g in
+        "https://www.youtube.com/channel/UC2zjki3bJIaXmgV_LBQ2jTg" you should
+        take "UC2zjki3bJIaXmgV_LBQ2jTg")
         :return string
-            rss url feed of youtube channel
+        rss url feed of youtube channel
+
+        Returns:
+
         """
 
         return YOUTUBE_FEED_BASE_URL + channel_id
@@ -72,10 +90,15 @@ class YoutubeChannel:
     @staticmethod
     def get_feed_url_from_video(video_url):
         """
-        :param video_url: string
-            Url of video (e.g in https://www.youtube.com/watch?v=KB_iTbDrkxE)
+
+        Args:
+          video_url: string
+        Url of video (e.g in https://www.youtube.com/watch?v=KB_iTbDrkxE)
         :return string
-            rss url feed of youtube channel.
+        rss url feed of youtube channel.
+
+        Returns:
+
         """
 
         web_page = Webpage(video_url)

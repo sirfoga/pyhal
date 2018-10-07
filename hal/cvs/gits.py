@@ -11,7 +11,7 @@ from hal.cvs.versioning import Version
 
 
 class Diff:
-    """ Git diff result """
+    """Git diff result"""
 
     ADD = 'added'
     DEL = 'removed'
@@ -29,9 +29,13 @@ class Diff:
         return "+", totals[self.ADD], " -", totals[self.DEL]
 
     def get_totals(self):
-        """
-        :return: {}
+        """:return: {}
             Dictionary with total additions and deletions
+
+        Args:
+
+        Returns:
+
         """
 
         total_added = 0
@@ -52,7 +56,7 @@ class Diff:
 
 
 class Commit:
-    """ Git repository commit """
+    """Git repository commit"""
 
     def __init__(self, commit):
         """
@@ -75,6 +79,7 @@ class Commit:
         return hash_value + " at " + date_time
 
     def get_author(self):
+        """ """
         author = self.c.author
 
         out = ""
@@ -88,7 +93,7 @@ class Commit:
 
 
 class Repository:
-    """ Git repository """
+    """Git repository"""
 
     def __init__(self, repo_path):
         """
@@ -99,17 +104,25 @@ class Repository:
         self.r = Repo(repo_path)
 
     def get_last_commit(self):
-        """
-        :return: git.Commit
+        """:return: git.Commit
             Last commit of repository
+
+        Args:
+
+        Returns:
+
         """
 
         return self.r.head.commit
 
     def get_diff_amounts(self):
-        """
-        :return: []
+        """:return: []
             List of total diff between 2 consecutive commits since start
+
+        Args:
+
+        Returns:
+
         """
 
         diffs = []
@@ -127,12 +140,16 @@ class Repository:
 
     def get_diff(self, commit, other_commit):
         """
-        :param commit: git.Commit
-            First commit
-        :param other_commit: git.Commit
-            Second commit
-        :return: {}
-            Dictionary with total additions and deletions
+
+        Args:
+          commit: git.Commit
+        First commit
+          other_commit: git.Commit
+        Second commit
+
+        Returns:
+          Dictionary with total additions and deletions
+
         """
 
         diff = self.r.git.diff(commit.hexsha, other_commit.hexsha)
@@ -140,10 +157,15 @@ class Repository:
 
     def get_version(self, diff_to_increase_ratio):
         """
-        :param diff_to_increase_ratio: float
-            Ratio to convert number of changes into version increases
-        :return: Version
-            Version of this code, based on commits diffs
+
+        Args:
+          diff_to_increase_ratio: float
+        Ratio to convert number of changes into version increases
+
+        Returns:
+          Version
+          Version of this code, based on commits diffs
+
         """
 
         diffs = self.get_diff_amounts()
@@ -156,10 +178,15 @@ class Repository:
 
     def get_pretty_version(self, diff_to_increase_ratio):
         """
-        :param diff_to_increase_ratio: float
-            Ratio to convert number of changes into version increases
-        :return: str
-            Pretty version of this repository
+
+        Args:
+          diff_to_increase_ratio: float
+        Ratio to convert number of changes into version increases
+
+        Returns:
+          str
+          Pretty version of this repository
+
         """
 
         version = self.get_version(diff_to_increase_ratio)

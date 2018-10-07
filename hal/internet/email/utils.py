@@ -6,10 +6,15 @@
 
 def get_email_content(file_path):
     """
-    :param file_path: str
-        Path to file with email text
-    :return: str
-        Email text (html formatted)
+
+    Args:
+      file_path: str
+    Path to file with email text
+
+    Returns:
+      str
+      Email text (html formatted)
+
     """
 
     with open(file_path, "r") as in_file:

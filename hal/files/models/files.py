@@ -13,7 +13,7 @@ from hal.files.models.system import fix_raw_path
 
 
 class Document(FileSystem):
-    """ File with content in a OS """
+    """File with content in a OS"""
 
     def __init__(self, path):
         """
@@ -29,12 +29,17 @@ class Document(FileSystem):
     @staticmethod
     def move_file_to_directory(file_path, directory_path):
         """
-        :param file_path: string
-            Path to file to move
-        :param directory_path: string
-            Path to target directory where to move file
-        :return: void
-            Move file to given directory
+
+        Args:
+          file_path: string
+        Path to file to move
+          directory_path: string
+        Path to target directory where to move file
+
+        Returns:
+          void
+          Move file to given directory
+
         """
         file_name = os.path.basename(file_path)  # get name of file
         if not os.path.exists(directory_path):
@@ -45,12 +50,17 @@ class Document(FileSystem):
     @staticmethod
     def move_file_to_file(old_path, new_path):
         """
-        :param old_path: string
-            Old path of file to move
-        :param new_path: string
-            New path (location) of file
-        :return: void
-            Move file from old location to new one
+
+        Args:
+          old_path: string
+        Old path of file to move
+          new_path: string
+        New path (location) of file
+
+        Returns:
+          void
+          Move file from old location to new one
+
         """
         try:
             os.rename(old_path, new_path)
@@ -72,12 +82,17 @@ class Document(FileSystem):
     @staticmethod
     def write_data_to_file(data, out_file):
         """
-        :param data: string
-            Data to write to file.
-        :param out_file: string
-            Path to output file.
-        :return: void
-            Writes given data to given path file.
+
+        Args:
+          data: string
+        Data to write to file.
+          out_file: string
+        Path to output file.
+
+        Returns:
+          void
+          Writes given data to given path file.
+
         """
 
         with open(out_file, "w") as out_f:
@@ -86,17 +101,26 @@ class Document(FileSystem):
     @staticmethod
     def extract_name_extension(file_name):
         """
-        :param file_name: string
-            Name of file
-        :return: tuple string, string
-            Name of file, extension of file
+
+        Args:
+          file_name: string
+        Name of file
+
+        Returns:
+          tuple string, string
+          Name of file, extension of file
+
         """
         return os.path.splitext(file_name)
 
     def get_path_name(self):
-        """
-        :return: tuple string, string
+        """:return: tuple string, string
             Name of path, name of file (or folder)
+
+        Args:
+
+        Returns:
+
         """
 
         path = fix_raw_path(os.path.dirname(os.path.abspath(self.path)))
@@ -104,42 +128,32 @@ class Document(FileSystem):
         return path, name
 
     def is_video(self):
-        """
-        :return: True iff document is a video.
-        """
+        """:return: True iff document is a video."""
         return self.extension.lower() in VIDEO_FORMAT
 
     def is_subtitle(self):
-        """
-        :return: True iff document is a subtitle.
-        """
+        """:return: True iff document is a subtitle."""
 
         return self.extension.lower() in SUBTITLE_FORMAT
 
     def is_text(self):
-        """
-        :return: True iff document is a text file.
-        """
+        """:return: True iff document is a text file."""
 
         return self.extension.lower() in TEXT_FORMAT
 
     def is_image(self):
-        """
-        :return: True iff document is an image.
-        """
+        """:return: True iff document is an image."""
 
         return self.extension.lower() in IMAGE_FORMAT
 
     def is_audio(self):
-        """
-        :return: True iff document is an audio.
-        """
+        """:return: True iff document is an audio."""
 
         return self.extension.lower() in AUDIO_FORMAT
 
 
 class Directory(FileSystem):
-    """ Folder of a OS """
+    """Folder of a OS"""
 
     def __init__(self, path):
         """
@@ -154,19 +168,28 @@ class Directory(FileSystem):
     @staticmethod
     def create_new(path):
         """
-        :param path: string
-            Path to directory to create
-        :return: void
-            Creates new directory
+
+        Args:
+          path: string
+        Path to directory to create
+
+        Returns:
+          void
+          Creates new directory
+
         """
 
         if not os.path.exists(path):
             os.makedirs(path)
 
     def get_path_name(self):
-        """
-        :return: tuple string, string
+        """:return: tuple string, string
             Name of path, name of file (or folder)
+
+        Args:
+
+        Returns:
+
         """
 
         complete_path = os.path.dirname(os.path.abspath(self.path))
@@ -177,9 +200,13 @@ class Directory(FileSystem):
         return complete_path, name
 
     def is_empty(self):
-        """
-        :return: Bool
+        """:return: Bool
             True iff empty
+
+        Args:
+
+        Returns:
+
         """
 
         return not os.listdir(self.path)

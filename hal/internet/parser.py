@@ -10,7 +10,7 @@ from hal.strings.utils import html_stripper
 
 
 class HtmlTable:
-    """ Table written in HTML language """
+    """Table written in HTML language"""
 
     def __init__(self, html_source):
         """
@@ -22,9 +22,13 @@ class HtmlTable:
         self.soup = BeautifulSoup(self.source, "lxml")
 
     def parse(self):
-        """
-        :return: list of list
+        """:return: list of list
             List of list of values in table
+
+        Args:
+
+        Returns:
+
         """
 
         data = []  # add name of section

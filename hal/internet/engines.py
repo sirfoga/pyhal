@@ -8,7 +8,7 @@ from hal.internet.web import Webpage
 
 
 class SearchEngineResult:
-    """ Result of general search engine """
+    """Result of general search engine"""
 
     def __init__(self, title, link, description=""):
 
@@ -22,7 +22,7 @@ class SearchEngineResult:
 
 
 class SearchEngine:
-    """ Internet general search engine """
+    """Internet general search engine"""
 
     def __init__(self, url, blank_replace="+"):
         """
@@ -39,10 +39,15 @@ class SearchEngine:
 
     def parse_query(self, query):
         """
-        :param query: string
-            Query to search engine.
-        :return: string
-            Parse given query in order to meet search criteria of search engine
+
+        Args:
+          query: string
+        Query to search engine.
+
+        Returns:
+          string
+          Parse given query in order to meet search criteria of search engine
+
         """
 
         return query.strip().replace(
@@ -52,12 +57,17 @@ class SearchEngine:
 
     def get_search_page(self, query, using_tor=False):
         """
-        :param query: string
-            Query to search engine.
-        :param using_tor: bool
-            Whether use tor or not to fetch web pages
-        :return: string
-            Get HTML source of search page of given query.
+
+        Args:
+          query: string
+        Query to search engine.
+          using_tor: bool
+        Whether use tor or not to fetch web pages (Default value = False)
+
+        Returns:
+          string
+          Get HTML source of search page of given query.
+
         """
 
         query_web_page = Webpage(self.url + self.parse_query(query))

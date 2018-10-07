@@ -11,9 +11,13 @@ import psutil
 
 
 def get_memory_usage():
-    """
-    :return: float
+    """:return: float
         MB of memory used by this process
+
+    Args:
+
+    Returns:
+
     """
 
     process = psutil.Process(os.getpid())
@@ -22,9 +26,13 @@ def get_memory_usage():
 
 
 def force_garbage_collect():
-    """
-    :return: void
+    """:return: void
         Releases memory used
+
+    Args:
+
+    Returns:
+
     """
 
     gc.collect()

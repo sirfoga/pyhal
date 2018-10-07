@@ -27,16 +27,20 @@ LOW_PRIMES = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53,
 
 
 class Integer:
-    """ Big int std python won't recognize """
+    """Big int std python won't recognize"""
 
     def __init__(self, string):
         self.to_int = int(string)
         self.to_string = string
 
     def is_naive_prime(self):
-        """
-        :return: bool
+        """:return: bool
             Checks if prime in very naive way
+
+        Args:
+
+        Returns:
+
         """
 
         if self.to_int < 2:
@@ -47,9 +51,7 @@ class Integer:
         return self.to_int in LOW_PRIMES
 
     def is_probably_prime(self):
-        """
-        :return: test with miller-rabin
-        """
+        """:return: test with miller-rabin"""
 
         if not self.is_naive_prime():
             if self.to_int in LOW_PRIMES:
@@ -67,9 +69,14 @@ class Integer:
 
     def test_miller_rabin(self, precision):
         """
-        :param precision: number of rounds to perform (higher -> better
+
+        Args:
+          precision: number of rounds to perform (higher -> better
         precision)
-        :return: True iff probably prime
+
+        Returns:
+          True iff probably prime
+
         """
 
         if not self.is_naive_prime():
@@ -111,8 +118,13 @@ class Integer:
 
 def get_prime(bits):
     """
-    :param bits: size of number to generate (bits)
-    :return: prime number of given size
+
+    Args:
+      bits: size of number to generate (bits)
+
+    Returns:
+      prime number of given size
+
     """
 
     if bits < 0:
@@ -125,11 +137,16 @@ def get_prime(bits):
 
 def blum_blum_shub(seed, amount, prime0, prime1):
     """
-    :param seed: seeder
-    :param amount: amount of number to generate
-    :param prime0: one prime number
-    :param prime1: the second prime number
-    :return: pseudo-number generator
+
+    Args:
+      seed: seeder
+      amount: amount of number to generate
+      prime0: one prime number
+      prime1: the second prime number
+
+    Returns:
+      pseudo-number generator
+
     """
 
     assert amount >= 0  # amount cannot be negative

@@ -7,13 +7,18 @@ from sklearn.preprocessing import LabelEncoder
 
 
 class Matrix:
+    """ """
     def __init__(self, matrix):
         self.matrix = matrix
 
     def precision(self):
-        """
-        :return: float
+        """:return: float
             Calculates accuracy on database
+
+        Args:
+
+        Returns:
+
         """
 
         true_pos = self.matrix[0][0]
@@ -25,9 +30,13 @@ class Matrix:
             return 0
 
     def recall(self):
-        """
-        :return: float
+        """:return: float
             Calculates recall on database
+
+        Args:
+
+        Returns:
+
         """
 
         true_pos = self.matrix[0][0]
@@ -39,9 +48,13 @@ class Matrix:
             return 0
 
     def true_neg_rate(self):
-        """
-        :return: float
+        """:return: float
             Calculates true negative rate on database
+
+        Args:
+
+        Returns:
+
         """
 
         false_pos = self.matrix[1][0]
@@ -53,9 +66,13 @@ class Matrix:
             return 0
 
     def accuracy(self):
-        """
-        :return: float
+        """:return: float
             Calculates accuracy on database
+
+        Args:
+
+        Returns:
+
         """
 
         true_pos = self.matrix[0][0]
@@ -72,9 +89,13 @@ class Matrix:
             return 0
 
     def f1_score(self):
-        """
-        :return: float
+        """:return: float
             Calculates F1 score on database
+
+        Args:
+
+        Returns:
+
         """
 
         m_pre = self.precision()
@@ -86,9 +107,13 @@ class Matrix:
             return 0
 
     def get_as_list(self):
-        """
-        :return: [] of anything
+        """:return: [] of anything
             List of all values in matrix
+
+        Args:
+
+        Returns:
+
         """
 
         return sum([
@@ -97,9 +122,13 @@ class Matrix:
         ], [])
 
     def encode(self):
-        """
-        :return: LabelEncoder
+        """:return: LabelEncoder
             Encoder
+
+        Args:
+
+        Returns:
+
         """
 
         lb = LabelEncoder()  # encoder
@@ -117,10 +146,15 @@ class Matrix:
 
     def decode(self, lb):
         """
-        :param lb: LabelEncoder
-            Encoder used to encode matrix
-        :return: void
-            Decodes matrix
+
+        Args:
+          lb: LabelEncoder
+        Encoder used to encode matrix
+
+        Returns:
+          void
+          Decodes matrix
+
         """
 
         self.matrix = [
@@ -131,10 +165,15 @@ class Matrix:
     @staticmethod
     def from_columns(columns):
         """
-        :param columns: [] of [] of anything
-            Matrix divided into columns
-        :return: Matrix
-            Merge the columns to form a matrix
+
+        Args:
+          columns: of [] of anything
+        Matrix divided into columns
+
+        Returns:
+          Matrix
+          Merge the columns to form a matrix
+
         """
 
         data = [

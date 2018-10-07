@@ -66,10 +66,15 @@ PATH_SEPARATOR = "/" if "posix" in os.name else "\\"
 
 def fix_raw_path(path):
     """
-    :param path: string
-        Path to fix
-    :return: string
-        Right path
+
+    Args:
+      path: string
+    Path to fix
+
+    Returns:
+      string
+      Right path
+
     """
 
     double_path_separator = PATH_SEPARATOR + PATH_SEPARATOR
@@ -86,10 +91,15 @@ def fix_raw_path(path):
 
 def remove_year(name):
     """
-    :param name: string
-        Name to edit
-    :return: string
-        Given string bu with no years.
+
+    Args:
+      name: string
+    Name to edit
+
+    Returns:
+      string
+      Given string bu with no years.
+
     """
 
     for i in range(len(
@@ -103,10 +113,15 @@ def remove_year(name):
 
 def remove_brackets(name):
     """
-    :param name: string
-        Name to edit
-    :return: string
-        Given string bu with no brackets
+
+    Args:
+      name: string
+    Name to edit
+
+    Returns:
+      string
+      Given string bu with no brackets
+
     """
 
     name = re.sub(
@@ -122,14 +137,19 @@ def remove_brackets(name):
 
 def extract_name_max_chars(name, max_chars=64, blank=" "):
     """
-    :param name: string
-        Name to edit
-    :param max_chars: int
-        Maximum chars of new name
-    :param blank: string
-        Char that represents the blank between words.
-    :return: string
-        Name edited to contain at most max_chars (truncate to nearest word)
+
+    Args:
+      name: string
+    Name to edit
+      max_chars: int
+    Maximum chars of new name (Default value = 64)
+      blank: string
+    Char that represents the blank between words. (Default value = " ")
+
+    Returns:
+      string
+      Name edited to contain at most max_chars (truncate to nearest word)
+
     """
 
     if max_chars <= 0:
@@ -146,12 +166,17 @@ def extract_name_max_chars(name, max_chars=64, blank=" "):
 
 def prettify(name, blank=" "):
     """
-    :param name: string
-        Name to edit
-    :param blank: string
-        Default blanks in name.
-    :return: string
-        Prettier name from given one: replace bad chars with good ones.
+
+    Args:
+      name: string
+    Name to edit
+      blank: string
+    Default blanks in name.
+
+    Returns:
+      string
+      Prettier name from given one: replace bad chars with good ones.
+
     """
 
     if name.startswith("."):  # remove starting .
@@ -184,10 +209,15 @@ def prettify(name, blank=" "):
 
 def is_file(path):
     """
-    :param path: str
-        Path to check
-    :return: bool
-        True iff path is a file
+
+    Args:
+      path: str
+    Path to check
+
+    Returns:
+      bool
+      True iff path is a file
+
     """
 
     return os.path.isfile(path)
@@ -195,10 +225,15 @@ def is_file(path):
 
 def is_folder(path):
     """
-    :param path: str
-        Path to check
-    :return: bool
-        True iff path is a file
+
+    Args:
+      path: str
+    Path to check
+
+    Returns:
+      bool
+      True iff path is a file
+
     """
 
     return os.path.isdir(path)
@@ -206,10 +241,15 @@ def is_folder(path):
 
 def get_parent_folder(file_path):
     """
-    :param file_path: str
-        Path to file or folder
-    :return: str
-        Name of folder container
+
+    Args:
+      file_path: str
+    Path to file or folder
+
+    Returns:
+      str
+      Name of folder container
+
     """
 
     return os.path.split(os.path.split(os.path.abspath(file_path))[0])[-1]
@@ -217,12 +257,17 @@ def get_parent_folder(file_path):
 
 def ls_dir(path, include_hidden=False):
     """
-    :param path: string
-        Path to directory to get list of files and folders
-    :param include_hidden: bool
-        Whether to include hidden files in list.
-    :return: list
-        List of paths in given directory.
+
+    Args:
+      path: string
+    Path to directory to get list of files and folders
+      include_hidden: bool
+    Whether to include hidden files in list. (Default value = False)
+
+    Returns:
+      list
+      List of paths in given directory.
+
     """
 
     lst = []
@@ -235,12 +280,17 @@ def ls_dir(path, include_hidden=False):
 
 def ls_recurse(path, include_hidden=False):
     """
-    :param path: string
-        Path to directory to get list of files and folders
-    :param include_hidden: bool
-        Whether to include hidden files in list.
-    :return: list
-        List of paths in given directory recursively.
+
+    Args:
+      path: string
+    Path to directory to get list of files and folders
+      include_hidden: bool
+    Whether to include hidden files in list. (Default value = False)
+
+    Returns:
+      list
+      List of paths in given directory recursively.
+
     """
 
     lst = []
@@ -258,14 +308,19 @@ def ls_recurse(path, include_hidden=False):
 
 def list_content(path, recurse, include_hidden=False):
     """
-    :param path: string
-        Path to directory to get list of files and folders
-    :param recurse: bool
-        Whether to recurse into subdirectories or not.
-    :param include_hidden: bool
-        Whether to include hidden files in list.
-    :return: list
-        List of paths in given directory recursively.
+
+    Args:
+      path: string
+    Path to directory to get list of files and folders
+      recurse: bool
+    Whether to recurse into subdirectories or not.
+      include_hidden: bool
+    Whether to include hidden files in list. (Default value = False)
+
+    Returns:
+      list
+      List of paths in given directory recursively.
+
     """
     if recurse:
         return ls_recurse(path, include_hidden=include_hidden)
@@ -274,7 +329,7 @@ def list_content(path, recurse, include_hidden=False):
 
 
 class FileSystem:
-    """ Models a folder/file in a OS """
+    """Models a folder/file in a OS"""
 
     def __init__(self, path):
         """
@@ -286,24 +341,24 @@ class FileSystem:
         self.name, self.extension = os.path.splitext(self.path)
 
     def is_hidden(self):
-        """
-        :return: bool
+        """:return: bool
             True iff path is hidden
+
+        Args:
+
+        Returns:
+
         """
 
         return self.name.startswith(".")
 
     def is_archive_mac(self):
-        """
-        :return: True iff document is an MACOSX archive.
-        """
+        """:return: True iff document is an MACOSX archive."""
 
         return "macosx" in self.path.lower()
 
     def is_russian(self):
-        """
-        :return: True iff document has a russian name.
-        """
+        """:return: True iff document has a russian name."""
 
         russian_chars = 0
         for char in RUSSIAN_CHARS:
@@ -312,19 +367,28 @@ class FileSystem:
         return russian_chars > len(RUSSIAN_CHARS) / 2.0
 
     def trash(self):
-        """
-        :return: void
+        """:return: void
             Trash given file/folder
+
+        Args:
+
+        Returns:
+
         """
 
         send2trash(self.path)
 
     def rename(self, new_path):
         """
-        :param new_path: string
-            New path to use
-        :return: void
-            Rename to new path
+
+        Args:
+          new_path: string
+        New path to use
+
+        Returns:
+          void
+          Rename to new path
+
         """
 
         rename_path = fix_raw_path(new_path)

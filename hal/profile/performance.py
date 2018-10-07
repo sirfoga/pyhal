@@ -15,7 +15,7 @@ from times import time
 
 
 class EightQueenTest:
-    """ Test CPU by solving eight-queen problem """
+    """Test CPU by solving eight-queen problem"""
 
     def __init__(self, size):
         self.size = size
@@ -23,9 +23,13 @@ class EightQueenTest:
 
     @staticmethod
     def welcome():
-        """
-        :return: string
+        """:return: string
             Welcomes user to this test sessions
+
+        Args:
+
+        Returns:
+
         """
 
         user = getpass.getuser()
@@ -39,8 +43,13 @@ class EightQueenTest:
 
     @staticmethod
     def introduction():
-        """ :return: string
+        """:return: string
             Welcomes user to this test sessions
+
+        Args:
+
+        Returns:
+
         """
 
         output = "So, let\'s get into the details.. I\'m going to solve the " \
@@ -63,10 +72,15 @@ class EightQueenTest:
     @staticmethod
     def run_test_with_size(size):
         """
-        :param size: int
-            Number of rows in grid
-        :return: int
-            Time to solve problem with given size
+
+        Args:
+          size: int
+        Number of rows in grid
+
+        Returns:
+          int
+          Time to solve problem with given size
+
         """
 
         timing = time()
@@ -76,19 +90,28 @@ class EightQueenTest:
 
     def update_std_out_and_log(self, string):
         """
-        :param string: string
-            Stuff to print
-        :return: void
-            Prints to stdout and updates log
+
+        Args:
+          string: string
+        Stuff to print
+
+        Returns:
+          void
+          Prints to stdout and updates log
+
         """
 
         print(string)  # update stdout
         self.benchmark += "\n" + string  # update log
 
     def start(self):
-        """
-        :return: void
+        """:return: void
             Starts profiling
+
+        Args:
+
+        Returns:
+
         """
 
         self.update_std_out_and_log(self.welcome())
@@ -101,6 +124,7 @@ class EightQueenTest:
             sys.exit(0)
 
     def _run(self):
+        """ """
         max_board_size = self.size
         start_time = time()
 

@@ -18,15 +18,21 @@ from times import time
 
 class CorrelationMatrix:
     def __init__(self, title, headers_to_test, headers, data):
+
         """
-        :param title: str
-            Title to show
-        :param headers_to_test: [] of str
-            List of columns to get correlation matrix of
-        :param headers: [] of str
-            List of all headers in matrix
-        :param data: [] of []
-            Matrix of float values
+
+        Args:
+          title: str
+        Title to show
+          headers_to_test: of str
+        List of columns to get correlation matrix of
+          headers: of str
+        List of all headers in matrix
+          data: of []
+        Matrix of float values
+
+        Returns:
+
         """
 
         self.title = title
@@ -37,20 +43,30 @@ class CorrelationMatrix:
     @staticmethod
     def get_correlation_matrix(matrix):
         """
-        :param matrix: [] of []
-            List of features to get correlation matrix
-        :return: [] of []
-            correlation matrix
+
+        Args:
+          matrix: of []
+        List of features to get correlation matrix
+
+        Returns:
+          of []
+          correlation matrix
+
         """
 
         return np.corrcoef(matrix)
 
     def show_correlation_matrix(self, correlation_matrix):
         """
-        :param correlation_matrix: [] of []
-            Correlation matrix of features
-        :return: void
-            shows the given correlation matrix as image
+
+        Args:
+          correlation_matrix: of []
+        Correlation matrix of features
+
+        Returns:
+          void
+          shows the given correlation matrix as image
+
         """
 
         cr_plot.create_correlation_matrix_plot(
@@ -59,13 +75,18 @@ class CorrelationMatrix:
         pyplot.show()
 
     def show_correlation_matrix_of_columns(self):
+        """ """
         correlation_matrix = self.get_correlation_matrix_of_columns()
         self.show_correlation_matrix(correlation_matrix)
 
     def get_correlation_matrix_of_columns(self):
-        """
-        :return: [] of []
+        """:return: [] of []
             Correlation matrix of selected columns
+
+        Args:
+
+        Returns:
+
         """
 
         header_to_column = {}  # create index of headers
@@ -87,10 +108,15 @@ class CorrelationMatrix:
 
     def save_to_file(self, out_file):
         """
-        :param out_file: str
-            Output file
-        :return: void
-            Saves correlation matrix of selected headers
+
+        Args:
+          out_file: str
+        Output file
+
+        Returns:
+          void
+          Saves correlation matrix of selected headers
+
         """
 
         correlation_matrix = self.get_correlation_matrix_of_columns()
@@ -104,10 +130,15 @@ class CorrelationMatrix:
     @staticmethod
     def save_correlation_matrix_of_data_files_in_folder(folder_path):
         """
-        :param folder_path: str
-            Folder containing logs data
-        :return: void
-            Saves each file's correlation matrix of common headers
+
+        Args:
+          folder_path: str
+        Folder containing logs data
+
+        Returns:
+          void
+          Saves each file's correlation matrix of common headers
+
         """
 
         output_folder = os.path.join(folder_path, "output-" + str(int(time())))

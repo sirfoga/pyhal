@@ -14,12 +14,17 @@ from hal.charts.models import SimpleChart
 
 def setup_chart(title, bottom=None):
     """
-    :param title: str
-        Title of chart
-    :param bottom: float
-        Bottom margin
-    :return: axis
-        Chart axis
+
+    Args:
+      title: str
+    Title of chart
+      bottom: float
+    Bottom margin (Default value = None)
+
+    Returns:
+      axis
+      Chart axis
+
     """
 
     chart = SimpleChart(title)
@@ -31,16 +36,21 @@ def setup_chart(title, bottom=None):
 
 def create_bar_chart(title, x_labels, y_values, y_label):
     """
-    :param title: str
-        Title of chart
-    :param x_labels: [] of str
-        Names for each variable
-    :param y_values: [] of float
-        Values of x labels
-    :param y_label: str
-        Label of y axis
-    :return: Subplot
-        Bar chart
+
+    Args:
+      title: str
+    Title of chart
+      x_labels: of str
+    Names for each variable
+      y_values: of float
+    Values of x labels
+      y_label: str
+    Label of y axis
+
+    Returns:
+      Subplot
+      Bar chart
+
     """
 
     ax1 = setup_chart(title, bottom=0.25)
@@ -58,18 +68,23 @@ def create_bar_chart(title, x_labels, y_values, y_label):
 def create_multiple_bar_chart(title, x_labels, mul_y_values, mul_y_labels,
                               normalize=False):
     """
-    :param title: str
-        Title of chart
-    :param x_labels: [] of str
-        Names for each variable
-    :param mul_y_values: [] of [] of float
-        List of values of x labels
-    :param mul_y_labels: [] of str
-        List of labels for each y value
-    :param normalize: bool
-        True iff you want to normalize each y series
-    :return: Subplot
-        Bar chart
+
+    Args:
+      title: str
+    Title of chart
+      x_labels: of str
+    Names for each variable
+      mul_y_values: of [] of float
+    List of values of x labels
+      mul_y_labels: of str
+    List of labels for each y value
+      normalize: bool
+    True iff you want to normalize each y series (Default value = False)
+
+    Returns:
+      Subplot
+      Bar chart
+
     """
 
     ax1 = setup_chart(title)
@@ -109,16 +124,21 @@ def create_multiple_bar_chart(title, x_labels, mul_y_values, mul_y_labels,
 
 def create_sym_log_bar_chart(title, x_labels, y_values, y_label):
     """
-    :param title: str
-        Title of chart
-    :param x_labels: [] of str
-        Names for each variable
-    :param y_values: [] of float
-        Values of x labels
-    :param y_label: str
-        Label of y axis
-    :return: return
-        Sym-log bar chart
+
+    Args:
+      title: str
+    Title of chart
+      x_labels: of str
+    Names for each variable
+      y_values: of float
+    Values of x labels
+      y_label: str
+    Label of y axis
+
+    Returns:
+      return: return
+      Sym-log bar chart
+
     """
 
     ax1 = create_bar_chart(title, x_labels, y_values, y_label)
