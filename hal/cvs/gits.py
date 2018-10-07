@@ -13,13 +13,13 @@ from hal.cvs.versioning import Version
 class Diff:
     """Git diff result"""
 
-    ADD = 'added'
-    DEL = 'removed'
+    ADD = "added"
+    DEL = "removed"
 
     def __init__(self, diff):
         """
-        :param diff: git.Diff
-            Diff between 2 commits
+        Args:
+            diff: Diff between 2 commits
         """
         self.d = diff
 
@@ -28,13 +28,10 @@ class Diff:
         return "+", totals[self.ADD], " -", totals[self.DEL]
 
     def get_totals(self):
-        """:return: {}
-            Dictionary with total additions and deletions
+        """
+        Calculates otal additions and deletions
 
-        Args:
-
-        Returns:
-
+        Returns: Dictionary with total additions and deletions
         """
         total_added = 0
         total_removed = 0
@@ -58,16 +55,19 @@ class Commit:
 
     def __init__(self, commit):
         """
-        :param commit: git.Commit
-            Commit of repository
+        Args:
+             commit:Commit of repository
         """
         self.c = commit
 
     def __str__(self, date_format="%H:%M:%S %y-%m-%d %z"):
         """
-        :param date_format: str
-            Format date and times with this format
-        :return: str
+        Converts to string
+
+        Args:
+            date_format: Format date and times with this format
+
+        Returns:
             Pretty description of commit
         """
         hash_value = self.c.hexsha
@@ -75,7 +75,11 @@ class Commit:
         return hash_value + " at " + date_time
 
     def get_author(self):
-        """ """
+        """
+        Gets author
+
+        Returns: author of commit
+        """
         author = self.c.author
 
         out = ""
@@ -93,30 +97,24 @@ class Repository:
 
     def __init__(self, repo_path):
         """
-        :param repo_path: str
-            Path to repository
+        Args:
+            repo_path: Path to repository
         """
         self.r = Repo(repo_path)
 
     def get_last_commit(self):
-        """:return: git.Commit
-            Last commit of repository
+        """
+        Gets last commit
 
-        Args:
-
-        Returns:
-
+        Returns: Last commit of repository
         """
         return self.r.head.commit
 
     def get_diff_amounts(self):
-        """:return: []
-            List of total diff between 2 consecutive commits since start
+        """
+        Gets list of total diff
 
-        Args:
-
-        Returns:
-
+        Returns: List of total diff between 2 consecutive commits since start
         """
         diffs = []
 
@@ -133,28 +131,26 @@ class Repository:
 
     def get_diff(self, commit, other_commit):
         """
+        Calculates total additions and deletions
+
         Args:
-          commit: git.Commit
-        First commit
-          other_commit: git.Commit
-        Second commit
+            commit: First commit
+            other_commit: Second commit
 
-        Returns:
-          Dictionary with total additions and deletions
-
+        Returns: Dictionary with total additions and deletions
         """
         diff = self.r.git.diff(commit.hexsha, other_commit.hexsha)
         return Diff(diff).get_totals()
 
     def get_version(self, diff_to_increase_ratio):
         """
-        Args:
-          diff_to_increase_ratio: float
-        Ratio to convert number of changes into version increases
+        Gets version
 
-        Returns:
-          Version
-          Version of this code, based on commits diffs
+        Args:
+            diff_to_increase_ratio:  Ratio to convert number of changes into
+                version increases
+
+        Returns: Version of this code, based on commits diffs
 
         """
         diffs = self.get_diff_amounts()
@@ -167,14 +163,12 @@ class Repository:
 
     def get_pretty_version(self, diff_to_increase_ratio):
         """
+        Pretty version
+
         Args:
-          diff_to_increase_ratio: float
-        Ratio to convert number of changes into version increases
+          diff_to_increase_ratio: Ratio to convert number of changes into version increases
 
-        Returns:
-          str
-          Pretty version of this repository
-
+        Returns: Pretty version of this repository
         """
         version = self.get_version(diff_to_increase_ratio)
         last = self.get_last_commit()

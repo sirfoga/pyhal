@@ -15,8 +15,8 @@ class SimpleChart:
         Setups bottom margin
 
         Args:
-          title: Title of chart
-          grid: True iff you want a chart with the grid
+            title: Title of chart
+            grid: True iff you want a chart with the grid
         """
         self.title = title
         self.fig = plt.figure()
@@ -28,7 +28,7 @@ class SimpleChart:
         Setups bottom margin
 
         Args:
-          bottom: Bottom margin
+            bottom: Bottom margin
         """
         plt.gcf().subplots_adjust(bottom=bottom)  # add bottom
 

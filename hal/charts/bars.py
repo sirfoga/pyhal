@@ -17,11 +17,11 @@ def setup_chart(title, bottom=None):
     Setups chart
 
     Args:
-      title: Title of chart
-      bottom: Bottom margin (Default value = None)
+        title: Title of chart
+        bottom: Bottom margin (Default value = None)
 
     Returns:
-      Chart axis
+        Chart axis
     """
     chart = SimpleChart(title)
     if bottom:
@@ -35,10 +35,10 @@ def create_bar_chart(title, x_labels, y_values, y_label):
     Creates bar char
 
     Args:
-      title: Title of chart
-      x_labels: Names for each variable
-      y_values: Values of x labels
-      y_label: Label of y axis
+        title: Title of chart
+        x_labels: Names for each variable
+        y_values: Values of x labels
+        y_label: Label of y axis
 
     Returns: Bar chart
     """
@@ -60,11 +60,11 @@ def create_multiple_bar_chart(title, x_labels, mul_y_values, mul_y_labels,
     Creates bar chart with multiple lines
 
     Args:
-      title: Title of chart
-      x_labels: Names for each variable
-      mul_y_values: list of values of x labels
-      mul_y_labels: list of labels for each y value
-      normalize: True iff you want to normalize each y series
+        title: Title of chart
+        x_labels: Names for each variable
+        mul_y_values: list of values of x labels
+        mul_y_labels: list of labels for each y value
+        normalize: True iff you want to normalize each y series
 
     Returns: Bar chart
     """
@@ -108,10 +108,10 @@ def create_sym_log_bar_chart(title, x_labels, y_values, y_label):
     Creates bar chart (log version)
 
     Args:
-      title: Title of chart
-      x_labels: Names for each variable
-      y_values: Values of x labels
-      y_label: Label of y axis
+        title: Title of chart
+        x_labels: Names for each variable
+        y_values: Values of x labels
+        y_label: Label of y axis
 
     Returns: Sym-log bar chart
     """

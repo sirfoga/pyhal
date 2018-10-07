@@ -19,8 +19,8 @@ class Plot2d:
         Plots scatter data
 
         Args:
-          vector_x: vector in x axis
-          vector_y: vector in y axis
+            vector_x: vector in x axis
+            vector_y: vector in y axis
 
         Returns: 2d scatter plot
         """
@@ -40,11 +40,11 @@ class Plot2d:
         Plots parametric data
 
         Args:
-          function_x: function in x value
-          function_y: function in y value
-          min_val: minimum value
-          max_val: maximum value
-          points: number of points to display
+            function_x: function in x value
+            function_y: function in y value
+            min_val: minimum value
+            max_val: maximum value
+            points: number of points to display
 
         Returns: 2d parametric graph of given function from min to max
         """
@@ -60,10 +60,10 @@ class Plot2d:
         Plots data
 
         Args:
-          func: function to plot
-          min_val: minimum value
-          max_val: maximum value
-          points: number of points
+            func: function to plot
+            min_val: minimum value
+            max_val: maximum value
+            points: number of points
 
         Returns: plots 2d function
         """
@@ -87,9 +87,9 @@ class Plot3d:
         Plots scatter data
 
         Args:
-          vector_x: vector in x axis
-          vector_y: vector in y axis
-          vector_z: vector in z axis
+            vector_x: vector in x axis
+            vector_y: vector in y axis
+            vector_z: vector in z axis
 
         Returns: plots 3d scattered points
         """
@@ -111,12 +111,12 @@ class Plot3d:
         Plots parametric functions
 
         Args:
-          function_x: function in x
-          function_y: function in y
-          function_z: function in z
-          min_val: minimum
-          max_val: maximum
-          points: number of points
+            function_x: function in x
+            function_y: function in y
+            function_z: function in z
+            min_val: minimum
+            max_val: maximum
+            points: number of points
 
         Returns: 3d parametric graph of given function from min to max
         """
@@ -153,13 +153,13 @@ class Plot3d:
         Plots function
 
         Args:
-          func: function to plot
-          min_x: minimum of x-values
-          max_x: maximum of x-values
-          points_x: points in x axis
-          min_y: minimum of y-values
-          max_y: maximum of y-values
-          points_y: points in y axis
+            func: function to plot
+            min_x: minimum of x-values
+            max_x: maximum of x-values
+            points_x: points in x axis
+            min_y: minimum of y-values
+            max_y: maximum of y-values
+            points_y: points in y axis
 
         Returns: Plots 3d function
         """
@@ -203,10 +203,10 @@ class Plot4d:
         Plots scatter data
 
         Args:
-          vector_x: vector in x axis
-          vector_y: vector in y axis
-          vector_z: vector in z axis
-          vector_w: vector in w axis
+            vector_x: vector in x axis
+            vector_y: vector in y axis
+            vector_z: vector in z axis
+            vector_w: vector in w axis
 
         Returns: Pplot 4d scattered points
         """
@@ -222,17 +222,17 @@ class Plot4d:
         Plots function
 
         Args:
-          func: function to plot
-          min_x: minimum of x-values
-          max_x: maximum of x-values
-          min_y: minimum of y-values
-          max_y: maximum of y-values
-          min_z: minimum of z-values
-          max_z: maximum of z-values
-          precision: precision (Default value = 0.5)
-          kind: x cont -> 3d plot with y, z variables in plane
-            and w as "z"-axis contour: x cont -> 3d plot with y,z variables in
-            plane and w colored (Default value = "contour")
+            func: function to plot
+            min_x: minimum of x-values
+            max_x: maximum of x-values
+            min_y: minimum of y-values
+            max_y: maximum of y-values
+            min_z: minimum of z-values
+            max_z: maximum of z-values
+            precision: precision (Default value = 0.5)
+            kind: x cont -> 3d plot with y, z variables in plane
+                and w as "z"-axis contour: x cont -> 3d plot with y,z variables
+                in plane and w colored (Default value = "contour")
 
         Returns: Plots 4d function
         """
@@ -260,10 +260,10 @@ class Plot4d:
             Set chart labels
 
             Args:
-              graph: plot
-              label_x: new label on x axis
-              label_y: new label on y axis
-              label_z: new label on z axis
+                graph: plot
+               label_x: new label on x axis
+                label_y: new label on y axis
+                label_z: new label on z axis
 
             Returns: Set given labels to axes of graph
             """
@@ -276,10 +276,9 @@ class Plot4d:
             Set chart limits
 
             Args:
-              graph: plot
+                graph: plot
 
             Returns: set given limits to axes of graph
-
             """
             graph.set_xlim(min_x, max_x)
             graph.set_ylim(min_y, max_y)
@@ -290,8 +289,8 @@ class Plot4d:
             Calculates precision
 
             Args:
-              min_val: minimum
-              max_val: maximum
+                min_val: minimum
+                max_val: maximum
 
             Returns: precision
             """
@@ -302,8 +301,8 @@ class Plot4d:
             Calculates precision delta
 
             Args:
-              min_val: minimum
-              max_val: maximum
+                min_val: minimum
+                max_val: maximum
 
             Returns: precision delte
             """
@@ -327,7 +326,7 @@ class Plot4d:
                 Updates chart with value
 
                 Args:
-                  val: value
+                    val: value
 
                 Returns: re-plot
                 """
@@ -365,7 +364,7 @@ class Plot4d:
                 Updates chart with value
 
                 Args:
-                  val: value
+                    val: value
 
                 Returns: re-plot
                 """
