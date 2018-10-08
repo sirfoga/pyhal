@@ -1,3 +1,6 @@
+idna>=2.7
+chardet>=3.0.4
+urllib3>=1.23
 scipy>=0.19.1
 stem>=1.6.0
 colorama>=0.3.9

@@ -4,19 +4,13 @@ init:
 	pipenv install --dev --skip-lock
 
 pip-init:
-    pip3 install . --upgrade --force-reinstall
+	pip3 install . --upgrade --force-reinstall
 
 fast-init:
-    PACKAGE="hal"
-    LOCAL_FOLDER="${PWD}/${PACKAGE}/*"
-    PYTHON_VERSION="python3.6"
-    DIST_FOLDER="/usr/local/lib/${PYTHON_VERSION}/dist-packages/${PACKAGE}"
-
-    cd ..
-    rm -rf ${DIST_FOLDER}  # clean
-    mkdir ${DIST_FOLDER}
-    cp -r ${LOCAL_FOLDER} ${DIST_FOLDER}  # copy recursively
-    echo "Installed to ${DIST_FOLDER}"
+	rm -rf /usr/local/lib/python3.6/dist-packages/hal
+	mkdir /usr/local/lib/python3.6/dist-packages/hal
+	cp -r hal/ /usr/local/lib/python3.6/dist-packages/
+	echo Installed to /usr/local/lib/python3.6/dist-packages/hal
 
 test:
 	# This runs all of the tests, on both Python 2 and Python 3.

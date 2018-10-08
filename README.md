@@ -132,5 +132,9 @@ Suggestions and improvements are [welcome](https://github.com/sirfoga/pyhal/issu
 | [Stefano Fogarollo](https://sirfoga.github.io) |
 
 
+## Thanks to
+- [Kenneth Reitz](https://github.com/kennethreitz)
+
+
 ## License
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
