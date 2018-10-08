@@ -95,13 +95,17 @@ channel_feed = get_channel_feed_url_from_video(video_url)
 <a href="https://pypi.org/project/PyHal/"><img alt="PyPI version" src="https://badge.fury.io/py/PyHal.svg"></a> <a href="https://requires.io/github/sirfoga/pyhal/requirements/?branch=master"><img alt="Requirements Status" src="https://requires.io/github/sirfoga/pyhal/requirements.svg?branch=master"></a> <a href="https://snyk.io/test/github/sirfoga/pyhal"><img alt="Known Vulnerabilities" src="https://snyk.io/test/github/sirfoga/pyhal/badge.svg"></a>
 
 Different ways, all equals
+
+### via `pip`
 - ```$ pip3 install . --upgrade --force-reinstall``` from the source
 - ```$ pip3 install PyHal``` via [pip](https://pypi.org/project/PyHal/)
-- ```$ bash install.sh ```
-- ```$ bash fast_install.sh ``` use this only if you are sure you met all dependencies
+- ```$ make pip-init```
 
-Just run `python3 setup.py install --force` to upgrade from local
-installation
+### via `pipenv`
+- ```$ pipenv install --dev --skip-lock ```
+- ```$ make init```
+
+```make fast-init``` just copies source files to distitribution files ... run it only if you're sure about dependencies
 
 
 ## Usage and documentation
