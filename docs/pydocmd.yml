@@ -25,6 +25,9 @@ generate:
   - data/matrix.md:
     - hal.data.matrix++
 
+  - files/parsers.md:
+    - hal.files.parsers++
+
 pages:
   - Home: index.md << ../README.md
   - "hal.charts: Charts":
@@ -40,6 +43,8 @@ pages:
     - Linked List: data/linked_list.md
     - Lists: data/lists.md
     - Matrix: data/matrix.md
+  - "hal.files: Deal with file systems":
+    - Parsers: files/parsers.md
 
 additional_search_paths:
    - ..

@@ -12,20 +12,19 @@ class Parser:
 
     def __init__(self, file_path):
         """
-        :param file_path: a raw .csv file that contains any data
+        # Arguments
+            file_path: a raw .csv file that contains any data
             about anything
         """
         self.path = file_path
         self.lines = None  # list of lines in database
 
     def get_lines(self):
-        """:return: [] of str
-            Lines in file
-
-        # Arguments
+        """
+        Gets lines in file
 
         # Returns:
-
+            lines: Lines in file
         """
         with open(self.path) as data:
             self.lines = data.readlines()  # store data in arrays
@@ -38,22 +37,21 @@ class CSVParser(Parser):
 
     def __init__(self, file_path, encoding="utf-8"):
         """
-        :param file_path: a raw .csv file that contains any data
+        # Arguments
+            file_path: a raw .csv file that contains any data
             about anything
-        :param encoding: str
+            encoding: str
             Encoding to open file with
         """
         super().__init__(file_path)
         self.encoding = str(encoding).strip()
 
     def get_matrix(self):
-        """:return: store values in array, store lines in array. The result is
-            a 2D matrix
-
-        # Arguments
+        """
+        Stores values in array, store lines in array.
 
         # Returns:
-
+            data: 2D matrix
         """
         data = []
         with open(self.path, encoding=self.encoding) as csv_file:
@@ -64,25 +62,22 @@ class CSVParser(Parser):
         return data
 
     def get_headers_data(self):
-        """:return: tuple [], [] of []
-            headers of csv file and data
-
-        # Arguments
+        """
+        Gets headers and data
 
         # Returns:
-
+            headers: headers of file
+            data: data of file
         """
         data = self.get_matrix()
         return data[0], data[1:]  # headers, data
 
     def get_dicts(self):
-        """:return: (generator of) [] of {}
-            List of dicts with data from .csv file
-
-        # Arguments
+        """
+        Gets dicts in file
 
         # Returns:
-
+            generator; List of dicts with data from .csv file
         """
         reader = csv.DictReader(open(self.path, "r", encoding=self.encoding))
         for row in reader:
