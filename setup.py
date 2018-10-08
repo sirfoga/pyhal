@@ -26,7 +26,7 @@ setup(
     author_email="sirfoga@protonmail.com",
     description=LITTLE_DESCRIPTION,
     long_description=DESCRIPTION,
-    keywords="library scratch awesome",
+    keywords="hal library general-purpose",
     url="https://github.com/sirfoga/pyhal",
     packages=find_packages(exclude=["tests"]),
     test_suite="tests"
