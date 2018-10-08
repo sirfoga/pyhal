@@ -38,9 +38,9 @@ class GoogleApiOAuth:
         """:return: credentials
             New user credentials file upon user prompt
 
-        # Arguments
+        Arguments:
 
-        # Returns:
+        Returns:
 
         """
         flow = client.flow_from_clientsecrets(self.app_secrets,
@@ -52,9 +52,9 @@ class GoogleApiOAuth:
         """:return: string
             User credentials created via OAuth
 
-        # Arguments
+        Arguments:
 
-        # Returns:
+        Returns:
 
         """
         if not os.path.exists(os.path.dirname(
@@ -71,11 +71,11 @@ class GoogleApiOAuth:
     @staticmethod
     def authenticate(credentials):
         """
-        # Arguments
+        Arguments:
           credentials: string
         User authentication code created via OAuth
 
-        # Returns:
+        Returns:
           http
           Http authenticated credentials
 
@@ -86,13 +86,13 @@ class GoogleApiOAuth:
 
     def get_driver(self, name, version):
         """
-        # Arguments
+        Arguments:
           name: string
         Name of driver
           version: string
         Version of driver
 
-        # Returns:
+        Returns:
           api driver
           Authenticates and creates new API driver to perform scope stuff
 

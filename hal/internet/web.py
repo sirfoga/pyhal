@@ -104,11 +104,11 @@ HEADERS = {
 
 def is_url(candidate_url):
     """
-    # Arguments
+    Arguments:
       candidate_url: str
     Possible url to check for url
 
-    # Returns:
+    Returns:
       bool
       True iff candidate is a valid url
     """
@@ -132,10 +132,10 @@ class Webpage:
     @staticmethod
     def parse_url(raw_url):
         """
-        # Arguments
+        Arguments:
           raw_url: url to parse
 
-        # Returns:
+        Returns:
           parses correctly url
 
         """
@@ -175,9 +175,9 @@ class Webpage:
         """:return: str
             HTML source of webpage
 
-        # Arguments
+        Arguments:
 
-        # Returns:
+        Returns:
 
         """
         req = urllib.request.Request(self.url)
@@ -189,11 +189,11 @@ class Webpage:
 
     def get_links(self, recall, timeout):
         """
-        # Arguments
+        Arguments:
           recall: max times to attempt to fetch url
           timeout: max times (s) to wait for web_page response
 
-        # Returns:
+        Returns:
           array of out_links
 
         """
@@ -212,11 +212,11 @@ class Webpage:
 
     def open_in_browser(self, n_times):
         """
-        # Arguments
+        Arguments:
           n_times: int
         Times to open webpage in browser
 
-        # Returns:
+        Returns:
           void
           Open a web-driver and go to webpage
 
@@ -227,13 +227,13 @@ class Webpage:
 
 def download_url(url, local_file):
     """
-    # Arguments
+    Arguments:
       url: string
     Url to download
       local_file: string
     Save url as this path
 
-    # Returns:
+    Returns:
       void
       Download link to local file
     """
@@ -244,7 +244,7 @@ def download_url(url, local_file):
 def download_to_file(url, local_file, headers=HEADERS, cookies=None,
                      chunk_size=1024):
     """
-    # Arguments
+    Arguments:
       url: str
     PDF url to download
       local_file: str
@@ -254,7 +254,7 @@ def download_to_file(url, local_file, headers=HEADERS, cookies=None,
       chunk_size: int
     Download file in this specific chunk size (Default value = 1024)
 
-    # Returns:
+    Returns:
       void
       Download link to local file
     """
@@ -283,10 +283,10 @@ def renew_connection(password):
     """:return: void
         signal TOR for a new connection
 
-    # Arguments
+    Arguments:
       password: 
 
-    # Returns:
+    Returns:
     """
     with Controller.from_port(port=9051) as controller:
         controller.authenticate(password=password)

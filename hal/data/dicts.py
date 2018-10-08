@@ -11,11 +11,11 @@ def how_similar_dicts(d1, d2):
     """
     Calculates similarity
 
-    # Arguments
+    Arguments:
         d1: Dictionary
         d2: Dictionary
 
-    # Returns
+    Returns:
         value: A measure of how much similar values of dictionaries are
     """
     values = []

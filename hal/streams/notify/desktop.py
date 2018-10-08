@@ -6,13 +6,13 @@ import subprocess
 
 def send_notification(app_name, message):
     """
-    # Arguments
+    Arguments:
       app_name: str
     Name of app to show
       message: str
     Details of app to show
 
-    # Returns:
+    Returns:
       void
       Shows notify to screen
     """

@@ -16,11 +16,11 @@ class Plot2d:
         """
         Plots scatter data
 
-        # Arguments
+        Arguments:
             vector_x: vector in x axis
             vector_y: vector in y axis
 
-        # Returns
+        Returns:
             Shows 2d scatter plot
         """
         if len(vector_x) == len(vector_y):
@@ -38,14 +38,14 @@ class Plot2d:
         """
         Plots parametric data
 
-        # Arguments
+        Arguments:
             function_x: function in x value
             function_y: function in y value
             min_val: minimum value
             max_val: maximum value
             points: number of points to display
 
-        # Returns
+        Returns:
             Shows 2d parametric graph of given function from min to max
         """
         if points < 0:
@@ -59,13 +59,13 @@ class Plot2d:
         """
         Plots data
 
-        # Arguments
+        Arguments:
             func: function to plot
             min_val: minimum value
             max_val: maximum value
             points: number of points
 
-        # Returns
+        Returns:
             Plots 2d function
         """
         if points < 0:
@@ -87,12 +87,12 @@ class Plot3d:
         """
         Plots scatter data
 
-        # Arguments
+        Arguments:
             vector_x: vector in x axis
             vector_y: vector in y axis
             vector_z: vector in z axis
 
-        # Returns
+        Returns:
             Plots 3d scattered points
         """
         if len(vector_x) == len(vector_y) == len(vector_z):
@@ -112,7 +112,7 @@ class Plot3d:
         """
         Plots parametric functions
 
-        # Arguments
+        Arguments:
             function_x: function in x
             function_y: function in y
             function_z: function in z
@@ -120,7 +120,7 @@ class Plot3d:
             max_val: maximum
             points: number of points
 
-        # Returns
+        Returns:
             Shows 3d parametric graph of given function from min to max
         """
         if points < 0:
@@ -155,7 +155,7 @@ class Plot3d:
         """
         Plots function
 
-        # Arguments
+        Arguments:
             func: function to plot
             min_x: minimum of x-values
             max_x: maximum of x-values
@@ -164,7 +164,7 @@ class Plot3d:
             max_y: maximum of y-values
             points_y: points in y axis
 
-        # Returns
+        Returns:
             Plots 3d function
         """
         if points_x < 0 or points_y < 0:
@@ -206,13 +206,13 @@ class Plot4d:
         """
         Plots scatter data
 
-        # Arguments
+        Arguments:
             vector_x: vector in x axis
             vector_y: vector in y axis
             vector_z: vector in z axis
             vector_w: vector in w axis
 
-        # Returns
+        Returns:
             Plots 4d scattered points
         """
         if len(vector_x) == len(vector_y) == len(vector_z) == len(vector_w):
@@ -226,7 +226,7 @@ class Plot4d:
         """
         Plots function
 
-        # Arguments
+        Arguments:
             func: function to plot
             min_x: minimum of x-values
             max_x: maximum of x-values
@@ -239,7 +239,7 @@ class Plot4d:
                 and w as "z"-axis contour: x cont -> 3d plot with y,z variables
                 in plane and w colored (Default value = "contour")
 
-        # Returns
+        Returns:
             Plots 4d function
         """
         if precision < 0:
@@ -265,13 +265,13 @@ class Plot4d:
             """
             Set chart labels
 
-            # Arguments
+            Arguments:
                 graph: plot
                label_x: new label on x axis
                 label_y: new label on y axis
                 label_z: new label on z axis
 
-            # Returns
+            Returns:
                 Sets given labels to axes of graph
             """
             graph.set_xlabel(label_x)
@@ -282,10 +282,10 @@ class Plot4d:
             """
             Set chart limits
 
-            # Arguments
+            Arguments:
                 graph: plot
 
-            # Returns
+            Returns:
                 Sets given limits to axes of graph
             """
             graph.set_xlim(min_x, max_x)
@@ -296,11 +296,11 @@ class Plot4d:
             """
             Calculates precision
 
-            # Arguments
+            Arguments:
                 min_val: minimum
                 max_val: maximum
 
-            # Returns
+            Returns:
                 precision: prevision of values
             """
             return int((max_val - min_val) * (1 + precision))
@@ -309,11 +309,11 @@ class Plot4d:
             """
             Calculates precision delta
 
-            # Arguments
+            Arguments:
                 min_val: minimum
                 max_val: maximum
 
-            # Returns
+            Returns:
                 delta: Precision delta
             """
             return float(max_val - min_val) / float(10 * precision)
@@ -335,10 +335,10 @@ class Plot4d:
                 """
                 Updates chart with value
 
-                # Arguments
+                Arguments:
                     val: value
 
-                # Returns
+                Returns:
                     Re-plots
                 """
                 chart.clear()
@@ -374,10 +374,10 @@ class Plot4d:
                 """
                 Updates chart with value
 
-                # Arguments
+                Arguments:
                     val: value
 
-                # Returns
+                Returns:
                     Re-plots
                 """
                 chart.clear()  # re-plot

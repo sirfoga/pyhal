@@ -18,7 +18,7 @@ class CorrelationMatrix:
     def __init__(self, title, headers_to_test, headers, data):
 
         """
-        # Arguments
+        Arguments:
           title: str
         Title to show
           headers_to_test: of str
@@ -28,7 +28,7 @@ class CorrelationMatrix:
           data: of []
         Matrix of float values
 
-        # Returns:
+        Returns:
 
         """
         self.title = title
@@ -39,11 +39,11 @@ class CorrelationMatrix:
     @staticmethod
     def get_correlation_matrix(matrix):
         """
-        # Arguments
+        Arguments:
           matrix: of []
         List of features to get correlation matrix
 
-        # Returns:
+        Returns:
           of []
           correlation matrix
 
@@ -52,11 +52,11 @@ class CorrelationMatrix:
 
     def show_correlation_matrix(self, correlation_matrix):
         """
-        # Arguments
+        Arguments:
           correlation_matrix: of []
         Correlation matrix of features
 
-        # Returns:
+        Returns:
           void
           shows the given correlation matrix as image
 
@@ -75,9 +75,9 @@ class CorrelationMatrix:
         """:return: [] of []
             Correlation matrix of selected columns
 
-        # Arguments
+        Arguments:
 
-        # Returns:
+        Returns:
 
         """
         header_to_column = {}  # create index of headers
@@ -99,11 +99,11 @@ class CorrelationMatrix:
 
     def save_to_file(self, out_file):
         """
-        # Arguments
+        Arguments:
           out_file: str
         Output file
 
-        # Returns:
+        Returns:
           void
           Saves correlation matrix of selected headers
 
@@ -119,11 +119,11 @@ class CorrelationMatrix:
     @staticmethod
     def save_correlation_matrix_of_data_files_in_folder(folder_path):
         """
-        # Arguments
+        Arguments:
           folder_path: str
         Folder containing logs data
 
-        # Returns:
+        Returns:
           void
           Saves each file's correlation matrix of common headers
 

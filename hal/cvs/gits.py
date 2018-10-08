@@ -18,7 +18,7 @@ class Diff:
 
     def __init__(self, diff):
         """
-        # Arguments
+        Arguments:
             diff: Diff between 2 commits
         """
         self.d = diff
@@ -31,7 +31,7 @@ class Diff:
         """
         Calculates otal additions and deletions
 
-        # Returns
+        Returns:
             dictionary: Dictionary with total additions and deletions
         """
         total_added = 0
@@ -56,7 +56,7 @@ class Commit:
 
     def __init__(self, commit):
         """
-        # Arguments
+        Arguments:
              commit:Commit of repository
         """
         self.c = commit
@@ -65,10 +65,10 @@ class Commit:
         """
         Converts to string
 
-        # Arguments
+        Arguments:
             date_format: Format date and times with this format
 
-        # Returns:
+        Returns:
             string: Pretty description of commit
         """
         hash_value = self.c.hexsha
@@ -79,7 +79,7 @@ class Commit:
         """
         Gets author
 
-        # Returns
+        Returns:
             author: author of commit
         """
         author = self.c.author
@@ -99,7 +99,7 @@ class Repository:
 
     def __init__(self, repo_path):
         """
-        # Arguments
+        Arguments:
             repo_path: Path to repository
         """
         self.r = Repo(repo_path)
@@ -108,7 +108,7 @@ class Repository:
         """
         Gets last commit
 
-        # Returns
+        Returns:
             commit: Last commit of repository
         """
         return self.r.head.commit
@@ -117,7 +117,7 @@ class Repository:
         """
         Gets list of total diff
 
-        # Returns
+        Returns:
             list: List of total diff between 2 consecutive commits since start
         """
         diffs = []
@@ -137,11 +137,11 @@ class Repository:
         """
         Calculates total additions and deletions
 
-        # Arguments
+        Arguments:
             commit: First commit
             other_commit: Second commit
 
-        # Returns
+        Returns:
             dictionary: Dictionary with total additions and deletions
         """
         diff = self.r.git.diff(commit.hexsha, other_commit.hexsha)
@@ -151,11 +151,11 @@ class Repository:
         """
         Gets version
 
-        # Arguments
+        Arguments:
             diff_to_increase_ratio:  Ratio to convert number of changes into
                 version increases
 
-        # Returns
+        Returns:
             version: Version of this code, based on commits diffs
         """
         diffs = self.get_diff_amounts()
@@ -170,10 +170,10 @@ class Repository:
         """
         Pretty version
 
-        # Arguments
+        Arguments:
           diff_to_increase_ratio: Ratio to convert number of changes into version increases
 
-        # Returns
+        Returns:
             string: Pretty version of this repository
         """
         version = self.get_version(diff_to_increase_ratio)

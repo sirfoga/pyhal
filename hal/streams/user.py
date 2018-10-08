@@ -32,11 +32,11 @@ class UserInput:
 
     def is_yes(self, answer):
         """
-        # Arguments
+        Arguments:
           answer: str
         User answer
 
-        # Returns:
+        Returns:
           bool
           True iff considered a "yes" answer
 
@@ -47,11 +47,11 @@ class UserInput:
 
     def is_no(self, answer):
         """
-        # Arguments
+        Arguments:
           answer: str
         User answer
 
-        # Returns:
+        Returns:
           bool
           True iff considered a "yes" answer
 
@@ -64,9 +64,9 @@ class UserInput:
         """:return: void
             Prints to stdout help on how to answer properly
 
-        # Arguments
+        Arguments:
 
-        # Returns:
+        Returns:
 
         """
         print("Sorry, not well understood.")
@@ -75,11 +75,11 @@ class UserInput:
 
     def re_ask(self, with_help=True):
         """
-        # Arguments
+        Arguments:
           with_help: bool
         True iff you want to show help on how to answer questions (Default value = True)
 
-        # Returns:
+        Returns:
           void
           Re-asks user the last question
 
@@ -91,11 +91,11 @@ class UserInput:
 
     def get_answer(self, question):
         """
-        # Arguments
+        Arguments:
           question: str
         Question to ask user
 
-        # Returns:
+        Returns:
           str
           User answer
 
@@ -106,11 +106,11 @@ class UserInput:
 
     def get_yes_no(self, question):
         """
-        # Arguments
+        Arguments:
           question: str
         Question to ask user
 
-        # Returns:
+        Returns:
           bool
           User answer
 
@@ -139,7 +139,7 @@ class UserInput:
     def get_number(self, question,
                    min_i=float("-inf"), max_i=float("inf"), just_these=None):
         """
-        # Arguments
+        Arguments:
           question: str
         Question to ask
           min_i: float
@@ -149,7 +149,7 @@ class UserInput:
           just_these: of float
         Accept only these numbers (Default value = None)
 
-        # Returns:
+        Returns:
           float
           User answer
 
@@ -184,7 +184,7 @@ class UserInput:
     def get_list(self, question,
                  splitter=",", at_least=0, at_most=float("inf")):
         """
-        # Arguments
+        Arguments:
           question: str
         Question to ask user
           splitter: str
@@ -195,7 +195,7 @@ class UserInput:
         List must have at most this amount of elements (Default value = float("inf"))
           ": 
 
-        # Returns:
+        Returns:
           User answer
 
         """

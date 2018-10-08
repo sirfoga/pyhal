@@ -13,11 +13,11 @@ MONTHS = {
 
 def parse_hh_mm_ss(string):
     """
-    # Arguments
+    Arguments:
       string: str
     Hours, minutes and seconds in the form hh:mm:ss to parse
 
-    # Returns:
+    Returns:
       datetime.times
       Time parsed
     """
@@ -33,11 +33,11 @@ def parse_hh_mm_ss(string):
 
 def get_seconds(string):
     """
-    # Arguments
+    Arguments:
       string: str
     Datetime in the form %H:%M:%S
 
-    # Returns:
+    Returns:
       int
       Seconds in times
     """
@@ -50,11 +50,11 @@ def get_seconds(string):
 
 def parse_hh_mm(string):
     """
-    # Arguments
+    Arguments:
       string: str
     Hours and minutes in the form hh:mm to parse
 
-    # Returns:
+    Returns:
       datetime.times
       Time parsed
     """

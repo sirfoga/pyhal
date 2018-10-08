@@ -12,21 +12,23 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+import os
+import sys
 
+sys.path.insert(0, os.path.abspath('..'))
+
+import hal
 
 # -- Project information -----------------------------------------------------
 
 project = 'PyHal'
-copyright = '2018, Stefano Fogarollo'
+copyright = 'MMXVIII, Stefano Fogarollo'
 author = 'Stefano Fogarollo'
 
 # The short X.Y version
-version = '10.1'
+version = hal.__version__
 # The full version, including alpha/beta/rc tags
-release = '10.1.4'
+release = hal.__version__
 
 
 # -- General configuration ---------------------------------------------------
@@ -51,7 +53,7 @@ templates_path = ['_templates']
 # You can specify multiple suffix as a list of string:
 #
 # source_suffix = ['.rst', '.md']
-source_suffix = '.md'
+source_suffix = '.rst'
 
 # The master toctree document.
 master_doc = 'index'

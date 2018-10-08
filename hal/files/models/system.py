@@ -64,11 +64,11 @@ PATH_SEPARATOR = "/" if "posix" in os.name else "\\"
 
 def fix_raw_path(path):
     """
-    # Arguments
+    Arguments:
       path: string
     Path to fix
 
-    # Returns:
+    Returns:
       string
       Right path
     """
@@ -86,11 +86,11 @@ def fix_raw_path(path):
 
 def remove_year(name):
     """
-    # Arguments
+    Arguments:
       name: string
     Name to edit
 
-    # Returns:
+    Returns:
       string
       Given string bu with no years.
     """
@@ -105,11 +105,11 @@ def remove_year(name):
 
 def remove_brackets(name):
     """
-    # Arguments
+    Arguments:
       name: string
     Name to edit
 
-    # Returns:
+    Returns:
       string
       Given string bu with no brackets
     """
@@ -126,7 +126,7 @@ def remove_brackets(name):
 
 def extract_name_max_chars(name, max_chars=64, blank=" "):
     """
-    # Arguments
+    Arguments:
       name: string
     Name to edit
       max_chars: int
@@ -134,7 +134,7 @@ def extract_name_max_chars(name, max_chars=64, blank=" "):
       blank: string
     Char that represents the blank between words. (Default value = " ")
 
-    # Returns:
+    Returns:
       string
       Name edited to contain at most max_chars (truncate to nearest word)
     """
@@ -152,13 +152,13 @@ def extract_name_max_chars(name, max_chars=64, blank=" "):
 
 def prettify(name, blank=" "):
     """
-    # Arguments
+    Arguments:
       name: string
     Name to edit
       blank: string
     Default blanks in name.
 
-    # Returns:
+    Returns:
       string
       Prettier name from given one: replace bad chars with good ones.
     """
@@ -192,11 +192,11 @@ def prettify(name, blank=" "):
 
 def is_file(path):
     """
-    # Arguments
+    Arguments:
       path: str
     Path to check
 
-    # Returns:
+    Returns:
       bool
       True iff path is a file
     """
@@ -205,11 +205,11 @@ def is_file(path):
 
 def is_folder(path):
     """
-    # Arguments
+    Arguments:
       path: str
     Path to check
 
-    # Returns:
+    Returns:
       bool
       True iff path is a file
     """
@@ -218,11 +218,11 @@ def is_folder(path):
 
 def get_parent_folder(file_path):
     """
-    # Arguments
+    Arguments:
       file_path: str
     Path to file or folder
 
-    # Returns:
+    Returns:
       str
       Name of folder container
     """
@@ -231,13 +231,13 @@ def get_parent_folder(file_path):
 
 def ls_dir(path, include_hidden=False):
     """
-    # Arguments
+    Arguments:
       path: string
     Path to directory to get list of files and folders
       include_hidden: bool
     Whether to include hidden files in list. (Default value = False)
 
-    # Returns:
+    Returns:
       list
       List of paths in given directory.
     """
@@ -251,13 +251,13 @@ def ls_dir(path, include_hidden=False):
 
 def ls_recurse(path, include_hidden=False):
     """
-    # Arguments
+    Arguments:
       path: string
     Path to directory to get list of files and folders
       include_hidden: bool
     Whether to include hidden files in list. (Default value = False)
 
-    # Returns:
+    Returns:
       list
       List of paths in given directory recursively.
     """
@@ -276,7 +276,7 @@ def ls_recurse(path, include_hidden=False):
 
 def list_content(path, recurse, include_hidden=False):
     """
-    # Arguments
+    Arguments:
       path: string
     Path to directory to get list of files and folders
       recurse: bool
@@ -284,7 +284,7 @@ def list_content(path, recurse, include_hidden=False):
       include_hidden: bool
     Whether to include hidden files in list. (Default value = False)
 
-    # Returns:
+    Returns:
       list
       List of paths in given directory recursively.
     """
@@ -309,9 +309,9 @@ class FileSystem:
         """:return: bool
             True iff path is hidden
 
-        # Arguments
+        Arguments:
 
-        # Returns:
+        Returns:
 
         """
         return self.name.startswith(".")
@@ -334,20 +334,20 @@ class FileSystem:
         """:return: void
             Trash given file/folder
 
-        # Arguments
+        Arguments:
 
-        # Returns:
+        Returns:
 
         """
         send2trash(self.path)
 
     def rename(self, new_path):
         """
-        # Arguments
+        Arguments:
           new_path: string
         New path to use
 
-        # Returns:
+        Returns:
           void
           Rename to new path
 

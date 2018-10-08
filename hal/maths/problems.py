@@ -12,12 +12,12 @@ class EightQueen:
     @staticmethod
     def under_attack(col, queens):
         """
-        # Arguments
+        Arguments:
           col: int
         Column number
           queens: list of queens
 
-        # Returns:
+        Returns:
           bool
           True iff queen is under attack
 
@@ -31,11 +31,11 @@ class EightQueen:
 
     def solve(self, table_size):
         """
-        # Arguments
+        Arguments:
           table_size: int
         Size of table
 
-        # Returns:
+        Returns:
           List of possible solutions
 
         """

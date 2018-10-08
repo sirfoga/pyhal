@@ -12,7 +12,7 @@ class Parser:
 
     def __init__(self, file_path):
         """
-        # Arguments
+        Arguments:
             file_path: a raw .csv file that contains any data
             about anything
         """
@@ -23,7 +23,7 @@ class Parser:
         """
         Gets lines in file
 
-        # Returns:
+        Returns:
             lines: Lines in file
         """
         with open(self.path) as data:
@@ -37,7 +37,7 @@ class CSVParser(Parser):
 
     def __init__(self, file_path, encoding="utf-8"):
         """
-        # Arguments
+        Arguments:
             file_path: a raw .csv file that contains any data
             about anything
             encoding: str
@@ -50,7 +50,7 @@ class CSVParser(Parser):
         """
         Stores values in array, store lines in array.
 
-        # Returns:
+        Returns:
             data: 2D matrix
         """
         data = []
@@ -65,7 +65,7 @@ class CSVParser(Parser):
         """
         Gets headers and data
 
-        # Returns:
+        Returns:
             headers: headers of file
             data: data of file
         """
@@ -76,7 +76,7 @@ class CSVParser(Parser):
         """
         Gets dicts in file
 
-        # Returns:
+        Returns:
             generator; List of dicts with data from .csv file
         """
         reader = csv.DictReader(open(self.path, "r", encoding=self.encoding))

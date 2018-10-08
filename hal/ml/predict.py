@@ -22,13 +22,13 @@ class BasePrediction:
 
     def train(self, x_data, y_data):
         """
-        # Arguments
+        Arguments:
           x_data: data
         Input x
           y_data: data
         Input y
 
-        # Returns:
+        Returns:
           void
           Train model on inputs
 

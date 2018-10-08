@@ -12,16 +12,16 @@ def create_correlation_matrix_plot(correlation_matrix, title, feature_list):
     """
     Creates plot for correlation matrix
 
-    # Arguments
+    Arguments:
         correlation_matrix: Correlation matrix of features
         title: Title of plot
         feature_list: List of names of features
 
-    # Returns
+    Returns:
         Shows the given correlation matrix as image
     """
     chart = SimpleChart(title)
-    ax1 = chart.create()
+    ax1 = chart.get_ax()
 
     ax1.set_xticks(list(range(len(feature_list))))
     ax1.set_xticklabels([feature_list[i] for i in range(len(feature_list))],

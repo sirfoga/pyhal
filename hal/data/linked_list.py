@@ -10,7 +10,7 @@ class Node:
 
     def __init__(self, val, next_node=None):
         """
-        # Arguments
+        Arguments:
             val: Value of node
             next_node: Next node
         """
@@ -23,7 +23,7 @@ class LinkedList:
 
     def __init__(self, lst):
         """
-        # Arguments
+        Arguments:
             lst: List of elements
         """
         self.head = LinkedList.from_list(lst)
@@ -32,7 +32,7 @@ class LinkedList:
         """
         Gets head
 
-        # Returns
+        Returns:
             head: Head of linked list
         """
         return self.head
@@ -41,7 +41,7 @@ class LinkedList:
         """
         Gets tail
 
-        # Returns
+        Returns:
             tail: Tail of linked list
         """
         node = self.head
@@ -57,7 +57,7 @@ class LinkedList:
         """
         Gets length
 
-        # Returns
+        Returns:
             length: How many items in linked list of linked list
         """
         item = self.head
@@ -73,10 +73,10 @@ class LinkedList:
         """
         Appends to list
 
-        # Arguments
+        Arguments:
             val: Object to insert
 
-        # Returns
+        Returns:
             bool: Appends element to last
         """
         return self.insert(val, self.length())
@@ -85,11 +85,11 @@ class LinkedList:
         """
         Insert in position
 
-        # Arguments
+        Arguments:
             val: Object to insert
             at: Index of insertion (Default value = 0)
 
-        # Returns
+        Returns:
             bool: True iff insertion completed successfully
         """
         if at < 0 or at > self.length():
@@ -122,7 +122,7 @@ class LinkedList:
         """
         Removes first
 
-        # Returns
+        Returns:
             bool: True iff head has been removed
         """
         if self.head.next_node is not None:
@@ -135,7 +135,7 @@ class LinkedList:
         """
         Removes last
 
-        # Returns
+        Returns:
             bool: True iff last element has been removed
         """
         node = self.head
@@ -153,10 +153,10 @@ class LinkedList:
         """
         Removes at index
 
-        # Arguments
+        Arguments:
             at: Index of removal
 
-        # Returns
+        Returns:
             bool: True iff removal completed successfully
         """
         if at < 0 or at > self.length():
@@ -187,7 +187,7 @@ class LinkedList:
         """
         Cycle all items and puts them in a list
 
-        # Returns
+        Returns:
             list: list representation
         """
         out = []
@@ -203,10 +203,10 @@ class LinkedList:
         """
         Executes function on each item
 
-        # Arguments
+        Arguments:
             func: Function to execute on each item
 
-        # Returns
+        Returns:
             list: Results of calling the function on each item
         """
         return [
@@ -225,10 +225,10 @@ class LinkedList:
         """
         Parses list
 
-        # Arguments
+        Arguments:
             lst: list of elements
 
-        # Returns
+        Returns:
             LinkedList: Nodes from list
         """
         if not lst:

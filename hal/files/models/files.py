@@ -26,13 +26,13 @@ class Document(FileSystem):
     @staticmethod
     def move_file_to_directory(file_path, directory_path):
         """
-        # Arguments
+        Arguments:
           file_path: string
         Path to file to move
           directory_path: string
         Path to target directory where to move file
 
-        # Returns:
+        Returns:
           void
           Move file to given directory
 
@@ -46,13 +46,13 @@ class Document(FileSystem):
     @staticmethod
     def move_file_to_file(old_path, new_path):
         """
-        # Arguments
+        Arguments:
           old_path: string
         Old path of file to move
           new_path: string
         New path (location) of file
 
-        # Returns:
+        Returns:
           void
           Move file from old location to new one
 
@@ -77,13 +77,13 @@ class Document(FileSystem):
     @staticmethod
     def write_data_to_file(data, out_file):
         """
-        # Arguments
+        Arguments:
           data: string
         Data to write to file.
           out_file: string
         Path to output file.
 
-        # Returns:
+        Returns:
           void
           Writes given data to given path file.
 
@@ -94,11 +94,11 @@ class Document(FileSystem):
     @staticmethod
     def extract_name_extension(file_name):
         """
-        # Arguments
+        Arguments:
           file_name: string
         Name of file
 
-        # Returns:
+        Returns:
           tuple string, string
           Name of file, extension of file
 
@@ -109,9 +109,9 @@ class Document(FileSystem):
         """:return: tuple string, string
             Name of path, name of file (or folder)
 
-        # Arguments
+        Arguments:
 
-        # Returns:
+        Returns:
 
         """
         path = fix_raw_path(os.path.dirname(os.path.abspath(self.path)))
@@ -158,11 +158,11 @@ class Directory(FileSystem):
     @staticmethod
     def create_new(path):
         """
-        # Arguments
+        Arguments:
           path: string
         Path to directory to create
 
-        # Returns:
+        Returns:
           void
           Creates new directory
 
@@ -174,9 +174,9 @@ class Directory(FileSystem):
         """:return: tuple string, string
             Name of path, name of file (or folder)
 
-        # Arguments
+        Arguments:
 
-        # Returns:
+        Returns:
 
         """
         complete_path = os.path.dirname(os.path.abspath(self.path))
@@ -190,9 +190,9 @@ class Directory(FileSystem):
         """:return: Bool
             True iff empty
 
-        # Arguments
+        Arguments:
 
-        # Returns:
+        Returns:
 
         """
         return not os.listdir(self.path)

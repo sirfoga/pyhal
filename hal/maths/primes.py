@@ -34,9 +34,9 @@ class Integer:
         """:return: bool
             Checks if prime in very naive way
 
-        # Arguments
+        Arguments:
 
-        # Returns:
+        Returns:
 
         """
         if self.to_int < 2:
@@ -65,11 +65,11 @@ class Integer:
 
     def test_miller_rabin(self, precision):
         """
-        # Arguments
+        Arguments:
           precision: number of rounds to perform (higher -> better
         precision)
 
-        # Returns:
+        Returns:
           True iff probably prime
 
         """
@@ -112,10 +112,10 @@ class Integer:
 
 def get_prime(bits):
     """
-    # Arguments
+    Arguments:
       bits: size of number to generate (bits)
 
-    # Returns:
+    Returns:
       prime number of given size
     """
     if bits < 0:
@@ -128,13 +128,13 @@ def get_prime(bits):
 
 def blum_blum_shub(seed, amount, prime0, prime1):
     """
-    # Arguments
+    Arguments:
       seed: seeder
       amount: amount of number to generate
       prime0: one prime number
       prime1: the second prime number
 
-    # Returns:
+    Returns:
       pseudo-number generator
     """
     assert amount >= 0  # amount cannot be negative

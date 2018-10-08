@@ -17,17 +17,17 @@ class VersionNumber:
         """
         Gets current set amount
 
-        # Returns
+        Returns:
             amount: Current set amount
         """
         pass
 
     def can_increase(self, amount):
         """
-        # Arguments
+        Arguments:
             amount: Amount to increase
 
-        # Returns
+        Returns:
             bool: True iff this number can be increased by such amount
         """
         return amount <= self.max_amount_allowed()
@@ -37,10 +37,10 @@ class VersionNumber:
         """
         Increase version by this amount
 
-        # Arguments
+        Arguments:
             amount: Increase number by this amount (Default value = 1)
 
-        # Returns
+        Returns:
             bool: True iff increase was successful
         """
         pass
@@ -50,7 +50,7 @@ class VersionNumber:
         """
         Maximizes this version
 
-        # Returns
+        Returns:
         Maximizes this version
         """
         pass
@@ -60,7 +60,7 @@ class VersionNumber:
         """
         Zeroes this number
 
-        # Returns
+        Returns:
         Zeroes this number
         """
         pass
@@ -70,7 +70,7 @@ class VersionNumber:
         """
         Calculates number of increases available
 
-        # Returns
+        Returns:
             increases: Number of increases that can be done before reaching
             maximum
         """
@@ -81,7 +81,7 @@ class VersionNumber:
         """
         Calculates max increases
 
-        # Returns
+        Returns:
             inreases: Number of increases that can be done before reaching
             maximum starting at 0
         """
@@ -150,7 +150,7 @@ class Subsystem(VersionNumber):
 
     def __init__(self, levels, separator="."):
         """
-        # Arguments
+        Arguments:
             levels: Levels in order of importance (from left to right the
                 importance increases). The version number is the reversed
             separator: Compose version number separating with this split
@@ -252,7 +252,7 @@ class Version(VersionNumber):
 
     def __init__(self, start="0.0.0", max_number=9, separator="."):
         """
-        # Arguments
+        Arguments:
             start:  Current version
             max_number: Max number reachable by sub-versions numbers
             separator: Compose version number separating with this split
@@ -290,11 +290,11 @@ class Version(VersionNumber):
         """
         Increase version by amount of changes
 
-        # Arguments
+        Arguments:
           changes_amount: Number of changes done
           ratio: Ratio changes / version increases
 
-        # Returns
+        Returns:
             bool: Increases version accordingly to changes
 
         See also: #increase()
@@ -306,7 +306,7 @@ class Version(VersionNumber):
         """
         Maximizes this version
 
-        # Returns
+        Returns:
         Maximizes this version
         """
         return self.s.maximize()
@@ -322,12 +322,12 @@ class Version(VersionNumber):
         """
         Parses string
 
-        # Arguments
+        Arguments:
           string: Version
           max_number: Max number reachable by sub-versions numbers
           separator: Version numbers are separated with this split
 
-        # Returns
+        Returns:
             version: Parses string and returns object
         """
         tokens = string.split(separator)

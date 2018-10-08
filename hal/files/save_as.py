@@ -11,7 +11,7 @@ class FileSaver:
 
     def __init__(self, output_file):
         """
-        # Arguments
+        Arguments:
             output_file: Path to output file to write data
         """
         self.path = output_file
@@ -20,11 +20,11 @@ class FileSaver:
         """
         Saves .csv file with posts data
 
-        # Arguments
+        Arguments:
             dicts: Dictionaries with same values
             output_file: Path to output file to write data
 
-        # Returns:
+        Returns:
             Saves .csv file with posts data
         """
         csv_headers = sorted(dicts[0].keys())
@@ -37,7 +37,7 @@ class FileSaver:
 
     def write_matrix_to_csv(self, headers, data):
         """
-        # Arguments
+        Arguments:
           headers: of str
         Column names
           data: matrix ([] of [])
@@ -45,7 +45,7 @@ class FileSaver:
           output_file: str
         Path to output file to write data
 
-        # Returns:
+        Returns:
           void
           Saves .csv file with data
         """
@@ -56,13 +56,13 @@ class FileSaver:
 
     def write_dicts_to_json(self, data):
         """
-        # Arguments
+        Arguments:
           data: list of {} or {}
         Data to write
           output_file: str
         Path to output file
 
-        # Returns:
+        Returns:
           void
           Saves output file as .json
         """
