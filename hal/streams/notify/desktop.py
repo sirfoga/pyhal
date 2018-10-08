@@ -1,6 +1,4 @@
-# !/usr/bin/python3
-# coding: utf-8
-
+# -*- coding: utf-8 -*-
 """ Sends desktop notify with notify-send tool """
 
 import subprocess

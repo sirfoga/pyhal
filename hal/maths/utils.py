@@ -1,6 +1,4 @@
-# !/usr/bin/python3
-# coding: utf-8
-
+# -*- coding: utf-8 -*-
 """ Tools realtive to maths """
 
 

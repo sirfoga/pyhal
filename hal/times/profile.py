@@ -1,6 +1,4 @@
-# !/usr/bin/python3
-# coding: utf-8
-
+# -*- coding: utf-8 -*-
 
 """ Tired of formatting ETA times? This is just for you """
 

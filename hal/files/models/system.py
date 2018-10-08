@@ -1,6 +1,4 @@
-# !/usr/bin/python3
-# coding: utf-8
-
+# -*- coding: utf-8 -*-
 
 """ File system utils, renaming and parsing """
 

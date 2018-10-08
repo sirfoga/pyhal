@@ -1,6 +1,4 @@
-# !/usr/bin/python3
-# coding: utf-8
-
+# -*- coding: utf-8 -*-
 """ Correlate values in arrays producing fancy good-looking matrices """
 
 import os

@@ -1,6 +1,4 @@
-# !/usr/bin/python3
-# coding: utf-8
-
+# -*- coding: utf-8 -*-
 
 """ Create easily bar charts """
 
@@ -16,11 +14,11 @@ def setup_chart(title, bottom=None):
     """
     Setups chart
 
-    # Arguments
+    Args:
         title: Title of chart
         bottom: Bottom margin (Default value = None)
 
-    # Returns:
+    Returns:
         axis: Chart axis
     """
     chart = SimpleChart(title)
@@ -34,13 +32,13 @@ def create_bar_chart(title, x_labels, y_values, y_label):
     """
     Creates bar char
 
-    # Arguments
+    # Args:
         title: Title of chart
         x_labels: Names for each variable
         y_values: Values of x labels
         y_label: Label of y axis
 
-    # Returns
+    # Returns:
         chart: Bar chart
     """
     ax1 = setup_chart(title, bottom=0.25)
@@ -60,7 +58,7 @@ def create_multiple_bar_chart(title, x_labels, mul_y_values, mul_y_labels,
     """
     Creates bar chart with multiple lines
 
-    # Arguments
+    Args:
         title: Title of chart
         x_labels: Names for each variable
         mul_y_values: list of values of x labels
@@ -109,7 +107,7 @@ def create_sym_log_bar_chart(title, x_labels, y_values, y_label):
     """
     Creates bar chart (log version)
 
-    # Arguments
+    Args:
         title: Title of chart
         x_labels: Names for each variable
         y_values: Values of x labels

@@ -1,6 +1,4 @@
-# !/usr/bin/python3
-# coding: utf-8
-
+# -*- coding: utf-8 -*-
 """ Various utilities to deal with MondoDB databases """
 
 from pymongo import MongoClient
