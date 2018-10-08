@@ -24,39 +24,27 @@ class AppCronLock:
 
     def set_update_interval(self, days=7):
         """
+        Sets app interval update
+
         Arguments:
-          days: int
-        Days between 2 consecutive app updates (Default value = 7)
-
-        Returns:
-          void
-          Sets app interval update
-
+            days: Days between 2 consecutive app updates (Default value = 7)
         """
         self.update_interval = days
 
     def can_proceed(self):
-        """:return: bool
-            True iff app is not locked and times since last update < app
+        """
+        Checks whether app can proceed
+
+        Returns: True iff app is not locked and times since last update < app
             update interval
-
-        Arguments:
-
-        Returns:
-
         """
         now = datetime.datetime.now()
         return now >= self.last_update + \
                       datetime.timedelta(days=self.update_interval)
 
     def parse_lock(self):
-        """:return: {}
-            Details about last update
-
-        Arguments:
-
-        Returns:
-
+        """
+        Returns: Details about last update
         """
         try:
             with open(self.lock_file, "r") as reader:

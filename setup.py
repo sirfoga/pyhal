@@ -1,10 +1,11 @@
-# !/usr/bin/python3
-# coding: utf_8
+#!/usr/bin/env python
 
-""" Setups library and install dependencies """
-
+import os
 
 from setuptools import setup, find_packages
+
+here = os.path.abspath(os.path.dirname(__file__))
+
 
 LITTLE_DESCRIPTION = "Your swiss knife to perform fast and easy pythonic stuff"
 DESCRIPTION = \

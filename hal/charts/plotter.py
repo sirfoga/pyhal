@@ -267,7 +267,7 @@ class Plot4d:
 
             Arguments:
                 graph: plot
-               label_x: new label on x axis
+                label_x: new label on x axis
                 label_y: new label on y axis
                 label_z: new label on z axis
 

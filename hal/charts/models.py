@@ -25,7 +25,8 @@ class SimpleChart:
         plt.title(title)
         plt.grid(grid)
 
-    def setup(self, bottom):
+    @staticmethod
+    def setup(bottom):
         """
         Setups bottom margin
 

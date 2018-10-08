@@ -42,8 +42,9 @@ release = hal.__version__
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
+    'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
-    'sphinx.ext.githubpages',
+    'sphinx.ext.viewcode',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -71,7 +72,7 @@ language = None
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = None
+pygments_style = 'flask_theme_support.FlaskyStyle'
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -85,12 +86,22 @@ html_theme = 'alabaster'
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
-
+html_theme_options = {
+    'show_powered_by': False,
+    'github_user': 'sirfoga',
+    'github_repo': 'pyhaò',
+    'github_banner': True,
+    'show_related': False,
+    'note_bg': '#FFF59C'
+}
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+# If true, SmartyPants will be used to convert quotes and dashes to
+# typographically correct entities.
+html_use_smartypants = False
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
@@ -100,7 +111,22 @@ html_static_path = ['_static']
 # default: ``['localtoc.html', 'relations.html', 'sourcelink.html',
 # 'searchbox.html']``.
 #
-# html_sidebars = {}
+# todo
+# html_sidebars = {
+#     'index':    ['sidebarintro.html', 'sourcelink.html', 'searchbox.html',
+#                  'hacks.html'],
+#     '**':       ['sidebarlogo.html', 'localtoc.html', 'relations.html',
+#                  'sourcelink.html', 'searchbox.html', 'hacks.html']
+# }
+
+# If true, links to the reST sources are added to the pages.
+html_show_sourcelink = False
+
+# If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
+html_show_sphinx = False
+
+# If true, "(C) Copyright ..." is shown in the HTML footer. Default is True.
+html_show_copyright = True
 
 
 # -- Options for HTMLHelp output ---------------------------------------------
@@ -164,6 +190,9 @@ texinfo_documents = [
 
 # Bibliographic Dublin Core info.
 epub_title = project
+epub_author = author
+epub_publisher = author
+epub_copyright = copyright
 
 # The unique identifier of the text. This can be a ISBN number
 # or the project homepage.
@@ -184,3 +213,8 @@ epub_exclude_files = ['search.html']
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
+
+intersphinx_mapping = {
+    'python': ('https://docs.python.org/3/', None),
+    'urllib3': ('https://urllib3.readthedocs.io/en/latest', None),
+}
