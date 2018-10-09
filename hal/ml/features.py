@@ -28,7 +28,7 @@ class FeatureSelect:
         return x_new
 
     def get_best(self):
-        """:return: tuple
+        """:returns: tuple
             Finds the optimal number of features
 
         """

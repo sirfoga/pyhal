@@ -30,7 +30,7 @@ def battery_test(assert_type, tests, func, args=None):
 
 
 def random_name():
-    """:return: str
+    """:returns: str
         Pseudo-random name
 
     """

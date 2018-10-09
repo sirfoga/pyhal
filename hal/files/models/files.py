@@ -15,23 +15,18 @@ class Document(FileSystem):
 
     def __init__(self, path):
         """
-        :param path: string
-            Path to file
+        :param path: Path to file
         """
         super().__init__(path)
-
         self.root_path, self.full_name = self.get_path_name()
         self.name, self.extension = os.path.splitext(self.full_name)
 
     @staticmethod
     def move_file_to_directory(file_path, directory_path):
         """
-        :param file_path: string
-        :param Path: to file to move
-        :param directory_path: string
-        :param Path: to target directory where to move file
-        :returns: void
-          Move file to given directory
+        Moves file to given directory
+        :param file_path: path to file to move
+        :param directory_path: path to target directory where to move file
         """
         file_name = os.path.basename(file_path)  # get name of file
         if not os.path.exists(directory_path):
@@ -42,12 +37,9 @@ class Document(FileSystem):
     @staticmethod
     def move_file_to_file(old_path, new_path):
         """
-        :param old_path: string
-        :param Old: path of file to move
-        :param new_path: string
-        :param New: path
-        :returns: void
-          Move file from old location to new one
+        Moves file from old location to new one
+        :param old_path: path of file to move
+        :param new_path: new path
         """
         try:
             os.rename(old_path, new_path)
@@ -55,26 +47,19 @@ class Document(FileSystem):
             old_file = os.path.basename(old_path)
             target_directory, target_file = os.path.dirname(
                 os.path.abspath(new_path)), os.path.basename(new_path)
-            try:
-                Document.move_file_to_directory(
-                    old_path,
-                    target_directory
-                )  # move old file to new directory, change name to new name
-                os.rename(os.path.join(target_directory, old_file),
-                          os.path.join(target_directory, target_file))
-            except:
-                print("[CRITICAL]", "Failed renaming", old_path, ">>",
-                      new_path)
+            Document.move_file_to_directory(
+                old_path,
+                target_directory
+            )  # move old file to new directory, change name to new name
+            os.rename(os.path.join(target_directory, old_file),
+                      os.path.join(target_directory, target_file))
 
     @staticmethod
     def write_data_to_file(data, out_file):
         """
-        :param data: string
-        :param Data: to write to file
-        :param out_file: string
-        :param Path: to output file
-        :returns: void
-          Writes given data to given path file.
+        Writes given data to given path file
+        :param data: data to write to file
+        :param out_file: path to output file
         """
         with open(out_file, "w") as out_f:
             out_f.write(data)
@@ -82,43 +67,47 @@ class Document(FileSystem):
     @staticmethod
     def extract_name_extension(file_name):
         """
-        :param file_name: string
-        :param Name: of file
-        :returns: tuple string, string
-          Name of file, extension of file
+        Gets name and extension of file
+        :param file_name: Name of file
+        :returns: Name of file, extension of file
         """
         return os.path.splitext(file_name)
 
     def get_path_name(self):
-        """:return: tuple string, string
-            Name of path, name of file (or folder)
-
+        """
+        Gets path and name of song
+        :returns: Name of path, name of file (or folder)
         """
         path = fix_raw_path(os.path.dirname(os.path.abspath(self.path)))
         name = os.path.basename(self.path)
         return path, name
 
     def is_video(self):
-        """:return: True iff document is a video."""
+        """Checks if file is video
+        :returns: True iff document is a video."""
         return self.extension.lower() in VIDEO_FORMAT
 
     def is_subtitle(self):
-        """:return: True iff document is a subtitle."""
+        """Checks if file is subtitle
+        :returns: True iff document is a subtitle."""
 
         return self.extension.lower() in SUBTITLE_FORMAT
 
     def is_text(self):
-        """:return: True iff document is a text file."""
+        """Checks if file is text
+        :returns: True iff document is a text file."""
 
         return self.extension.lower() in TEXT_FORMAT
 
     def is_image(self):
-        """:return: True iff document is an image."""
+        """Checks if file is image
+        :returns: True iff document is an image."""
 
         return self.extension.lower() in IMAGE_FORMAT
 
     def is_audio(self):
-        """:return: True iff document is an audio."""
+        """Checks if file is audio
+        :returns: True iff document is an audio."""
 
         return self.extension.lower() in AUDIO_FORMAT
 
@@ -128,28 +117,24 @@ class Directory(FileSystem):
 
     def __init__(self, path):
         """
-        :param path: string
-            Path to file
+        :param path: Path to file
         """
         super().__init__(fix_raw_path(path))
-
         self.root_path, self.name = self.get_path_name()
 
     @staticmethod
     def create_new(path):
         """
-        :param path: string
-        :param Path: to directory to create
-        :returns: void
-          Creates new directory
+        Creates new directory
+        :param path: path to directory to create
         """
         if not os.path.exists(path):
             os.makedirs(path)
 
     def get_path_name(self):
-        """:return: tuple string, string
-            Name of path, name of file (or folder)
-
+        """
+        Gets path and name of file
+        :returns: Name of path, name of file (or folder)
         """
         complete_path = os.path.dirname(os.path.abspath(self.path))
         name = self.path.replace(complete_path + PATH_SEPARATOR, "")
@@ -159,8 +144,7 @@ class Directory(FileSystem):
         return complete_path, name
 
     def is_empty(self):
-        """:return: Bool
-            True iff empty
-
+        """Checks if folder is empty
+        :returns: BTrue iff empty
         """
         return not os.listdir(self.path)

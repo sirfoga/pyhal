@@ -12,12 +12,9 @@ from hal.files.models.system import list_content
 
 def find_songs(folder, recursive):
     """
-    :param folder: str
-    :param Path:
-    :param recursive: bool
-    :param True: iff want to search recursively
-    :returns: generator of MP3Song
-      List of paths of the songs in folder
+    :param folder: folder path
+    :param recursive: True  want to search recursively
+    :returns: (generator of) paths of the songs in folder
     """
     paths = list_content(folder, recursive)
     for p in paths:
@@ -26,36 +23,32 @@ def find_songs(folder, recursive):
 
 
 class MP3Song(FileSystem):
-    """mp3 song"""
+    """.mp3 song"""
 
     @staticmethod
     def is_valid_mp3(path):
         """
-        :param path: str
-        :param Path: to candidate
-        :returns: bool
-          True iff song is MP3 encoded
+        :param path: candidate
+        :returns: True iff song is MP3 encoded
         """
         try:
             MP3(path)
             return True
-        except Exception as e:
+        except:
             return False
 
     def __init__(self, path):
         """
-        :param path: str
-            Location of .mp3 file
+        :param path: Location of .mp3 file
         """
         super().__init__(path)
-
         self.song = MP3(self.path, ID3=ID3)
         self.tags = self.song.tags
 
     def get_details(self):
-        """:return: {}
-            Dictionary with songs details about title, artist, album and year
-
+        """
+        Finds songs details
+        :returns: Dictionary with songs details about title, artist, album and year
         """
         title = str(self.get_title()).strip()
         artist = str(self.get_artist()).strip()
@@ -69,126 +62,104 @@ class MP3Song(FileSystem):
             "year": year
         }
 
-    # setters
+    def _set_attr(self, attribute):
+        """
+        Sets attribute of song
+        :param attribute: Attribute to save
+        :return: True iff operation completed
+        """
+
+        try:
+            self.tags.add(attribute)
+            self.song.save()
+        except:
+            return False
 
     def set_title(self, name):
         """
-        :param name: str
-        :param Song: s title
-        :returns: void
-          Sets song's title
+        Sets song's title
+        :param name: title
         """
-        self.tags.add(TIT2(encoding=3, text=name.decode('utf-8')))
-        self.song.save()
+        self._set_attr(TIT2(encoding=3, text=name.decode('utf-8')))
 
     def set_artist(self, artist):
         """
-        :param artist: str
-        :param Song: s artist
-        :returns: void
-          Sets song's artist
+        Sets song's artist
+        :param artist: artist
         """
-        self.tags.add(TPE1(encoding=3, text=artist.decode('utf-8')))
-        self.song.save()
+        self._set_attr(TPE1(encoding=3, text=artist.decode('utf-8')))
 
     def set_album(self, album):
         """
-        :param album: str
-        :param Song: s album
-        :returns: void
-          Sets song's albu
+        Sets song's album
+        :param album: album
         """
-        self.tags.add(TALB(encoding=3, text=album.decode('utf-8')))
-        self.song.save()
+        self._set_attr(TALB(encoding=3, text=album.decode('utf-8')))
 
     def set_nr_track(self, nr_track):
         """
-        :param nr_track: int
-        :param Number: of track
-        :returns: void
-          Sets song's track number
+        Sets song's track numb
+        :param nr_track: # of track
         """
-        self.tags.add(TRCK(encoding=3, text=str(nr_track)))
-        self.song.save()
+        self._set_attr(TRCK(encoding=3, text=str(nr_track)))
 
     def set_year(self, year):
         """
-        :param year: int
-        :param Year: of song
-        :returns: void
-          Sets song's year
+        Sets song's year
+        :param year: year
         """
-        self.tags.add(TDRC(encoding=3, text=str(year)))
-        self.song.save()
+        self._set_attr(TDRC(encoding=3, text=str(year)))
 
     def set_genre(self, genre):
         """
-        :param genre: str
-        :param Genre: of song
-        :returns: void
-          Sets song's genre
+        Sets song's genre
+        :param genre: genre
         """
-        self.tags.add(TCON(encoding=3, text=str(genre)))
-        self.song.save()
+        self._set_attr(TCON(encoding=3, text=str(genre)))
 
-    # getters
+    def _get_attr(self, key):
+        """
+        Gets attribute of song
+        :param key: Name of attribute to get
+        :return: Attribute
+        """
+        try:
+            return self.tags.get(key).text[0]
+        except:
+            return None
 
     def get_title(self):
-        """:return: str
-            Gets song's title
-
+        """Gets song's title
+        :returns: title
         """
-        try:
-            return self.tags.get("TIT2").text[0]
-        except Exception:
-            return None
+        return self._get_attr("TIT2")
 
     def get_artist(self):
-        """:return: str
-            Gets song's artist
-
+        """Gets song's artist
+        :returns: artist
         """
-        try:
-            return self.tags.get("TPE1").text[0]
-        except Exception:
-            return None
+        return self._get_attr("TPE1")
 
     def get_album(self):
-        """:return: str
-            Gets song's albu
-
+        """Gets song's albu
+        :returns: album
         """
-        try:
-            return self.tags.get("TALB").text[0]
-        except Exception:
-            return None
+        return self._get_attr("TALB")
 
     def get_nr_track(self):
-        """:return: str
-            Gets song's track number
-
+        """Gets song's track number
+        :returns: # of track
         """
-        try:
-            return self.tags.get("TRCK").text[0]
-        except Exception:
-            return None
+        return self._get_attr("TRCK")
 
     def get_year(self):
-        """:return: str
-            Gets song's year
-
+        """Gets song's year
+        :returns: year
         """
-        try:
-            return self.tags.get("TDRC").text[0]
-        except Exception:
-            return None
+        return self._get_attr("TDRC")
 
     def get_genre(self):
-        """:return: str
-            Gets song's genre
-
+        """Gets song's genre
+        :returns: genre
         """
-        try:
-            return self.tags.get("TCON").text[0]
-        except Exception:
-            return None
+        return self._get_attr("TCON")

@@ -53,7 +53,6 @@ class UserInput:
         return no_sim > yes_sim and no_sim > self.THRESHOLD_INPUT
 
     def show_help(self):
-        """:return: void
             Prints to stdout help on how to answer properly
 
         """
@@ -65,7 +64,6 @@ class UserInput:
         """
         :param with_help: bool
         :param True: iff you want to show help on how to answer questions
-        :returns: void
           Re-asks user the last question
         """
         if with_help:

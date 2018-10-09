@@ -4,10 +4,7 @@
 
 import getpass
 import os
-import random
-import sys
 
-from hal.files.models import Document
 from hal.maths import primes
 from times import time
 
@@ -21,7 +18,7 @@ class EightQueenTest:
 
     @staticmethod
     def welcome():
-        """:return: string
+        """:returns: string
             Welcomes user to this test sessions
 
         """
@@ -36,7 +33,7 @@ class EightQueenTest:
 
     @staticmethod
     def introduction():
-        """:return: string
+        """:returns: string
             Welcomes user to this test sessions
 
         """
@@ -74,14 +71,12 @@ class EightQueenTest:
         """
         :param string: string
         :param Stuff: to print
-        :returns: void
           Prints to stdout and updates log
         """
         print(string)  # update stdout
         self.benchmark += "\n" + string  # update log
 
     def start(self):
-        """:return: void
             Starts profiling
 
         """

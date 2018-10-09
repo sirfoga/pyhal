@@ -25,8 +25,7 @@ class BasePrediction:
         :param x_data: data
         :param Input: 
         :param y_data: data
-        :param Input: 
-        :returns: void
+        :param Input:
           Train model on inputs
         """
         x_train, _, y_train, _ = train_test_split(

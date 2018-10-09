@@ -45,7 +45,6 @@ class CorrelationMatrix:
         """
         :param correlation_matrix: of
         :param Correlation: matrix of features
-        :returns: void
           shows the given correlation matrix as image
         """
         cr_plot.create_correlation_matrix_plot(
@@ -59,7 +58,7 @@ class CorrelationMatrix:
         self.show_correlation_matrix(correlation_matrix)
 
     def get_correlation_matrix_of_columns(self):
-        """:return: [] of []
+        """:returns: [] of []
             Correlation matrix of selected columns
 
         """
@@ -84,7 +83,6 @@ class CorrelationMatrix:
         """
         :param out_file: str
         :param Output: file
-        :returns: void
           Saves correlation matrix of selected headers
         """
         correlation_matrix = self.get_correlation_matrix_of_columns()
@@ -100,7 +98,6 @@ class CorrelationMatrix:
         """
         :param folder_path: str
         :param Folder: containing logs data
-        :returns: void
           Saves each file's correlation matrix of common headers
         """
         output_folder = os.path.join(folder_path, "output-" + str(int(time())))

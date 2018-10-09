@@ -51,7 +51,7 @@ class SqlTable:
                     self.data[i][j] = str(self.data[i][j])
 
     def _calculate_optimal_column_widths(self):
-        """:return: [] of int
+        """:returns: [] of int
             Length of longest data in each column (labels and data)
 
         """

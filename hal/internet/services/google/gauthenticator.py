@@ -35,7 +35,7 @@ class GoogleApiOAuth:
         self.store = Storage(user_credentials_path)
 
     def get_new_user_credentials(self):
-        """:return: credentials
+        """:returns: credentials
             New user credentials file upon user prompt
 
         """
@@ -45,7 +45,7 @@ class GoogleApiOAuth:
         return tools.run_flow(flow, self.store)
 
     def get_user_credentials(self):
-        """:return: string
+        """:returns: string
             User credentials created via OAuth
 
         """

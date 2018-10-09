@@ -31,7 +31,7 @@ class Integer:
         self.to_string = string
 
     def is_naive_prime(self):
-        """:return: bool
+        """:returns: bool
             Checks if prime in very naive way
 
         """
@@ -43,7 +43,7 @@ class Integer:
         return self.to_int in LOW_PRIMES
 
     def is_probably_prime(self):
-        """:return: test with miller-rabin"""
+        """:returns: test with miller-rabin"""
 
         if not self.is_naive_prime():
             if self.to_int in LOW_PRIMES:

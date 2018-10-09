@@ -53,7 +53,6 @@ class AppCronLock:
             self.parse_lock()
 
     def write_lock(self, last_update=datetime.datetime.now()):
-        """:return: void
             Writes lock file
         :param last_update: Default value
         """

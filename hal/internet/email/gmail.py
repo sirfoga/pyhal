@@ -29,7 +29,7 @@ class GMailApiOAuth(GoogleApiOAuth):
         )
 
     def create_driver(self):
-        """:return: driver
+        """:returns: driver
             GMail API driver
 
         """
@@ -62,7 +62,6 @@ def send_email(sender, msg, driver):
     :param Message: to send to me
     :param driver: GMailApiOAuth driver
     :param GMail: authenticator
-    :returns: void
       Sends email to me with this message
     """
     driver.users().messages().send(

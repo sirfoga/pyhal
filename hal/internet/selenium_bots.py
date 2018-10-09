@@ -18,7 +18,6 @@ class SeleniumForm:
         :param Name: of field to fill
         :param field_value: string
         :param Value: with which to fill field
-        :returns: void
           Fill given field with given value.
         """
         browser.execute_script(
@@ -39,7 +38,6 @@ class SeleniumForm:
         :param Password: of user to login
         :param user_password_field: string
         :param Name: of field to fill with user password
-        :returns: void
           Form filled with given information
         """
         SeleniumForm.fill_form_field(browser, username_field,
@@ -54,7 +52,6 @@ class SeleniumForm:
         :param Browser: to use to submit form
         :param button_name: string
         :param Name: of button to press to submit form
-        :returns: void
           Submit form.
         """
         browser.execute_script(

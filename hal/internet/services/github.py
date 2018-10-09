@@ -2,13 +2,6 @@
 
 """ Common classes and entities in Github """
 
-import json
-
-import requests
-from bs4 import BeautifulSoup
-
-from internet.utils import add_params_to_url
-
 GITHUB_URL = "https://github.com"
 API_URL = "https://api.github.com/"  # Github api url
 GITHUB_TOKEN = None
@@ -64,7 +57,7 @@ class GithubRawApi:
         """
         :param key: str
             Dictionary key to find specific user field
-        :return: str
+        :returns: str
             Dictionary value of given key
         """
         if self.api_content is None:  # update API content
@@ -76,7 +69,6 @@ class GithubRawApi:
             return None
 
     def _get_api_content(self):
-        """:return: void
             Updates class api content by calling Github api and storing result
 
         """
@@ -93,7 +85,6 @@ class GithubRawApi:
     def add_params_to_url(self, params):
         """Arguments:
         :param params:
-        :returns: void
           Adds params to url
         """
         self.api_url = add_params_to_url(self.api_url, params)
@@ -152,7 +143,7 @@ class GithubUser(GithubApi):
         self.api_url += "/" + self.username
 
     def get_email(self):
-        """:return: str
+        """: returns: str
             Email of user
 
         """
@@ -171,7 +162,9 @@ class GithubUser(GithubApi):
 
     @staticmethod
     def _get_repos(url):
-        """:return: [] of GithubUserRepository
+        """: returns: []
+of
+GithubUserRepository
             List of repositories in given url
         :param url:
         """
@@ -198,7 +191,9 @@ class GithubUser(GithubApi):
         return repos_list
 
     def get_repos(self):
-        """:return: [] of GithubUserRepository
+        """: returns: []
+of
+GithubUserRepository
             List of public user repositories
 
         """
@@ -206,7 +201,9 @@ class GithubUser(GithubApi):
         return self._get_repos(url)
 
     def get_all_repos(self):
-        """:return: [] of GithubUserRepository
+        """: returns: []
+of
+GithubUserRepository
             List of all user repositories (public, orgs and private)
 
         """
@@ -218,7 +215,9 @@ class GithubUser(GithubApi):
         return self._get_repos(url)
 
     def get_starred_repos(self):
-        """:return: [] of GithubUserRepository
+        """: returns: []
+of
+GithubUserRepository
             List of starred repositories
 
         """
@@ -245,7 +244,7 @@ class GithubUser(GithubApi):
         return repos_list
 
     def get_trending_daily_not_starred(self):
-        """:return: []
+        """: returns: []
             List of daily-trending repositories which are not starred by user
 
         """

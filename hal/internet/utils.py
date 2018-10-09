@@ -15,7 +15,6 @@ def add_params_to_url(url, params):
     Url to add params to
     :param url:
     :param params:
-    :returns: void
       Adds params to url
     """
     url_parts = list(urlparse.urlparse(url))  # get url parts

@@ -11,8 +11,6 @@ from urllib.parse import urljoin
 
 import requests
 from bs4 import BeautifulSoup
-from stem import Signal
-from stem.control import Controller
 
 USER_AGENTS = [
     "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.19 ("
@@ -149,23 +147,23 @@ class Webpage:
         return parsed
 
     def get_scheme(self):
-        """:return: get scheme (HTTP, HTTPS, FTP ..) from given url"""
+        """:returns: get scheme (HTTP, HTTPS, FTP ..) from given url"""
 
         return urllib.request.urlparse(self.url).scheme
 
     def get_hostname(self):
-        """:return: extract hostname from given url"""
+        """:returns: extract hostname from given url"""
 
         return urllib.request.urlparse(self.url).hostname
 
     def get_domain(self):
-        """:return: get domain from given url"""
+        """:returns: get domain from given url"""
 
         return "{uri.scheme}://{uri.netloc}/".format(
             uri=urllib.request.urlparse(self.url))
 
     def get_html_source(self):
-        """:return: str
+        """:returns: str
             HTML source of webpage
 
         """
@@ -199,7 +197,6 @@ class Webpage:
         """
         :param n_times: int
         :param Times: to open webpage in browser
-        :returns: void
           Open a web-driver and go to webpage
         """
         for _ in range(n_times):
@@ -212,7 +209,6 @@ def download_url(url, local_file):
     :param Url: to download
     :param local_file: string
     :param Save: url as this path
-    :returns: void
       Download link to local file
     """
     downloader = urllib.request.URLopener()
@@ -230,7 +226,6 @@ def download_to_file(url, local_file, headers=HEADERS, cookies=None,
     :param cookies: Cookies to fetch url
     :param chunk_size: int
     :param Download: file in this specific chunk size
-    :returns: void
       Download link to local file
     """
     if not cookies:
@@ -255,7 +250,6 @@ def get_tor_session():
 
 
 def renew_connection(password):
-    """:return: void
         signal TOR for a new connection
     :param password:
     """

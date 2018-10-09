@@ -14,14 +14,14 @@ class DbBrowser:
         self.db = self.client[db_name]
 
     def get_collection_names(self):
-        """:return: [] of str
+        """:returns: [] of str
             List of names of all collections
 
         """
         return self.db.collection_names()
 
     def get_documents_count(self):
-        """:return: int
+        """:returns: int
             Number of documents in db
 
         """

@@ -19,7 +19,7 @@ def divide(numerator, denominator):
     Handles errors of division
     :param numerator: Numerator
     :param denominator: Denominator
-    :return: division value
+    :returns: division value
     """
 
     try:
