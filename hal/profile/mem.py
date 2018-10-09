@@ -12,7 +12,6 @@ def get_memory_usage():
     """:return: float
         MB of memory used by this process
 
-
     """
     process = psutil.Process(os.getpid())
     mem = process.memory_info().rss
@@ -22,7 +21,6 @@ def get_memory_usage():
 def force_garbage_collect():
     """:return: void
         Releases memory used
-
 
     """
     gc.collect()

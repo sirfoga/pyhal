@@ -22,7 +22,6 @@ def battery_test(assert_type, tests, func, args=None):
     :param args:  (Default value = None)
     :returns: bool
       True iff all tests pass
-
     """
     if args is None:
         args = {}
@@ -34,7 +33,6 @@ def battery_test(assert_type, tests, func, args=None):
 def random_name():
     """:return: str
         Pseudo-random name
-
 
     """
     return str(uuid.uuid4())

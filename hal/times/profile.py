@@ -16,7 +16,6 @@ def get_time_eta(total_done, total, start_time):
     :param Time: of start processing items
     :returns: times
       Time to go
-
     """
     time_done = int(time()) - start_time
     try:
@@ -58,7 +57,6 @@ def print_time_eta(time_to_go, note=""):
     :param Notes: to append to stdout
     :returns: void
       Prints debug info to screen
-
     """
     print(
         str(note),

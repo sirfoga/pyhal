@@ -13,7 +13,6 @@ def send_notification(app_name, message):
     :param Details: of app to show
     :returns: void
       Shows notify to screen
-
     """
     subprocess.call([
         "notify-send",

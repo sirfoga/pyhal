@@ -26,7 +26,6 @@ class Parser:
         :returns: Lines in file
 
         :rtype: lines
-
         """
         with open(self.path) as data:
             self.lines = data.readlines()  # store data in arrays
@@ -55,7 +54,6 @@ class CSVParser(Parser):
         :returns: 2D matrix
 
         :rtype: data
-
         """
         data = []
         with open(self.path, encoding=self.encoding) as csv_file:
@@ -72,7 +70,6 @@ class CSVParser(Parser):
         :returns: headers of file
 
         :rtype: headers
-
         """
         data = self.get_matrix()
         return data[0], data[1:]  # headers, data
@@ -82,7 +79,6 @@ class CSVParser(Parser):
 
 
         :returns: generator; List of dicts with data from .csv file
-
         """
         reader = csv.DictReader(open(self.path, "r", encoding=self.encoding))
         for row in reader:

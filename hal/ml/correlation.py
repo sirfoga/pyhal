@@ -16,9 +16,7 @@ from times import time
 
 class CorrelationMatrix:
     def __init__(self, title, headers_to_test, headers, data):
-
         """
-
         :param title: str
         :param Title: to show
         :param headers_to_test: of str
@@ -27,7 +25,6 @@ class CorrelationMatrix:
         :param List: of all headers in matrix
         :param data: of
         :param Matrix: of float values
-
         """
         self.title = title
         self.headers_to_test = headers_to_test
@@ -37,23 +34,19 @@ class CorrelationMatrix:
     @staticmethod
     def get_correlation_matrix(matrix):
         """
-
         :param matrix: of
         :param List: of features to get correlation matrix
         :returns: of []
           correlation matrix
-
         """
         return np.corrcoef(matrix)
 
     def show_correlation_matrix(self, correlation_matrix):
         """
-
         :param correlation_matrix: of
         :param Correlation: matrix of features
         :returns: void
           shows the given correlation matrix as image
-
         """
         cr_plot.create_correlation_matrix_plot(
             correlation_matrix, self.title, self.headers_to_test
@@ -68,7 +61,6 @@ class CorrelationMatrix:
     def get_correlation_matrix_of_columns(self):
         """:return: [] of []
             Correlation matrix of selected columns
-
 
         """
         header_to_column = {}  # create index of headers
@@ -90,12 +82,10 @@ class CorrelationMatrix:
 
     def save_to_file(self, out_file):
         """
-
         :param out_file: str
         :param Output: file
         :returns: void
           Saves correlation matrix of selected headers
-
         """
         correlation_matrix = self.get_correlation_matrix_of_columns()
         cr_plot.create_correlation_matrix_plot(
@@ -108,12 +98,10 @@ class CorrelationMatrix:
     @staticmethod
     def save_correlation_matrix_of_data_files_in_folder(folder_path):
         """
-
         :param folder_path: str
         :param Folder: containing logs data
         :returns: void
           Saves each file's correlation matrix of common headers
-
         """
         output_folder = os.path.join(folder_path, "output-" + str(int(time())))
         os.makedirs(output_folder)  # make necessary folders to create directory

@@ -36,7 +36,6 @@ class EmailTemplate:
         """:return: str
             Email header
 
-
         """
         return "<h2>Ciao " + str(self.recipient).title() + "!</h2><br>"
 
@@ -44,14 +43,12 @@ class EmailTemplate:
         """:return: str
             Email text (html formatted)
 
-
         """
         return get_email_content(self.footer_file)
 
     def get_mime_message(self):
         """:return: MIMEText
             Email formatted as HTML ready to be sent
-
 
         """
         message = MIMEText(

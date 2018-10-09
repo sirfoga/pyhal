@@ -26,14 +26,12 @@ class Document(FileSystem):
     @staticmethod
     def move_file_to_directory(file_path, directory_path):
         """
-
         :param file_path: string
         :param Path: to file to move
         :param directory_path: string
         :param Path: to target directory where to move file
         :returns: void
           Move file to given directory
-
         """
         file_name = os.path.basename(file_path)  # get name of file
         if not os.path.exists(directory_path):
@@ -44,14 +42,12 @@ class Document(FileSystem):
     @staticmethod
     def move_file_to_file(old_path, new_path):
         """
-
         :param old_path: string
         :param Old: path of file to move
         :param new_path: string
         :param New: path
         :returns: void
           Move file from old location to new one
-
         """
         try:
             os.rename(old_path, new_path)
@@ -73,14 +69,12 @@ class Document(FileSystem):
     @staticmethod
     def write_data_to_file(data, out_file):
         """
-
         :param data: string
         :param Data: to write to file
         :param out_file: string
         :param Path: to output file
         :returns: void
           Writes given data to given path file.
-
         """
         with open(out_file, "w") as out_f:
             out_f.write(data)
@@ -88,19 +82,16 @@ class Document(FileSystem):
     @staticmethod
     def extract_name_extension(file_name):
         """
-
         :param file_name: string
         :param Name: of file
         :returns: tuple string, string
           Name of file, extension of file
-
         """
         return os.path.splitext(file_name)
 
     def get_path_name(self):
         """:return: tuple string, string
             Name of path, name of file (or folder)
-
 
         """
         path = fix_raw_path(os.path.dirname(os.path.abspath(self.path)))
@@ -147,12 +138,10 @@ class Directory(FileSystem):
     @staticmethod
     def create_new(path):
         """
-
         :param path: string
         :param Path: to directory to create
         :returns: void
           Creates new directory
-
         """
         if not os.path.exists(path):
             os.makedirs(path)
@@ -160,7 +149,6 @@ class Directory(FileSystem):
     def get_path_name(self):
         """:return: tuple string, string
             Name of path, name of file (or folder)
-
 
         """
         complete_path = os.path.dirname(os.path.abspath(self.path))
@@ -173,7 +161,6 @@ class Directory(FileSystem):
     def is_empty(self):
         """:return: Bool
             True iff empty
-
 
         """
         return not os.listdir(self.path)

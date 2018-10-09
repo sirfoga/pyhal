@@ -109,7 +109,6 @@ def is_url(candidate_url):
     :param Possible: url to check for url
     :returns: bool
       True iff candidate is a valid url
-
     """
     return re.match(URL_VALID_REGEX, candidate_url)
 
@@ -131,10 +130,8 @@ class Webpage:
     @staticmethod
     def parse_url(raw_url):
         """
-
         :param raw_url: url to parse
         :returns: parses correctly url
-
         """
         parsed = raw_url
 
@@ -172,7 +169,6 @@ class Webpage:
         """:return: str
             HTML source of webpage
 
-
         """
         req = urllib.request.Request(self.url)
         req.add_header("user-agent", random.choice(USER_AGENTS))
@@ -183,11 +179,9 @@ class Webpage:
 
     def get_links(self, recall, timeout):
         """
-
         :param recall: max times to attempt to fetch url
         :param timeout: max times
         :returns: array of out_links
-
         """
         for _ in range(recall):
             try:  # setting timeout
@@ -204,12 +198,10 @@ class Webpage:
 
     def open_in_browser(self, n_times):
         """
-
         :param n_times: int
         :param Times: to open webpage in browser
         :returns: void
           Open a web-driver and go to webpage
-
         """
         for _ in range(n_times):
             webbrowser.open(self.url)
@@ -224,7 +216,6 @@ def download_url(url, local_file):
     :param Save: url as this path
     :returns: void
       Download link to local file
-
     """
     downloader = urllib.request.URLopener()
     downloader.retrieve(url, local_file)
@@ -244,7 +235,6 @@ def download_to_file(url, local_file, headers=HEADERS, cookies=None,
     :param Download: file in this specific chunk size
     :returns: void
       Download link to local file
-
     """
     if not cookies:
         cookies = {}
@@ -271,8 +261,7 @@ def renew_connection(password):
     """:return: void
         signal TOR for a new connection
 
-    :param password: 
-
+    :param password:
     """
     with Controller.from_port(port=9051) as controller:
         controller.authenticate(password=password)

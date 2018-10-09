@@ -24,9 +24,7 @@ class AppCronLock:
 
     def set_update_interval(self, days=7):
         """Sets app interval update
-
         :param days: Days between 2 consecutive app updates (Default value = 7)
-
         """
         self.update_interval = days
 
@@ -35,7 +33,6 @@ class AppCronLock:
         
         Returns: True iff app is not locked and times since last update < app
             update interval
-
 
         """
         now = datetime.datetime.now()
@@ -58,9 +55,7 @@ class AppCronLock:
     def write_lock(self, last_update=datetime.datetime.now()):
         """:return: void
             Writes lock file
-
         :param last_update: Default value
-
         """
         data = {
             "last_update": last_update.strftime(AppCronLock.DATETIME_FORMAT)

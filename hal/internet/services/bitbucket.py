@@ -14,6 +14,5 @@ def get_clone_url(remote_shortcut, user):
     :param User: to clone with
     :returns: str
       Url to clone
-
     """
     return BITBUCKET_REMOTE.format(user) + remote_shortcut

@@ -12,7 +12,6 @@ class SeleniumForm:
     @staticmethod
     def fill_form_field(browser, field_name, field_value):
         """
-
         :param browser: web
         :param Browser: to use to submit form
         :param field_name: string
@@ -21,7 +20,6 @@ class SeleniumForm:
         :param Value: with which to fill field
         :returns: void
           Fill given field with given value.
-
         """
         browser.execute_script(
             "document.getElementsByName(\"" + str(
@@ -31,7 +29,6 @@ class SeleniumForm:
     def fill_login_form(browser, username, username_field, user_password,
                         user_password_field):
         """
-
         :param browser: web
         :param Browser: to use to submit form
         :param username: string
@@ -44,7 +41,6 @@ class SeleniumForm:
         :param Name: of field to fill with user password
         :returns: void
           Form filled with given information
-
         """
         SeleniumForm.fill_form_field(browser, username_field,
                                      username)  # set username
@@ -54,14 +50,12 @@ class SeleniumForm:
     @staticmethod
     def submit_form(browser, button_name):
         """
-
         :param browser: web
         :param Browser: to use to submit form
         :param button_name: string
         :param Name: of button to press to submit form
         :returns: void
           Submit form.
-
         """
         browser.execute_script(
             "document.getElementsByName(\"" + button_name + "\")[0].click()"

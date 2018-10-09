@@ -24,7 +24,6 @@ class EightQueenTest:
         """:return: string
             Welcomes user to this test sessions
 
-
         """
         user = getpass.getuser()
         os_name = os.name
@@ -39,7 +38,6 @@ class EightQueenTest:
     def introduction():
         """:return: string
             Welcomes user to this test sessions
-
 
         """
         output = "So, let\'s get into the details.. I\'m going to solve the " \
@@ -62,12 +60,10 @@ class EightQueenTest:
     @staticmethod
     def run_test_with_size(size):
         """
-
         :param size: int
         :param Number: of rows in grid
         :returns: int
           Time to solve problem with given size
-
         """
         timing = time()
         problem = primes.problems.EightQueen(size)
@@ -76,12 +72,10 @@ class EightQueenTest:
 
     def update_std_out_and_log(self, string):
         """
-
         :param string: string
         :param Stuff: to print
         :returns: void
           Prints to stdout and updates log
-
         """
         print(string)  # update stdout
         self.benchmark += "\n" + string  # update log
@@ -89,7 +83,6 @@ class EightQueenTest:
     def start(self):
         """:return: void
             Starts profiling
-
 
         """
         self.update_std_out_and_log(self.welcome())

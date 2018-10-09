@@ -23,7 +23,6 @@ def _implementation():
     This function works best on CPython and PyPy: in particular, it probably
     doesn't work for Jython or IronPython. Future investigation should be done
     to work out the correct shape of the code for those platforms.
-
     """
     implementation = platform.python_implementation()
 

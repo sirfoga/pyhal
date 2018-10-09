@@ -22,7 +22,6 @@ class HtmlTable:
         """:return: list of list
             List of list of values in table
 
-
         """
         data = []  # add name of section
         for row in self.soup.find_all("tr"):  # cycle through all rows

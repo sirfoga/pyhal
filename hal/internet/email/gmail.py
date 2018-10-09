@@ -12,16 +12,13 @@ from hal.internet.services.google.gauthenticator import GoogleApiOAuth
 
 class GMailApiOAuth(GoogleApiOAuth):
     def __init__(self, app_name, client_secrets_file, oauth_path):
-
         """
-
         :param app_name: str
         :param Name: of app to display
         :param client_secrets_file: str
         :param Path: to client_secret
         :param oauth_path: str
         :param Path: to gmail
-
         """
         GoogleApiOAuth.__init__(
             self,
@@ -34,7 +31,6 @@ class GMailApiOAuth(GoogleApiOAuth):
     def create_driver(self):
         """:return: driver
             GMail API driver
-
 
         """
         return super().get_driver("gmail", "v1")
@@ -49,7 +45,6 @@ def get_mime_message(subject, text):
     :param Email: content
     :returns: MIMEText
       Email formatted as HTML ready to be sent
-
     """
     message = MIMEText(
         "<html>" +
@@ -71,7 +66,6 @@ def send_email(sender, msg, driver):
     :param GMail: authenticator
     :returns: void
       Sends email to me with this message
-
     """
     driver.users().messages().send(
         userId=sender,

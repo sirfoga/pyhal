@@ -5,9 +5,8 @@
 def get_percentage_relative_to(val, other):
     """
 
-    :param val: 
-    :param other: 
-
+    :param val:
+    :param other:
     """
     val = float(val)
     other = float(other)

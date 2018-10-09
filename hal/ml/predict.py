@@ -22,14 +22,12 @@ class BasePrediction:
 
     def train(self, x_data, y_data):
         """
-
         :param x_data: data
         :param Input: 
         :param y_data: data
         :param Input: 
         :returns: void
           Train model on inputs
-
         """
         x_train, _, y_train, _ = train_test_split(
             x_data,

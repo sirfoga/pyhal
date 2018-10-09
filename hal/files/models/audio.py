@@ -14,12 +14,11 @@ def find_songs(folder, recursive):
     """
 
     :param folder: str
-    :param Path: 
+    :param Path:
     :param recursive: bool
     :param True: iff want to search recursively
     :returns: generator of MP3Song
       List of paths of the songs in folder
-
     """
     paths = list_content(folder, recursive)
     for p in paths:
@@ -33,12 +32,10 @@ class MP3Song(FileSystem):
     @staticmethod
     def is_valid_mp3(path):
         """
-
         :param path: str
         :param Path: to candidate
         :returns: bool
           True iff song is MP3 encoded
-
         """
         try:
             MP3(path)
@@ -60,7 +57,6 @@ class MP3Song(FileSystem):
         """:return: {}
             Dictionary with songs details about title, artist, album and year
 
-
         """
         title = str(self.get_title()).strip()
         artist = str(self.get_artist()).strip()
@@ -78,72 +74,60 @@ class MP3Song(FileSystem):
 
     def set_title(self, name):
         """
-
         :param name: str
         :param Song: s title
         :returns: void
           Sets song's title
-
         """
         self.tags.add(TIT2(encoding=3, text=name.decode('utf-8')))
         self.song.save()
 
     def set_artist(self, artist):
         """
-
         :param artist: str
         :param Song: s artist
         :returns: void
           Sets song's artist
-
         """
         self.tags.add(TPE1(encoding=3, text=artist.decode('utf-8')))
         self.song.save()
 
     def set_album(self, album):
         """
-
         :param album: str
         :param Song: s album
         :returns: void
           Sets song's albu
-
         """
         self.tags.add(TALB(encoding=3, text=album.decode('utf-8')))
         self.song.save()
 
     def set_nr_track(self, nr_track):
         """
-
         :param nr_track: int
         :param Number: of track
         :returns: void
           Sets song's track number
-
         """
         self.tags.add(TRCK(encoding=3, text=str(nr_track)))
         self.song.save()
 
     def set_year(self, year):
         """
-
         :param year: int
         :param Year: of song
         :returns: void
           Sets song's year
-
         """
         self.tags.add(TDRC(encoding=3, text=str(year)))
         self.song.save()
 
     def set_genre(self, genre):
         """
-
         :param genre: str
         :param Genre: of song
         :returns: void
           Sets song's genre
-
         """
         self.tags.add(TCON(encoding=3, text=str(genre)))
         self.song.save()
@@ -153,7 +137,6 @@ class MP3Song(FileSystem):
     def get_title(self):
         """:return: str
             Gets song's title
-
 
         """
         try:
@@ -165,7 +148,6 @@ class MP3Song(FileSystem):
         """:return: str
             Gets song's artist
 
-
         """
         try:
             return self.tags.get("TPE1").text[0]
@@ -175,7 +157,6 @@ class MP3Song(FileSystem):
     def get_album(self):
         """:return: str
             Gets song's albu
-
 
         """
         try:
@@ -187,7 +168,6 @@ class MP3Song(FileSystem):
         """:return: str
             Gets song's track number
 
-
         """
         try:
             return self.tags.get("TRCK").text[0]
@@ -198,7 +178,6 @@ class MP3Song(FileSystem):
         """:return: str
             Gets song's year
 
-
         """
         try:
             return self.tags.get("TDRC").text[0]
@@ -208,7 +187,6 @@ class MP3Song(FileSystem):
     def get_genre(self):
         """:return: str
             Gets song's genre
-
 
         """
         try:

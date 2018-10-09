@@ -15,13 +15,11 @@ def handle_exceptions(func):
     :param function: to wrap
     :returns: callback function return type
       wraps callback function
-
     """
 
     @functools.wraps(func)
     def _handle_exceptions(*args, **kwargs):
         """Arguments:
-
         :param kwargs: kwargs for callback function
         :param args: 
         :param kwargs: 
@@ -29,7 +27,6 @@ def handle_exceptions(func):
         :param **kwargs: 
         :returns: callback function return type
           handle exception of callback function
-
         """
         function_name = func.__name__
         exception_string = \

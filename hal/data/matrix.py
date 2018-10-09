@@ -19,7 +19,6 @@ class Matrix:
         :returns: Precision of matrix
 
         :rtype: value
-
         """
         true_pos = self.matrix[0][0]
         false_pos = self.matrix[1][0]
@@ -36,7 +35,6 @@ class Matrix:
         :returns: Recall
 
         :rtype: value
-
         """
         true_pos = self.matrix[0][0]
         false_neg = self.matrix[0][1]
@@ -53,7 +51,6 @@ class Matrix:
         :returns: true negative rate
 
         :rtype: value
-
         """
         false_pos = self.matrix[1][0]
         true_neg = self.matrix[1][1]
@@ -70,7 +67,6 @@ class Matrix:
         :returns: Accuracy
 
         :rtype: value
-
         """
         true_pos = self.matrix[0][0]
         false_pos = self.matrix[1][0]
@@ -92,7 +88,6 @@ class Matrix:
         :returns: F1 score
 
         :rtype: value
-
         """
         m_pre = self.precision()
         rec = self.recall()
@@ -109,7 +104,6 @@ class Matrix:
         :returns: list representation
 
         :rtype: list
-
         """
         return sum([
             row
@@ -123,7 +117,6 @@ class Matrix:
         :returns: Encoder used
 
         :rtype: encoder
-
         """
         lb = LabelEncoder()  # encoder
         values = self.get_as_list()
@@ -140,10 +133,8 @@ class Matrix:
 
     def decode(self, lb):
         """Decodes matrix
-
         :param lb: Encoder used to encode matrix
         :returns: list: Decodes matrix
-
         """
         self.matrix = [
             lb.inverse_transform(row)
@@ -153,10 +144,8 @@ class Matrix:
     @staticmethod
     def from_columns(columns):
         """Parses raw columns
-
         :param columns: atrix divided into columns
         :returns: Matrix: Merge the columns to form a matrix
-
         """
         data = [
             [

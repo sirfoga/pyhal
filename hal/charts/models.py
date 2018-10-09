@@ -15,10 +15,8 @@ class SimpleChart:
     def __init__(self, title, grid=True):
         """
         Setups bottom margin
-
-        # Attributes
-            title: Title of chart
-            fig: Matplotlib figure
+        :param title: Title of chart
+        :param grid: True if you want the grid
         """
         self.title = title
         self.fig = plt.figure()
@@ -28,42 +26,28 @@ class SimpleChart:
     @staticmethod
     def setup(bottom):
         """Setups bottom margin
-
         :param bottom: Bottom margin
-
         """
         plt.gcf().subplots_adjust(bottom=bottom)  # add bottom
 
     def get_fig(self):
         """Gets chart canvas
-
-
         :returns: matplotlib figure
-
-        :rtype: figure
-
         """
         return self.fig
 
     def get_ax(self):
         """Adds to figure
-
-
-        :returns: operation completed
-
-        :rtype: completed
-
+        :returns: operation completed successfully?
         """
         return self.fig.add_subplot(111)
 
     def create_bar_chart(self, x_labels, y_values, y_label):
         """Creates bar char
-
         :param x_labels: Names for each variable
         :param y_values: Values of x labels
         :param y_label: Label of y axis
         :returns: chart: Bar chart
-
         """
         self.setup(0.25)
         ax1 = self.get_ax()
@@ -80,14 +64,12 @@ class SimpleChart:
     def create_multiple_bar_chart(self, x_labels, mul_y_values, mul_y_labels,
                                   normalize=False):
         """Creates bar chart with multiple lines
-
         :param x_labels: Names for each variable
         :param mul_y_values: list of values of x labels
         :param mul_y_labels: list of labels for each y value
-        :param normalize: True iff you want to normalize each y series (Default value = False)
+        :param normalize: True iff you want to normalize each y series
         :returns: Bar chart
         :rtype: chart
-
         """
         self.setup(0.25)
         ax1 = self.get_ax()
@@ -126,13 +108,10 @@ class SimpleChart:
 
     def create_sym_log_bar_chart(self, x_labels, y_values, y_label):
         """Creates bar chart (log version)
-
         :param x_labels: Names for each variable
         :param y_values: Values of x labels
         :param y_label: Label of y axis
         :returns: Sym-log bar chart
-        :rtype: chart
-
         """
         ax1 = self.create_bar_chart(x_labels, y_values, y_label)
         ax1.set_yscale("sym-log", linthreshy=1e-12)  # logarithmic plot

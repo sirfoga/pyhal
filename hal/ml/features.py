@@ -19,12 +19,10 @@ class FeatureSelect:
 
     def select_k_best(self, k):
         """
-
         :param k: int
         :param K: features to select
         :returns: matrix
           Select k best features in dataset
-
         """
         x_new = SelectKBest(chi2, k=k).fit_transform(self.x, self.y)
         return x_new
@@ -32,7 +30,6 @@ class FeatureSelect:
     def get_best(self):
         """:return: tuple
             Finds the optimal number of features
-
 
         """
         svc = SVC(kernel="linear")

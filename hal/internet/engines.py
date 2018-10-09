@@ -34,12 +34,10 @@ class SearchEngine:
 
     def parse_query(self, query):
         """
-
         :param query: string
         :param Query: to search engine
         :returns: string
           Parse given query in order to meet search criteria of search engine
-
         """
         return query.strip().replace(
             " ",
@@ -48,14 +46,12 @@ class SearchEngine:
 
     def get_search_page(self, query, using_tor=False):
         """
-
         :param query: string
         :param Query: to search engine
         :param using_tor: bool (Default value = False)
         :param Whether: use tor or not to fetch web pages
         :returns: string
           Get HTML source of search page of given query.
-
         """
         query_web_page = Webpage(self.url + self.parse_query(query))
         query_web_page.get_html_source(tor=using_tor)  # get html source

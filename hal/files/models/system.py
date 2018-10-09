@@ -69,7 +69,6 @@ def fix_raw_path(path):
     :param Path: to fix
     :returns: string
       Right path
-
     """
     double_path_separator = PATH_SEPARATOR + PATH_SEPARATOR
     while path.find(
@@ -90,7 +89,6 @@ def remove_year(name):
     :param Name: to edit
     :returns: string
       Given string bu with no years.
-
     """
     for i in range(len(
             name) - 3):  # last index is length - 3 - 1 = length - 4
@@ -108,7 +106,6 @@ def remove_brackets(name):
     :param Name: to edit
     :returns: string
       Given string bu with no brackets
-
     """
     name = re.sub(
         r"([(\[]).*?([)\]])",
@@ -132,7 +129,6 @@ def extract_name_max_chars(name, max_chars=64, blank=" "):
     :param Char: that represents the blank between words
     :returns: string
       Name edited to contain at most max_chars (truncate to nearest word)
-
     """
     if max_chars <= 0:
         raise ValueError(
@@ -155,7 +151,6 @@ def prettify(name, blank=" "):
     :param Default: blanks in name
     :returns: string
       Prettier name from given one: replace bad chars with good ones.
-
     """
     if name.startswith("."):  # remove starting .
         name = name[1:]
@@ -192,7 +187,6 @@ def is_file(path):
     :param Path: to check
     :returns: bool
       True iff path is a file
-
     """
     return os.path.isfile(path)
 
@@ -204,7 +198,6 @@ def is_folder(path):
     :param Path: to check
     :returns: bool
       True iff path is a file
-
     """
     return os.path.isdir(path)
 
@@ -216,7 +209,6 @@ def get_parent_folder(file_path):
     :param Path: to file or folder
     :returns: str
       Name of folder container
-
     """
     return os.path.split(os.path.split(os.path.abspath(file_path))[0])[-1]
 
@@ -230,7 +222,6 @@ def ls_dir(path, include_hidden=False):
     :param Whether: to include hidden files in list
     :returns: list
       List of paths in given directory.
-
     """
     lst = []
     for file in os.listdir(path):
@@ -249,7 +240,6 @@ def ls_recurse(path, include_hidden=False):
     :param Whether: to include hidden files in list
     :returns: list
       List of paths in given directory recursively.
-
     """
     lst = []
     for file in os.listdir(path):
@@ -275,7 +265,6 @@ def list_content(path, recurse, include_hidden=False):
     :param Whether: to include hidden files in list
     :returns: list
       List of paths in given directory recursively.
-
     """
     if recurse:
         return ls_recurse(path, include_hidden=include_hidden)
@@ -298,7 +287,6 @@ class FileSystem:
         """:return: bool
             True iff path is hidden
 
-
         """
         return self.name.startswith(".")
 
@@ -320,18 +308,15 @@ class FileSystem:
         """:return: void
             Trash given file/folder
 
-
         """
         send2trash(self.path)
 
     def rename(self, new_path):
         """
-
         :param new_path: string
         :param New: path to use
         :returns: void
           Rename to new path
-
         """
         rename_path = fix_raw_path(new_path)
         if os.path.isdir(self.path):
