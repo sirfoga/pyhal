@@ -10,9 +10,8 @@ class Node:
 
     def __init__(self, val, next_node=None):
         """
-        Arguments:
-            val: Value of node
-            next_node: Next node
+        :param val: Value of node
+        :param next_node: Next node
         """
         self.val = val
         self.next_node = next_node  # the pointer initially points to nothing
@@ -23,8 +22,7 @@ class LinkedList:
 
     def __init__(self, lst):
         """
-        Arguments:
-            lst: List of elements
+        :param lst: List of elements
         """
         self.head = LinkedList.from_list(lst)
 

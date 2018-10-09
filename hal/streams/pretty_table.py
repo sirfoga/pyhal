@@ -6,7 +6,6 @@ from hal.strings.utils import non_ansi_string
 
 def parse_colorama(text):
     """
-
     :param text: str
     :param Colorama: text to parse
     :returns: str
@@ -18,7 +17,6 @@ def parse_colorama(text):
 class SqlTable:
     def __init__(self, labels, data, num_format, line_separator):
     """
-
     :param labels: of str
     :param List: of labels of data
     :param data: of
@@ -158,7 +156,6 @@ class SqlTable:
 
 def pretty_format_table(labels, data, num_format="{:.3f}", line_separator="\n"):
     """
-
     :param labels: of str
     :param List: of labels of data
     :param data: of
@@ -176,7 +173,6 @@ def pretty_format_table(labels, data, num_format="{:.3f}", line_separator="\n"):
 
 def pretty_df(df):
     """
-
     :param df: pandas
     :param Data:
     :returns: str

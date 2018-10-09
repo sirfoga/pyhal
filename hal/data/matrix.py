@@ -5,6 +5,8 @@
 
 from sklearn.preprocessing import LabelEncoder
 
+from hal.maths.utils import divide
+
 
 class Matrix:
     """Table of data"""
@@ -18,11 +20,7 @@ class Matrix:
         """
         true_pos = self.matrix[0][0]
         false_pos = self.matrix[1][0]
-
-        try:
-            return 1.0 * true_pos / (true_pos + false_pos)
-        except:  # division by 0
-            return 0
+        return divide(1.0 * true_pos, true_pos + false_pos)
 
     def recall(self):
         """Calculates recall
@@ -30,11 +28,7 @@ class Matrix:
         """
         true_pos = self.matrix[0][0]
         false_neg = self.matrix[0][1]
-
-        try:
-            return 1.0 * true_pos / (true_pos + false_neg)
-        except:  # division by 0
-            return 0
+        return divide(1.0 * true_pos, true_pos + false_neg)
 
     def true_neg_rate(self):
         """Calculates true negative rate
@@ -42,11 +36,7 @@ class Matrix:
         """
         false_pos = self.matrix[1][0]
         true_neg = self.matrix[1][1]
-
-        try:
-            return 1.0 * true_neg / (true_neg + false_pos)
-        except:  # division by 0
-            return 0
+        return divide(1.0 * true_neg, true_neg + false_pos)
 
     def accuracy(self):
         """Calculates accuracy
@@ -60,10 +50,7 @@ class Matrix:
         num = 1.0 * (true_pos + true_neg)
         den = true_pos + true_neg + false_pos + false_neg
 
-        try:
-            return num / den
-        except:  # division by 0
-            return 0
+        return divide(num, den)
 
     def f1_score(self):
         """Calculates F1 score
@@ -71,11 +58,7 @@ class Matrix:
         """
         m_pre = self.precision()
         rec = self.recall()
-
-        try:
-            return 2.0 / (1.0 / m_pre + 1.0 / rec)  # harmonic mean
-        except:  # division by 0
-            return 0
+        return divide(2.0, 1.0 / m_pre + 1.0 / rec)  # harmonic mean
 
     def get_as_list(self):
         """List of all values in matrix
@@ -116,7 +99,7 @@ class Matrix:
     @staticmethod
     def from_columns(columns):
         """Parses raw columns
-        :param columns: atrix divided into columns
+        :param columns: matrix divided into columns
         :returns: Matrix: Merge the columns to form a matrix
         """
         data = [

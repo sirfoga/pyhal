@@ -9,10 +9,9 @@ from hal.strings.utils import how_similar_are
 
 def how_similar_dicts(d1, d2):
     """Calculates similarity
-
     :param d1: Dictionary
     :param d2: Dictionary
-    :returns: value: A measure of how much similar values of dictionaries are
+    :returns:  measure of how much similar values of dictionaries are
     """
     values = []
     for k in d1:  # iterate keys

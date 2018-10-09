@@ -7,7 +7,6 @@ from times import time
 
 def get_time_eta(total_done, total, start_time):
     """
-
     :param total_done: int
     :param Item: processed
     :param total: int
@@ -51,7 +50,6 @@ def get_time_eta(total_done, total, start_time):
 
 def print_time_eta(time_to_go, note=""):
     """
-
     :param time_to_go: Result of a call get_time_eta
     :param note: str
     :param Notes: to append to stdout

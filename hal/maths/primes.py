@@ -104,7 +104,6 @@ class Integer:
 
 def get_prime(bits):
     """
-
     :param bits: size of number to generate
     :returns: prime number of given size
     """
@@ -118,7 +117,6 @@ def get_prime(bits):
 
 def blum_blum_shub(seed, amount, prime0, prime1):
     """
-
     :param seed: seeder
     :param amount: amount of number to generate
     :param prime0: one prime number

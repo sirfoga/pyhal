@@ -64,7 +64,6 @@ PATH_SEPARATOR = "/" if "posix" in os.name else "\\"
 
 def fix_raw_path(path):
     """
-
     :param path: string
     :param Path: to fix
     :returns: string
@@ -84,7 +83,6 @@ def fix_raw_path(path):
 
 def remove_year(name):
     """
-
     :param name: string
     :param Name: to edit
     :returns: string
@@ -101,7 +99,6 @@ def remove_year(name):
 
 def remove_brackets(name):
     """
-
     :param name: string
     :param Name: to edit
     :returns: string
@@ -120,7 +117,6 @@ def remove_brackets(name):
 
 def extract_name_max_chars(name, max_chars=64, blank=" "):
     """
-
     :param name: string
     :param Name: to edit
     :param max_chars: int
@@ -144,7 +140,6 @@ def extract_name_max_chars(name, max_chars=64, blank=" "):
 
 def prettify(name, blank=" "):
     """
-
     :param name: string
     :param Name: to edit
     :param blank: string
@@ -182,7 +177,6 @@ def prettify(name, blank=" "):
 
 def is_file(path):
     """
-
     :param path: str
     :param Path: to check
     :returns: bool
@@ -193,7 +187,6 @@ def is_file(path):
 
 def is_folder(path):
     """
-
     :param path: str
     :param Path: to check
     :returns: bool
@@ -204,7 +197,6 @@ def is_folder(path):
 
 def get_parent_folder(file_path):
     """
-
     :param file_path: str
     :param Path: to file or folder
     :returns: str
@@ -215,7 +207,6 @@ def get_parent_folder(file_path):
 
 def ls_dir(path, include_hidden=False):
     """
-
     :param path: string
     :param Path: to directory to get list of files and folders
     :param include_hidden: bool
@@ -233,7 +224,6 @@ def ls_dir(path, include_hidden=False):
 
 def ls_recurse(path, include_hidden=False):
     """
-
     :param path: string
     :param Path: to directory to get list of files and folders
     :param include_hidden: bool
@@ -256,7 +246,6 @@ def ls_recurse(path, include_hidden=False):
 
 def list_content(path, recurse, include_hidden=False):
     """
-
     :param path: string
     :param Path: to directory to get list of files and folders
     :param recurse: bool

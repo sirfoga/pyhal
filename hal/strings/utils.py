@@ -10,7 +10,6 @@ from pyparsing import Literal, Word, nums, Combine, Optional, delimitedList, \
 
 def how_similar_are(str1, str2):
     """
-
     :param str1: str
     :param First: string
     :param str2: str
@@ -23,7 +22,6 @@ def how_similar_are(str1, str2):
 
 def get_max_similar(string, lst):
     """
-
     :param string: str
     :param String: to find
     :param lst: of str
@@ -41,7 +39,6 @@ def get_max_similar(string, lst):
 
 def get_average_length_of_string(strings):
     """
-
     :param strings: of str
     :param Words:
     :returns: float
@@ -55,7 +52,6 @@ def get_average_length_of_string(strings):
 
 def just_alphanum(string):
     """
-
     :param string: str
     :param String:
     :returns: str
@@ -78,7 +74,6 @@ def just_alphanum(string):
 
 def non_ansi_string(text):
     """
-
     :param text:
     """
     esc_key = Literal('\x1b')
@@ -91,7 +86,6 @@ def non_ansi_string(text):
 
 def is_string_well_formatted(string):
     """
-
     :param string: string
     :param String: to parse
     :returns: bool
@@ -112,7 +106,6 @@ def is_string_well_formatted(string):
 
 def html_stripper(string):
     """
-
     :param string: string
     :param String: to parse
     :returns: string

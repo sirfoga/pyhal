@@ -7,7 +7,6 @@ from pymongo import MongoClient
 class DbBrowser:
     def __init__(self, db_name):
     """
-
     :param db_name: str
     :param Name: of db
     """

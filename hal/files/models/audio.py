@@ -12,7 +12,6 @@ from hal.files.models.system import list_content
 
 def find_songs(folder, recursive):
     """
-
     :param folder: str
     :param Path:
     :param recursive: bool

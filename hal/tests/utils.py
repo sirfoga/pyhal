@@ -15,8 +15,7 @@ def battery_test(assert_type, tests, func, args=None):
     key= params in function, value= what should be the result
       func: function
     Function to apply
-
-    :param assert_type: 
+    :param assert_type:
     :param tests: 
     :param func: 
     :param args:

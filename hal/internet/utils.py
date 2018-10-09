@@ -13,7 +13,6 @@ def add_params_to_url(url, params):
     """Arguments:
       url: str
     Url to add params to
-
     :param url:
     :param params:
     :returns: void
@@ -28,7 +27,6 @@ def add_params_to_url(url, params):
 
 def is_internet_on(host="8.8.8.8", port=53, timeout=3):
     """
-
     :param host: str
     :param Google: public
     :param port: int
@@ -48,7 +46,6 @@ def is_internet_on(host="8.8.8.8", port=53, timeout=3):
 
 def wait_until_internet(time_between_attempts=3, max_attempts=10):
     """
-
     :param time_between_attempts: int
     :param Seconds: between 2 consecutive attempts
     :param max_attempts: int

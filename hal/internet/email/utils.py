@@ -4,7 +4,6 @@
 
 def get_email_content(file_path):
     """
-
     :param file_path: str
     :param Path: to file with email text
     :returns: str

@@ -22,7 +22,6 @@ def get_token():
 
 def get_clone_url(remote_shortcut, token):
     """
-
     :param remote_shortcut: str
     :param Remote: relative path of repository to clone
     :param token: str

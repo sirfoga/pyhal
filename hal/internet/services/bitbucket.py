@@ -7,7 +7,6 @@ BITBUCKET_REMOTE = "https://{}@bitbucket.org/"
 
 def get_clone_url(remote_shortcut, user):
     """
-
     :param remote_shortcut: str
     :param Remote: relative path of repository to clone
     :param user: str

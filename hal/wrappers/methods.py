@@ -10,7 +10,6 @@ import colorama
 
 def handle_exceptions(func):
     """
-
     :param func: callback function
     :param function: to wrap
     :returns: callback function return type

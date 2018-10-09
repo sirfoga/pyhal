@@ -104,7 +104,6 @@ HEADERS = {
 
 def is_url(candidate_url):
     """
-
     :param candidate_url: str
     :param Possible: url to check for url
     :returns: bool
@@ -209,7 +208,6 @@ class Webpage:
 
 def download_url(url, local_file):
     """
-
     :param url: string
     :param Url: to download
     :param local_file: string
@@ -224,7 +222,6 @@ def download_url(url, local_file):
 def download_to_file(url, local_file, headers=HEADERS, cookies=None,
                      chunk_size=1024):
     """
-
     :param url: str
     :param PDF: url to download
     :param local_file: str
@@ -260,7 +257,6 @@ def get_tor_session():
 def renew_connection(password):
     """:return: void
         signal TOR for a new connection
-
     :param password:
     """
     with Controller.from_port(port=9051) as controller:

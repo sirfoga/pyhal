@@ -38,7 +38,6 @@ class GMailApiOAuth(GoogleApiOAuth):
 
 def get_mime_message(subject, text):
     """
-
     :param subject: str
     :param Subject: of email
     :param text: str
@@ -57,7 +56,6 @@ def get_mime_message(subject, text):
 
 def send_email(sender, msg, driver):
     """
-
     :param sender: str
     :param Sender: of email
     :param msg: str

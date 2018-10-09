@@ -20,7 +20,6 @@ class Weekday(Enum):
 
 def get_just_date(date):
     """
-
     :param date: datetime
     :param Date: with possible hours
     :returns: date
@@ -35,7 +34,6 @@ def get_just_date(date):
 
 def get_next_weekday(weekday, including_today=False):
     """
-
     :param weekday: Weekday
     :param Weekday: to get
     :param including_today: bool
@@ -57,7 +55,6 @@ def get_next_weekday(weekday, including_today=False):
 
 def get_last_weekday(weekday, including_today=False):
     """
-
     :param weekday: Weekday
     :param Weekday: to get
     :param including_today: bool
@@ -84,7 +81,6 @@ def get_last_weekday(weekday, including_today=False):
 
 def is_date_in_between(date, start, end):
     """
-
     :param date: datetime
     :param Date: to check
     :param start: datetime
@@ -99,7 +95,6 @@ def is_date_in_between(date, start, end):
 
 def is_in_this_week(date):
     """
-
     :param date: datetime
     :param Date:
     :returns: bool

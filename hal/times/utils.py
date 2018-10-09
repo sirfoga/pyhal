@@ -13,7 +13,6 @@ MONTHS = {
 
 def parse_hh_mm_ss(string):
     """
-
     :param string: str
     :param Hours: minutes and seconds in the form hh
     :returns: datetime.times
@@ -31,7 +30,6 @@ def parse_hh_mm_ss(string):
 
 def get_seconds(string):
     """
-
     :param string: str
     :param Datetime: in the form
     :returns: int
@@ -46,7 +44,6 @@ def get_seconds(string):
 
 def parse_hh_mm(string):
     """
-
     :param string: str
     :param Hours: and minutes in the form hh
     :returns: datetime.times
