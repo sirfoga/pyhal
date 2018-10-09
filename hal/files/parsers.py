@@ -1,5 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
+# -*- coding: utf-8 -*-
 
 
 """ Parsers for raw databases """
@@ -12,9 +11,7 @@ class Parser:
 
     def __init__(self, file_path):
         """
-        Arguments:
-            file_path: a raw .csv file that contains any data
-            about anything
+        :param file_path: path to file
         """
         self.path = file_path
         self.lines = None  # list of lines in database
@@ -34,11 +31,8 @@ class CSVParser(Parser):
 
     def __init__(self, file_path, encoding="utf-8"):
         """
-        Arguments:
-            file_path: a raw .csv file that contains any data
-            about anything
-            encoding: str
-            Encoding to open file with
+        :param file_path: path to file
+        :param encoding: Encoding to open file with
         """
         super().__init__(file_path)
         self.encoding = str(encoding).strip()
@@ -64,7 +58,7 @@ class CSVParser(Parser):
 
     def get_dicts(self):
         """Gets dicts in file
-        :returns: generator; List of dicts with data from .csv file
+        :returns: (generator of) of dicts with data from .csv file
         """
         reader = csv.DictReader(open(self.path, "r", encoding=self.encoding))
         for row in reader:
