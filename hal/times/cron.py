@@ -24,7 +24,7 @@ class AppCronLock:
 
     def set_update_interval(self, days=7):
         """Sets app interval update
-        :param days: Days between 2 consecutive app updates (Default value = 7)
+        :param days: Days between 2 consecutive app updates
         """
         self.update_interval = days
 

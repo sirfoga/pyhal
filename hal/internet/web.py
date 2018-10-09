@@ -229,9 +229,9 @@ def download_to_file(url, local_file, headers=HEADERS, cookies=None,
     :param PDF: url to download
     :param local_file: str
     :param Save: url as this path
-    :param headers: Headers to fetch url (Default value = HEADERS)
-    :param cookies: Cookies to fetch url (Default value = None)
-    :param chunk_size: int (Default value = 1024)
+    :param headers: Headers to fetch url
+    :param cookies: Cookies to fetch url
+    :param chunk_size: int
     :param Download: file in this specific chunk size
     :returns: void
       Download link to local file

@@ -53,7 +53,7 @@ def print_time_eta(time_to_go, note=""):
     """
 
     :param time_to_go: Result of a call get_time_eta
-    :param note: str (Default value = "")
+    :param note: str
     :param Notes: to append to stdout
     :returns: void
       Prints debug info to screen

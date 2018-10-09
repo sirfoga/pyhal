@@ -116,7 +116,7 @@ class GithubApi(GithubRawApi):
     @staticmethod
     def get_trending_daily(lang=""):
         """
-        :param lang: str (Default value = "")
+        :param lang: str
         :param Coding: language
         :returns: List of GithubUserRepository
         """

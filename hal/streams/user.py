@@ -63,7 +63,7 @@ class UserInput:
 
     def re_ask(self, with_help=True):
         """
-        :param with_help: bool (Default value = True)
+        :param with_help: bool
         :param True: iff you want to show help on how to answer questions
         :returns: void
           Re-asks user the last question
@@ -117,11 +117,11 @@ class UserInput:
         """
         :param question: str
         :param Question: to ask
-        :param min_i: float (Default value = float("-inf"))
+        :param min_i: float
         :param Min: acceptable number
-        :param max_i: float (Default value = float("inf"))
+        :param max_i: float
         :param Max: acceptable number
-        :param just_these: of float (Default value = None)
+        :param just_these: of float
         :param Accept: only these numbers
         :returns: float
           User answer
@@ -158,11 +158,11 @@ class UserInput:
         """
         :param question: str
         :param Question: to ask user
-        :param splitter: str (Default value = ")
+        :param splitter: str
         :param Split: list elements with this char
-        :param at_least: int (Default value = 0)
+        :param at_least: int
         :param List: must have at least this amount of elements
-        :param at_most: int (Default value = float("inf"))
+        :param at_most: int
         :param List: must have at most this amount of elements
         :param ": 
         :returns: User answer

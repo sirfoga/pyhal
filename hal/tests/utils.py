@@ -19,7 +19,7 @@ def battery_test(assert_type, tests, func, args=None):
     :param assert_type: 
     :param tests: 
     :param func: 
-    :param args:  (Default value = None)
+    :param args:
     :returns: bool
       True iff all tests pass
     """

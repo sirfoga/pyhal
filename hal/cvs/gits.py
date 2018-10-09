@@ -18,8 +18,7 @@ class Diff:
 
     def __init__(self, diff):
         """
-        Arguments:
-            diff: Diff between 2 commits
+        :param diff: Diff between 2 commits
         """
         self.d = diff
 
@@ -28,12 +27,8 @@ class Diff:
         return "+", totals[self.ADD], " -", totals[self.DEL]
 
     def get_totals(self):
-        """Calculates otal additions and deletions
-
-
-        :returns: Dictionary with total additions and deletions
-
-        :rtype: dictionary
+        """Calculates total additions and deletions
+        :returns: Dictionary with totals
         """
         total_added = 0
         total_removed = 0
@@ -57,20 +52,15 @@ class Commit:
 
     def __init__(self, commit):
         """
-        Arguments:
-             commit:Commit of repository
+        :param commit: Commit of repository
         """
         self.c = commit
 
     def __str__(self, date_format="%H:%M:%S %y-%m-%d %z"):
         """
         Converts to string
-
-        Arguments:
-            date_format: Format date and times with this format
-
-        Returns:
-            string: Pretty description of commit
+        :param date_format: Format date and times with this format
+        :returns: Pretty description of commit
         """
         hash_value = self.c.hexsha
         date_time = self.c.authored_datetime.strftime(date_format)
@@ -78,11 +68,7 @@ class Commit:
 
     def get_author(self):
         """Gets author
-
-
         :returns: author of commit
-
-        :rtype: author
         """
         author = self.c.author
 
@@ -101,28 +87,19 @@ class Repository:
 
     def __init__(self, repo_path):
         """
-        Arguments:
-            repo_path: Path to repository
+        :param repo_path: Path to repository
         """
         self.r = Repo(repo_path)
 
     def get_last_commit(self):
         """Gets last commit
-
-
         :returns: Last commit of repository
-
-        :rtype: commit
         """
         return self.r.head.commit
 
     def get_diff_amounts(self):
         """Gets list of total diff
-
-
         :returns: List of total diff between 2 consecutive commits since start
-
-        :rtype: list
         """
         diffs = []
 
@@ -149,8 +126,7 @@ class Repository:
     def get_version(self, diff_to_increase_ratio):
         """Gets version
         :param diff_to_increase_ratio: Ratio to convert number of changes into
-        :param version: increases
-        :returns: version: Version of this code, based on commits diffs
+        :returns: Version of this code, based on commits diffs
         """
         diffs = self.get_diff_amounts()
         version = Version()
@@ -162,7 +138,8 @@ class Repository:
 
     def get_pretty_version(self, diff_to_increase_ratio):
         """Pretty version
-        :param diff_to_increase_ratio: Ratio to convert number of changes into version increases
+        :param diff_to_increase_ratio: Ratio to convert number of changes into
+        version increases
         :returns: string: Pretty version of this repository
         """
         version = self.get_version(diff_to_increase_ratio)

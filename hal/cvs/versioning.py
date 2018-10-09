@@ -15,34 +15,28 @@ class VersionNumber:
     @abstractmethod
     def get_current_amount(self):
         """Gets current set amount
-
-
         :returns: Current set amount
-
-        :rtype: amount
         """
         pass
 
     def can_increase(self, amount):
         """
         :param amount: Amount to increase
-        :returns: bool: True iff this number can be increased by such amount
+        :returns: True iff this number can be increased by such amount
         """
         return amount <= self.max_amount_allowed()
 
     @abstractmethod
     def increase(self, amount=1):
         """Increase version by this amount
-        :param amount: Increase number by this amount (Default value = 1)
-        :returns: bool: True iff increase was successful
+        :param amount: Increase number by this amount
+        :returns: True iff increase was successful
         """
         pass
 
     @abstractmethod
     def maximize(self):
         """Maximizes this version
-
-
         :returns: Maximizes this version
         """
         pass
@@ -50,8 +44,6 @@ class VersionNumber:
     @abstractmethod
     def reset(self):
         """Zeroes this number
-
-
         :returns: Zeroes this number
         """
         pass
@@ -59,22 +51,14 @@ class VersionNumber:
     @abstractmethod
     def max_amount_allowed(self):
         """Calculates number of increases available
-
-
         :returns: Number of increases that can be done before reaching
-
-        :rtype: increases
         """
         pass
 
     @abstractmethod
     def max(self):
         """Calculates max increases
-
-
         :returns: Number of increases that can be done before reaching
-
-        :rtype: inreases
         """
         pass
 
@@ -84,10 +68,9 @@ class Level(VersionNumber):
 
     def __init__(self, max_inner, start=0):
         """
-        Args
-            max_inner: Max number of this level. If you set to 0 this level will
-                increase never
-            start: Start at this number
+        :param max_inner: Max number of this level. If you set to 0 this level will
+        increase never
+        :param start: Start at this number
         """
         self.max_inner = max_inner
         self.current = start
@@ -96,13 +79,9 @@ class Level(VersionNumber):
         return str(self.current)
 
     def get_current_amount(self):
-        """See also: #get_current_amount()"""
         return self.current
 
     def increase(self, amount=1):
-        """See also: #increase()
-        :param amount:  (Default value = 1)
-        """
         if self.can_increase(amount):
             self.current += amount
             return True
@@ -110,19 +89,15 @@ class Level(VersionNumber):
         return False
 
     def maximize(self):
-        """See also: #maximize()"""
         self.current = self.max_inner
 
     def reset(self):
-        """See also: #reset()"""
         self.current = 0
 
     def max_amount_allowed(self):
-        """See also: #max_amount_allowed()"""
         return self.max_inner - self.current
 
     def max(self):
-        """See also: #max()"""
         return self.max_inner
 
 
@@ -131,10 +106,9 @@ class Subsystem(VersionNumber):
 
     def __init__(self, levels, separator="."):
         """
-        Arguments:
-            levels: Levels in order of importance (from left to right the
-                importance increases). The version number is the reversed
-            separator: Compose version number separating with this split
+        :param levels: Levels in order of importance (from left to right the
+        importance increases). The version number is the reversed
+        :param separator: Compose version number separating with this split
         """
         self.ll = LinkedList(levels)
         self.current = self.max() - self.max_amount_allowed()  # inverse
@@ -148,11 +122,9 @@ class Subsystem(VersionNumber):
         return out
 
     def get_current_amount(self):
-        """See also: #get_current_amount()"""
         return self.current
 
     def reset(self):
-        """See also: #reset()"""
         node = self.ll.head
 
         while node is not None:
@@ -160,9 +132,6 @@ class Subsystem(VersionNumber):
             node = node.next_node
 
     def increase(self, amount=1):
-        """See also: #increase()
-        :param amount:  (Default value = 1)
-        """
         if self.ll.head.val.increase(amount):
             return True
 
@@ -186,7 +155,6 @@ class Subsystem(VersionNumber):
         return self.increase(amount_left)
 
     def maximize(self):
-        """See also: #maximize()"""
         node = self.ll.head
 
         while node is not None:
@@ -194,7 +162,6 @@ class Subsystem(VersionNumber):
             node = node.next_node
 
     def max_amount_allowed(self):
-        """See also: #max_amount_allowed()"""
         amount_allowed = self.ll.head.val.max_amount_allowed()
         multiplier = self.ll.head.val.max()
         node = self.ll.head.next_node
@@ -207,7 +174,6 @@ class Subsystem(VersionNumber):
         return amount_allowed
 
     def max(self):
-        """See also: #max()"""
         multiplier = 1
         node = self.ll.head
 
@@ -223,10 +189,9 @@ class Version(VersionNumber):
 
     def __init__(self, start="0.0.0", max_number=9, separator="."):
         """
-        Arguments:
-            start:  Current version
-            max_number: Max number reachable by sub-versions numbers
-            separator: Compose version number separating with this split
+        :param start: Current version
+        :param max_number: Max number reachable by sub-versions numbers
+        :param separator: Compose version number separating with this split
         """
         self.s = Version.from_str(start, max_number, separator)
 
@@ -234,53 +199,39 @@ class Version(VersionNumber):
         return str(self.s)
 
     def get_current_amount(self):
-        """See also: #get_current_amount()"""
         return self.s.get_current_amount()
 
     def reset(self):
-        """See also: #reset()"""
         return self.s.reset()
 
     def max_amount_allowed(self):
-        """See also: #max_amount_allowed()"""
         return self.s.max_amount_allowed()
 
     def increase(self, amount=1):
-        """See also: #increase()
-        :param amount:  (Default value = 1)
-        """
         return self.s.increase(amount)
 
     def increase_by_changes(self, changes_amount, ratio):
         """Increase version by amount of changes
         :param changes_amount: Number of changes done
         :param ratio: Ratio changes
-        :returns: bool: Increases version accordingly to changes
-        
-        See also: #increase()
+        :returns: Increases version accordingly to changes
         """
         increases = round(changes_amount * ratio)
         return self.increase(int(increases))
 
     def maximize(self):
-        """Maximizes this version
-
-
-        :returns: Maximizes this version
-        """
         return self.s.maximize()
 
     def max(self):
-        """See also: #maximize()"""
         return self.s.max()
 
     @staticmethod
     def from_str(string, max_number=9, separator="."):
         """Parses string
         :param string: Version
-        :param max_number: Max number reachable by sub (Default value = 9)
-        :param separator: Version numbers are separated with this split (Default value = ".")
-        :returns: version: Parses string and returns object
+        :param max_number: Max number reachable by sub
+        :param separator: Version numbers are separated with this split
+        :returns: Parses string and returns object
         """
         tokens = string.split(separator)
         tokens = list(reversed(tokens))  # reverse order of importance

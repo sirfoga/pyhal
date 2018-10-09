@@ -35,7 +35,7 @@ class DbBrowser:
         """
         :param collection_name: str
         :param Name: of collection
-        :param with_id: bool (Default value = True)
+        :param with_id: bool
         :param True: iff each document should also come with its id
         :returns: of {}
           List of documents in collection in self.db
@@ -62,7 +62,7 @@ class DbBrowser:
 
     def get_documents_in_database(self, with_id=True):
         """
-        :param with_id: bool (Default value = True)
+        :param with_id: bool
         :param True: iff each document should also come with its id
         :returns: of {}
           List of documents in collection in database

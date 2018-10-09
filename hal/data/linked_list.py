@@ -30,21 +30,13 @@ class LinkedList:
 
     def get_head(self):
         """Gets head
-
-
         :returns: Head of linked list
-
-        :rtype: head
         """
         return self.head
 
     def get_tail(self):
         """Gets tail
-
-
         :returns: Tail of linked list
-
-        :rtype: tail
         """
         node = self.head
         last_node = self.head
@@ -57,11 +49,7 @@ class LinkedList:
 
     def length(self):
         """Gets length
-
-
         :returns: How many items in linked list of linked list
-
-        :rtype: length
         """
         item = self.head
         counter = 0
@@ -82,7 +70,7 @@ class LinkedList:
     def insert(self, val, at=0):
         """Insert in position
         :param val: Object to insert
-        :param at: Index of insertion (Default value = 0)
+        :param at: Index of insertion
         :returns: bool: True iff insertion completed successfully
         """
         if at < 0 or at > self.length():
@@ -113,11 +101,7 @@ class LinkedList:
 
     def remove_first(self):
         """Removes first
-
-
         :returns: True iff head has been removed
-
-        :rtype: bool
         """
         if self.head.next_node is not None:
             self.head = self.head.next_node
@@ -127,11 +111,7 @@ class LinkedList:
 
     def remove_last(self):
         """Removes last
-
-
         :returns: True iff last element has been removed
-
-        :rtype: bool
         """
         node = self.head
 
@@ -175,11 +155,7 @@ class LinkedList:
 
     def to_lst(self):
         """Cycle all items and puts them in a list
-
-
         :returns: list representation
-
-        :rtype: list
         """
         out = []
         node = self.head

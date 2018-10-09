@@ -123,9 +123,9 @@ def extract_name_max_chars(name, max_chars=64, blank=" "):
 
     :param name: string
     :param Name: to edit
-    :param max_chars: int (Default value = 64)
+    :param max_chars: int
     :param Maximum: chars of new name
-    :param blank: string (Default value = " ")
+    :param blank: string
     :param Char: that represents the blank between words
     :returns: string
       Name edited to contain at most max_chars (truncate to nearest word)
@@ -147,7 +147,7 @@ def prettify(name, blank=" "):
 
     :param name: string
     :param Name: to edit
-    :param blank: string (Default value = " ")
+    :param blank: string
     :param Default: blanks in name
     :returns: string
       Prettier name from given one: replace bad chars with good ones.
@@ -218,7 +218,7 @@ def ls_dir(path, include_hidden=False):
 
     :param path: string
     :param Path: to directory to get list of files and folders
-    :param include_hidden: bool (Default value = False)
+    :param include_hidden: bool
     :param Whether: to include hidden files in list
     :returns: list
       List of paths in given directory.
@@ -236,7 +236,7 @@ def ls_recurse(path, include_hidden=False):
 
     :param path: string
     :param Path: to directory to get list of files and folders
-    :param include_hidden: bool (Default value = False)
+    :param include_hidden: bool
     :param Whether: to include hidden files in list
     :returns: list
       List of paths in given directory recursively.
@@ -261,7 +261,7 @@ def list_content(path, recurse, include_hidden=False):
     :param Path: to directory to get list of files and folders
     :param recurse: bool
     :param Whether: to recurse into subdirectories or not
-    :param include_hidden: bool (Default value = False)
+    :param include_hidden: bool
     :param Whether: to include hidden files in list
     :returns: list
       List of paths in given directory recursively.

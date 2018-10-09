@@ -38,7 +38,7 @@ def get_next_weekday(weekday, including_today=False):
 
     :param weekday: Weekday
     :param Weekday: to get
-    :param including_today: bool (Default value = False)
+    :param including_today: bool
     :param If: today is sunday and requesting next sunday
     :returns: datetime
       Date of next monday, tuesday ...
@@ -60,7 +60,7 @@ def get_last_weekday(weekday, including_today=False):
 
     :param weekday: Weekday
     :param Weekday: to get
-    :param including_today: bool (Default value = False)
+    :param including_today: bool
     :param If: today is sunday and requesting next sunday
     :returns: datetime
       Date of next monday, tuesday ...

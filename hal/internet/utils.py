@@ -29,11 +29,11 @@ def add_params_to_url(url, params):
 def is_internet_on(host="8.8.8.8", port=53, timeout=3):
     """
 
-    :param host: str (Default value = "8.8.8.8")
+    :param host: str
     :param Google: public
-    :param port: int (Default value = 53)
+    :param port: int
     :param 53: tcp
-    :param timeout: int (Default value = 3)
+    :param timeout: int
     :param Seconds: Default value
     :returns: bool
       True iff machine has internet connection
@@ -49,9 +49,9 @@ def is_internet_on(host="8.8.8.8", port=53, timeout=3):
 def wait_until_internet(time_between_attempts=3, max_attempts=10):
     """
 
-    :param time_between_attempts: int (Default value = 3)
+    :param time_between_attempts: int
     :param Seconds: between 2 consecutive attempts
-    :param max_attempts: int (Default value = 10)
+    :param max_attempts: int
     :param Max: number of attempts to try
     :returns: bool
       True iff there is internet connection

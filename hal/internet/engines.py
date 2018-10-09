@@ -48,7 +48,7 @@ class SearchEngine:
         """
         :param query: string
         :param Query: to search engine
-        :param using_tor: bool (Default value = False)
+        :param using_tor: bool
         :param Whether: use tor or not to fetch web pages
         :returns: string
           Get HTML source of search page of given query.

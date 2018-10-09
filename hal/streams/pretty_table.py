@@ -99,9 +99,9 @@ class SqlTable:
 
     def get_blank_row(self, filler="-", splitter="+"):
         """
-        :param filler: char (Default value = "-")
+        :param filler: char
         :param Fill: empty columns with this char
-        :param splitter: char (Default value = "+")
+        :param splitter: char
         :param Separate: columns with this char
         :returns: str
           Pretty formatted blank row (with no meaningful data in it)
@@ -116,9 +116,9 @@ class SqlTable:
         """
         :param row: of anything
         :param List: of data
-        :param filler: char (Default value = " ")
+        :param filler: char
         :param Fill: empty columns with this char
-        :param splitter: char (Default value = "|")
+        :param splitter: char
         :param Separate: columns with this char
         :returns: str
           Pretty formatted row
@@ -163,9 +163,9 @@ def pretty_format_table(labels, data, num_format="{:.3f}", line_separator="\n"):
     :param List: of labels of data
     :param data: of
     :param Matrix: of any type
-    :param num_format: str (Default value = "{:.3f}")
+    :param num_format: str
     :param Format: numbers with this format
-    :param line_separator: str (Default value = "\n")
+    :param line_separator: str
     :param Separate: each new line with this
     :returns: str
       Pretty formatted table (first row is labels, then actual data)
