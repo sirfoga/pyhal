@@ -6,13 +6,12 @@ from hal.strings.utils import non_ansi_string
 
 def parse_colorama(text):
     """
-    Arguments:
-      text: str
-    Colorama text to parse
 
-    Returns:
-      str
+    :param text: str
+    :param Colorama: text to parse
+    :returns: str
       Parsed colorama text
+
     """
     return non_ansi_string(text)
 
@@ -20,22 +19,20 @@ def parse_colorama(text):
 class SqlTable:
     def __init__(self, labels, data, num_format, line_separator):
 
-        """
-        Arguments:
-          labels: of str
-        List of labels of data
-          data: of []) of anything
-        Matrix of any type
-          num_format: str
-        Format numbers with this format
-          line_separator: str
-        Separate each new line with this
+    """
 
-        Returns:
-          str
+    :param labels: of str
+    :param List: of labels of data
+    :param data: of
+    :param Matrix: of any type
+    :param num_format: str
+    :param Format: numbers with this format
+    :param line_separator: str
+    :param Separate: each new line with this
+    :returns: str
           Pretty formatted table (first row is labels, then actual data)
 
-        """
+    """
         self.labels = labels
         self.data = data
         self.num_format = num_format
@@ -62,9 +59,6 @@ class SqlTable:
         """:return: [] of int
             Length of longest data in each column (labels and data)
 
-        Arguments:
-
-        Returns:
 
         """
         columns = len(self.data[0])  # number of columns
@@ -87,16 +81,14 @@ class SqlTable:
 
     def get_pretty_row(self, row, filler, splitter):
         """
-        Arguments:
-          row: of anything
-        List of data
-          filler: char
-        Fill empty columns with this char
-          splitter: char
-        Separate columns with this char
 
-        Returns:
-          str
+        :param row: of anything
+        :param List: of data
+        :param filler: char
+        :param Fill: empty columns with this char
+        :param splitter: char
+        :param Separate: columns with this char
+        :returns: str
           Pretty formatted row
 
         """
@@ -113,14 +105,12 @@ class SqlTable:
 
     def get_blank_row(self, filler="-", splitter="+"):
         """
-        Arguments:
-          filler: char
-        Fill empty columns with this char (Default value = "-")
-          splitter: char
-        Separate columns with this char (Default value = "+")
 
-        Returns:
-          str
+        :param filler: char (Default value = "-")
+        :param Fill: empty columns with this char
+        :param splitter: char (Default value = "+")
+        :param Separate: columns with this char
+        :returns: str
           Pretty formatted blank row (with no meaningful data in it)
 
         """
@@ -132,16 +122,14 @@ class SqlTable:
 
     def pretty_format_row(self, row, filler=" ", splitter="|"):
         """
-        Arguments:
-          row: of anything
-        List of data
-          filler: char
-        Fill empty columns with this char (Default value = " ")
-          splitter: char
-        Separate columns with this char (Default value = "|")
 
-        Returns:
-          str
+        :param row: of anything
+        :param List: of data
+        :param filler: char (Default value = " ")
+        :param Fill: empty columns with this char
+        :param splitter: char (Default value = "|")
+        :param Separate: columns with this char
+        :returns: str
           Pretty formatted row
 
         """
@@ -168,12 +156,10 @@ class SqlTable:
     @staticmethod
     def from_df(df):
         """
-        Arguments:
-          df: pandas.DataFrame
-        Data
 
-        Returns:
-          SqlTable
+        :param df: pandas
+        :param Data: 
+        :returns: SqlTable
           Parses data and builds an instance of this class
 
         """
@@ -184,19 +170,18 @@ class SqlTable:
 
 def pretty_format_table(labels, data, num_format="{:.3f}", line_separator="\n"):
     """
-    Arguments:
-      labels: of str
-    List of labels of data
-      data: of []) of anything
-    Matrix of any type
-      num_format: str
-    Format numbers with this format (Default value = "{:.3f}")
-      line_separator: str
-    Separate each new line with this (Default value = "\n")
 
-    Returns:
-      str
+    :param labels: of str
+    :param List: of labels of data
+    :param data: of
+    :param Matrix: of any type
+    :param num_format: str (Default value = "{:.3f}")
+    :param Format: numbers with this format
+    :param line_separator: str (Default value = "\n")
+    :param Separate: each new line with this
+    :returns: str
       Pretty formatted table (first row is labels, then actual data)
+
     """
     table = SqlTable(labels, data, num_format, line_separator)
     return table.build()
@@ -204,13 +189,12 @@ def pretty_format_table(labels, data, num_format="{:.3f}", line_separator="\n"):
 
 def pretty_df(df):
     """
-    Arguments:
-      df: pandas.DataFrame
-    Data
 
-    Returns:
-      str
+    :param df: pandas
+    :param Data: 
+    :returns: str
       Pretty formatted table (first row is labels, then actual data)
+
     """
     table = SqlTable.from_df(df)
     return table.build()

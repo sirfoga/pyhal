@@ -7,28 +7,22 @@ import numpy as np
 
 
 def pearson(lst1, lst2):
-    """
-    Calculates pearson coefficient of arrays
+    """Calculates pearson coefficient of arrays
 
-    Arguments:
-      lst1: first list
-      lst2: second list
+    :param lst1: first list
+    :param lst2: second list
+    :returns: value: Pearson coefficient of arrays
 
-    Returns:
-        value: Pearson coefficient of arrays
     """
     return np.corrcoef(lst1, lst2)[0][1]
 
 
 def normalize_array(lst):
-    """
-    Normalizes list
+    """Normalizes list
 
-    Arguments:
-      lst:  Array of floats
+    :param lst: Array of floats
+    :returns: list: Normalized (in [0, 1]) input array
 
-    Returns:
-        list: Normalized (in [0, 1]) input array
     """
     np_arr = np.array(lst)
     x_normalized = np_arr / np_arr.max(axis=0)
@@ -36,15 +30,12 @@ def normalize_array(lst):
 
 
 def is_in_all(value, lists):
-    """
-    Checks if item is in all lists
+    """Checks if item is in all lists
 
-    Arguments:
-      value: Value to check
-      lists: List of lists
+    :param value: Value to check
+    :param lists: List of lists
+    :returns: bool: True iff value is in all inner lists
 
-    Returns:
-        bool: True iff value is in all inner lists
     """
     for l in lists:
         if value not in l:
@@ -54,14 +45,11 @@ def is_in_all(value, lists):
 
 
 def find_commons(lists):
-    """
-    Finds common values
+    """Finds common values
 
-    Arguments:
-      lists:  List of lists
+    :param lists: List of lists
+    :returns: list: List of values that are in common between inner lists
 
-    Returns:
-        list: List of values that are in common between inner lists
     """
     others = lists[1:]
     return [

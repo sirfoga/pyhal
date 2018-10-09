@@ -32,12 +32,10 @@ class UserInput:
 
     def is_yes(self, answer):
         """
-        Arguments:
-          answer: str
-        User answer
 
-        Returns:
-          bool
+        :param answer: str
+        :param User: answer
+        :returns: bool
           True iff considered a "yes" answer
 
         """
@@ -47,12 +45,10 @@ class UserInput:
 
     def is_no(self, answer):
         """
-        Arguments:
-          answer: str
-        User answer
 
-        Returns:
-          bool
+        :param answer: str
+        :param User: answer
+        :returns: bool
           True iff considered a "yes" answer
 
         """
@@ -64,9 +60,6 @@ class UserInput:
         """:return: void
             Prints to stdout help on how to answer properly
 
-        Arguments:
-
-        Returns:
 
         """
         print("Sorry, not well understood.")
@@ -75,12 +68,10 @@ class UserInput:
 
     def re_ask(self, with_help=True):
         """
-        Arguments:
-          with_help: bool
-        True iff you want to show help on how to answer questions (Default value = True)
 
-        Returns:
-          void
+        :param with_help: bool (Default value = True)
+        :param True: iff you want to show help on how to answer questions
+        :returns: void
           Re-asks user the last question
 
         """
@@ -91,12 +82,10 @@ class UserInput:
 
     def get_answer(self, question):
         """
-        Arguments:
-          question: str
-        Question to ask user
 
-        Returns:
-          str
+        :param question: str
+        :param Question: to ask user
+        :returns: str
           User answer
 
         """
@@ -106,12 +95,10 @@ class UserInput:
 
     def get_yes_no(self, question):
         """
-        Arguments:
-          question: str
-        Question to ask user
 
-        Returns:
-          bool
+        :param question: str
+        :param Question: to ask user
+        :returns: bool
           User answer
 
         """
@@ -139,18 +126,16 @@ class UserInput:
     def get_number(self, question,
                    min_i=float("-inf"), max_i=float("inf"), just_these=None):
         """
-        Arguments:
-          question: str
-        Question to ask
-          min_i: float
-        Min acceptable number (Default value = float("-inf"))
-          max_i: float
-        Max acceptable number (Default value = float("inf"))
-          just_these: of float
-        Accept only these numbers (Default value = None)
 
-        Returns:
-          float
+        :param question: str
+        :param Question: to ask
+        :param min_i: float (Default value = float("-inf"))
+        :param Min: acceptable number
+        :param max_i: float (Default value = float("inf"))
+        :param Max: acceptable number
+        :param just_these: of float (Default value = None)
+        :param Accept: only these numbers
+        :returns: float
           User answer
 
         """
@@ -184,19 +169,17 @@ class UserInput:
     def get_list(self, question,
                  splitter=",", at_least=0, at_most=float("inf")):
         """
-        Arguments:
-          question: str
-        Question to ask user
-          splitter: str
-        Split list elements with this char/str (Default value = ")
-          at_least: int
-        List must have at least this amount of elements (Default value = 0)
-          at_most: int
-        List must have at most this amount of elements (Default value = float("inf"))
-          ": 
 
-        Returns:
-          User answer
+        :param question: str
+        :param Question: to ask user
+        :param splitter: str (Default value = ")
+        :param Split: list elements with this char
+        :param at_least: int (Default value = 0)
+        :param List: must have at least this amount of elements
+        :param at_most: int (Default value = float("inf"))
+        :param List: must have at most this amount of elements
+        :param ": 
+        :returns: User answer
 
         """
         try:

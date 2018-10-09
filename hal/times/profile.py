@@ -7,17 +7,16 @@ from times import time
 
 def get_time_eta(total_done, total, start_time):
     """
-    Arguments:
-      total_done: int
-    Item processed
-      total: int
-    Total number of items to process
-      start_time: times
-    Time of start processing items
 
-    Returns:
-      times
+    :param total_done: int
+    :param Item: processed
+    :param total: int
+    :param Total: number of items to process
+    :param start_time: times
+    :param Time: of start processing items
+    :returns: times
       Time to go
+
     """
     time_done = int(time()) - start_time
     try:
@@ -53,14 +52,13 @@ def get_time_eta(total_done, total, start_time):
 
 def print_time_eta(time_to_go, note=""):
     """
-    Arguments:
-      time_to_go: Result of a call get_time_eta(...)
-      note: str
-    Notes to append to stdout (Default value = "")
 
-    Returns:
-      void
+    :param time_to_go: Result of a call get_time_eta
+    :param note: str (Default value = "")
+    :param Notes: to append to stdout
+    :returns: void
       Prints debug info to screen
+
     """
     print(
         str(note),

@@ -20,13 +20,12 @@ class Weekday(Enum):
 
 def get_just_date(date):
     """
-    Arguments:
-      date: datetime
-    Date with possible hours
 
-    Returns:
-      date
+    :param date: datetime
+    :param Date: with possible hours
+    :returns: date
       Just day, month and year (setting hours to 00:00:00)
+
     """
     return datetime.datetime(
         date.year,
@@ -37,15 +36,14 @@ def get_just_date(date):
 
 def get_next_weekday(weekday, including_today=False):
     """
-    Arguments:
-      weekday: Weekday
-    Weekday to get
-      including_today: bool
-    If today is sunday and requesting next sunday, I shall return today (Default value = False)
 
-    Returns:
-      datetime
+    :param weekday: Weekday
+    :param Weekday: to get
+    :param including_today: bool (Default value = False)
+    :param If: today is sunday and requesting next sunday
+    :returns: datetime
       Date of next monday, tuesday ...
+
     """
     now = datetime.datetime.now()
     if now.weekday() == weekday.value and including_today:
@@ -61,15 +59,14 @@ def get_next_weekday(weekday, including_today=False):
 
 def get_last_weekday(weekday, including_today=False):
     """
-    Arguments:
-      weekday: Weekday
-    Weekday to get
-      including_today: bool
-    If today is sunday and requesting next sunday, I shall return today (Default value = False)
 
-    Returns:
-      datetime
+    :param weekday: Weekday
+    :param Weekday: to get
+    :param including_today: bool (Default value = False)
+    :param If: today is sunday and requesting next sunday
+    :returns: datetime
       Date of next monday, tuesday ...
+
     """
     now = datetime.datetime.now()
     if now.weekday() == weekday.value and including_today:
@@ -90,30 +87,28 @@ def get_last_weekday(weekday, including_today=False):
 
 def is_date_in_between(date, start, end):
     """
-    Arguments:
-      date: datetime
-    Date to check
-      start: datetime
-    Date cannot be before this date
-      end: datetime
-    Date cannot be after this date
 
-    Returns:
-      bool
+    :param date: datetime
+    :param Date: to check
+    :param start: datetime
+    :param Date: cannot be before this date
+    :param end: datetime
+    :param Date: cannot be after this date
+    :returns: bool
       True iff date is in between dates
+
     """
     return get_just_date(start) <= get_just_date(date) < get_just_date(end)
 
 
 def is_in_this_week(date):
     """
-    Arguments:
-      date: datetime
-    Date
 
-    Returns:
-      bool
+    :param date: datetime
+    :param Date: 
+    :returns: bool
       True iff date is in this week (from sunday to sunday)
+
     """
     return is_date_in_between(
         get_just_date(date),

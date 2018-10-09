@@ -18,17 +18,15 @@ class CorrelationMatrix:
     def __init__(self, title, headers_to_test, headers, data):
 
         """
-        Arguments:
-          title: str
-        Title to show
-          headers_to_test: of str
-        List of columns to get correlation matrix of
-          headers: of str
-        List of all headers in matrix
-          data: of []
-        Matrix of float values
 
-        Returns:
+        :param title: str
+        :param Title: to show
+        :param headers_to_test: of str
+        :param List: of columns to get correlation matrix of
+        :param headers: of str
+        :param List: of all headers in matrix
+        :param data: of
+        :param Matrix: of float values
 
         """
         self.title = title
@@ -39,12 +37,10 @@ class CorrelationMatrix:
     @staticmethod
     def get_correlation_matrix(matrix):
         """
-        Arguments:
-          matrix: of []
-        List of features to get correlation matrix
 
-        Returns:
-          of []
+        :param matrix: of
+        :param List: of features to get correlation matrix
+        :returns: of []
           correlation matrix
 
         """
@@ -52,12 +48,10 @@ class CorrelationMatrix:
 
     def show_correlation_matrix(self, correlation_matrix):
         """
-        Arguments:
-          correlation_matrix: of []
-        Correlation matrix of features
 
-        Returns:
-          void
+        :param correlation_matrix: of
+        :param Correlation: matrix of features
+        :returns: void
           shows the given correlation matrix as image
 
         """
@@ -75,9 +69,6 @@ class CorrelationMatrix:
         """:return: [] of []
             Correlation matrix of selected columns
 
-        Arguments:
-
-        Returns:
 
         """
         header_to_column = {}  # create index of headers
@@ -99,12 +90,10 @@ class CorrelationMatrix:
 
     def save_to_file(self, out_file):
         """
-        Arguments:
-          out_file: str
-        Output file
 
-        Returns:
-          void
+        :param out_file: str
+        :param Output: file
+        :returns: void
           Saves correlation matrix of selected headers
 
         """
@@ -119,12 +108,10 @@ class CorrelationMatrix:
     @staticmethod
     def save_correlation_matrix_of_data_files_in_folder(folder_path):
         """
-        Arguments:
-          folder_path: str
-        Folder containing logs data
 
-        Returns:
-          void
+        :param folder_path: str
+        :param Folder: containing logs data
+        :returns: void
           Saves each file's correlation matrix of common headers
 
         """

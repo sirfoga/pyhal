@@ -10,80 +10,80 @@ from hal.data.linked_list import LinkedList
 
 
 class VersionNumber:
-    """ Version """
+    """Version"""
 
     @abstractmethod
     def get_current_amount(self):
-        """
-        Gets current set amount
+        """Gets current set amount
 
-        Returns:
-            amount: Current set amount
+
+        :returns: Current set amount
+
+        :rtype: amount
+
         """
         pass
 
     def can_increase(self, amount):
         """
-        Arguments:
-            amount: Amount to increase
 
-        Returns:
-            bool: True iff this number can be increased by such amount
+        :param amount: Amount to increase
+        :returns: bool: True iff this number can be increased by such amount
+
         """
         return amount <= self.max_amount_allowed()
 
     @abstractmethod
     def increase(self, amount=1):
-        """
-        Increase version by this amount
+        """Increase version by this amount
 
-        Arguments:
-            amount: Increase number by this amount (Default value = 1)
+        :param amount: Increase number by this amount (Default value = 1)
+        :returns: bool: True iff increase was successful
 
-        Returns:
-            bool: True iff increase was successful
         """
         pass
 
     @abstractmethod
     def maximize(self):
-        """
-        Maximizes this version
+        """Maximizes this version
 
-        Returns:
-        Maximizes this version
+
+        :returns: Maximizes this version
+
         """
         pass
 
     @abstractmethod
     def reset(self):
-        """
-        Zeroes this number
+        """Zeroes this number
 
-        Returns:
-        Zeroes this number
+
+        :returns: Zeroes this number
+
         """
         pass
 
     @abstractmethod
     def max_amount_allowed(self):
-        """
-        Calculates number of increases available
+        """Calculates number of increases available
 
-        Returns:
-            increases: Number of increases that can be done before reaching
-            maximum
+
+        :returns: Number of increases that can be done before reaching
+
+        :rtype: increases
+
         """
         pass
 
     @abstractmethod
     def max(self):
-        """
-        Calculates max increases
+        """Calculates max increases
 
-        Returns:
-            inreases: Number of increases that can be done before reaching
-            maximum starting at 0
+
+        :returns: Number of increases that can be done before reaching
+
+        :rtype: inreases
+
         """
         pass
 
@@ -105,14 +105,14 @@ class Level(VersionNumber):
         return str(self.current)
 
     def get_current_amount(self):
-        """
-        See also: #get_current_amount()
-        """
+        """See also: #get_current_amount()"""
         return self.current
 
     def increase(self, amount=1):
-        """
-        See also: #increase()
+        """See also: #increase()
+
+        :param amount:  (Default value = 1)
+
         """
         if self.can_increase(amount):
             self.current += amount
@@ -121,27 +121,19 @@ class Level(VersionNumber):
         return False
 
     def maximize(self):
-        """
-        See also: #maximize()
-        """
+        """See also: #maximize()"""
         self.current = self.max_inner
 
     def reset(self):
-        """
-        See also: #reset()
-        """
+        """See also: #reset()"""
         self.current = 0
 
     def max_amount_allowed(self):
-        """
-        See also: #max_amount_allowed()
-        """
+        """See also: #max_amount_allowed()"""
         return self.max_inner - self.current
 
     def max(self):
-        """
-        See also: #max()
-        """
+        """See also: #max()"""
         return self.max_inner
 
 
@@ -167,15 +159,11 @@ class Subsystem(VersionNumber):
         return out
 
     def get_current_amount(self):
-        """
-        See also: #get_current_amount()
-        """
+        """See also: #get_current_amount()"""
         return self.current
 
     def reset(self):
-        """
-        See also: #reset()
-        """
+        """See also: #reset()"""
         node = self.ll.head
 
         while node is not None:
@@ -183,8 +171,10 @@ class Subsystem(VersionNumber):
             node = node.next_node
 
     def increase(self, amount=1):
-        """
-        See also: #increase()
+        """See also: #increase()
+
+        :param amount:  (Default value = 1)
+
         """
         if self.ll.head.val.increase(amount):
             return True
@@ -209,9 +199,7 @@ class Subsystem(VersionNumber):
         return self.increase(amount_left)
 
     def maximize(self):
-        """
-        See also: #maximize()
-        """
+        """See also: #maximize()"""
         node = self.ll.head
 
         while node is not None:
@@ -219,9 +207,7 @@ class Subsystem(VersionNumber):
             node = node.next_node
 
     def max_amount_allowed(self):
-        """
-        See also: #max_amount_allowed()
-        """
+        """See also: #max_amount_allowed()"""
         amount_allowed = self.ll.head.val.max_amount_allowed()
         multiplier = self.ll.head.val.max()
         node = self.ll.head.next_node
@@ -234,9 +220,7 @@ class Subsystem(VersionNumber):
         return amount_allowed
 
     def max(self):
-        """
-        See also: #max()
-        """
+        """See also: #max()"""
         multiplier = 1
         node = self.ll.head
 
@@ -263,72 +247,60 @@ class Version(VersionNumber):
         return str(self.s)
 
     def get_current_amount(self):
-        """
-        See also: #get_current_amount()
-        """
+        """See also: #get_current_amount()"""
         return self.s.get_current_amount()
 
     def reset(self):
-        """
-        See also: #reset()
-        """
+        """See also: #reset()"""
         return self.s.reset()
 
     def max_amount_allowed(self):
-        """
-        See also: #max_amount_allowed()
-        """
+        """See also: #max_amount_allowed()"""
         return self.s.max_amount_allowed()
 
     def increase(self, amount=1):
-        """
-        See also: #increase()
+        """See also: #increase()
+
+        :param amount:  (Default value = 1)
+
         """
         return self.s.increase(amount)
 
     def increase_by_changes(self, changes_amount, ratio):
-        """
-        Increase version by amount of changes
+        """Increase version by amount of changes
 
-        Arguments:
-          changes_amount: Number of changes done
-          ratio: Ratio changes / version increases
-
-        Returns:
-            bool: Increases version accordingly to changes
-
+        :param changes_amount: Number of changes done
+        :param ratio: Ratio changes
+        :returns: bool: Increases version accordingly to changes
+        
         See also: #increase()
+
         """
         increases = round(changes_amount * ratio)
         return self.increase(int(increases))
 
     def maximize(self):
-        """
-        Maximizes this version
+        """Maximizes this version
 
-        Returns:
-        Maximizes this version
+
+        :returns: Maximizes this version
+
         """
         return self.s.maximize()
 
     def max(self):
-        """
-        See also: #maximize()
-        """
+        """See also: #maximize()"""
         return self.s.max()
 
     @staticmethod
     def from_str(string, max_number=9, separator="."):
-        """
-        Parses string
+        """Parses string
 
-        Arguments:
-          string: Version
-          max_number: Max number reachable by sub-versions numbers
-          separator: Version numbers are separated with this split
+        :param string: Version
+        :param max_number: Max number reachable by sub (Default value = 9)
+        :param separator: Version numbers are separated with this split (Default value = ".")
+        :returns: version: Parses string and returns object
 
-        Returns:
-            version: Parses string and returns object
         """
         tokens = string.split(separator)
         tokens = list(reversed(tokens))  # reverse order of importance

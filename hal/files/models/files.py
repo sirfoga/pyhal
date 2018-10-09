@@ -26,14 +26,12 @@ class Document(FileSystem):
     @staticmethod
     def move_file_to_directory(file_path, directory_path):
         """
-        Arguments:
-          file_path: string
-        Path to file to move
-          directory_path: string
-        Path to target directory where to move file
 
-        Returns:
-          void
+        :param file_path: string
+        :param Path: to file to move
+        :param directory_path: string
+        :param Path: to target directory where to move file
+        :returns: void
           Move file to given directory
 
         """
@@ -46,14 +44,12 @@ class Document(FileSystem):
     @staticmethod
     def move_file_to_file(old_path, new_path):
         """
-        Arguments:
-          old_path: string
-        Old path of file to move
-          new_path: string
-        New path (location) of file
 
-        Returns:
-          void
+        :param old_path: string
+        :param Old: path of file to move
+        :param new_path: string
+        :param New: path
+        :returns: void
           Move file from old location to new one
 
         """
@@ -77,14 +73,12 @@ class Document(FileSystem):
     @staticmethod
     def write_data_to_file(data, out_file):
         """
-        Arguments:
-          data: string
-        Data to write to file.
-          out_file: string
-        Path to output file.
 
-        Returns:
-          void
+        :param data: string
+        :param Data: to write to file
+        :param out_file: string
+        :param Path: to output file
+        :returns: void
           Writes given data to given path file.
 
         """
@@ -94,12 +88,10 @@ class Document(FileSystem):
     @staticmethod
     def extract_name_extension(file_name):
         """
-        Arguments:
-          file_name: string
-        Name of file
 
-        Returns:
-          tuple string, string
+        :param file_name: string
+        :param Name: of file
+        :returns: tuple string, string
           Name of file, extension of file
 
         """
@@ -109,9 +101,6 @@ class Document(FileSystem):
         """:return: tuple string, string
             Name of path, name of file (or folder)
 
-        Arguments:
-
-        Returns:
 
         """
         path = fix_raw_path(os.path.dirname(os.path.abspath(self.path)))
@@ -158,12 +147,10 @@ class Directory(FileSystem):
     @staticmethod
     def create_new(path):
         """
-        Arguments:
-          path: string
-        Path to directory to create
 
-        Returns:
-          void
+        :param path: string
+        :param Path: to directory to create
+        :returns: void
           Creates new directory
 
         """
@@ -174,9 +161,6 @@ class Directory(FileSystem):
         """:return: tuple string, string
             Name of path, name of file (or folder)
 
-        Arguments:
-
-        Returns:
 
         """
         complete_path = os.path.dirname(os.path.abspath(self.path))
@@ -190,9 +174,6 @@ class Directory(FileSystem):
         """:return: Bool
             True iff empty
 
-        Arguments:
-
-        Returns:
 
         """
         return not os.listdir(self.path)

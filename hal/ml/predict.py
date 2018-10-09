@@ -22,14 +22,12 @@ class BasePrediction:
 
     def train(self, x_data, y_data):
         """
-        Arguments:
-          x_data: data
-        Input x
-          y_data: data
-        Input y
 
-        Returns:
-          void
+        :param x_data: data
+        :param Input: 
+        :param y_data: data
+        :param Input: 
+        :returns: void
           Train model on inputs
 
         """

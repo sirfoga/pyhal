@@ -27,43 +27,43 @@ class SimpleChart:
 
     @staticmethod
     def setup(bottom):
-        """
-        Setups bottom margin
+        """Setups bottom margin
 
-        Arguments:
-            bottom: Bottom margin
+        :param bottom: Bottom margin
+
         """
         plt.gcf().subplots_adjust(bottom=bottom)  # add bottom
 
     def get_fig(self):
-        """
-        Gets chart canvas
+        """Gets chart canvas
 
-        Returns:
-            figure: matplotlib figure
+
+        :returns: matplotlib figure
+
+        :rtype: figure
+
         """
         return self.fig
 
     def get_ax(self):
-        """
-        Adds to figure
+        """Adds to figure
 
-        Returns:
-            completed: operation completed
+
+        :returns: operation completed
+
+        :rtype: completed
+
         """
         return self.fig.add_subplot(111)
 
     def create_bar_chart(self, x_labels, y_values, y_label):
-        """
-        Creates bar char
+        """Creates bar char
 
-        Arguments:
-            x_labels: Names for each variable
-            y_values: Values of x labels
-            y_label: Label of y axis
+        :param x_labels: Names for each variable
+        :param y_values: Values of x labels
+        :param y_label: Label of y axis
+        :returns: chart: Bar chart
 
-        Returns:
-            chart: Bar chart
         """
         self.setup(0.25)
         ax1 = self.get_ax()
@@ -79,17 +79,15 @@ class SimpleChart:
 
     def create_multiple_bar_chart(self, x_labels, mul_y_values, mul_y_labels,
                                   normalize=False):
-        """
-        Creates bar chart with multiple lines
+        """Creates bar chart with multiple lines
 
-        Args:
-            x_labels: Names for each variable
-            mul_y_values: list of values of x labels
-            mul_y_labels: list of labels for each y value
-            normalize: True iff you want to normalize each y series
+        :param x_labels: Names for each variable
+        :param mul_y_values: list of values of x labels
+        :param mul_y_labels: list of labels for each y value
+        :param normalize: True iff you want to normalize each y series (Default value = False)
+        :returns: Bar chart
+        :rtype: chart
 
-        Returns:
-            chart: Bar chart
         """
         self.setup(0.25)
         ax1 = self.get_ax()
@@ -127,16 +125,14 @@ class SimpleChart:
         return ax1
 
     def create_sym_log_bar_chart(self, x_labels, y_values, y_label):
-        """
-        Creates bar chart (log version)
+        """Creates bar chart (log version)
 
-        Args:
-            x_labels: Names for each variable
-            y_values: Values of x labels
-            y_label: Label of y axis
+        :param x_labels: Names for each variable
+        :param y_values: Values of x labels
+        :param y_label: Label of y axis
+        :returns: Sym-log bar chart
+        :rtype: chart
 
-        Returns:
-            chart: Sym-log bar chart
         """
         ax1 = self.create_bar_chart(x_labels, y_values, y_label)
         ax1.set_yscale("sym-log", linthreshy=1e-12)  # logarithmic plot

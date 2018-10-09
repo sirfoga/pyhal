@@ -9,16 +9,13 @@ from hal.charts.models import SimpleChart
 
 
 def create_correlation_matrix_plot(correlation_matrix, title, feature_list):
-    """
-    Creates plot for correlation matrix
+    """Creates plot for correlation matrix
 
-    Arguments:
-        correlation_matrix: Correlation matrix of features
-        title: Title of plot
-        feature_list: List of names of features
+    :param correlation_matrix: Correlation matrix of features
+    :param title: Title of plot
+    :param feature_list: List of names of features
+    :returns: Shows the given correlation matrix as image
 
-    Returns:
-        Shows the given correlation matrix as image
     """
     chart = SimpleChart(title)
     ax1 = chart.get_ax()

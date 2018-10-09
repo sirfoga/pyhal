@@ -12,15 +12,14 @@ from hal.files.models.system import list_content
 
 def find_songs(folder, recursive):
     """
-    Arguments:
-      folder: str
-    Path
-      recursive: bool
-    True iff want to search recursively
 
-    Returns:
-      generator of MP3Song
+    :param folder: str
+    :param Path: 
+    :param recursive: bool
+    :param True: iff want to search recursively
+    :returns: generator of MP3Song
       List of paths of the songs in folder
+
     """
     paths = list_content(folder, recursive)
     for p in paths:
@@ -34,12 +33,10 @@ class MP3Song(FileSystem):
     @staticmethod
     def is_valid_mp3(path):
         """
-        Arguments:
-          path: str
-        Path to candidate .mp3 song
 
-        Returns:
-          bool
+        :param path: str
+        :param Path: to candidate
+        :returns: bool
           True iff song is MP3 encoded
 
         """
@@ -63,9 +60,6 @@ class MP3Song(FileSystem):
         """:return: {}
             Dictionary with songs details about title, artist, album and year
 
-        Arguments:
-
-        Returns:
 
         """
         title = str(self.get_title()).strip()
@@ -84,12 +78,10 @@ class MP3Song(FileSystem):
 
     def set_title(self, name):
         """
-        Arguments:
-          name: str
-        Song's title
 
-        Returns:
-          void
+        :param name: str
+        :param Song: s title
+        :returns: void
           Sets song's title
 
         """
@@ -98,12 +90,10 @@ class MP3Song(FileSystem):
 
     def set_artist(self, artist):
         """
-        Arguments:
-          artist: str
-        Song's artist
 
-        Returns:
-          void
+        :param artist: str
+        :param Song: s artist
+        :returns: void
           Sets song's artist
 
         """
@@ -112,12 +102,10 @@ class MP3Song(FileSystem):
 
     def set_album(self, album):
         """
-        Arguments:
-          album: str
-        Song's album
 
-        Returns:
-          void
+        :param album: str
+        :param Song: s album
+        :returns: void
           Sets song's albu
 
         """
@@ -126,12 +114,10 @@ class MP3Song(FileSystem):
 
     def set_nr_track(self, nr_track):
         """
-        Arguments:
-          nr_track: int
-        Number of track
 
-        Returns:
-          void
+        :param nr_track: int
+        :param Number: of track
+        :returns: void
           Sets song's track number
 
         """
@@ -140,12 +126,10 @@ class MP3Song(FileSystem):
 
     def set_year(self, year):
         """
-        Arguments:
-          year: int
-        Year of song
 
-        Returns:
-          void
+        :param year: int
+        :param Year: of song
+        :returns: void
           Sets song's year
 
         """
@@ -154,12 +138,10 @@ class MP3Song(FileSystem):
 
     def set_genre(self, genre):
         """
-        Arguments:
-          genre: str
-        Genre of song
 
-        Returns:
-          void
+        :param genre: str
+        :param Genre: of song
+        :returns: void
           Sets song's genre
 
         """
@@ -172,9 +154,6 @@ class MP3Song(FileSystem):
         """:return: str
             Gets song's title
 
-        Arguments:
-
-        Returns:
 
         """
         try:
@@ -186,9 +165,6 @@ class MP3Song(FileSystem):
         """:return: str
             Gets song's artist
 
-        Arguments:
-
-        Returns:
 
         """
         try:
@@ -200,9 +176,6 @@ class MP3Song(FileSystem):
         """:return: str
             Gets song's albu
 
-        Arguments:
-
-        Returns:
 
         """
         try:
@@ -214,9 +187,6 @@ class MP3Song(FileSystem):
         """:return: str
             Gets song's track number
 
-        Arguments:
-
-        Returns:
 
         """
         try:
@@ -228,9 +198,6 @@ class MP3Song(FileSystem):
         """:return: str
             Gets song's year
 
-        Arguments:
-
-        Returns:
 
         """
         try:
@@ -242,9 +209,6 @@ class MP3Song(FileSystem):
         """:return: str
             Gets song's genre
 
-        Arguments:
-
-        Returns:
 
         """
         try:

@@ -12,16 +12,14 @@ class SeleniumForm:
     @staticmethod
     def fill_form_field(browser, field_name, field_value):
         """
-        Arguments:
-          browser: web-driver
-        Browser to use to submit form.
-          field_name: string
-        Name of field to fill
-          field_value: string
-        Value with which to fill field.
 
-        Returns:
-          void
+        :param browser: web
+        :param Browser: to use to submit form
+        :param field_name: string
+        :param Name: of field to fill
+        :param field_value: string
+        :param Value: with which to fill field
+        :returns: void
           Fill given field with given value.
 
         """
@@ -33,20 +31,18 @@ class SeleniumForm:
     def fill_login_form(browser, username, username_field, user_password,
                         user_password_field):
         """
-        Arguments:
-          browser: web-driver
-        Browser to use to submit form
-          username: string
-        Username of user to login
-          username_field: string
-        Name of field to fill with username
-          user_password: string
-        Password of user to login
-          user_password_field: string
-        Name of field to fill with user password
 
-        Returns:
-          void
+        :param browser: web
+        :param Browser: to use to submit form
+        :param username: string
+        :param Username: of user to login
+        :param username_field: string
+        :param Name: of field to fill with username
+        :param user_password: string
+        :param Password: of user to login
+        :param user_password_field: string
+        :param Name: of field to fill with user password
+        :returns: void
           Form filled with given information
 
         """
@@ -58,14 +54,12 @@ class SeleniumForm:
     @staticmethod
     def submit_form(browser, button_name):
         """
-        Arguments:
-          browser: web-driver
-        Browser to use to submit form.
-          button_name: string
-        Name of button to press to submit form
 
-        Returns:
-          void
+        :param browser: web
+        :param Browser: to use to submit form
+        :param button_name: string
+        :param Name: of button to press to submit form
+        :returns: void
           Submit form.
 
         """

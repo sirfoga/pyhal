@@ -7,14 +7,12 @@ from pymongo import MongoClient
 class DbBrowser:
     def __init__(self, db_name):
 
-        """
-        Arguments:
-          db_name: str
-        Name of db
+    """
 
-        Returns:
+    :param db_name: str
+    :param Name: of db
 
-        """
+    """
         self.client = MongoClient()
         self.db = self.client[db_name]
 
@@ -22,9 +20,6 @@ class DbBrowser:
         """:return: [] of str
             List of names of all collections
 
-        Arguments:
-
-        Returns:
 
         """
         return self.db.collection_names()
@@ -33,9 +28,6 @@ class DbBrowser:
         """:return: int
             Number of documents in db
 
-        Arguments:
-
-        Returns:
 
         """
         db_collections = [
@@ -45,14 +37,12 @@ class DbBrowser:
 
     def get_documents_in_collection(self, collection_name, with_id=True):
         """
-        Arguments:
-          collection_name: str
-        Name of collection
-          with_id: bool
-        True iff each document should also come with its id (Default value = True)
 
-        Returns:
-          of {}
+        :param collection_name: str
+        :param Name: of collection
+        :param with_id: bool (Default value = True)
+        :param True: iff each document should also come with its id
+        :returns: of {}
           List of documents in collection in self.db
 
         """
@@ -69,12 +59,10 @@ class DbBrowser:
 
     def get_collection(self, key):
         """
-        Arguments:
-          key: str
-        Name of collection
 
-        Returns:
-          Collection
+        :param key: str
+        :param Name: of collection
+        :returns: Collection
           Data in collection with given key
 
         """
@@ -82,12 +70,10 @@ class DbBrowser:
 
     def get_documents_in_database(self, with_id=True):
         """
-        Arguments:
-          with_id: bool
-        True iff each document should also come with its id (Default value = True)
 
-        Returns:
-          of {}
+        :param with_id: bool (Default value = True)
+        :param True: iff each document should also come with its id
+        :returns: of {}
           List of documents in collection in database
 
         """

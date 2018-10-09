@@ -13,15 +13,12 @@ class Plot2d:
 
     @staticmethod
     def scatter(vector_x, vector_y):
-        """
-        Plots scatter data
+        """Plots scatter data
 
-        Arguments:
-            vector_x: vector in x axis
-            vector_y: vector in y axis
+        :param vector_x: vector in x axis
+        :param vector_y: vector in y axis
+        :returns: Shows 2d scatter plot
 
-        Returns:
-            Shows 2d scatter plot
         """
         if len(vector_x) == len(vector_y):
             # fig = plt.figure()
@@ -35,18 +32,15 @@ class Plot2d:
 
     @staticmethod
     def param(function_x, function_y, min_val, max_val, points):
-        """
-        Plots parametric data
+        """Plots parametric data
 
-        Arguments:
-            function_x: function in x value
-            function_y: function in y value
-            min_val: minimum value
-            max_val: maximum value
-            points: number of points to display
+        :param function_x: function in x value
+        :param function_y: function in y value
+        :param min_val: minimum value
+        :param max_val: maximum value
+        :param points: number of points to display
+        :returns: Shows 2d parametric graph of given function from min to max
 
-        Returns:
-            Shows 2d parametric graph of given function from min to max
         """
         if points < 0:
             raise ValueError("Number of points to plot must be positive.")
@@ -56,17 +50,14 @@ class Plot2d:
 
     @staticmethod
     def plot(func, min_val, max_val, points):
-        """
-        Plots data
+        """Plots data
 
-        Arguments:
-            func: function to plot
-            min_val: minimum value
-            max_val: maximum value
-            points: number of points
+        :param func: function to plot
+        :param min_val: minimum value
+        :param max_val: maximum value
+        :param points: number of points
+        :returns: Plots 2d function
 
-        Returns:
-            Plots 2d function
         """
         if points < 0:
             raise ValueError("Number of points to plot must be positive.")
@@ -84,16 +75,13 @@ class Plot3d:
 
     @staticmethod
     def scatter(vector_x, vector_y, vector_z):
-        """
-        Plots scatter data
+        """Plots scatter data
 
-        Arguments:
-            vector_x: vector in x axis
-            vector_y: vector in y axis
-            vector_z: vector in z axis
+        :param vector_x: vector in x axis
+        :param vector_y: vector in y axis
+        :param vector_z: vector in z axis
+        :returns: Plots 3d scattered points
 
-        Returns:
-            Plots 3d scattered points
         """
         if len(vector_x) == len(vector_y) == len(vector_z):
             # general settings
@@ -109,19 +97,16 @@ class Plot3d:
     @staticmethod
     def param(function_x, function_y, function_z, min_val, max_val,
               points):
-        """
-        Plots parametric functions
+        """Plots parametric functions
 
-        Arguments:
-            function_x: function in x
-            function_y: function in y
-            function_z: function in z
-            min_val: minimum
-            max_val: maximum
-            points: number of points
+        :param function_x: function in x
+        :param function_y: function in y
+        :param function_z: function in z
+        :param min_val: minimum
+        :param max_val: maximum
+        :param points: number of points
+        :returns: Shows 3d parametric graph of given function from min to max
 
-        Returns:
-            Shows 3d parametric graph of given function from min to max
         """
         if points < 0:
             raise ValueError("Number of points to plot must be positive.")
@@ -152,20 +137,17 @@ class Plot3d:
 
     @staticmethod
     def plot(func, min_x, max_x, points_x, min_y, max_y, points_y):
-        """
-        Plots function
+        """Plots function
 
-        Arguments:
-            func: function to plot
-            min_x: minimum of x-values
-            max_x: maximum of x-values
-            points_x: points in x axis
-            min_y: minimum of y-values
-            max_y: maximum of y-values
-            points_y: points in y axis
+        :param func: function to plot
+        :param min_x: minimum of x
+        :param max_x: maximum of x
+        :param points_x: points in x axis
+        :param min_y: minimum of y
+        :param max_y: maximum of y
+        :param points_y: points in y axis
+        :returns: Plots 3d function
 
-        Returns:
-            Plots 3d function
         """
         if points_x < 0 or points_y < 0:
             raise ValueError("Number of points to plot must be positive.")
@@ -203,17 +185,14 @@ class Plot4d:
 
     @staticmethod
     def scatter(vector_x, vector_y, vector_z, vector_w):
-        """
-        Plots scatter data
+        """Plots scatter data
 
-        Arguments:
-            vector_x: vector in x axis
-            vector_y: vector in y axis
-            vector_z: vector in z axis
-            vector_w: vector in w axis
+        :param vector_x: vector in x axis
+        :param vector_y: vector in y axis
+        :param vector_z: vector in z axis
+        :param vector_w: vector in w axis
+        :returns: Plots 4d scattered points
 
-        Returns:
-            Plots 4d scattered points
         """
         if len(vector_x) == len(vector_y) == len(vector_z) == len(vector_w):
             pass
@@ -223,24 +202,21 @@ class Plot4d:
     @staticmethod
     def plot(func, min_x, max_x, min_y, max_y, min_z, max_z,
              precision=0.5, kind="contour"):
-        """
-        Plots function
+        """Plots function
 
-        Arguments:
-            func: function to plot
-            min_x: minimum of x-values
-            max_x: maximum of x-values
-            min_y: minimum of y-values
-            max_y: maximum of y-values
-            min_z: minimum of z-values
-            max_z: maximum of z-values
-            precision: precision (Default value = 0.5)
-            kind: x cont -> 3d plot with y, z variables in plane
-                and w as "z"-axis contour: x cont -> 3d plot with y,z variables
-                in plane and w colored (Default value = "contour")
+        :param func: function to plot
+        :param min_x: minimum of x
+        :param max_x: maximum of x
+        :param min_y: minimum of y
+        :param max_y: maximum of y
+        :param min_z: minimum of z
+        :param max_z: maximum of z
+        :param precision: precision (Default value = 0.5)
+        :param kind: x cont (Default value = "contour")
+        :param and: w as
+        :param in: plane and w colored
+        :returns: Plots 4d function
 
-        Returns:
-            Plots 4d function
         """
         if precision < 0:
             raise ValueError("Precision cannot be negative.")
@@ -262,59 +238,47 @@ class Plot4d:
                 "Plot type not supported, only \"slice\" and \"contour\" are.")
 
         def set_labels(graph, label_x, label_y, label_z):
-            """
-            Set chart labels
+            """Set chart labels
 
-            Arguments:
-                graph: plot
-                label_x: new label on x axis
-                label_y: new label on y axis
-                label_z: new label on z axis
+            :param graph: plot
+            :param label_x: new label on x axis
+            :param label_y: new label on y axis
+            :param label_z: new label on z axis
+            :returns: Sets given labels to axes of graph
 
-            Returns:
-                Sets given labels to axes of graph
             """
             graph.set_xlabel(label_x)
             graph.set_ylabel(label_y)
             graph.set_zlabel(label_z)
 
         def set_limits(graph):
-            """
-            Set chart limits
+            """Set chart limits
 
-            Arguments:
-                graph: plot
+            :param graph: plot
+            :returns: Sets given limits to axes of graph
 
-            Returns:
-                Sets given limits to axes of graph
             """
             graph.set_xlim(min_x, max_x)
             graph.set_ylim(min_y, max_y)
             graph.set_zlim(min_z, max_z)
 
         def get_precision(min_val, max_val):
-            """
-            Calculates precision
+            """Calculates precision
 
-            Arguments:
-                min_val: minimum
-                max_val: maximum
+            :param min_val: minimum
+            :param max_val: maximum
+            :returns: precision: prevision of values
 
-            Returns:
-                precision: prevision of values
             """
             return int((max_val - min_val) * (1 + precision))
 
         def get_precision_delta(min_val, max_val):
-            """
-            Calculates precision delta
+            """Calculates precision delta
 
-            Arguments:
-                min_val: minimum
-                max_val: maximum
+            :param min_val: minimum
+            :param max_val: maximum
+            :returns: delta: Precision delta
 
-            Returns:
-                delta: Precision delta
             """
             return float(max_val - min_val) / float(10 * precision)
 
@@ -332,14 +296,11 @@ class Plot4d:
             slider = Slider(axis_slider, "x", min_x, max_x, valinit=min_x)
 
             def update(val):
-                """
-                Updates chart with value
+                """Updates chart with value
 
-                Arguments:
-                    val: value
+                :param val: value
+                :returns: Re-plots
 
-                Returns:
-                    Re-plots
                 """
                 chart.clear()
                 x_const = slider.val
@@ -371,14 +332,11 @@ class Plot4d:
             # update
 
             def update(val):
-                """
-                Updates chart with value
+                """Updates chart with value
 
-                Arguments:
-                    val: value
+                :param val: value
+                :returns: Re-plots
 
-                Returns:
-                    Re-plots
                 """
                 chart.clear()  # re-plot
                 x_const = slider.val

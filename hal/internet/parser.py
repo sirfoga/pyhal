@@ -22,9 +22,6 @@ class HtmlTable:
         """:return: list of list
             List of list of values in table
 
-        Arguments:
-
-        Returns:
 
         """
         data = []  # add name of section

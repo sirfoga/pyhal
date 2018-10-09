@@ -14,21 +14,18 @@
 #
 import os
 import sys
-
-sys.path.insert(0, os.path.abspath('..'))
-
 import hal
 
 # -- Project information -----------------------------------------------------
 
 project = 'PyHal'
-copyright = 'MMXVIII, Stefano Fogarollo'
+_copyright = 'MMXVIII, Stefano Fogarollo'
 author = 'Stefano Fogarollo'
 
 # The short X.Y version
-version = hal.__version__
+version = "10.1.4"  # todo hal.__version__
 # The full version, including alpha/beta/rc tags
-release = hal.__version__
+release = "10.1.4"  # todo hal.__version__
 
 
 # -- General configuration ---------------------------------------------------
@@ -72,7 +69,7 @@ language = None
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'flask_theme_support.FlaskyStyle'
+pygments_style = None
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -89,7 +86,7 @@ html_theme = 'alabaster'
 html_theme_options = {
     'show_powered_by': False,
     'github_user': 'sirfoga',
-    'github_repo': 'pyhaò',
+    'github_repo': 'pyhal',
     'github_banner': True,
     'show_related': False,
     'note_bg': '#FFF59C'
@@ -192,7 +189,7 @@ texinfo_documents = [
 epub_title = project
 epub_author = author
 epub_publisher = author
-epub_copyright = copyright
+epub_copyright = _copyright
 
 # The unique identifier of the text. This can be a ISBN number
 # or the project homepage.

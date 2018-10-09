@@ -109,7 +109,11 @@ Different ways, all equals
 
 
 ## Usage and documentation
-Browse the [readthedocs](https://sirfoga.github.io/pyhal/) on-line documentation
+<a href="https://pyhal.readthedocs.io/en/latest/"><img src="https://readthedocs.org/projects/pyhal/badge/?version=latest"></a>
+
+Browse the online documentation
+- on my [personal page]([readthedocs](https://sirfoga.github.io/pyhal/))
+- on [readthedocs.org](https://pyhal.readthedocs.io/en/latest/)
 
 
 ## Contributing

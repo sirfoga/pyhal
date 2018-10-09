@@ -13,11 +13,13 @@ class Matrix:
         self.matrix = matrix
 
     def precision(self):
-        """
-        Calculates precision
+        """Calculates precision
 
-        Returns:
-            value: Precision of matrix
+
+        :returns: Precision of matrix
+
+        :rtype: value
+
         """
         true_pos = self.matrix[0][0]
         false_pos = self.matrix[1][0]
@@ -28,11 +30,13 @@ class Matrix:
             return 0
 
     def recall(self):
-        """
-        Calculates recall
+        """Calculates recall
 
-        Returns:
-            value: Recall
+
+        :returns: Recall
+
+        :rtype: value
+
         """
         true_pos = self.matrix[0][0]
         false_neg = self.matrix[0][1]
@@ -43,11 +47,13 @@ class Matrix:
             return 0
 
     def true_neg_rate(self):
-        """
-        Calculates true negative rate
+        """Calculates true negative rate
 
-        Returns:
-            value: true negative rate
+
+        :returns: true negative rate
+
+        :rtype: value
+
         """
         false_pos = self.matrix[1][0]
         true_neg = self.matrix[1][1]
@@ -58,11 +64,13 @@ class Matrix:
             return 0
 
     def accuracy(self):
-        """
-        Calculates accuracy
+        """Calculates accuracy
 
-        Returns:
-            value: Accuracy
+
+        :returns: Accuracy
+
+        :rtype: value
+
         """
         true_pos = self.matrix[0][0]
         false_pos = self.matrix[1][0]
@@ -78,11 +86,13 @@ class Matrix:
             return 0
 
     def f1_score(self):
-        """
-        Calculates F1 score
+        """Calculates F1 score
 
-        Returns:
-            value: F1 score
+
+        :returns: F1 score
+
+        :rtype: value
+
         """
         m_pre = self.precision()
         rec = self.recall()
@@ -93,11 +103,13 @@ class Matrix:
             return 0
 
     def get_as_list(self):
-        """
-        List of all values in matrix
+        """List of all values in matrix
 
-        Returns:
-            list: list representation
+
+        :returns: list representation
+
+        :rtype: list
+
         """
         return sum([
             row
@@ -105,11 +117,13 @@ class Matrix:
         ], [])
 
     def encode(self):
-        """
-        Encodes matrix
+        """Encodes matrix
 
-        Returns:
-            encoder: Encoder used
+
+        :returns: Encoder used
+
+        :rtype: encoder
+
         """
         lb = LabelEncoder()  # encoder
         values = self.get_as_list()
@@ -125,14 +139,11 @@ class Matrix:
         return lb
 
     def decode(self, lb):
-        """
-        Decodes matrix
+        """Decodes matrix
 
-        Arguments:
-          lb: Encoder used to encode matrix
+        :param lb: Encoder used to encode matrix
+        :returns: list: Decodes matrix
 
-        Returns:
-            list: Decodes matrix
         """
         self.matrix = [
             lb.inverse_transform(row)
@@ -141,14 +152,11 @@ class Matrix:
 
     @staticmethod
     def from_columns(columns):
-        """
-        Parses raw columns
+        """Parses raw columns
 
-        Arguments:
-          columns:  atrix divided into columns
+        :param columns: atrix divided into columns
+        :returns: Matrix: Merge the columns to form a matrix
 
-        Returns:
-            Matrix: Merge the columns to form a matrix
         """
         data = [
             [

@@ -17,15 +17,12 @@ class FileSaver:
         self.path = output_file
 
     def write_dicts_to_csv(self, dicts):
-        """
-        Saves .csv file with posts data
+        """Saves .csv file with posts data
 
-        Arguments:
-            dicts: Dictionaries with same values
-            output_file: Path to output file to write data
+        :param dicts: Dictionaries with same values
+        :param output_file: Path to output file to write data
+        :returns: Saves .csv file with posts data
 
-        Returns:
-            Saves .csv file with posts data
         """
         csv_headers = sorted(dicts[0].keys())
         with open(self.path, "w") as out_file:  # write to file
@@ -37,17 +34,16 @@ class FileSaver:
 
     def write_matrix_to_csv(self, headers, data):
         """
-        Arguments:
-          headers: of str
-        Column names
-          data: matrix ([] of [])
-        Data
-          output_file: str
-        Path to output file to write data
 
-        Returns:
-          void
+        :param headers: of str
+        :param Column: names
+        :param data: matrix
+        :param Data: 
+        :param output_file: str
+        :param Path: to output file to write data
+        :returns: void
           Saves .csv file with data
+
         """
         with open(self.path, "w") as out_file:  # write to file
             data_writer = csv.writer(out_file, delimiter=",")
@@ -56,15 +52,14 @@ class FileSaver:
 
     def write_dicts_to_json(self, data):
         """
-        Arguments:
-          data: list of {} or {}
-        Data to write
-          output_file: str
-        Path to output file
 
-        Returns:
-          void
+        :param data: list of
+        :param Data: to write
+        :param output_file: str
+        :param Path: to output file
+        :returns: void
           Saves output file as .json
+
         """
         with open(self.path, "w") as out:
             json.dump(

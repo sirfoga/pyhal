@@ -64,13 +64,12 @@ PATH_SEPARATOR = "/" if "posix" in os.name else "\\"
 
 def fix_raw_path(path):
     """
-    Arguments:
-      path: string
-    Path to fix
 
-    Returns:
-      string
+    :param path: string
+    :param Path: to fix
+    :returns: string
       Right path
+
     """
     double_path_separator = PATH_SEPARATOR + PATH_SEPARATOR
     while path.find(
@@ -86,13 +85,12 @@ def fix_raw_path(path):
 
 def remove_year(name):
     """
-    Arguments:
-      name: string
-    Name to edit
 
-    Returns:
-      string
+    :param name: string
+    :param Name: to edit
+    :returns: string
       Given string bu with no years.
+
     """
     for i in range(len(
             name) - 3):  # last index is length - 3 - 1 = length - 4
@@ -105,13 +103,12 @@ def remove_year(name):
 
 def remove_brackets(name):
     """
-    Arguments:
-      name: string
-    Name to edit
 
-    Returns:
-      string
+    :param name: string
+    :param Name: to edit
+    :returns: string
       Given string bu with no brackets
+
     """
     name = re.sub(
         r"([(\[]).*?([)\]])",
@@ -126,17 +123,16 @@ def remove_brackets(name):
 
 def extract_name_max_chars(name, max_chars=64, blank=" "):
     """
-    Arguments:
-      name: string
-    Name to edit
-      max_chars: int
-    Maximum chars of new name (Default value = 64)
-      blank: string
-    Char that represents the blank between words. (Default value = " ")
 
-    Returns:
-      string
+    :param name: string
+    :param Name: to edit
+    :param max_chars: int (Default value = 64)
+    :param Maximum: chars of new name
+    :param blank: string (Default value = " ")
+    :param Char: that represents the blank between words
+    :returns: string
       Name edited to contain at most max_chars (truncate to nearest word)
+
     """
     if max_chars <= 0:
         raise ValueError(
@@ -152,15 +148,14 @@ def extract_name_max_chars(name, max_chars=64, blank=" "):
 
 def prettify(name, blank=" "):
     """
-    Arguments:
-      name: string
-    Name to edit
-      blank: string
-    Default blanks in name.
 
-    Returns:
-      string
+    :param name: string
+    :param Name: to edit
+    :param blank: string (Default value = " ")
+    :param Default: blanks in name
+    :returns: string
       Prettier name from given one: replace bad chars with good ones.
+
     """
     if name.startswith("."):  # remove starting .
         name = name[1:]
@@ -192,54 +187,50 @@ def prettify(name, blank=" "):
 
 def is_file(path):
     """
-    Arguments:
-      path: str
-    Path to check
 
-    Returns:
-      bool
+    :param path: str
+    :param Path: to check
+    :returns: bool
       True iff path is a file
+
     """
     return os.path.isfile(path)
 
 
 def is_folder(path):
     """
-    Arguments:
-      path: str
-    Path to check
 
-    Returns:
-      bool
+    :param path: str
+    :param Path: to check
+    :returns: bool
       True iff path is a file
+
     """
     return os.path.isdir(path)
 
 
 def get_parent_folder(file_path):
     """
-    Arguments:
-      file_path: str
-    Path to file or folder
 
-    Returns:
-      str
+    :param file_path: str
+    :param Path: to file or folder
+    :returns: str
       Name of folder container
+
     """
     return os.path.split(os.path.split(os.path.abspath(file_path))[0])[-1]
 
 
 def ls_dir(path, include_hidden=False):
     """
-    Arguments:
-      path: string
-    Path to directory to get list of files and folders
-      include_hidden: bool
-    Whether to include hidden files in list. (Default value = False)
 
-    Returns:
-      list
+    :param path: string
+    :param Path: to directory to get list of files and folders
+    :param include_hidden: bool (Default value = False)
+    :param Whether: to include hidden files in list
+    :returns: list
       List of paths in given directory.
+
     """
     lst = []
     for file in os.listdir(path):
@@ -251,15 +242,14 @@ def ls_dir(path, include_hidden=False):
 
 def ls_recurse(path, include_hidden=False):
     """
-    Arguments:
-      path: string
-    Path to directory to get list of files and folders
-      include_hidden: bool
-    Whether to include hidden files in list. (Default value = False)
 
-    Returns:
-      list
+    :param path: string
+    :param Path: to directory to get list of files and folders
+    :param include_hidden: bool (Default value = False)
+    :param Whether: to include hidden files in list
+    :returns: list
       List of paths in given directory recursively.
+
     """
     lst = []
     for file in os.listdir(path):
@@ -276,17 +266,16 @@ def ls_recurse(path, include_hidden=False):
 
 def list_content(path, recurse, include_hidden=False):
     """
-    Arguments:
-      path: string
-    Path to directory to get list of files and folders
-      recurse: bool
-    Whether to recurse into subdirectories or not.
-      include_hidden: bool
-    Whether to include hidden files in list. (Default value = False)
 
-    Returns:
-      list
+    :param path: string
+    :param Path: to directory to get list of files and folders
+    :param recurse: bool
+    :param Whether: to recurse into subdirectories or not
+    :param include_hidden: bool (Default value = False)
+    :param Whether: to include hidden files in list
+    :returns: list
       List of paths in given directory recursively.
+
     """
     if recurse:
         return ls_recurse(path, include_hidden=include_hidden)
@@ -309,9 +298,6 @@ class FileSystem:
         """:return: bool
             True iff path is hidden
 
-        Arguments:
-
-        Returns:
 
         """
         return self.name.startswith(".")
@@ -334,21 +320,16 @@ class FileSystem:
         """:return: void
             Trash given file/folder
 
-        Arguments:
-
-        Returns:
 
         """
         send2trash(self.path)
 
     def rename(self, new_path):
         """
-        Arguments:
-          new_path: string
-        New path to use
 
-        Returns:
-          void
+        :param new_path: string
+        :param New: path to use
+        :returns: void
           Rename to new path
 
         """

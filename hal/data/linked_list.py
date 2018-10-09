@@ -29,20 +29,24 @@ class LinkedList:
         self.head = LinkedList.from_list(lst)
 
     def get_head(self):
-        """
-        Gets head
+        """Gets head
 
-        Returns:
-            head: Head of linked list
+
+        :returns: Head of linked list
+
+        :rtype: head
+
         """
         return self.head
 
     def get_tail(self):
-        """
-        Gets tail
+        """Gets tail
 
-        Returns:
-            tail: Tail of linked list
+
+        :returns: Tail of linked list
+
+        :rtype: tail
+
         """
         node = self.head
         last_node = self.head
@@ -54,11 +58,13 @@ class LinkedList:
         return last_node
 
     def length(self):
-        """
-        Gets length
+        """Gets length
 
-        Returns:
-            length: How many items in linked list of linked list
+
+        :returns: How many items in linked list of linked list
+
+        :rtype: length
+
         """
         item = self.head
         counter = 0
@@ -70,27 +76,21 @@ class LinkedList:
         return counter
 
     def append(self, val):
-        """
-        Appends to list
+        """Appends to list
 
-        Arguments:
-            val: Object to insert
+        :param val: Object to insert
+        :returns: bool: Appends element to last
 
-        Returns:
-            bool: Appends element to last
         """
         return self.insert(val, self.length())
 
     def insert(self, val, at=0):
-        """
-        Insert in position
+        """Insert in position
 
-        Arguments:
-            val: Object to insert
-            at: Index of insertion (Default value = 0)
+        :param val: Object to insert
+        :param at: Index of insertion (Default value = 0)
+        :returns: bool: True iff insertion completed successfully
 
-        Returns:
-            bool: True iff insertion completed successfully
         """
         if at < 0 or at > self.length():
             return False
@@ -119,11 +119,13 @@ class LinkedList:
         return False
 
     def remove_first(self):
-        """
-        Removes first
+        """Removes first
 
-        Returns:
-            bool: True iff head has been removed
+
+        :returns: True iff head has been removed
+
+        :rtype: bool
+
         """
         if self.head.next_node is not None:
             self.head = self.head.next_node
@@ -132,11 +134,13 @@ class LinkedList:
         return False
 
     def remove_last(self):
-        """
-        Removes last
+        """Removes last
 
-        Returns:
-            bool: True iff last element has been removed
+
+        :returns: True iff last element has been removed
+
+        :rtype: bool
+
         """
         node = self.head
 
@@ -150,14 +154,11 @@ class LinkedList:
         return False
 
     def remove(self, at):
-        """
-        Removes at index
+        """Removes at index
 
-        Arguments:
-            at: Index of removal
+        :param at: Index of removal
+        :returns: bool: True iff removal completed successfully
 
-        Returns:
-            bool: True iff removal completed successfully
         """
         if at < 0 or at > self.length():
             return False
@@ -184,11 +185,13 @@ class LinkedList:
         return False
 
     def to_lst(self):
-        """
-        Cycle all items and puts them in a list
+        """Cycle all items and puts them in a list
 
-        Returns:
-            list: list representation
+
+        :returns: list representation
+
+        :rtype: list
+
         """
         out = []
         node = self.head
@@ -200,14 +203,11 @@ class LinkedList:
         return out
 
     def execute(self, func):
-        """
-        Executes function on each item
+        """Executes function on each item
 
-        Arguments:
-            func: Function to execute on each item
+        :param func: Function to execute on each item
+        :returns: list: Results of calling the function on each item
 
-        Returns:
-            list: Results of calling the function on each item
         """
         return [
             func(item) for item in self.to_lst()
@@ -222,14 +222,11 @@ class LinkedList:
 
     @staticmethod
     def from_list(lst):
-        """
-        Parses list
+        """Parses list
 
-        Arguments:
-            lst: list of elements
+        :param lst: list of elements
+        :returns: LinkedList: Nodes from list
 
-        Returns:
-            LinkedList: Nodes from list
         """
         if not lst:
             return None

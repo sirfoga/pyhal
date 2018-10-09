@@ -12,16 +12,15 @@ from hal.internet.services.google.gauthenticator import GoogleApiOAuth
 
 class GMailApiOAuth(GoogleApiOAuth):
     def __init__(self, app_name, client_secrets_file, oauth_path):
-        """
-        Arguments:
-          app_name: str
-        Name of app to display
-          client_secrets_file: str
-        Path to client_secret.json file
-          oauth_path: str
-        Path to gmail.json file
 
-        Returns:
+        """
+
+        :param app_name: str
+        :param Name: of app to display
+        :param client_secrets_file: str
+        :param Path: to client_secret
+        :param oauth_path: str
+        :param Path: to gmail
 
         """
         GoogleApiOAuth.__init__(
@@ -36,9 +35,6 @@ class GMailApiOAuth(GoogleApiOAuth):
         """:return: driver
             GMail API driver
 
-        Arguments:
-
-        Returns:
 
         """
         return super().get_driver("gmail", "v1")
@@ -46,15 +42,14 @@ class GMailApiOAuth(GoogleApiOAuth):
 
 def get_mime_message(subject, text):
     """
-    Arguments:
-      subject: str
-    Subject of email
-      text: str
-    Email content
 
-    Returns:
-      MIMEText
+    :param subject: str
+    :param Subject: of email
+    :param text: str
+    :param Email: content
+    :returns: MIMEText
       Email formatted as HTML ready to be sent
+
     """
     message = MIMEText(
         "<html>" +
@@ -67,17 +62,16 @@ def get_mime_message(subject, text):
 
 def send_email(sender, msg, driver):
     """
-    Arguments:
-      sender: str
-    Sender of email
-      msg: str
-    Message to send to me
-      driver: GMailApiOAuth driver
-    GMail authenticator
 
-    Returns:
-      void
+    :param sender: str
+    :param Sender: of email
+    :param msg: str
+    :param Message: to send to me
+    :param driver: GMailApiOAuth driver
+    :param GMail: authenticator
+    :returns: void
       Sends email to me with this message
+
     """
     driver.users().messages().send(
         userId=sender,

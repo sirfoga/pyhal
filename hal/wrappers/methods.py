@@ -10,26 +10,24 @@ import colorama
 
 def handle_exceptions(func):
     """
-    Arguments:
-      func: callback function
-    function to wrap
 
-    Returns:
-      callback function return type
+    :param func: callback function
+    :param function: to wrap
+    :returns: callback function return type
       wraps callback function
+
     """
 
     @functools.wraps(func)
     def _handle_exceptions(*args, **kwargs):
-        """
-        Arguments:
-          args: args for callback function
-          kwargs: kwargs for callback function
-          *args: 
-          **kwargs: 
+        """Arguments:
 
-        Returns:
-          callback function return type
+        :param kwargs: kwargs for callback function
+        :param args: 
+        :param kwargs: 
+        :param *args: 
+        :param **kwargs: 
+        :returns: callback function return type
           handle exception of callback function
 
         """
