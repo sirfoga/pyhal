@@ -11,6 +11,8 @@ from urllib.parse import urljoin
 
 import requests
 from bs4 import BeautifulSoup
+from stem import Signal
+from stem.control import Controller
 
 USER_AGENTS = [
     "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.19 ("
@@ -100,23 +102,21 @@ HEADERS = {
 }
 
 
-def is_url(candidate_url):
+def is_url(candidate):
     """
-    :param candidate_url: str
-    :param Possible: url to check for url
-    :returns: bool
-      True iff candidate is a valid url
+    Checks if string is url
+    :param candidate: url to check for url
+    :returns: True iff candidate is a valid url
     """
-    return re.match(URL_VALID_REGEX, candidate_url)
+    return re.match(URL_VALID_REGEX, candidate)
 
 
 class Webpage:
-    """representation of URL (web page)"""
+    """Representation of Web page at URL"""
 
     def __init__(self, url):
         """
-        :param url: string
-            Url of webpage
+        :param url: Url of webpage
         """
         self.url = self.parse_url(url)
         self.domain = self.get_domain()
@@ -125,17 +125,17 @@ class Webpage:
         self.soup = None
 
     @staticmethod
-    def parse_url(raw_url):
+    def parse_url(url):
         """
-        :param raw_url: url to parse
-        :returns: parses correctly url
+        Parses correctly url
+        :param url: url to parse
         """
-        parsed = raw_url
+        parsed = url
 
-        if not raw_url.startswith("http://") and not raw_url.startswith(
+        if not url.startswith("http://") and not url.startswith(
                 "https://"):  # if url is like www.yahoo.com
             parsed = "http://" + parsed
-        elif raw_url.startswith("https://"):
+        elif url.startswith("https://"):
             parsed = parsed[8:]
             parsed = "http://" + parsed
 
@@ -147,25 +147,34 @@ class Webpage:
         return parsed
 
     def get_scheme(self):
-        """:returns: get scheme (HTTP, HTTPS, FTP ..) from given url"""
+        """
+        Gets scheme of url
+        :returns: get scheme (HTTP, HTTPS, FTP ..) from given url
+        """
 
         return urllib.request.urlparse(self.url).scheme
 
     def get_hostname(self):
-        """:returns: extract hostname from given url"""
+        """
+        Gets hostname of url
+        :returns: extract hostname from given url
+        """
 
         return urllib.request.urlparse(self.url).hostname
 
     def get_domain(self):
-        """:returns: get domain from given url"""
+        """
+        Gets domain of url
+        :returns: get domain from given url
+        """
 
         return "{uri.scheme}://{uri.netloc}/".format(
             uri=urllib.request.urlparse(self.url))
 
     def get_html_source(self):
-        """:returns: str
-            HTML source of webpage
-
+        """
+        Gets source page of url
+        :returns: HTML source
         """
         req = urllib.request.Request(self.url)
         req.add_header("user-agent", random.choice(USER_AGENTS))
@@ -176,6 +185,7 @@ class Webpage:
 
     def get_links(self, recall, timeout):
         """
+        Gets links in page
         :param recall: max times to attempt to fetch url
         :param timeout: max times
         :returns: array of out_links
@@ -195,9 +205,8 @@ class Webpage:
 
     def open_in_browser(self, n_times):
         """
-        :param n_times: int
-        :param Times: to open webpage in browser
-          Open a web-driver and go to webpage
+        Opens page in browser
+        :param n_times: Times to open page in browser
         """
         for _ in range(n_times):
             webbrowser.open(self.url)
@@ -205,11 +214,9 @@ class Webpage:
 
 def download_url(url, local_file):
     """
-    :param url: string
-    :param Url: to download
-    :param local_file: string
-    :param Save: url as this path
-      Download link to local file
+    Downloads link to local file
+    :param url :Url to download
+    :param local_file: Save url as this path
     """
     downloader = urllib.request.URLopener()
     downloader.retrieve(url, local_file)
@@ -218,15 +225,12 @@ def download_url(url, local_file):
 def download_to_file(url, local_file, headers=HEADERS, cookies=None,
                      chunk_size=1024):
     """
-    :param url: str
-    :param PDF: url to download
-    :param local_file: str
-    :param Save: url as this path
+    Download link to local file
+    :param url: PDF url to download
+    :param local_file: Save url as this path
     :param headers: Headers to fetch url
     :param cookies: Cookies to fetch url
     :param chunk_size: int
-    :param Download: file in this specific chunk size
-      Download link to local file
     """
     if not cookies:
         cookies = {}
@@ -239,7 +243,10 @@ def download_to_file(url, local_file, headers=HEADERS, cookies=None,
 
 
 def get_tor_session():
-    """ """
+    """
+    Finds TOR session
+    :return: TOR session
+    """
     session = requests.session()
     # Tor uses the 9050 port as the default socks port
     session.proxies = {
@@ -250,8 +257,8 @@ def get_tor_session():
 
 
 def renew_connection(password):
-        signal TOR for a new connection
-    :param password:
+    """
+    :param password: new password
     """
     with Controller.from_port(port=9051) as controller:
         controller.authenticate(password=password)
