@@ -151,4 +151,4 @@ class Repository:
         :return: hash of last commit
         """
         last = self.get_last_commit()
-        return str(Commit(last))
+        return str(last.hexsha)
