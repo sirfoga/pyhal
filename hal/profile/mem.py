@@ -2,15 +2,15 @@
 
 """Profile OS memory """
 
+import gc
 import os
 
 import psutil
 
 
 def get_memory_usage():
-    """:returns: float
-        MB of memory used by this process
-
+    """Gets RAM memory usage
+    :returns: MB of memory used by this process
     """
     process = psutil.Process(os.getpid())
     mem = process.memory_info().rss
@@ -18,7 +18,6 @@ def get_memory_usage():
 
 
 def force_garbage_collect():
-        Releases memory used
-
+    """Releases memory used
     """
     gc.collect()
