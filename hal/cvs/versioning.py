@@ -2,7 +2,7 @@
 # coding: utf-8
 
 
-"""Models to version stuff """
+"""Models to version stuff"""
 
 from abc import abstractmethod
 

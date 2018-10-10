@@ -68,7 +68,7 @@ class MP3Song(FileSystem):
         """
         Sets attribute of song
         :param attribute: Attribute to save
-        :return: True iff operation completed
+        :returns: True iff operation completed
         """
 
         self.tags.add(attribute)
@@ -121,7 +121,7 @@ class MP3Song(FileSystem):
         """
         Gets attribute of song
         :param key: Name of attribute to get
-        :return: Attribute
+        :returns: Attribute
         """
         return self.tags.get(key).text[0]
 

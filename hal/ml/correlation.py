@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Correlate values in arrays producing fancy good-looking matrices """
+"""Correlate values in arrays producing fancy good-looking matrices"""
 
 import os
 

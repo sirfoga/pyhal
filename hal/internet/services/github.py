@@ -1,6 +1,14 @@
 # -*- coding: utf-8 -*-
 
 """Common classes and entities in Github """
+import json
+import urllib
+
+import requests
+from bs4 import BeautifulSoup
+
+from hal.internet.utils import add_params_to_url
+from hal.wrappers.errors import none_returns
 
 GITHUB_URL = "https://github.com"
 API_URL = "https://api.github.com/"  # Github api url
@@ -9,24 +17,24 @@ GITHUB_REMOTE = "https://{}:x-oauth-basic@github.com/"
 
 
 def get_token():
-    """"""
+    """Gets authentication token
+    :returns: authentication token
+    """
     return GITHUB_TOKEN
 
 
 def get_clone_url(remote_shortcut, token):
     """
-    :param remote_shortcut: str
-    :param Remote: relative path of repository to clone
-    :param token: str
-    :param Github: OAUTH token
-    :returns: str
-      Url to clone
+    Finds url of repo to clone
+    :param remote_shortcut: relative path of repository to clone
+    :param token: Github OAUTH token
+    :returns: Url to clone
     """
     return GITHUB_REMOTE.format(token) + remote_shortcut
 
 
 class GithubRawApi:
-    """Wrapper for generic Github API"""
+    """Generic Github API"""
 
     _API_URL_TYPE = {
         k: API_URL + k
@@ -39,10 +47,9 @@ class GithubRawApi:
     def __init__(self, url=API_URL, url_params=None,
                  get_api_content_now=False):
         """
-        :param url: str
-            Url of API content to get
-        :param get_api_content_now: bool
-            True iff you want to get API content response when building object
+        :param url: Url of API content to get
+        :param get_api_content_now: True iff you want to get API content
+            response when building object
         """
         self.api_url = url
         self.api_content = None
@@ -55,10 +62,9 @@ class GithubRawApi:
 
     def __getitem__(self, key):
         """
-        :param key: str
-            Dictionary key to find specific user field
-        :returns: str
-            Dictionary value of given key
+        Gets value
+        :param key: Dictionary key to find specific user field
+        :returns: Dictionary value of given key
         """
         if self.api_content is None:  # update API content
             self._get_api_content()
@@ -69,9 +75,10 @@ class GithubRawApi:
             return None
 
     def _get_api_content(self):
-            Updates class api content by calling Github api and storing result
-
         """
+        Updates class api content by calling Github api and storing result
+        """
+
         if GITHUB_TOKEN is not None:
             self.add_params_to_url({
                 "access_token": GITHUB_TOKEN
@@ -83,9 +90,8 @@ class GithubRawApi:
         )  # parse response
 
     def add_params_to_url(self, params):
-        """Arguments:
-        :param params:
-          Adds params to url
+        """Adds params to url
+        :param params: url params
         """
         self.api_url = add_params_to_url(self.api_url, params)
 
@@ -106,8 +112,8 @@ class GithubApi(GithubRawApi):
     @staticmethod
     def get_trending_daily(lang=""):
         """
-        :param lang: str
-        :param Coding: language
+        Fetches repos in "Trending Daily" Github section
+        :param lang: Coding language
         :returns: List of GithubUserRepository
         """
         url = "https://github.com/trending/"
@@ -134,39 +140,32 @@ class GithubUser(GithubApi):
 
     def __init__(self, username):
         """
-        :param username: str
-            Username of user
+        :param username: Username of user
         """
         super(GithubUser, self).__init__("users")
 
         self.username = str(username)
         self.api_url += "/" + self.username
 
+    @none_returns
     def get_email(self):
-        """: returns: str
-            Email of user
-
+        """Gets email
+        :returns: Email of user
         """
         api_url = self.api_url + "/events/public"
         api_content = GithubRawApi(
             api_url,
             get_api_content_now=True
         ).api_content
-
-        try:
-            for event in api_content:
-                if event["type"] == "PushEvent":
-                    return event["payload"]["commits"][0]["author"]["email"]
-        except:
-            return None
+        for event in api_content:
+            if event["type"] == "PushEvent":
+                return event["payload"]["commits"][0]["author"]["email"]
 
     @staticmethod
     def _get_repos(url):
-        """: returns: []
-of
-GithubUserRepository
-            List of repositories in given url
-        :param url:
+        """Gets repos in url
+        :param url: Url
+        :returns: List of repositories in given url
         """
         current_page = 1
         there_is_something_left = True
@@ -191,21 +190,15 @@ GithubUserRepository
         return repos_list
 
     def get_repos(self):
-        """: returns: []
-of
-GithubUserRepository
-            List of public user repositories
-
+        """Gets user public repos
+        :returns: List of user public repositories
         """
         url = self["repos_url"]
         return self._get_repos(url)
 
     def get_all_repos(self):
-        """: returns: []
-of
-GithubUserRepository
-            List of all user repositories (public, orgs and private)
-
+        """Gets user repos
+        :returns: List of all user repositories (public, orgs and private)
         """
         url = "https://api.github.com/user/repos"
         params = {
@@ -215,16 +208,14 @@ GithubUserRepository
         return self._get_repos(url)
 
     def get_starred_repos(self):
-        """: returns: []
-of
-GithubUserRepository
-            List of starred repositories
-
+        """Gets repos starred by user
+        :returns: List of starred repositories
         """
         starred_url = self.api_url + "/starred"
         keep_finding = True  # False when there are no more stars to find
         current_page = 1
         repos_list = []
+
         while keep_finding:
             api_url = starred_url + "?page=" + str(
                 current_page)  # request starred list url with page number
@@ -241,19 +232,21 @@ GithubUserRepository
             if len(api_driver.api_content) < 1:  # no more repo to find
                 keep_finding = False
             current_page += 1  # increase page counter
+
         return repos_list
 
     def get_trending_daily_not_starred(self):
-        """: returns: []
-            List of daily-trending repositories which are not starred by user
-
+        """Gets trending repositories NOT starred by user
+        :returns: List of daily-trending repositories which are not starred
         """
         trending_daily = self.get_trending_daily()  # repos trending daily
         starred_repos = self.get_starred_repos()  # repos starred by user
         repos_list = []
+
         for repo in trending_daily:
             if repo not in starred_repos:
                 repos_list.append(repo)
+
         return repos_list
 
 
@@ -262,10 +255,8 @@ class GithubUserRepository(GithubApi):
 
     def __init__(self, username, repository_name):
         """
-        :param username: str
-            Username of user
-        :param repository_name: str
-            Name of repository
+        :param username: Username of user
+        :param repository_name: Name of repository
         """
         super(GithubUserRepository, self).__init__("repos")
 

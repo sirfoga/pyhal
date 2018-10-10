@@ -245,7 +245,7 @@ def download_to_file(url, local_file, headers=HEADERS, cookies=None,
 def get_tor_session():
     """
     Finds TOR session
-    :return: TOR session
+    :returns: TOR session
     """
     session = requests.session()
     # Tor uses the 9050 port as the default socks port

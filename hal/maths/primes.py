@@ -31,9 +31,9 @@ class Integer:
         self.to_string = string
 
     def is_naive_prime(self):
-        """:returns: bool
-            Checks if prime in very naive way
-
+        """
+        Checks if prime in very naive way
+        :returns: True iff prime
         """
         if self.to_int < 2:
             return False
@@ -43,28 +43,29 @@ class Integer:
         return self.to_int in LOW_PRIMES
 
     def is_probably_prime(self):
-        """:returns: test with miller-rabin"""
+        """
+        Tests with miller-rabin
+        :returns: True iff prime
+        """
 
-        if not self.is_naive_prime():
-            if self.to_int in LOW_PRIMES:
-                return True
+        if self.is_naive_prime():
+            return True
 
-            # check if multiple pf low primes
-            for prime in LOW_PRIMES:
-                if self.to_int % prime == 0:
-                    return False
+        # check if multiple pf low primes
+        for prime in LOW_PRIMES:
+            if self.to_int % prime == 0:
+                return False
 
-            # if all else fails, call rabin to determine if to_int is prime
-            return self.test_miller_rabin(5)
-
-        return True
+        # if all else fails, call rabin to determine if to_int is prime
+        return self.test_miller_rabin(5)
 
     def test_miller_rabin(self, precision):
         """
+        Tests prime with miller-rabin algorithm
         :param precision: number of rounds to perform
-        :param precision: 
         :returns: True iff probably prime
         """
+
         if not self.is_naive_prime():
             if precision < 0:
                 raise ValueError('precision must be positive')
@@ -104,6 +105,7 @@ class Integer:
 
 def get_prime(bits):
     """
+    Creates (probable) prime number of given size
     :param bits: size of number to generate
     :returns: prime number of given size
     """
@@ -117,6 +119,7 @@ def get_prime(bits):
 
 def blum_blum_shub(seed, amount, prime0, prime1):
     """
+    Creates pseudo-number generator
     :param seed: seeder
     :param amount: amount of number to generate
     :param prime0: one prime number
