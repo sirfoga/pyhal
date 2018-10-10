@@ -56,7 +56,7 @@ class CorrelationMatrix:
 
     def get_correlation_matrix_of_columns(self):
         """Computes correlation matrix of columns
-        :return: Correlation matrix of columns
+        :returns: Correlation matrix of columns
         """
         header_to_column = {}  # create index of headers
         for header in self.headers:

@@ -149,21 +149,21 @@ class Webpage:
 
     def get_scheme(self):
         """Gets scheme of url
-        :return: get scheme (HTTP, HTTPS, FTP ..) from given url
+        :returns: get scheme (HTTP, HTTPS, FTP ..) from given url
         """
 
         return urllib.request.urlparse(self.url).scheme
 
     def get_hostname(self):
         """Gets hostname of url
-        :return: extract hostname from given url
+        :returns: extract hostname from given url
         """
 
         return urllib.request.urlparse(self.url).hostname
 
     def get_domain(self):
         """Gets domain of url
-        :return: get domain from given url
+        :returns: get domain from given url
         """
 
         return "{uri.scheme}://{uri.netloc}/".format(
@@ -171,7 +171,7 @@ class Webpage:
 
     def get_html_source(self):
         """Gets source page of url
-        :return: HTML source
+        :returns: HTML source
         """
         req = urllib.request.Request(self.url)
         req.add_header("user-agent", random.choice(USER_AGENTS))
@@ -244,7 +244,7 @@ def download_to_file(url, local_file, headers=HEADERS, cookies=None,
 def get_tor_session():
     """Finds TOR session
 
-    :return: TOR session
+    :returns: TOR session
     """
     session = requests.session()
     # Tor uses the 9050 port as the default socks port

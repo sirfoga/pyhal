@@ -51,7 +51,8 @@ class MP3Song(FileSystem):
 
     def get_details(self):
         """Finds songs details
-        :return: Dictionary with songs details about title, artist, album and year
+
+        :returns: Dictionary with songs details about title, artist, album and year
         """
         title = str(self.get_title()).strip()
         artist = str(self.get_artist()).strip()
@@ -129,36 +130,42 @@ class MP3Song(FileSystem):
 
     def get_title(self):
         """Gets song's title
-        :return: title
+
+        :returns: title
         """
         return self._get_attr("TIT2")
 
     def get_artist(self):
         """Gets song's artist
-        :return: artist
+
+        :returns: artist
         """
         return self._get_attr("TPE1")
 
     def get_album(self):
         """Gets song's albu
-        :return: album
+
+        :returns: album
         """
         return self._get_attr("TALB")
 
     def get_nr_track(self):
         """Gets song's track number
-        :return: # of track
+
+        :returns: # of track
         """
         return self._get_attr("TRCK")
 
     def get_year(self):
         """Gets song's year
-        :return: year
+
+        :returns: year
         """
         return self._get_attr("TDRC")
 
     def get_genre(self):
         """Gets song's genre
-        :return: genre
+
+        :returns: genre
         """
         return self._get_attr("TCON")

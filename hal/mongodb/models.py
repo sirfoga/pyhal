@@ -18,13 +18,15 @@ class DbBrowser:
 
     def get_collection_names(self):
         """Gets name of all collections
-        :return: List of names of all collections
+
+        :returns: List of names of all collections
         """
         return self.db.collection_names()
 
     def get_documents_count(self):
         """Counts documents in database
-        :return: Number of documents in db
+
+        :returns: Number of documents in db
         """
         db_collections = [
             self.db[c] for c in self.get_collection_names()

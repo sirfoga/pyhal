@@ -29,7 +29,7 @@ class Diff:
     def get_totals(self):
         """Calculates total additions and deletions
         
-        :return: Dictionary with totals
+        :returns: Dictionary with totals
         """
         total_added = 0
         total_removed = 0
@@ -63,7 +63,7 @@ class Commit:
         Converts to string
 
         :param date_format: Format date and times with this format
-        :return: Pretty description of commit
+        :returns: Pretty description of commit
         """
         hash_value = self.c.hexsha
         date_time = self.c.authored_datetime.strftime(date_format)
@@ -72,7 +72,7 @@ class Commit:
     def get_author(self):
         """Gets author
         
-        :return: author of commit
+        :returns: author of commit
         """
         author = self.c.author
 
@@ -99,14 +99,14 @@ class Repository:
     def get_last_commit(self):
         """Gets last commit
         
-        :return: Last commit of repository
+        :returns: Last commit of repository
         """
         return self.r.head.commit
 
     def get_diff_amounts(self):
         """Gets list of total diff
         
-        :return: List of total diff between 2 consecutive commits since start
+        :returns: List of total diff between 2 consecutive commits since start
         """
         diffs = []
 
@@ -158,7 +158,8 @@ class Repository:
 
     def get_last_commit_hash(self):
         """Gets hash of last commit
-        :return: hash of last commit
+
+        :returns: hash of last commit
         """
         last = self.get_last_commit()
         return str(last.hexsha)

@@ -34,14 +34,14 @@ class SimpleChart:
     def get_fig(self):
         """Gets chart canvas
         
-        :return: matplotlib figure
+        :returns: matplotlib figure
         """
         return self.fig
 
     def get_ax(self):
         """Adds to figure
         
-        :return: operation completed successfully?
+        :returns: operation completed successfully?
         """
         return self.fig.add_subplot(111)
 

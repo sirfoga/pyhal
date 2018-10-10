@@ -20,7 +20,8 @@ class HtmlTable:
 
     def parse(self):
         """Parses data in table
-        :return: List of list of values in table
+
+        :returns: List of list of values in table
         """
         data = []  # add name of section
         for row in self.soup.find_all("tr"):  # cycle through all rows

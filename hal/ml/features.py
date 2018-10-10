@@ -32,7 +32,7 @@ class FeatureSelect:
 
     def get_best(self):
         """Finds the optimal number of features
-        :return: optimal number of features and ranking
+        :returns: optimal number of features and ranking
         """
         svc = SVC(kernel="linear")
         rfecv = RFECV(

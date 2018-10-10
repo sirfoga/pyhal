@@ -14,11 +14,9 @@ class GMailApiOAuth(GoogleApiOAuth):
     def __init__(self, app_name, client_secrets_file, oauth_path):
 
         """
-
         :param app_name: Name of app to display
         :param client_secrets_file: Path to client_secret
         :param oauth_path: Path to gmail
-
         """
         GoogleApiOAuth.__init__(
             self,
@@ -30,7 +28,8 @@ class GMailApiOAuth(GoogleApiOAuth):
 
     def create_driver(self):
         """Creates GMail driver
-        :return: GMail API driver
+
+        :returns: GMail API driver
         """
         return super().get_driver("gmail", "v1")
 
@@ -41,7 +40,6 @@ def get_mime_message(subject, text):
     :param subject: Subject of email
     :param text: Email content
     :returns: Email formatted as HTML ready to be sent
-
     """
     message = MIMEText(
         "<html>" +
@@ -58,7 +56,6 @@ def send_email(sender, msg, driver):
     :param sender: Sender of email
     :param msg: Message to send to me
     :param driver: GMail authenticator
-
     """
     driver.users().messages().send(
         userId=sender,

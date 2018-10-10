@@ -32,7 +32,8 @@ class GoogleApiOAuth:
 
     def get_new_user_credentials(self):
         """Gets new credentials
-        :return: New user credentials file upon user prompt
+
+        :returns: New user credentials file upon user prompt
         """
         # OAuth2.0 authorization flow
         flow = client.flow_from_clientsecrets(self.app_secrets, self.scope)
@@ -41,7 +42,8 @@ class GoogleApiOAuth:
 
     def get_user_credentials(self):
         """Gets new credentials
-        :return: User credentials created via OAuth
+
+        :returns: User credentials created via OAuth
         """
         # create path to user credentials if needed
         if not os.path.exists(os.path.dirname(self.user_credentials)):

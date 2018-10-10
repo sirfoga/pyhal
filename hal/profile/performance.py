@@ -44,7 +44,8 @@ class EightQueenTest:
     @staticmethod
     def welcome():
         """Welcomes user to this test sessions
-        :return: intro to test
+
+        :returns: intro to test
         """
         user = getpass.getuser()
         os_name = os.name
@@ -58,13 +59,15 @@ class EightQueenTest:
     @staticmethod
     def introduction():
         """Welcomes user to this test sessions
-        :return: intro to test
+
+        :returns: intro to test
         """
         return INTRO
 
     def run_test(self):
         """Runs test
-        :return: Time to solve problem with given size
+
+        :returns: Time to solve problem with given size
         """
         timing = time()
         problem = EightQueen(self.size)

@@ -22,7 +22,7 @@ class MarkdownItem:
 
     def to_markdown(self):
         """Converts to markdown
-        :return: item in markdown format
+        :returns: item in markdown format
         """
         if self.type == "text":
             return self.text
@@ -60,7 +60,9 @@ class MarkdownTable:
         return "|" + "|".join(items) + "|"
 
     def _get_header(self):
-        """:return: markdown-formatted header"""
+        """Gets header of table
+
+        :returns: markdown-formatted header"""
         out = self._get_row(self.labels)
         out += "\n"
         out += self._get_row(["---"] * len(self.labels))  # line below headers
@@ -68,7 +70,7 @@ class MarkdownTable:
 
     def to_markdown(self):
         """Converts to markdown
-        :return: item in markdown format
+        :returns: item in markdown format
         """
         out = self._get_header()
         out += "\n"

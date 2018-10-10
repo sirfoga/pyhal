@@ -32,7 +32,7 @@ class Integer:
 
     def is_naive_prime(self):
         """Checks if prime in very naive way
-        :return: True iff prime
+        :returns: True iff prime
         """
         if self.to_int < 2:
             return False
@@ -43,7 +43,7 @@ class Integer:
 
     def is_probably_prime(self):
         """Tests with miller-rabin
-        :return: True iff prime
+        :returns: True iff prime
         """
 
         if self.is_naive_prime():

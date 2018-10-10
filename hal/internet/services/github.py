@@ -19,7 +19,7 @@ GITHUB_REMOTE = "https://{}:x-oauth-basic@github.com/"
 def get_token():
     """Gets authentication token
 
-    :return: authentication token
+    :returns: authentication token
     """
     return GITHUB_TOKEN
 
@@ -66,7 +66,7 @@ class GithubRawApi:
         """
         Gets value
         :param key: Dictionary key to find specific user field
-        :return: Dictionary value of given key
+        :returns: Dictionary value of given key
         """
         if self.api_content is None:  # update API content
             self._get_api_content()
@@ -151,7 +151,7 @@ class GithubUser(GithubApi):
     @none_returns
     def get_email(self):
         """Gets email
-        :return: Email of user
+        :returns: Email of user
         """
         api_url = self.api_url + "/events/public"
         api_content = GithubRawApi(
@@ -193,14 +193,14 @@ class GithubUser(GithubApi):
 
     def get_repos(self):
         """Gets user public repos
-        :return: List of user public repositories
+        :returns: List of user public repositories
         """
         url = self["repos_url"]
         return self._get_repos(url)
 
     def get_all_repos(self):
         """Gets user repos
-        :return: List of all user repositories (public, orgs and private)
+        :returns: List of all user repositories (public, orgs and private)
         """
         url = "https://api.github.com/user/repos"
         params = {
@@ -211,7 +211,7 @@ class GithubUser(GithubApi):
 
     def get_starred_repos(self):
         """Gets repos starred by user
-        :return: List of starred repositories
+        :returns: List of starred repositories
         """
         starred_url = self.api_url + "/starred"
         keep_finding = True  # False when there are no more stars to find
@@ -239,7 +239,7 @@ class GithubUser(GithubApi):
 
     def get_trending_daily_not_starred(self):
         """Gets trending repositories NOT starred by user
-        :return: List of daily-trending repositories which are not starred
+        :returns: List of daily-trending repositories which are not starred
         """
         trending_daily = self.get_trending_daily()  # repos trending daily
         starred_repos = self.get_starred_repos()  # repos starred by user

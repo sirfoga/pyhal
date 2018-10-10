@@ -75,7 +75,8 @@ class Document(FileSystem):
 
     def get_path_name(self):
         """Gets path and name of song
-        :return: Name of path, name of file (or folder)
+
+        :returns: Name of path, name of file (or folder)
         """
         path = fix_raw_path(os.path.dirname(os.path.abspath(self.path)))
         name = os.path.basename(self.path)
@@ -83,34 +84,39 @@ class Document(FileSystem):
 
     def is_video(self):
         """Checks if file is video
-        :return: True iff document is a video.
+
+        :returns: True iff document is a video.
         """
         return self.extension.lower() in VIDEO_FORMAT
 
     def is_subtitle(self):
         """Checks if file is subtitle
-        :return: True iff document is a subtitle.
+
+        :returns: True iff document is a subtitle.
         """
 
         return self.extension.lower() in SUBTITLE_FORMAT
 
     def is_text(self):
         """Checks if file is text
-        :return: True iff document is a text file.
+
+        :returns: True iff document is a text file.
         """
 
         return self.extension.lower() in TEXT_FORMAT
 
     def is_image(self):
         """Checks if file is image
-        :return: True iff document is an image.
+
+        :returns: True iff document is an image.
         """
 
         return self.extension.lower() in IMAGE_FORMAT
 
     def is_audio(self):
         """Checks if file is audio
-        :return: True iff document is an audio.
+
+        :returns: True iff document is an audio.
         """
 
         return self.extension.lower() in AUDIO_FORMAT
@@ -137,7 +143,8 @@ class Directory(FileSystem):
 
     def get_path_name(self):
         """Gets path and name of file
-        :return: Name of path, name of file (or folder)
+
+        :returns: Name of path, name of file (or folder)
         """
         complete_path = os.path.dirname(os.path.abspath(self.path))
         name = self.path.replace(complete_path + PATH_SEPARATOR, "")
@@ -148,6 +155,7 @@ class Directory(FileSystem):
 
     def is_empty(self):
         """Checks if folder is empty
-        :return: BTrue iff empty
+
+        :returns: BTrue iff empty
         """
         return not os.listdir(self.path)

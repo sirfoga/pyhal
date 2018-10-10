@@ -27,6 +27,6 @@ def battery_test(assert_type, tests, func, args=None):
 def random_name():
     """Computes random name
 
-    :return: Pseudo-random name
+    :returns: Pseudo-random name
     """
     return str(uuid.uuid4())

@@ -29,14 +29,14 @@ class LinkedList:
     def get_head(self):
         """Gets head
         
-        :return: Head of linked list
+        :returns: Head of linked list
         """
         return self.head
 
     def get_tail(self):
         """Gets tail
         
-        :return: Tail of linked list
+        :returns: Tail of linked list
         """
         node = self.head
         last_node = self.head
@@ -50,7 +50,7 @@ class LinkedList:
     def length(self):
         """Gets length
         
-        :return: How many items in linked list of linked list
+        :returns: How many items in linked list of linked list
         """
         item = self.head
         counter = 0
@@ -105,7 +105,7 @@ class LinkedList:
     def remove_first(self):
         """Removes first
         
-        :return: True iff head has been removed
+        :returns: True iff head has been removed
         """
         if self.head.next_node is not None:
             self.head = self.head.next_node
@@ -116,7 +116,7 @@ class LinkedList:
     def remove_last(self):
         """Removes last
         
-        :return: True iff last element has been removed
+        :returns: True iff last element has been removed
         """
         node = self.head
 
@@ -162,7 +162,7 @@ class LinkedList:
     def to_lst(self):
         """Cycle all items and puts them in a list
         
-        :return: list representation
+        :returns: list representation
         """
         out = []
         node = self.head

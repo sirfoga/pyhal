@@ -262,20 +262,23 @@ class FileSystem:
 
     def is_hidden(self):
         """Checks if file is hidden
-        :return: True iff path is hidden
+
+        :returns: True iff path is hidden
         """
         return self.name.startswith(".")
 
     def is_archive_mac(self):
         """Checks if file is a MAC archive
-        :return: True iff document is an MACOSX archive
+
+        :returns: True iff document is an MACOSX archive
         """
 
         return "macosx" in self.path.lower()
 
     def is_russian(self):
         """Checks if file path is russian
-        :return: True iff document has a russian name
+
+        :returns: True iff document has a russian name
         """
 
         russian_chars = 0

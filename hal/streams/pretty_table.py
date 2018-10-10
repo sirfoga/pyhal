@@ -50,7 +50,8 @@ class SqlTable:
 
     def _calculate_optimal_column_widths(self):
         """Calculates widths of columns
-        :return: Length of longest data in each column (labels and data)
+
+        :returns: Length of longest data in each column (labels and data)
         """
         columns = len(self.data[0])  # number of columns
         str_labels = [parse_colorama(str(l)) for l in
@@ -118,7 +119,8 @@ class SqlTable:
 
     def build(self):
         """Builds pretty-formatted table
-        :return: pretty table
+
+        :returns: pretty table
         """
         self._calculate_optimal_column_widths()
 

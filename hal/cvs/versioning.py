@@ -16,7 +16,7 @@ class VersionNumber:
     def get_current_amount(self):
         """Gets current set amount
         
-        :return: Current set amount
+        :returns: Current set amount
         """
         pass
 
@@ -51,7 +51,7 @@ class VersionNumber:
     def max_amount_allowed(self):
         """Calculates number of increases available
         
-        :return: Number of increases that can be done before reaching
+        :returns: Number of increases that can be done before reaching
         """
         pass
 
@@ -59,7 +59,7 @@ class VersionNumber:
     def max(self):
         """Calculates max increases
         
-        :return: Number of increases that can be done before reaching
+        :returns: Number of increases that can be done before reaching
         """
         pass
 
