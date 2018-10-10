@@ -8,6 +8,7 @@ from mutagen.mp3 import MP3
 
 from hal.files.models.system import FileSystem
 from hal.files.models.system import list_content
+from hal.wrappers.errors import true_false_returns, none_returns
 
 
 def find_songs(folder, recursive):
@@ -62,6 +63,7 @@ class MP3Song(FileSystem):
             "year": year
         }
 
+    @true_false_returns
     def _set_attr(self, attribute):
         """
         Sets attribute of song
@@ -69,11 +71,8 @@ class MP3Song(FileSystem):
         :return: True iff operation completed
         """
 
-        try:
-            self.tags.add(attribute)
-            self.song.save()
-        except:
-            return False
+        self.tags.add(attribute)
+        self.song.save()
 
     def set_title(self, name):
         """
@@ -117,16 +116,14 @@ class MP3Song(FileSystem):
         """
         self._set_attr(TCON(encoding=3, text=str(genre)))
 
+    @none_returns
     def _get_attr(self, key):
         """
         Gets attribute of song
         :param key: Name of attribute to get
         :return: Attribute
         """
-        try:
-            return self.tags.get(key).text[0]
-        except:
-            return None
+        return self.tags.get(key).text[0]
 
     def get_title(self):
         """Gets song's title

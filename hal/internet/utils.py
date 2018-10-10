@@ -7,15 +7,14 @@ import urllib.parse as urlparse
 from urllib.parse import urlencode
 
 from hal import times
+from hal.wrappers.errors import true_false_returns
 
 
 def add_params_to_url(url, params):
-    """Arguments:
-      url: str
-    Url to add params to
-    :param url:
-    :param params:
-      Adds params to url
+    """Adds params to url
+    :param url: Url
+    :param params: Params to add
+    :returns: original url with new params
     """
     url_parts = list(urlparse.urlparse(url))  # get url parts
     query = dict(urlparse.parse_qsl(url_parts[4]))  # get url query
@@ -24,8 +23,10 @@ def add_params_to_url(url, params):
     return urlparse.urlunparse(url_parts)
 
 
+@true_false_returns
 def is_internet_on(host="8.8.8.8", port=53, timeout=3):
     """
+
     :param host: str
     :param Google: public
     :param port: int
@@ -35,12 +36,9 @@ def is_internet_on(host="8.8.8.8", port=53, timeout=3):
     :returns: bool
       True iff machine has internet connection
     """
-    try:
-        socket.setdefaulttimeout(timeout)
-        socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect((host, port))
-        return True
-    except:
-        return False
+
+    socket.setdefaulttimeout(timeout)
+    socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect((host, port))
 
 
 def wait_until_internet(time_between_attempts=3, max_attempts=10):

@@ -25,4 +25,4 @@ def divide(numerator, denominator):
     try:
         return float(numerator) / float(denominator)
     except:
-        return 0.0
+        return float("nan")
