@@ -11,7 +11,7 @@ from sklearn.svm import SVC
 
 
 class FeatureSelect:
-    """"""
+    """Selects best features"""
 
     def __init__(self, x, y):
         """

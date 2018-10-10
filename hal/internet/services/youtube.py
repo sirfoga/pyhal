@@ -11,7 +11,7 @@ YOUTUBE_FEED_BASE_URL = "https://www.youtube.com/feeds/videos.xml?channel_id="
 
 
 class YoutubeChannel:
-    """"""
+    """Youtube channel"""
 
     def __init__(self, channel_name):
         self.channel_name = channel_name

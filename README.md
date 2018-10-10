@@ -47,11 +47,11 @@ for root, dirs, files in os.walk(my_folder):
 
 #### Using `pyhal`
 ```python
-from hal.files.models import FileSystem, MP3Song
+from hal.files.models.system import ls_recurse
 
 my_folder = "path to folder containing songs"
 
-for file in FileSystem.ls_recurse(my_folder):
+for file in ls_recurse(my_folder):
     MP3Song(file).set_artist("An example")
 ```
 
@@ -73,7 +73,7 @@ plt.show()
 import numpy as np
 from hal.charts.plotter import Plot2d
 
-Plot2d.plot(np.sin, 1, 100, 100)
+Plot2d().plot(np.sin, 1, 100, 100)
 ```
 
 ### Get YouTube RSS feed of channel
@@ -84,10 +84,14 @@ No easy way that I know of
 
 #### Using `pyhal`
 ```python
-from hal.internet.youtube import get_channel_feed_url_from_video
+from hal.internet.services.youtube import YoutubeChannel
 
 video_url = "my awesome video of an awesome channel"
-channel_feed = get_channel_feed_url_from_video(video_url)
+channel_feed = YoutubeChannel.get_feed_url_from_video(video_url)
+
+# or if you know the name
+channel_name = "my awesome channel"
+channel_feed = YoutubeChannel(channel_name).get_feed_url()
 ```
 
 

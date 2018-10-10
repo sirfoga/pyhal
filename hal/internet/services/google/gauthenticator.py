@@ -14,7 +14,7 @@ from oauth2client.file import Storage
 
 
 class GoogleApiOAuth:
-    """"""
+    """OAuth Google API"""
 
     def __init__(self, scope, app_name, app_secrets_path,
                  user_credentials_path):
