@@ -15,14 +15,10 @@ class UserInput:
     def __init__(self, yes_choices=YES, no_choices=NO,
                  threshold=THRESHOLD_INPUT, interactive=True):
         """
-        :param threshold: float [0, 1]
-            Match user answer with the one provided with at least this rate
-        :param yes_choices: [] of str
-            List of answer considered a "yes"
-        :param no_choices: [] of str
-            List of answer considered a "no"
-        :param interactive: bool
-            True iff program should deal with user not answering properly
+        :param threshold: Match user answer with the one provided with at least this rate
+        :param yes_choices: List of answer considered a "yes"
+        :param no_choices: List of answer considered a "no"
+        :param interactive: True iff program should deal with user not answering properly
         """
         self.THRESHOLD_INPUT = threshold
         self.YES = yes_choices
@@ -32,10 +28,8 @@ class UserInput:
 
     def is_yes(self, answer):
         """
-        :param answer: str
-        :param User: answer
-        :returns: bool
-          True iff considered a "yes" answer
+        :param answer: User: answer
+        :returns: True iff considered a "yes" answer
         """
         yes_sim, _ = get_max_similar(answer, self.YES)
         no_sim, _ = get_max_similar(answer, self.NO)
@@ -43,28 +37,25 @@ class UserInput:
 
     def is_no(self, answer):
         """
-        :param answer: str
-        :param User: answer
-        :returns: bool
-          True iff considered a "yes" answer
+        Checks iff considered a "yes" answer
+        :param answer: User answer
+        :returns: True iff considered a "yes" answer
         """
         yes_sim, _ = get_max_similar(answer, self.YES)
         no_sim, _ = get_max_similar(answer, self.NO)
         return no_sim > yes_sim and no_sim > self.THRESHOLD_INPUT
 
     def show_help(self):
-            Prints to stdout help on how to answer properly
-
-        """
+        """Prints to stdout help on how to answer properly"""
         print("Sorry, not well understood.")
         print("- use", str(self.YES), "to answer 'YES'")
         print("- use", str(self.NO), "to answer 'NO'")
 
     def re_ask(self, with_help=True):
         """
-        :param with_help: bool
-        :param True: iff you want to show help on how to answer questions
-          Re-asks user the last question
+        Re-asks user the last question
+        :param with_help: True iff you want to show help on how to answer questions
+        :returns: user answer
         """
         if with_help:
             self.show_help()
@@ -73,10 +64,9 @@ class UserInput:
 
     def get_answer(self, question):
         """
-        :param question: str
-        :param Question: to ask user
-        :returns: str
-          User answer
+        Asks user a question, then gets user answer
+        :param question: Question: to ask user
+        :returns: User answer
         """
         self.last_question = str(question).strip()
         user_answer = input(self.last_question)
@@ -84,10 +74,9 @@ class UserInput:
 
     def get_yes_no(self, question):
         """
-        :param question: str
-        :param Question: to ask user
-        :returns: bool
-          User answer
+        Checks iff question is yes (True) or no (False)
+        :param question: Question to ask user
+        :returns: User answer
         """
         user_answer = self.get_answer(question).lower()
         if user_answer in self.YES:
@@ -112,17 +101,12 @@ class UserInput:
 
     def get_number(self, question,
                    min_i=float("-inf"), max_i=float("inf"), just_these=None):
-        """
-        :param question: str
-        :param Question: to ask
-        :param min_i: float
-        :param Min: acceptable number
-        :param max_i: float
-        :param Max: acceptable number
-        :param just_these: of float
-        :param Accept: only these numbers
-        :returns: float
-          User answer
+        """Parses answer and gets number
+        :param question: Question: to ask user
+        :param min_i: min acceptable number
+        :param max_i: max acceptable number
+        :param just_these: Accept only these numbers
+        :returns: User answer
         """
         try:
             user_answer = self.get_answer(question)
@@ -153,16 +137,11 @@ class UserInput:
 
     def get_list(self, question,
                  splitter=",", at_least=0, at_most=float("inf")):
-        """
-        :param question: str
-        :param Question: to ask user
-        :param splitter: str
-        :param Split: list elements with this char
-        :param at_least: int
-        :param List: must have at least this amount of elements
-        :param at_most: int
-        :param List: must have at most this amount of elements
-        :param ": 
+        """Parses answer and gets list
+        :param question: Question: to ask user
+        :param splitter: Split list elements with this char
+        :param at_least: List must have at least this amount of elements
+        :param at_most: List must have at most this amount of elements
         :returns: User answer
         """
         try:

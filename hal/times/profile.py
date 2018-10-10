@@ -2,7 +2,7 @@
 
 """Tired of formatting ETA times? This is just for you """
 
-from times import time
+from time import time
 
 
 def get_time_eta(total_done, total, start_time):

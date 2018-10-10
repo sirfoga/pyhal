@@ -7,28 +7,21 @@ from hal.strings.utils import non_ansi_string
 
 def parse_colorama(text):
     """
-    :param text: str
-    :param Colorama: text to parse
-    :returns: str
-      Parsed colorama text
+    Parses colorama
+    :param text: Colorama text to parse
+    :returns: Parsed colorama text
     """
     return non_ansi_string(text)
 
 
 class SqlTable:
     def __init__(self, labels, data, num_format, line_separator):
-    """
-    :param labels: of str
-    :param List: of labels of data
-    :param data: of
-    :param Matrix: of any type
-    :param num_format: str
-    :param Format: numbers with this format
-    :param line_separator: str
-    :param Separate: each new line with this
-    :returns: str
-          Pretty formatted table (first row is labels, then actual data)
-    """
+        """
+        :param labels: List of labels of data
+        :param data: Matrix of any type
+        :param num_format: Format numbers with this format
+        :param line_separator: Separate each new line with this
+        """
         self.labels = labels
         self.data = data
         self.num_format = num_format
@@ -38,7 +31,7 @@ class SqlTable:
         self._parse()
 
     def _parse(self):
-        """"""
+        """Parses raw data"""
         for i, row in enumerate(self.data):
             for j, col in enumerate(row):
                 try:
@@ -52,9 +45,8 @@ class SqlTable:
                     self.data[i][j] = str(self.data[i][j])
 
     def _calculate_optimal_column_widths(self):
-        """:returns: [] of int
-            Length of longest data in each column (labels and data)
-
+        """Calculates widths of columns
+        :returns: Length of longest data in each column (labels and data)
         """
         columns = len(self.data[0])  # number of columns
         str_labels = [parse_colorama(str(l)) for l in
@@ -75,15 +67,11 @@ class SqlTable:
         self.widths = widths
 
     def get_pretty_row(self, row, filler, splitter):
-        """
-        :param row: of anything
-        :param List: of data
-        :param filler: char
-        :param Fill: empty columns with this char
-        :param splitter: char
-        :param Separate: columns with this char
-        :returns: str
-          Pretty formatted row
+        """Gets pretty-formatted row
+        :param row: List of data
+        :param filler: Fill empty columns with this char
+        :param splitter: Separate columns with this char
+        :returns: Pretty formatted row
         """
         for i, val in enumerate(row):
             length_diff = self.widths[i] - len(parse_colorama(val))
@@ -97,13 +85,10 @@ class SqlTable:
         return pretty_row
 
     def get_blank_row(self, filler="-", splitter="+"):
-        """
-        :param filler: char
-        :param Fill: empty columns with this char
-        :param splitter: char
-        :param Separate: columns with this char
-        :returns: str
-          Pretty formatted blank row (with no meaningful data in it)
+        """Gets blank row
+        :param filler: Fill empty columns with this char
+        :param splitter: Separate columns with this char
+        :returns: Pretty formatted blank row (with no meaningful data in it)
         """
         return self.get_pretty_row(
             ["" for _ in self.widths],  # blanks
@@ -113,14 +98,11 @@ class SqlTable:
 
     def pretty_format_row(self, row, filler=" ", splitter="|"):
         """
-        :param row: of anything
-        :param List: of data
-        :param filler: char
-        :param Fill: empty columns with this char
-        :param splitter: char
-        :param Separate: columns with this char
-        :returns: str
-          Pretty formatted row
+        Gets pretty-formatted row
+        :param row: List of data
+        :param filler: Fill empty columns with this char
+        :param splitter: Separate columns with this char
+        :returns: Pretty formatted row
         """
         return self.get_pretty_row(
             row,
@@ -129,7 +111,9 @@ class SqlTable:
         )
 
     def build(self):
-        """"""
+        """Builds pretty-formatted table
+        :return: pretty table
+        """
         self._calculate_optimal_column_widths()
 
         pretty_table = self.get_blank_row() + self.new_line  # first row
@@ -145,10 +129,9 @@ class SqlTable:
     @staticmethod
     def from_df(df):
         """
-        :param df: pandas
-        :param Data: 
+        Parses data and builds an instance of this class
+        :param df: pandas DataFrame
         :returns: SqlTable
-          Parses data and builds an instance of this class
         """
         labels = df.keys().tolist()
         data = df.values.tolist()
@@ -157,16 +140,12 @@ class SqlTable:
 
 def pretty_format_table(labels, data, num_format="{:.3f}", line_separator="\n"):
     """
-    :param labels: of str
-    :param List: of labels of data
-    :param data: of
-    :param Matrix: of any type
-    :param num_format: str
-    :param Format: numbers with this format
-    :param line_separator: str
-    :param Separate: each new line with this
-    :returns: str
-      Pretty formatted table (first row is labels, then actual data)
+    Parses and creates pretty table
+    :param labels: List of labels of data
+    :param data: Matrix of any type
+    :param num_format: Format numbers with this format
+    :param line_separator: Separate each new line with this
+    :returns: Pretty formatted table (first row is labels, then actual data)
     """
     table = SqlTable(labels, data, num_format, line_separator)
     return table.build()
@@ -174,10 +153,9 @@ def pretty_format_table(labels, data, num_format="{:.3f}", line_separator="\n"):
 
 def pretty_df(df):
     """
-    :param df: pandas
-    :param Data:
-    :returns: str
-      Pretty formatted table (first row is labels, then actual data)
+    Parses data and builds an instance of this class
+    :param df: pandas DataFrame
+    :returns: Pretty formatted table (first row is labels, then actual data)
     """
     table = SqlTable.from_df(df)
     return table.build()
