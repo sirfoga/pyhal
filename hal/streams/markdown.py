@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" Markdown r/w models """
+"""Markdown r/w models """
 
 
 class MarkdownItem:
@@ -24,7 +24,7 @@ class MarkdownItem:
         self.attributes = attributes
 
     def to_markdown(self):
-        """ """
+        """"""
         if self.type == "text":
             return self.text
         elif self.type == "url" or self.type == "image":
@@ -57,14 +57,14 @@ class MarkdownTable:
         return "|" + "|".join(items) + "|"
 
     def _get_header(self):
-        """ """
+        """"""
         out = self._get_row(self.labels)
         out += "\n"
         out += self._get_row(["---"] * len(self.labels))  # line below headers
         return out
 
     def to_markdown(self):
-        """ """
+        """"""
         out = self._get_header()
         out += "\n"
 

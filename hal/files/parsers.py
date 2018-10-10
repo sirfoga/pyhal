@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-""" Parsers for raw databases """
+"""Parsers for raw databases """
 
 import csv
 

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" Typical operations on strings made easy """
+"""Typical operations on strings made easy """
 
 from difflib import SequenceMatcher
 

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" Songs in various formats """
+"""Songs in various formats """
 
 from mutagen.id3 import ID3
 from mutagen.id3._frames import TIT2, TPE1, TALB, TRCK, TDRC, TCON

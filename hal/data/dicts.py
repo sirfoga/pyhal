@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" Typical operations on dicts made easy """
+"""Typical operations on dicts made easy """
 
 import numpy as np
 

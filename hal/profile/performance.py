@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" Perform benchmarks and tests on your PC """
+"""Perform benchmarks and tests on your PC """
 
 import getpass
 import os
@@ -79,18 +79,18 @@ class EightQueenTest:
     def start(self):
             Starts profiling
 
-        """
-        self.update_std_out_and_log(self.welcome())
-        print(EightQueenTest.introduction())
+    """
+    self.update_std_out_and_log(self.welcome())
+    print(EightQueenTest.introduction())
 
-        if input("Are you sure you want to proceed? [y/n]").startswith("y"):
-            self._run()
-        else:
-            print("Bye bye!")
-            sys.exit(0)
+    if input("Are you sure you want to proceed? [y/n]").startswith("y"):
+        self._run()
+    else:
+        print("Bye bye!")
+        sys.exit(0)
 
-    def _run(self):
-        """ """
+def _run(self):
+    """"""
         max_board_size = self.size
         start_time = time()
 

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" Parse, convert times formats """
+"""Parse, convert times formats """
 
 from datetime import datetime
 

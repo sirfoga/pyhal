@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" Primes functions """
+"""Primes functions """
 
 import random
 

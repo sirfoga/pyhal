@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" Deal with web-pages """
+"""Deal with web-pages """
 
 import random
 import re
@@ -258,6 +258,7 @@ def get_tor_session():
 
 def renew_connection(password):
     """
+    Renews TOR session
     :param password: new password
     """
     with Controller.from_port(port=9051) as controller:

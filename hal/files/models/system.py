@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" File system utils, renaming and parsing """
+"""File system utils, renaming and parsing """
 
 import os
 import re

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-""" Functions to deal with matrices """
+"""Functions to deal with matrices """
 
 from sklearn.preprocessing import LabelEncoder
 

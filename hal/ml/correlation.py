@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-""" Correlate values in arrays producing fancy good-looking matrices """
+"""Correlate values in arrays producing fancy good-looking matrices """
 
 import os
 
@@ -53,7 +53,7 @@ class CorrelationMatrix:
         pyplot.show()
 
     def show_correlation_matrix_of_columns(self):
-        """ """
+        """"""
         correlation_matrix = self.get_correlation_matrix_of_columns()
         self.show_correlation_matrix(correlation_matrix)
 

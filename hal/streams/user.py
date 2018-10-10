@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" Deal with user on standard output/input """
+"""Deal with user on standard output/input """
 
 from hal.strings.utils import get_max_similar
 

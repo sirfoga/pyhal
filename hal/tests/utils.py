@@ -2,7 +2,7 @@
 # coding: utf_8
 
 
-""" Tools to ease testing process """
+"""Tools to ease testing process """
 
 import uuid
 

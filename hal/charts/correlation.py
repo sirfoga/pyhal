@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" Everything you need to create correlation charts """
+"""Everything you need to create correlation charts """
 
 import numpy as np
 from matplotlib import pyplot as plt, cm

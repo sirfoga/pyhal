@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" Documents and folders in system """
+"""Documents and folders in system """
 
 import os
 

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" Parse anything there is on the Internet """
+"""Parse anything there is on the Internet """
 
 from bs4 import BeautifulSoup
 
@@ -19,9 +19,9 @@ class HtmlTable:
         self.soup = BeautifulSoup(self.source, "lxml")
 
     def parse(self):
-        """:returns: list of list
-            List of list of values in table
-
+        """
+        Parses data in table
+        :returns: List of list of values in table
         """
         data = []  # add name of section
         for row in self.soup.find_all("tr"):  # cycle through all rows

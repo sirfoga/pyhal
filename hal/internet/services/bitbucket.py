@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" Common classes and entities in Bitbucket """
+"""Common classes and entities in Bitbucket """
 
 BITBUCKET_REMOTE = "https://{}@bitbucket.org/"
 

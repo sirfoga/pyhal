@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-""" Pretty prints table in SQL style """
+"""Pretty prints table in SQL style """
 
 from hal.strings.utils import non_ansi_string
 
@@ -37,7 +37,7 @@ class SqlTable:
         self._parse()
 
     def _parse(self):
-        """ """
+        """"""
         for i, row in enumerate(self.data):
             for j, col in enumerate(row):
                 try:
@@ -128,7 +128,7 @@ class SqlTable:
         )
 
     def build(self):
-        """ """
+        """"""
         self._calculate_optimal_column_widths()
 
         pretty_table = self.get_blank_row() + self.new_line  # first row

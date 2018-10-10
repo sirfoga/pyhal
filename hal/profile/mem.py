@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" Profile OS memory """
+"""Profile OS memory """
 
 import os
 

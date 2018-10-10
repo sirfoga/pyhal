@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" Tired of formatting ETA times? This is just for you """
+"""Tired of formatting ETA times? This is just for you """
 
 from times import time
 

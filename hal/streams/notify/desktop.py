@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-""" Sends desktop notify with notify-send tool """
+"""Sends desktop notify with notify-send tool """
 
 import subprocess
 

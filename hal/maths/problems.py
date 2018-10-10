@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" Useful problems """
+"""Useful problems """
 
 
 class EightQueen:

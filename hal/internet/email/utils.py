@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-""" Email creator utils """
+"""Email creator utils """
 
 
 def get_email_content(file_path):

@@ -2,7 +2,7 @@
 # coding: utf-8
 
 
-""" Handles main models in git repository """
+"""Handles main models in git repository """
 
 from git import Repo
 from unidiff import PatchSet

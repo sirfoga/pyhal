@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" Show elegant plots in any dimension """
+"""Show elegant plots in any dimension """
 
 import abc
 

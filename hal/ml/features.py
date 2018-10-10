@@ -2,7 +2,7 @@
 # coding: utf-8
 
 
-""" Collection of methods to find weights of features and select the best
+"""Collection of methods to find weights of features and select the best
 ones """
 
 from sklearn.feature_selection import SelectKBest, chi2, RFECV
@@ -11,7 +11,7 @@ from sklearn.svm import SVC
 
 
 class FeatureSelect:
-    """ """
+    """"""
 
     def __init__(self, x, y):
         self.x = x

@@ -2,7 +2,7 @@
 # coding: utf_8
 
 
-""" Authenticate your Google APIs """
+"""Authenticate your Google APIs """
 
 import os
 
@@ -14,7 +14,7 @@ from oauth2client.file import Storage
 
 
 class GoogleApiOAuth:
-    """ """
+    """"""
 
     def __init__(self, scope, app_name, app_secrets_path,
                  user_credentials_path):

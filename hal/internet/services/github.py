@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" Common classes and entities in Github """
+"""Common classes and entities in Github """
 
 GITHUB_URL = "https://github.com"
 API_URL = "https://api.github.com/"  # Github api url
@@ -9,7 +9,7 @@ GITHUB_REMOTE = "https://{}:x-oauth-basic@github.com/"
 
 
 def get_token():
-    """ """
+    """"""
     return GITHUB_TOKEN
 
 

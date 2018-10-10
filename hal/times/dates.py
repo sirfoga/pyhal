@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" Datetime utils """
+"""Datetime utils """
 
 import datetime
 from enum import Enum

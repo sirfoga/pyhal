@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" Save various data to file """
+"""Save various data to file """
 
 import csv
 import json

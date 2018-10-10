@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-""" Email templates """
+"""Email templates """
 
 from email.mime.text import MIMEText
 

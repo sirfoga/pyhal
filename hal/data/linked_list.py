@@ -2,7 +2,7 @@
 # coding: utf-8
 
 
-""" Linked list implementation """
+"""Linked list implementation """
 
 
 class Node:

@@ -2,7 +2,7 @@
 # coding: utf_8
 
 
-""" Use GMail APIs from python """
+"""Use GMail APIs from python """
 
 import os
 from email.mime.text import MIMEText

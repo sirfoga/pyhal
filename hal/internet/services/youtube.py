@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" Get rss feed for youtube channel """
+"""Get rss feed for youtube channel """
 
 from bs4 import BeautifulSoup
 
@@ -11,7 +11,7 @@ YOUTUBE_FEED_BASE_URL = "https://www.youtube.com/feeds/videos.xml?channel_id="
 
 
 class YoutubeChannel:
-    """ """
+    """"""
 
     def __init__(self, channel_name):
         self.channel_name = channel_name

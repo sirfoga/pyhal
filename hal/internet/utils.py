@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 
-""" Internet tools """
+"""Internet tools """
 
 import socket
+import time
 import urllib.parse as urlparse
 from urllib.parse import urlencode
 
-from hal import times
 from hal.wrappers.errors import true_false_returns
 
 
@@ -25,34 +25,25 @@ def add_params_to_url(url, params):
 
 @true_false_returns
 def is_internet_on(host="8.8.8.8", port=53, timeout=3):
+    """Checks iff machine has internet connection
+    :param host: hostname to test
+    :param port: port of hostname
+    :param timeout: seconds before discarding connection
+    :returns: True iff machine has internet connection
     """
-
-    :param host: str
-    :param Google: public
-    :param port: int
-    :param 53: tcp
-    :param timeout: int
-    :param Seconds: Default value
-    :returns: bool
-      True iff machine has internet connection
-    """
-
     socket.setdefaulttimeout(timeout)
     socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect((host, port))
 
 
 def wait_until_internet(time_between_attempts=3, max_attempts=10):
-    """
-    :param time_between_attempts: int
-    :param Seconds: between 2 consecutive attempts
-    :param max_attempts: int
-    :param Max: number of attempts to try
-    :returns: bool
-      True iff there is internet connection
+    """Waits until machine has internet
+    :param time_between_attempts: seconds between 2 consecutive attempts
+    :param max_attempts: max number of attempts to try
+    :returns: True iff there is internet connection
     """
     counter = 0
     while not is_internet_on():
-        times.sleep(time_between_attempts)  # wait until internet is on
+        time.sleep(time_between_attempts)  # wait until internet is on
         counter += 1
 
         if counter > max_attempts:

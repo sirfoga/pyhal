@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" Abstract search engines """
+"""Abstract search engines """
 
 from hal.internet.web import Webpage
 
@@ -9,6 +9,11 @@ class SearchEngineResult:
     """Result of general search engine"""
 
     def __init__(self, title, link, description=""):
+        """
+        :param title: title of result
+        :param link: search query url
+        :param description: description of result
+        """
         self.title = title
         self.link = link
         self.description = description
@@ -34,25 +39,21 @@ class SearchEngine:
 
     def parse_query(self, query):
         """
-        :param query: string
-        :param Query: to search engine
-        :returns: string
-          Parse given query in order to meet search criteria of search engine
+        Parses given query in order to meet search criteria of search engine
+        :param query: Query to search engine
+        :returns: query of search engine (well-formatted)
         """
         return query.strip().replace(
             " ",
             self.blank_replace
         ).lower()  # remove trailing blanks, replace with search engine blanks
 
-    def get_search_page(self, query, using_tor=False):
+    def get_search_page(self, query):
         """
-        :param query: string
-        :param Query: to search engine
-        :param using_tor: bool
-        :param Whether: use tor or not to fetch web pages
-        :returns: string
-          Get HTML source of search page of given query.
+        Gets HTML source
+        :param query: query to search engine
+        :returns: HTML source of search page of given query
         """
         query_web_page = Webpage(self.url + self.parse_query(query))
-        query_web_page.get_html_source(tor=using_tor)  # get html source
+        query_web_page.get_html_source()  # get html source
         return query_web_page.source

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-""" Tools to deal with lists """
+"""Tools to deal with lists """
 
 import numpy as np
 

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-""" Tools realtive to maths """
+"""Tools realtive to maths """
 
 
 def get_percentage_relative_to(val, other):

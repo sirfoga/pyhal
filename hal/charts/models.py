@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" Chart model """
+"""Chart model """
 
 import numpy as np
 from matplotlib import cm

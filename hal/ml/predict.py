@@ -2,7 +2,7 @@
 # coding: utf-8
 
 
-"""" General model to make prediction about everything """
+""""General model to make prediction about everything """
 
 from sklearn.model_selection import train_test_split
 

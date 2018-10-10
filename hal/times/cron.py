@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" Cron-ify python apps with simple config files """
+"""Cron-ify python apps with simple config files """
 
 import datetime
 import json
