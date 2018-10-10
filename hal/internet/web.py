@@ -214,7 +214,6 @@ def download_url(url, local_file):
 
     :param url: Url to download
     :param local_file: Save url as this path
-
     """
     downloader = urllib.request.URLopener()
     downloader.retrieve(url, local_file)
@@ -229,7 +228,6 @@ def download_to_file(url, local_file, headers=HEADERS, cookies=None,
     :param headers: Headers to fetch url (Default value = HEADERS)
     :param cookies: Cookies to fetch url (Default value = None)
     :param chunk_size: int (Default value = 1024)
-
     """
     if not cookies:
         cookies = {}
@@ -259,7 +257,6 @@ def renew_connection(password):
     """Renews TOR session
 
     :param password: new password
-
     """
     with Controller.from_port(port=9051) as controller:
         controller.authenticate(password=password)

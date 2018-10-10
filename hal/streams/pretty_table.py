@@ -24,7 +24,6 @@ class SqlTable:
         :param data: Matrix of any type
         :param num_format: Format numbers with this format
         :param line_separator: Separate each new line with this
-
         """
         self.labels = labels
         self.data = data

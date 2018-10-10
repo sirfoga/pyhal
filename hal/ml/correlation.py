@@ -23,7 +23,6 @@ class CorrelationMatrix:
         :param headers_to_test: List of columns to get correlation matrix of
         :param headers: List of all headers in matrix
         :param data: Matri: of float values
-
         """
         self.title = title
         self.headers_to_test = headers_to_test

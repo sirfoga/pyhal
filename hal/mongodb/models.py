@@ -9,9 +9,7 @@ class DbBrowser:
     def __init__(self, db_name):
 
         """
-
         :param db_name: Name of db
-
         """
         self.client = MongoClient()
         self.db = self.client[db_name]
