@@ -15,12 +15,14 @@ class VersionNumber:
     @abstractmethod
     def get_current_amount(self):
         """Gets current set amount
+
         :return: Current set amount
         """
         pass
 
     def can_increase(self, amount):
-        """
+        """Checks iff can increase by such amount
+
         :param amount: Amount to increase
         :return: True iff this number can be increased by such amount
         """
@@ -29,6 +31,7 @@ class VersionNumber:
     @abstractmethod
     def increase(self, amount=1):
         """Increase version by this amount
+
         :param amount: Increase number by this amount
         :return: True iff increase was successful
         """
@@ -37,20 +40,19 @@ class VersionNumber:
     @abstractmethod
     def maximize(self):
         """Maximizes this version
-        :return: Maximizes this version
         """
         pass
 
     @abstractmethod
     def reset(self):
         """Zeroes this number
-        :return: Zeroes this number
         """
         pass
 
     @abstractmethod
     def max_amount_allowed(self):
         """Calculates number of increases available
+
         :return: Number of increases that can be done before reaching
         """
         pass
@@ -58,6 +60,7 @@ class VersionNumber:
     @abstractmethod
     def max(self):
         """Calculates max increases
+
         :return: Number of increases that can be done before reaching
         """
         pass
@@ -69,7 +72,7 @@ class Level(VersionNumber):
     def __init__(self, max_inner, start=0):
         """
         :param max_inner: Max number of this level. If you set to 0 this level will
-        increase never
+            increase never
         :param start: Start at this number
         """
         self.max_inner = max_inner
@@ -107,7 +110,7 @@ class Subsystem(VersionNumber):
     def __init__(self, levels, separator="."):
         """
         :param levels: Levels in order of importance (from left to right the
-        importance increases). The version number is the reversed
+            importance increases). The version number is the reversed
         :param separator: Compose version number separating with this split
         """
         self.ll = LinkedList(levels)
@@ -212,6 +215,7 @@ class Version(VersionNumber):
 
     def increase_by_changes(self, changes_amount, ratio):
         """Increase version by amount of changes
+
         :param changes_amount: Number of changes done
         :param ratio: Ratio changes
         :return: Increases version accordingly to changes
@@ -228,6 +232,7 @@ class Version(VersionNumber):
     @staticmethod
     def from_str(string, max_number=9, separator="."):
         """Parses string
+
         :param string: Version
         :param max_number: Max number reachable by sub
         :param separator: Version numbers are separated with this split

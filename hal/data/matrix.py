@@ -16,6 +16,7 @@ class Matrix:
 
     def precision(self):
         """Calculates precision
+
         :return: Precision of matrix
         """
         true_pos = self.matrix[0][0]
@@ -24,6 +25,7 @@ class Matrix:
 
     def recall(self):
         """Calculates recall
+
         :return: Recall
         """
         true_pos = self.matrix[0][0]
@@ -32,6 +34,7 @@ class Matrix:
 
     def true_neg_rate(self):
         """Calculates true negative rate
+
         :return: true negative rate
         """
         false_pos = self.matrix[1][0]
@@ -40,6 +43,7 @@ class Matrix:
 
     def accuracy(self):
         """Calculates accuracy
+
         :return: Accuracy
         """
         true_pos = self.matrix[0][0]
@@ -54,6 +58,7 @@ class Matrix:
 
     def f1_score(self):
         """Calculates F1 score
+
         :return: F1 score
         """
         m_pre = self.precision()
@@ -62,6 +67,7 @@ class Matrix:
 
     def get_as_list(self):
         """List of all values in matrix
+
         :return: list representation
         """
         return sum([
@@ -71,6 +77,7 @@ class Matrix:
 
     def encode(self):
         """Encodes matrix
+
         :return: Encoder used
         """
         lb = LabelEncoder()  # encoder
@@ -88,6 +95,7 @@ class Matrix:
 
     def decode(self, lb):
         """Decodes matrix
+
         :param lb: Encoder used to encode matrix
         :return: list: Decodes matrix
         """
@@ -97,8 +105,8 @@ class Matrix:
         ]
 
     def get_column(self, index):
-        """
-        Gets column at given index
+        """Gets column at given index
+
         :param index: index of column
         :return: Column
         """
@@ -111,6 +119,7 @@ class Matrix:
     @staticmethod
     def from_columns(columns):
         """Parses raw columns
+
         :param columns: matrix divided into columns
         :return: Matrix: Merge the columns to form a matrix
         """

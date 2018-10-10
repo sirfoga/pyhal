@@ -9,6 +9,7 @@ from hal.strings.utils import how_similar_are
 
 def how_similar_dicts(d1, d2):
     """Calculates similarity
+
     :param d1: Dictionary
     :param d2: Dictionary
     :return: measure of how much similar values of dictionaries are
@@ -24,6 +25,7 @@ def how_similar_dicts(d1, d2):
 
 def get_inner_keys(d):
     """Gets 2nd-level dictionary keys
+
     :param d: dict
     :return: inner keys
     """
@@ -42,6 +44,7 @@ def get_inner_keys(d):
 
 def get_inner_data(d):
     """Gets 2nd-level data into 1st-level dictionary
+
     :param d: dict
     :return: {} with 2nd-level data
     """

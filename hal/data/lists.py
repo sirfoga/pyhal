@@ -8,6 +8,7 @@ import numpy as np
 
 def pearson(lst1, lst2):
     """Calculates pearson coefficient of arrays
+
     :param lst1: first list
     :param lst2: second list
     :return: Pearson coefficient of arrays
@@ -17,6 +18,7 @@ def pearson(lst1, lst2):
 
 def normalize_array(lst):
     """Normalizes list
+
     :param lst: Array of floats
     :return: Normalized (in [0, 1]) input array
     """
@@ -27,6 +29,7 @@ def normalize_array(lst):
 
 def is_in_all(value, lists):
     """Checks if item is in all lists
+
     :param value: Value to check
     :param lists: List of lists
     :return: True iff value is in all inner lists
@@ -40,6 +43,7 @@ def is_in_all(value, lists):
 
 def find_commons(lists):
     """Finds common values
+
     :param lists: List of lists
     :return: List of values that are in common between inner lists
     """

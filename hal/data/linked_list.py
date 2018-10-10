@@ -28,12 +28,14 @@ class LinkedList:
 
     def get_head(self):
         """Gets head
+
         :return: Head of linked list
         """
         return self.head
 
     def get_tail(self):
         """Gets tail
+
         :return: Tail of linked list
         """
         node = self.head
@@ -47,6 +49,7 @@ class LinkedList:
 
     def length(self):
         """Gets length
+
         :return: How many items in linked list of linked list
         """
         item = self.head
@@ -60,6 +63,7 @@ class LinkedList:
 
     def append(self, val):
         """Appends to list
+
         :param val: Object to insert
         :return: bool: Appends element to last
         """
@@ -67,6 +71,7 @@ class LinkedList:
 
     def insert(self, val, at=0):
         """Insert in position
+
         :param val: Object to insert
         :param at: Index of insertion
         :return: bool: True iff insertion completed successfully
@@ -99,6 +104,7 @@ class LinkedList:
 
     def remove_first(self):
         """Removes first
+
         :return: True iff head has been removed
         """
         if self.head.next_node is not None:
@@ -109,6 +115,7 @@ class LinkedList:
 
     def remove_last(self):
         """Removes last
+
         :return: True iff last element has been removed
         """
         node = self.head
@@ -124,6 +131,7 @@ class LinkedList:
 
     def remove(self, at):
         """Removes at index
+
         :param at: Index of removal
         :return: bool: True iff removal completed successfully
         """
@@ -153,6 +161,7 @@ class LinkedList:
 
     def to_lst(self):
         """Cycle all items and puts them in a list
+
         :return: list representation
         """
         out = []
@@ -166,6 +175,7 @@ class LinkedList:
 
     def execute(self, func):
         """Executes function on each item
+
         :param func: Function to execute on each item
         :return: list: Results of calling the function on each item
         """
@@ -183,6 +193,7 @@ class LinkedList:
     @staticmethod
     def from_list(lst):
         """Parses list
+
         :param lst: list of elements
         :return: LinkedList: Nodes from list
         """

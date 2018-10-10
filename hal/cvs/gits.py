@@ -28,6 +28,7 @@ class Diff:
 
     def get_totals(self):
         """Calculates total additions and deletions
+
         :return: Dictionary with totals
         """
         total_added = 0
@@ -52,6 +53,7 @@ class Commit:
 
     def __init__(self, commit):
         """
+
         :param commit: Commit of repository
         """
         self.c = commit
@@ -59,6 +61,7 @@ class Commit:
     def __str__(self, date_format="%H:%M:%S %y-%m-%d %z"):
         """
         Converts to string
+
         :param date_format: Format date and times with this format
         :return: Pretty description of commit
         """
@@ -68,6 +71,7 @@ class Commit:
 
     def get_author(self):
         """Gets author
+
         :return: author of commit
         """
         author = self.c.author
@@ -87,18 +91,21 @@ class Repository:
 
     def __init__(self, repo_path):
         """
+
         :param repo_path: Path to repository
         """
         self.r = Repo(repo_path)
 
     def get_last_commit(self):
         """Gets last commit
+
         :return: Last commit of repository
         """
         return self.r.head.commit
 
     def get_diff_amounts(self):
         """Gets list of total diff
+
         :return: List of total diff between 2 consecutive commits since start
         """
         diffs = []
@@ -116,6 +123,7 @@ class Repository:
 
     def get_diff(self, commit, other_commit):
         """Calculates total additions and deletions
+
         :param commit: First commit
         :param other_commit: Second commit
         :return: dictionary: Dictionary with total additions and deletions
@@ -125,6 +133,7 @@ class Repository:
 
     def get_version(self, diff_to_increase_ratio):
         """Gets version
+
         :param diff_to_increase_ratio: Ratio to convert number of changes into
         :return: Version of this code, based on commits diffs
         """
@@ -138,8 +147,9 @@ class Repository:
 
     def get_pretty_version(self, diff_to_increase_ratio):
         """Pretty version
+
         :param diff_to_increase_ratio: Ratio to convert number of changes into
-        version increases
+            version increases
         :return: string: Pretty version of this repository
         """
         version = self.get_version(diff_to_increase_ratio)
@@ -147,7 +157,7 @@ class Repository:
         return str(version) + " (" + build + ")"
 
     def get_last_commit_hash(self):
-        """
+        """Gets hash of last commit
         :return: hash of last commit
         """
         last = self.get_last_commit()

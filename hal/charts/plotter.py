@@ -16,6 +16,7 @@ class Plotter:
     @abc.abstractmethod
     def scatter(self, vectors):
         """Plots scatter data
+
         :param vectors: list of vectors (x, y, ...)
         """
         pass
@@ -23,6 +24,7 @@ class Plotter:
     @abc.abstractmethod
     def param(self, functions, min_val, max_val, points):
         """Plots parametric data
+
         :param functions: functions to plot (x, y ...)
         :param min_val: minimum value
         :param max_val: maximum value
@@ -34,6 +36,7 @@ class Plotter:
     @abc.abstractmethod
     def plot(self, func, mins, maxs, points):
         """Plots function
+
         :param func: function to plot
         :param mins: [] minimum of values (x, y ...)
         :param maxs: [] maximum of values (x, y ...)
@@ -43,6 +46,8 @@ class Plotter:
 
     @staticmethod
     def show_plot():
+        """Shows plot
+        """
         plt.legend()
         plt.show()
 
@@ -153,6 +158,7 @@ class Plot4d(Plotter):
 
         def set_labels(graph, label_x, label_y, label_z):
             """Sets given labels to axes of graph
+
             :param graph: plot
             :param label_x: new label on x axis
             :param label_y: new label on y axis
@@ -164,6 +170,7 @@ class Plot4d(Plotter):
 
         def set_limits(graph):
             """Set chart limits to axes of graph
+
             :param graph: plot
             """
             graph.set_xlim(min_x, max_x)
@@ -172,6 +179,7 @@ class Plot4d(Plotter):
 
         def get_precision(min_val, max_val):
             """Calculates precision
+
             :param min_val: minimum
             :param max_val: maximum
             :return: precision: prevision of values
@@ -180,6 +188,7 @@ class Plot4d(Plotter):
 
         def get_precision_delta(min_val, max_val):
             """Calculates precision delta
+
             :param min_val: minimum
             :param max_val: maximum
             :return: delta: Precision delta
@@ -198,6 +207,7 @@ class Plot4d(Plotter):
 
             def update(val):
                 """Updates chart with value
+
                 :param val: value
                 """
                 chart.clear()
@@ -233,6 +243,7 @@ class Plot4d(Plotter):
 
             def update(val):
                 """Updates chart with value
+
                 :param val: value
                 """
                 chart.clear()  # re-plot
