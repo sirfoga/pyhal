@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 """Pretty prints table in SQL style """
 
 from hal.strings.utils import non_ansi_string

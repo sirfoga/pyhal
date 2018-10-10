@@ -96,6 +96,18 @@ class Matrix:
             for row in self.matrix
         ]
 
+    def get_column(self, index):
+        """
+        Gets column at given index
+        :param index: index of column
+        :return: Column
+        """
+
+        return [
+            row[index]
+            for row in self.matrix
+        ]
+
     @staticmethod
     def from_columns(columns):
         """Parses raw columns

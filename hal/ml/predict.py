@@ -12,21 +12,17 @@ class BasePrediction:
 
     def __init__(self, model, rounds):
         """
-        :param model: sklearn.model
-            Model chosen for prediction
-        :param rounds: int
-            Number of rounds to repeat prediction (and get better results)
+        :param model: Model chosen for prediction
+        :param rounds: Number of rounds to repeat prediction
         """
         self.model = model  # ml algorithm to use for prediction
         self.rounds = rounds  # number of times to make prediction
 
     def train(self, x_data, y_data):
         """
-        :param x_data: data
-        :param Input: 
-        :param y_data: data
-        :param Input:
-          Train model on inputs
+        Trains model on inputs
+        :param x_data: x matrix
+        :param y_data: y array
         """
         x_train, _, y_train, _ = train_test_split(
             x_data,

@@ -14,23 +14,26 @@ class FeatureSelect:
     """"""
 
     def __init__(self, x, y):
+        """
+        :param x: x matrix
+        :param y: y array
+        """
         self.x = x
         self.y = y
 
     def select_k_best(self, k):
         """
-        :param k: int
-        :param K: features to select
-        :returns: matrix
-          Select k best features in dataset
+        Selects k best features in dataset
+        :param k: features to select
+        :returns: k best features
         """
         x_new = SelectKBest(chi2, k=k).fit_transform(self.x, self.y)
         return x_new
 
     def get_best(self):
-        """:returns: tuple
-            Finds the optimal number of features
-
+        """
+        Finds the optimal number of features
+        :returns: optimal number of features and ranking
         """
         svc = SVC(kernel="linear")
         rfecv = RFECV(

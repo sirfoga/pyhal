@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 """Various utilities to deal with MondoDB databases """
 
 from pymongo import MongoClient
