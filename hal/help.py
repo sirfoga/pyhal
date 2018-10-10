@@ -40,7 +40,8 @@ class BugReporter:
         """
         platform_info = BugReporter.get_platform_info()
         hal_info = {
-            'version': hal_version.__version__
+            'version': hal_version.__version__,
+            'build': hal_version.__build__
         }
 
         return {
@@ -101,6 +102,9 @@ def main():
 
     print("SQL report:")
     print(reporter.as_sql())
+
+    print("Choose the appropriate format (if you're submitting a GithubIssue "
+          "please chose the Markdown report) and paste it!")
 
 
 if __name__ == '__main__':

@@ -1,5 +1,3 @@
-# todo automatic versioning
-
 __title__ = 'hal'
 __description__ = 'Your swiss knife to perform fast and easy pythonic stuff'
 __url__ = 'https://sirfoga.github.io/pyhal/'

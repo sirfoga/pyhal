@@ -143,5 +143,12 @@ class Repository:
         :returns: string: Pretty version of this repository
         """
         version = self.get_version(diff_to_increase_ratio)
+        build = self.get_last_commit_hash()
+        return str(version) + " (" + build + ")"
+
+    def get_last_commit_hash(self):
+        """
+        :return: hash of last commit
+        """
         last = self.get_last_commit()
-        return str(version) + " (" + str(Commit(last)) + ")"
+        return str(Commit(last))

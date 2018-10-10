@@ -10,8 +10,10 @@
   1.
   1.
 
-## Specifications
+## System Information
 
-  - Version (check `VERSION`):
-  - Platform:
-  - python version (check `python --version`):
+    $ python -m hal.help
+
+```
+<paste here>
+```
