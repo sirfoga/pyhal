@@ -50,7 +50,7 @@ class MarkdownTable:
     def _get_row(items):
         """
         :param items: array
-        :returns: markdown-formatted array
+        :return: markdown-formatted array
         """
         items = [
             str(item)

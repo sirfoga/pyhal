@@ -106,7 +106,7 @@ def is_url(candidate):
     """
     Checks if string is url
     :param candidate: url to check for url
-    :returns: True iff candidate is a valid url
+    :return: True iff candidate is a valid url
     """
     return re.match(URL_VALID_REGEX, candidate)
 
@@ -149,7 +149,7 @@ class Webpage:
     def get_scheme(self):
         """
         Gets scheme of url
-        :returns: get scheme (HTTP, HTTPS, FTP ..) from given url
+        :return: get scheme (HTTP, HTTPS, FTP ..) from given url
         """
 
         return urllib.request.urlparse(self.url).scheme
@@ -157,7 +157,7 @@ class Webpage:
     def get_hostname(self):
         """
         Gets hostname of url
-        :returns: extract hostname from given url
+        :return: extract hostname from given url
         """
 
         return urllib.request.urlparse(self.url).hostname
@@ -165,7 +165,7 @@ class Webpage:
     def get_domain(self):
         """
         Gets domain of url
-        :returns: get domain from given url
+        :return: get domain from given url
         """
 
         return "{uri.scheme}://{uri.netloc}/".format(
@@ -174,7 +174,7 @@ class Webpage:
     def get_html_source(self):
         """
         Gets source page of url
-        :returns: HTML source
+        :return: HTML source
         """
         req = urllib.request.Request(self.url)
         req.add_header("user-agent", random.choice(USER_AGENTS))
@@ -188,7 +188,7 @@ class Webpage:
         Gets links in page
         :param recall: max times to attempt to fetch url
         :param timeout: max times
-        :returns: array of out_links
+        :return: array of out_links
         """
         for _ in range(recall):
             try:  # setting timeout
@@ -245,7 +245,7 @@ def download_to_file(url, local_file, headers=HEADERS, cookies=None,
 def get_tor_session():
     """
     Finds TOR session
-    :returns: TOR session
+    :return: TOR session
     """
     session = requests.session()
     # Tor uses the 9050 port as the default socks port

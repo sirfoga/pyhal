@@ -10,7 +10,7 @@ fast-init:
 	rm -rf /usr/local/lib/python3.6/dist-packages/hal
 	mkdir /usr/local/lib/python3.6/dist-packages/hal
 	cp -r hal/ /usr/local/lib/python3.6/dist-packages/
-	echo Installed to /usr/local/lib/python3.6/dist-packages/hal
+	@echo "\033[95m\n\nInstalled to /usr/local/lib/python3.6/dist-packages/hal\n\033[0m"
 
 test:
 	# This runs all of the tests, on both Python 2 and Python 3.

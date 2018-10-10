@@ -10,7 +10,7 @@ import psutil
 
 def get_memory_usage():
     """Gets RAM memory usage
-    :returns: MB of memory used by this process
+    :return: MB of memory used by this process
     """
     process = psutil.Process(os.getpid())
     mem = process.memory_info().rss

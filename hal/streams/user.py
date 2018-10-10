@@ -29,7 +29,7 @@ class UserInput:
     def is_yes(self, answer):
         """
         :param answer: User: answer
-        :returns: True iff considered a "yes" answer
+        :return: True iff considered a "yes" answer
         """
         yes_sim, _ = get_max_similar(answer, self.YES)
         no_sim, _ = get_max_similar(answer, self.NO)
@@ -39,7 +39,7 @@ class UserInput:
         """
         Checks if considered a "yes" answer
         :param answer: User answer
-        :returns: True iff considered a "yes" answer
+        :return: True iff considered a "yes" answer
         """
         yes_sim, _ = get_max_similar(answer, self.YES)
         no_sim, _ = get_max_similar(answer, self.NO)
@@ -55,7 +55,7 @@ class UserInput:
         """
         Re-asks user the last question
         :param with_help: True iff you want to show help on how to answer questions
-        :returns: user answer
+        :return: user answer
         """
         if with_help:
             self.show_help()
@@ -66,7 +66,7 @@ class UserInput:
         """
         Asks user a question, then gets user answer
         :param question: Question: to ask user
-        :returns: User answer
+        :return: User answer
         """
         self.last_question = str(question).strip()
         user_answer = input(self.last_question)
@@ -76,7 +76,7 @@ class UserInput:
         """
         Checks if question is yes (True) or no (False)
         :param question: Question to ask user
-        :returns: User answer
+        :return: User answer
         """
         user_answer = self.get_answer(question).lower()
         if user_answer in self.YES:
@@ -106,7 +106,7 @@ class UserInput:
         :param min_i: min acceptable number
         :param max_i: max acceptable number
         :param just_these: Accept only these numbers
-        :returns: User answer
+        :return: User answer
         """
         try:
             user_answer = self.get_answer(question)
@@ -142,7 +142,7 @@ class UserInput:
         :param splitter: Split list elements with this char
         :param at_least: List must have at least this amount of elements
         :param at_most: List must have at most this amount of elements
-        :returns: User answer
+        :return: User answer
         """
         try:
             user_answer = self.get_answer(question)  # ask question

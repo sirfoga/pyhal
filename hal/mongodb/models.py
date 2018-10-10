@@ -15,13 +15,13 @@ class DbBrowser:
 
     def get_collection_names(self):
         """Gets name of all collections
-        :returns: List of names of all collections
+        :return: List of names of all collections
         """
         return self.db.collection_names()
 
     def get_documents_count(self):
         """Counts documents in database
-        :returns: Number of documents in db
+        :return: Number of documents in db
         """
         db_collections = [
             self.db[c] for c in self.get_collection_names()
@@ -32,7 +32,7 @@ class DbBrowser:
         """Gets all documents in collection
         :param collection_name: Name of collection
         :param with_id: True iff each document should also come with its id
-        :returns: List of documents in collection in self.db
+        :return: List of documents in collection in self.db
         """
         documents_iterator = self.db[collection_name].find()  # anything
         documents = [
@@ -48,14 +48,14 @@ class DbBrowser:
     def get_collection(self, key):
         """Gets collection with given key
         :param key: Name of collection
-        :returns: Data in collection with given key
+        :return: Data in collection with given key
         """
         return self.db[key]
 
     def get_documents_in_database(self, with_id=True):
         """Gets all documents in database
         :param with_id: True iff each document should also come with its id
-        :returns: List of documents in collection in database
+        :return: List of documents in collection in database
         """
         documents = []
         for coll in self.get_collection_names():

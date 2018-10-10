@@ -33,7 +33,7 @@ class Integer:
     def is_naive_prime(self):
         """
         Checks if prime in very naive way
-        :returns: True iff prime
+        :return: True iff prime
         """
         if self.to_int < 2:
             return False
@@ -45,7 +45,7 @@ class Integer:
     def is_probably_prime(self):
         """
         Tests with miller-rabin
-        :returns: True iff prime
+        :return: True iff prime
         """
 
         if self.is_naive_prime():
@@ -63,7 +63,7 @@ class Integer:
         """
         Tests prime with miller-rabin algorithm
         :param precision: number of rounds to perform
-        :returns: True iff probably prime
+        :return: True iff probably prime
         """
 
         if not self.is_naive_prime():
@@ -107,7 +107,7 @@ def get_prime(bits):
     """
     Creates (probable) prime number of given size
     :param bits: size of number to generate
-    :returns: prime number of given size
+    :return: prime number of given size
     """
     if bits < 0:
         raise ValueError('\'bits\' field cannot be negative')
@@ -124,7 +124,7 @@ def blum_blum_shub(seed, amount, prime0, prime1):
     :param amount: amount of number to generate
     :param prime0: one prime number
     :param prime1: the second prime number
-    :returns: pseudo-number generator
+    :return: pseudo-number generator
     """
     assert amount >= 0  # amount cannot be negative
     if amount == 0:

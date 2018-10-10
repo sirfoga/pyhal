@@ -12,7 +12,7 @@ def how_similar_are(str1, str2):
     """Computes similarity between strings
     :param str1: First string
     :param str2: Second string
-    :returns: Similarity of a VS b
+    :return: Similarity of a VS b
     """
     return SequenceMatcher(None, str1, str2).ratio()
 
@@ -21,7 +21,7 @@ def get_max_similar(string, lst):
     """Finds most similar string in list
     :param string: String to find
     :param lst: Strings available
-    :returns: Max similarity and index of max similar
+    :return: Max similarity and index of max similar
     """
     max_similarity, index = 0.0, -1
     for i, candidate in enumerate(lst):
@@ -34,7 +34,7 @@ def get_max_similar(string, lst):
 def get_average_length_of_string(strings):
     """Computes average length of words
     :param strings: list of words
-    :returns: Average length of word on list
+    :return: Average length of word on list
     """
     if not strings:
         return 0
@@ -45,7 +45,7 @@ def get_average_length_of_string(strings):
 def just_alphanum(string):
     """Removes everything except number and letters from string
     :param string: String
-    :returns: All numbers and letters in string
+    :return: All numbers and letters in string
     """
     chars = []
 
@@ -65,7 +65,7 @@ def just_alphanum(string):
 def non_ansi_string(text):
     """Removes non-ansi chars from text
     :param text: string
-    :returns: input except non-ansi chars
+    :return: input except non-ansi chars
     """
     esc_key = Literal('\x1b')
     integer = Word(nums)
@@ -78,7 +78,7 @@ def non_ansi_string(text):
 def is_string_well_formatted(string):
     """Checks if string is good formatted
     :param string: String to parse
-    :returns: True iff string is good formatted
+    :return: True iff string is good formatted
     """
     # False iff there are at least \n, \r, \t,"  "
     is_bad_formatted = ":" in string or \
@@ -96,7 +96,7 @@ def is_string_well_formatted(string):
 def html_stripper(string):
     """Strips string of all HTML elements
     :param string: string to parse
-    :returns: Given string with raw HTML elements removed
+    :return: Given string with raw HTML elements removed
     """
     out = string
     while not is_string_well_formatted(

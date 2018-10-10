@@ -16,7 +16,7 @@ class Matrix:
 
     def precision(self):
         """Calculates precision
-        :returns: Precision of matrix
+        :return: Precision of matrix
         """
         true_pos = self.matrix[0][0]
         false_pos = self.matrix[1][0]
@@ -24,7 +24,7 @@ class Matrix:
 
     def recall(self):
         """Calculates recall
-        :returns: Recall
+        :return: Recall
         """
         true_pos = self.matrix[0][0]
         false_neg = self.matrix[0][1]
@@ -32,7 +32,7 @@ class Matrix:
 
     def true_neg_rate(self):
         """Calculates true negative rate
-        :returns: true negative rate
+        :return: true negative rate
         """
         false_pos = self.matrix[1][0]
         true_neg = self.matrix[1][1]
@@ -40,7 +40,7 @@ class Matrix:
 
     def accuracy(self):
         """Calculates accuracy
-        :returns: Accuracy
+        :return: Accuracy
         """
         true_pos = self.matrix[0][0]
         false_pos = self.matrix[1][0]
@@ -54,7 +54,7 @@ class Matrix:
 
     def f1_score(self):
         """Calculates F1 score
-        :returns: F1 score
+        :return: F1 score
         """
         m_pre = self.precision()
         rec = self.recall()
@@ -62,7 +62,7 @@ class Matrix:
 
     def get_as_list(self):
         """List of all values in matrix
-        :returns: list representation
+        :return: list representation
         """
         return sum([
             row
@@ -71,7 +71,7 @@ class Matrix:
 
     def encode(self):
         """Encodes matrix
-        :returns: Encoder used
+        :return: Encoder used
         """
         lb = LabelEncoder()  # encoder
         values = self.get_as_list()
@@ -89,7 +89,7 @@ class Matrix:
     def decode(self, lb):
         """Decodes matrix
         :param lb: Encoder used to encode matrix
-        :returns: list: Decodes matrix
+        :return: list: Decodes matrix
         """
         self.matrix = [
             lb.inverse_transform(row)
@@ -112,7 +112,7 @@ class Matrix:
     def from_columns(columns):
         """Parses raw columns
         :param columns: matrix divided into columns
-        :returns: Matrix: Merge the columns to form a matrix
+        :return: Matrix: Merge the columns to form a matrix
         """
         data = [
             [

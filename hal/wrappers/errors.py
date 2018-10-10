@@ -9,7 +9,7 @@ def true_false_returns(func):
     """
     Executes function, if error returns False, else True
     :param func: function to call
-    :returns: True iff ok, else False
+    :return: True iff ok, else False
     """
 
     @functools.wraps(func)
@@ -18,7 +18,7 @@ def true_false_returns(func):
         Executes function, if error returns False, else True
         :param args: args of function
         :param kwargs: extra args of function
-        :returns: True iff ok, else False
+        :return: True iff ok, else False
         """
 
         try:
@@ -34,7 +34,7 @@ def none_returns(func):
     """
     Executes function, if error returns None else value of function
     :param func: function to call
-    :returns: None else value of function
+    :return: None else value of function
     """
 
     @functools.wraps(func)
@@ -43,7 +43,7 @@ def none_returns(func):
         Executes function, if error returns None else value of function
         :param args: args of function
         :param kwargs: extra args of function
-        :returns: None else value of function
+        :return: None else value of function
         """
 
         try:

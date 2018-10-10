@@ -33,7 +33,7 @@ class GoogleApiOAuth:
     def get_new_user_credentials(self):
         """
         Gets new credentials
-        :returns: New user credentials file upon user prompt
+        :return: New user credentials file upon user prompt
         """
         # OAuth2.0 authorization flow
         flow = client.flow_from_clientsecrets(self.app_secrets, self.scope)
@@ -42,7 +42,7 @@ class GoogleApiOAuth:
 
     def get_user_credentials(self):
         """Gets new credentials
-        :returns: User credentials created via OAuth
+        :return: User credentials created via OAuth
         """
         # create path to user credentials if needed
         if not os.path.exists(os.path.dirname(self.user_credentials)):
@@ -61,7 +61,7 @@ class GoogleApiOAuth:
         """
         Authenticates credentials
         :param credentials: authentication code created via OAuth
-        :returns: Http authenticated credentials
+        :return: Http authenticated credentials
         """
         http = httplib2.Http()
         credentials.authorize(http)
@@ -72,7 +72,7 @@ class GoogleApiOAuth:
         Authenticates and creates new API driver to perform scope stuff
         :param name: Name of driver
         :param version: Version of driver
-        :returns: driver
+        :return: driver
         """
         user_credentials = self.get_user_credentials()  # get credentials
         return discovery.build(

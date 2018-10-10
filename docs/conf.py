@@ -14,18 +14,18 @@
 #
 import os
 import sys
-import hal
+from hal import __version__ as hal_version
 
 # -- Project information -----------------------------------------------------
 
 project = 'PyHal'
-_copyright = 'MMXVIII, Stefano Fogarollo'
+copyright = ' MMXVIII, Stefano Fogarollo'
 author = 'Stefano Fogarollo'
 
 # The short X.Y version
-version = "10.1.4"  # todo hal.__version__
+version = hal_version.__version__
 # The full version, including alpha/beta/rc tags
-release = "10.1.4"  # todo hal.__version__
+release = version + " build " + hal_version.__build__
 
 
 # -- General configuration ---------------------------------------------------
@@ -77,7 +77,7 @@ pygments_style = None
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+html_theme = 'classic'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -123,7 +123,7 @@ html_show_sourcelink = False
 html_show_sphinx = False
 
 # If true, "(C) Copyright ..." is shown in the HTML footer. Default is True.
-html_show_copyright = True
+html_showcopyright = True
 
 
 # -- Options for HTMLHelp output ---------------------------------------------
@@ -189,7 +189,7 @@ texinfo_documents = [
 epub_title = project
 epub_author = author
 epub_publisher = author
-epub_copyright = _copyright
+epubcopyright = copyright
 
 # The unique identifier of the text. This can be a ISBN number
 # or the project homepage.

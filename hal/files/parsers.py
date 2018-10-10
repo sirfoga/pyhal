@@ -18,7 +18,7 @@ class Parser:
 
     def get_lines(self):
         """Gets lines in file
-        :returns: Lines in file
+        :return: Lines in file
         """
         with open(self.path) as data:
             self.lines = data.readlines()  # store data in arrays
@@ -39,7 +39,7 @@ class CSVParser(Parser):
 
     def get_matrix(self):
         """Stores values in array, store lines in array.
-        :returns: 2D matrix
+        :return: 2D matrix
         """
         data = []
         with open(self.path, encoding=self.encoding) as csv_file:
@@ -51,14 +51,14 @@ class CSVParser(Parser):
 
     def get_headers_data(self):
         """Gets headers and data
-        :returns: headers of file
+        :return: headers of file
         """
         data = self.get_matrix()
         return data[0], data[1:]  # headers, data
 
     def get_dicts(self):
         """Gets dicts in file
-        :returns: (generator of) of dicts with data from .csv file
+        :return: (generator of) of dicts with data from .csv file
         """
         reader = csv.DictReader(open(self.path, "r", encoding=self.encoding))
         for row in reader:

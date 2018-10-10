@@ -15,14 +15,14 @@ class VersionNumber:
     @abstractmethod
     def get_current_amount(self):
         """Gets current set amount
-        :returns: Current set amount
+        :return: Current set amount
         """
         pass
 
     def can_increase(self, amount):
         """
         :param amount: Amount to increase
-        :returns: True iff this number can be increased by such amount
+        :return: True iff this number can be increased by such amount
         """
         return amount <= self.max_amount_allowed()
 
@@ -30,35 +30,35 @@ class VersionNumber:
     def increase(self, amount=1):
         """Increase version by this amount
         :param amount: Increase number by this amount
-        :returns: True iff increase was successful
+        :return: True iff increase was successful
         """
         pass
 
     @abstractmethod
     def maximize(self):
         """Maximizes this version
-        :returns: Maximizes this version
+        :return: Maximizes this version
         """
         pass
 
     @abstractmethod
     def reset(self):
         """Zeroes this number
-        :returns: Zeroes this number
+        :return: Zeroes this number
         """
         pass
 
     @abstractmethod
     def max_amount_allowed(self):
         """Calculates number of increases available
-        :returns: Number of increases that can be done before reaching
+        :return: Number of increases that can be done before reaching
         """
         pass
 
     @abstractmethod
     def max(self):
         """Calculates max increases
-        :returns: Number of increases that can be done before reaching
+        :return: Number of increases that can be done before reaching
         """
         pass
 
@@ -214,7 +214,7 @@ class Version(VersionNumber):
         """Increase version by amount of changes
         :param changes_amount: Number of changes done
         :param ratio: Ratio changes
-        :returns: Increases version accordingly to changes
+        :return: Increases version accordingly to changes
         """
         increases = round(changes_amount * ratio)
         return self.increase(int(increases))
@@ -231,7 +231,7 @@ class Version(VersionNumber):
         :param string: Version
         :param max_number: Max number reachable by sub
         :param separator: Version numbers are separated with this split
-        :returns: Parses string and returns object
+        :return: Parses string and returns object
         """
         tokens = string.split(separator)
         tokens = list(reversed(tokens))  # reverse order of importance

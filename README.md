@@ -96,7 +96,7 @@ channel_feed = YoutubeChannel(channel_name).get_feed_url()
 
 
 ## Install
-<a href="https://pypi.org/project/PyHal/"><img alt="PyPI version" src="https://badge.fury.io/py/PyHal.svg"></a> <a href="https://requires.io/github/sirfoga/pyhal/requirements/?branch=master"><img alt="Requirements Status" src="https://requires.io/github/sirfoga/pyhal/requirements.svg?branch=master"></a> <a href="https://snyk.io/test/github/sirfoga/pyhal"><img alt="Known Vulnerabilities" src="https://snyk.io/test/github/sirfoga/pyhal/badge.svg"></a>
+<a href="https://pypi.org/project/PyHal/"><img alt="PyPI version" src="https://badge.fury.io/py/PyHal.svg"></a> <a href="https://requires.io/github/sirfoga/pyhal/requirements/?branch=master"><img alt="Requirements Status" src="https://requires.io/github/sirfoga/pyhal/requirements.svg?branch=master"></a> <a href="https://snyk.io/test/github/sirfoga/pyhal?targetFile=requirements.txt"><img src="https://snyk.io/test/github/sirfoga/pyhal/badge.svg?targetFile=requirements.txt" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/sirfoga/pyhal?targetFile=requirements.txt" style="max-width:100%;"></a>
 
 Different ways, all equals
 

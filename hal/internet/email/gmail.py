@@ -27,7 +27,7 @@ class GMailApiOAuth(GoogleApiOAuth):
 
     def create_driver(self):
         """Creates GMail driver
-        :returns: GMail API driver
+        :return: GMail API driver
         """
         return super().get_driver("gmail", "v1")
 
@@ -37,7 +37,7 @@ def get_mime_message(subject, text):
     Creates MIME message
     :param subject: Subject of email
     :param text: Email content
-    :returns: Email formatted as HTML ready to be sent
+    :return: Email formatted as HTML ready to be sent
     """
     message = MIMEText(
         "<html>" +
