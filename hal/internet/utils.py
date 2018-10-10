@@ -25,7 +25,7 @@ def add_params_to_url(url, params):
 
 @true_false_returns
 def is_internet_on(host="8.8.8.8", port=53, timeout=3):
-    """Checks iff machine has internet connection
+    """Checks if machine has internet connection
     :param host: hostname to test
     :param port: port of hostname
     :param timeout: seconds before discarding connection

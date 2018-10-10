@@ -76,7 +76,7 @@ def non_ansi_string(text):
 
 
 def is_string_well_formatted(string):
-    """Checks iff string is good formatted
+    """Checks if string is good formatted
     :param string: String to parse
     :returns: True iff string is good formatted
     """

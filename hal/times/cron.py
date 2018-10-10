@@ -13,8 +13,7 @@ class AppCronLock:
 
     def __init__(self, lock_file):
         """
-        :param lock_file: str
-            Path to lock file
+        :param lock_file: Path to lock file
         """
         self.lock_file = lock_file
         self.update_interval = 7
@@ -30,17 +29,16 @@ class AppCronLock:
 
     def can_proceed(self):
         """Checks whether app can proceed
-        
-        Returns: True iff app is not locked and times since last update < app
+        :returns: True iff app is not locked and times since last update < app
             update interval
-
         """
         now = datetime.datetime.now()
-        return now >= self.last_update + \
-                      datetime.timedelta(days=self.update_interval)
+        delta = datetime.timedelta(days=self.update_interval)
+        return now >= self.last_update + delta
 
     def parse_lock(self):
-        """Returns: Details about last update"""
+        """Parses app lock file
+        :returns: Details about last update"""
         try:
             with open(self.lock_file, "r") as reader:
                 data = json.loads(reader.read())
@@ -53,8 +51,8 @@ class AppCronLock:
             self.parse_lock()
 
     def write_lock(self, last_update=datetime.datetime.now()):
-        """    Writes lock file
-        :param last_update: Default value
+        """Writes lock file
+        :param last_update: last update of app
         """
         data = {
             "last_update": last_update.strftime(AppCronLock.DATETIME_FORMAT)

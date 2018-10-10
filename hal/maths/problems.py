@@ -12,7 +12,7 @@ class EightQueen:
     @staticmethod
     def under_attack(col, queens):
         """
-        Checks iff queen is under attack
+        Checks if queen is under attack
         :param col: Column number
         :param queens: list of queens
         :returns: True iff queen is under attack

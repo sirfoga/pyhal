@@ -6,15 +6,11 @@ from time import time
 
 
 def get_time_eta(total_done, total, start_time):
-    """
-    :param total_done: int
-    :param Item: processed
-    :param total: int
-    :param Total: number of items to process
-    :param start_time: times
-    :param Time: of start processing items
-    :returns: times
-      Time to go
+    """Gets ETA
+    :param total_done: # items processed
+    :param total: total # of items to process
+    :param start_time: Time of start processing items
+    :returns: Time to go
     """
     time_done = int(time()) - start_time
     try:
@@ -28,39 +24,17 @@ def get_time_eta(total_done, total, start_time):
         minutes, seconds = divmod(time_to_go, 60)
         hours, minutes = divmod(minutes, 60)
         percentage = total_done * 100.0 / total
-
-        return {
-            "done": int(total_done),
-            "tot": int(total),
-            "%": float("{0:.2f}".format(percentage)),
-            "h": int(hours),
-            "m": int(minutes),
-            "s": int(seconds)
-        }
+    else:
+        percentage = 0
+        hours = 0
+        minutes = 0
+        seconds = 0
 
     return {
         "done": int(total_done),
         "tot": int(total),
-        "%": 0,
-        "h": 0,
-        "m": 0,
-        "s": 0
+        "%": float("{0:.2f}".format(percentage)),
+        "h": int(hours),
+        "m": int(minutes),
+        "s": int(seconds)
     }
-
-
-def print_time_eta(time_to_go, note=""):
-    """
-    :param time_to_go: Result of a call get_time_eta
-    :param note: str
-    :param Notes: to append to stdout
-      Prints debug info to screen
-    """
-    print(
-        str(note),
-        str(time_to_go["done"]) + "/" + str(time_to_go["tot"]),
-        "(" + str(time_to_go["%"]) + "%)",
-        "ETA {:20.19}".format(
-            str(time_to_go["h"]) + "h " + str(time_to_go["m"]) + "\' " + str(
-                time_to_go["s"]) + "\""
-        )
-    )

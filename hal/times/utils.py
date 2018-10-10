@@ -4,19 +4,19 @@
 
 from datetime import datetime
 
-MONTHS_NAMES = [datetime.strftime(datetime(year=1, month=m, day=1), "%B") for m
-                in range(1, 13)]  # names of each month
+MONTHS_NAMES = [
+    datetime.strftime(datetime(year=1, month=m, day=1), "%B")
+    for m in range(1, 13)
+]  # names of each month
 MONTHS = {
     i + 1: MONTHS_NAMES[i] for i in range(len(MONTHS_NAMES))
 }  # dict <month index: month name>
 
 
 def parse_hh_mm_ss(string):
-    """
-    :param string: str
-    :param Hours: minutes and seconds in the form hh
-    :returns: datetime.times
-      Time parsed
+    """Parses raw time
+    :param string: Hours minutes and seconds in the form hh
+    :returns: Time parsed
     """
     string = str(string).strip()  # discard gibberish
     split_count = string.count(":")
@@ -29,11 +29,9 @@ def parse_hh_mm_ss(string):
 
 
 def get_seconds(string):
-    """
-    :param string: str
-    :param Datetime: in the form
-    :returns: int
-      Seconds in times
+    """Gets seconds from raw time
+    :param string: Datetime
+    :returns: Seconds in time
     """
     parsed_string = parse_hh_mm_ss(string)  # get times
     total_seconds = parsed_string.second
@@ -43,11 +41,9 @@ def get_seconds(string):
 
 
 def parse_hh_mm(string):
-    """
-    :param string: str
-    :param Hours: and minutes in the form hh
-    :returns: datetime.times
-      Time parsed
+    """Parses raw time
+    :param string: Hours and minutes
+    :returns: Time parsed
     """
     string = str(string).strip()  # discard gibberish
     split_count = string.count(":")

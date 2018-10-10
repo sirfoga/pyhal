@@ -37,7 +37,7 @@ class UserInput:
 
     def is_no(self, answer):
         """
-        Checks iff considered a "yes" answer
+        Checks if considered a "yes" answer
         :param answer: User answer
         :returns: True iff considered a "yes" answer
         """
@@ -74,7 +74,7 @@ class UserInput:
 
     def get_yes_no(self, question):
         """
-        Checks iff question is yes (True) or no (False)
+        Checks if question is yes (True) or no (False)
         :param question: Question to ask user
         :returns: User answer
         """
