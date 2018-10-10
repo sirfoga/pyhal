@@ -11,11 +11,11 @@ class EightQueen:
 
     @staticmethod
     def under_attack(col, queens):
-        """
-        Checks if queen is under attack
+        """Checks if queen is under attack
+
         :param col: Column number
         :param queens: list of queens
-        :return: True iff queen is under attack
+        :returns: True iff queen is under attack
         """
         left = right = col
         for _, column in reversed(queens):
@@ -25,10 +25,10 @@ class EightQueen:
         return False
 
     def solve(self, table_size):
-        """
-        Solves problem
+        """Solves problem
+
         :param table_size: Size of table
-        :return: List of possible solutions
+        :returns: List of possible solutions
         """
         if table_size == 0:
             return [[]]

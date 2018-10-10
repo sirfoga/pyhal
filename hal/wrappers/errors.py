@@ -6,19 +6,22 @@ import functools
 
 
 def true_false_returns(func):
-    """
-    Executes function, if error returns False, else True
+    """Executes function, if error returns False, else True
+
     :param func: function to call
-    :return: True iff ok, else False
+    :returns: True iff ok, else False
+
     """
 
     @functools.wraps(func)
     def _execute(*args, **kwargs):
-        """
-        Executes function, if error returns False, else True
+        """Executes function, if error returns False, else True
+
         :param args: args of function
         :param kwargs: extra args of function
-        :return: True iff ok, else False
+        :param *args: 
+        :param **kwargs: 
+        :returns: True iff ok, else False
         """
 
         try:
@@ -31,19 +34,22 @@ def true_false_returns(func):
 
 
 def none_returns(func):
-    """
-    Executes function, if error returns None else value of function
+    """Executes function, if error returns None else value of function
+
     :param func: function to call
-    :return: None else value of function
+    :returns: None else value of function
+
     """
 
     @functools.wraps(func)
     def _execute(*args, **kwargs):
-        """
-        Executes function, if error returns None else value of function
+        """Executes function, if error returns None else value of function
+
         :param args: args of function
         :param kwargs: extra args of function
-        :return: None else value of function
+        :param *args: 
+        :param **kwargs: 
+        :returns: None else value of function
         """
 
         try:

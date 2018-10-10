@@ -23,7 +23,8 @@ class AppCronLock:
 
     def set_update_interval(self, days=7):
         """Sets app interval update
-        :param days: Days between 2 consecutive app updates
+
+        :param days: Days between 2 consecutive app updates (Default value = 7)
         """
         self.update_interval = days
 
@@ -38,7 +39,8 @@ class AppCronLock:
 
     def parse_lock(self):
         """Parses app lock file
-        :return: Details about last update"""
+        :return: Details about last update
+        """
         try:
             with open(self.lock_file, "r") as reader:
                 data = json.loads(reader.read())
@@ -52,7 +54,8 @@ class AppCronLock:
 
     def write_lock(self, last_update=datetime.datetime.now()):
         """Writes lock file
-        :param last_update: last update of app
+
+        :param last_update: last update of app (Default value = datetime.datetime.now())
         """
         data = {
             "last_update": last_update.strftime(AppCronLock.DATETIME_FORMAT)

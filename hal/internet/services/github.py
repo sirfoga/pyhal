@@ -18,17 +18,19 @@ GITHUB_REMOTE = "https://{}:x-oauth-basic@github.com/"
 
 def get_token():
     """Gets authentication token
+
     :return: authentication token
     """
     return GITHUB_TOKEN
 
 
 def get_clone_url(remote_shortcut, token):
-    """
-    Finds url of repo to clone
+    """Finds url of repo to clone
+
     :param remote_shortcut: relative path of repository to clone
     :param token: Github OAUTH token
-    :return: Url to clone
+    :returns: Url to clone
+
     """
     return GITHUB_REMOTE.format(token) + remote_shortcut
 
@@ -75,9 +77,7 @@ class GithubRawApi:
             return None
 
     def _get_api_content(self):
-        """
-        Updates class api content by calling Github api and storing result
-        """
+        """Updates class api content by calling Github api and storing result"""
 
         if GITHUB_TOKEN is not None:
             self.add_params_to_url({
@@ -91,6 +91,7 @@ class GithubRawApi:
 
     def add_params_to_url(self, params):
         """Adds params to url
+
         :param params: url params
         """
         self.api_url = add_params_to_url(self.api_url, params)
@@ -111,10 +112,10 @@ class GithubApi(GithubRawApi):
 
     @staticmethod
     def get_trending_daily(lang=""):
-        """
-        Fetches repos in "Trending Daily" Github section
-        :param lang: Coding language
-        :return: List of GithubUserRepository
+        """Fetches repos in "Trending Daily" Github section
+
+        :param lang: Coding language (Default value = "")
+        :returns: List of GithubUserRepository
         """
         url = "https://github.com/trending/"
         url += str(lang).lower().replace(" ", "") + "?since=daily"
@@ -164,8 +165,9 @@ class GithubUser(GithubApi):
     @staticmethod
     def _get_repos(url):
         """Gets repos in url
+
         :param url: Url
-        :return: List of repositories in given url
+        :returns: List of repositories in given url
         """
         current_page = 1
         there_is_something_left = True

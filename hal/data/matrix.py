@@ -16,7 +16,7 @@ class Matrix:
 
     def precision(self):
         """Calculates precision
-
+        
         :return: Precision of matrix
         """
         true_pos = self.matrix[0][0]
@@ -25,7 +25,7 @@ class Matrix:
 
     def recall(self):
         """Calculates recall
-
+        
         :return: Recall
         """
         true_pos = self.matrix[0][0]
@@ -34,7 +34,7 @@ class Matrix:
 
     def true_neg_rate(self):
         """Calculates true negative rate
-
+        
         :return: true negative rate
         """
         false_pos = self.matrix[1][0]
@@ -43,7 +43,7 @@ class Matrix:
 
     def accuracy(self):
         """Calculates accuracy
-
+        
         :return: Accuracy
         """
         true_pos = self.matrix[0][0]
@@ -58,7 +58,7 @@ class Matrix:
 
     def f1_score(self):
         """Calculates F1 score
-
+        
         :return: F1 score
         """
         m_pre = self.precision()
@@ -67,7 +67,7 @@ class Matrix:
 
     def get_as_list(self):
         """List of all values in matrix
-
+        
         :return: list representation
         """
         return sum([
@@ -77,7 +77,7 @@ class Matrix:
 
     def encode(self):
         """Encodes matrix
-
+        
         :return: Encoder used
         """
         lb = LabelEncoder()  # encoder
@@ -97,7 +97,7 @@ class Matrix:
         """Decodes matrix
 
         :param lb: Encoder used to encode matrix
-        :return: list: Decodes matrix
+        :returns: list: Decodes matrix
         """
         self.matrix = [
             lb.inverse_transform(row)
@@ -108,7 +108,7 @@ class Matrix:
         """Gets column at given index
 
         :param index: index of column
-        :return: Column
+        :returns: Column
         """
 
         return [
@@ -121,7 +121,7 @@ class Matrix:
         """Parses raw columns
 
         :param columns: matrix divided into columns
-        :return: Matrix: Merge the columns to form a matrix
+        :returns: Matrix: Merge the columns to form a matrix
         """
         data = [
             [

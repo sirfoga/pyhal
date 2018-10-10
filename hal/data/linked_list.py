@@ -28,14 +28,14 @@ class LinkedList:
 
     def get_head(self):
         """Gets head
-
+        
         :return: Head of linked list
         """
         return self.head
 
     def get_tail(self):
         """Gets tail
-
+        
         :return: Tail of linked list
         """
         node = self.head
@@ -49,7 +49,7 @@ class LinkedList:
 
     def length(self):
         """Gets length
-
+        
         :return: How many items in linked list of linked list
         """
         item = self.head
@@ -65,7 +65,7 @@ class LinkedList:
         """Appends to list
 
         :param val: Object to insert
-        :return: bool: Appends element to last
+        :returns: bool: Appends element to last
         """
         return self.insert(val, self.length())
 
@@ -73,8 +73,8 @@ class LinkedList:
         """Insert in position
 
         :param val: Object to insert
-        :param at: Index of insertion
-        :return: bool: True iff insertion completed successfully
+        :param at: Index of insertion (Default value = 0)
+        :returns: bool: True iff insertion completed successfully
         """
         if at < 0 or at > self.length():
             return False
@@ -104,7 +104,7 @@ class LinkedList:
 
     def remove_first(self):
         """Removes first
-
+        
         :return: True iff head has been removed
         """
         if self.head.next_node is not None:
@@ -115,7 +115,7 @@ class LinkedList:
 
     def remove_last(self):
         """Removes last
-
+        
         :return: True iff last element has been removed
         """
         node = self.head
@@ -133,7 +133,7 @@ class LinkedList:
         """Removes at index
 
         :param at: Index of removal
-        :return: bool: True iff removal completed successfully
+        :returns: bool: True iff removal completed successfully
         """
         if at < 0 or at > self.length():
             return False
@@ -161,7 +161,7 @@ class LinkedList:
 
     def to_lst(self):
         """Cycle all items and puts them in a list
-
+        
         :return: list representation
         """
         out = []
@@ -177,7 +177,7 @@ class LinkedList:
         """Executes function on each item
 
         :param func: Function to execute on each item
-        :return: list: Results of calling the function on each item
+        :returns: list: Results of calling the function on each item
         """
         return [
             func(item) for item in self.to_lst()
@@ -195,7 +195,7 @@ class LinkedList:
         """Parses list
 
         :param lst: list of elements
-        :return: LinkedList: Nodes from list
+        :returns: LinkedList: Nodes from list
         """
         if not lst:
             return None

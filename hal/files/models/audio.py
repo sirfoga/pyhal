@@ -13,9 +13,11 @@ from hal.wrappers.errors import true_false_returns, none_returns
 
 def find_songs(folder, recursive):
     """
+
     :param folder: folder path
     :param recursive: True  want to search recursively
-    :return: (generator of) paths of the songs in folder
+    :returns: generator of) paths of the songs in folder
+
     """
     paths = list_content(folder, recursive)
     for p in paths:
@@ -29,8 +31,9 @@ class MP3Song(FileSystem):
     @staticmethod
     def is_valid_mp3(path):
         """
+
         :param path: candidate
-        :return: True iff song is MP3 encoded
+        :returns: True iff song is MP3 encoded
         """
         try:
             MP3(path)
@@ -47,8 +50,7 @@ class MP3Song(FileSystem):
         self.tags = self.song.tags
 
     def get_details(self):
-        """
-        Finds songs details
+        """Finds songs details
         :return: Dictionary with songs details about title, artist, album and year
         """
         title = str(self.get_title()).strip()
@@ -65,63 +67,63 @@ class MP3Song(FileSystem):
 
     @true_false_returns
     def _set_attr(self, attribute):
-        """
-        Sets attribute of song
+        """Sets attribute of song
+
         :param attribute: Attribute to save
-        :return: True iff operation completed
+        :returns: True iff operation completed
         """
 
         self.tags.add(attribute)
         self.song.save()
 
     def set_title(self, name):
-        """
-        Sets song's title
+        """Sets song's title
+
         :param name: title
         """
         self._set_attr(TIT2(encoding=3, text=name.decode('utf-8')))
 
     def set_artist(self, artist):
-        """
-        Sets song's artist
+        """Sets song's artist
+
         :param artist: artist
         """
         self._set_attr(TPE1(encoding=3, text=artist.decode('utf-8')))
 
     def set_album(self, album):
-        """
-        Sets song's album
+        """Sets song's album
+
         :param album: album
         """
         self._set_attr(TALB(encoding=3, text=album.decode('utf-8')))
 
     def set_nr_track(self, nr_track):
-        """
-        Sets song's track numb
-        :param nr_track: # of track
+        """Sets song's track numb
+
+        :param nr_track: of track
         """
         self._set_attr(TRCK(encoding=3, text=str(nr_track)))
 
     def set_year(self, year):
-        """
-        Sets song's year
+        """Sets song's year
+
         :param year: year
         """
         self._set_attr(TDRC(encoding=3, text=str(year)))
 
     def set_genre(self, genre):
-        """
-        Sets song's genre
+        """Sets song's genre
+
         :param genre: genre
         """
         self._set_attr(TCON(encoding=3, text=str(genre)))
 
     @none_returns
     def _get_attr(self, key):
-        """
-        Gets attribute of song
+        """Gets attribute of song
+
         :param key: Name of attribute to get
-        :return: Attribute
+        :returns: Attribute
         """
         return self.tags.get(key).text[0]
 

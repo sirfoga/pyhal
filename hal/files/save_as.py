@@ -17,8 +17,9 @@ class FileSaver:
 
     def write_dicts_to_csv(self, dicts):
         """Saves .csv file with posts data
+
         :param dicts: Dictionaries with same values
-        :return: Saves .csv file with posts data
+        :returns: Saves .csv file with posts data
         """
         csv_headers = sorted(dicts[0].keys())
         with open(self.path, "w") as out_file:  # write to file
@@ -29,8 +30,8 @@ class FileSaver:
             dict_writer.writerows(dicts)
 
     def write_matrix_to_csv(self, headers, data):
-        """
-        Saves .csv file with data
+        """Saves .csv file with data
+
         :param headers: column names
         :param data: Data
         """
@@ -40,8 +41,8 @@ class FileSaver:
             data_writer.writerows(data)  # write all data
 
     def write_dicts_to_json(self, data):
-        """
-        Saves .json file with data
+        """Saves .json file with data
+
         :param data: Data
         """
         with open(self.path, "w") as out:

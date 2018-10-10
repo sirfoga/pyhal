@@ -28,7 +28,7 @@ class Diff:
 
     def get_totals(self):
         """Calculates total additions and deletions
-
+        
         :return: Dictionary with totals
         """
         total_added = 0
@@ -71,7 +71,7 @@ class Commit:
 
     def get_author(self):
         """Gets author
-
+        
         :return: author of commit
         """
         author = self.c.author
@@ -98,14 +98,14 @@ class Repository:
 
     def get_last_commit(self):
         """Gets last commit
-
+        
         :return: Last commit of repository
         """
         return self.r.head.commit
 
     def get_diff_amounts(self):
         """Gets list of total diff
-
+        
         :return: List of total diff between 2 consecutive commits since start
         """
         diffs = []
@@ -126,7 +126,7 @@ class Repository:
 
         :param commit: First commit
         :param other_commit: Second commit
-        :return: dictionary: Dictionary with total additions and deletions
+        :returns: dictionary: Dictionary with total additions and deletions
         """
         diff = self.r.git.diff(commit.hexsha, other_commit.hexsha)
         return Diff(diff).get_totals()
@@ -135,7 +135,7 @@ class Repository:
         """Gets version
 
         :param diff_to_increase_ratio: Ratio to convert number of changes into
-        :return: Version of this code, based on commits diffs
+        :returns: Version of this code, based on commits diffs
         """
         diffs = self.get_diff_amounts()
         version = Version()
@@ -150,7 +150,7 @@ class Repository:
 
         :param diff_to_increase_ratio: Ratio to convert number of changes into
             version increases
-        :return: string: Pretty version of this repository
+        :returns: string: Pretty version of this repository
         """
         version = self.get_version(diff_to_increase_ratio)
         build = self.get_last_commit_hash()

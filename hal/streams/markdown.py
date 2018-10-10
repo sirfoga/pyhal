@@ -49,8 +49,9 @@ class MarkdownTable:
     @staticmethod
     def _get_row(items):
         """
+
         :param items: array
-        :return: markdown-formatted array
+        :returns: markdown-formatted array
         """
         items = [
             str(item)
@@ -59,9 +60,7 @@ class MarkdownTable:
         return "|" + "|".join(items) + "|"
 
     def _get_header(self):
-        """
-        :return: markdown-formatted header
-        """
+        """:return: markdown-formatted header"""
         out = self._get_row(self.labels)
         out += "\n"
         out += self._get_row(["---"] * len(self.labels))  # line below headers

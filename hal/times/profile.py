@@ -7,10 +7,12 @@ from time import time
 
 def get_time_eta(total_done, total, start_time):
     """Gets ETA
-    :param total_done: # items processed
+
+    :param total_done: items processed
     :param total: total # of items to process
     :param start_time: Time of start processing items
-    :return: Time to go
+    :returns: Time to go
+
     """
     time_done = int(time()) - start_time
     try:

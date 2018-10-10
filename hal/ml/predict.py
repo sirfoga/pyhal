@@ -2,7 +2,7 @@
 # coding: utf-8
 
 
-""""General model to make prediction about everything"""
+"""General model to make prediction about everything"""
 
 from sklearn.model_selection import train_test_split
 
@@ -19,8 +19,8 @@ class BasePrediction:
         self.rounds = rounds  # number of times to make prediction
 
     def train(self, x_data, y_data):
-        """
-        Trains model on inputs
+        """Trains model on inputs
+
         :param x_data: x matrix
         :param y_data: y array
         """

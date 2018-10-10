@@ -31,8 +31,7 @@ class Integer:
         self.to_string = string
 
     def is_naive_prime(self):
-        """
-        Checks if prime in very naive way
+        """Checks if prime in very naive way
         :return: True iff prime
         """
         if self.to_int < 2:
@@ -43,8 +42,7 @@ class Integer:
         return self.to_int in LOW_PRIMES
 
     def is_probably_prime(self):
-        """
-        Tests with miller-rabin
+        """Tests with miller-rabin
         :return: True iff prime
         """
 
@@ -60,10 +58,10 @@ class Integer:
         return self.test_miller_rabin(5)
 
     def test_miller_rabin(self, precision):
-        """
-        Tests prime with miller-rabin algorithm
+        """Tests prime with miller-rabin algorithm
+
         :param precision: number of rounds to perform
-        :return: True iff probably prime
+        :returns: True iff probably prime
         """
 
         if not self.is_naive_prime():
@@ -104,10 +102,11 @@ class Integer:
 
 
 def get_prime(bits):
-    """
-    Creates (probable) prime number of given size
+    """Creates (probable) prime number of given size
+
     :param bits: size of number to generate
-    :return: prime number of given size
+    :returns: prime number of given size
+
     """
     if bits < 0:
         raise ValueError('\'bits\' field cannot be negative')
@@ -118,13 +117,14 @@ def get_prime(bits):
 
 
 def blum_blum_shub(seed, amount, prime0, prime1):
-    """
-    Creates pseudo-number generator
+    """Creates pseudo-number generator
+
     :param seed: seeder
     :param amount: amount of number to generate
     :param prime0: one prime number
     :param prime1: the second prime number
-    :return: pseudo-number generator
+    :returns: pseudo-number generator
+
     """
     assert amount >= 0  # amount cannot be negative
     if amount == 0:

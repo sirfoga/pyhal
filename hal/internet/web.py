@@ -103,10 +103,11 @@ HEADERS = {
 
 
 def is_url(candidate):
-    """
-    Checks if string is url
+    """Checks if string is url
+
     :param candidate: url to check for url
-    :return: True iff candidate is a valid url
+    :returns: True iff candidate is a valid url
+
     """
     return re.match(URL_VALID_REGEX, candidate)
 
@@ -126,8 +127,8 @@ class Webpage:
 
     @staticmethod
     def parse_url(url):
-        """
-        Parses correctly url
+        """Parses correctly url
+
         :param url: url to parse
         """
         parsed = url
@@ -147,24 +148,21 @@ class Webpage:
         return parsed
 
     def get_scheme(self):
-        """
-        Gets scheme of url
+        """Gets scheme of url
         :return: get scheme (HTTP, HTTPS, FTP ..) from given url
         """
 
         return urllib.request.urlparse(self.url).scheme
 
     def get_hostname(self):
-        """
-        Gets hostname of url
+        """Gets hostname of url
         :return: extract hostname from given url
         """
 
         return urllib.request.urlparse(self.url).hostname
 
     def get_domain(self):
-        """
-        Gets domain of url
+        """Gets domain of url
         :return: get domain from given url
         """
 
@@ -172,8 +170,7 @@ class Webpage:
             uri=urllib.request.urlparse(self.url))
 
     def get_html_source(self):
-        """
-        Gets source page of url
+        """Gets source page of url
         :return: HTML source
         """
         req = urllib.request.Request(self.url)
@@ -184,11 +181,11 @@ class Webpage:
         return self.source
 
     def get_links(self, recall, timeout):
-        """
-        Gets links in page
+        """Gets links in page
+
         :param recall: max times to attempt to fetch url
         :param timeout: max times
-        :return: array of out_links
+        :returns: array of out_links
         """
         for _ in range(recall):
             try:  # setting timeout
@@ -204,8 +201,8 @@ class Webpage:
                 time.sleep(timeout)  # times to wait for another attempt
 
     def open_in_browser(self, n_times):
-        """
-        Opens page in browser
+        """Opens page in browser
+
         :param n_times: Times to open page in browser
         """
         for _ in range(n_times):
@@ -213,10 +210,11 @@ class Webpage:
 
 
 def download_url(url, local_file):
-    """
-    Downloads link to local file
-    :param url :Url to download
+    """Downloads link to local file
+
+    :param url: Url to download
     :param local_file: Save url as this path
+
     """
     downloader = urllib.request.URLopener()
     downloader.retrieve(url, local_file)
@@ -224,13 +222,14 @@ def download_url(url, local_file):
 
 def download_to_file(url, local_file, headers=HEADERS, cookies=None,
                      chunk_size=1024):
-    """
-    Download link to local file
+    """Download link to local file
+
     :param url: PDF url to download
     :param local_file: Save url as this path
-    :param headers: Headers to fetch url
-    :param cookies: Cookies to fetch url
-    :param chunk_size: int
+    :param headers: Headers to fetch url (Default value = HEADERS)
+    :param cookies: Cookies to fetch url (Default value = None)
+    :param chunk_size: int (Default value = 1024)
+
     """
     if not cookies:
         cookies = {}
@@ -243,8 +242,8 @@ def download_to_file(url, local_file, headers=HEADERS, cookies=None,
 
 
 def get_tor_session():
-    """
-    Finds TOR session
+    """Finds TOR session
+
     :return: TOR session
     """
     session = requests.session()
@@ -257,9 +256,10 @@ def get_tor_session():
 
 
 def renew_connection(password):
-    """
-    Renews TOR session
+    """Renews TOR session
+
     :param password: new password
+
     """
     with Controller.from_port(port=9051) as controller:
         controller.authenticate(password=password)

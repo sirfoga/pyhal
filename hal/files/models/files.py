@@ -23,8 +23,8 @@ class Document(FileSystem):
 
     @staticmethod
     def move_file_to_directory(file_path, directory_path):
-        """
-        Moves file to given directory
+        """Moves file to given directory
+
         :param file_path: path to file to move
         :param directory_path: path to target directory where to move file
         """
@@ -36,8 +36,8 @@ class Document(FileSystem):
 
     @staticmethod
     def move_file_to_file(old_path, new_path):
-        """
-        Moves file from old location to new one
+        """Moves file from old location to new one
+
         :param old_path: path of file to move
         :param new_path: new path
         """
@@ -56,8 +56,8 @@ class Document(FileSystem):
 
     @staticmethod
     def write_data_to_file(data, out_file):
-        """
-        Writes given data to given path file
+        """Writes given data to given path file
+
         :param data: data to write to file
         :param out_file: path to output file
         """
@@ -66,16 +66,15 @@ class Document(FileSystem):
 
     @staticmethod
     def extract_name_extension(file_name):
-        """
-        Gets name and extension of file
+        """Gets name and extension of file
+
         :param file_name: Name of file
-        :return: Name of file, extension of file
+        :returns: Name of file, extension of file
         """
         return os.path.splitext(file_name)
 
     def get_path_name(self):
-        """
-        Gets path and name of song
+        """Gets path and name of song
         :return: Name of path, name of file (or folder)
         """
         path = fix_raw_path(os.path.dirname(os.path.abspath(self.path)))
@@ -84,30 +83,35 @@ class Document(FileSystem):
 
     def is_video(self):
         """Checks if file is video
-        :return: True iff document is a video."""
+        :return: True iff document is a video.
+        """
         return self.extension.lower() in VIDEO_FORMAT
 
     def is_subtitle(self):
         """Checks if file is subtitle
-        :return: True iff document is a subtitle."""
+        :return: True iff document is a subtitle.
+        """
 
         return self.extension.lower() in SUBTITLE_FORMAT
 
     def is_text(self):
         """Checks if file is text
-        :return: True iff document is a text file."""
+        :return: True iff document is a text file.
+        """
 
         return self.extension.lower() in TEXT_FORMAT
 
     def is_image(self):
         """Checks if file is image
-        :return: True iff document is an image."""
+        :return: True iff document is an image.
+        """
 
         return self.extension.lower() in IMAGE_FORMAT
 
     def is_audio(self):
         """Checks if file is audio
-        :return: True iff document is an audio."""
+        :return: True iff document is an audio.
+        """
 
         return self.extension.lower() in AUDIO_FORMAT
 
@@ -124,16 +128,15 @@ class Directory(FileSystem):
 
     @staticmethod
     def create_new(path):
-        """
-        Creates new directory
+        """Creates new directory
+
         :param path: path to directory to create
         """
         if not os.path.exists(path):
             os.makedirs(path)
 
     def get_path_name(self):
-        """
-        Gets path and name of file
+        """Gets path and name of file
         :return: Name of path, name of file (or folder)
         """
         complete_path = os.path.dirname(os.path.abspath(self.path))

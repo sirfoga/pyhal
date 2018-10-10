@@ -10,6 +10,7 @@ import psutil
 
 def get_memory_usage():
     """Gets RAM memory usage
+
     :return: MB of memory used by this process
     """
     process = psutil.Process(os.getpid())
@@ -18,6 +19,5 @@ def get_memory_usage():
 
 
 def force_garbage_collect():
-    """Releases memory used
-    """
+    """Releases memory used"""
     gc.collect()

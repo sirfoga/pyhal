@@ -63,10 +63,11 @@ PATH_SEPARATOR = "/" if "posix" in os.name else "\\"
 
 
 def fix_raw_path(path):
-    """
-    Prettify name of path
+    """Prettify name of path
+
     :param path: path to fix
-    :return: Good name for path
+    :returns: Good name for path
+
     """
     double_path_separator = PATH_SEPARATOR + PATH_SEPARATOR
     while path.find(
@@ -81,10 +82,11 @@ def fix_raw_path(path):
 
 
 def remove_year(name):
-    """
-    Removes year from input
+    """Removes year from input
+
     :param name: path to edit
-    :return: inputs with no years
+    :returns: inputs with no years
+
     """
     for i in range(len(
             name) - 3):  # last index is length - 3 - 1 = length - 4
@@ -96,10 +98,11 @@ def remove_year(name):
 
 
 def remove_brackets(name):
-    """
-    Removes brackets form input
+    """Removes brackets form input
+
     :param name: path to fix
-    :return: inputs with no brackets
+    :returns: inputs with no brackets
+
     """
     name = re.sub(
         r"([(\[]).*?([)\]])",
@@ -113,12 +116,13 @@ def remove_brackets(name):
 
 
 def extract_name_max_chars(name, max_chars=64, blank=" "):
-    """
-    Extracts max chars in name truncated to nearest word
+    """Extracts max chars in name truncated to nearest word
+
     :param name: path to edit
-    :param max_chars: max chars of new name
-    :param blank: char that represents the blank between words
-    :return: Name edited to contain at most max_chars
+    :param max_chars: max chars of new name (Default value = 64)
+    :param blank: char that represents the blank between words (Default value = " ")
+    :returns: Name edited to contain at most max_chars
+
     """
     new_name = name.strip()
     if len(new_name) > max_chars:
@@ -129,11 +133,12 @@ def extract_name_max_chars(name, max_chars=64, blank=" "):
 
 
 def prettify(name, blank=" "):
-    """
-    Prettify name of path
+    """Prettify name of path
+
     :param name: path Name: to edit
     :param blank: default blanks in name
-    :return: Prettier name from given one: replace bad chars with good ones.
+    :returns: Prettier name from given one: replace bad chars with good ones.
+
     """
     if name.startswith("."):  # remove starting .
         name = name[1:]
@@ -164,38 +169,42 @@ def prettify(name, blank=" "):
 
 
 def is_file(path):
-    """
-    Checks if path is file
+    """Checks if path is file
+
     :param path: path to check
-    :return: True iff path is a file
+    :returns: True iff path is a file
+
     """
     return os.path.isfile(path)
 
 
 def is_folder(path):
-    """
-    Checks if path is folder
+    """Checks if path is folder
+
     :param path: path to check
-    :return: True iff path is a file
+    :returns: True iff path is a file
+
     """
     return os.path.isdir(path)
 
 
 def get_parent_folder(file_path):
-    """
-    Finds parent folder of file
+    """Finds parent folder of file
+
     :param file_path: str
-    :return: Name of folder container
+    :returns: Name of folder container
+
     """
     return os.path.split(os.path.split(os.path.abspath(file_path))[0])[-1]
 
 
 def ls_dir(path, include_hidden=False):
-    """
-    Finds content of folder
+    """Finds content of folder
+
     :param path: directory to get list of files and folders
-    :param include_hidden: True iff include hidden files in list
-    :return: List of paths in given directory.
+    :param include_hidden: True iff include hidden files in list (Default value = False)
+    :returns: List of paths in given directory.
+
     """
     lst = []
     for file in os.listdir(path):
@@ -206,11 +215,12 @@ def ls_dir(path, include_hidden=False):
 
 
 def ls_recurse(path, include_hidden=False):
-    """
-    Finds content of folder recursively
+    """Finds content of folder recursively
+
     :param path: directory to get list of files and folders
-    :param include_hidden: True iff include hidden files in list
-    :return: List of paths in given directory recursively.
+    :param include_hidden: True iff include hidden files in list (Default value = False)
+    :returns: List of paths in given directory recursively.
+
     """
     lst = []
     for file in os.listdir(path):
@@ -226,12 +236,13 @@ def ls_recurse(path, include_hidden=False):
 
 
 def list_content(path, recurse, include_hidden=False):
-    """
-    Finds content of folder (recursively)
+    """Finds content of folder (recursively)
+
     :param path: directory to get list of files and folders
     :param recurse: True iff recurse into subdirectories or not
-    :param include_hidden: True iff include hidden files in list
-    :return: List of paths in given directory recursively.
+    :param include_hidden: True iff include hidden files in list (Default value = False)
+    :returns: List of paths in given directory recursively.
+
     """
     if recurse:
         return ls_recurse(path, include_hidden=include_hidden)
@@ -250,23 +261,20 @@ class FileSystem:
         self.name, self.extension = os.path.splitext(self.path)
 
     def is_hidden(self):
-        """
-        Checks if file is hidden
+        """Checks if file is hidden
         :return: True iff path is hidden
         """
         return self.name.startswith(".")
 
     def is_archive_mac(self):
-        """
-        Checks if file is a MAC archive
+        """Checks if file is a MAC archive
         :return: True iff document is an MACOSX archive
         """
 
         return "macosx" in self.path.lower()
 
     def is_russian(self):
-        """
-        Checks if file path is russian
+        """Checks if file path is russian
         :return: True iff document has a russian name
         """
 
@@ -277,14 +285,12 @@ class FileSystem:
         return russian_chars > len(RUSSIAN_CHARS) / 2.0
 
     def trash(self):
-        """
-        Trashes given file/folder
-        """
+        """Trashes given file/folder"""
         send2trash(self.path)
 
     def rename(self, new_path):
-        """
-        Renames to new path
+        """Renames to new path
+
         :param new_path: new path to use
         """
         rename_path = fix_raw_path(new_path)

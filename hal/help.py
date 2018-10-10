@@ -12,14 +12,13 @@ from hal.streams.pretty_table import SqlTable
 
 
 class BugReporter:
+    """ """
     def __init__(self):
         self.report = self.get_bug_report()
 
     @staticmethod
     def get_platform_info():
-        """
-        :return: platform info
-        """
+        """:return: platform info"""
 
         try:
             system_name = platform.system()
@@ -88,8 +87,7 @@ class BugReporter:
 
 
 def main():
-    """Pretty-print the bug information as JSON
-    """
+    """Pretty-print the bug information as JSON"""
 
     reporter = BugReporter()
 

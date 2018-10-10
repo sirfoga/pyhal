@@ -52,19 +52,19 @@ class YoutubeChannel:
 
     @staticmethod
     def get_feed_url_from_id(channel_id):
-        """
-        Fetches feed url
+        """Fetches feed url
+
         :param channel_id: id of channel
-        :return: feed url
+        :returns: feed url
         """
         return YOUTUBE_FEED_BASE_URL + channel_id
 
     @staticmethod
     def get_feed_url_from_video(video_url):
-        """
-        Gets channel id and then creates feed url
+        """Gets channel id and then creates feed url
+
         :param video_url: Url of video
-        :return: feed url
+        :returns: feed url
         """
         web_page = Webpage(video_url)
         web_page.get_html_source()

@@ -6,21 +6,25 @@ from hal.strings.utils import non_ansi_string
 
 
 def parse_colorama(text):
-    """
-    Parses colorama
+    """Parses colorama
+
     :param text: Colorama text to parse
-    :return: Parsed colorama text
+    :returns: Parsed colorama text
+
     """
     return non_ansi_string(text)
 
 
 class SqlTable:
     def __init__(self, labels, data, num_format, line_separator):
+
         """
+
         :param labels: List of labels of data
         :param data: Matrix of any type
         :param num_format: Format numbers with this format
         :param line_separator: Separate each new line with this
+
         """
         self.labels = labels
         self.data = data
@@ -68,10 +72,11 @@ class SqlTable:
 
     def get_pretty_row(self, row, filler, splitter):
         """Gets pretty-formatted row
+
         :param row: List of data
         :param filler: Fill empty columns with this char
         :param splitter: Separate columns with this char
-        :return: Pretty formatted row
+        :returns: Pretty formatted row
         """
         for i, val in enumerate(row):
             length_diff = self.widths[i] - len(parse_colorama(val))
@@ -86,9 +91,10 @@ class SqlTable:
 
     def get_blank_row(self, filler="-", splitter="+"):
         """Gets blank row
-        :param filler: Fill empty columns with this char
-        :param splitter: Separate columns with this char
-        :return: Pretty formatted blank row (with no meaningful data in it)
+
+        :param filler: Fill empty columns with this char (Default value = "-")
+        :param splitter: Separate columns with this char (Default value = "+")
+        :returns: Pretty formatted blank row (with no meaningful data in it)
         """
         return self.get_pretty_row(
             ["" for _ in self.widths],  # blanks
@@ -97,12 +103,12 @@ class SqlTable:
         )
 
     def pretty_format_row(self, row, filler=" ", splitter="|"):
-        """
-        Gets pretty-formatted row
+        """Gets pretty-formatted row
+
         :param row: List of data
-        :param filler: Fill empty columns with this char
-        :param splitter: Separate columns with this char
-        :return: Pretty formatted row
+        :param filler: Fill empty columns with this char (Default value = " ")
+        :param splitter: Separate columns with this char (Default value = "|")
+        :returns: Pretty formatted row
         """
         return self.get_pretty_row(
             row,
@@ -131,10 +137,10 @@ class SqlTable:
 
     @staticmethod
     def from_df(df):
-        """
-        Parses data and builds an instance of this class
+        """Parses data and builds an instance of this class
+
         :param df: pandas DataFrame
-        :return: SqlTable
+        :returns: SqlTable
         """
         labels = df.keys().tolist()
         data = df.values.tolist()
@@ -142,23 +148,25 @@ class SqlTable:
 
 
 def pretty_format_table(labels, data, num_format="{:.3f}", line_separator="\n"):
-    """
-    Parses and creates pretty table
+    """Parses and creates pretty table
+
     :param labels: List of labels of data
     :param data: Matrix of any type
-    :param num_format: Format numbers with this format
-    :param line_separator: Separate each new line with this
-    :return: Pretty formatted table (first row is labels, then actual data)
+    :param num_format: Format numbers with this format (Default value = "{:.3f}")
+    :param line_separator: Separate each new line with this (Default value = "\n")
+    :returns: Pretty formatted table (first row is labels, then actual data)
+
     """
     table = SqlTable(labels, data, num_format, line_separator)
     return table.build()
 
 
 def pretty_df(df):
-    """
-    Parses data and builds an instance of this class
+    """Parses data and builds an instance of this class
+
     :param df: pandas DataFrame
-    :return: Pretty formatted table (first row is labels, then actual data)
+    :returns: Pretty formatted table (first row is labels, then actual data)
+
     """
     table = SqlTable.from_df(df)
     return table.build()

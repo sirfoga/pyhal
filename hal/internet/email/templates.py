@@ -29,8 +29,7 @@ class EmailTemplate:
         self.data = {} if not extra_args else extra_args
 
     def get_email_header(self):
-        """
-        Gets email header
+        """Gets email header
         :return: Email header
         """
         return "<h2>Ciao " + str(self.recipient).title() + "!</h2><br>"

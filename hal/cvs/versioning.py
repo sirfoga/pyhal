@@ -15,7 +15,7 @@ class VersionNumber:
     @abstractmethod
     def get_current_amount(self):
         """Gets current set amount
-
+        
         :return: Current set amount
         """
         pass
@@ -24,7 +24,7 @@ class VersionNumber:
         """Checks iff can increase by such amount
 
         :param amount: Amount to increase
-        :return: True iff this number can be increased by such amount
+        :returns: True iff this number can be increased by such amount
         """
         return amount <= self.max_amount_allowed()
 
@@ -32,27 +32,25 @@ class VersionNumber:
     def increase(self, amount=1):
         """Increase version by this amount
 
-        :param amount: Increase number by this amount
-        :return: True iff increase was successful
+        :param amount: Increase number by this amount (Default value = 1)
+        :returns: True iff increase was successful
         """
         pass
 
     @abstractmethod
     def maximize(self):
-        """Maximizes this version
-        """
+        """Maximizes this version"""
         pass
 
     @abstractmethod
     def reset(self):
-        """Zeroes this number
-        """
+        """Zeroes this number"""
         pass
 
     @abstractmethod
     def max_amount_allowed(self):
         """Calculates number of increases available
-
+        
         :return: Number of increases that can be done before reaching
         """
         pass
@@ -60,7 +58,7 @@ class VersionNumber:
     @abstractmethod
     def max(self):
         """Calculates max increases
-
+        
         :return: Number of increases that can be done before reaching
         """
         pass
@@ -82,9 +80,14 @@ class Level(VersionNumber):
         return str(self.current)
 
     def get_current_amount(self):
+        """ """
         return self.current
 
     def increase(self, amount=1):
+        """
+
+        :param amount:  (Default value = 1)
+        """
         if self.can_increase(amount):
             self.current += amount
             return True
@@ -92,15 +95,19 @@ class Level(VersionNumber):
         return False
 
     def maximize(self):
+        """ """
         self.current = self.max_inner
 
     def reset(self):
+        """ """
         self.current = 0
 
     def max_amount_allowed(self):
+        """ """
         return self.max_inner - self.current
 
     def max(self):
+        """ """
         return self.max_inner
 
 
@@ -125,9 +132,11 @@ class Subsystem(VersionNumber):
         return out
 
     def get_current_amount(self):
+        """ """
         return self.current
 
     def reset(self):
+        """ """
         node = self.ll.head
 
         while node is not None:
@@ -135,6 +144,10 @@ class Subsystem(VersionNumber):
             node = node.next_node
 
     def increase(self, amount=1):
+        """
+
+        :param amount:  (Default value = 1)
+        """
         if self.ll.head.val.increase(amount):
             return True
 
@@ -158,6 +171,7 @@ class Subsystem(VersionNumber):
         return self.increase(amount_left)
 
     def maximize(self):
+        """ """
         node = self.ll.head
 
         while node is not None:
@@ -165,6 +179,7 @@ class Subsystem(VersionNumber):
             node = node.next_node
 
     def max_amount_allowed(self):
+        """ """
         amount_allowed = self.ll.head.val.max_amount_allowed()
         multiplier = self.ll.head.val.max()
         node = self.ll.head.next_node
@@ -177,6 +192,7 @@ class Subsystem(VersionNumber):
         return amount_allowed
 
     def max(self):
+        """ """
         multiplier = 1
         node = self.ll.head
 
@@ -202,15 +218,22 @@ class Version(VersionNumber):
         return str(self.s)
 
     def get_current_amount(self):
+        """ """
         return self.s.get_current_amount()
 
     def reset(self):
+        """ """
         return self.s.reset()
 
     def max_amount_allowed(self):
+        """ """
         return self.s.max_amount_allowed()
 
     def increase(self, amount=1):
+        """
+
+        :param amount:  (Default value = 1)
+        """
         return self.s.increase(amount)
 
     def increase_by_changes(self, changes_amount, ratio):
@@ -218,15 +241,17 @@ class Version(VersionNumber):
 
         :param changes_amount: Number of changes done
         :param ratio: Ratio changes
-        :return: Increases version accordingly to changes
+        :returns: Increases version accordingly to changes
         """
         increases = round(changes_amount * ratio)
         return self.increase(int(increases))
 
     def maximize(self):
+        """ """
         return self.s.maximize()
 
     def max(self):
+        """ """
         return self.s.max()
 
     @staticmethod
@@ -234,9 +259,9 @@ class Version(VersionNumber):
         """Parses string
 
         :param string: Version
-        :param max_number: Max number reachable by sub
-        :param separator: Version numbers are separated with this split
-        :return: Parses string and returns object
+        :param max_number: Max number reachable by sub (Default value = 9)
+        :param separator: Version numbers are separated with this split (Default value = ".")
+        :returns: Parses string and returns object
         """
         tokens = string.split(separator)
         tokens = list(reversed(tokens))  # reverse order of importance

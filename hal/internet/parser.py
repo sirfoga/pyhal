@@ -19,8 +19,7 @@ class HtmlTable:
         self.soup = BeautifulSoup(self.source, "lxml")
 
     def parse(self):
-        """
-        Parses data in table
+        """Parses data in table
         :return: List of list of values in table
         """
         data = []  # add name of section

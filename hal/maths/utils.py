@@ -4,11 +4,12 @@
 
 
 def get_percentage_relative_to(val, other):
-    """
-    Finds percentage between 2 numbers
+    """Finds percentage between 2 numbers
+
     :param val: number
     :param other: number to compare to
-    :return: percentage of delta between first and second
+    :returns: percentage of delta between first and second
+
     """
     val = float(val)
     other = float(other)
@@ -18,11 +19,12 @@ def get_percentage_relative_to(val, other):
 
 
 def divide(numerator, denominator):
-    """
-    Handles errors of division
+    """Handles errors of division
+
     :param numerator: Numerator
     :param denominator: Denominator
-    :return: division value
+    :returns: division value
+
     """
 
     try:

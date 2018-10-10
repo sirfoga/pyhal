@@ -31,8 +31,7 @@ class GoogleApiOAuth:
         self.store = Storage(user_credentials_path)
 
     def get_new_user_credentials(self):
-        """
-        Gets new credentials
+        """Gets new credentials
         :return: New user credentials file upon user prompt
         """
         # OAuth2.0 authorization flow
@@ -58,21 +57,21 @@ class GoogleApiOAuth:
 
     @staticmethod
     def authenticate(credentials):
-        """
-        Authenticates credentials
+        """Authenticates credentials
+
         :param credentials: authentication code created via OAuth
-        :return: Http authenticated credentials
+        :returns: Http authenticated credentials
         """
         http = httplib2.Http()
         credentials.authorize(http)
         return http
 
     def get_driver(self, name, version):
-        """
-        Authenticates and creates new API driver to perform scope stuff
+        """Authenticates and creates new API driver to perform scope stuff
+
         :param name: Name of driver
         :param version: Version of driver
-        :return: driver
+        :returns: driver
         """
         user_credentials = self.get_user_credentials()  # get credentials
         return discovery.build(

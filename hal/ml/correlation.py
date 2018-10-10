@@ -18,10 +18,12 @@ from hal.files.parsers import CSVParser
 class CorrelationMatrix:
     def __init__(self, title, headers_to_test, headers, data):
         """
+
         :param title: Title to show
         :param headers_to_test: List of columns to get correlation matrix of
         :param headers: List of all headers in matrix
         :param data: Matri: of float values
+
         """
         self.title = title
         self.headers_to_test = headers_to_test
@@ -30,15 +32,16 @@ class CorrelationMatrix:
 
     @staticmethod
     def get_correlation_matrix(matrix):
-        """
-        Finds correlation matrix of matrix
+        """Finds correlation matrix of matrix
+
         :param matrix: List of features to get correlation matrix
-        :return: correlation matrix
+        :returns: correlation matrix
         """
         return np.corrcoef(matrix)
 
     def show_correlation_matrix(self, correlation_matrix):
         """Shows the given correlation matrix as image
+
         :param correlation_matrix: Correlation matrix of features
         """
         cr_plot.create_correlation_matrix_plot(
@@ -47,8 +50,7 @@ class CorrelationMatrix:
         pyplot.show()
 
     def show_correlation_matrix_of_columns(self):
-        """Shows the correlation matrix of columns
-        """
+        """Shows the correlation matrix of columns"""
         correlation_matrix = self.get_correlation_matrix_of_columns()
         self.show_correlation_matrix(correlation_matrix)
 
@@ -74,6 +76,7 @@ class CorrelationMatrix:
 
     def save_to_file(self, out_file):
         """Saves correlation matrix of selected headers
+
         :param out_file: Output file
         """
         correlation_matrix = self.get_correlation_matrix_of_columns()
@@ -87,6 +90,7 @@ class CorrelationMatrix:
     @staticmethod
     def save_correlation_matrix_of_data_files_in_folder(folder_path):
         """Saves each file's correlation matrix of common headers
+
         :param folder_path: Folder containing logs data
         """
         file_name = "output-" + str(int(time.time()))

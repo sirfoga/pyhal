@@ -13,8 +13,8 @@ class SeleniumForm:
         self.browser = browser
 
     def fill_form_field(self, field_name, field_value):
-        """
-        Fills given field with given value
+        """Fills given field with given value
+
         :param field_name: name of field to fill
         :param field_value: value with which to fill field
         """
@@ -24,8 +24,8 @@ class SeleniumForm:
 
     def fill_login_form(self, username, username_field, user_password,
                         user_password_field):
-        """
-        Fills form with login info
+        """Fills form with login info
+
         :param username: user login
         :param username_field: name of field to fill with username
         :param user_password: login password
@@ -35,8 +35,8 @@ class SeleniumForm:
         self.fill_form_field(user_password_field, user_password)  # set password
 
     def submit_form(self, button_name):
-        """
-        Submits form
+        """Submits form
+
         :param button_name: name of button to press to submit form
         """
         self.browser.execute_script(

@@ -18,6 +18,7 @@ class Parser:
 
     def get_lines(self):
         """Gets lines in file
+
         :return: Lines in file
         """
         with open(self.path) as data:

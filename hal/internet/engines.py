@@ -38,10 +38,10 @@ class SearchEngine:
         self.blank_replace = blank_replace
 
     def parse_query(self, query):
-        """
-        Parses given query in order to meet search criteria of search engine
+        """Parses given query in order to meet search criteria of search engine
+
         :param query: Query to search engine
-        :return: query of search engine (well-formatted)
+        :returns: query of search engine (well-formatted)
         """
         return query.strip().replace(
             " ",
@@ -49,10 +49,10 @@ class SearchEngine:
         ).lower()  # remove trailing blanks, replace with search engine blanks
 
     def get_search_page(self, query):
-        """
-        Gets HTML source
+        """Gets HTML source
+
         :param query: query to search engine
-        :return: HTML source of search page of given query
+        :returns: HTML source of search page of given query
         """
         query_web_page = Webpage(self.url + self.parse_query(query))
         query_web_page.get_html_source()  # get html source

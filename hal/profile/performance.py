@@ -72,7 +72,8 @@ class EightQueenTest:
         return time() - timing
 
     def update_std_out_and_log(self, string):
-        """ Prints to stdout and updates log
+        """Prints to stdout and updates log
+
         :param string: Stuff to print
         """
         print(string)  # update stdout

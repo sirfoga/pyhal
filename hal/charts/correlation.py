@@ -14,7 +14,8 @@ def create_correlation_matrix_plot(correlation_matrix, title, feature_list):
     :param correlation_matrix: Correlation matrix of features
     :param title: Title of plot
     :param feature_list: List of names of features
-    :return: Shows the given correlation matrix as image
+    :returns: Shows the given correlation matrix as image
+
     """
     chart = SimpleChart(title)
     ax1 = chart.get_ax()
