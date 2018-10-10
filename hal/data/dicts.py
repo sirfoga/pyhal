@@ -20,3 +20,38 @@ def how_similar_dicts(d1, d2):
                 how_similar_are(str(d1[k]), str(d2[k]))
             )
     return np.mean(values)  # average
+
+
+def get_inner_keys(d):
+    """Gets 2nd-level dictionary keys
+    :param d: dict
+    :return: inner keys
+    """
+
+    keys = []
+
+    for key in d.keys():
+        inner_keys = d[key].keys()
+        keys += [
+            key + " " + inner_key  # concatenate
+            for inner_key in inner_keys
+        ]
+
+    return keys
+
+
+def get_inner_data(d):
+    """Gets 2nd-level data into 1st-level dictionary
+    :param d: dict
+    :return: {} with 2nd-level data
+    """
+
+    out = {}
+
+    for key in d.keys():
+        inner_keys = d[key].keys()
+        for inner_key in inner_keys:
+            new_key = key + " " + inner_key  # concatenate
+            out[new_key] = d[key][inner_key]
+
+    return out

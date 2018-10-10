@@ -4,83 +4,103 @@
 
 import json
 import platform
-import ssl
-
-import urllib3
-from urllib3.contrib import pyopenssl
 
 from hal import __version__ as hal_version
+from hal.data.dicts import get_inner_data
+from hal.streams.markdown import MarkdownTable
+from hal.streams.pretty_table import SqlTable
 
 
-def _implementation():
-    """
+class BugReporter:
+    def __init__(self):
+        self.report = self.get_bug_report()
 
+    @staticmethod
+    def get_platform_info():
+        """
+        :return: platform info
+        """
 
-    :returns: Provide both the name and the version of the Python implementation
-    currently running. For example, on CPython 2.7.5 it will return
-    {'name': 'CPython', 'version': '2.7.5'}.
-    
-    This function works best on CPython and PyPy: in particular, it probably
-    doesn't work for Jython or IronPython. Future investigation should be done
-    to work out the correct shape of the code for those platforms.
-    """
-    implementation = platform.python_implementation()
+        try:
+            system_name = platform.system()
+            release_name = platform.release()
+        except:
+            system_name = "Unknown"
+            release_name = "Unknown"
 
-    if implementation == 'CPython':
-        implementation_version = platform.python_version()
-    elif implementation == 'Jython':
-        implementation_version = platform.python_version()  # Complete Guess
-    elif implementation == 'IronPython':
-        implementation_version = platform.python_version()  # Complete Guess
-    else:
-        implementation_version = 'Unknown'
-
-    return {'name': implementation, 'version': implementation_version}
-
-
-def info():
-    """Generate information for a bug report."""
-    try:
-        platform_info = {
-            'system': platform.system(),
-            'release': platform.release(),
-        }
-    except IOError:
-        platform_info = {
-            'system': 'Unknown',
-            'release': 'Unknown',
+        return {
+            'system': system_name,
+            'release': release_name,
         }
 
-    implementation_info = _implementation()
-    urllib3_info = {'version': urllib3.__version__}
-
-    pyopenssl_info = {
-        'version': None,
-        'openssl_version': '',
-    }
-
-    # OPENSSL_VERSION_NUMBER doesn't exist in the Python 2.6 ssl module.
-    system_ssl = getattr(ssl, 'OPENSSL_VERSION_NUMBER', None)
-    system_ssl_info = {
-        'version': '%x' % system_ssl if system_ssl is not None else ''
-    }
-
-    return {
-        'platform': platform_info,
-        'implementation': implementation_info,
-        'system_ssl': system_ssl_info,
-        'using_pyopenssl': pyopenssl is not None,
-        'pyOpenSSL': pyopenssl_info,
-        'urllib3': urllib3_info,
-        'pyhal': {
-            'version': hal_version,
+    @staticmethod
+    def get_bug_report():
+        """Generate information for a bug report
+        :return: information for bug report
+        """
+        platform_info = BugReporter.get_platform_info()
+        hal_info = {
+            'version': hal_version.__version__
         }
-    }
+
+        return {
+            'platform': platform_info,
+            'pyhal': hal_info
+        }
+
+    def _get_table(self):
+        """Gets report as table (with columns)
+        :return: column names and data
+        """
+        data = get_inner_data(self.report)
+        labels = data.keys()
+        row = [
+            data[key]
+            for key in labels
+        ]
+        return list(labels), [row]  # as matrix
+
+    def as_json(self):
+        """Gets report as json
+        :return: json-formatted report
+        """
+
+        return json.dumps(self.report, sort_keys=True, indent=2)
+
+    def as_sql(self):
+        """Gets report as json
+        :return: json-formatted report
+        """
+
+        labels, data = self._get_table()
+        table = SqlTable(labels, data, "{:.3f}", "\n")
+        return str(table)
+
+    def as_markdown(self):
+        """Gets report as json
+        :return: json-formatted report
+        """
+
+        labels, data = self._get_table()
+        table = MarkdownTable(labels, data)
+        return str(table)
 
 
 def main():
-    """Pretty-print the bug information as JSON."""
-    print(json.dumps(info(), sort_keys=True, indent=2))
+    """Pretty-print the bug information as JSON
+    """
+
+    reporter = BugReporter()
+
+    print("JSON report:")
+    print(reporter.as_json())
+    print()
+
+    print("Markdown report:")
+    print(reporter.as_markdown())
+
+    print("SQL report:")
+    print(reporter.as_sql())
 
 
 if __name__ == '__main__':

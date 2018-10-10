@@ -126,6 +126,9 @@ class SqlTable:
 
         return pretty_table
 
+    def __str__(self):
+        return self.build()
+
     @staticmethod
     def from_df(df):
         """
