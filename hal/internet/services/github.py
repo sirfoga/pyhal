@@ -38,12 +38,12 @@ def get_clone_url(remote_shortcut, token):
 class GithubRawApi:
     """Generic Github API"""
 
+    _API_TYPES = [
+        "users", "repos", "orgs", "authorizations", "gists", "feeds", "search"
+    ]
     _API_URL_TYPE = {
         k: API_URL + k
-        for k in [
-        "users", "repos", "orgs", "authorizations", "gists", "feeds",
-        "search"
-    ]
+        for k in _API_TYPES
     }  # possible types of Github API
 
     def __init__(self, url=API_URL, url_params=None,
@@ -267,5 +267,6 @@ class GithubUserRepository(GithubApi):
         self.api_url += "/" + self.username + "/" + self.repository_name
 
     def __eq__(self, other):
-        return self.username == other.username \
-               and self.repository_name == other.repository_name
+        same_username = self.username == other.username
+        same_repo = self.repository_name == other.repository_name
+        return same_username and same_repo

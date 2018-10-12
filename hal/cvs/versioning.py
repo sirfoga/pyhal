@@ -15,7 +15,7 @@ class VersionNumber:
     @abstractmethod
     def get_current_amount(self):
         """Gets current set amount
-        
+
         :returns: Current set amount
         """
         pass
@@ -50,7 +50,7 @@ class VersionNumber:
     @abstractmethod
     def max_amount_allowed(self):
         """Calculates number of increases available
-        
+
         :returns: Number of increases that can be done before reaching
         """
         pass
@@ -58,7 +58,7 @@ class VersionNumber:
     @abstractmethod
     def max(self):
         """Calculates max increases
-        
+
         :returns: Number of increases that can be done before reaching
         """
         pass

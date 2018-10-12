@@ -152,9 +152,8 @@ def prettify(name, blank=" "):
 
     for i in range(1, len(name) - 2):
         try:
-            if name[i - 1] == blank and \
-                            name[i + 1] == blank and \
-                            name[i] in BAD_CHARS:
+            are_blanks = name[i - 1] == blank and name[i + 1] == blank
+            if are_blanks and name[i] in BAD_CHARS:
                 name = name[:i - 1] + name[i + 2:]
         except:  # out of bounds
             pass

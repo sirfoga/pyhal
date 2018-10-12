@@ -16,7 +16,7 @@ class Matrix:
 
     def precision(self):
         """Calculates precision
-        
+
         :returns: Precision of matrix
         """
         true_pos = self.matrix[0][0]
@@ -25,7 +25,7 @@ class Matrix:
 
     def recall(self):
         """Calculates recall
-        
+
         :returns: Recall
         """
         true_pos = self.matrix[0][0]
@@ -34,7 +34,7 @@ class Matrix:
 
     def true_neg_rate(self):
         """Calculates true negative rate
-        
+
         :returns: true negative rate
         """
         false_pos = self.matrix[1][0]
@@ -43,7 +43,7 @@ class Matrix:
 
     def accuracy(self):
         """Calculates accuracy
-        
+
         :returns: Accuracy
         """
         true_pos = self.matrix[0][0]
@@ -58,7 +58,7 @@ class Matrix:
 
     def f1_score(self):
         """Calculates F1 score
-        
+
         :returns: F1 score
         """
         m_pre = self.precision()
@@ -67,7 +67,7 @@ class Matrix:
 
     def get_as_list(self):
         """List of all values in matrix
-        
+
         :returns: list representation
         """
         return sum([
@@ -77,7 +77,7 @@ class Matrix:
 
     def encode(self):
         """Encodes matrix
-        
+
         :returns: Encoder used
         """
         lb = LabelEncoder()  # encoder

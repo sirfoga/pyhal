@@ -27,7 +27,7 @@ test:
 	detox
 
 flake8:
-	pipenv run flake8 --ignore=E501,F401,E128,E402,E731,F821 hal
+	pipenv run flake8 --ignore=E501,F401,E128,E402,E731,F821,E722 hal
 
 coverage:
 	pipenv run py.test --cov-config .coveragerc --verbose --cov-report term --cov-report xml --cov=requests tests

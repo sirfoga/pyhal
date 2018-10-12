@@ -55,23 +55,12 @@ class Plot2d(Plotter):
     """2d plot"""
 
     def scatter(self, vectors):
-        """
-
-        :param vectors:
-        """
         vector_x = vectors[0]
         vector_y = vectors[1]
         plt.plot(vector_x, vector_y, "-o")
         self.show_plot()
 
     def param(self, functions, min_val, max_val, points):
-        """
-
-        :param functions:
-        :param min_val:
-        :param max_val:
-        :param points:
-        """
         function_x = functions[0]
         function_y = functions[1]
 
@@ -84,13 +73,6 @@ class Plot2d(Plotter):
         self.show_plot()
 
     def plot(self, func, mins, maxs, points):
-        """
-
-        :param func: 
-        :param mins: 
-        :param maxs: 
-        :param points: 
-        """
         min_x = mins[0]
         max_x = maxs[0]
         points = points[0]
@@ -103,10 +85,6 @@ class Plot3d(Plotter):
     """3D plot"""
 
     def scatter(self, vectors):
-        """
-
-        :param vectors: 
-        """
         vector_x = vectors[0]
         vector_y = vectors[1]
         vector_z = vectors[2]
@@ -120,13 +98,6 @@ class Plot3d(Plotter):
         self.show_plot()
 
     def param(self, functions, min_val, max_val, points):
-        """
-
-        :param functions: 
-        :param min_val: 
-        :param max_val: 
-        :param points: 
-        """
         function_x = functions[0]
         function_y = functions[1]
         function_z = functions[2]
@@ -147,13 +118,6 @@ class Plot3d(Plotter):
         self.show_plot()
 
     def plot(self, func, mins, maxs, points):
-        """
-
-        :param func: 
-        :param mins: 
-        :param maxs: 
-        :param points: 
-        """
         min_x, min_y = mins[0], mins[1]
         max_x, max_y = maxs[0], maxs[1]
         points_x, points_y = points[0], points[1]
@@ -182,32 +146,12 @@ class Plot4d(Plotter):
     """4D plot generator with slider"""
 
     def scatter(self, vectors):
-        """
-
-        :param vectors: 
-        """
         raise ValueError("Cannot plot 4D vectors in 2D space")
 
     def param(self, functions, min_val, max_val, points):
-        """
-
-        :param functions: 
-        :param min_val: 
-        :param max_val: 
-        :param points: 
-        """
         raise ValueError("Cannot plot 4D function in 2D space")
 
     def plot(self, func, mins, maxs, points, precision=0.5, kind="slice"):
-        """
-
-        :param func: 
-        :param mins: 
-        :param maxs: 
-        :param points: 
-        :param precision:  (Default value = 0.5)
-        :param kind:  (Default value = "slice")
-        """
         min_x, min_y, min_z = mins[0], mins[1], mins[2]
         max_x, max_y, max_z = maxs[0], maxs[1], maxs[2]
 
@@ -251,7 +195,10 @@ class Plot4d(Plotter):
             return float(max_val - min_val) / float(10 * precision)
 
         def plot_slice():
-            """ """
+            """ Plots slice
+
+            :return: shows plot
+            """
             chart = plt.axes(projection="3d")  # general settings
             points_x = get_precision(min_x, max_x)
             points_y = get_precision(min_y, max_z)

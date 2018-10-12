@@ -19,8 +19,8 @@ def true_false_returns(func):
 
         :param args: args of function
         :param kwargs: extra args of function
-        :param *args: 
-        :param **kwargs: 
+        :param *args:
+        :param **kwargs:
         :returns: True iff ok, else False
         """
 
@@ -47,8 +47,8 @@ def none_returns(func):
 
         :param args: args of function
         :param kwargs: extra args of function
-        :param *args: 
-        :param **kwargs: 
+        :param *args:
+        :param **kwargs:
         :returns: None else value of function
         """
 

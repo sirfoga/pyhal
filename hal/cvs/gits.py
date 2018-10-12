@@ -28,7 +28,7 @@ class Diff:
 
     def get_totals(self):
         """Calculates total additions and deletions
-        
+
         :returns: Dictionary with totals
         """
         total_added = 0
@@ -71,7 +71,7 @@ class Commit:
 
     def get_author(self):
         """Gets author
-        
+
         :returns: author of commit
         """
         author = self.c.author
@@ -98,14 +98,14 @@ class Repository:
 
     def get_last_commit(self):
         """Gets last commit
-        
+
         :returns: Last commit of repository
         """
         return self.r.head.commit
 
     def get_diff_amounts(self):
         """Gets list of total diff
-        
+
         :returns: List of total diff between 2 consecutive commits since start
         """
         diffs = []

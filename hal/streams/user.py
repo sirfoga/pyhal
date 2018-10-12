@@ -145,7 +145,6 @@ class UserInput:
         :param splitter: Split list elements with this char (Default value = ")
         :param at_least: List must have at least this amount of elements (Default value = 0)
         :param at_most: List must have at most this amount of elements (Default value = float("inf"))
-        :param ": 
         :returns: User answer
         """
         try:

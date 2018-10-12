@@ -103,11 +103,11 @@ Different ways, all equals
 ### via `pip`
 - ```$ pip3 install . --upgrade --force-reinstall``` from the source
 - ```$ pip3 install PyHal``` via [pip](https://pypi.org/project/PyHal/)
-- ```$ make pip-init```
+- ```$ make pip-install```
 
 ### via `pipenv`
 - ```$ pipenv install --dev --skip-lock ```
-- ```$ make init```
+- ```$ make install```
 
 ```make fast-init``` just copies source files to distitribution files ... run it only if you're sure about dependencies
 
@@ -118,6 +118,7 @@ Different ways, all equals
 Browse the online documentation
 - on my [personal page]([readthedocs](https://sirfoga.github.io/pyhal/))
 - on [readthedocs.org](https://pyhal.readthedocs.io/en/latest/)
+or make your own by `make docs`
 
 
 ## Contributing

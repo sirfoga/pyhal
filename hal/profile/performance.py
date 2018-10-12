@@ -16,19 +16,19 @@ from hal.maths.problems import EightQueen
 
 INTRO = "So, let\'s get into the details.. I\'m going to solve the " \
         "classic Eight Queens Puzzle: it\'s the problem of placing " \
-                 "eight chess queens on an 8×8 chessboard so that no two " \
-                 "queens threaten each other.\nFinding all solutions to the " \
-                 "eight queens puzzle is a good example of a nontrivial " \
-                 "problem. For this reason, it is often used as an example " \
-                 "problem for various programming techniques, including " \
-                 "non-traditional approaches such as constraint programming," \
-                 " logic programming or genetic algorithms. Most often, " \
-                 "it is used as an example of a problem that can be solved " \
-                 "with a recursive algorithm (read more here: " \
-                 "https://en.wikipedia.org/wiki/Eight_queens_puzzle) ... and" \
-                 " since recursion involves both RAM storage and CPU use of " \
-                 "your machine, this problem is a good tester to test your " \
-                 "PC speed! Now let\'s get started.. "
+        "eight chess queens on an 8×8 chessboard so that no two " \
+        "queens threaten each other.\nFinding all solutions to the " \
+        "eight queens puzzle is a good example of a nontrivial " \
+        "problem. For this reason, it is often used as an example " \
+        "problem for various programming techniques, including " \
+        "non-traditional approaches such as constraint programming," \
+        " logic programming or genetic algorithms. Most often, " \
+        "it is used as an example of a problem that can be solved " \
+        "with a recursive algorithm (read more here: " \
+        "https://en.wikipedia.org/wiki/Eight_queens_puzzle) ... and" \
+        " since recursion involves both RAM storage and CPU use of " \
+        "your machine, this problem is a good tester to test your " \
+        "PC speed! Now let\'s get started.. "
 
 
 class EightQueenTest:
