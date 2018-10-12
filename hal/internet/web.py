@@ -6,7 +6,6 @@ import random
 import re
 import time
 import urllib.request
-import webbrowser
 from urllib.parse import urljoin
 
 import requests

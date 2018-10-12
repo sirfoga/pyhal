@@ -113,7 +113,7 @@ class Repository:
         last_commit = None
         for commit in self.repo.iter_commits():
             if last_commit is not None:
-                diff = self.get_diff(commit, last_commit)
+                diff = self.get_diff(commit.hexsha, last_commit.hexsha)
                 total_changed = diff[Diff.ADD] + diff[Diff.DEL]
                 diffs.append(total_changed)
 
@@ -128,7 +128,7 @@ class Repository:
         :param other_commit: Second commit
         :return: dictionary: Dictionary with total additions and deletions
         """
-        diff = self.repo.git.diff(commit.hexsha, other_commit.hexsha)
+        diff = self.repo.git.diff(commit, other_commit)
         return Diff(diff).get_totals()
 
     def get_version(self, diff_to_increase_ratio):
@@ -143,6 +143,22 @@ class Repository:
         for diff in diffs:
             version.increase_by_changes(diff, diff_to_increase_ratio)
 
+        return version
+
+    def get_new_version(self, last_version, last_commit,
+                        diff_to_increase_ratio):
+        """Gets new version
+
+        :param last_version: last version known
+        :param last_commit: hash of commit of last version
+        :param diff_to_increase_ratio: Ratio to convert number of changes into
+        :return: new version
+        """
+
+        version = Version(last_version)
+        diff = self.get_diff(last_commit, self.get_last_commit_hash())
+
+        version.increase_by_changes(diff, diff_to_increase_ratio)
         return version
 
     def get_pretty_version(self, diff_to_increase_ratio):
