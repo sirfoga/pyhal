@@ -14,7 +14,7 @@ script:
   - "make show-installed-version"
   - "python3 -m pytest --cov=./"  # test coverage
   - "codecov"
-  - "pylint -j 8 hal/* || pylint-exit $?"  # measure code lint
+  - "python3 -m pylint 'hal/'"  # measure code lint
 notifications:
   email: "false"  # no email notify
 cache: "pip"
