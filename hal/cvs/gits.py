@@ -128,6 +128,7 @@ class Repository:
         :param other_commit: Second commit
         :return: dictionary: Dictionary with total additions and deletions
         """
+        print(other_commit, "VS", commit)
         diff = self.repo.git.diff(commit, other_commit)
         return Diff(diff).get_totals()
 
@@ -157,8 +158,9 @@ class Repository:
 
         version = Version(last_version)
         diff = self.get_diff(last_commit, self.get_last_commit_hash())
+        total_changed = diff[Diff.ADD] + diff[Diff.DEL]
 
-        version.increase_by_changes(diff, diff_to_increase_ratio)
+        version.increase_by_changes(total_changed, diff_to_increase_ratio)
         return version
 
     def get_pretty_version(self, diff_to_increase_ratio):
