@@ -3,7 +3,8 @@ language: "python"
 python:
   - "3.6"
 before_install:
-  - "sudo apt-get install pylint3"  # measure code lint
+  - "sudo apt update"  # measure code lint
+  - "sudo apt install pylint3"  # measure code lint
   - "pip3 install -U pip"  # upgrade pip
   - "pip3 install codecov pytest pytest-cov"  # test coverage
   - "pip3 install pylint-exit"
@@ -19,6 +20,3 @@ script:
 notifications:
   email: "false"  # no email notify
 cache: "pip"
-addons:
-  apt:
-    update: true
