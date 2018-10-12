@@ -12,8 +12,8 @@ install:
   - "make pip-install"  # install
 script:
   - "make show-installed-version"
-  - "pytest --cov=./"  # test coverage
-  - "# codecov"
+  - "python3 -m pytest --cov=./"  # test coverage
+  - "codecov"
   - "pylint -j 8 hal/* || pylint-exit $?"  # measure code lint
 notifications:
   email: "false"  # no email notify
