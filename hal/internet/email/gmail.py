@@ -11,8 +11,9 @@ from hal.internet.services.google.gauthenticator import GoogleApiOAuth
 
 
 class GMailApiOAuth(GoogleApiOAuth):
-    def __init__(self, app_name, client_secrets_file, oauth_path):
+    """Creates OAuth driver for GMail"""
 
+    def __init__(self, app_name, client_secrets_file, oauth_path):
         """
         :param app_name: Name of app to display
         :param client_secrets_file: Path to client_secret

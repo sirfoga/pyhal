@@ -8,21 +8,33 @@ from hal.strings.utils import get_max_similar
 class UserInput:
     """Chat with user and ask questions"""
 
-    YES = ["yes", "ok", "fine"]
-    NO = ["no", "not ok", "none"]
+    YES_INPUT = ["yes", "ok", "fine"]
+    NO_INPUT = ["no", "not ok", "none"]
     THRESHOLD_INPUT = 0.9
 
-    def __init__(self, yes_choices=YES, no_choices=NO,
-                 threshold=THRESHOLD_INPUT, interactive=True):
+    def __init__(self, yes_choices=None, no_choices=None, threshold=None,
+                 interactive=True):
         """
-        :param threshold: Match user answer with the one provided with at least this rate
+        :param threshold: Match user answer with the one provided with at least
+            this rate
         :param yes_choices: List of answer considered a "yes"
         :param no_choices: List of answer considered a "no"
-        :param interactive: True iff program should deal with user not answering properly
+        :param interactive: True iff program should deal with user not answering
+            properly
         """
-        self.THRESHOLD_INPUT = threshold
-        self.YES = yes_choices
-        self.NO = no_choices
+
+        if not yes_choices:
+            yes_choices = self.YES_INPUT
+
+        if not no_choices:
+            no_choices = self.NO_INPUT
+
+        if not threshold:
+            threshold = self.THRESHOLD_INPUT
+
+        self.threshold = threshold
+        self.yes_input = yes_choices
+        self.no_input = no_choices
         self.last_question = None
         self.interactive = bool(interactive)
 
@@ -32,9 +44,9 @@ class UserInput:
         :param answer: User: answer
         :returns: True iff considered a "yes" answer
         """
-        yes_sim, _ = get_max_similar(answer, self.YES)
-        no_sim, _ = get_max_similar(answer, self.NO)
-        return yes_sim > no_sim and yes_sim > self.THRESHOLD_INPUT
+        yes_sim, _ = get_max_similar(answer, self.yes_input)
+        no_sim, _ = get_max_similar(answer, self.no_input)
+        return yes_sim > no_sim and yes_sim > self.threshold
 
     def is_no(self, answer):
         """Checks if considered a "yes" answer
@@ -42,20 +54,21 @@ class UserInput:
         :param answer: User answer
         :returns: True iff considered a "yes" answer
         """
-        yes_sim, _ = get_max_similar(answer, self.YES)
-        no_sim, _ = get_max_similar(answer, self.NO)
-        return no_sim > yes_sim and no_sim > self.THRESHOLD_INPUT
+        yes_sim, _ = get_max_similar(answer, self.yes_input)
+        no_sim, _ = get_max_similar(answer, self.no_input)
+        return no_sim > yes_sim and no_sim > self.threshold
 
     def show_help(self):
         """Prints to stdout help on how to answer properly"""
         print("Sorry, not well understood.")
-        print("- use", str(self.YES), "to answer 'YES'")
-        print("- use", str(self.NO), "to answer 'NO'")
+        print("- use", str(self.yes_input), "to answer 'YES'")
+        print("- use", str(self.no_input), "to answer 'NO'")
 
     def re_ask(self, with_help=True):
         """Re-asks user the last question
 
-        :param with_help: True iff you want to show help on how to answer questions (Default value = True)
+        :param with_help: True iff you want to show help on how to answer
+            questions
         :returns: user answer
         """
         if with_help:
@@ -80,10 +93,10 @@ class UserInput:
         :returns: User answer
         """
         user_answer = self.get_answer(question).lower()
-        if user_answer in self.YES:
+        if user_answer in self.yes_input:
             return True
 
-        if user_answer in self.NO:
+        if user_answer in self.no_input:
             return False
 
         is_yes = self.is_yes(user_answer)  # check if similar to yes/no choices
@@ -97,17 +110,17 @@ class UserInput:
         if self.interactive:
             self.show_help()
             return self.get_yes_no(self.last_question)
-        else:
-            return False
+
+        return False
 
     def get_number(self, question,
                    min_i=float("-inf"), max_i=float("inf"), just_these=None):
         """Parses answer and gets number
 
         :param question: Question: to ask user
-        :param min_i: min acceptable number (Default value = float("-inf"))
-        :param max_i: max acceptable number (Default value = float("inf"))
-        :param just_these: Accept only these numbers (Default value = None)
+        :param min_i: min acceptable number
+        :param max_i: max acceptable number
+        :param just_these: Accept only these numbers
         :returns: User answer
         """
         try:
@@ -124,13 +137,13 @@ class UserInput:
                         raise Exception(exc)
                 else:
                     return user_answer
-            else:
-                exc = "Number is not within limits. "
-                exc += "Min is " + str(min_i) + ". Max is " + str(max_i) + ""
-                raise Exception(exc)
-        except Exception as e:
-            print(str(e))
-            self.get_number(
+
+            exc = "Number is not within limits. "
+            exc += "Min is " + str(min_i) + ". Max is " + str(max_i) + ""
+            raise Exception(exc)
+        except Exception as exc:
+            print(str(exc))
+            return self.get_number(
                 self.last_question,
                 min_i=min_i,
                 max_i=max_i,
@@ -142,9 +155,9 @@ class UserInput:
         """Parses answer and gets list
 
         :param question: Question: to ask user
-        :param splitter: Split list elements with this char (Default value = ")
-        :param at_least: List must have at least this amount of elements (Default value = 0)
-        :param at_most: List must have at most this amount of elements (Default value = float("inf"))
+        :param splitter: Split list elements with this char
+        :param at_least: List must have at least this amount of elements
+        :param at_most: List must have at most this amount of elements
         :returns: User answer
         """
         try:
@@ -154,15 +167,15 @@ class UserInput:
 
             if at_least < len(user_answer) < at_most:
                 return user_answer
-            else:
-                exc = "List is not correct. "
-                exc += "There must be at least " + str(at_least) + " items, "
-                exc += "and at most " + str(at_most) + ". "
-                exc += "Use '" + str(splitter) + "' to separate items"
-                raise Exception(exc)
-        except Exception as e:
-            print(str(e))
-            self.get_list(
+
+            exc = "List is not correct. "
+            exc += "There must be at least " + str(at_least) + " items, "
+            exc += "and at most " + str(at_most) + ". "
+            exc += "Use '" + str(splitter) + "' to separate items"
+            raise Exception(exc)
+        except Exception as exc:
+            print(str(exc))
+            return self.get_list(
                 self.last_question,
                 at_least=at_least,
                 at_most=at_most

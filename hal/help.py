@@ -12,7 +12,7 @@ from hal.streams.pretty_table import SqlTable
 
 
 class BugReporter:
-    """ """
+    """Generates reports on module installation"""
     def __init__(self):
         self.report = self.get_bug_report()
 

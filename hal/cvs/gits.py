@@ -20,7 +20,7 @@ class Diff:
         """
         :param diff: Diff between 2 commits
         """
-        self.d = diff
+        self.diff = diff
 
     def __str__(self):
         totals = self.get_totals()
@@ -34,7 +34,7 @@ class Diff:
         total_added = 0
         total_removed = 0
 
-        patch = PatchSet(self.d)
+        patch = PatchSet(self.diff)
         total_added += sum([
             edit.added for edit in patch
         ])
@@ -56,7 +56,7 @@ class Commit:
 
         :param commit: Commit of repository
         """
-        self.c = commit
+        self.commit = commit
 
     def __str__(self, date_format="%H:%M:%S %y-%m-%d %z"):
         """
@@ -65,8 +65,8 @@ class Commit:
         :param date_format: Format date and times with this format
         :returns: Pretty description of commit
         """
-        hash_value = self.c.hexsha
-        date_time = self.c.authored_datetime.strftime(date_format)
+        hash_value = self.commit.hexsha
+        date_time = self.commit.authored_datetime.strftime(date_format)
         return hash_value + " at " + date_time
 
     def get_author(self):
@@ -74,7 +74,7 @@ class Commit:
 
         :returns: author of commit
         """
-        author = self.c.author
+        author = self.commit.author
 
         out = ""
         if author.name is not None:
@@ -94,14 +94,14 @@ class Repository:
 
         :param repo_path: Path to repository
         """
-        self.r = Repo(repo_path)
+        self.repo = Repo(repo_path)
 
     def get_last_commit(self):
         """Gets last commit
 
         :returns: Last commit of repository
         """
-        return self.r.head.commit
+        return self.repo.head.commit
 
     def get_diff_amounts(self):
         """Gets list of total diff
@@ -111,7 +111,7 @@ class Repository:
         diffs = []
 
         last_commit = None
-        for commit in self.r.iter_commits():
+        for commit in self.repo.iter_commits():
             if last_commit is not None:
                 diff = self.get_diff(commit, last_commit)
                 total_changed = diff[Diff.ADD] + diff[Diff.DEL]
@@ -128,7 +128,7 @@ class Repository:
         :param other_commit: Second commit
         :returns: dictionary: Dictionary with total additions and deletions
         """
-        diff = self.r.git.diff(commit.hexsha, other_commit.hexsha)
+        diff = self.repo.git.diff(commit.hexsha, other_commit.hexsha)
         return Diff(diff).get_totals()
 
     def get_version(self, diff_to_increase_ratio):

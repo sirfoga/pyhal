@@ -67,7 +67,6 @@ def fix_raw_path(path):
 
     :param path: path to fix
     :returns: Good name for path
-
     """
     double_path_separator = PATH_SEPARATOR + PATH_SEPARATOR
     while path.find(
@@ -86,7 +85,6 @@ def remove_year(name):
 
     :param name: path to edit
     :returns: inputs with no years
-
     """
     for i in range(len(
             name) - 3):  # last index is length - 3 - 1 = length - 4
@@ -102,7 +100,6 @@ def remove_brackets(name):
 
     :param name: path to fix
     :returns: inputs with no brackets
-
     """
     name = re.sub(
         r"([(\[]).*?([)\]])",
@@ -119,10 +116,9 @@ def extract_name_max_chars(name, max_chars=64, blank=" "):
     """Extracts max chars in name truncated to nearest word
 
     :param name: path to edit
-    :param max_chars: max chars of new name (Default value = 64)
-    :param blank: char that represents the blank between words (Default value = " ")
+    :param max_chars: max chars of new name
+    :param blank: char that represents the blank between words
     :returns: Name edited to contain at most max_chars
-
     """
     new_name = name.strip()
     if len(new_name) > max_chars:
@@ -138,7 +134,6 @@ def prettify(name, blank=" "):
     :param name: path Name: to edit
     :param blank: default blanks in name
     :returns: Prettier name from given one: replace bad chars with good ones.
-
     """
     if name.startswith("."):  # remove starting .
         name = name[1:]
@@ -172,7 +167,6 @@ def is_file(path):
 
     :param path: path to check
     :returns: True iff path is a file
-
     """
     return os.path.isfile(path)
 
@@ -182,7 +176,6 @@ def is_folder(path):
 
     :param path: path to check
     :returns: True iff path is a file
-
     """
     return os.path.isdir(path)
 
@@ -192,7 +185,6 @@ def get_parent_folder(file_path):
 
     :param file_path: str
     :returns: Name of folder container
-
     """
     return os.path.split(os.path.split(os.path.abspath(file_path))[0])[-1]
 
@@ -201,9 +193,8 @@ def ls_dir(path, include_hidden=False):
     """Finds content of folder
 
     :param path: directory to get list of files and folders
-    :param include_hidden: True iff include hidden files in list (Default value = False)
+    :param include_hidden: True iff include hidden files in list
     :returns: List of paths in given directory.
-
     """
     lst = []
     for file in os.listdir(path):
@@ -217,9 +208,8 @@ def ls_recurse(path, include_hidden=False):
     """Finds content of folder recursively
 
     :param path: directory to get list of files and folders
-    :param include_hidden: True iff include hidden files in list (Default value = False)
+    :param include_hidden: True iff include hidden files in list
     :returns: List of paths in given directory recursively.
-
     """
     lst = []
     for file in os.listdir(path):
@@ -239,9 +229,8 @@ def list_content(path, recurse, include_hidden=False):
 
     :param path: directory to get list of files and folders
     :param recurse: True iff recurse into subdirectories or not
-    :param include_hidden: True iff include hidden files in list (Default value = False)
+    :param include_hidden: True iff include hidden files in list
     :returns: List of paths in given directory recursively.
-
     """
     if recurse:
         return ls_recurse(path, include_hidden=include_hidden)

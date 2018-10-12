@@ -10,7 +10,6 @@ def true_false_returns(func):
 
     :param func: function to call
     :returns: True iff ok, else False
-
     """
 
     @functools.wraps(func)
@@ -38,7 +37,6 @@ def none_returns(func):
 
     :param func: function to call
     :returns: None else value of function
-
     """
 
     @functools.wraps(func)

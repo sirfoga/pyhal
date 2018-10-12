@@ -32,14 +32,14 @@ class HtmlTable:
                 data_row.append(
                     html_stripper(column_label.text)
                 )
-                if len(data_row[-1]) > 0:
+                if data_row[-1]:
                     is_empty = False
 
             for column in row.find_all("td"):  # cycle through all columns
                 data_row.append(
                     html_stripper(column.text)
                 )
-                if len(data_row[-1]) > 0:
+                if data_row[-1]:
                     is_empty = False
 
             if not is_empty:

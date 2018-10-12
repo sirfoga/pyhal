@@ -23,7 +23,6 @@ def get_just_date(date):
 
     :param date: Date with possible hours
     :returns: Just day, month and year (setting hours to 00:00:00)
-
     """
     return datetime.datetime(
         date.year,
@@ -36,9 +35,8 @@ def get_next_weekday(weekday, including_today=False):
     """Gets next week day
 
     :param weekday: Weekday to get
-    :param including_today: If today is sunday and requesting next sunday (Default value = False)
+    :param including_today: If today is sunday and requesting next sunday
     :returns: Date of next monday, tuesday ...
-
     """
     now = datetime.datetime.now()
     if now.weekday() == weekday.value and including_today:
@@ -56,9 +54,8 @@ def get_last_weekday(weekday, including_today=False):
     """Gets last week day
 
     :param weekday: weekday to get
-    :param including_today: If today is sunday and requesting next sunday (Default value = False)
+    :param including_today: If today is sunday and requesting next sunday
     :returns: Date of last monday, tuesday ...
-
     """
     now = datetime.datetime.now()
     if now.weekday() == weekday.value and including_today:
@@ -84,7 +81,6 @@ def is_date_in_between(date, start, end):
     :param start: Date cannot be before this date
     :param end: Date cannot be after this date
     :returns: True iff date is in between dates
-
     """
     return get_just_date(start) <= get_just_date(date) < get_just_date(end)
 
@@ -94,7 +90,6 @@ def is_in_this_week(date):
 
     :param date: Date
     :returns: True iff date is in this week (from sunday to sunday)
-
     """
     return is_date_in_between(
         get_just_date(date),

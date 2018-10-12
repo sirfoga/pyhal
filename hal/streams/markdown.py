@@ -9,15 +9,15 @@ class MarkdownItem:
     TYPES = ["text", "url", "image", "title"]
     ATTRIBUTES = ["ref", "size"]
 
-    def __init__(self, text, type, attributes=None):
+    def __init__(self, text, item_type, attributes=None):
         """
         :param text: Text property to write
-        :param type: Type of item
+        :param item_type: Type of item
         :param attributes: Extra param, like url, ref ... Each key MUST be in
             MarkdownItem.ATTRIBUTES
         """
         self.text = str(text)
-        self.type = type
+        self.type = item_type
         self.attributes = attributes
 
     def to_markdown(self):
@@ -30,6 +30,8 @@ class MarkdownItem:
             return "[" + self.text + "](" + self.attributes["ref"] + ")"
         elif self.type == "title":
             return "#" * int(self.attributes["size"]) + " " + self.text
+
+        return None
 
     def __str__(self):
         return self.to_markdown()

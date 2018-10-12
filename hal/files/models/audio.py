@@ -17,12 +17,11 @@ def find_songs(folder, recursive):
     :param folder: folder path
     :param recursive: True  want to search recursively
     :returns: generator of) paths of the songs in folder
-
     """
     paths = list_content(folder, recursive)
-    for p in paths:
-        if MP3Song.is_valid_mp3(p):
-            yield MP3Song(p)
+    for path in paths:
+        if MP3Song.is_valid_mp3(path):
+            yield MP3Song(path)
 
 
 class MP3Song(FileSystem):
@@ -52,7 +51,8 @@ class MP3Song(FileSystem):
     def get_details(self):
         """Finds songs details
 
-        :returns: Dictionary with songs details about title, artist, album and year
+        :returns: Dictionary with songs details about title, artist, album and
+            year
         """
         title = str(self.get_title()).strip()
         artist = str(self.get_artist()).strip()

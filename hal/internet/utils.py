@@ -16,7 +16,6 @@ def add_params_to_url(url, params):
     :param url: Url
     :param params: Params to add
     :returns: original url with new params
-
     """
     url_parts = list(urlparse.urlparse(url))  # get url parts
     query = dict(urlparse.parse_qsl(url_parts[4]))  # get url query
@@ -29,11 +28,10 @@ def add_params_to_url(url, params):
 def is_internet_on(host="8.8.8.8", port=53, timeout=3):
     """Checks if machine has internet connection
 
-    :param host: hostname to test (Default value = "8.8.8.8")
-    :param port: port of hostname (Default value = 53)
-    :param timeout: seconds before discarding connection (Default value = 3)
+    :param host: hostname to test
+    :param port: port of hostname
+    :param timeout: seconds before discarding connection
     :returns: True iff machine has internet connection
-
     """
     socket.setdefaulttimeout(timeout)
     socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect((host, port))
@@ -42,10 +40,9 @@ def is_internet_on(host="8.8.8.8", port=53, timeout=3):
 def wait_until_internet(time_between_attempts=3, max_attempts=10):
     """Waits until machine has internet
 
-    :param time_between_attempts: seconds between 2 consecutive attempts (Default value = 3)
-    :param max_attempts: max number of attempts to try (Default value = 10)
+    :param time_between_attempts: seconds between 2 consecutive attempts
+    :param max_attempts: max number of attempts to try
     :returns: True iff there is internet connection
-
     """
     counter = 0
     while not is_internet_on():

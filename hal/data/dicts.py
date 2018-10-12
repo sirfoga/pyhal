@@ -7,35 +7,33 @@ import numpy as np
 from hal.strings.utils import how_similar_are
 
 
-def how_similar_dicts(d1, d2):
+def how_similar_dicts(dict1, dict2):
     """Calculates similarity
 
-    :param d1: Dictionary
-    :param d2: Dictionary
+    :param dict1: Dictionary
+    :param dict2: Dictionary
     :returns: measure of how much similar values of dictionaries are
-
     """
     values = []
-    for k in d1:  # iterate keys
-        if k in d2 and d1[k] and d2[k]:  # make sure values are comparable
+    for k in dict1:  # iterate keys
+        if k in dict2 and dict1[k] and dict2[k]:
             values.append(
-                how_similar_are(str(d1[k]), str(d2[k]))
+                how_similar_are(str(dict1[k]), str(dict2[k]))
             )
     return np.mean(values)  # average
 
 
-def get_inner_keys(d):
+def get_inner_keys(dictionary):
     """Gets 2nd-level dictionary keys
 
-    :param d: dict
+    :param dictionary: dict
     :returns: inner keys
-
     """
 
     keys = []
 
-    for key in d.keys():
-        inner_keys = d[key].keys()
+    for key in dictionary.keys():
+        inner_keys = dictionary[key].keys()
         keys += [
             key + " " + inner_key  # concatenate
             for inner_key in inner_keys
@@ -49,7 +47,6 @@ def get_inner_data(d):
 
     :param d: dict
     :returns: with 2nd-level data
-
     """
 
     out = {}

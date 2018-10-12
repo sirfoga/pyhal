@@ -13,9 +13,8 @@ def battery_test(assert_type, tests, func, args=None):
     :param assert_type: assert type
     :param tests: key, value what should be the result
     :param func: function to assert
-    :param args: params in function (Default value = None)
+    :param args: params in function
     :returns: True iff all tests pass
-
     """
     if args is None:
         args = {}

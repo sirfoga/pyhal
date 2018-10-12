@@ -16,9 +16,10 @@ from hal.files.parsers import CSVParser
 
 
 class CorrelationMatrix:
+    """Common operations for a correlation matrix"""
+
     def __init__(self, title, headers_to_test, headers, data):
         """
-
         :param title: Title to show
         :param headers_to_test: List of columns to get correlation matrix of
         :param headers: List of all headers in matrix
@@ -48,12 +49,12 @@ class CorrelationMatrix:
         )
         pyplot.show()
 
-    def show_correlation_matrix_of_columns(self):
+    def show_correlation_matrix_from_columns(self):
         """Shows the correlation matrix of columns"""
-        correlation_matrix = self.get_correlation_matrix_of_columns()
+        correlation_matrix = self.get_correlation_matrix_from_columns()
         self.show_correlation_matrix(correlation_matrix)
 
-    def get_correlation_matrix_of_columns(self):
+    def get_correlation_matrix_from_columns(self):
         """Computes correlation matrix of columns
         :returns: Correlation matrix of columns
         """
@@ -78,7 +79,7 @@ class CorrelationMatrix:
 
         :param out_file: Output file
         """
-        correlation_matrix = self.get_correlation_matrix_of_columns()
+        correlation_matrix = self.get_correlation_matrix_from_columns()
         cr_plot.create_correlation_matrix_plot(
             correlation_matrix, self.title, self.headers_to_test)
 
@@ -87,7 +88,7 @@ class CorrelationMatrix:
         pyplot.savefig(out_file, dpi=120)
 
     @staticmethod
-    def save_correlation_matrix_of_data_files_in_folder(folder_path):
+    def save_correlation_matrix_from_folder(folder_path):
         """Saves each file's correlation matrix of common headers
 
         :param folder_path: Folder containing logs data

@@ -69,17 +69,17 @@ class LinkedList:
         """
         return self.insert(val, self.length())
 
-    def insert(self, val, at=0):
+    def insert(self, val, position=0):
         """Insert in position
 
         :param val: Object to insert
-        :param at: Index of insertion (Default value = 0)
+        :param position: Index of insertion
         :returns: bool: True iff insertion completed successfully
         """
-        if at < 0 or at > self.length():
+        if position < 0 or position > self.length():
             return False
 
-        if at == 0:  # at beginning
+        if position == 0:  # at beginning
             self.head = Node(val, next_node=self.head)
             return True
 
@@ -87,8 +87,8 @@ class LinkedList:
         last_node = self.head
         current_node = self.head
 
-        while current_node is not None and counter <= at:
-            if counter == at:
+        while current_node is not None and counter <= position:
+            if counter == position:
                 last_node.next_node = Node(val, current_node)
                 return True
 
@@ -129,27 +129,27 @@ class LinkedList:
 
         return False
 
-    def remove(self, at):
+    def remove(self, position):
         """Removes at index
 
-        :param at: Index of removal
+        :param position: Index of removal
         :returns: bool: True iff removal completed successfully
         """
-        if at < 0 or at > self.length():
+        if position < 0 or position > self.length():
             return False
 
-        if at == 0:  # at beginning
+        if position == 0:  # at beginning
             self.remove_first()
 
-        if at == self.length():  # at end
+        if position == self.length():  # at end
             self.remove_last()
 
         counter = 0
         last_node = self.head
         current_node = self.head
 
-        while current_node is not None and counter <= at:
-            if counter == at:
+        while current_node is not None and counter <= position:
+            if counter == position:
                 last_node.next_node = current_node.next_node  # remove current
                 return True
 

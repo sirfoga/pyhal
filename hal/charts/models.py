@@ -72,7 +72,7 @@ class SimpleChart:
         :param x_labels: Names for each variable
         :param mul_y_values: list of values of x labels
         :param mul_y_labels: list of labels for each y value
-        :param normalize: True iff you want to normalize each y series (Default value = False)
+        :param normalize: True iff you want to normalize each y series
         :returns: Bar chart
         """
         self.setup(0.25)
@@ -92,9 +92,9 @@ class SimpleChart:
             x_pos = range(len(x_labels))  # x points
             x_pos = np.array(x_pos) + x_shifts[i]  # shift for each y series
             if normalize:  # normalize array
-                y_values = normalize_array(mul_y_values[i]),
+                y_values = normalize_array(mul_y_values[i])
             else:
-                y_values = mul_y_values[i],
+                y_values = mul_y_values[i]
 
             ax_series.append(
                 ax1.bar(

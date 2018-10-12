@@ -30,7 +30,6 @@ def get_clone_url(remote_shortcut, token):
     :param remote_shortcut: relative path of repository to clone
     :param token: Github OAUTH token
     :returns: Url to clone
-
     """
     return GITHUB_REMOTE.format(token) + remote_shortcut
 
@@ -114,7 +113,7 @@ class GithubApi(GithubRawApi):
     def get_trending_daily(lang=""):
         """Fetches repos in "Trending Daily" Github section
 
-        :param lang: Coding language (Default value = "")
+        :param lang: Coding language
         :returns: List of GithubUserRepository
         """
         url = "https://github.com/trending/"
@@ -158,6 +157,7 @@ class GithubUser(GithubApi):
             api_url,
             get_api_content_now=True
         ).api_content
+
         for event in api_content:
             if event["type"] == "PushEvent":
                 return event["payload"]["commits"][0]["author"]["email"]
@@ -186,7 +186,7 @@ class GithubUser(GithubApi):
                 repos_list.append(
                     GithubUserRepository(repo_user, repo_name))
 
-            there_is_something_left = len(api_driver.api_content) > 0
+            there_is_something_left = bool(api_driver.api_content)
             current_page += 1
 
         return repos_list

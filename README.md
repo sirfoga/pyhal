@@ -121,20 +121,24 @@ Browse the online documentation
 or make your own by `make docs`
 
 
-## Contributing
+## Contributing and feedback
+<a href="https://github.com/sirfoga/pyhal/issues"><img alt="Contributions welcome" src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"></a>
 <a href="https://opensource.org/licenses/MIT"><img alt="Open Source Love" src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103"></a>
 
-[Fork](https://github.com/sirfoga/pyhal/fork) | Patch | Push | [Pull request](https://github.com/sirfoga/pyhal/pulls)
-
-
-## Feedback
-<a href="https://github.com/sirfoga/pyhal/issues"><img alt="Contributions welcome" src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"></a>
+0. [open an issue](https://github.com/sirfoga/pyhal/issues/new)
+0. [fork](https://github.com/sirfoga/pyhal/fork) this repository
+0. create your feature branch (`git checkout -b my-new-feature`)
+0. commit your changes (`git commit -am 'Added my new feature'`)
+0. publish the branch (`git push origin my-new-feature`)
+0. [open a PR](https://github.com/sirfoga/pyhal/compare)
 
 Suggestions and improvements are [welcome](https://github.com/sirfoga/pyhal/issues)!
 
 
 ## Authors
-<a href="https://bettercodehub.com/"><img alt="BCH compliance" src="https://bettercodehub.com/edge/badge/sirfoga/pyhal?branch=master"></a> <a href="https://codeclimate.com/github/sirfoga/pyhal"><img alt="Code Climate" src="https://lima.codeclimate.com/github/sirfoga/pyhal/badges/gpa.svg"></a>
+<a href="https://codeclimate.com/github/sirfoga/pyhal"><img alt="Code Climate" src="https://lima.codeclimate.com/github/sirfoga/pyhal/badges/gpa.svg"></a>
+<a href="https://bettercodehub.com/"><img alt="BCH compliance" src="https://bettercodehub.com/edge/badge/sirfoga/pyhal?branch=master"></a>
+<a href="https://travis-ci.org/sirfoga/pyhal"><img alt="pylint score" src="https://mperlet.github.io/pybadge/badges/9.74.svg"></a>
 
 | [![sirfoga](https://avatars0.githubusercontent.com/u/14162628?s=128&v=4)](https://github.com/sirfoga "Follow @sirfoga on Github") |
 |---|

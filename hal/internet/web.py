@@ -107,7 +107,6 @@ def is_url(candidate):
 
     :param candidate: url to check for url
     :returns: True iff candidate is a valid url
-
     """
     return re.match(URL_VALID_REGEX, candidate)
 
@@ -219,16 +218,20 @@ def download_url(url, local_file):
     downloader.retrieve(url, local_file)
 
 
-def download_to_file(url, local_file, headers=HEADERS, cookies=None,
+def download_to_file(url, local_file, headers=None, cookies=None,
                      chunk_size=1024):
     """Download link to local file
 
     :param url: PDF url to download
     :param local_file: Save url as this path
-    :param headers: Headers to fetch url (Default value = HEADERS)
-    :param cookies: Cookies to fetch url (Default value = None)
-    :param chunk_size: int (Default value = 1024)
+    :param headers: Headers to fetch url
+    :param cookies: Cookies to fetch url
+    :param chunk_size: int
     """
+
+    if not headers:
+        headers = HEADERS
+
     if not cookies:
         cookies = {}
 

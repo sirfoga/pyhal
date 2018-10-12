@@ -151,7 +151,19 @@ class Plot4d(Plotter):
     def param(self, functions, min_val, max_val, points):
         raise ValueError("Cannot plot 4D function in 2D space")
 
-    def plot(self, func, mins, maxs, points, precision=0.5, kind="slice"):
+    def plot(self, func, mins, maxs, points=None):
+        self.plot_type(func, mins, maxs, 0.5, "slice")
+
+    def plot_type(self, func, mins, maxs, precision, kind):
+        """Plots function
+
+        :param func: function to plot
+        :param mins: minimum of values (x, y ...)
+        :param maxs: maximum of values (x, y ...)
+        :param precision: precision to plot
+        :param kind: kind of plot, "slice", "countour"
+        """
+
         min_x, min_y, min_z = mins[0], mins[1], mins[2]
         max_x, max_y, max_z = maxs[0], maxs[1], maxs[2]
 

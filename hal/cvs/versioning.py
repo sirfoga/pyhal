@@ -32,7 +32,7 @@ class VersionNumber:
     def increase(self, amount=1):
         """Increase version by this amount
 
-        :param amount: Increase number by this amount (Default value = 1)
+        :param amount: Increase number by this amount
         :returns: True iff increase was successful
         """
         pass
@@ -69,8 +69,8 @@ class Level(VersionNumber):
 
     def __init__(self, max_inner, start=0):
         """
-        :param max_inner: Max number of this level. If you set to 0 this level will
-            increase never
+        :param max_inner: Max number of this level. If you set to 0 this level
+            will increase never
         :param start: Start at this number
         """
         self.max_inner = max_inner
@@ -80,14 +80,9 @@ class Level(VersionNumber):
         return str(self.current)
 
     def get_current_amount(self):
-        """ """
         return self.current
 
     def increase(self, amount=1):
-        """
-
-        :param amount:  (Default value = 1)
-        """
         if self.can_increase(amount):
             self.current += amount
             return True
@@ -95,19 +90,15 @@ class Level(VersionNumber):
         return False
 
     def maximize(self):
-        """ """
         self.current = self.max_inner
 
     def reset(self):
-        """ """
         self.current = 0
 
     def max_amount_allowed(self):
-        """ """
         return self.max_inner - self.current
 
     def max(self):
-        """ """
         return self.max_inner
 
 
@@ -120,42 +111,36 @@ class Subsystem(VersionNumber):
             importance increases). The version number is the reversed
         :param separator: Compose version number separating with this split
         """
-        self.ll = LinkedList(levels)
+        self.levels = LinkedList(levels)
         self.current = self.max() - self.max_amount_allowed()  # inverse
         self.split = separator
 
     def __str__(self):
         out = [
-            str(val) for val in self.ll.to_lst()
+            str(val) for val in self.levels.to_lst()
         ]
         out = self.split.join(reversed(out))  # reverse according importance
         return out
 
     def get_current_amount(self):
-        """ """
         return self.current
 
     def reset(self):
-        """ """
-        node = self.ll.head
+        node = self.levels.head
 
         while node is not None:
             node.val.reset()
             node = node.next_node
 
     def increase(self, amount=1):
-        """
-
-        :param amount:  (Default value = 1)
-        """
-        if self.ll.head.val.increase(amount):
+        if self.levels.head.val.increase(amount):
             return True
 
         # head cannot increase -> reset and check for carry
-        amount_left = amount - self.ll.head.val.max_amount_allowed() - 1
-        self.ll.head.val.reset()
+        amount_left = amount - self.levels.head.val.max_amount_allowed() - 1
+        self.levels.head.val.reset()
 
-        node = self.ll.head.next_node
+        node = self.levels.head.next_node
         carried = False
 
         while node is not None and not carried:
@@ -171,18 +156,16 @@ class Subsystem(VersionNumber):
         return self.increase(amount_left)
 
     def maximize(self):
-        """ """
-        node = self.ll.head
+        node = self.levels.head
 
         while node is not None:
             node.val.maximize()
             node = node.next_node
 
     def max_amount_allowed(self):
-        """ """
-        amount_allowed = self.ll.head.val.max_amount_allowed()
-        multiplier = self.ll.head.val.max()
-        node = self.ll.head.next_node
+        amount_allowed = self.levels.head.val.max_amount_allowed()
+        multiplier = self.levels.head.val.max()
+        node = self.levels.head.next_node
 
         while node is not None:
             amount_allowed += (node.val.max_amount_allowed() - 1) * multiplier
@@ -192,9 +175,8 @@ class Subsystem(VersionNumber):
         return amount_allowed
 
     def max(self):
-        """ """
         multiplier = 1
-        node = self.ll.head
+        node = self.levels.head
 
         while node is not None:
             multiplier *= node.val.max()
@@ -218,21 +200,18 @@ class Version(VersionNumber):
         return str(self.s)
 
     def get_current_amount(self):
-        """ """
         return self.s.get_current_amount()
 
     def reset(self):
-        """ """
         return self.s.reset()
 
     def max_amount_allowed(self):
-        """ """
         return self.s.max_amount_allowed()
 
     def increase(self, amount=1):
         """
 
-        :param amount:  (Default value = 1)
+        :param amount:
         """
         return self.s.increase(amount)
 
@@ -247,11 +226,9 @@ class Version(VersionNumber):
         return self.increase(int(increases))
 
     def maximize(self):
-        """ """
         return self.s.maximize()
 
     def max(self):
-        """ """
         return self.s.max()
 
     @staticmethod
@@ -259,8 +236,8 @@ class Version(VersionNumber):
         """Parses string
 
         :param string: Version
-        :param max_number: Max number reachable by sub (Default value = 9)
-        :param separator: Version numbers are separated with this split (Default value = ".")
+        :param max_number: Max number reachable by sub
+        :param separator: Version numbers are separated with this split
         :returns: Parses string and returns object
         """
         tokens = string.split(separator)
