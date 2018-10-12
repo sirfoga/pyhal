@@ -1,6 +1,11 @@
 hal.streams.notify package
 ==========================
 
+.. automodule:: hal.streams.notify
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 Submodules
 ----------
 
@@ -13,10 +18,3 @@ hal.streams.notify.desktop module
     :show-inheritance:
 
 
-Module contents
----------------
-
-.. automodule:: hal.streams.notify
-    :members:
-    :undoc-members:
-    :show-inheritance:

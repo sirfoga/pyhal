@@ -1,6 +1,11 @@
 hal.internet.services.google package
 ====================================
 
+.. automodule:: hal.internet.services.google
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 Submodules
 ----------
 
@@ -13,10 +18,3 @@ hal.internet.services.google.gauthenticator module
     :show-inheritance:
 
 
-Module contents
----------------
-
-.. automodule:: hal.internet.services.google
-    :members:
-    :undoc-members:
-    :show-inheritance:

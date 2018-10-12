@@ -1,6 +1,11 @@
 hal.internet package
 ====================
 
+.. automodule:: hal.internet
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 Subpackages
 -----------
 
@@ -46,10 +51,3 @@ hal.internet.web module
     :show-inheritance:
 
 
-Module contents
----------------
-
-.. automodule:: hal.internet
-    :members:
-    :undoc-members:
-    :show-inheritance:

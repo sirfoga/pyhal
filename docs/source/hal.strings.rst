@@ -1,6 +1,11 @@
 hal.strings package
 ===================
 
+.. automodule:: hal.strings
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 Submodules
 ----------
 
@@ -21,10 +26,3 @@ hal.strings.utils module
     :show-inheritance:
 
 
-Module contents
----------------
-
-.. automodule:: hal.strings
-    :members:
-    :undoc-members:
-    :show-inheritance:

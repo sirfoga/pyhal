@@ -1,6 +1,11 @@
 hal.internet.email package
 ==========================
 
+.. automodule:: hal.internet.email
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 Submodules
 ----------
 
@@ -29,10 +34,3 @@ hal.internet.email.utils module
     :show-inheritance:
 
 
-Module contents
----------------
-
-.. automodule:: hal.internet.email
-    :members:
-    :undoc-members:
-    :show-inheritance:

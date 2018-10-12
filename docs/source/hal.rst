@@ -1,6 +1,11 @@
 hal package
 ===========
 
+.. automodule:: hal
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 Subpackages
 -----------
 
@@ -33,10 +38,3 @@ hal.help module
     :show-inheritance:
 
 
-Module contents
----------------
-
-.. automodule:: hal
-    :members:
-    :undoc-members:
-    :show-inheritance:

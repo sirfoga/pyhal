@@ -2,7 +2,7 @@
 # coding: utf_8
 
 
-""" Tests files handling methods """
+"""Tests files handling methods """
 
 import os
 import random
@@ -16,7 +16,7 @@ from hal.tests.utils import random_name, BatteryTests
 
 
 class TestPaths:
-    """ Tests hal.files.models.FileSystem path handlers """
+    """Tests hal.files.models.FileSystem path handlers """
 
     def test_fix_raw_path(self):
         """Asserts iff FileSystem.fix_raw_path correctly handles raw paths"""
@@ -139,7 +139,7 @@ class TestPaths:
 
 
 class TestLs:
-    """ Tests hal.files.models.FileSystem folders/files functions """
+    """Tests hal.files.models.FileSystem folders/files functions """
 
     def prepare_temp_files(self):
         """Creates temp file for testing"""

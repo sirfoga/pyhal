@@ -1,6 +1,11 @@
 hal.maths package
 =================
 
+.. automodule:: hal.maths
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 Submodules
 ----------
 
@@ -37,10 +42,3 @@ hal.maths.utils module
     :show-inheritance:
 
 
-Module contents
----------------
-
-.. automodule:: hal.maths
-    :members:
-    :undoc-members:
-    :show-inheritance:

@@ -18,5 +18,5 @@ help:
 %: Makefile
 	rm -rf _build
 	rm -rf source
-	sphinx-apidoc -o source/ ../hal
+	sphinx-apidoc -M -o source/ ../hal
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)

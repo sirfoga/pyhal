@@ -20,7 +20,8 @@ class BugReporter:
     def get_platform_info():
         """Gets platform info
 
-        :return: platform info"""
+        :return: platform info
+        """
 
         try:
             system_name = platform.system()

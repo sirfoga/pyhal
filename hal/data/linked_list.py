@@ -2,7 +2,7 @@
 # coding: utf-8
 
 
-"""Linked list implementation """
+"""Linked list implementation"""
 
 
 class Node:
@@ -33,6 +33,25 @@ class LinkedList:
         """
         return self.head
 
+    def get(self, position):
+        """Gets value at index
+
+        :param position: index
+        :return: value at position
+        """
+
+        counter = 0
+        current_node = self.head
+
+        while current_node is not None and counter <= position:
+            if counter == position:
+                return current_node.val
+
+            current_node = current_node.next_node
+            counter += 1
+
+        return None
+
     def get_tail(self):
         """Gets tail
 
@@ -61,7 +80,7 @@ class LinkedList:
 
         return counter
 
-    def append(self, val):
+    def insert_last(self, val):
         """Appends to list
 
         :param val: Object to insert
@@ -104,30 +123,38 @@ class LinkedList:
 
         if current_node is None:  # append to last element
             last_node.next_node = Node(val, None)
-            return True
 
-        return False
+        return True
 
     def remove_first(self):
         """Removes first
 
         :return: True iff head has been removed
         """
-        if self.head.next_node is not None:
-            self.head = self.head.next_node
-            return True
 
-        return False
+        if self.head is None:
+            return False
+
+        self.head = self.head.next_node
+        return True
 
     def remove_last(self):
         """Removes last
 
         :return: True iff last element has been removed
         """
+
+        if self.length() <= 1:
+            self.head = None
+            return True
+
         node = self.head
 
         while node is not None:
-            if node.next_node.next_node is None:
+            is_last_but_one = node.next_node is not None and \
+                              node.next_node.next_node is None
+            print(node.val, is_last_but_one)
+            if is_last_but_one:  # this is the last
                 node.next_node = None  # get to last but one element
                 return True
 
@@ -141,14 +168,11 @@ class LinkedList:
         :param position: Index of removal
         :return: bool: True iff removal completed successfully
         """
-        if position < 0 or position > self.length():
-            return False
+        if position <= 0:  # at beginning
+            return self.remove_first()
 
-        if position == 0:  # at beginning
-            self.remove_first()
-
-        if position == self.length():  # at end
-            self.remove_last()
+        if position >= self.length() - 1:  # at end
+            return self.remove_last()
 
         counter = 0
         last_node = self.head
@@ -179,14 +203,16 @@ class LinkedList:
 
         return out
 
-    def execute(self, func):
+    def execute(self, func, *args, **kwargs):
         """Executes function on each item
 
         :param func: Function to execute on each item
+        :param args: args of function
+        :param kwargs: extra args of function
         :return: list: Results of calling the function on each item
         """
         return [
-            func(item) for item in self.to_lst()
+            func(item, *args, **kwargs) for item in self.to_lst()
         ]
 
     def __str__(self):

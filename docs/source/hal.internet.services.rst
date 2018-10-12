@@ -1,6 +1,11 @@
 hal.internet.services package
 =============================
 
+.. automodule:: hal.internet.services
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 Subpackages
 -----------
 
@@ -36,10 +41,3 @@ hal.internet.services.youtube module
     :show-inheritance:
 
 
-Module contents
----------------
-
-.. automodule:: hal.internet.services
-    :members:
-    :undoc-members:
-    :show-inheritance:

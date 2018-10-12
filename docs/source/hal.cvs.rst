@@ -1,6 +1,11 @@
 hal.cvs package
 ===============
 
+.. automodule:: hal.cvs
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 Submodules
 ----------
 
@@ -21,10 +26,3 @@ hal.cvs.versioning module
     :show-inheritance:
 
 
-Module contents
----------------
-
-.. automodule:: hal.cvs
-    :members:
-    :undoc-members:
-    :show-inheritance:

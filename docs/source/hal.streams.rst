@@ -1,6 +1,11 @@
 hal.streams package
 ===================
 
+.. automodule:: hal.streams
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 Subpackages
 -----------
 
@@ -36,10 +41,3 @@ hal.streams.user module
     :show-inheritance:
 
 
-Module contents
----------------
-
-.. automodule:: hal.streams
-    :members:
-    :undoc-members:
-    :show-inheritance:

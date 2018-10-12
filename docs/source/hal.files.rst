@@ -1,6 +1,11 @@
 hal.files package
 =================
 
+.. automodule:: hal.files
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 Subpackages
 -----------
 
@@ -28,10 +33,3 @@ hal.files.save\_as module
     :show-inheritance:
 
 
-Module contents
----------------
-
-.. automodule:: hal.files
-    :members:
-    :undoc-members:
-    :show-inheritance:

@@ -1,6 +1,11 @@
 hal.wrappers package
 ====================
 
+.. automodule:: hal.wrappers
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 Submodules
 ----------
 
@@ -13,10 +18,3 @@ hal.wrappers.errors module
     :show-inheritance:
 
 
-Module contents
----------------
-
-.. automodule:: hal.wrappers
-    :members:
-    :undoc-members:
-    :show-inheritance:

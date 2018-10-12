@@ -4,7 +4,7 @@
 </div>
 
 <div align="center">
-<a href="https://travis-ci.org/sirfoga/pyhal"><img alt="Build Status" src="https://travis-ci.org/sirfoga/pyhal.svg?branch=master"></a> <a href="https://codecov.io/github/rsirfoga/pyhal"><img alt="codecov.io" src="https://codecov.io/github/sirfoga/pyhal/coverage.svg?branch=master"></a> <a href="https://landscape.io/github/sirfoga/hal/master"><img alt="Code Health" src="https://landscape.io/github/sirfoga/pyhal/master/landscape.svg?style=flat"></a> 
+<a href="https://travis-ci.org/sirfoga/pyhal"><img alt="Build Status" src="https://travis-ci.org/sirfoga/pyhal.svg?branch=master"></a> <a href="https://codecov.io/github/sirfoga/pyhal"><img alt="codecov.io" src="https://codecov.io/github/sirfoga/pyhal/coverage.svg?branch=master"></a> <a href="https://landscape.io/github/sirfoga/hal/master"><img alt="Code Health" src="https://landscape.io/github/sirfoga/pyhal/master/landscape.svg?style=flat"></a>
 </div>
 
 
@@ -27,7 +27,7 @@ Say you want to
 - [plot 2D/3D or even 4D points](#using-pyhal-1)
 - [fetch the RSS feed of a YouTube channel](#using-pyhal-2)
 
-If you want to do this stuff in a fast and easy way, this library is for ya.
+If you want to do this stuff in a fast and easy way, this library is for you
 
 
 ## Examples
@@ -105,16 +105,13 @@ Different ways, all equals
 - ```$ make pip-install```
 
 ### fast install
-- ```make fast-init```
-*just copies source files to distitribution files ... run it only if you're sure about dependencies*
+- ```make fast-init``` just copies source files to distitribution files ... run it only if you're sure about dependencies
 
 
 ## Usage and documentation
 <a href="https://pyhal.readthedocs.io/en/latest/"><img src="https://readthedocs.org/projects/pyhal/badge/?version=latest"></a>
 
-Browse the online documentation
-- on my [personal page]([readthedocs](https://sirfoga.github.io/pyhal/))
-- on [readthedocs.org](https://pyhal.readthedocs.io/en/latest/)
+Browse the online documentation here](https://pyhal.readthedocs.io/en/latest/)
 or make your own by `make docs`
 
 

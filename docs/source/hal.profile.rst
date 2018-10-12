@@ -1,6 +1,11 @@
 hal.profile package
 ===================
 
+.. automodule:: hal.profile
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 Submodules
 ----------
 
@@ -21,10 +26,3 @@ hal.profile.performance module
     :show-inheritance:
 
 
-Module contents
----------------
-
-.. automodule:: hal.profile
-    :members:
-    :undoc-members:
-    :show-inheritance:

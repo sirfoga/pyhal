@@ -51,7 +51,7 @@ class SimpleChart:
         :param x_labels: Names for each variable
         :param y_values: Values of x labels
         :param y_label: Label of y axis
-        :return: chart: Bar chart
+        :return: Bar chart
         """
         self.setup(0.25)
         ax1 = self.get_ax()

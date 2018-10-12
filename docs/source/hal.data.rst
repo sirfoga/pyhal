@@ -1,6 +1,11 @@
 hal.data package
 ================
 
+.. automodule:: hal.data
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 Submodules
 ----------
 
@@ -37,10 +42,3 @@ hal.data.matrix module
     :show-inheritance:
 
 
-Module contents
----------------
-
-.. automodule:: hal.data
-    :members:
-    :undoc-members:
-    :show-inheritance:

@@ -1,6 +1,11 @@
 hal.times package
 =================
 
+.. automodule:: hal.times
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 Submodules
 ----------
 
@@ -37,10 +42,3 @@ hal.times.utils module
     :show-inheritance:
 
 
-Module contents
----------------
-
-.. automodule:: hal.times
-    :members:
-    :undoc-members:
-    :show-inheritance:

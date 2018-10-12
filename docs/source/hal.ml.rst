@@ -1,6 +1,11 @@
 hal.ml package
 ==============
 
+.. automodule:: hal.ml
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 Submodules
 ----------
 
@@ -29,10 +34,3 @@ hal.ml.predict module
     :show-inheritance:
 
 
-Module contents
----------------
-
-.. automodule:: hal.ml
-    :members:
-    :undoc-members:
-    :show-inheritance:

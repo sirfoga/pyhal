@@ -1,6 +1,11 @@
 hal.files.models package
 ========================
 
+.. automodule:: hal.files.models
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 Submodules
 ----------
 
@@ -29,10 +34,3 @@ hal.files.models.system module
     :show-inheritance:
 
 
-Module contents
----------------
-
-.. automodule:: hal.files.models
-    :members:
-    :undoc-members:
-    :show-inheritance:

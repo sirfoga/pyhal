@@ -1,6 +1,11 @@
 hal.charts package
 ==================
 
+.. automodule:: hal.charts
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 Submodules
 ----------
 
@@ -29,10 +34,3 @@ hal.charts.plotter module
     :show-inheritance:
 
 
-Module contents
----------------
-
-.. automodule:: hal.charts
-    :members:
-    :undoc-members:
-    :show-inheritance:

@@ -1,6 +1,11 @@
 hal.tests package
 =================
 
+.. automodule:: hal.tests
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 Submodules
 ----------
 
@@ -13,10 +18,3 @@ hal.tests.utils module
     :show-inheritance:
 
 
-Module contents
----------------
-
-.. automodule:: hal.tests
-    :members:
-    :undoc-members:
-    :show-inheritance:
