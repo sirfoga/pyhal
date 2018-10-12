@@ -1,5 +1,7 @@
 sudo: false
 language: "python"
+python:
+  - "3.6"
 install:
   - "pip3 install -U pip"  # upgrade pip
   - "pip3 install codecov pytest pytest-cov"  # test coverage

@@ -131,12 +131,12 @@ class UserInput:
                 if just_these:
                     if user_answer in just_these:
                         return user_answer
-                    else:
-                        exc = "Number cannot be accepted. Just these: "
-                        exc += str(just_these)
-                        raise Exception(exc)
-                else:
-                    return user_answer
+
+                    exc = "Number cannot be accepted. Just these: "
+                    exc += str(just_these)
+                    raise Exception(exc)
+
+                return user_answer
 
             exc = "Number is not within limits. "
             exc += "Min is " + str(min_i) + ". Max is " + str(max_i) + ""
