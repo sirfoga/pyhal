@@ -8,21 +8,24 @@
 </div>
 
 
-## Table of Contents
+<details>
+  <summary>Table of Contents</summary>
 
-- [The problem](#the-problem)
-- [Examples](#examples)
-- [Install](#install)
-- [Usage and documentation](#usage-and-documentation)
-- [Questions and issues](#questions-and-issues)
-- [License](#license)
+* [The problem](#the-problem)
+* [Examples](#examples)
+* [Install](#install)
+* [Usage and documentation](#usage-and-documentation)
+* [Questions and issues](#questions-and-issues)
+* [License](#license)
+
+</details>
 
 
 ## The problem
 Say you want to
-- edit the tags of all the songs in a folder
-- plot 2D/3D or even 4D points
-- fetch the RSS feed of a YouTube channel.
+- [edit the tags of all the songs in a folder](#using-pyhal)
+- [plot 2D/3D or even 4D points](#using-pyhal-1)
+- [fetch the RSS feed of a YouTube channel](#using-pyhal-2)
 
 If you want to do this stuff in a fast and easy way, this library is for ya.
 
@@ -48,6 +51,7 @@ for root, dirs, files in os.walk(my_folder):
 #### Using `pyhal`
 ```python
 from hal.files.models.system import ls_recurse
+from hal.files.models.audio import MP3Song
 
 my_folder = "path to folder containing songs"
 
