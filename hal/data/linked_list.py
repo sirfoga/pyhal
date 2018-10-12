@@ -69,6 +69,16 @@ class LinkedList:
         """
         return self.insert(val, self.length())
 
+    def insert_first(self, val):
+        """Insert in head
+
+        :param val: Object to insert
+        :return: True iff insertion completed successfully
+        """
+
+        self.head = Node(val, next_node=self.head)
+        return True
+
     def insert(self, val, position=0):
         """Insert in position
 
@@ -76,12 +86,8 @@ class LinkedList:
         :param position: Index of insertion
         :return: bool: True iff insertion completed successfully
         """
-        if position < 0 or position > self.length():
-            return False
-
-        if position == 0:  # at beginning
-            self.head = Node(val, next_node=self.head)
-            return True
+        if position <= 0:  # at beginning
+            return self.insert_first(val)
 
         counter = 0
         last_node = self.head

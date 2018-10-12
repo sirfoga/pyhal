@@ -23,7 +23,9 @@ fast-install:
 	$(MAKE) show-installed-version
 
 test:
-	python3 -m pytest --cov=./
+	rm -rf htmlcov/
+	python3 -m pytest --cov=./ --cov-report=html
+	@echo "\033[95m\nTest report htmlcov/index.html\033[0m"
 
 flake8:
 	pipenv run flake8 --ignore=E501,F401,E128,E402,E731,F821,E722 hal

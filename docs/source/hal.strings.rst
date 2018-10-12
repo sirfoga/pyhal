@@ -4,6 +4,14 @@ hal.strings package
 Submodules
 ----------
 
+hal.strings.models module
+-------------------------
+
+.. automodule:: hal.strings.models
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 hal.strings.utils module
 ------------------------
 

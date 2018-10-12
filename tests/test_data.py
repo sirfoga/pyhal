@@ -24,10 +24,7 @@ class TestLinkedList:
     """ Tests hal.files.models.FileSystem path handlers """
 
     def test_build(self):
-        """
-        :return: bool
-            True iff FileSystem.fix_raw_path correctly handles raw paths
-        """
+        """Asserts iff FileSystem.fix_raw_path correctly handles raw paths"""
 
         tests = [
             [],
@@ -41,10 +38,7 @@ class TestLinkedList:
             assert from_and_to_lst(lst) == lst
 
     def test_insertion(self):
-        """
-        :return: bool
-            True iff FileSystem.fix_raw_path correctly handles raw paths
-        """
+        """Asserts iff FileSystem.fix_raw_path correctly handles raw paths"""
 
         test_attempts = range(1, 10)
 

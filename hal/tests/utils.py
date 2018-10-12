@@ -16,11 +16,12 @@ class BatteryTests:
         """
         self.tests = dictionary
 
-    def assert_all(self, func=None, args=None):
+    def assert_all(self, func=None, *args, **kwargs):
         """Asserts tests
 
         :param func: function to assert
         :param args: params in function
+        :param kwargs: extra params
         :return: True iff all tests pass
         """
 
@@ -30,7 +31,7 @@ class BatteryTests:
         tests = self.tests.items()
         if func is not None:
             tests = [
-                (func(key, *args), val)
+                (func(key, *args, **kwargs), val)
                 for key, val in tests
             ]
 

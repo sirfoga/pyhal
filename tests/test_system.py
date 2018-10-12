@@ -5,12 +5,13 @@
 """ Tests files handling methods """
 
 import os
+import random
 import shutil
-from functools import partial
 
 from hal.files.models.system import fix_raw_path, remove_year, \
-    remove_brackets, extract_name_max_chars, BAD_CHARS, prettify, ls_dir, \
-    ls_recurse
+    remove_brackets, extract_name_max_chars, BAD_CHARS, prettify, ls_recurse, \
+    is_file, get_parent_folder, list_content, FileSystem, \
+    RUSSIAN_CHARS
 from hal.tests.utils import random_name, BatteryTests
 
 
@@ -18,21 +19,18 @@ class TestPaths:
     """ Tests hal.files.models.FileSystem path handlers """
 
     def test_fix_raw_path(self):
-        """
-        :return: bool
-            True iff FileSystem.fix_raw_path correctly handles raw paths
-        """
+        """Asserts iff FileSystem.fix_raw_path correctly handles raw paths"""
 
         tests = {
             "//a/b/c": "/a/b/c",  # double separators
+            os.getenv("HOME"): os.getenv("HOME") + "/",
             "/a/b/c.txt": "/a/b/c.txt"  # files
         }
         BatteryTests(tests).assert_all(fix_raw_path)
 
     def test_remove_year(self):
-        """
-        :return: bool
-            True iff FileSystem.remove_year correctly removes years from paths
+        """Asserts iff FileSystem.remove_year correctly removes years from
+            paths
         """
 
         tests = {
@@ -46,11 +44,8 @@ class TestPaths:
         BatteryTests(tests).assert_all(remove_year)
 
     def test_remove_brackets(self):
-        """
-        :return: bool
-            True iff FileSystem.remove_bracket correctly removes brackets
-            from paths
-        """
+        """Asserts iff FileSystem.remove_bracket correctly removes brackets
+            from paths"""
 
         tests = {
             "(": "",  # void
@@ -65,11 +60,8 @@ class TestPaths:
         BatteryTests(tests).assert_all(remove_brackets)
 
     def test_extract_name_max_chars(self):
-        """
-        :return: bool
-            True iff FileSystem.extract_name_max_chars correctly extracts
-            name from paths
-        """
+        """Asserts iff FileSystem.extract_name_max_chars correctly extracts
+            name from paths"""
 
         tests = {
             "012345678a": "012345678a",  # length
@@ -77,35 +69,80 @@ class TestPaths:
             "012345678c  ": "012345678c",
             " 012345678d": "012345678d",
             "  012345678e": "012345678e",
+            " 0 12345678e": "0",
             "012345678912345678f": "0123456789"  # remove
         }
-        BatteryTests(tests).assert_all(
-            partial(extract_name_max_chars, max_chars=10)
-        )
+        BatteryTests(tests).assert_all(extract_name_max_chars, max_chars=10)
 
     def test_prettify(self):
-        """
-        :return: bool
-            True iff FileSystem.prettify correctly prettifies bad strings
-        """
+        """Asserts iff FileSystem.prettify correctly prettifies bad strings"""
 
         bad_string = "".join(BAD_CHARS)
         tests = {
             bad_string: "",
             bad_string + bad_string: "",
+            "a " + BAD_CHARS[0] + " ": "a",
             bad_string + "a good string" + bad_string: "a_good_string"
         }
-        BatteryTests(tests).assert_all(partial(prettify, blank="_"))
+
+        BatteryTests(tests).assert_all(prettify, blank="_")
+
+    def test_is_file(self):
+        """Asserts files are files, and folders are not"""
+
+        tests = {
+            os.getenv("HOME"): False,
+            __file__: True
+        }
+
+        BatteryTests(tests).assert_all(is_file)
+
+    def test_is_archive_mac(self):
+        """Asserts files are archive from a Mac"""
+
+        tests = {
+            "macosx": True,
+            __file__: False
+        }
+        tests = {
+            FileSystem(key).is_archive_mac(): val
+            for key, val in tests.items()
+        }
+
+        BatteryTests(tests).assert_all()
+
+    def test_is_russian(self):
+        """Asserts files contain russian chars"""
+
+        tests = {
+            "".join([random.choice(RUSSIAN_CHARS)] * 15 + ["fjdhf"]): True,
+            "".join([random.choice(RUSSIAN_CHARS)] * 2 + ["fjdhf"]): False,
+            __file__: False
+        }
+        tests = {
+            FileSystem(key).is_russian(): val
+            for key, val in tests.items()
+        }
+
+        BatteryTests(tests).assert_all()
+
+    def test_get_parent_folder(self):
+        """Asserts parent folder guessing"""
+
+        tests = {
+            "/a/b/c": "b",
+            "/a/b/c/": "b",
+            "/a/b/c//": "b"
+        }
+
+        BatteryTests(tests).assert_all(get_parent_folder)
 
 
 class TestLs:
     """ Tests hal.files.models.FileSystem folders/files functions """
 
     def prepare_temp_files(self):
-        """
-        :return: void
-            Creates temp file for testing
-        """
+        """Creates temp file for testing"""
 
         # create folder structure, at the end it will be like
         # working_folder/
@@ -144,10 +181,7 @@ class TestLs:
         self._create_temp_files()
 
     def _create_temp_files(self):
-        """
-        :return: void
-            Creates files/folders structure for tests
-        """
+        """Creates files/folders structure for tests"""
 
         os.makedirs(self.working_folder)  # create folders
         os.makedirs(self.inner_folder)
@@ -156,18 +190,12 @@ class TestLs:
             open(file, "a").close()  # create files
 
     def purge_temp_files(self):
-        """
-        :return: void
-            Removes all temp files
-        """
+        """Removes all temp files"""
 
         shutil.rmtree(self.working_folder)  # remove main folder
 
     def test_ls_dir(self):
-        """
-        :return: bool
-            True iff FileSystem.ls_dir correctly list only folders
-        """
+        """Asserts iff FileSystem.ls_dir correctly list only folders"""
 
         self.prepare_temp_files()
         tests = {
@@ -175,14 +203,11 @@ class TestLs:
             self.inner_folder: {self.file11, self.file12}
         }
 
-        BatteryTests(tests).assert_all(ls_dir)
+        BatteryTests(tests).assert_all(list_content, recurse=False)
         self.purge_temp_files()
 
     def test_ls_recurse(self):
-        """
-        :return: bool
-            True iff FileSystem.ls_recurse correctly list recursively
-        """
+        """Asserts iff FileSystem.ls_recurse correctly list recursively"""
 
         self.prepare_temp_files()
         tests = {
@@ -190,14 +215,11 @@ class TestLs:
                                   self.file11, self.file12}
         }
 
-        BatteryTests(tests).assert_all(ls_recurse)
+        BatteryTests(tests).assert_all(list_content, recurse=True)
         self.purge_temp_files()
 
     def test_ls_hidden(self):
-        """
-        :return: bool
-            True iff FileSystem.ls correctly list hidden files
-        """
+        """Asserts iff FileSystem.ls correctly list hidden files"""
 
         self.prepare_temp_files()
         tests = {
@@ -205,5 +227,5 @@ class TestLs:
                                   self.file11, self.file12, self.hidden_file}
         }
 
-        BatteryTests(tests).assert_all(ls_recurse, {"include_hidden": True})
+        BatteryTests(tests).assert_all(ls_recurse, include_hidden=True)
         self.purge_temp_files()
