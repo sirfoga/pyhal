@@ -1,13 +1,11 @@
-sudo: true
+sudo: false
 language: "python"
 python:
   - "3.6"
 before_install:
-  - "sudo apt -y update"  # measure code lint
-  - "sudo apt -y install python3 python3-setuptools pylint3"  # code lint
   - "pip3 install -U pip"  # upgrade pip
   - "pip3 install codecov pytest pytest-cov"  # test coverage
-  - "pip3 install pylint-exit"
+  - "pip3 install pylint pylint-exit"
 install:
   - "git clone --depth=1 https://github.com/sirfoga/pyhal.git"  # clone repo
   - "cd pyhal"
@@ -16,7 +14,7 @@ script:
   - "make show-installed-version"
   - "pytest --cov=./"  # test coverage
   - "# codecov"
-  - "pylint3 -j 8 hal/* || pylint-exit $?"  # measure code lint
+  - "pylint -j 8 hal/* || pylint-exit $?"  # measure code lint
 notifications:
   email: "false"  # no email notify
 cache: "pip"
