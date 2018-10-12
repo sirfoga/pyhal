@@ -100,16 +100,17 @@ channel_feed = YoutubeChannel(channel_name).get_feed_url()
 
 Different ways, all equals
 
+### via `pipenv`
+- ```$ pipenv install .```
+- ```$ make install```
+
 ### via `pip`
-- ```$ pip3 install . --upgrade --force-reinstall``` from the source
 - ```$ pip3 install PyHal``` via [pip](https://pypi.org/project/PyHal/)
 - ```$ make pip-install```
 
-### via `pipenv`
-- ```$ pipenv install --dev --skip-lock ```
-- ```$ make install```
-
-```make fast-init``` just copies source files to distitribution files ... run it only if you're sure about dependencies
+### fast install
+- ```make fast-init```
+*just copies source files to distitribution files ... run it only if you're sure about dependencies*
 
 
 ## Usage and documentation

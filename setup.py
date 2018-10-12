@@ -4,30 +4,52 @@ import os
 
 from setuptools import setup, find_packages
 
-here = os.path.abspath(os.path.dirname(__file__))
+
+def get_version_details(path):
+    """Parses version file
+
+    :param path: path to version file
+    :return: version details
+    """
+
+    with open(path, "r") as reader:
+        lines = reader.readlines()
+        data = {
+            line.split(" = ")[0].replace("__", ""):
+                line.split(" = ")[1].strip().replace("'", "")
+            for line in lines
+        }
+        return data
 
 
-LITTLE_DESCRIPTION = "Your swiss knife to perform fast and easy pythonic stuff"
+# folders
+HERE = os.path.abspath(os.path.dirname(__file__))
+SRC_FOLDER = os.path.join(HERE, "hal")
+
+# version
+VERSION_FILE = os.path.join(SRC_FOLDER, "__version__.py")
+VERSION = get_version_details(VERSION_FILE)
+
+# descriptions
+LITTLE_DESCRIPTION = VERSION["description"]
 DESCRIPTION = \
     "HAL\n" + LITTLE_DESCRIPTION + "\n\
     Install\n\
-    - $ pip install . --upgrade --force-reinstall, from the source\n\
+    - $ make install, with pipenv\n\
+    - $ make pip-install, with pip\n\
     - $ pip install PyHal, via pip\n\
     Questions and issues\n\
     The Github issue tracker is only for bug reports and feature requests."
-VERSION = open("VERSION").readlines()[0]
-VERSION_NUMBER = VERSION.split(" ")[0]
 
 
 setup(
-    name="PyHal",
-    version=VERSION_NUMBER,
-    author="sirfoga",
-    author_email="sirfoga@protonmail.com",
+    name=VERSION["title"],
+    version=VERSION["version"],
+    author=VERSION["author"],
+    author_email=VERSION["author_email"],
     description=LITTLE_DESCRIPTION,
     long_description=DESCRIPTION,
     keywords="hal library general-purpose",
-    url="https://github.com/sirfoga/pyhal",
-    packages=find_packages(exclude=["tests"]),
-    test_suite="tests"
+    url=VERSION["url"],
+    packages=find_packages(exclude=["tests"])
 )

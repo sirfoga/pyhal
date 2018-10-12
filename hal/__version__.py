@@ -1,4 +1,4 @@
-__title__ = 'hal'
+__title__ = 'PyHal'
 __description__ = 'Your swiss knife to perform fast and easy pythonic stuff'
 __url__ = 'https://sirfoga.github.io/pyhal/'
 __version__ = '10.2.3'

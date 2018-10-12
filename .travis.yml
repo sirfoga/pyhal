@@ -14,7 +14,7 @@ script:
   - "make show-installed-version"
   - "make test"  # test coverage
   - "codecov"
-  - "python3 -m pylint 'hal/'"  # measure code lint
-  - "# make docs"  # generate docs
+  - "python3 -m pylint hal/ || pylint-exit $?"  # measure code lint
+  - "make docs"  # generate docs
 notifications:
   email: "false"  # no email notify
