@@ -139,7 +139,7 @@ Suggestions and improvements are [welcome](https://github.com/sirfoga/pyhal/issu
 ## Authors
 <a href="https://codeclimate.com/github/sirfoga/pyhal"><img alt="Code Climate" src="https://lima.codeclimate.com/github/sirfoga/pyhal/badges/gpa.svg"></a>
 <a href="https://bettercodehub.com/"><img alt="BCH compliance" src="https://bettercodehub.com/edge/badge/sirfoga/pyhal?branch=master"></a>
-<a href="https://travis-ci.org/sirfoga/pyhal"><img alt="pylint score" src="https://mperlet.github.io/pybadge/badges/9.74.svg"></a>
+<a href="https://travis-ci.org/sirfoga/pyhal"><img alt="pylint score" src="https://mperlet.github.io/pybadge/badges/9.65.svg"></a>
 
 | [![sirfoga](https://avatars0.githubusercontent.com/u/14162628?s=128&v=4)](https://github.com/sirfoga "Follow @sirfoga on Github") |
 |---|

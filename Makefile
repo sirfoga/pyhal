@@ -1,4 +1,4 @@
-.PHONY: clean
+.PHONY: clean docs
 VERSION := $(shell pip3 show PyHal | grep "Version" | awk '{split($$0, a, " ");print a[2]}')
 
 clean:
@@ -43,7 +43,7 @@ publish:
 	@echo "\033[95m\nPublished at https://pypi.org/project/PyHal/\033[0m"
 
 docs:
-	cd docs && make html
+	cd docs && $(MAKE) html
 	@echo "\033[95m\nBuild successful! View the docs homepage at docs/_build/html/index.html.\033[0m"
 
 bug-report:
