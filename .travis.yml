@@ -19,3 +19,6 @@ script:
 notifications:
   email: "false"  # no email notify
 cache: "pip"
+addons:
+  apt:
+    update: true
