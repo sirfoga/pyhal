@@ -12,7 +12,7 @@ class String:
     def __init__(self, string):
         self.string = str(string)
 
-    def just_alphanum(self):
+    def remove_escapes(self):
         """Removes everything except number and letters from string
 
         :return: All numbers and letters in string
