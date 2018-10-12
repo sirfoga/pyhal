@@ -9,7 +9,8 @@ import shutil
 from functools import partial
 
 from hal.files.models.system import fix_raw_path, remove_year, \
-    remove_brackets, extract_name_max_chars, BAD_CHARS, prettify, ls_dir
+    remove_brackets, extract_name_max_chars, BAD_CHARS, prettify, ls_dir, \
+    ls_recurse
 from hal.tests.utils import random_name, BatteryTests
 
 
@@ -173,12 +174,9 @@ class TestLs:
             self.working_folder: {self.file1, self.file2, self.inner_folder},
             self.inner_folder: {self.file11, self.file12}
         }
-        try:
-            BatteryTests(tests).assert_all(ls_dir)
-        except Exception as exception:
-            raise exception
-        finally:
-            self.purge_temp_files()
+
+        BatteryTests(tests).assert_all(ls_dir)
+        self.purge_temp_files()
 
     def test_ls_recurse(self):
         """
@@ -188,17 +186,12 @@ class TestLs:
 
         self.prepare_temp_files()
         tests = {
-            self.working_folder: [self.file1, self.file2, self.inner_folder,
-                                  self.file11, self.file12]
+            self.working_folder: {self.file1, self.file2, self.inner_folder,
+                                  self.file11, self.file12}
         }
 
-        try:
-            pass
-            # todo utils.battery_test(tests, ls_recurse)
-        except Exception as exception:
-            raise exception
-        finally:
-            self.purge_temp_files()
+        BatteryTests(tests).assert_all(ls_recurse)
+        self.purge_temp_files()
 
     def test_ls_hidden(self):
         """
@@ -208,15 +201,9 @@ class TestLs:
 
         self.prepare_temp_files()
         tests = {
-            self.working_folder: [self.file1, self.file2, self.inner_folder,
-                                  self.file11, self.file12, self.hidden_file]
+            self.working_folder: {self.file1, self.file2, self.inner_folder,
+                                  self.file11, self.file12, self.hidden_file}
         }
 
-        try:
-            pass
-            # todo utils.battery_test(tests, ls_recurse, {"include_hidden":
-            # True})
-        except Exception as exception:
-            raise exception
-        finally:
-            self.purge_temp_files()
+        BatteryTests(tests).assert_all(ls_recurse, {"include_hidden": True})
+        self.purge_temp_files()
