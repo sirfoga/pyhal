@@ -17,4 +17,3 @@ beautifulsoup4>=4.6.3
 GitPython>=2.1.11
 google_api_python_client>=1.7.4
 scikit_learn>=0.20.0
-google-api-python-client

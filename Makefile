@@ -12,7 +12,7 @@ install:
 	$(MAKE) show-installed-version
 
 pip-install:
-	pip3 install . --upgrade --force-reinstall
+	pip3 install -r requirements.txt . --upgrade --force-reinstall
 	$(MAKE) show-installed-version
 
 fast-install:
