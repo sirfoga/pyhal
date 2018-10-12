@@ -2,7 +2,7 @@
 
 """Pretty prints table in SQL style """
 
-from hal.strings.utils import non_ansi_string
+from hal.strings.models import String
 
 
 def parse_colorama(text):
@@ -11,7 +11,7 @@ def parse_colorama(text):
     :param text: Colorama text to parse
     :return: Parsed colorama text
     """
-    return non_ansi_string(text)
+    return String(text).remove_non_ansi()
 
 
 class SqlTable:

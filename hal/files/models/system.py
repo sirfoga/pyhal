@@ -7,6 +7,8 @@ import re
 
 from send2trash import send2trash
 
+from hal.strings.models import String
+
 BAD_CHARS = [
     ".", ":", "\"", "’", "&", "720p", "1080p", "yify", ",", "brrip", "bluray",
     "Bokutox", "x264", "[", "]", "sparks", "h264",
@@ -141,9 +143,7 @@ def prettify(name, blank=" "):
     for bad_char in BAD_CHARS:
         name = name.replace(bad_char, blank)  # remove token
 
-    name = name.replace(" ", blank)  # replace blanks
-    while name.find(blank + blank) >= 0:  # while there are blanks
-        name = name.replace(blank + blank, blank)
+    name = String(name).remove_all(blank)
 
     for i in range(1, len(name) - 2):
         try:

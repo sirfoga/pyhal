@@ -4,7 +4,7 @@
 
 from bs4 import BeautifulSoup
 
-from hal.strings.utils import html_stripper
+from hal.strings.models import String
 
 
 class HtmlTable:
@@ -31,7 +31,7 @@ class HtmlTable:
         data = []
         for column_label in row.find_all(tag):  # cycle through all labels
             data.append(
-                html_stripper(column_label.text)
+                String(column_label.text).strip_bad_html()
             )
             if data[-1]:
                 is_empty = False
