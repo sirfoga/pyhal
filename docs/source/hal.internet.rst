@@ -7,6 +7,7 @@ Subpackages
 .. toctree::
 
     hal.internet.email
+    hal.internet.selenium
     hal.internet.services
 
 Submodules
@@ -24,14 +25,6 @@ hal.internet.parser module
 --------------------------
 
 .. automodule:: hal.internet.parser
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-hal.internet.selenium\_bots module
-----------------------------------
-
-.. automodule:: hal.internet.selenium_bots
     :members:
     :undoc-members:
     :show-inheritance:

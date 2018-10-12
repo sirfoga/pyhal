@@ -4,6 +4,14 @@ hal.maths package
 Submodules
 ----------
 
+hal.maths.matrix module
+-----------------------
+
+.. automodule:: hal.maths.matrix
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 hal.maths.primes module
 -----------------------
 

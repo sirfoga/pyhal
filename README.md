@@ -38,9 +38,7 @@ If you want to do this stuff in a fast and easy way, this library is for ya.
 ```python
 import os
 from mutagen.mp3 import MP3
-
 my_folder = "path to folder containing songs"
-
 for root, dirs, files in os.walk(my_folder):
     for file in files:
         audio = MP3(file)
@@ -52,9 +50,7 @@ for root, dirs, files in os.walk(my_folder):
 ```python
 from hal.files.models.system import ls_recurse
 from hal.files.models.audio import MP3Song
-
 my_folder = "path to folder containing songs"
-
 for file in ls_recurse(my_folder):
     MP3Song(file).set_artist("An example")
 ```
@@ -65,7 +61,6 @@ for file in ls_recurse(my_folder):
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
-
 x = np.arange(1., 100.)
 y = np.sin(x)
 plt.plot(x, y)
@@ -76,7 +71,6 @@ plt.show()
 ```python
 import numpy as np
 from hal.charts.plotter import Plot2d
-
 Plot2d().plot(np.sin, 1, 100, 100)
 ```
 
@@ -89,10 +83,8 @@ No easy way that I know of
 #### Using `pyhal`
 ```python
 from hal.internet.services.youtube import YoutubeChannel
-
 video_url = "my awesome video of an awesome channel"
 channel_feed = YoutubeChannel.get_feed_url_from_video(video_url)
-
 # or if you know the name
 channel_name = "my awesome channel"
 channel_feed = YoutubeChannel(channel_name).get_feed_url()
@@ -109,7 +101,7 @@ Different ways, all equals
 - ```$ make install```
 
 ### via `pip`
-- ```$ pip3 install PyHal``` via [pip](https://pypi.org/project/PyHal/)
+- ```$ pip3 install PyHal```
 - ```$ make pip-install```
 
 ### fast install

@@ -4,114 +4,221 @@
    contain the root `toctree` directive.
 
 Hal: Your swiss knife to perform fast and easy pythonic stuff
-=================================
+=============================================================
 
-Release v\ |version| (:ref:`Installation <install>`)
+Release v\ |version|
 
-.. image:: https://img.shields.io/pypi/l/requests.svg
-    :target: https://pypi.org/project/requests/
 
-.. image:: https://img.shields.io/pypi/wheel/requests.svg
-    :target: https://pypi.org/project/requests/
+.. image:: https://img.shields.io/badge/License-MIT-blue.svg
+   :target: https://opensource.org/licenses/MIT
 
-.. image:: https://img.shields.io/pypi/pyversions/requests.svg
-    :target: https://pypi.org/project/requests/
+.. image:: https://badge.fury.io/py/PyHal.svg
+   :target: https://pypi.org/project/PyHal/
 
-.. image:: https://codecov.io/github/requests/requests/coverage.svg?branch=master
-    :target: https://codecov.io/github/requests/requests
-    :alt: codecov.io
+.. image:: https://img.shields.io/badge/Python-3.6-blue.svg
+   :target: https://www.python.org/download/releases/3
 
-.. image:: https://img.shields.io/badge/Say%20Thanks!-🦉-1EAEDB.svg
-    :target: https://saythanks.io/to/kennethreitz
-
+.. image:: https://codecov.io/github/sirfoga/pyhal/coverage.svg?branch=master
+   :target: https://codecov.io/github/rsirfoga/pyhal
 
 -------------------
-
-**Behold, the power of Hal**::
-
-    >>> r = requests.get('https://api.github.com/user', auth=('user', 'pass'))
-    >>> r.status_code
-    200
-    >>> r.headers['content-type']
-    'application/json; charset=utf8'
-    >>> r.encoding
-    'utf-8'
-    >>> r.text
-    u'{"type":"User"...'
-    >>> r.json()
-    {u'private_gists': 419, u'total_private_repos': 77, ...}
-
-See `similar code, sans pyhal <https://gist.github.com/973705>`_.
-
 
 
 Table of contents
---------------
+-----------------
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+* `Introduction`_
+* `Installation`_
+* `Contribute`_
+* `Authors`_
+* `Thanks`_
+* `License`_
 
+API reference
+-------------
 
-The User Guide
---------------
-
-This part of the documentation, which is mostly prose, begins with some
-background information about Requests, then focuses on step-by-step
-instructions for getting the most out of Requests.
-
-.. toctree::
-   :maxdepth: 2
-
-   user/intro
-   user/install
-   user/quickstart
-   user/advanced
-   user/authentication
+* `Hal`_
+* `Alphabetical list`_
 
 
-The Community Guide
--------------------
+Behold, the power of Hal
+------------------------
 
-This part of the documentation, which is mostly prose, details the
-Requests ecosystem and community.
+Edit songs tags
+~~~~~~~~~~~~~~~
 
-.. toctree::
-   :maxdepth: 2
+Classic way
+^^^^^^^^^^^
 
-   community/sponsors
-   community/recommended
-   community/faq
-   community/out-there
-   community/support
-   community/vulnerabilities
-   community/updates
-   community/release-process
+.. code:: python
 
-The API Documentation / Guide
------------------------------
+    >>> import os
+    >>> from mutagen.mp3 import MP3
+    >>> my_folder = "path to folder containing songs"
+    >>> for root, dirs, files in os.walk(my_folder):
+    >>>     for file in files:
+    >>>         audio = MP3(file)
+    >>>         audio["artist"] = "An example"
+    >>>         audio.save()
 
-If you are looking for information on a specific function, class, or method,
-this part of the documentation is for you.
+Using ``pyhal``
+^^^^^^^^^^^^^^^
 
-.. toctree::
-   :maxdepth: 2
+.. code:: python
 
-   api
+    >>> from hal.files.models.system import ls_recurse
+    >>> from hal.files.models.audio import MP3Song
+    >>> my_folder = "path to folder containing songs"
+    >>> for file in ls_recurse(my_folder):
+    >>>     MP3Song(file).set_artist("An example")
+
+Plot data
+~~~~~~~~~
+
+.. _classic-way-1:
+
+Classic way
+^^^^^^^^^^^
+
+.. code:: python
+
+    >>> import numpy as np
+    >>> import matplotlib.pyplot as plt
+    >>> x = np.arange(1., 100.)
+    >>> y = np.sin(x)
+    >>> plt.plot(x, y)
+    >>> plt.show()
+
+.. _using-pyhal-1:
+
+Using ``pyhal``
+^^^^^^^^^^^^^^^
+
+.. code:: python
+
+    >>> import numpy as np
+    >>> from hal.charts.plotter import Plot2d
+    >>> Plot2d().plot(np.sin, 1, 100, 100)
+
+Get YouTube RSS feed of channel
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. _classic-way-2:
+
+Classic way
+^^^^^^^^^^^
+
+No easy way that I know of
+
+.. _using-pyhal-2:
+
+Using ``pyhal``
+^^^^^^^^^^^^^^^
+
+.. code:: python
+
+    >>> from hal.internet.services.youtube import YoutubeChannel
+    >>> video_url = "my awesome video of an awesome channel"
+    >>> channel_feed = YoutubeChannel.get_feed_url_from_video(video_url)
+    >>> # or if you know the name
+    >>> channel_name = "my awesome channel"
+    >>> channel_feed = YoutubeChannel(channel_name).get_feed_url()
 
 
-The Contributor Guide
----------------------
+Install
+-------
 
-If you want to contribute to the project, this part of the documentation is for
-you.
+Different ways, all equals
 
-.. toctree::
-   :maxdepth: 3
+via ``pipenv``
+~~~~~~~~~~~~~~
 
-   dev/contributing
-   dev/philosophy
-   dev/todo
-   dev/authors
+-  ``$ pipenv install .``
+-  ``$ make install``
 
-.. todo add thanks to section (mirror README.md)
+via ``pip``
+~~~~~~~~~~~
+
+-  ``$ pip3 install PyHal``
+-  ``$ make pip-install``
+
+fast install
+~~~~~~~~~~~~
+
+-  ``make fast-init`` *just copies source files to distitribution files
+   … run it only if you’re sure about dependencies*
+
+.. _pip: https://pypi.org/project/PyHal/
+
+
+Contributing and feedback
+-------------------------
+
+0. `open an issue`_
+1. `fork`_ this repository
+2. create your feature branch (``git checkout -b my-new-feature``)
+3. commit your changes (``git commit -am 'Added my new feature'``)
+4. publish the branch (``git push origin my-new-feature``)
+5. `open a PR`_
+
+Suggestions and improvements are `welcome`_!
+
+Authors
+-------
+
++----------------------+
+| |sirfoga|            |
++======================+
+| `Stefano Fogarollo`_ |
++----------------------+
+
+Thanks to
+---------
+
+-  `Kenneth Reitz`_
+
+License
+-------
+.. image:: https://img.shields.io/badge/License-MIT-blue.svg
+   :target: https://opensource.org/licenses/MIT
+
+The MIT License (MIT)
+
+Copyright (c) Stefano Fogarollo
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy of
+    this software and associated documentation files (the "Software"), to deal in
+    the Software without restriction, including without limitation the rights to
+    use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+    the Software, and to permit persons to whom the Software is furnished to do so,
+    subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+    FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+    COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+    IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+.. _open an issue: https://github.com/sirfoga/pyhal/issues/new
+.. _fork: https://github.com/sirfoga/pyhal/fork
+.. _open a PR: https://github.com/sirfoga/pyhal/compare
+.. _welcome: https://github.com/sirfoga/pyhal/issues
+.. _Stefano Fogarollo: https://sirfoga.github.io
+.. _Kenneth Reitz: https://github.com/kennethreitz
+
+.. |sirfoga| image:: https://avatars0.githubusercontent.com/u/14162628?s=128&v=4
+   :target: https://github.com/sirfoga
+
+.. _Introduction: #behold-the-power-of-hal
+.. _Installation: #install
+.. _Contribute: #contributing-and-feedback
+.. _Authors: #authors
+.. _Thanks: #thanks-to
+.. _License: #license
+.. _Hal: source/hal.html
+.. _Alphabetical list: genindex.html
