@@ -7,20 +7,35 @@
 import uuid
 
 
-def battery_test(assert_type, tests, func, args=None):
-    """Performs battery tests on objects
+class BatteryTests:
+    """Performs assertions on tests"""
 
-    :param assert_type: assert type
-    :param tests: key, value what should be the result
-    :param func: function to assert
-    :param args: params in function
-    :returns: True iff all tests pass
-    """
-    if args is None:
-        args = {}
+    def __init__(self, dictionary):
+        """
+        :param dictionary: tests
+        """
+        self.tests = dictionary
 
-    for test, good_result in tests.items():
-        assert_type(func(test, *args), good_result)
+    def assert_all(self, func=None, args=None):
+        """Asserts tests
+
+        :param func: function to assert
+        :param args: params in function
+        :returns: True iff all tests pass
+        """
+
+        if args is None:
+            args = {}
+
+        tests = self.tests.items()
+        if func is not None:
+            tests = [
+                (func(key, *args), val)
+                for key, val in tests
+            ]
+
+        for test, good_result in tests:
+            assert test == good_result
 
 
 def random_name():

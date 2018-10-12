@@ -201,7 +201,7 @@ def ls_dir(path, include_hidden=False):
         hidden_file = FileSystem(file).is_hidden()
         if (hidden_file and include_hidden) or (not hidden_file):
             lst.append(os.path.join(path, file))
-    return lst
+    return set(lst)
 
 
 def ls_recurse(path, include_hidden=False):
@@ -221,7 +221,7 @@ def ls_recurse(path, include_hidden=False):
                     os.path.join(path, file),
                     include_hidden=include_hidden
                 )  # get list of files in directory
-    return lst
+    return set(lst)
 
 
 def list_content(path, recurse, include_hidden=False):

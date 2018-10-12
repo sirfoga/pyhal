@@ -4,9 +4,8 @@
 
 """ Tests linked list implementation """
 
-from unittest import TestCase, main
-
-from data.linked_list import LinkedList
+from hal.data.linked_list import LinkedList
+from hal.tests.utils import BatteryTests
 
 
 def from_and_to_lst(lst):
@@ -21,7 +20,7 @@ def from_and_to_lst(lst):
     return linked_list.to_lst()
 
 
-class TestPaths(TestCase):
+class TestPaths:
     """ Tests hal.files.models.FileSystem path handlers """
 
     def test_build(self):
@@ -39,7 +38,7 @@ class TestPaths(TestCase):
         ]
 
         for lst in tests:
-            self.assertEqual(from_and_to_lst(lst), lst)
+            assert from_and_to_lst(lst) == lst
 
     def test_insertion(self):
         """
@@ -47,16 +46,14 @@ class TestPaths(TestCase):
             True iff FileSystem.fix_raw_path correctly handles raw paths
         """
 
-        tests = range(1, 10)
+        test_attempts = range(1, 10)
 
         linked_list = LinkedList([])  # empty
-        for test in tests:
-            self.assertTrue(linked_list.insert(test))
-            self.assertEqual(linked_list.length(), test)
-
-            self.assertEqual(linked_list.get_head().val, test)
-            self.assertEqual(linked_list.get_tail().val, 1)
-
-
-if __name__ == '__main__':
-    main()
+        for test in test_attempts:
+            tests = {
+                linked_list.insert(test): True,
+                linked_list.length(): test,
+                linked_list.get_head().val: test,
+                linked_list.get_tail().val: 1
+            }
+            BatteryTests(tests).assert_all()

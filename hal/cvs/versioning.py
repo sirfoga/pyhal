@@ -194,26 +194,26 @@ class Version(VersionNumber):
         :param max_number: Max number reachable by sub-versions numbers
         :param separator: Compose version number separating with this split
         """
-        self.s = Version.from_str(start, max_number, separator)
+        self.version = Version.from_str(start, max_number, separator)
 
     def __str__(self):
-        return str(self.s)
+        return str(self.version)
 
     def get_current_amount(self):
-        return self.s.get_current_amount()
+        return self.version.get_current_amount()
 
     def reset(self):
-        return self.s.reset()
+        return self.version.reset()
 
     def max_amount_allowed(self):
-        return self.s.max_amount_allowed()
+        return self.version.max_amount_allowed()
 
     def increase(self, amount=1):
         """
 
         :param amount:
         """
-        return self.s.increase(amount)
+        return self.version.increase(amount)
 
     def increase_by_changes(self, changes_amount, ratio):
         """Increase version by amount of changes
@@ -226,10 +226,10 @@ class Version(VersionNumber):
         return self.increase(int(increases))
 
     def maximize(self):
-        return self.s.maximize()
+        return self.version.maximize()
 
     def max(self):
-        return self.s.max()
+        return self.version.max()
 
     @staticmethod
     def from_str(string, max_number=9, separator="."):

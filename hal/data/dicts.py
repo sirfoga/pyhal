@@ -42,19 +42,19 @@ def get_inner_keys(dictionary):
     return keys
 
 
-def get_inner_data(d):
+def get_inner_data(dictionary):
     """Gets 2nd-level data into 1st-level dictionary
 
-    :param d: dict
+    :param dictionary: dict
     :returns: with 2nd-level data
     """
 
     out = {}
 
-    for key in d.keys():
-        inner_keys = d[key].keys()
+    for key in dictionary.keys():
+        inner_keys = dictionary[key].keys()
         for inner_key in inner_keys:
             new_key = key + " " + inner_key  # concatenate
-            out[new_key] = d[key][inner_key]
+            out[new_key] = dictionary[key][inner_key]
 
     return out
