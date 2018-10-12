@@ -65,14 +65,10 @@ class Integer:
         """
 
         if not self.is_naive_prime():
-            if precision < 0:
-                raise ValueError('precision must be positive')
-
             # true -> probably prime
             # false -> composite
 
-            # write n = d*2^s, d odd
-            s = self.to_int - 1
+            s = self.to_int - 1  # write n = d * 2^s, d odd
             t = 0
             while s % 2 == 0:
                 s /= 2

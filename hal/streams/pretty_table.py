@@ -31,19 +31,35 @@ class SqlTable:
 
         self._parse()
 
+    def _parse_value(self, raw):
+        """Parses value
+
+        :param raw: raw value
+        :return: Parsed value
+        """
+        try:
+            val = float(raw)
+            if (val % 1) == 0:  # integer
+                val = int(raw)
+                return str(val)
+
+            return self.num_format.format(val)
+        except:
+            return str(raw)
+
+    def _parse_row(self, i):
+        """Parses row
+
+        :param i: index of row to parse
+        """
+        row = self.data[i]
+        for j in range(len(row)):
+            self.data[i][j] = self._parse_value(self.data[i][j])
+
     def _parse(self):
         """Parses raw data"""
-        for i, row in enumerate(self.data):
-            for j, col in enumerate(row):
-                try:
-                    val = float(col)
-                    if (val % 1) == 0:  # integer
-                        val = int(col)
-                        self.data[i][j] = str(val)
-                    else:
-                        self.data[i][j] = self.num_format.format(val)
-                except:
-                    self.data[i][j] = str(self.data[i][j])
+        for i in range(len(self.data)):
+            self._parse_row(i)
 
     def _calculate_optimal_column_widths(self):
         """Calculates widths of columns
