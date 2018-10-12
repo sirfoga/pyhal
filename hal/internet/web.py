@@ -106,7 +106,7 @@ def is_url(candidate):
     """Checks if string is url
 
     :param candidate: url to check for url
-    :returns: True iff candidate is a valid url
+    :return: True iff candidate is a valid url
     """
     return re.match(URL_VALID_REGEX, candidate)
 
@@ -148,21 +148,21 @@ class Webpage:
 
     def get_scheme(self):
         """Gets scheme of url
-        :returns: get scheme (HTTP, HTTPS, FTP ..) from given url
+        :return: get scheme (HTTP, HTTPS, FTP ..) from given url
         """
 
         return urllib.request.urlparse(self.url).scheme
 
     def get_hostname(self):
         """Gets hostname of url
-        :returns: extract hostname from given url
+        :return: extract hostname from given url
         """
 
         return urllib.request.urlparse(self.url).hostname
 
     def get_domain(self):
         """Gets domain of url
-        :returns: get domain from given url
+        :return: get domain from given url
         """
 
         return "{uri.scheme}://{uri.netloc}/".format(
@@ -170,7 +170,7 @@ class Webpage:
 
     def get_html_source(self):
         """Gets source page of url
-        :returns: HTML source
+        :return: HTML source
         """
         req = urllib.request.Request(self.url)
         req.add_header("user-agent", random.choice(USER_AGENTS))
@@ -184,7 +184,7 @@ class Webpage:
 
         :param recall: max times to attempt to fetch url
         :param timeout: max times
-        :returns: array of out_links
+        :return: array of out_links
         """
         for _ in range(recall):
             try:  # setting timeout
@@ -207,45 +207,43 @@ class Webpage:
         for _ in range(n_times):
             webbrowser.open(self.url)
 
+    def download_url(self, local_file):
+        """Downloads url to local file
 
-def download_url(url, local_file):
-    """Downloads link to local file
+        :param local_file: Save url as this path
+        """
 
-    :param url: Url to download
-    :param local_file: Save url as this path
-    """
-    downloader = urllib.request.URLopener()
-    downloader.retrieve(url, local_file)
+        downloader = urllib.request.URLopener()
+        downloader.retrieve(self.url, local_file)
 
+    def download_to_file(self, local_file, headers=None, cookies=None,
+                         chunk_size=1024):
+        """Downloads link to local file
 
-def download_to_file(url, local_file, headers=None, cookies=None,
-                     chunk_size=1024):
-    """Download link to local file
+        :param local_file: Save url as this path
+        :param headers: Headers to fetch url
+        :param cookies: Cookies to fetch url
+        :param chunk_size: int
+        """
 
-    :param url: PDF url to download
-    :param local_file: Save url as this path
-    :param headers: Headers to fetch url
-    :param cookies: Cookies to fetch url
-    :param chunk_size: int
-    """
+        if not headers:
+            headers = HEADERS
 
-    if not headers:
-        headers = HEADERS
+        if not cookies:
+            cookies = {}
 
-    if not cookies:
-        cookies = {}
-
-    req = requests.get(url, headers=headers, cookies=cookies, stream=True)
-    with open(local_file, "wb") as local_download:
-        for chunk in req.iter_content(chunk_size):
-            if chunk:
-                local_download.write(chunk)
+        req = requests.get(self.url, headers=headers, cookies=cookies,
+                           stream=True)
+        with open(local_file, "wb") as local_download:
+            for chunk in req.iter_content(chunk_size):
+                if chunk:
+                    local_download.write(chunk)
 
 
 def get_tor_session():
     """Finds TOR session
 
-    :returns: TOR session
+    :return: TOR session
     """
     session = requests.session()
     # Tor uses the 9050 port as the default socks port

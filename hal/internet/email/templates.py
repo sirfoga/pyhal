@@ -31,21 +31,21 @@ class EmailTemplate:
     def get_email_header(self):
         """Gets email header
 
-        :returns: Email header
+        :return: Email header
         """
         return "<h2>Ciao " + str(self.recipient).title() + "!</h2><br>"
 
     def get_email_footer(self):
         """Gets email footer
 
-        :returns: Email text (html formatted)
+        :return: Email text (html formatted)
         """
         return get_email_content(self.footer_file)
 
     def get_mime_message(self):
         """Gets email MIME message
 
-        :returns: Email formatted as HTML ready to be sent
+        :return: Email formatted as HTML ready to be sent
         """
         message = MIMEText(
             "<html>" +

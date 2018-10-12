@@ -31,7 +31,7 @@ class AppCronLock:
     def can_proceed(self):
         """Checks whether app can proceed
 
-        :returns: True iff app is not locked and times since last update < app
+        :return: True iff app is not locked and times since last update < app
             update interval
         """
         now = datetime.datetime.now()
@@ -41,7 +41,7 @@ class AppCronLock:
     def parse_lock(self):
         """Parses app lock file
 
-        :returns: Details about last update
+        :return: Details about last update
         """
         try:
             with open(self.lock_file, "r") as reader:

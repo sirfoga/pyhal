@@ -69,14 +69,14 @@ class Document(FileSystem):
         """Gets name and extension of file
 
         :param file_name: Name of file
-        :returns: Name of file, extension of file
+        :return: Name of file, extension of file
         """
         return os.path.splitext(file_name)
 
     def get_path_name(self):
         """Gets path and name of song
 
-        :returns: Name of path, name of file (or folder)
+        :return: Name of path, name of file (or folder)
         """
         path = fix_raw_path(os.path.dirname(os.path.abspath(self.path)))
         name = os.path.basename(self.path)
@@ -85,14 +85,14 @@ class Document(FileSystem):
     def is_video(self):
         """Checks if file is video
 
-        :returns: True iff document is a video.
+        :return: True iff document is a video.
         """
         return self.extension.lower() in VIDEO_FORMAT
 
     def is_subtitle(self):
         """Checks if file is subtitle
 
-        :returns: True iff document is a subtitle.
+        :return: True iff document is a subtitle.
         """
 
         return self.extension.lower() in SUBTITLE_FORMAT
@@ -100,7 +100,7 @@ class Document(FileSystem):
     def is_text(self):
         """Checks if file is text
 
-        :returns: True iff document is a text file.
+        :return: True iff document is a text file.
         """
 
         return self.extension.lower() in TEXT_FORMAT
@@ -108,7 +108,7 @@ class Document(FileSystem):
     def is_image(self):
         """Checks if file is image
 
-        :returns: True iff document is an image.
+        :return: True iff document is an image.
         """
 
         return self.extension.lower() in IMAGE_FORMAT
@@ -116,7 +116,7 @@ class Document(FileSystem):
     def is_audio(self):
         """Checks if file is audio
 
-        :returns: True iff document is an audio.
+        :return: True iff document is an audio.
         """
 
         return self.extension.lower() in AUDIO_FORMAT
@@ -144,7 +144,7 @@ class Directory(FileSystem):
     def get_path_name(self):
         """Gets path and name of file
 
-        :returns: Name of path, name of file (or folder)
+        :return: Name of path, name of file (or folder)
         """
         complete_path = os.path.dirname(os.path.abspath(self.path))
         name = self.path.replace(complete_path + PATH_SEPARATOR, "")
@@ -156,6 +156,6 @@ class Directory(FileSystem):
     def is_empty(self):
         """Checks if folder is empty
 
-        :returns: BTrue iff empty
+        :return: BTrue iff empty
         """
         return not os.listdir(self.path)

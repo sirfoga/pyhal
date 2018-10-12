@@ -35,7 +35,7 @@ class CorrelationMatrix:
         """Finds correlation matrix of matrix
 
         :param matrix: List of features to get correlation matrix
-        :returns: correlation matrix
+        :return: correlation matrix
         """
         return np.corrcoef(matrix)
 
@@ -56,7 +56,7 @@ class CorrelationMatrix:
 
     def get_correlation_matrix_from_columns(self):
         """Computes correlation matrix of columns
-        :returns: Correlation matrix of columns
+        :return: Correlation matrix of columns
         """
         header_to_column = {}  # create index of headers
         for header in self.headers:

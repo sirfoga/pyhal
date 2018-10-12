@@ -11,7 +11,7 @@ def get_time_eta(total_done, total, start_time):
     :param total_done: items processed
     :param total: total # of items to process
     :param start_time: Time of start processing items
-    :returns: Time to go
+    :return: Time to go
     """
     time_done = int(time()) - start_time
     try:

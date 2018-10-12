@@ -8,7 +8,7 @@ def get_percentage_relative_to(val, other):
 
     :param val: number
     :param other: number to compare to
-    :returns: percentage of delta between first and second
+    :return: percentage of delta between first and second
     """
     val = float(val)
     other = float(other)
@@ -22,7 +22,7 @@ def divide(numerator, denominator):
 
     :param numerator: Numerator
     :param denominator: Denominator
-    :returns: division value
+    :return: division value
     """
 
     try:

@@ -17,7 +17,7 @@ def parse_hh_mm_ss(string):
     """Parses raw time
 
     :param string: Hours minutes and seconds in the form hh
-    :returns: Time parsed
+    :return: Time parsed
     """
     string = str(string).strip()  # discard gibberish
     split_count = string.count(":")
@@ -33,7 +33,7 @@ def get_seconds(string):
     """Gets seconds from raw time
 
     :param string: Datetime
-    :returns: Seconds in time
+    :return: Seconds in time
     """
     parsed_string = parse_hh_mm_ss(string)  # get times
     total_seconds = parsed_string.second
@@ -46,7 +46,7 @@ def parse_hh_mm(string):
     """Parses raw time
 
     :param string: Hours and minutes
-    :returns: Time parsed
+    :return: Time parsed
     """
     string = str(string).strip()  # discard gibberish
     split_count = string.count(":")

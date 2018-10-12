@@ -10,9 +10,9 @@ install:
   - "cd pyhal"
   - "make pip-install"  # install
 script:
-  - "pytest --cov=./"  # test coverage
-  - "codecov"
-  - "pylint3 -j 8 hal/* || pylint-exit $?"  # measure code lint
+  - "# pytest --cov=./"  # test coverage
+  - "# codecov"
+  - "pylint3 -j 8 hal/*"  # measure code lint
 notifications:
   email: "false"  # no email notify
 cache: "pip"

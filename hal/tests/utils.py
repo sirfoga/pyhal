@@ -21,7 +21,7 @@ class BatteryTests:
 
         :param func: function to assert
         :param args: params in function
-        :returns: True iff all tests pass
+        :return: True iff all tests pass
         """
 
         if args is None:
@@ -41,6 +41,6 @@ class BatteryTests:
 def random_name():
     """Computes random name
 
-    :returns: Pseudo-random name
+    :return: Pseudo-random name
     """
     return str(uuid.uuid4())

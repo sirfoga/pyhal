@@ -20,7 +20,7 @@ class BugReporter:
     def get_platform_info():
         """Gets platform info
 
-        :returns: platform info"""
+        :return: platform info"""
 
         try:
             system_name = platform.system()
@@ -38,7 +38,7 @@ class BugReporter:
     def get_bug_report():
         """Generate information for a bug report
 
-        :returns: information for bug report
+        :return: information for bug report
         """
         platform_info = BugReporter.get_platform_info()
         hal_info = {
@@ -54,7 +54,7 @@ class BugReporter:
     def _get_table(self):
         """Gets report as table (with columns)
 
-        :returns: column names and data
+        :return: column names and data
         """
         data = get_inner_data(self.report)
         labels = data.keys()
@@ -67,7 +67,7 @@ class BugReporter:
     def as_json(self):
         """Gets report as json
 
-        :returns: json-formatted report
+        :return: json-formatted report
         """
 
         return json.dumps(self.report, sort_keys=True, indent=2)
@@ -75,7 +75,7 @@ class BugReporter:
     def as_sql(self):
         """Gets report as json
 
-        :returns: json-formatted report
+        :return: json-formatted report
         """
 
         labels, data = self._get_table()
@@ -85,7 +85,7 @@ class BugReporter:
     def as_markdown(self):
         """Gets report as json
 
-        :returns: json-formatted report
+        :return: json-formatted report
         """
 
         labels, data = self._get_table()

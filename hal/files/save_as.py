@@ -19,7 +19,7 @@ class FileSaver:
         """Saves .csv file with posts data
 
         :param dicts: Dictionaries with same values
-        :returns: Saves .csv file with posts data
+        :return: Saves .csv file with posts data
         """
         csv_headers = sorted(dicts[0].keys())
         with open(self.path, "w") as out_file:  # write to file

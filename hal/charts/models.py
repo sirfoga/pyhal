@@ -34,14 +34,14 @@ class SimpleChart:
     def get_fig(self):
         """Gets chart canvas
 
-        :returns: matplotlib figure
+        :return: matplotlib figure
         """
         return self.fig
 
     def get_ax(self):
         """Adds to figure
 
-        :returns: operation completed successfully?
+        :return: operation completed successfully?
         """
         return self.fig.add_subplot(111)
 
@@ -51,7 +51,7 @@ class SimpleChart:
         :param x_labels: Names for each variable
         :param y_values: Values of x labels
         :param y_label: Label of y axis
-        :returns: chart: Bar chart
+        :return: chart: Bar chart
         """
         self.setup(0.25)
         ax1 = self.get_ax()
@@ -73,7 +73,7 @@ class SimpleChart:
         :param mul_y_values: list of values of x labels
         :param mul_y_labels: list of labels for each y value
         :param normalize: True iff you want to normalize each y series
-        :returns: Bar chart
+        :return: Bar chart
         """
         self.setup(0.25)
         ax1 = self.get_ax()
@@ -116,7 +116,7 @@ class SimpleChart:
         :param x_labels: Names for each variable
         :param y_values: Values of x labels
         :param y_label: Label of y axis
-        :returns: Sym-log bar chart
+        :return: Sym-log bar chart
         """
         ax1 = self.create_bar_chart(x_labels, y_values, y_label)
         ax1.set_yscale("sym-log", linthreshy=1e-12)  # logarithmic plot

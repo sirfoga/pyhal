@@ -15,7 +15,7 @@ class EightQueen:
 
         :param col: Column number
         :param queens: list of queens
-        :returns: True iff queen is under attack
+        :return: True iff queen is under attack
         """
         left = right = col
         for _, column in reversed(queens):
@@ -28,7 +28,7 @@ class EightQueen:
         """Solves problem
 
         :param table_size: Size of table
-        :returns: List of possible solutions
+        :return: List of possible solutions
         """
         if table_size == 0:
             return [[]]

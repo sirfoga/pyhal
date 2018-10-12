@@ -19,7 +19,7 @@ GITHUB_REMOTE = "https://{}:x-oauth-basic@github.com/"
 def get_token():
     """Gets authentication token
 
-    :returns: authentication token
+    :return: authentication token
     """
     return GITHUB_TOKEN
 
@@ -29,7 +29,7 @@ def get_clone_url(remote_shortcut, token):
 
     :param remote_shortcut: relative path of repository to clone
     :param token: Github OAUTH token
-    :returns: Url to clone
+    :return: Url to clone
     """
     return GITHUB_REMOTE.format(token) + remote_shortcut
 
@@ -65,7 +65,7 @@ class GithubRawApi:
         """
         Gets value
         :param key: Dictionary key to find specific user field
-        :returns: Dictionary value of given key
+        :return: Dictionary value of given key
         """
         if self.api_content is None:  # update API content
             self._get_api_content()
@@ -114,7 +114,7 @@ class GithubApi(GithubRawApi):
         """Fetches repos in "Trending Daily" Github section
 
         :param lang: Coding language
-        :returns: List of GithubUserRepository
+        :return: List of GithubUserRepository
         """
         url = "https://github.com/trending/"
         url += str(lang).lower().replace(" ", "") + "?since=daily"
@@ -150,7 +150,7 @@ class GithubUser(GithubApi):
     @none_returns
     def get_email(self):
         """Gets email
-        :returns: Email of user
+        :return: Email of user
         """
         api_url = self.api_url + "/events/public"
         api_content = GithubRawApi(
@@ -167,7 +167,7 @@ class GithubUser(GithubApi):
         """Gets repos in url
 
         :param url: Url
-        :returns: List of repositories in given url
+        :return: List of repositories in given url
         """
         current_page = 1
         there_is_something_left = True
@@ -193,14 +193,14 @@ class GithubUser(GithubApi):
 
     def get_repos(self):
         """Gets user public repos
-        :returns: List of user public repositories
+        :return: List of user public repositories
         """
         url = self["repos_url"]
         return self._get_repos(url)
 
     def get_all_repos(self):
         """Gets user repos
-        :returns: List of all user repositories (public, orgs and private)
+        :return: List of all user repositories (public, orgs and private)
         """
         url = "https://api.github.com/user/repos"
         params = {
@@ -211,7 +211,7 @@ class GithubUser(GithubApi):
 
     def get_starred_repos(self):
         """Gets repos starred by user
-        :returns: List of starred repositories
+        :return: List of starred repositories
         """
         starred_url = self.api_url + "/starred"
         keep_finding = True  # False when there are no more stars to find
@@ -239,7 +239,7 @@ class GithubUser(GithubApi):
 
     def get_trending_daily_not_starred(self):
         """Gets trending repositories NOT starred by user
-        :returns: List of daily-trending repositories which are not starred
+        :return: List of daily-trending repositories which are not starred
         """
         trending_daily = self.get_trending_daily()  # repos trending daily
         starred_repos = self.get_starred_repos()  # repos starred by user

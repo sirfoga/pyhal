@@ -16,7 +16,7 @@ class VersionNumber:
     def get_current_amount(self):
         """Gets current set amount
 
-        :returns: Current set amount
+        :return: Current set amount
         """
         pass
 
@@ -24,7 +24,7 @@ class VersionNumber:
         """Checks iff can increase by such amount
 
         :param amount: Amount to increase
-        :returns: True iff this number can be increased by such amount
+        :return: True iff this number can be increased by such amount
         """
         return amount <= self.max_amount_allowed()
 
@@ -33,7 +33,7 @@ class VersionNumber:
         """Increase version by this amount
 
         :param amount: Increase number by this amount
-        :returns: True iff increase was successful
+        :return: True iff increase was successful
         """
         pass
 
@@ -51,7 +51,7 @@ class VersionNumber:
     def max_amount_allowed(self):
         """Calculates number of increases available
 
-        :returns: Number of increases that can be done before reaching
+        :return: Number of increases that can be done before reaching
         """
         pass
 
@@ -59,7 +59,7 @@ class VersionNumber:
     def max(self):
         """Calculates max increases
 
-        :returns: Number of increases that can be done before reaching
+        :return: Number of increases that can be done before reaching
         """
         pass
 
@@ -220,7 +220,7 @@ class Version(VersionNumber):
 
         :param changes_amount: Number of changes done
         :param ratio: Ratio changes
-        :returns: Increases version accordingly to changes
+        :return: Increases version accordingly to changes
         """
         increases = round(changes_amount * ratio)
         return self.increase(int(increases))
@@ -238,7 +238,7 @@ class Version(VersionNumber):
         :param string: Version
         :param max_number: Max number reachable by sub
         :param separator: Version numbers are separated with this split
-        :returns: Parses string and returns object
+        :return: Parses string and returns object
         """
         tokens = string.split(separator)
         tokens = list(reversed(tokens))  # reverse order of importance

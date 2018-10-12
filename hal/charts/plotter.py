@@ -193,7 +193,7 @@ class Plot4d(Plotter):
 
             :param min_val: minimum
             :param max_val: maximum
-            :returns: precision: prevision of values
+            :return: precision: prevision of values
             """
             return int((max_val - min_val) * (1 + precision))
 
@@ -202,7 +202,7 @@ class Plot4d(Plotter):
 
             :param min_val: minimum
             :param max_val: maximum
-            :returns: delta: Precision delta
+            :return: delta: Precision delta
             """
             return float(max_val - min_val) / float(10 * precision)
 

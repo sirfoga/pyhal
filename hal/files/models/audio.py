@@ -16,7 +16,7 @@ def find_songs(folder, recursive):
 
     :param folder: folder path
     :param recursive: True  want to search recursively
-    :returns: generator of) paths of the songs in folder
+    :return: generator of) paths of the songs in folder
     """
     paths = list_content(folder, recursive)
     for path in paths:
@@ -32,7 +32,7 @@ class MP3Song(FileSystem):
         """
 
         :param path: candidate
-        :returns: True iff song is MP3 encoded
+        :return: True iff song is MP3 encoded
         """
         try:
             MP3(path)
@@ -51,7 +51,7 @@ class MP3Song(FileSystem):
     def get_details(self):
         """Finds songs details
 
-        :returns: Dictionary with songs details about title, artist, album and
+        :return: Dictionary with songs details about title, artist, album and
             year
         """
         title = str(self.get_title()).strip()
@@ -71,7 +71,7 @@ class MP3Song(FileSystem):
         """Sets attribute of song
 
         :param attribute: Attribute to save
-        :returns: True iff operation completed
+        :return: True iff operation completed
         """
 
         self.tags.add(attribute)
@@ -124,48 +124,48 @@ class MP3Song(FileSystem):
         """Gets attribute of song
 
         :param key: Name of attribute to get
-        :returns: Attribute
+        :return: Attribute
         """
         return self.tags.get(key).text[0]
 
     def get_title(self):
         """Gets song's title
 
-        :returns: title
+        :return: title
         """
         return self._get_attr("TIT2")
 
     def get_artist(self):
         """Gets song's artist
 
-        :returns: artist
+        :return: artist
         """
         return self._get_attr("TPE1")
 
     def get_album(self):
         """Gets song's albu
 
-        :returns: album
+        :return: album
         """
         return self._get_attr("TALB")
 
     def get_nr_track(self):
         """Gets song's track number
 
-        :returns: # of track
+        :return: # of track
         """
         return self._get_attr("TRCK")
 
     def get_year(self):
         """Gets song's year
 
-        :returns: year
+        :return: year
         """
         return self._get_attr("TDRC")
 
     def get_genre(self):
         """Gets song's genre
 
-        :returns: genre
+        :return: genre
         """
         return self._get_attr("TCON")

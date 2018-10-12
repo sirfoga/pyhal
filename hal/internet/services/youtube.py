@@ -19,7 +19,7 @@ class YoutubeChannel:
     def get_channel_page(self):
         """Fetches source page
 
-        :returns: source page of youtube channel
+        :return: source page of youtube channel
         """
         channel_url = YOUTUBE_USER_BASE_URL + self.channel_name  # url
         source_page = Webpage(
@@ -29,7 +29,7 @@ class YoutubeChannel:
     def get_channel_id(self):
         """Fetches id
 
-        :returns: id of youtube channel
+        :return: id of youtube channel
         """
         soup = BeautifulSoup(
             self.get_channel_page(), "lxml"
@@ -48,7 +48,7 @@ class YoutubeChannel:
     def get_feed_url(self):
         """Fetches RSS url
 
-        :returns: rss url feed of youtube channel
+        :return: rss url feed of youtube channel
         """
         channel_id = self.get_channel_id()  # get id
         return YoutubeChannel.get_feed_url_from_id(channel_id)
@@ -58,7 +58,7 @@ class YoutubeChannel:
         """Fetches feed url
 
         :param channel_id: id of channel
-        :returns: feed url
+        :return: feed url
         """
         return YOUTUBE_FEED_BASE_URL + channel_id
 
@@ -67,7 +67,7 @@ class YoutubeChannel:
         """Gets channel id and then creates feed url
 
         :param video_url: Url of video
-        :returns: feed url
+        :return: feed url
         """
         web_page = Webpage(video_url)
         web_page.get_html_source()

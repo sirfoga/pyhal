@@ -12,7 +12,7 @@ def how_similar_dicts(dict1, dict2):
 
     :param dict1: Dictionary
     :param dict2: Dictionary
-    :returns: measure of how much similar values of dictionaries are
+    :return: measure of how much similar values of dictionaries are
     """
     values = []
     for k in dict1:  # iterate keys
@@ -27,7 +27,7 @@ def get_inner_keys(dictionary):
     """Gets 2nd-level dictionary keys
 
     :param dictionary: dict
-    :returns: inner keys
+    :return: inner keys
     """
 
     keys = []
@@ -46,7 +46,7 @@ def get_inner_data(dictionary):
     """Gets 2nd-level data into 1st-level dictionary
 
     :param dictionary: dict
-    :returns: with 2nd-level data
+    :return: with 2nd-level data
     """
 
     out = {}

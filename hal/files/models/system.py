@@ -66,7 +66,7 @@ def fix_raw_path(path):
     """Prettify name of path
 
     :param path: path to fix
-    :returns: Good name for path
+    :return: Good name for path
     """
     double_path_separator = PATH_SEPARATOR + PATH_SEPARATOR
     while path.find(
@@ -84,7 +84,7 @@ def remove_year(name):
     """Removes year from input
 
     :param name: path to edit
-    :returns: inputs with no years
+    :return: inputs with no years
     """
     for i in range(len(
             name) - 3):  # last index is length - 3 - 1 = length - 4
@@ -99,7 +99,7 @@ def remove_brackets(name):
     """Removes brackets form input
 
     :param name: path to fix
-    :returns: inputs with no brackets
+    :return: inputs with no brackets
     """
     name = re.sub(
         r"([(\[]).*?([)\]])",
@@ -118,7 +118,7 @@ def extract_name_max_chars(name, max_chars=64, blank=" "):
     :param name: path to edit
     :param max_chars: max chars of new name
     :param blank: char that represents the blank between words
-    :returns: Name edited to contain at most max_chars
+    :return: Name edited to contain at most max_chars
     """
     new_name = name.strip()
     if len(new_name) > max_chars:
@@ -133,7 +133,7 @@ def prettify(name, blank=" "):
 
     :param name: path Name: to edit
     :param blank: default blanks in name
-    :returns: Prettier name from given one: replace bad chars with good ones.
+    :return: Prettier name from given one: replace bad chars with good ones.
     """
     if name.startswith("."):  # remove starting .
         name = name[1:]
@@ -166,7 +166,7 @@ def is_file(path):
     """Checks if path is file
 
     :param path: path to check
-    :returns: True iff path is a file
+    :return: True iff path is a file
     """
     return os.path.isfile(path)
 
@@ -175,7 +175,7 @@ def is_folder(path):
     """Checks if path is folder
 
     :param path: path to check
-    :returns: True iff path is a file
+    :return: True iff path is a file
     """
     return os.path.isdir(path)
 
@@ -184,7 +184,7 @@ def get_parent_folder(file_path):
     """Finds parent folder of file
 
     :param file_path: str
-    :returns: Name of folder container
+    :return: Name of folder container
     """
     return os.path.split(os.path.split(os.path.abspath(file_path))[0])[-1]
 
@@ -194,7 +194,7 @@ def ls_dir(path, include_hidden=False):
 
     :param path: directory to get list of files and folders
     :param include_hidden: True iff include hidden files in list
-    :returns: List of paths in given directory.
+    :return: List of paths in given directory.
     """
     lst = []
     for file in os.listdir(path):
@@ -209,7 +209,7 @@ def ls_recurse(path, include_hidden=False):
 
     :param path: directory to get list of files and folders
     :param include_hidden: True iff include hidden files in list
-    :returns: List of paths in given directory recursively.
+    :return: List of paths in given directory recursively.
     """
     lst = []
     for file in os.listdir(path):
@@ -230,7 +230,7 @@ def list_content(path, recurse, include_hidden=False):
     :param path: directory to get list of files and folders
     :param recurse: True iff recurse into subdirectories or not
     :param include_hidden: True iff include hidden files in list
-    :returns: List of paths in given directory recursively.
+    :return: List of paths in given directory recursively.
     """
     if recurse:
         return ls_recurse(path, include_hidden=include_hidden)
@@ -251,14 +251,14 @@ class FileSystem:
     def is_hidden(self):
         """Checks if file is hidden
 
-        :returns: True iff path is hidden
+        :return: True iff path is hidden
         """
         return self.name.startswith(".")
 
     def is_archive_mac(self):
         """Checks if file is a MAC archive
 
-        :returns: True iff document is an MACOSX archive
+        :return: True iff document is an MACOSX archive
         """
 
         return "macosx" in self.path.lower()
@@ -266,7 +266,7 @@ class FileSystem:
     def is_russian(self):
         """Checks if file path is russian
 
-        :returns: True iff document has a russian name
+        :return: True iff document has a russian name
         """
 
         russian_chars = 0

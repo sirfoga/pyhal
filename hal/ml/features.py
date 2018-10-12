@@ -25,14 +25,14 @@ class FeatureSelect:
         """Selects k best features in dataset
 
         :param k: features to select
-        :returns: k best features
+        :return: k best features
         """
         x_new = SelectKBest(chi2, k=k).fit_transform(self.x_train, self.y_train)
         return x_new
 
     def get_best(self):
         """Finds the optimal number of features
-        :returns: optimal number of features and ranking
+        :return: optimal number of features and ranking
         """
         svc = SVC(kernel="linear")
         rfecv = RFECV(
