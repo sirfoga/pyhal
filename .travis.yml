@@ -5,13 +5,14 @@ python:
 install:
   - "pip3 install -U pip"  # upgrade pip
   - "pip3 install codecov pytest pytest-cov"  # test coverage
-  - "pip3 install pylint pylint-exit"  # measure code lint
+  - "apt install pylint3"  # measure code lint
+  - "pip3 install pylint-exit"
   - "git clone --depth=1 https://github.com/sirfoga/pyhal.git"  # clone repo
   - "cd pyhal"
   - "make pip-install"  # install
 script:
   - "make show-installed-version"
-  - "# pytest --cov=./"  # test coverage
+  - "pytest --cov=./"  # test coverage
   - "# codecov"
   - "pylint -j 8 hal/* || pylint-exit $?"  # measure code lint
 notifications:
