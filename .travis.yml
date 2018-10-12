@@ -10,9 +10,10 @@ install:
   - "cd pyhal"
   - "make pip-install"  # install
 script:
+  - "make show-installed-version"
   - "# pytest --cov=./"  # test coverage
   - "# codecov"
-  - "pylint3 -j 8 hal/*"  # measure code lint
+  - "pylint -j 8 hal/*"  # measure code lint
 notifications:
   email: "false"  # no email notify
 cache: "pip"

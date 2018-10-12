@@ -3,7 +3,7 @@
 """Some utils methods for a selenium web-driver """
 
 
-class SeleniumForm:
+class SeleniumFormFiller:
     """Methods to deal with selenium web-drivers"""
 
     def __init__(self, browser):
