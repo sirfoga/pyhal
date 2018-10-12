@@ -2,13 +2,14 @@ sudo: false
 language: "python"
 install:
   - "pip3 install -U pip"  # upgrade pip
-  - "pip3 install codecov"  # test coverage
+  - "pip3 install codecov pytest pytest-cov"  # test coverage
   - "pip3 install pylint pylint-exit"  # measure code lint
   - "git clone --depth=1 https://github.com/sirfoga/pyhal.git"  # clone repo
   - "cd pyhal"
   - "make pip-install"  # install
 script:
-  - "codecov"  # test coverage
+  - "pytest --cov=./"  # test coverage
+  - "codecov"
   - "pylint3 -j 8 hal/* || pylint-exit $?"  # measure code lint
 notifications:
   email: "false"  # no email notify

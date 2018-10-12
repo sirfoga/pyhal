@@ -4,7 +4,7 @@
 </div>
 
 <div align="center">
-<a href="https://travis-ci.org/sirfoga/pyhal"><img alt="Build Status" src="https://travis-ci.org/sirfoga/pyhal.svg?branch=master"></a> <a href="https://coveralls.io/github/sirfoga/pyhal?branch=master"><img alt="Coverage Status" src="https://coveralls.io/repos/github/sirfoga/pyhal/badge.svg?branch=master"></a> <a href="https://landscape.io/github/sirfoga/hal/master"><img alt="Code Health" src="https://landscape.io/github/sirfoga/pyhal/master/landscape.svg?style=flat"></a> 
+<a href="https://travis-ci.org/sirfoga/pyhal"><img alt="Build Status" src="https://travis-ci.org/sirfoga/pyhal.svg?branch=master"></a> codecov badge <a href="https://landscape.io/github/sirfoga/hal/master"><img alt="Code Health" src="https://landscape.io/github/sirfoga/pyhal/master/landscape.svg?style=flat"></a> 
 </div>
 
 

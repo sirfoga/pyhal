@@ -20,7 +20,7 @@ def from_and_to_lst(lst):
     return linked_list.to_lst()
 
 
-class TestPaths:
+class TestLinkedList:
     """ Tests hal.files.models.FileSystem path handlers """
 
     def test_build(self):
