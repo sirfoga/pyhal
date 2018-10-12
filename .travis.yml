@@ -12,10 +12,9 @@ install:
   - "make pip-install"  # install
 script:
   - "make show-installed-version"
-  - "python3 -m pytest --cov=./"  # test coverage
+  - "make test"  # test coverage
   - "codecov"
   - "python3 -m pylint 'hal/'"  # measure code lint
-  - "make docs"  # generate docs
+  - "# make docs"  # generate docs
 notifications:
   email: "false"  # no email notify
-cache: "pip"

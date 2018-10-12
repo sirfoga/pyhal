@@ -80,9 +80,9 @@ class Matrix:
 
         :return: Encoder used
         """
-        lb = LabelEncoder()  # encoder
+        encoder = LabelEncoder()  # encoder
         values = self.get_as_list()
-        encoded = lb.fit_transform(values)  # long list of encoded
+        encoded = encoder.fit_transform(values)  # long list of encoded
         n_columns = len(self.matrix[0])
         n_rows = len(self.matrix)
 
@@ -91,16 +91,16 @@ class Matrix:
             for i in range(0, n_rows * n_columns, n_columns)
         ]
 
-        return lb
+        return encoder
 
-    def decode(self, lb):
+    def decode(self, encoder):
         """Decodes matrix
 
-        :param lb: Encoder used to encode matrix
+        :param encoder: Encoder used to encode matrix
         :return: list: Decodes matrix
         """
         self.matrix = [
-            lb.inverse_transform(row)
+            encoder.inverse_transform(row)
             for row in self.matrix
         ]
 
