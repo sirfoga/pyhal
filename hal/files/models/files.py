@@ -54,15 +54,23 @@ class Document(FileSystem):
             os.rename(os.path.join(target_directory, old_file),
                       os.path.join(target_directory, target_file))
 
-    @staticmethod
-    def write_data_to_file(data, out_file):
+    def write_data(self, data):
         """Writes given data to given path file
 
         :param data: data to write to file
-        :param out_file: path to output file
         """
-        with open(out_file, "w") as out_f:
-            out_f.write(data)
+        with open(self.path, "w") as writer:
+            writer.write(data)
+
+    def read_data(self):
+        """
+        :return: contents of file
+        """
+        try:
+            with open(self.path, "r") as reader:
+                return reader.read()
+        except:
+            return None
 
     @staticmethod
     def extract_name_extension(file_name):

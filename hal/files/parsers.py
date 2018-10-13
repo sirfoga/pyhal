@@ -21,7 +21,7 @@ class Parser:
 
         :return: Lines in file
         """
-        with open(self.path) as data:
+        with open(self.path, "r") as data:
             self.lines = data.readlines()  # store data in arrays
 
         return self.lines

@@ -117,6 +117,6 @@ class EightQueenTest:
             file_name = "EightQueenTest" + str(int(random.random() * 10000)) \
                         + ".log"
             log_file = os.path.join(os.getcwd(), file_name)
-            Document.write_data_to_file(self.benchmark, log_file)
+            Document(log_file).write_data(self.benchmark)
 
             print("The log file is", log_file)

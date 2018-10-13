@@ -20,8 +20,14 @@ class TestDocument:
         pass  # todo auto generated method stub
 
     @staticmethod
-    def test_write_data_to_file():
+    def test_write_data():
         """Tests hal.files.models.files.Document.write_data_to_file method"""
+
+        pass  # todo auto generated method stub
+
+    @staticmethod
+    def test_read_data():
+        """Tests hal.files.models.files.Document.read_data_to_file method"""
 
         pass  # todo auto generated method stub
 

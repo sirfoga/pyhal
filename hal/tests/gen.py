@@ -1,5 +1,6 @@
 import os
 
+from hal.files.models.files import Document
 from hal.meta.attributes import get_modules, ModuleFile, MODULE_SEP
 
 DOCS = "\"\"\"{}\"\"\""
@@ -154,7 +155,4 @@ class TestWriter:
             file_name = mod.package.replace(MODULE_SEP, "_")
             file_name = "test_" + file_name + ".py"
             output_file = os.path.join(output_folder, file_name)
-
-            with open(output_file, "w") as writer:
-                contents = self.get_module_tests(mod)
-                writer.write(contents)
+            Document(output_file).write_data(self.get_module_tests(mod))
