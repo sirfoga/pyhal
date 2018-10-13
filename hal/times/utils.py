@@ -13,44 +13,47 @@ MONTHS = {
 }  # dict <month index: month name>
 
 
-def parse_hh_mm_ss(string):
-    """Parses raw time
+class Timing:
+    """Time"""
 
-    :param string: Hours minutes and seconds in the form hh
-    :return: Time parsed
-    """
-    string = str(string).strip()  # discard gibberish
-    split_count = string.count(":")
-    if split_count == 2:  # hh:mm:ss
-        return datetime.strptime(str(string).strip(), "%H:%M:%S").time()
-    elif split_count == 1:  # mm:ss
-        return datetime.strptime(str(string).strip(), "%M:%S").time()
+    def __init__(self, raw):
+        """
+        :param raw: raw time
+        """
+        self.raw = str(raw).strip()  # discard gibberish
 
-    return datetime.strptime(str(string).strip(), "%S").time()
+    def parse_hh_mm_ss(self):
+        """Parses raw time
 
+        :return: Time parsed
+        """
+        split_count = self.raw.count(":")
 
-def get_seconds(string):
-    """Gets seconds from raw time
+        if split_count == 2:  # hh:mm:ss
+            return datetime.strptime(str(self.raw).strip(), "%H:%M:%S").time()
+        elif split_count == 1:  # mm:ss
+            return datetime.strptime(str(self.raw).strip(), "%M:%S").time()
 
-    :param string: Datetime
-    :return: Seconds in time
-    """
-    parsed_string = parse_hh_mm_ss(string)  # get times
-    total_seconds = parsed_string.second
-    total_seconds += parsed_string.minute * 60.0
-    total_seconds += parsed_string.hour * 60.0 * 60.0
-    return total_seconds
+        return datetime.strptime(str(self.raw).strip(), "%S").time()
 
+    def get_seconds(self):
+        """Gets seconds from raw time
 
-def parse_hh_mm(string):
-    """Parses raw time
+        :return: Seconds in time
+        """
+        parsed = self.parse_hh_mm_ss()  # get times
+        total_seconds = parsed.second
+        total_seconds += parsed.minute * 60.0
+        total_seconds += parsed.hour * 60.0 * 60.0
+        return total_seconds
 
-    :param string: Hours and minutes
-    :return: Time parsed
-    """
-    string = str(string).strip()  # discard gibberish
-    split_count = string.count(":")
-    if split_count == 1:  # hh:mm
-        return datetime.strptime(str(string).strip(), "%H:%M").time()
+    def parse_hh_mm(self):
+        """Parses raw time
 
-    return datetime.strptime(str(string).strip(), "%M").time()
+        :return: Time parsed
+        """
+        split_count = self.raw.count(":")
+        if split_count == 1:  # hh:mm
+            return datetime.strptime(self.raw, "%H:%M").time()
+
+        return datetime.strptime(self.raw, "%M").time()

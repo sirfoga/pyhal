@@ -8,8 +8,8 @@ from hal.tests.utils import BatteryTests
 from hal.wrappers import errors
 
 
-class TestWrappers:
-    """Tests linked list"""
+class TestErrorWrappers:
+    """Tests wrappers"""
 
     def test_true_false_returns(self):
         """Asserts True/False wrapper"""
