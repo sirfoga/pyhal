@@ -5,12 +5,14 @@
 import ast
 import os
 
-from hal.files.models.system import get_folder_name
+from hal.files.models.files import Document
+from hal.files.models.system import get_folder_name, is_file, \
+    is_folder
 
 MODULE_SEP = "."
 
 
-class File:
+class ModuleFile:
     """File attributes"""
 
     def __init__(self, path, root_package):
@@ -52,10 +54,10 @@ class File:
         :return: Tree
         """
 
-        return Tree(self.tree, root_package=self.package)
+        return ModuleTree(self.tree, root_package=self.package)
 
 
-class Tree:
+class ModuleTree:
     """Hierarchy"""
 
     def __init__(self, tree, root_package):
@@ -110,7 +112,7 @@ class Tree:
         return self.tree.name
 
 
-class TreeObject(Tree):
+class ModuleTreeObject(ModuleTree):
     """Object of Python tree"""
 
     def __init__(self, tree, root_package):
@@ -118,12 +120,13 @@ class TreeObject(Tree):
         self.full_package = self.package + MODULE_SEP + self.get_name()
 
 
-class PyClass(TreeObject):
+class PyClass(ModuleTreeObject):
     """Python parsed class"""
 
-    def get_functions(self):
+    def get_functions(self, include_meta=False):
         """Finds top-level functions in file
 
+        :param include_meta: whether include meta functions like (__init__)
         :return: list of top-level functions
         """
         instances = self._get_instances(ast.FunctionDef)
@@ -131,8 +134,63 @@ class PyClass(TreeObject):
             PyFunction(instance, self.full_package)  # fix package name
             for instance in instances
         ]
+
+        if not include_meta:
+            instances = [
+                instance  # fix package name
+                for instance in instances
+                if not instance.get_name().startswith("__")
+            ]
+
         return instances
 
 
-class PyFunction(TreeObject):
+class PyFunction(ModuleTreeObject):
     """Python parsed method"""
+
+
+def _get_modules(path):
+    """Finds modules in folder recursively
+
+    :param path: directory
+    :return: list of modules
+    """
+    lst = []
+    folder_contents = os.listdir(path)
+    is_python_module = "__init__.py" in folder_contents
+
+    if is_python_module:
+        for file in folder_contents:
+            full_path = os.path.join(path, file)
+
+            if is_file(full_path):
+                lst.append(full_path)
+
+            if is_folder(full_path):
+                lst += _get_modules(full_path)  # recurse in folder
+
+    return list(set(lst))
+
+
+def get_modules(folder, include_meta=False):
+    """Finds modules (recursively) in folder
+
+    :param folder: root folder
+    :param include_meta: whether include meta files like (__init__ or
+        __version__)
+    :return: list of modules
+    """
+    files = [
+        file
+        for file in _get_modules(folder)
+        if is_file(file)  # just files
+    ]
+
+    if not include_meta:
+        files = [
+            file
+            for file in files
+            if not Document(file).name.startswith("__")
+        ]
+
+    return files

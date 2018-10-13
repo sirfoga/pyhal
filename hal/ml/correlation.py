@@ -11,7 +11,7 @@ from matplotlib import pyplot
 from hal.charts import correlation as cr_plot
 from hal.data.matrix import Matrix
 from hal.files.models.files import Document
-from hal.files.models.system import list_content
+from hal.files.models.system import list_content, is_file
 from hal.files.parsers import CSVParser
 
 
@@ -98,7 +98,7 @@ class CorrelationMatrix:
         os.makedirs(output_folder)  # make necessary folders to create directory
 
         for file in list_content(folder_path, False, False):
-            if os.path.isfile(file) and str(file).endswith("csv"):
+            if is_file(file) and str(file).endswith("csv"):
                 print("Analysing file ", str(file))
 
                 file_name = Document(file).name.strip()

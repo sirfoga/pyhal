@@ -202,7 +202,9 @@ class TestLs:
             self.inner_folder: {self.file11, self.file12}
         }
 
-        BatteryTests(tests).assert_all(list_content, recurse=False)
+        for key, val in tests.items():
+            assert set(list_content(key, False)) == val
+
         self.purge_temp_files()
 
     def test_ls_recurse(self):
@@ -214,7 +216,9 @@ class TestLs:
                                   self.file11, self.file12}
         }
 
-        BatteryTests(tests).assert_all(list_content, recurse=True)
+        for key, val in tests.items():
+            assert set(list_content(key, True)) == val
+
         self.purge_temp_files()
 
     def test_ls_hidden(self):
@@ -226,5 +230,7 @@ class TestLs:
                                   self.file11, self.file12, self.hidden_file}
         }
 
-        BatteryTests(tests).assert_all(ls_recurse, include_hidden=True)
+        for key, val in tests.items():
+            assert set(ls_recurse(key, include_hidden=True)) == val
+
         self.purge_temp_files()

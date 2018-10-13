@@ -210,7 +210,7 @@ def ls_dir(path, include_hidden=False):
         hidden_file = FileSystem(file).is_hidden()
         if (hidden_file and include_hidden) or (not hidden_file):
             lst.append(os.path.join(path, file))
-    return set(lst)
+    return list(set(lst))
 
 
 def ls_recurse(path, include_hidden=False):
@@ -225,12 +225,12 @@ def ls_recurse(path, include_hidden=False):
         hidden_file = FileSystem(file).is_hidden()
         if (hidden_file and include_hidden) or (not hidden_file):
             lst.append(os.path.join(path, file))
-            if os.path.isdir(os.path.join(path, file)):
+            if is_folder(os.path.join(path, file)):
                 lst += ls_recurse(
                     os.path.join(path, file),
                     include_hidden=include_hidden
                 )  # get list of files in directory
-    return set(lst)
+    return list(set(lst))
 
 
 def list_content(path, recurse, include_hidden=False):
@@ -294,7 +294,7 @@ class FileSystem:
         :param new_path: new path to use
         """
         rename_path = fix_raw_path(new_path)
-        if os.path.isdir(self.path):
+        if is_folder(self.path):
             os.rename(self.path, rename_path)
         else:
             os.renames(self.path, rename_path)
