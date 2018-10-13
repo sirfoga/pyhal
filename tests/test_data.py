@@ -2,7 +2,7 @@
 # coding: utf_8
 
 
-"""Tests linked list implementation"""
+"""Tests data module implementation"""
 
 from hal.data.linked_list import LinkedList
 from hal.tests.utils import BatteryTests

@@ -14,10 +14,7 @@ def get_time_eta(total_done, total, start_time):
     :return: Time to go
     """
     time_done = int(time()) - start_time
-    try:
-        speed = total_done / time_done
-    except:
-        speed = 0
+    speed = total_done / time_done
 
     if time_done > 0 and speed > 0:
         total_to_go = total - total_done

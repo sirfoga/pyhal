@@ -2,7 +2,7 @@
 # coding: utf_8
 
 
-"""Tests string implementation"""
+"""Tests wrappers implementation"""
 
 from hal.tests.utils import BatteryTests
 from hal.wrappers import errors
