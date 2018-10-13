@@ -25,10 +25,12 @@ class TestAttributes:
         assert len(classes) == 1
 
         assert classes[0].full_package == "hal.charts.models.SimpleChart"
-        assert classes[0].get_functions()[1].full_package == \
-               "hal.charts.models.SimpleChart.setup"
-        assert classes[0].get_functions()[0].get_name() == "__init__"
-        assert len(classes[0].get_functions()) == 7
+        assert classes[0].get_functions()[1].full_package.startswith(
+            "hal.charts.models.SimpleChart"
+        )
+        assert classes[0].get_functions(include_meta=True)[0].get_name() \
+               == "__init__"
+        assert len(classes[0].get_functions()) == 6
 
         functions = f.get_tree().get_functions()
         assert len(functions) == 0
