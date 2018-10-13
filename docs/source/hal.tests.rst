@@ -9,6 +9,14 @@ hal.tests package
 Submodules
 ----------
 
+hal.tests.gen module
+--------------------
+
+.. automodule:: hal.tests.gen
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 hal.tests.utils module
 ----------------------
 

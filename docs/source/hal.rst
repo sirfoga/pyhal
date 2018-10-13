@@ -17,6 +17,7 @@ Subpackages
     hal.files
     hal.internet
     hal.maths
+    hal.meta
     hal.ml
     hal.mongodb
     hal.profile

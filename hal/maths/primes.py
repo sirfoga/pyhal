@@ -103,8 +103,6 @@ def get_prime(bits):
     :param bits: size of number to generate
     :return: prime number of given size
     """
-    if bits < 0:
-        raise ValueError('\'bits\' field cannot be negative')
     while True:
         num = random.randrange(2 ** (bits - 1), 2 ** bits)
         if Integer(str(num)).is_probably_prime():
@@ -120,19 +118,16 @@ def blum_blum_shub(seed, amount, prime0, prime1):
     :param prime1: the second prime number
     :return: pseudo-number generator
     """
-    assert amount >= 0  # amount cannot be negative
     if amount == 0:
         return []
 
-    assert (seed > 0 and
-            prime0 > 0 and prime1 > 0)  # seed and primes cannot be negative
     assert (prime0 % 4 == 3 and
             prime1 % 4 == 3)  # primes must be congruent 3 mod 4
 
     mod = prime0 * prime1
     rand = [seed]
 
-    for _ in range(amount):
+    for _ in range(amount - 1):
         last_num = rand[len(rand) - 1]
         next_num = (last_num * last_num) % mod
         rand.append(next_num)

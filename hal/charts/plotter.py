@@ -145,11 +145,13 @@ class Plot3d(Plotter):
 class Plot4d(Plotter):
     """4D plot generator with slider"""
 
+    @DeprecationWarning
     def scatter(self, vectors):
-        raise ValueError("Cannot plot 4D vectors in 2D space")
+        pass
 
+    @DeprecationWarning
     def param(self, functions, min_val, max_val, points):
-        raise ValueError("Cannot plot 4D function in 2D space")
+        pass
 
     def plot(self, func, mins, maxs, points=None):
         self.plot_type(func, mins, maxs, 0.5, "slice")
