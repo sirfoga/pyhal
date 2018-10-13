@@ -10,7 +10,7 @@ import shutil
 
 from hal.files.models.system import fix_raw_path, remove_year, \
     remove_brackets, extract_name_max_chars, BAD_CHARS, prettify, ls_recurse, \
-    is_file, get_parent_folder, list_content, FileSystem, \
+    is_file, get_parent_folder_name, list_content, FileSystem, \
     RUSSIAN_CHARS
 from hal.tests.utils import random_name, BatteryTests
 
@@ -135,7 +135,7 @@ class TestPaths:
             "/a/b/c//": "b"
         }
 
-        BatteryTests(tests).assert_all(get_parent_folder)
+        BatteryTests(tests).assert_all(get_parent_folder_name)
 
 
 class TestLs:

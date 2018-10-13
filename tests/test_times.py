@@ -89,3 +89,22 @@ class TestProfile:
             val["done"] = key[0]
 
             assert attempt == val
+
+
+class TestDay:
+    """Tests dates module"""
+
+    def test_get_just_date(self):
+        pass
+
+    def test_is_in_this_week(self):
+        pass
+
+    def test_is_date_in_between(self):
+        pass
+
+    def test_get_next_weekday(self):
+        pass
+
+    def test_get_last_weekday(self):
+        pass
