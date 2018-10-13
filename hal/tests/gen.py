@@ -1,6 +1,6 @@
 import os
 
-from meta.attributes import get_modules, ModuleFile, MODULE_SEP
+from hal.meta.attributes import get_modules, ModuleFile, MODULE_SEP
 
 DOCS = "\"\"\"{}\"\"\""
 TODO = "# todo auto generated method stub"
@@ -47,11 +47,12 @@ class TestWriter:
         ]
 
     @staticmethod
-    def get_functions_tests(functions, indent=0):
+    def get_functions_tests(functions, indent=0, static=False):
         """Auto generates functions tests
 
         :param functions: list of functions
         :param indent: indentation level
+        :param static: whether is a static method or not
         :return: list of tests
         """
 
@@ -63,12 +64,17 @@ class TestWriter:
         for func in functions:
             name = "test_" + func.get_name()
             signature = METHOD_KEYWORD + " " + name + "():"
-            content = "assert True  " + TODO
+            content = "pass  " + TODO
             docs = DOCS.format("Tests " + func.full_package + " method")
 
-            test = start_indent + signature
+            if static:
+                test = start_indent + "@staticmethod" + "\n"
+            else:
+                test = ""
+
+            test += start_indent + signature
             test += new_line + docs
-            test += new_line + content
+            test += "\n" + new_line + content
 
             tests.append(test)
 
@@ -96,10 +102,10 @@ class TestWriter:
 
             if functions:
                 content = "\n\n".join(
-                    TestWriter.get_functions_tests(functions, indent + 1)
+                    TestWriter.get_functions_tests(functions, indent + 1, True)
                 )
             else:
-                content = inner_indent + TODO
+                content = inner_indent + "pass  " + TODO
 
             test = start_indent + signature
             test += new_line + cl_docs

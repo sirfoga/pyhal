@@ -124,6 +124,29 @@ Using ``pyhal``
     >>> channel_name = "my awesome channel"
     >>> channel_feed = YoutubeChannel(channel_name).get_feed_url()
 
+Generate module tests code
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. _classic-way-3:
+
+Classic way
+^^^^^^^^^^^
+
+No easy way that I know of
+
+.. _using-pyhal-3:
+
+Using ``pyhal``
+^^^^^^^^^^^^^^^
+
+.. code:: python
+
+    >>> from hal.tests.gen import TestWriter
+    >>> src = "path to module source folder"
+    >>> out = "path to output folder"
+    >>> w = TestWriter(src)
+    >>> w.write_tests(out)
+
 
 Install
 -------

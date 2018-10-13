@@ -1,17 +1,18 @@
 # -*- coding: utf-8 -*-
 
 
-"""Tests string implementation"""
+"""Tests hal.strings.models implementation"""
 
 from hal.strings.models import String
 from hal.tests.utils import BatteryTests
 
 
 class TestString:
-    """Tests linked list"""
+    """Tests String class"""
 
-    def test_remove_escapes(self):
-        """Asserts removal of anything except letters and numbers"""
+    @staticmethod
+    def test_remove_escapes():
+        """Tests hal.strings.models.String.remove_escapes method"""
 
         tests = {
             "a": "a",
@@ -25,8 +26,9 @@ class TestString:
 
         BatteryTests(tests).assert_all()
 
-    def test_remove_non_ansi(self):
-        """Asserts removal of non ANSI chars"""
+    @staticmethod
+    def test_remove_non_ansi():
+        """Tests hal.strings.models.String.remove_non_ansi method"""
 
         tests = {
             "a": "a",
@@ -40,8 +42,9 @@ class TestString:
 
         BatteryTests(tests).assert_all()
 
-    def test_is_well_formatted(self):
-        """Asserts is well formatted"""
+    @staticmethod
+    def test_is_well_formatted():
+        """Tests hal.strings.models.String.is_well_formatted method"""
 
         tests = {
             "a": True,
@@ -55,8 +58,9 @@ class TestString:
 
         BatteryTests(tests).assert_all()
 
-    def test_strip_bad_html(self):
-        """Asserts bad HTML stripper"""
+    @staticmethod
+    def test_strip_bad_html():
+        """Tests hal.strings.models.String.strip_bad_html method"""
 
         tests = {
             "a": True,
@@ -69,3 +73,9 @@ class TestString:
         }
 
         BatteryTests(tests).assert_all()
+
+    @staticmethod
+    def test_remove_all():
+        """Tests hal.strings.models.String.remove_all method"""
+
+        pass  # todo auto generated method stub

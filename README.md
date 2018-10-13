@@ -26,6 +26,7 @@ Say you want to
 - [edit the tags of all the songs in a folder](#using-pyhal)
 - [plot 2D/3D or even 4D points](#using-pyhal-1)
 - [fetch the RSS feed of a YouTube channel](#using-pyhal-2)
+- [generate tests code for a module](#generate-module-tests-code)
 
 If you want to do this stuff in a fast and easy way, this library is for you
 
@@ -90,6 +91,20 @@ channel_name = "my awesome channel"
 channel_feed = YoutubeChannel(channel_name).get_feed_url()
 ```
 
+### Generate module tests code
+
+#### Classic way
+
+No easy way that I know of
+
+#### Using `pyhal`
+```python
+from hal.tests.gen import TestWriter
+src = "path to module source folder"
+out = "path to output folder"
+w = TestWriter(src)
+w.write_tests(out)
+```
 
 ## Install
 <a href="https://pypi.org/project/PyHal/"><img alt="PyPI version" src="https://badge.fury.io/py/PyHal.svg"></a> <a href="https://requires.io/github/sirfoga/pyhal/requirements/?branch=master"><img alt="Requirements Status" src="https://requires.io/github/sirfoga/pyhal/requirements.svg?branch=master"></a> <a href="https://snyk.io/test/github/sirfoga/pyhal?targetFile=requirements.txt"><img src="https://snyk.io/test/github/sirfoga/pyhal/badge.svg?targetFile=requirements.txt" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/sirfoga/pyhal?targetFile=requirements.txt" style="max-width:100%;"></a>
