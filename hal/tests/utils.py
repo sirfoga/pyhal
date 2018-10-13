@@ -1,5 +1,4 @@
-# !/usr/bin/python
-# coding: utf_8
+# -*- coding: utf-8 -*-
 
 
 """Tools to ease testing process """

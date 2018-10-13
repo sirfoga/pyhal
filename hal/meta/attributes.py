@@ -128,7 +128,7 @@ class PyClass(TreeObject):
         """
         instances = self._get_instances(ast.FunctionDef)
         instances = [
-            PyFunction(instance, self.full_package)
+            PyFunction(instance, self.full_package)  # fix package name
             for instance in instances
         ]
         return instances

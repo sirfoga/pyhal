@@ -1,5 +1,4 @@
-# !/usr/bin/python
-# coding: utf_8
+# -*- coding: utf-8 -*-
 
 
 """Tests meta module implementation"""
@@ -28,6 +27,7 @@ class TestFile:
         assert classes[0].full_package == "hal.charts.models.SimpleChart"
         assert classes[0].get_functions()[1].full_package == \
                "hal.charts.models.SimpleChart.setup"
+        assert classes[0].get_functions()[0].get_name() == "__init__"
         assert len(classes[0].get_functions()) == 7
 
         functions = f.get_tree().get_functions()

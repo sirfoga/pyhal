@@ -1,6 +1,4 @@
-# !/usr/bin/python
-# coding: utf_8
-
+# -*- coding: utf-8 -*-
 
 """Authenticate your Google APIs """
 
