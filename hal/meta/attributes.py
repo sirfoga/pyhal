@@ -7,6 +7,8 @@ import os
 
 from hal.files.models.system import get_folder_name
 
+MODULE_SEP = "."
+
 
 class File:
     """File attributes"""
@@ -38,7 +40,7 @@ class File:
         if package.endswith(".py"):
             package = package[:-3]
 
-        package = package.replace(os.path.sep, ".")
+        package = package.replace(os.path.sep, MODULE_SEP)
         root_package = get_folder_name(root_package)
 
         package = root_package + package  # add root
@@ -113,11 +115,23 @@ class TreeObject(Tree):
 
     def __init__(self, tree, root_package):
         super().__init__(tree, root_package)
-        self.full_name = self.package + self.get_name()
+        self.full_package = self.package + MODULE_SEP + self.get_name()
 
 
 class PyClass(TreeObject):
     """Python parsed class"""
+
+    def get_functions(self):
+        """Finds top-level functions in file
+
+        :return: list of top-level functions
+        """
+        instances = self._get_instances(ast.FunctionDef)
+        instances = [
+            PyFunction(instance, self.full_package)
+            for instance in instances
+        ]
+        return instances
 
 
 class PyFunction(TreeObject):
