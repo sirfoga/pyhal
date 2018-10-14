@@ -19,7 +19,7 @@ Release v\ |version|
    :target: https://www.python.org/download/releases/3
 
 .. image:: https://codecov.io/github/sirfoga/pyhal/coverage.svg?branch=master
-   :target: https://codecov.io/github/rsirfoga/pyhal
+   :target: https://codecov.io/github/sirfoga/pyhal
 
 -------------------
 

@@ -194,3 +194,12 @@ def get_modules(folder, include_meta=False):
         ]
 
     return files
+
+
+def get_class_name(obj):
+    """Finds name of class of object
+
+    :param obj: object
+    :return: Name of class
+    """
+    return str(obj.__class__.__name__)
