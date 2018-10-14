@@ -4,6 +4,7 @@
 
 import functools
 
+from hal.meta.attributes import get_method_name
 from hal.profile.models import Timer
 from hal.streams.logger import log_message
 
@@ -26,11 +27,12 @@ def log_time(func):
         :return: function result
         """
 
-        func_name = func.func_name
+        func_name = get_method_name(func)
         timer = Timer()
         log_message(func_name, "has started")
 
-        result = func(*args, **kwargs)
+        with timer:
+            result = func(*args, **kwargs)
 
         seconds = "{:.3f}".format(timer.elapsed_time())
         log_message(func_name, "has finished. Execution time:", seconds, "s")

@@ -3,6 +3,7 @@
 """Perform benchmarks and tests on your PC """
 
 import getpass
+import os
 import random
 import sys
 
@@ -68,8 +69,9 @@ class EightQueenTest:
         """
         timer = Timer()
 
-        problem = EightQueen(self.size)
-        problem.solve(problem.board_size)
+        with timer:
+            problem = EightQueen(self.size)
+            problem.solve(problem.board_size)
 
         return timer.elapsed_time()
 
@@ -96,18 +98,19 @@ class EightQueenTest:
         """Runs test and safes results"""
         max_board_size = self.size
         timer = Timer()
+        with timer:
+            for size in range(max_board_size + 1):
+                timing = self.run_test()
+                self.update_std_out_and_log(
+                    "BOARD SIZE".ljust(10) +
+                    str(size).ljust(10) + "TIME REQUIRED (s)".ljust(20) +
+                    str('{:03.3f}'.format(timing))
+                )
 
-        for size in range(max_board_size + 1):
-            timing = self.run_test()
-            self.update_std_out_and_log(
-                "BOARD SIZE".ljust(10) +
-                str(size).ljust(10) + "TIME REQUIRED (s)".ljust(20) +
-                str('{:03.3f}'.format(timing))
-            )
-        length = timer.elapsed_time()
+        seconds = timer.elapsed_time()
 
         self.update_std_out_and_log(
-            "It took me " + str(length) + " seconds to complete all " + str(
+            "It took me " + str(seconds) + " seconds to complete all " + str(
                 max_board_size) + " problems.\nThanks for your patience!")
 
         if input("Do you wanna save the results? [y/n]").startswith("y"):

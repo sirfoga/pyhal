@@ -2,9 +2,10 @@
 
 
 """Tests hal.meta.attributes implementation"""
+
 import os
 
-from hal.meta.attributes import ModuleFile
+from hal.meta.attributes import ModuleFile, get_method_name, get_class_name
 from hal.meta.attributes import get_modules
 
 HERE = os.path.abspath(os.path.dirname(__file__))
@@ -30,6 +31,16 @@ def test_get_modules():
     meta_module = os.path.join(ROOT_MODULE, "__version__.py")
     assert meta_module in meta_modules
     assert meta_module not in modules
+
+
+def test_get_class_name():
+    """Tests hal.meta.attributes.get_class_name method"""
+    assert get_class_name(None) == "NoneType"
+
+
+def test_get_method_name():
+    """Tests hal.meta.attributes.get_method_name method"""
+    assert get_method_name(get_method_name) == "get_method_name"
 
 
 class TestModuleFile:

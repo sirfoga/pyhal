@@ -15,6 +15,7 @@ Subpackages
     hal.cvs
     hal.data
     hal.files
+    hal.hashes
     hal.internet
     hal.maths
     hal.meta
@@ -23,6 +24,7 @@ Subpackages
     hal.profile
     hal.streams
     hal.strings
+    hal.system
     hal.tests
     hal.times
     hal.wrappers

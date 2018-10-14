@@ -30,9 +30,9 @@ def test_blum_blum_shub():
 
     assert len(randoms) == amount
 
-    distro = describe(randoms)
+    distribution = describe(randoms)
 
-    assert abs(distro.skewness) <= 0.5
+    assert abs(distribution.skewness) <= 0.5
 
     assert not blum_blum_shub(seed, 0, primes[0], primes[1])
 

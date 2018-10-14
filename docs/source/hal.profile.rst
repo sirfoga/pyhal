@@ -17,6 +17,14 @@ hal.profile.mem module
     :undoc-members:
     :show-inheritance:
 
+hal.profile.models module
+-------------------------
+
+.. automodule:: hal.profile.models
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 hal.profile.performance module
 ------------------------------
 

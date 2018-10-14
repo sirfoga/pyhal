@@ -203,3 +203,12 @@ def get_class_name(obj):
     :return: Name of class
     """
     return str(obj.__class__.__name__)
+
+
+def get_method_name(func):
+    """Finds name of method
+
+    :param func: method
+    :return: Name of method
+    """
+    return str(func.__name__)
