@@ -2,22 +2,40 @@
 
 """Wrappers to profile functions"""
 
+import functools
+from time import time
 
-def jd_time(func):
+from hal.streams.logger import log_message
+
+
+def log_time(func):
+    """Executes function and logs time
+
+    :param func: function to call
+    :return: function result
     """
-    For debugging the execution time of a function.
-    """
 
-    def wrapper(*arg):
-        start = time.time()
-        print
-        '# dec_time: enter', func.func_name
-        try:
-            return func(*arg)
-        finally:
-            print
-            '# dec_time: exit {} ({} sec.)'.format(func.func_name,
-                                                   time.time() - start)
+    @functools.wraps(func)
+    def _execute(*args, **kwargs):
+        """Executes function and logs time
 
-    #
-    return wrapper
+        :param args: args of function
+        :param kwargs: extra args of function
+        :param *args: args
+        :param **kwargs: extra args
+        :return: function result
+        """
+
+        func_name = func.func_name
+        timer = time()
+        log_message(func_name, "has started")
+
+        result = func(*args, **kwargs)
+
+        timer = time() - timer
+        seconds = "{:.3f}".format(timer)
+        log_message(func_name, "has finished. Execution time:", seconds, "s")
+
+        return result
+
+    return _execute
