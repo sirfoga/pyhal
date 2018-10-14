@@ -27,6 +27,21 @@ class TestString:
         BatteryTests(tests).assert_all()
 
     @staticmethod
+    def test_remove_accents():
+        """Tests hal.strings.models.String.remove_accents method"""
+
+        tests = {
+            "árvíztűrő tükörfúrógép": "arvizturo tukorfurogep",
+            "ÁRVÍZTŰRŐ TÜKÖRFÚRÓGÉP": "ARVIZTURO TUKORFUROGEP"
+        }
+        tests = {
+            String(key).convert_accents(): val
+            for key, val in tests.items()
+        }
+
+        BatteryTests(tests).assert_all()
+
+    @staticmethod
     def test_remove_non_ascii():
         """Tests hal.strings.models.String.remove_non_ascii method"""
 

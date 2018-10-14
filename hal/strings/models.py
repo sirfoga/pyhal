@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """String models"""
+import unicodedata
 
 from pyparsing import Literal, Word, nums, Combine, Optional, delimitedList, \
     alphas, oneOf, Suppress
@@ -37,6 +38,18 @@ class String:
         :return: input except non-ansi chars
         """
         return ''.join(c for c in self.string if ord(c) < 128)
+
+    def convert_accents(self):
+        """Removes accents from text
+
+        :return: input with converted accents chars
+        """
+        nkfd_form = unicodedata.normalize('NFKD', self.string)
+        return "".join([
+            char
+            for char in nkfd_form
+            if not unicodedata.combining(char)
+        ])
 
     def remove_control_chars(self):
         """Removes controls chars from text

@@ -16,6 +16,14 @@ Subpackages
 Submodules
 ----------
 
+hal.streams.logger module
+-------------------------
+
+.. automodule:: hal.streams.logger
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 hal.streams.markdown module
 ---------------------------
 

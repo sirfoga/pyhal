@@ -17,4 +17,12 @@ hal.wrappers.errors module
     :undoc-members:
     :show-inheritance:
 
+hal.wrappers.profile module
+---------------------------
+
+.. automodule:: hal.wrappers.profile
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 
