@@ -8,7 +8,7 @@ from numpy.linalg import eigvalsh
 
 def eigenvalues_hadamard(matrix1, matrix2):
     """Computes the Hadamard product of 2 matrices. See
-    https://www.johndcook.com/blog/2018/10/10/hadamard-product/ for details.
+    https://www.johndcook.com/blog/2018/10/10/hadamard-product/ for details
 
     :param matrix1: first matrix
     :param matrix2: second matrix

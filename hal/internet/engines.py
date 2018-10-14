@@ -28,7 +28,7 @@ class SearchEngine:
     def __init__(self, url, blank_replace="+"):
         """
         :param url: string
-            Url of search engine used in all query.
+            Url of search engine used in all query
         :param blank_replace:
             Every search engine has to replace blanks in query
         """

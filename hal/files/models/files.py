@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 """Documents and folders in system """
-
 import os
 
 from hal.files.models.system import FileSystem
@@ -93,14 +92,14 @@ class Document(FileSystem):
     def is_video(self):
         """Checks if file is video
 
-        :return: True iff document is a video.
+        :return: True iff document is a video
         """
         return self.extension.lower() in VIDEO_FORMAT
 
     def is_subtitle(self):
         """Checks if file is subtitle
 
-        :return: True iff document is a subtitle.
+        :return: True iff document is a subtitle
         """
 
         return self.extension.lower() in SUBTITLE_FORMAT
@@ -108,7 +107,7 @@ class Document(FileSystem):
     def is_text(self):
         """Checks if file is text
 
-        :return: True iff document is a text file.
+        :return: True iff document is a text file
         """
 
         return self.extension.lower() in TEXT_FORMAT
@@ -116,7 +115,7 @@ class Document(FileSystem):
     def is_image(self):
         """Checks if file is image
 
-        :return: True iff document is an image.
+        :return: True iff document is an image
         """
 
         return self.extension.lower() in IMAGE_FORMAT
@@ -124,7 +123,7 @@ class Document(FileSystem):
     def is_audio(self):
         """Checks if file is audio
 
-        :return: True iff document is an audio.
+        :return: True iff document is an audio
         """
 
         return self.extension.lower() in AUDIO_FORMAT

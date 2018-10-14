@@ -39,7 +39,7 @@ class CSVParser(Parser):
         self.encoding = str(encoding).strip()
 
     def get_matrix(self):
-        """Stores values in array, store lines in array.
+        """Stores values in array, store lines in array
 
         :return: 2D matrix
         """

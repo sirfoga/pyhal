@@ -95,37 +95,37 @@ class TestSubsystem:
 
     @staticmethod
     def test_get_current_amount():
-        """Tests hal.cvs.versioning.Subsystem.get_current_amount method"""
+        """Tests hal.cvs.versioning.get_current_amount method"""
 
         pass  # todo auto generated method stub
 
     @staticmethod
     def test_reset():
-        """Tests hal.cvs.versioning.Subsystem.reset method"""
+        """Tests hal.cvs.versioning.reset method"""
 
         pass  # todo auto generated method stub
 
     @staticmethod
     def test_increase():
-        """Tests hal.cvs.versioning.Subsystem.increase method"""
+        """Tests hal.cvs.versioning.increase method"""
 
         pass  # todo auto generated method stub
 
     @staticmethod
     def test_maximize():
-        """Tests hal.cvs.versioning.Subsystem.maximize method"""
+        """Tests hal.cvs.versioning.maximize method"""
 
         pass  # todo auto generated method stub
 
     @staticmethod
     def test_max_amount_allowed():
-        """Tests hal.cvs.versioning.Subsystem.max_amount_allowed method"""
+        """Tests hal.cvs.versioning.max_amount_allowed method"""
 
         pass  # todo auto generated method stub
 
     @staticmethod
     def test_max():
-        """Tests hal.cvs.versioning.Subsystem.max method"""
+        """Tests hal.cvs.versioning.max method"""
 
         pass  # todo auto generated method stub
 

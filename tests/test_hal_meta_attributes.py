@@ -2,7 +2,6 @@
 
 
 """Tests hal.meta.attributes implementation"""
-
 import os
 
 from hal.meta.attributes import ModuleFile

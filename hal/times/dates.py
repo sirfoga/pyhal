@@ -23,7 +23,7 @@ class Weekday(Enum):
 
         :param weekday: day of week
         :param including_today: If today is sunday and requesting next sunday
-        :return: Date of next monday, tuesday ...
+        :return: Date of next monday, tuesday ..
         """
         now = datetime.datetime.now()
         if now.weekday() == weekday.value and including_today:
@@ -42,7 +42,7 @@ class Weekday(Enum):
 
         :param weekday: day of week
         :param including_today: If today is sunday and requesting last sunday
-        :return: Date of last monday, tuesday ...
+        :return: Date of last monday, tuesday ..
         """
         now = datetime.datetime.now()
         if now.weekday() == weekday.value and including_today:
@@ -110,7 +110,7 @@ class Day:
         """Gets next week day
 
         :param including_today: If today is sunday and requesting next sunday
-        :return: Date of next monday, tuesday ...
+        :return: Date of next monday, tuesday ..
         """
         weekday = self.date_time.weekday()
         return Weekday.get_next(weekday, including_today=including_today)
@@ -119,7 +119,7 @@ class Day:
         """Gets last week day
 
         :param including_today: If today is sunday and requesting next sunday
-        :return: Date of last monday, tuesday ...
+        :return: Date of last monday, tuesday ..
         """
         weekday = self.date_time.weekday()
         return Weekday.get_last(weekday, including_today=including_today)

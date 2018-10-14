@@ -3,7 +3,6 @@
 
 """Tests hal.files.models.system implementation"""
 
-import os
 import random
 import shutil
 
@@ -21,7 +20,7 @@ from hal.tests.utils import BatteryTests, random_name
 
 
 def test_fix_raw_path():
-    """Tests hal.files.models.system.fix_raw_path method"""
+    """Tests hal.files.models.os.fix_raw_path method"""
 
     tests = {
         "//a/b/c": "/a/b/c",  # double separators
@@ -33,7 +32,7 @@ def test_fix_raw_path():
 
 
 def test_remove_year():
-    """Tests hal.files.models.system.remove_year method"""
+    """Tests hal.files.models.os.remove_year method"""
 
     tests = {
         "Today is 1980": "Today is ",
@@ -48,7 +47,7 @@ def test_remove_year():
 
 
 def test_remove_brackets():
-    """Tests hal.files.models.system.remove_brackets method"""
+    """Tests hal.files.models.os.remove_brackets method"""
 
     tests = {
         "(": "",  # void
@@ -65,7 +64,7 @@ def test_remove_brackets():
 
 
 def test_extract_name_max_chars():
-    """Tests hal.files.models.system.extract_name_max_chars method"""
+    """Tests hal.files.models.os.extract_name_max_chars method"""
 
     tests = {
         "012345678a": "012345678a",  # length
@@ -81,7 +80,7 @@ def test_extract_name_max_chars():
 
 
 def test_prettify():
-    """Tests hal.files.models.system.prettify method"""
+    """Tests hal.files.models.os.prettify method"""
 
     bad_string = "".join(BAD_CHARS)
     tests = {
@@ -95,7 +94,7 @@ def test_prettify():
 
 
 def test_is_file():
-    """Tests hal.files.models.system.is_file method"""
+    """Tests hal.files.models.os.is_file method"""
 
     tests = {
         os.getenv("HOME"): False,
@@ -106,13 +105,13 @@ def test_is_file():
 
 
 def test_is_folder():
-    """Tests hal.files.models.system.is_folder method"""
+    """Tests hal.files.models.os.is_folder method"""
 
     pass  # todo auto generated method stub
 
 
 def test_get_parent_folder_name():
-    """Tests hal.files.models.system.get_parent_folder_name method"""
+    """Tests hal.files.models.os.get_parent_folder_name method"""
 
     tests = {
         "/a/b/c": "b",
@@ -124,13 +123,13 @@ def test_get_parent_folder_name():
 
 
 def test_get_folder_name():
-    """Tests hal.files.models.system.get_folder_name method"""
+    """Tests hal.files.models.os.get_folder_name method"""
 
     pass  # todo auto generated method stub
 
 
 class TestLs:
-    """Tests hal.files.models.system.ls* methods"""
+    """Tests hal.files.models.os.ls* methods"""
 
     def prepare_temp_files(self):
         """Creates temp file for testing"""
@@ -186,7 +185,7 @@ class TestLs:
         shutil.rmtree(self.working_folder)  # remove main folder
 
     def test_ls_dir(self):
-        """Tests hal.files.models.system.ls_dir method"""
+        """Tests hal.files.models.os.ls_dir method"""
 
         self.prepare_temp_files()
         tests = {
@@ -200,7 +199,7 @@ class TestLs:
         self.purge_temp_files()
 
     def test_ls_recurse(self):
-        """Tests hal.files.models.system.ls_recurse method"""
+        """Tests hal.files.models.os.ls_recurse method"""
 
         self.prepare_temp_files()
         tests = {
@@ -214,7 +213,7 @@ class TestLs:
         self.purge_temp_files()
 
     def test_list_hidden_content(self):
-        """Tests hal.files.models.system.list_content method (hidden=True)"""
+        """Tests hal.files.models.os.list_content method (hidden=True)"""
 
         self.prepare_temp_files()
         tests = {
@@ -228,7 +227,7 @@ class TestLs:
         self.purge_temp_files()
 
     def test_list_content(self):
-        """Tests hal.files.models.system.list_content method"""
+        """Tests hal.files.models.os.list_content method"""
 
         pass  # todo auto generated method stub
 
@@ -238,13 +237,13 @@ class TestFileSystem:
 
     @staticmethod
     def test_is_hidden():
-        """Tests hal.files.models.system.FileSystem.is_hidden method"""
+        """Tests hal.files.models.os.Fileos.is_hidden method"""
 
         pass  # todo auto generated method stub
 
     @staticmethod
     def test_is_archive_mac():
-        """Tests hal.files.models.system.FileSystem.is_archive_mac method"""
+        """Tests hal.files.models.os.Fileos.is_archive_mac method"""
 
         tests = {
             "macosx": True,
@@ -259,7 +258,7 @@ class TestFileSystem:
 
     @staticmethod
     def test_is_russian():
-        """Tests hal.files.models.system.FileSystem.is_russian method"""
+        """Tests hal.files.models.os.Fileos.is_russian method"""
 
         tests = {
             "".join([random.choice(RUSSIAN_CHARS)] * 15 + ["fjdhf"]): True,
@@ -275,12 +274,12 @@ class TestFileSystem:
 
     @staticmethod
     def test_trash():
-        """Tests hal.files.models.system.FileSystem.trash method"""
+        """Tests hal.files.models.os.Fileos.trash method"""
 
         pass  # todo auto generated method stub
 
     @staticmethod
     def test_rename():
-        """Tests hal.files.models.system.FileSystem.rename method"""
+        """Tests hal.files.models.os.Fileos.rename method"""
 
         pass  # todo auto generated method stub

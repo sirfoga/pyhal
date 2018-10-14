@@ -3,7 +3,6 @@
 """Perform benchmarks and tests on your PC """
 
 import getpass
-import os
 import random
 import sys
 from time import time

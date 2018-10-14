@@ -7,7 +7,7 @@ import hashlib
 
 def string_to_md5(content):
     """Calculate the md5 hash of a string. This 'string' can be the binary
-    content of a file too.
+    content of a file too
 
     :param content: string to convert
     :return: MD5 hash of content

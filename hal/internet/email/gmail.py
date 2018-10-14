@@ -2,7 +2,6 @@
 
 """Use GMail APIs from python """
 
-import os
 from email.mime.text import MIMEText
 
 from hal.internet.services.google.gauthenticator import GoogleApiOAuth

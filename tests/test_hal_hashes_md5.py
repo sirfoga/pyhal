@@ -2,7 +2,6 @@
 
 
 """Tests hal.hashes.md5 implementation"""
-import os
 
 from hal.hashes.md5 import file_to_md5
 from hal.hashes.md5 import string_to_md5

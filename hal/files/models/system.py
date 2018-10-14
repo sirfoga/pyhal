@@ -135,9 +135,9 @@ def prettify(name, blank=" "):
 
     :param name: path Name: to edit
     :param blank: default blanks in name
-    :return: Prettier name from given one: replace bad chars with good ones.
+    :return: Prettier name from given one: replace bad chars with good ones
     """
-    if name.startswith("."):  # remove starting .
+    if name.startswith("."):  # remove starting
         name = name[1:]
 
     for bad_char in BAD_CHARS:
@@ -203,7 +203,7 @@ def ls_dir(path, include_hidden=False):
 
     :param path: directory to get list of files and folders
     :param include_hidden: True iff include hidden files in list
-    :return: List of paths in given directory.
+    :return: List of paths in given directory
     """
     lst = []
     for file in os.listdir(path):
@@ -218,7 +218,7 @@ def ls_recurse(path, include_hidden=False):
 
     :param path: directory to get list of files and folders
     :param include_hidden: True iff include hidden files in list
-    :return: List of paths in given directory recursively.
+    :return: List of paths in given directory recursively
     """
     lst = []
     for file in os.listdir(path):
@@ -239,7 +239,7 @@ def list_content(path, recurse, include_hidden=False):
     :param path: directory to get list of files and folders
     :param recurse: True iff recurse into subdirectories or not
     :param include_hidden: True iff include hidden files in list
-    :return: List of paths in given directory recursively.
+    :return: List of paths in given directory recursively
     """
     if recurse:
         return ls_recurse(path, include_hidden=include_hidden)
