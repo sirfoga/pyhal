@@ -5,13 +5,11 @@
 import getpass
 import random
 import sys
-from time import time
 
 from hal.files.models.files import Document
 from hal.maths.problems import EightQueen
-
 # todo use logging
-
+from hal.profile.models import Timer
 
 INTRO = "So, let\'s get into the details.. I\'m going to solve the " \
         "classic Eight Queens Puzzle: it\'s the problem of placing " \
@@ -68,10 +66,12 @@ class EightQueenTest:
 
         :return: Time to solve problem with given size
         """
-        timing = time()
+        timer = Timer()
+
         problem = EightQueen(self.size)
         problem.solve(problem.board_size)
-        return time() - timing
+
+        return timer.elapsed_time()
 
     def update_std_out_and_log(self, string):
         """Prints to stdout and updates log
@@ -95,7 +95,7 @@ class EightQueenTest:
     def run(self):
         """Runs test and safes results"""
         max_board_size = self.size
-        start_time = time()
+        timer = Timer()
 
         for size in range(max_board_size + 1):
             timing = self.run_test()
@@ -104,9 +104,7 @@ class EightQueenTest:
                 str(size).ljust(10) + "TIME REQUIRED (s)".ljust(20) +
                 str('{:03.3f}'.format(timing))
             )
-
-        finish_time = time()
-        length = finish_time - start_time
+        length = timer.elapsed_time()
 
         self.update_std_out_and_log(
             "It took me " + str(length) + " seconds to complete all " + str(

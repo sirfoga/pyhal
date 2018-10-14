@@ -3,8 +3,8 @@
 """Wrappers to profile functions"""
 
 import functools
-from time import time
 
+from hal.profile.models import Timer
 from hal.streams.logger import log_message
 
 
@@ -27,13 +27,12 @@ def log_time(func):
         """
 
         func_name = func.func_name
-        timer = time()
+        timer = Timer()
         log_message(func_name, "has started")
 
         result = func(*args, **kwargs)
 
-        timer = time() - timer
-        seconds = "{:.3f}".format(timer)
+        seconds = "{:.3f}".format(timer.elapsed_time())
         log_message(func_name, "has finished. Execution time:", seconds, "s")
 
         return result
