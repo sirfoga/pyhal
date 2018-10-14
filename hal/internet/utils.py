@@ -7,7 +7,9 @@ import time
 import urllib.parse as urlparse
 from urllib.parse import urlencode
 
-from hal.wrappers.errors import true_false_returns
+import requests
+
+from hal.wrappers.errors import true_false_returns, none_returns
 
 
 def add_params_to_url(url, params):
@@ -53,3 +55,15 @@ def wait_until_internet(time_between_attempts=3, max_attempts=10):
             return False
 
     return True
+
+
+@none_returns
+def get_my_external_ip():
+    """Gets external IP
+
+    :return: external IP
+    """
+
+    resp = requests.get(url="https://jsonip.com/")
+    data = resp.json()
+    return data["ip"]
