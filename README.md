@@ -5,6 +5,10 @@
 
 <div align="center">
 <a href="https://travis-ci.org/sirfoga/pyhal"><img alt="Build Status" src="https://travis-ci.org/sirfoga/pyhal.svg?branch=master"></a> <a href="https://codecov.io/github/sirfoga/pyhal"><img alt="codecov.io" src="https://codecov.io/github/sirfoga/pyhal/coverage.svg?branch=master"></a> <a href="https://landscape.io/github/sirfoga/hal/master"><img alt="Code Health" src="https://landscape.io/github/sirfoga/pyhal/master/landscape.svg?style=flat"></a>
+
+
+
+<a href="https://saythanks.io/to/sirfoga"><img src="https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg" alt="Say Thanks!" /></a>
 </div>
 
 

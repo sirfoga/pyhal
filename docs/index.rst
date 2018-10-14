@@ -21,6 +21,9 @@ Release v\ |version|
 .. image:: https://codecov.io/github/sirfoga/pyhal/coverage.svg?branch=master
    :target: https://codecov.io/github/sirfoga/pyhal
 
+.. image:: https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg
+   :target: https://saythanks.io/to/sirfoga
+
 -------------------
 
 
