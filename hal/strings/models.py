@@ -31,10 +31,17 @@ class String:
 
         return "".join(chars)
 
-    def remove_non_ansi(self):
+    def remove_non_ascii(self):
         """Removes non-ansi chars from text
-    
+
         :return: input except non-ansi chars
+        """
+        return ''.join(c for c in self.string if ord(c) < 128)
+
+    def remove_control_chars(self):
+        """Removes controls chars from text
+    
+        :return: input except controls chars
         """
         esc_key = Literal('\x1b')
         integer = Word(nums)

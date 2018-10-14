@@ -11,7 +11,7 @@ def parse_colorama(text):
     :param text: Colorama text to parse
     :return: Parsed colorama text
     """
-    return String(text).remove_non_ansi()
+    return String(text).remove_control_chars()
 
 
 class SqlTable:

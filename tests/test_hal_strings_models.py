@@ -27,8 +27,22 @@ class TestString:
         BatteryTests(tests).assert_all()
 
     @staticmethod
-    def test_remove_non_ansi():
-        """Tests hal.strings.models.String.remove_non_ansi method"""
+    def test_remove_non_ascii():
+        """Tests hal.strings.models.String.remove_non_ascii method"""
+
+        tests = {
+            "László": "Lszl"
+        }
+        tests = {
+            String(key).remove_non_ascii(): val
+            for key, val in tests.items()
+        }
+
+        BatteryTests(tests).assert_all()
+
+    @staticmethod
+    def test_remove_control_char():
+        """Tests hal.strings.models.String.remove_control_char method"""
 
         tests = {
             "a": "a",
@@ -36,7 +50,7 @@ class TestString:
             "a\x1b[31m": "a"
         }
         tests = {
-            String(key).remove_non_ansi(): val
+            String(key).remove_control_chars(): val
             for key, val in tests.items()
         }
 

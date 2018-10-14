@@ -19,7 +19,7 @@
 * [Examples](#examples)
 * [Install](#install)
 * [Usage and documentation](#usage-and-documentation)
-* [Questions and issues](#questions-and-issues)
+* [Contributing and feedback](#contributing-and-feedback)
 * [License](#license)
 
 </details>
@@ -124,7 +124,7 @@ Different ways, all equals
 - ```$ make pip-install```
 
 ### fast install
-- ```make fast-init``` just copies source files to distitribution files ... run it only if you're sure about dependencies
+- ```make fast-init``` just copies source files to distribution files ... run it only if you're sure about dependencies
 
 
 ## Usage and documentation

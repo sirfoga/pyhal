@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""Module containing bug report helper(s)."""
+"""Module containing bug report helper(s)"""
 
 import json
 import platform
@@ -42,14 +42,14 @@ class BugReporter:
         :return: information for bug report
         """
         platform_info = BugReporter.get_platform_info()
-        hal_info = {
+        module_info = {
             'version': hal_version.__version__,
             'build': hal_version.__build__
         }
 
         return {
             'platform': platform_info,
-            'pyhal': hal_info
+            'pyhal': module_info
         }
 
     def _get_table(self):
@@ -109,7 +109,7 @@ def main():
     print("SQL report:")
     print(reporter.as_sql())
 
-    print("Choose the appropriate format (if you're submitting a GithubIssue "
+    print("Choose the appropriate format (if you're submitting a Github Issue "
           "please chose the Markdown report) and paste it!")
 
 

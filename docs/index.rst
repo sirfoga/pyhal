@@ -64,7 +64,7 @@ Classic way
     >>>         audio["artist"] = "An example"
     >>>         audio.save()
 
-Using ``pyhal``
+Using ``Hal``
 ^^^^^^^^^^^^^^^
 
 .. code:: python
@@ -94,7 +94,7 @@ Classic way
 
 .. _using-pyhal-1:
 
-Using ``pyhal``
+Using ``Hal``
 ^^^^^^^^^^^^^^^
 
 .. code:: python
@@ -115,7 +115,7 @@ No easy way that I know of
 
 .. _using-pyhal-2:
 
-Using ``pyhal``
+Using ``Hal``
 ^^^^^^^^^^^^^^^
 
 .. code:: python
@@ -139,7 +139,7 @@ No easy way that I know of
 
 .. _using-pyhal-3:
 
-Using ``pyhal``
+Using ``Hal``
 ^^^^^^^^^^^^^^^
 
 .. code:: python
@@ -171,7 +171,7 @@ via ``pip``
 fast install
 ~~~~~~~~~~~~
 
--  ``make fast-init`` *just copies source files to distitribution files
+-  ``make fast-init`` *just copies source files to distribution files
    … run it only if you’re sure about dependencies*
 
 .. _pip: https://pypi.org/project/PyHal/
