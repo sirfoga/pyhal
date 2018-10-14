@@ -142,17 +142,26 @@ class TestWriter:
 
         return contents + "\n"  # PEP 8: no newline at end of file
 
+    @staticmethod
+    def write_modules_tests(modules, output_folder):
+        """Writes test stubs for modules
+
+        :param modules: list of modules
+        :param output_folder: output folder
+        """
+
+        for mod in modules:
+            file_name = mod.package.replace(MODULE_SEP, "_")
+            file_name = "test_" + file_name + ".py"
+            output_file = os.path.join(output_folder, file_name)
+            Document(output_file).write_data(TestWriter.get_module_tests(mod))
+
     def write_tests(self, output_folder):
         """Writes test stubs for modules in folder
 
         :param output_folder: output folder
         """
-
         if not os.path.exists(output_folder):  # prepare necessary folders
             os.makedirs(output_folder)
 
-        for mod in self.modules:
-            file_name = mod.package.replace(MODULE_SEP, "_")
-            file_name = "test_" + file_name + ".py"
-            output_file = os.path.join(output_folder, file_name)
-            Document(output_file).write_data(self.get_module_tests(mod))
+        self.write_modules_tests(self.modules, output_folder)
