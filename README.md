@@ -160,6 +160,7 @@ Suggestions and improvements are [welcome](https://github.com/sirfoga/pyhal/issu
 
 ## Thanks to
 - [Kenneth Reitz](https://github.com/kennethreitz)
+- [Jabba Laci](https://github.com/jabbalaci) ([Laszlo Szathmary](mailto:jabba.laci@gmail.com)
 
 
 ## License

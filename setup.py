@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 
+"""Setups Hal"""
+
+import os
 
 from setuptools import setup, find_packages
 
@@ -22,11 +25,11 @@ def get_version_details(path):
 
 
 # folders
-HERE = system.path.abspath(system.path.dirname(__file__))
-SRC_FOLDER = system.path.join(HERE, "hal")
+HERE = os.path.abspath(os.path.dirname(__file__))
+SRC_FOLDER = os.path.join(HERE, "hal")
 
 # version
-VERSION_FILE = system.path.join(SRC_FOLDER, "__version__.py")
+VERSION_FILE = os.path.join(SRC_FOLDER, "__version__.py")
 VERSION = get_version_details(VERSION_FILE)
 
 # descriptions
