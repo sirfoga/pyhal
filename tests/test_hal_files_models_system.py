@@ -3,6 +3,7 @@
 
 """Tests hal.files.models.system implementation"""
 
+import os
 import random
 import shutil
 
