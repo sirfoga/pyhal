@@ -1,3 +1,4 @@
+import os
 
 from hal.files.models.files import Document
 from hal.meta.attributes import get_modules, ModuleFile, MODULE_SEP

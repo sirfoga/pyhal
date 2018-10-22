@@ -3,6 +3,7 @@
 """Profile OS memory """
 
 import gc
+import os
 
 import psutil
 

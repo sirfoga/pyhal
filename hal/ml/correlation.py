@@ -2,6 +2,7 @@
 
 """Correlate values in arrays producing fancy good-looking matrices"""
 
+import os
 import time
 
 import numpy as np
