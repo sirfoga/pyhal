@@ -2,6 +2,7 @@
 
 """Authenticate your Google APIs """
 
+import os
 
 import httplib2
 from googleapiclient import discovery

@@ -1,5 +1,6 @@
 .PHONY: clean docs
 VERSION := $(shell pip3 show PyHal | grep "Version" | awk '{split($$0, a, " ");print a[2]}')
+HERE := $(shell pwd)
 
 clean:
 	rm -fr build dist *egg *.egg-info
@@ -16,9 +17,9 @@ pip-install:
 	$(MAKE) show-installed-version
 
 fast-install:
-	rm -rf /usr/local/lib/python3.6/dist-packages/hal
-	mkdir /usr/local/lib/python3.6/dist-packages/hal
-	cp -r hal/ /usr/local/lib/python3.6/dist-packages/
+	sudo rm -rf /usr/local/lib/python3.6/dist-packages/hal
+	sudo mkdir /usr/local/lib/python3.6/dist-packages/hal
+	sudo cp -r hal/ /usr/local/lib/python3.6/dist-packages/
 	@echo "\033[95m\nInstalled to /usr/local/lib/python3.6/dist-packages/hal\033[0m"
 	$(MAKE) show-installed-version
 
@@ -46,7 +47,9 @@ publish:
 
 docs:
 	cd docs && $(MAKE) html
-	@echo "\033[95m\nBuild successful! View the docs homepage at docs/_build/html/index.html.\033[0m"
+	@echo "\033[95m\nBuild successful! View the docs homepage at $(HERE)/docs/_build/html/index.html.\033[0m"
+	xdg-open "$(HERE)/docs/_build/html/index.html"
+
 
 bug-report:
 	python3 hal/help.py
