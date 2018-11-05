@@ -89,14 +89,18 @@ class Day:
         """
         return self.is_date_in_between(
             Weekday.get_last(self.week_end, including_today=True),
-            Weekday.get_next(self.week_end)
+            Weekday.get_next(self.week_end),
+            include_end=False
         )
 
-    def is_date_in_between(self, start, end):
+    def is_date_in_between(self, start, end, include_start=True,
+                           include_end=True):
         """Checks if date is in between dates
 
         :param start: Date cannot be before this date
         :param end: Date cannot be after this date
+        :param include_start: True iff date is start
+        :param include_end: True iff date is end
         :return: True iff date is in between dates
         """
 
@@ -104,7 +108,16 @@ class Day:
         now = self.get_just_date()
         end = Day(end).get_just_date()
 
-        return start <= now <= end
+        if start < now < end:
+            return True
+
+        if include_start and now == start:
+            return True
+
+        if include_end and now == end:
+            return True
+
+        return False
 
     def get_next_weekday(self, including_today=False):
         """Gets next week day

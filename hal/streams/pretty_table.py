@@ -38,12 +38,15 @@ class SqlTable:
         :return: Parsed value
         """
         try:
-            val = float(raw)
-            if (val % 1) == 0:  # integer
-                val = int(raw)
-                return str(val)
+            if not raw.startswith("0"):
+                val = float(raw)
+                if (val % 1) == 0:  # integer
+                    val = int(raw)
+                    return str(val)
 
-            return self.num_format.format(val)
+                return self.num_format.format(val)
+            else:
+                raise ValueError("Cannot parse int!")
         except:
             return str(raw)
 
