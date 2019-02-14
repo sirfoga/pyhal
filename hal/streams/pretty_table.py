@@ -2,6 +2,8 @@
 
 """Pretty prints table in SQL style """
 
+import pandas as pd
+
 from hal.strings.models import String
 
 
@@ -186,3 +188,14 @@ def pretty_df(data_frame):
     """
     table = SqlTable.from_df(data_frame)
     return table.build()
+
+
+def pretty_dicts(dicts):
+    """Converts list of dicts to data frame, then calls 'pretty_df'
+
+    :param dicts: list of dicts
+    :return: Pretty formatted table (first row is labels, then actual data)
+    """
+
+    df = pd.DataFrame(dicts)
+    return pretty_df(df)

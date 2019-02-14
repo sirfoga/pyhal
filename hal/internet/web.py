@@ -176,7 +176,7 @@ class Webpage:
         req.add_header("user-agent", random.choice(USER_AGENTS))
         req_text = urllib.request.urlopen(req).read()
         self.source = str(req_text)
-        self.soup = BeautifulSoup(self.source, "lxml")
+        self.soup = BeautifulSoup(self.source, "html.parser")
         return self.source
 
     def get_links(self, recall, timeout):
