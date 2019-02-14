@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """String models"""
+
 import unicodedata
 
 from pyparsing import Literal, Word, nums, Combine, Optional, delimitedList, \

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """Documents and folders in system """
+
 import os
 
 from hal.files.models.system import FileSystem

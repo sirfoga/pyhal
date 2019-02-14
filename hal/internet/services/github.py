@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """Common classes and entities in Github """
+
 import json
 import urllib
 
