@@ -208,7 +208,7 @@ License
 .. image:: https://img.shields.io/badge/License-MIT-blue.svg
    :target: https://opensource.org/licenses/MIT
 
-The MIT License (MIT)
+GNU GENERAL PUBLIC LICENSE - Version 3, 29 June 2007
 
 Copyright (c) Stefano Fogarollo
 

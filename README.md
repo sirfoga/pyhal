@@ -146,7 +146,7 @@ or make your own by `make docs`
 
 ## Contributing and feedback
 <a href="https://github.com/sirfoga/pyhal/issues"><img alt="Contributions welcome" src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"></a>
-<a href="https://opensource.org/licenses/MIT"><img alt="Open Source Love" src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103"></a>
+<a href="https://opensource.org/licenses/GPL-3.0"><img alt="Open Source Love" src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103"></a>
 
 0. [open an issue](https://github.com/sirfoga/pyhal/issues/new)
 0. [fork](https://github.com/sirfoga/pyhal/fork) this repository
@@ -174,4 +174,4 @@ Suggestions and improvements are [welcome](https://github.com/sirfoga/pyhal/issu
 
 
 ## License
-<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
+<a href="https://opensource.org/licenses/GPL-3.0"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg"></a>
