@@ -18,3 +18,4 @@ GitPython>=2.1.11
 google_api_python_client>=1.7.4
 scikit_learn>=0.20.0
 oauth2client>=4.1.3
+lxml

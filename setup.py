@@ -36,10 +36,13 @@ VERSION = get_version_details(VERSION_FILE)
 LITTLE_DESCRIPTION = VERSION["description"]
 DESCRIPTION = \
     "HAL\n" + LITTLE_DESCRIPTION + "\n\
+    Requirements\n\
+    - $ pip install -r https://raw.githubusercontent.com/sirfoga/pyhal/master/requirements.txt\n\
     Install\n\
     - $ make install, with pipenv\n\
     - $ make pip-install, with pip\n\
     - $ pip install PyHal, via pip\n\
+    - $ pip install git+https://github.com/sirfoga/pyhal/, via for the latest release\n\
     Questions and issues\n\
     The Github issue tracker is only for bug reports and feature requests."
 
@@ -53,5 +56,5 @@ setup(
     long_description=DESCRIPTION,
     keywords="hal library general-purpose",
     url=VERSION["url"],
-    packages=find_packages(exclude=["tests"])
+    packages=find_packages(exclude=["tests"]),
 )
