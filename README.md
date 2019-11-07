@@ -110,10 +110,19 @@ w = TestWriter(src)
 w.write_tests(out)
 ```
 
+## Requirements
+
+- ```$ pip install -r https://raw.githubusercontent.com/sirfoga/pyhal/master/requirements.txt```
+
+### Dev requirements (optional)
+
+- ```$ pip install -r https://raw.githubusercontent.com/sirfoga/pyhal/master/requirements_dev.txt```
+
 ## Install
 <a href="https://pypi.org/project/PyHal/"><img alt="PyPI version" src="https://badge.fury.io/py/PyHal.svg"></a> <a href="https://requires.io/github/sirfoga/pyhal/requirements/?branch=master"><img alt="Requirements Status" src="https://requires.io/github/sirfoga/pyhal/requirements.svg?branch=master"></a> <a href="https://snyk.io/test/github/sirfoga/pyhal?targetFile=requirements.txt"><img src="https://snyk.io/test/github/sirfoga/pyhal/badge.svg?targetFile=requirements.txt" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/sirfoga/pyhal?targetFile=requirements.txt" style="max-width:100%;"></a>
 
 Different ways, all equals
+
 
 ### via `pipenv`
 - ```$ pipenv install .```
@@ -122,6 +131,7 @@ Different ways, all equals
 ### via `pip`
 - ```$ pip3 install PyHal```
 - ```$ make pip-install```
+- ```$ pip install git+https://github.com/sirfoga/pyhal/  # use GitHub for the latest release```
 
 ### fast install
 - ```make fast-init``` just copies source files to distribution files ... run it only if you're sure about dependencies

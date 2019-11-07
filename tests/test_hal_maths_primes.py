@@ -5,7 +5,7 @@
 
 from scipy.stats import describe
 
-from hal.maths.primes import get_prime, Integer, blum_blum_shub
+from hal.maths.nt.primes import get_prime, Integer, blum_blum_shub
 
 
 def test_get_prime():

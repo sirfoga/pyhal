@@ -38,6 +38,8 @@ DESCRIPTION = \
     "HAL\n" + LITTLE_DESCRIPTION + "\n\
     Requirements\n\
     - $ pip install -r https://raw.githubusercontent.com/sirfoga/pyhal/master/requirements.txt\n\
+    Dev requirements\n\
+    - $ pip install -r https://raw.githubusercontent.com/sirfoga/pyhal/master/requirements_dev.txt\n\
     Install\n\
     - $ make install, with pipenv\n\
     - $ make pip-install, with pip\n\
