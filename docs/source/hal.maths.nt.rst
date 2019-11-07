@@ -1,7 +1,7 @@
-hal.meta package
-================
+hal.maths.nt package
+====================
 
-.. automodule:: hal.meta
+.. automodule:: hal.maths.nt
    :members:
    :undoc-members:
    :show-inheritance:
@@ -9,10 +9,10 @@ hal.meta package
 Submodules
 ----------
 
-hal.meta.attributes module
+hal.maths.nt.primes module
 --------------------------
 
-.. automodule:: hal.meta.attributes
+.. automodule:: hal.maths.nt.primes
    :members:
    :undoc-members:
    :show-inheritance:

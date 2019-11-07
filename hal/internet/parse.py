@@ -74,3 +74,21 @@ class HtmlTable:
                 data.append(parsed)
 
         return data
+
+
+def remove_tag(tag, soup):
+    [s.extract() for s in soup(tag)]
+    return soup
+
+
+def remove_dynamics(soup):
+    dynamics_tags = ['link', 'script']
+
+    for tag in dynamics_tags:
+        soup = remove_tag(tag, soup)
+
+    return soup
+
+
+def remove_style(soup):
+    return remove_tag('css', soup)
