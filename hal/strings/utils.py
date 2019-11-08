@@ -40,3 +40,20 @@ def get_average_length_of_string(strings):
         return 0
 
     return sum(len(word) for word in strings) / len(strings)
+
+
+def convert2sentence_case(string, splitter='. '):
+    def prettify_sentence(s):
+        return s.strip()
+
+    def convert(s):
+        return s[0].upper() + s[1:]
+
+    def join_separate(s, joiner='. '):
+        return joiner.join(s)
+
+    sentences = string.split(splitter)
+    sentences = map(prettify_sentence, sentences)  # prettify
+    sentences = map(convert, sentences)  # convert
+    out = join_separate(sentences)  # combine
+    return out
