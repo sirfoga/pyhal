@@ -6,7 +6,7 @@ import numpy as np
 import scipy.stats as ss
 
 from hal.maths.probability.distribution.sampling import Pdf1D
-from maths.probability.monte_carlo.integration import MonteCarlo1D
+from hal.maths.probability.monte_carlo.integration import MonteCarlo1D
 
 
 class NormalImportanceSample(MonteCarlo1D):
