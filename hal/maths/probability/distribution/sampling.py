@@ -43,7 +43,8 @@ class Pdf1D(Pdf):
 
 class Pdf2D(Pdf):
     def expected_value(self, limits):
-        x_min, x_max, y_min, y_max = limits
+        x_min, x_max = limits[0]  # x-limit
+        y_min, y_max = limits[1]  # y-limit
         val, _ = integrate.dblquad(self.f, x_min, x_max, lambda x: y_min, lambda x: y_max)
         return val
 
