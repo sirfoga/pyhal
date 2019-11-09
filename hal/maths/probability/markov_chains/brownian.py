@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+
+""" Brownian motion """
+
 import random
 from enum import Enum
 
