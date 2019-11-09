@@ -40,7 +40,7 @@ class MonteCarlo1D(MonteCarlo):
         return b - a
 
     def unpack_limits(self, limits):
-        a, b = limits[0]  # just x-limits -> take first value
+        a, b = limits  # just x-limits -> take first value
         return a, b
 
     def integrate(self, limits, n):
@@ -55,9 +55,8 @@ class MonteCarlo1D(MonteCarlo):
         return self.volume(limits) / n * raw_integration
 
     def anal_mean_var(self, limits, n):
-        a, b = self.unpack_limits(limits)
         pdf = Pdf1D(self.f)
-        mean, var = pdf.expected_value(a, b), pdf.variance(a, b)
+        mean, var = pdf.expected_value(limits), pdf.variance(limits)
         return mean, 1 / n * var
 
 
@@ -68,7 +67,7 @@ class MonteCarlo2D(MonteCarlo):
 
     def unpack_limits(self, limits):
         x_min, x_max = limits[0]  # x-limit
-        y_min, y_max = limits[0]  # x-limit
+        y_min, y_max = limits[1]  # y-limit
         return x_min, x_max, y_min, y_max
 
     def integrate(self, limits, n):
