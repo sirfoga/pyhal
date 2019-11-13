@@ -17,6 +17,17 @@ class Pdf:
             self.f() for _ in range(n)
         ]
 
+    def antithetics(self, n):
+        samples = self.sample(n)
+        antithetics = [1 - sample for sample in samples]
+        return antithetics
+
+    def sample_with_antithetics(self, n):
+        n_samples = int(n / 2)
+        samples = self.sample(n_samples)
+        antithetics = [1 - sample for sample in samples]
+        return samples + antithetics
+
     @abc.abstractmethod
     def expected_value(self, limits):
         return 0

@@ -6,20 +6,20 @@ import numpy as np
 import scipy.stats as ss
 
 from hal.maths.probability.distribution.sampling import Pdf1D
-from hal.maths.probability.monte_carlo.integration import MonteCarlo1D
+from hal.maths.probability.monte_carlo.uniform import MonteCarlo
 
 
-class NormalImportanceSample(MonteCarlo1D):
+class NormalImportanceSample(MonteCarlo):
     @staticmethod
     def N(mean, std):
         return np.random.normal(mean, std)
 
-    def unpack_limits(self, config):
-        a, b, mean, std = config  # just x-limits -> take first value
-        return a, b, mean, std
+    def volume(self, config):
+        a, b, _, _ = config
+        return b - a
 
     def integrate(self, config, n):
-        a, b, mean, std = self.unpack_limits(config)
+        a, b, mean, std = config
 
         def pdf():
             return self.N(mean, std)
@@ -30,4 +30,4 @@ class NormalImportanceSample(MonteCarlo1D):
         q = ss.norm.pdf(samples, loc=mean, scale=std)
         ws = p / q  # weighted
         raw_integration = sum(ys * ws)
-        return 1 / n * raw_integration
+        return 1 / n * self.volume(config) * raw_integration
