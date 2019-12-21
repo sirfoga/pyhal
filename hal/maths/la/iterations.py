@@ -4,9 +4,9 @@
 
 import abc
 
-from hal.maths.la.iterations.utils import get_error
 
-from algorithms.iterative.utils import is_enough_toll
+from algorithms.iterative.utils import is_toll_enough
+from hal.maths.la.utils import get_error
 from hal.maths.la.matrix import LinearSystemMatrix
 
 DEFAULT_TOLL = 1e-16
@@ -24,7 +24,7 @@ class LinearSystemSolver:
         return self.x
 
     def check_solution(self, abs_toll=DEFAULT_TOLL, rel_toll=0):
-        return is_enough_toll(self.A * self.x, self.b, abs_toll, rel_toll)
+        return is_toll_enough(self.A * self.x, self.b, abs_toll, rel_toll)
 
     def get_solution_error(self):
         return get_error(self.A * self.x, self.b)
@@ -41,7 +41,7 @@ class IterativeLinearSystemSolver(LinearSystemSolver):
         self.set_tolls(abs_toll, rel_toll)
 
     def is_toll_enough(self, x_new, x):
-        return self.check(x_new, x, self.abs_toll, self.rel_toll)
+        return is_toll_enough(x_new, x, self.abs_toll, self.rel_toll)
 
 
 class PureIterativeLinearSystemSolver(IterativeLinearSystemSolver):
