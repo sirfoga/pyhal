@@ -2,5 +2,20 @@
 # coding: utf-8
 
 
+def modulus(x):
+    try:
+        return x.linear_norm()
+    except:
+        return abs(x)
+
+
 def get_error(x, x_real):
-    return (x - x_real).linear_norm()
+    diff = x - x_real
+    return modulus(diff)
+
+
+def apply_toll(x, rel_toll, abs_toll):
+    x *= rel_toll
+    x = modulus(x)
+    x += abs_toll
+    return x
