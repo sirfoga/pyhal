@@ -6,8 +6,9 @@ from bs4 import BeautifulSoup
 
 from hal.internet.web import Webpage
 
-YOUTUBE_USER_BASE_URL = "https://www.youtube.com/user/"
-YOUTUBE_FEED_BASE_URL = "https://www.youtube.com/feeds/videos.xml?channel_id="
+# last dot to avoid pay/adv wall
+YOUTUBE_USER_BASE_URL = "https://www.youtube.com./user/"
+YOUTUBE_FEED_BASE_URL = "https://www.youtube.com./feeds/videos.xml?channel_id="
 
 
 class YoutubeChannel:
