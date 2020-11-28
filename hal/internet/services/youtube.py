@@ -7,24 +7,23 @@ from bs4 import BeautifulSoup
 from hal.internet.web import Webpage
 
 # last dot to avoid pay/adv wall
-YOUTUBE_USER_BASE_URL = "https://www.youtube.com./user/"
-YOUTUBE_FEED_BASE_URL = "https://www.youtube.com./feeds/videos.xml?channel_id="
+YOUTUBE_USER_BASE_URL = "https://www.youtube.com/user/"
+YOUTUBE_CHANNEL_BASE_URL = "https://www.youtube.com/c/"
+YOUTUBE_FEED_BASE_URL = "https://www.youtube.com/feeds/videos.xml?channel_id="
 
 
 class YoutubeChannel:
     """Youtube channel"""
 
-    def __init__(self, channel_name):
-        self.channel_name = channel_name
+    def __init__(self, url):
+        self.url = url
 
     def get_channel_page(self):
         """Fetches source page
 
         :return: source page of youtube channel
         """
-        channel_url = YOUTUBE_USER_BASE_URL + self.channel_name  # url
-        source_page = Webpage(
-            channel_url).get_html_source()  # get source page of channel
+        source_page = Webpage(self.url).get_html_source()  # get source page of channel
         return source_page
 
     def get_channel_id(self):
@@ -35,16 +34,7 @@ class YoutubeChannel:
         soup = BeautifulSoup(
             self.get_channel_page(), "lxml"
         )  # parser for source page
-        channel_id = soup.find_all(
-            "span",
-            {
-                "class": "channel-header-subscription-button-container"
-            }
-        )  # get all good spans
-        channel_id = channel_id[0].find_all("button")[
-            0]  # get button in first span
-        channel_id = channel_id["data-channel-external-id"]  # get id
-        return channel_id
+        return soup.find_all('link', {'rel': 'canonical'})[0]['href'].split('/')[-1]
 
     def get_feed_url(self):
         """Fetches RSS url
@@ -71,10 +61,11 @@ class YoutubeChannel:
         :return: feed url
         """
         web_page = Webpage(video_url)
-        web_page.get_html_source()
-        channel_id = \
-            web_page.soup.find_all("div", {"class": "yt-user-info"})[0].a[
-                "href"]
-        channel_id = str(channel_id).strip().replace("/channel/",
-                                                     "")  # get channel id
+        channel_id = YoutubeChannel(video_url).get_channel_id()
+        return YoutubeChannel.get_feed_url_from_id(channel_id)
+
+    @staticmethod
+    def get_feed_url_from_channel(channel_name):
+        url = YOUTUBE_CHANNEL_BASE_URL + channel_name 
+        channel_id = YoutubeChannel(url).get_channel_id()
         return YoutubeChannel.get_feed_url_from_id(channel_id)
